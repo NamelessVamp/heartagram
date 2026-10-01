@@ -14,12 +14,6 @@
 
 > Restricción: el catálogo de Switch es enorme. · Autoría: Inti, para Adriana. · Setup: abre `index.html`. · Extensión: agrega juegos en `data/games.json`.
 
-── ⋆⋅✦⋅⋆ ──
-
-## ⟦ QUÉ ES ⟧
-
-H.E.A.R.T.A.G.R.A.M. es la bienvenida de Adriana a su Nintendo Switch. Contesta un test de 12 preguntas, descubre su perfil gamer y recibe recomendaciones del catálogo de Switch (Nintendo, third-party, indies y free-to-play) pensadas para ella y para jugar en pareja.
-
 **Flujo:**
 
 ```
@@ -28,15 +22,15 @@ Intro → Test → Perfil → Recomendaciones → Para jugar con Inti → Regalo
 
 ## ⟦ EL NOMBRE ⟧
 
-| Letra | Significado |
-|---|---|
-| **H** | Hyrule — la consola llega con Zelda |
-| **E** | Experience — no es una tienda, es una bienvenida |
-| **A** | Adventure — lo que viene después |
-| **R** | Recommendation — el motor |
+| Letra | Significado                                        |
+| ----- | -------------------------------------------------- |
+| **H** | Hyrule — la consola llega con Zelda                |
+| **E** | Experience — no es una tienda, es una bienvenida   |
+| **A** | Adventure — lo que viene después                   |
+| **R** | Recommendation — el motor                          |
 | **T** | Tool — algo que se sigue usando después del regalo |
 
-*Nombre provisional hasta encontrar uno mejor.*
+_Nombre provisional hasta encontrar uno mejor._
 
 ── ⋆⋅✦⋅⋆ ──
 
@@ -138,6 +132,7 @@ GitHub Pages desde la rama `main`, carpeta raíz.
 ## ⟦ ROADMAP ⟧ (vivo)
 
 ### Fase 0 — Diseño
+
 - [x] SPECS v0.2
 - [x] ROADMAP
 - [x] Diseño del test y arquetipos
@@ -146,24 +141,29 @@ GitHub Pages desde la rama `main`, carpeta raíz.
 - [x] CODESTYLE.md
 
 ### Fase 1 — Catálogo (8–14 oct)
+
 - [ ] Biblioteca de Inti → `INTI_LIBRARY_MATCH`
 - [ ] Verificar precios, disponibilidad y multiplayer en eShop MX
 - [ ] `games.json`, `questions.json`, `archetypes.json`
 
 ### Fase 2 — Build v1 (15–21 oct)
+
 - [ ] Motor del test, perfil y recomendaciones
 - [ ] Sección dúo, carritos y tutorial
 
 ### Fase 3 — UI + QA (22–27 oct)
+
 - [ ] Estética horror + textura de película
 - [ ] QA con 4 perfiles simulados
 
 ### Fase 4 — Entrega (28–29 oct)
+
 - [ ] Código de $1,500 (reveal cifrado u otro método)
 - [ ] Sticker NFC
 - [ ] Traspaso de la consola
 
 ### Post-entrega
+
 - [ ] v2: precios en vivo vía Cloudflare Worker
 - [ ] v3: agente con Gemini
 
@@ -171,13 +171,13 @@ GitHub Pages desde la rama `main`, carpeta raíz.
 
 ## ⟦ DECISIONES ⟧
 
-| Decisión | Por qué |
-|---|---|
-| JS vanilla, sin framework | Sitio pequeño, sin build, fácil de mantener |
-| Sin IA en v1 | Recomendaciones predecibles y verificables antes del regalo |
-| Catálogo curado a mano | Ninguna API sabe qué tiene "FNAF vibes" |
-| Precios manuales con fecha | No hay fuente MXN confirmada todavía |
-| Repo personal, PC personal | Proyecto personal, fuera de Emerson |
+| Decisión                   | Por qué                                                     |
+| -------------------------- | ----------------------------------------------------------- |
+| JS vanilla, sin framework  | Sitio pequeño, sin build, fácil de mantener                 |
+| Sin IA en v1               | Recomendaciones predecibles y verificables antes del regalo |
+| Catálogo curado a mano     | Ninguna API sabe qué tiene "FNAF vibes"                     |
+| Precios manuales con fecha | No hay fuente MXN confirmada todavía                        |
+| Repo personal, PC personal | Proyecto personal, fuera de Emerson                         |
 
 ```
 // H.E.A.R.T.A.G.R.A.M. :: hecho para alguien en específico

@@ -113,6 +113,61 @@ def check_questions(questions: list[dict], report: Report) -> None:
             if set(o.get("vibes", [])) - TAGS["vibes"]:
                 report.fail(f"{ref}: vibe desconocido")
 
+def check_profile_texts(
+    profile_texts: dict,
+    profile_combos: dict,
+    report: Report,
+) -> None:
+    missing = ARCHETYPES - profile_texts.keys()
+    extra = profile_texts.keys() - ARCHETYPES
+
+    if missing:
+        report.fail(
+            f"profile_texts: faltan arquetipos {sorted(missing)}"
+        )
+
+    if extra:
+        report.fail(
+            f"profile_texts: arquetipos desconocidos {sorted(extra)}"
+        )
+
+    for archetype_id, text in profile_texts.items():
+        if not text.get("title"):
+            report.fail(
+                f"profile_texts.{archetype_id}: falta title"
+            )
+
+        if not text.get("description"):
+            report.fail(
+                f"profile_texts.{archetype_id}: falta description"
+            )
+
+    for combo_key, combo in profile_combos.items():
+        parts = combo_key.split("|")
+
+        if len(parts) != 2:
+            report.fail(
+                f"profile_combos: clave inválida '{combo_key}'"
+            )
+            continue
+
+        unknown = set(parts) - ARCHETYPES
+
+        if unknown:
+            report.fail(
+                f"profile_combos.{combo_key}: "
+                f"arquetipos desconocidos {sorted(unknown)}"
+            )
+
+        if not combo.get("summary"):
+            report.fail(
+                f"profile_combos.{combo_key}: falta summary"
+            )
+
+        if not combo.get("body"):
+            report.fail(
+                f"profile_combos.{combo_key}: falta body"
+            )
 
 def main() -> int:
     strict = "--strict" in sys.argv
@@ -125,6 +180,12 @@ def main() -> int:
     for game in games:
         check_game(game, report, strict)
     check_questions(load("questions.json"), report)
+
+    check_profile_texts(
+    load("profile_texts.json"),
+    load("profile_combos.json"),
+    report,
+)
 
     verified = sum(g.get("status") == "VERIFICADO" for g in games)
     print(f"[INIT] {len(games)} juegos · {verified} verificados · modo {'strict' if strict else 'reporte'}")

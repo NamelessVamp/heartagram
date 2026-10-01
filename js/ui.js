@@ -60,15 +60,49 @@ export function renderQuestion(question, index, total, selectedId, onSelect) {
 
 /* ---------- Profile ---------- */
 
-export function renderProfile(profile, archetypes) {
-  const find = (id) => archetypes.find((a) => a.id === id);
-  const primary = find(profile.archetypes.primary);
-  const secondary = find(profile.archetypes.secondary);
+function findProfileCombo(combos, primaryId, secondaryId) {
+  const directKey = `${primaryId}|${secondaryId}`;
+  const reverseKey = `${secondaryId}|${primaryId}`;
+
+  return combos[directKey] ?? combos[reverseKey] ?? null;
+}
+
+function buildFallbackProfileCopy(primaryText, secondaryText) {
+  return {
+    summary: "Tu forma de jugar no cabe en una sola categoría.",
+    body: `${primaryText.description} ${secondaryText.description}`,
+  };
+}
+
+export function renderProfile(
+  profile,
+  archetypes,
+  profileTexts,
+  profileCombos,
+) {
+  const primaryId = profile.archetypes.primary;
+  const secondaryId = profile.archetypes.secondary;
+
+  const findArchetype = (id) =>
+    archetypes.find((archetype) => archetype.id === id);
+
+  const primaryArchetype = findArchetype(primaryId);
+  const secondaryArchetype = findArchetype(secondaryId);
+
+  const primaryText = profileTexts[primaryId] ?? primaryArchetype;
+  const secondaryText = profileTexts[secondaryId] ?? secondaryArchetype;
+
+  const combo =
+    findProfileCombo(profileCombos, primaryId, secondaryId) ??
+    buildFallbackProfileCopy(primaryText, secondaryText);
 
   document.getElementById("profile-title").textContent =
-    `${primary.name} · ${secondary.name}`;
-  document.getElementById("profile-description").textContent =
-    `${primary.description} ${secondary.description}`;
+    `${primaryText.title} · ${secondaryText.title}`;
+
+  document.getElementById("profile-summary").textContent = combo.summary;
+
+  document.getElementById("profile-body").textContent = combo.body;
+
   drawRadar(document.getElementById("profile-radar"), profile.vector);
 }
 

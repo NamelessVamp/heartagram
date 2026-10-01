@@ -1,0 +1,41 @@
+{
+  "EXPLORER": {
+    "title": "La Errante",
+    "description": "No juegas para llegar rápido. Juegas para descubrir qué hay detrás de la siguiente colina."
+  },
+
+  "COMPETITOR": {
+    "title": "La de la Grieta",
+    "description": "Hay algo satisfactorio en mejorar, ganar y volver a intentarlo una vez más."
+  },
+
+  "COLLECTOR": {
+    "title": "La Edad Dorada",
+    "description": "Siempre existe una última pieza, un personaje más o un secreto sin descubrir."
+  },
+
+  "CREATOR": {
+    "title": "La Casa en Nebraska",
+    "description": "Disfrutas los juegos que te permiten construir algo propio y verlo crecer."
+  },
+
+  "SURVIVOR": {
+    "title": "Tiempos Difíciles",
+    "description": "Los recursos escasos y los retos difíciles no te alejan. Te mantienen interesada."
+  },
+
+  "STRATEGIST": {
+    "title": "El Árbol Familiar",
+    "description": "Te gusta cuando cada decisión tiene consecuencias y cada movimiento conecta con otro."
+  },
+
+  "STORY_SEEKER": {
+    "title": "La Hija del Predicador",
+    "description": "Los personajes, los secretos y las historias suelen quedarse contigo mucho después de terminar un juego."
+  },
+
+  "HORROR_FAN": {
+    "title": "La Guardia Nocturna",
+    "description": "Hay algo en la tensión, el misterio y la oscuridad que te hace querer seguir avanzando."
+  }
+}

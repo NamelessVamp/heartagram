@@ -1,0 +1,21 @@
+{
+  "STORY_SEEKER|EXPLORER": {
+    "summary": "Te atraen los mundos que esconden algo.",
+    "body": "Los personajes memorables, los lugares misteriosos y las historias que no te llevan de la mano. Prefieres descubrir por tu cuenta antes que seguir una lista de tareas. Por eso tus recomendaciones se inclinan hacia RPGs narrativos, aventuras atmosféricas y mundos grandes que recompensan la curiosidad."
+  },
+
+  "EXPLORER|HORROR_FAN": {
+    "summary": "La oscuridad nunca te ha detenido.",
+    "body": "Los lugares desconocidos te llaman incluso cuando esconden algo aterrador. Disfrutas explorar, descubrir secretos y avanzar donde otros darían media vuelta."
+  },
+
+  "HORROR_FAN|STORY_SEEKER": {
+    "summary": "No buscas sustos por los sustos.",
+    "body": "Te atraen las historias extrañas, los misterios y la sensación de que algo no encaja. Cuanto más inquietante es el mundo, más quieres entenderlo."
+  },
+
+  "CREATOR|COLLECTOR": {
+    "summary": "Te gusta hacer un lugar tuyo.",
+    "body": "Disfrutas construir, decorar y reunir cosas que hacen que un mundo se sienta personal. El progreso para ti es algo que se ve."
+  }
+}

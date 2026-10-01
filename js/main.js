@@ -12,6 +12,8 @@ const NEXT_QUESTION_DELAY_MS = 250;
 const state = {
   questions: [],
   archetypes: [],
+  profileTexts: {},
+  profileCombos: {},
   games: [],
   index: 0,
   answers: {},
@@ -91,7 +93,12 @@ function finishQuiz() {
   const duo = buildDuo(profile, ranked);
   const carts = buildCarts(ranked, duo, sections.outOfZone);
 
-  ui.renderProfile(profile, state.archetypes);
+  ui.renderProfile(
+    profile,
+    state.archetypes,
+    state.profileTexts,
+    state.profileCombos,
+  );
   ui.renderResults(sections);
   ui.renderDuo(duo);
   ui.renderCarts(carts);
@@ -133,13 +140,19 @@ function bindActions() {
 async function init() {
   bindActions();
   try {
-    const [questions, archetypes, games] = await Promise.all([
-      loadJson("data/questions.json"),
-      loadJson("data/archetypes.json"),
-      loadJson("data/games.json"),
-    ]);
+    const [questions, archetypes, profileTexts, profileCombos, games] =
+      await Promise.all([
+        loadJson("data/questions.json"),
+        loadJson("data/archetypes.json"),
+        loadJson("data/profile_texts.json"),
+        loadJson("data/profile_combos.json"),
+        loadJson("data/games.json"),
+      ]);
+
     state.questions = questions;
     state.archetypes = archetypes;
+    state.profileTexts = profileTexts;
+    state.profileCombos = profileCombos;
     state.games = PREVIEW ? games.map(toPreviewGame) : games;
   } catch (error) {
     document.querySelector('[data-screen="intro"] .lead').textContent =
