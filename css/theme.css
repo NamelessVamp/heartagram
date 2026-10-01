@@ -184,16 +184,84 @@ body {
 /* ---------- Game cards ---------- */
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  padding: var(--space-4);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-left: 3px solid var(--color-accent);
+  overflow: hidden;
+  padding: var(--space-5);
+  background: linear-gradient(
+    145deg,
+    rgba(44, 19, 25, 0.88),
+    rgba(18, 10, 12, 0.96) 62%
+  );
+  border: 1px solid rgba(224, 98, 122, 0.28);
+  border-left: 2px solid var(--color-accent);
   border-radius: var(--radius-md);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 235, 239, 0.035),
+    0 14px 38px rgba(0, 0, 0, 0.16);
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
+.card::after {
+  content: "";
+  position: absolute;
+  top: -3rem;
+  right: -3rem;
+  width: 8rem;
+  height: 8rem;
+  border: 1px solid rgba(224, 98, 122, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(224, 98, 122, 0.72);
+  box-shadow:
+    0 0 0 1px rgba(224, 98, 122, 0.08),
+    0 18px 46px rgba(0, 0, 0, 0.24),
+    0 0 28px rgba(163, 36, 59, 0.08);
+}
+
+.card-title {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #fff1f3;
+}
+
+.card-price {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-accent-strong);
+  letter-spacing: 0.045em;
+}
+
+.card-why {
+  max-width: 52ch;
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  color: #d9c8ca;
+}
+
+.card-owned {
+  align-self: flex-start;
+  padding: 2px 7px;
+  border: 1px solid rgba(242, 184, 194, 0.42);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--color-focus);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
 .card-title {
   font-family: var(--font-display);
   font-size: var(--text-lg);
@@ -285,7 +353,7 @@ body {
   }
 }
 
-/* ---------- Profile: Wrapped-style reveal ---------- */
+/* ---------- Profile: Razorblade Romance reveal ---------- */
 
 [data-screen="profile"] {
   min-height: 82vh;
@@ -293,58 +361,93 @@ body {
 }
 
 .profile-title {
-  max-width: 18ch;
-  font-size: clamp(2rem, 8vw, 3.75rem);
-  line-height: 1.05;
+  max-width: 26ch;
+  font-family: var(--font-display);
+  font-size: clamp(2.15rem, 7vw, 4rem);
+  font-style: italic;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
   text-wrap: balance;
+  color: #fff4f5;
+  text-shadow:
+    0 0 8px rgba(255, 226, 232, 0.35),
+    0 0 22px rgba(224, 98, 122, 0.35),
+    0 0 48px rgba(163, 36, 59, 0.25);
+}
+
+.profile-title::after {
+  width: min(10rem, 45%);
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-strong),
+    rgba(224, 98, 122, 0.1)
+  );
 }
 
 .profile-copy {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
-  max-width: 34rem;
-  margin-top: var(--space-3);
+  max-width: 38rem;
+  margin-top: var(--space-4);
+  padding: var(--space-5);
+  background: linear-gradient(
+    135deg,
+    rgba(224, 98, 122, 0.08),
+    rgba(163, 36, 59, 0.025) 55%,
+    transparent
+  );
+  border-left: 1px solid rgba(224, 98, 122, 0.75);
+}
+
+.profile-copy::before {
+  content: "RZR // PROFILE";
+  display: block;
+  width: auto;
+  height: auto;
+  background: none;
+  box-shadow: none;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.16em;
 }
 
 .profile-summary {
+  max-width: 25ch;
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 4vw, 1.75rem);
-  line-height: 1.35;
-  color: var(--color-accent-strong);
+  font-size: clamp(1.4rem, 4.5vw, 2rem);
+  font-style: italic;
+  line-height: 1.25;
+  color: #f18ca0;
   text-wrap: balance;
 }
 
 .profile-body {
-  max-width: 55ch;
-  color: var(--color-text);
-  font-size: var(--text-lg);
-  line-height: 1.8;
-  white-space: normal;
-}
-
-.profile-copy::before {
-  content: "";
-  display: block;
-  width: 2.75rem;
-  height: 1px;
-  background: var(--color-accent);
-  box-shadow: 0 0 10px rgba(224, 98, 122, 0.35);
+  max-width: 54ch;
+  color: #eadbdd;
+  font-size: clamp(1rem, 2.8vw, 1.125rem);
+  line-height: 1.75;
 }
 
 .profile-radar {
   align-self: center;
-  width: 100%;
-  max-width: 320px;
+  width: min(100%, 340px);
   height: auto;
-  margin: var(--space-4) 0;
-  filter: drop-shadow(0 0 14px rgba(163, 36, 59, 0.22));
+  margin: var(--space-5) auto;
+  padding: var(--space-3);
+  filter: drop-shadow(0 0 10px rgba(224, 98, 122, 0.28))
+    drop-shadow(0 0 28px rgba(163, 36, 59, 0.18));
+}
+
+[data-screen="profile"] .btn-primary {
+  width: 100%;
 }
 
 @media (min-width: 48rem) {
   [data-screen="profile"] {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 320px;
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
     column-gap: var(--space-7);
     align-items: center;
   }
@@ -362,5 +465,51 @@ body {
 
   [data-screen="profile"] .btn {
     grid-column: 1 / -1;
+  }
+}
+
+.section-title {
+  position: relative;
+  font-style: italic;
+  color: #f7e9eb;
+}
+
+.section-title::before {
+  content: "// ";
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.75em;
+  font-style: normal;
+}
+
+[data-screen="results"] > .title,
+[data-screen="duo"] > .title,
+[data-screen="carts"] > .title,
+[data-screen="gift"] > .title,
+[data-screen="family"] > .title {
+  font-style: italic;
+  color: #fff1f3;
+}
+
+@media (max-width: 30rem) {
+  #app {
+    padding-inline: 1.25rem;
+  }
+
+  .profile-title {
+    max-width: none;
+    font-size: 2.35rem;
+  }
+
+  .profile-copy {
+    padding: 1.25rem;
+  }
+
+  .profile-radar {
+    max-width: 280px;
+  }
+
+  .card {
+    padding: 1.25rem;
   }
 }
