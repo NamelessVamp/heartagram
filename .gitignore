@@ -1,0 +1,6 @@
+.venv/
+.env
+*.secret
+secrets/
+node_modules/
+__pycache__/

@@ -1,0 +1,672 @@
+[
+  {
+    "id": "q1",
+    "text": "Domingo lluvioso, tarde libre. ¿Qué se te antoja?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Perderme horas en un mundo enorme",
+        "img": null,
+        "dims": {
+          "structure": 1,
+          "session": 2,
+          "pace": -1
+        },
+        "arch": {
+          "EXPLORER": 2
+        },
+        "vibes": []
+      },
+      {
+        "id": "b",
+        "text": "Unas partidas rápidas para ganar algo",
+        "img": null,
+        "dims": {
+          "social": 1,
+          "session": -1,
+          "pace": 1,
+          "challenge": 1
+        },
+        "arch": {
+          "COMPETITOR": 2
+        },
+        "vibes": []
+      },
+      {
+        "id": "c",
+        "text": "Algo tranquilo: decorar, cultivar, ordenar",
+        "img": null,
+        "dims": {
+          "pace": -2,
+          "mood": -1,
+          "challenge": -1
+        },
+        "arch": {
+          "CREATOR": 1,
+          "COLLECTOR": 1
+        },
+        "vibes": []
+      },
+      {
+        "id": "d",
+        "text": "Luces apagadas y algo que me ponga nerviosa",
+        "img": null,
+        "dims": {
+          "mood": 2,
+          "pace": 1
+        },
+        "arch": {
+          "HORROR_FAN": 2
+        },
+        "vibes": []
+      }
+    ]
+  },
+  {
+    "id": "q2",
+    "text": "En LoL, ¿qué es lo que te mantiene jugando?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ganar y subir de rank",
+        "img": null,
+        "dims": {
+          "challenge": 2,
+          "social": 1
+        },
+        "arch": {
+          "COMPETITOR": 2
+        },
+        "vibes": [
+          "LOL_VIBES"
+        ]
+      },
+      {
+        "id": "b",
+        "text": "Jugar con amigos (o con Inti)",
+        "img": null,
+        "dims": {
+          "social": 2
+        },
+        "arch": {
+          "COMPETITOR": 1
+        },
+        "vibes": [
+          "LOL_VIBES"
+        ]
+      },
+      {
+        "id": "c",
+        "text": "Dominar a mi main y sus mecánicas",
+        "img": null,
+        "dims": {
+          "challenge": 1
+        },
+        "arch": {
+          "STRATEGIST": 2
+        },
+        "vibes": [
+          "LOL_VIBES"
+        ]
+      },
+      {
+        "id": "d",
+        "text": "Las skins y el lore",
+        "img": null,
+        "dims": {},
+        "arch": {
+          "COLLECTOR": 1,
+          "STORY_SEEKER": 1
+        },
+        "vibes": [
+          "LOL_VIBES"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "q3",
+    "text": "¿Qué era lo mejor de Genshin Impact?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Explorar y encontrar lugares escondidos",
+        "img": null,
+        "dims": {
+          "structure": 1,
+          "session": 1
+        },
+        "arch": {
+          "EXPLORER": 2
+        },
+        "vibes": [
+          "GENSHIN_VIBES"
+        ]
+      },
+      {
+        "id": "b",
+        "text": "Conseguir personajes y armas",
+        "img": null,
+        "dims": {
+          "session": 1
+        },
+        "arch": {
+          "COLLECTOR": 2
+        },
+        "vibes": [
+          "GENSHIN_VIBES"
+        ]
+      },
+      {
+        "id": "c",
+        "text": "La historia y los personajes",
+        "img": null,
+        "dims": {
+          "structure": -1
+        },
+        "arch": {
+          "STORY_SEEKER": 2
+        },
+        "vibes": [
+          "GENSHIN_VIBES"
+        ]
+      },
+      {
+        "id": "d",
+        "text": "Nunca me terminó de enganchar",
+        "img": null,
+        "dims": {
+          "pace": 1,
+          "structure": -1
+        },
+        "arch": {},
+        "vibes": []
+      }
+    ]
+  },
+  {
+    "id": "q4",
+    "text": "Noche de película de terror. ¿Cuál eliges?",
+    "special": "horror_tolerance",
+    "options": [
+      {
+        "id": "a",
+        "text": "Paso, mejor otra cosa",
+        "img": null,
+        "dims": {
+          "mood": -2
+        },
+        "arch": {},
+        "vibes": [],
+        "value": 0
+      },
+      {
+        "id": "b",
+        "text": "Algo raro y misterioso, sin sustos",
+        "img": null,
+        "dims": {
+          "mood": 1
+        },
+        "arch": {
+          "STORY_SEEKER": 1
+        },
+        "vibes": [],
+        "value": 1
+      },
+      {
+        "id": "c",
+        "text": "Sustos y tensión nivel FNAF",
+        "img": null,
+        "dims": {
+          "mood": 2
+        },
+        "arch": {
+          "HORROR_FAN": 1
+        },
+        "vibes": [
+          "FNAF_VIBES",
+          "CRY_OF_FEAR_VIBES"
+        ],
+        "value": 2
+      },
+      {
+        "id": "d",
+        "text": "Lo más perturbador que exista",
+        "img": null,
+        "dims": {
+          "mood": 2
+        },
+        "arch": {
+          "HORROR_FAN": 2,
+          "SURVIVOR": 1
+        },
+        "vibes": [
+          "FNAF_VIBES",
+          "CRY_OF_FEAR_VIBES"
+        ],
+        "value": 3
+      }
+    ]
+  },
+  {
+    "id": "q5",
+    "text": "Un juego se pone difícil. ¿Qué haces?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Lo intento hasta romperlo",
+        "img": null,
+        "dims": {
+          "challenge": 2
+        },
+        "arch": {
+          "SURVIVOR": 1
+        },
+        "vibes": []
+      },
+      {
+        "id": "b",
+        "text": "Busco una estrategia o una guía",
+        "img": null,
+        "dims": {
+          "challenge": 1
+        },
+        "arch": {
+          "STRATEGIST": 2
+        },
+        "vibes": []
+      },
+      {
+        "id": "c",
+        "text": "Le bajo la dificultad, vine a pasarla bien",
+        "img": null,
+        "dims": {
+          "challenge": -2
+        },
+        "arch": {},
+        "vibes": []
+      },
+      {
+        "id": "d",
+        "text": "Lo dejo un rato y juego otra cosa",
+        "img": null,
+        "dims": {
+          "challenge": -1,
+          "session": -1
+        },
+        "arch": {},
+        "vibes": []
+      }
+    ]
+  },
+  {
+    "id": "q6",
+    "text": "¿Cuánto tiempo juegas normalmente de un jalón?",
+    "options": [
+      {
+        "id": "a",
+        "text": "15–20 min entre cosas",
+        "img": null,
+        "dims": {
+          "session": -2
+        },
+        "arch": {},
+        "vibes": []
+      },
+      {
+        "id": "b",
+        "text": "Una o dos horas",
+        "img": null,
+        "dims": {
+          "session": 0
+        },
+        "arch": {},
+        "vibes": []
+      },
+      {
+        "id": "c",
+        "text": "Maratón de fin de semana",
+        "img": null,
+        "dims": {
+          "session": 2
+        },
+        "arch": {},
+        "vibes": []
+      },
+      {
+        "id": "d",
+        "text": "Depende, voy y vengo",
+        "img": null,
+        "dims": {
+          "session": -1,
+          "structure": 1
+        },
+        "arch": {},
+        "vibes": []
+      }
+    ]
+  },
+  {
+    "id": "q7",
+    "text": "Jugando con Inti, ¿qué prefieres?",
+    "special": "couple_pref",
+    "options": [
+      {
+        "id": "a",
+        "text": "Competir y presumirle que le gané",
+        "img": null,
+        "dims": {},
+        "arch": {
+          "COMPETITOR": 1
+        },
+        "vibes": [],
+        "couple": "COMPETITIVE_COUPLE"
+      },
+      {
+        "id": "b",
+        "text": "Equipo contra todo",
+        "img": null,
+        "dims": {},
+        "arch": {
+          "SURVIVOR": 1
+        },
+        "vibes": [],
+        "couple": "COOP_HEAVY"
+      },
+      {
+        "id": "c",
+        "text": "Cada quien lo suyo en el mismo mundo",
+        "img": null,
+        "dims": {},
+        "arch": {
+          "CREATOR": 1
+        },
+        "vibes": [],
+        "couple": "COUPLE_FRIENDLY"
+      },
+      {
+        "id": "d",
+        "text": "Turnarnos o ver la historia juntos",
+        "img": null,
+        "dims": {},
+        "arch": {
+          "STORY_SEEKER": 1
+        },
+        "vibes": [],
+        "couple": "DATE_NIGHT"
+      }
+    ]
+  },
+  {
+    "id": "q8",
+    "text": "¿Qué lugar te gustaría visitar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ciudad de neón de noche",
+        "img": null,
+        "dims": {
+          "mood": 1,
+          "pace": 1
+        },
+        "arch": {
+          "COMPETITOR": 1
+        },
+        "vibes": []
+      },
+      {
+        "id": "b",
+        "text": "Bosque oscuro con niebla",
+        "img": null,
+        "dims": {
+          "mood": 2
+        },
+        "arch": {
+          "HORROR_FAN": 1,
+          "EXPLORER": 1
+        },
+        "vibes": [
+          "GOTH_VIBES"
+        ]
+      },
+      {
+        "id": "c",
+        "text": "Un pueblito con casas bonitas",
+        "img": null,
+        "dims": {
+          "mood": -2
+        },
+        "arch": {
+          "CREATOR": 1
+        },
+        "vibes": []
+      },
+      {
+        "id": "d",
+        "text": "Ruinas antiguas llenas de secretos",
+        "img": null,
+        "dims": {},
+        "arch": {
+          "EXPLORER": 2,
+          "STORY_SEEKER": 1
+        },
+        "vibes": []
+      }
+    ]
+  },
+  {
+    "id": "q9",
+    "text": "Empiezas un juego nuevo. ¿Qué quieres?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Que me cuente una historia paso a paso",
+        "img": null,
+        "dims": {
+          "structure": -2
+        },
+        "arch": {
+          "STORY_SEEKER": 2
+        },
+        "vibes": []
+      },
+      {
+        "id": "b",
+        "text": "Que me suelte y descubra sola",
+        "img": null,
+        "dims": {
+          "structure": 2
+        },
+        "arch": {
+          "EXPLORER": 1
+        },
+        "vibes": []
+      },
+      {
+        "id": "c",
+        "text": "Construir mi propio lugar",
+        "img": null,
+        "dims": {
+          "structure": 2
+        },
+        "arch": {
+          "CREATOR": 2
+        },
+        "vibes": []
+      },
+      {
+        "id": "d",
+        "text": "Objetivos claros y retos",
+        "img": null,
+        "dims": {
+          "structure": -1,
+          "challenge": 1
+        },
+        "arch": {
+          "STRATEGIST": 1
+        },
+        "vibes": []
+      }
+    ]
+  },
+  {
+    "id": "q10",
+    "text": "¿Qué tenían los shooters como CoD Mobile?",
+    "options": [
+      {
+        "id": "a",
+        "text": "La adrenalina",
+        "img": null,
+        "dims": {
+          "pace": 2
+        },
+        "arch": {
+          "COMPETITOR": 1
+        },
+        "vibes": [
+          "COD_VIBES"
+        ]
+      },
+      {
+        "id": "b",
+        "text": "Jugar en escuadra",
+        "img": null,
+        "dims": {
+          "social": 2
+        },
+        "arch": {
+          "SURVIVOR": 1
+        },
+        "vibes": [
+          "COD_VIBES"
+        ]
+      },
+      {
+        "id": "c",
+        "text": "Mejorar mi puntería",
+        "img": null,
+        "dims": {
+          "challenge": 1
+        },
+        "arch": {
+          "COMPETITOR": 1,
+          "STRATEGIST": 1
+        },
+        "vibes": [
+          "COD_VIBES"
+        ]
+      },
+      {
+        "id": "d",
+        "text": "No eran lo mío",
+        "img": null,
+        "dims": {
+          "pace": -1
+        },
+        "arch": {},
+        "vibes": []
+      }
+    ]
+  },
+  {
+    "id": "q11",
+    "text": "Tu inventario ideal es…",
+    "options": [
+      {
+        "id": "a",
+        "text": "Lleno: todo coleccionado",
+        "img": null,
+        "dims": {
+          "session": 1
+        },
+        "arch": {
+          "COLLECTOR": 2
+        },
+        "vibes": []
+      },
+      {
+        "id": "b",
+        "text": "Lo mínimo para sobrevivir",
+        "img": null,
+        "dims": {
+          "mood": 1,
+          "challenge": 1
+        },
+        "arch": {
+          "SURVIVOR": 2
+        },
+        "vibes": []
+      },
+      {
+        "id": "c",
+        "text": "Solo lo necesario y a lo que sigue",
+        "img": null,
+        "dims": {
+          "pace": 1
+        },
+        "arch": {},
+        "vibes": []
+      },
+      {
+        "id": "d",
+        "text": "Cosas para decorar y crear",
+        "img": null,
+        "dims": {
+          "pace": -1
+        },
+        "arch": {
+          "CREATOR": 2
+        },
+        "vibes": []
+      }
+    ]
+  },
+  {
+    "id": "q12",
+    "text": "Un juego es perfecto si al terminar…",
+    "options": [
+      {
+        "id": "a",
+        "text": "Me quedé pensando en la historia",
+        "img": null,
+        "dims": {},
+        "arch": {
+          "STORY_SEEKER": 2
+        },
+        "vibes": []
+      },
+      {
+        "id": "b",
+        "text": "Gané",
+        "img": null,
+        "dims": {},
+        "arch": {
+          "COMPETITOR": 2
+        },
+        "vibes": []
+      },
+      {
+        "id": "c",
+        "text": "Sigo con miedo",
+        "img": null,
+        "dims": {
+          "mood": 2
+        },
+        "arch": {
+          "HORROR_FAN": 2
+        },
+        "vibes": []
+      },
+      {
+        "id": "d",
+        "text": "Quiero volver a explorar",
+        "img": null,
+        "dims": {},
+        "arch": {
+          "EXPLORER": 2
+        },
+        "vibes": []
+      }
+    ]
+  }
+]

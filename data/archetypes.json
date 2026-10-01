@@ -1,0 +1,42 @@
+[
+  {
+    "id": "EXPLORER",
+    "name": "La Errante",
+    "description": "Va a donde el mapa no dice."
+  },
+  {
+    "id": "COMPETITOR",
+    "name": "La de la Grieta",
+    "description": "Juega para ganar, y para que se note."
+  },
+  {
+    "id": "COLLECTOR",
+    "name": "La Edad Dorada",
+    "description": "Nada brillante se queda sin conseguir."
+  },
+  {
+    "id": "CREATOR",
+    "name": "La Casa en Nebraska",
+    "description": "Si no existe, lo construye."
+  },
+  {
+    "id": "SURVIVOR",
+    "name": "Tiempos Difíciles",
+    "description": "Pocos recursos, mucha voluntad."
+  },
+  {
+    "id": "STRATEGIST",
+    "name": "El Árbol Familiar",
+    "description": "Cada movimiento conecta con otro."
+  },
+  {
+    "id": "STORY_SEEKER",
+    "name": "La Hija del Predicador",
+    "description": "Juega por lo que se cuenta."
+  },
+  {
+    "id": "HORROR_FAN",
+    "name": "La Guardia Nocturna",
+    "description": "La que se queda en el turno de noche."
+  }
+]

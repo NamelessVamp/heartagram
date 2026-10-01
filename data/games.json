@@ -1,0 +1,2193 @@
+[
+  {
+    "id": "luigis-mansion-3",
+    "title": "Luigi's Mansion 3",
+    "genres": [
+      "ACTION",
+      "ADVENTURE"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "CREEPY",
+      "LIGHTHEARTED"
+    ],
+    "vibes": [
+      "FNAF_VIBES"
+    ],
+    "personality": [
+      "HORROR_FAN",
+      "EXPLORER"
+    ],
+    "couple": [
+      "COUPLE_FRIENDLY"
+    ],
+    "vector": {
+      "pace": 0,
+      "social": 1,
+      "structure": -1,
+      "session": 0,
+      "mood": 1,
+      "challenge": -1
+    },
+    "horror_level": 1,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Sustos con humor: la tensión de FNAF, pero sin traumas.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON,LOC"
+    }
+  },
+  {
+    "id": "little-nightmares",
+    "title": "Little Nightmares",
+    "genres": [
+      "HORROR",
+      "PLATFORMER",
+      "PUZZLE"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "CREEPY",
+      "DARK"
+    ],
+    "vibes": [
+      "CRY_OF_FEAR_VIBES"
+    ],
+    "personality": [
+      "HORROR_FAN"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": 0,
+      "social": -2,
+      "structure": -2,
+      "session": -1,
+      "mood": 2,
+      "challenge": 0
+    },
+    "horror_level": 2,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Corto, inquietante y precioso. Pura atmósfera de pesadilla.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "little-nightmares-2",
+    "title": "Little Nightmares II",
+    "genres": [
+      "HORROR",
+      "PLATFORMER",
+      "PUZZLE"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "CREEPY",
+      "DARK"
+    ],
+    "vibes": [
+      "CRY_OF_FEAR_VIBES"
+    ],
+    "personality": [
+      "HORROR_FAN"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": 0,
+      "social": -2,
+      "structure": -2,
+      "session": -1,
+      "mood": 2,
+      "challenge": 0
+    },
+    "horror_level": 2,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "La secuela: más grande, más oscura y más perturbadora.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "fnaf-security-breach",
+    "title": "Five Nights at Freddy's: Security Breach",
+    "genres": [
+      "HORROR"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "CREEPY"
+    ],
+    "vibes": [
+      "FNAF_VIBES"
+    ],
+    "personality": [
+      "HORROR_FAN"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": 0,
+      "social": -2,
+      "structure": 0,
+      "session": 0,
+      "mood": 2,
+      "challenge": 0
+    },
+    "horror_level": 2,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Freddy en una plaza enorme, de noche. Ya sabes cómo va esto.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "fnaf-help-wanted",
+    "title": "Five Nights at Freddy's: Help Wanted",
+    "genres": [
+      "HORROR"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "CREEPY"
+    ],
+    "vibes": [
+      "FNAF_VIBES"
+    ],
+    "personality": [
+      "HORROR_FAN"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": 0,
+      "social": -2,
+      "structure": -1,
+      "session": -1,
+      "mood": 2,
+      "challenge": 0
+    },
+    "horror_level": 3,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Los turnos de noche clásicos de FNAF, reunidos en un solo juego.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "signalis",
+    "title": "Signalis",
+    "genres": [
+      "HORROR",
+      "SURVIVAL"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "MELANCHOLIC",
+      "DARK"
+    ],
+    "vibes": [
+      "CRY_OF_FEAR_VIBES"
+    ],
+    "personality": [
+      "HORROR_FAN",
+      "STORY_SEEKER"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": -1,
+      "social": -2,
+      "structure": -1,
+      "session": 1,
+      "mood": 2,
+      "challenge": 1
+    },
+    "horror_level": 3,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Horror de supervivencia con una historia triste que no se olvida.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "darkwood",
+    "title": "Darkwood",
+    "genres": [
+      "HORROR",
+      "SURVIVAL"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "DARK"
+    ],
+    "vibes": [
+      "CRY_OF_FEAR_VIBES"
+    ],
+    "personality": [
+      "SURVIVOR",
+      "HORROR_FAN"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": 0,
+      "social": -2,
+      "structure": 1,
+      "session": 1,
+      "mood": 2,
+      "challenge": 2
+    },
+    "horror_level": 3,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Un bosque, recursos escasos y noches que se sienten eternas.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "dredge",
+    "title": "Dredge",
+    "genres": [
+      "ADVENTURE"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "MYSTERIOUS",
+      "CREEPY"
+    ],
+    "vibes": [],
+    "personality": [
+      "SURVIVOR",
+      "EXPLORER"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": -1,
+      "social": -2,
+      "structure": 1,
+      "session": 0,
+      "mood": 1,
+      "challenge": 0
+    },
+    "horror_level": 1,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Pescas de día. De noche, el mar se vuelve algo más.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "inscryption",
+    "title": "Inscryption",
+    "genres": [
+      "STRATEGY",
+      "ROGUELIKE"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "CREEPY",
+      "MYSTERIOUS"
+    ],
+    "vibes": [],
+    "personality": [
+      "STRATEGIST",
+      "STORY_SEEKER"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": -1,
+      "social": -2,
+      "structure": -1,
+      "session": 0,
+      "mood": 1,
+      "challenge": 1
+    },
+    "horror_level": 1,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Un juego de cartas que no es lo que parece. Mejor no saber más.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "blasphemous",
+    "title": "Blasphemous",
+    "genres": [
+      "METROIDVANIA",
+      "ACTION"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "DARK_GOTHIC"
+    ],
+    "vibes": [
+      "GOTH_VIBES"
+    ],
+    "personality": [
+      "SURVIVOR"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": 1,
+      "social": -2,
+      "structure": 0,
+      "session": 1,
+      "mood": 2,
+      "challenge": 2
+    },
+    "horror_level": 1,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Gótico, brutal y hermoso. Difícil a propósito.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "cult-of-the-lamb",
+    "title": "Cult of the Lamb",
+    "genres": [
+      "ROGUELIKE",
+      "ACTION"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "GOTHIC",
+      "CHAOTIC"
+    ],
+    "vibes": [
+      "GOTH_VIBES"
+    ],
+    "personality": [
+      "CREATOR",
+      "SURVIVOR"
+    ],
+    "couple": [
+      "INTI_LIBRARY_MATCH"
+    ],
+    "vector": {
+      "pace": 1,
+      "social": 0,
+      "structure": 1,
+      "session": 1,
+      "mood": 1,
+      "challenge": 0
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Tierno por fuera, oscuro por dentro: tú diriges la secta.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "VERIFICAR"
+    }
+  },
+  {
+    "id": "hollow-knight",
+    "title": "Hollow Knight",
+    "genres": [
+      "METROIDVANIA"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "MELANCHOLIC"
+    ],
+    "vibes": [
+      "GOTH_VIBES"
+    ],
+    "personality": [
+      "EXPLORER",
+      "SURVIVOR"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": 1,
+      "social": -2,
+      "structure": 1,
+      "session": 1,
+      "mood": 1,
+      "challenge": 2
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Un reino subterráneo enorme, melancólico y lleno de secretos.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "hollow-knight-silksong",
+    "title": "Hollow Knight: Silksong",
+    "genres": [
+      "METROIDVANIA"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "DARK"
+    ],
+    "vibes": [
+      "GOTH_VIBES"
+    ],
+    "personality": [
+      "EXPLORER",
+      "SURVIVOR"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": 1,
+      "social": -2,
+      "structure": 1,
+      "session": 1,
+      "mood": 1,
+      "challenge": 2
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "La secuela de Hollow Knight: más rápida y todavía más difícil.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "resident-evil-tbd",
+    "title": "Resident Evil (título por definir)",
+    "genres": [
+      "HORROR",
+      "ACTION"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "DARK",
+      "CREEPY"
+    ],
+    "vibes": [],
+    "personality": [
+      "HORROR_FAN",
+      "SURVIVOR"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": 1,
+      "social": -2,
+      "structure": -1,
+      "session": 0,
+      "mood": 2,
+      "challenge": 1
+    },
+    "horror_level": 3,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "El clásico del survival horror. Pasillos, recursos y tensión.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "VERIFICAR"
+    }
+  },
+  {
+    "id": "zelda-botw",
+    "title": "The Legend of Zelda: Breath of the Wild",
+    "genres": [
+      "OPEN_WORLD",
+      "ADVENTURE"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "EPIC",
+      "MYSTERIOUS"
+    ],
+    "vibes": [
+      "GENSHIN_VIBES"
+    ],
+    "personality": [
+      "EXPLORER"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": 0,
+      "social": -2,
+      "structure": 2,
+      "session": 2,
+      "mood": -1,
+      "challenge": 1
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Si te gustaba explorar Teyvat, este es el mundo abierto que lo inspiró.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "zelda-totk",
+    "title": "The Legend of Zelda: Tears of the Kingdom",
+    "genres": [
+      "OPEN_WORLD",
+      "ADVENTURE"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "EPIC",
+      "MYSTERIOUS"
+    ],
+    "vibes": [
+      "GENSHIN_VIBES"
+    ],
+    "personality": [
+      "EXPLORER",
+      "CREATOR"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": 0,
+      "social": -2,
+      "structure": 2,
+      "session": 2,
+      "mood": -1,
+      "challenge": 1
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Hyrule otra vez, ahora con islas en el cielo y cosas para construir.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "zelda-oot-2026",
+    "title": "The Legend of Zelda: Ocarina of Time",
+    "genres": [
+      "ADVENTURE"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "MYSTERIOUS",
+      "EPIC"
+    ],
+    "vibes": [],
+    "personality": [
+      "EXPLORER",
+      "STORY_SEEKER"
+    ],
+    "couple": [
+      "INTI_LIBRARY_MATCH"
+    ],
+    "vector": {
+      "pace": 0,
+      "social": -2,
+      "structure": 0,
+      "session": 1,
+      "mood": 0,
+      "challenge": 1
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "El clásico de Zelda, rehecho para tu consola.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "zelda-echoes-of-wisdom",
+    "title": "The Legend of Zelda: Echoes of Wisdom",
+    "genres": [
+      "ADVENTURE",
+      "PUZZLE"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "MYSTERIOUS",
+      "LIGHTHEARTED"
+    ],
+    "vibes": [],
+    "personality": [
+      "EXPLORER",
+      "CREATOR"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": -1,
+      "social": -2,
+      "structure": 1,
+      "session": 1,
+      "mood": -1,
+      "challenge": 0
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Zelda como protagonista: resuelves todo con creatividad.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "pokemon-legends-za",
+    "title": "Pokémon Legends: Z-A",
+    "genres": [
+      "RPG"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "LIGHTHEARTED"
+    ],
+    "vibes": [
+      "GENSHIN_VIBES"
+    ],
+    "personality": [
+      "COLLECTOR",
+      "EXPLORER"
+    ],
+    "couple": [
+      "INTI_LIBRARY_MATCH"
+    ],
+    "vector": {
+      "pace": 0,
+      "social": 0,
+      "structure": 0,
+      "session": 1,
+      "mood": -1,
+      "challenge": 0
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Pokémon en una ciudad: explorar, capturar y coleccionar.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "VERIFICAR"
+    }
+  },
+  {
+    "id": "pokemon-scarlet-violet",
+    "title": "Pokémon Scarlet / Violet",
+    "genres": [
+      "OPEN_WORLD",
+      "RPG"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "LIGHTHEARTED"
+    ],
+    "vibes": [
+      "GENSHIN_VIBES"
+    ],
+    "personality": [
+      "COLLECTOR",
+      "EXPLORER"
+    ],
+    "couple": [
+      "COUPLE_FRIENDLY"
+    ],
+    "vector": {
+      "pace": -1,
+      "social": 1,
+      "structure": 2,
+      "session": 1,
+      "mood": -1,
+      "challenge": -1
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Mundo abierto de Pokémon para recorrer, solo o con alguien.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON,LOC"
+    }
+  },
+  {
+    "id": "no-mans-sky",
+    "title": "No Man's Sky",
+    "genres": [
+      "SANDBOX",
+      "OPEN_WORLD",
+      "SURVIVAL"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "MYSTERIOUS",
+      "EPIC"
+    ],
+    "vibes": [],
+    "personality": [
+      "EXPLORER",
+      "CREATOR"
+    ],
+    "couple": [
+      "COOP_HEAVY",
+      "INTI_LIBRARY_MATCH"
+    ],
+    "vector": {
+      "pace": -1,
+      "social": 1,
+      "structure": 2,
+      "session": 2,
+      "mood": 0,
+      "challenge": 0
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Un universo infinito para explorar, y Inti ya está ahí.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON"
+    }
+  },
+  {
+    "id": "metroid-dread",
+    "title": "Metroid Dread",
+    "genres": [
+      "METROIDVANIA"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "DARK",
+      "STYLISH"
+    ],
+    "vibes": [],
+    "personality": [
+      "SURVIVOR",
+      "EXPLORER"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": 2,
+      "social": -2,
+      "structure": 0,
+      "session": 0,
+      "mood": 1,
+      "challenge": 2
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Huye de algo que te persigue en una estación hostil.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "metroid-prime-4",
+    "title": "Metroid Prime 4",
+    "genres": [
+      "SHOOTER",
+      "ADVENTURE"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "MYSTERIOUS",
+      "DARK"
+    ],
+    "vibes": [],
+    "personality": [
+      "EXPLORER"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": 1,
+      "social": -2,
+      "structure": 0,
+      "session": 1,
+      "mood": 1,
+      "challenge": 1
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Exploración en primera persona en planetas misteriosos.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "xenoblade-3",
+    "title": "Xenoblade Chronicles 3",
+    "genres": [
+      "RPG"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "EPIC",
+      "MELANCHOLIC"
+    ],
+    "vibes": [],
+    "personality": [
+      "STORY_SEEKER"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": 0,
+      "social": -2,
+      "structure": -1,
+      "session": 2,
+      "mood": 0,
+      "challenge": 0
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Un RPG épico con una historia que pega fuerte.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "pokemon-unite",
+    "title": "Pokémon UNITE",
+    "genres": [
+      "MOBA"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "LIGHTHEARTED"
+    ],
+    "vibes": [
+      "LOL_VIBES"
+    ],
+    "personality": [
+      "COMPETITOR",
+      "STRATEGIST"
+    ],
+    "couple": [
+      "COMPETITIVE_COUPLE"
+    ],
+    "vector": {
+      "pace": 1,
+      "social": 2,
+      "structure": 0,
+      "session": -1,
+      "mood": -1,
+      "challenge": 1
+    },
+    "horror_level": 0,
+    "free_to_play": true,
+    "price_mxn": 0,
+    "price_checked": null,
+    "why": "Es un MOBA, como LoL, pero con Pokémon. Y es gratis.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON,LOC"
+    }
+  },
+  {
+    "id": "fortnite",
+    "title": "Fortnite",
+    "genres": [
+      "SHOOTER"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "CHAOTIC"
+    ],
+    "vibes": [
+      "COD_VIBES"
+    ],
+    "personality": [
+      "COMPETITOR",
+      "SURVIVOR"
+    ],
+    "couple": [
+      "COOP_HEAVY"
+    ],
+    "vector": {
+      "pace": 2,
+      "social": 2,
+      "structure": 0,
+      "session": -1,
+      "mood": 0,
+      "challenge": 1
+    },
+    "horror_level": 0,
+    "free_to_play": true,
+    "price_mxn": 0,
+    "price_checked": null,
+    "why": "Battle royale gratis. Si te gustaba CoD Mobile, aquí hay adrenalina.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON"
+    }
+  },
+  {
+    "id": "splatoon-3",
+    "title": "Splatoon 3",
+    "genres": [
+      "SHOOTER"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "STYLISH"
+    ],
+    "vibes": [
+      "COD_VIBES"
+    ],
+    "personality": [
+      "COMPETITOR"
+    ],
+    "couple": [
+      "COMPETITIVE_COUPLE"
+    ],
+    "vector": {
+      "pace": 2,
+      "social": 2,
+      "structure": -1,
+      "session": -1,
+      "mood": -1,
+      "challenge": 1
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Shooter por equipos, pero con tinta. Rápido y con mucho estilo.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON,LOC"
+    }
+  },
+  {
+    "id": "mario-kart-world",
+    "title": "Mario Kart World",
+    "genres": [
+      "RACING"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "CHAOTIC",
+      "LIGHTHEARTED"
+    ],
+    "vibes": [],
+    "personality": [
+      "COMPETITOR"
+    ],
+    "couple": [
+      "COMPETITIVE_COUPLE",
+      "COUPLE_FRIENDLY",
+      "INTI_LIBRARY_MATCH"
+    ],
+    "vector": {
+      "pace": 2,
+      "social": 2,
+      "structure": 0,
+      "session": -2,
+      "mood": -2,
+      "challenge": 0
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "El clásico para retar a Inti. Ya lo tiene, así que pueden jugar hoy.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON,LOC"
+    }
+  },
+  {
+    "id": "smash-ultimate",
+    "title": "Super Smash Bros. Ultimate",
+    "genres": [
+      "FIGHTING",
+      "PARTY"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "CHAOTIC"
+    ],
+    "vibes": [],
+    "personality": [
+      "COMPETITOR"
+    ],
+    "couple": [
+      "COMPETITIVE_COUPLE"
+    ],
+    "vector": {
+      "pace": 2,
+      "social": 2,
+      "structure": -1,
+      "session": -1,
+      "mood": -1,
+      "challenge": 1
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Peleas caóticas entre personajes de Nintendo y muchos más.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON,LOC"
+    }
+  },
+  {
+    "id": "overwatch-2",
+    "title": "Overwatch 2",
+    "genres": [
+      "SHOOTER"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "STYLISH"
+    ],
+    "vibes": [
+      "LOL_VIBES",
+      "COD_VIBES"
+    ],
+    "personality": [
+      "COMPETITOR",
+      "STRATEGIST"
+    ],
+    "couple": [
+      "COOP_HEAVY"
+    ],
+    "vector": {
+      "pace": 2,
+      "social": 2,
+      "structure": -1,
+      "session": -1,
+      "mood": 0,
+      "challenge": 1
+    },
+    "horror_level": 0,
+    "free_to_play": true,
+    "price_mxn": 0,
+    "price_checked": null,
+    "why": "Héroes con roles, como en LoL, pero en shooter. Gratis.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON"
+    }
+  },
+  {
+    "id": "rocket-league",
+    "title": "Rocket League",
+    "genres": [
+      "RACING",
+      "ACTION"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "CHAOTIC"
+    ],
+    "vibes": [],
+    "personality": [
+      "COMPETITOR"
+    ],
+    "couple": [
+      "COMPETITIVE_COUPLE"
+    ],
+    "vector": {
+      "pace": 2,
+      "social": 2,
+      "structure": -1,
+      "session": -2,
+      "mood": -1,
+      "challenge": 1
+    },
+    "horror_level": 0,
+    "free_to_play": true,
+    "price_mxn": 0,
+    "price_checked": null,
+    "why": "Futbol con coches. Suena raro y es adictivo. Gratis.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON,LOC"
+    }
+  },
+  {
+    "id": "fall-guys",
+    "title": "Fall Guys",
+    "genres": [
+      "PARTY"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "LIGHTHEARTED",
+      "CHAOTIC"
+    ],
+    "vibes": [],
+    "personality": [
+      "COMPETITOR"
+    ],
+    "couple": [
+      "COUPLE_FRIENDLY"
+    ],
+    "vector": {
+      "pace": 1,
+      "social": 2,
+      "structure": -1,
+      "session": -2,
+      "mood": -2,
+      "challenge": 0
+    },
+    "horror_level": 0,
+    "free_to_play": true,
+    "price_mxn": 0,
+    "price_checked": null,
+    "why": "Carreras de obstáculos caóticas para reírse. Gratis.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON"
+    }
+  },
+  {
+    "id": "splatoon-raiders",
+    "title": "Splatoon Raiders",
+    "genres": [
+      "ACTION",
+      "SHOOTER"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "STYLISH"
+    ],
+    "vibes": [
+      "COD_VIBES"
+    ],
+    "personality": [
+      "COMPETITOR",
+      "SURVIVOR"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": 1,
+      "social": 1,
+      "structure": -1,
+      "session": 0,
+      "mood": -1,
+      "challenge": 0
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Splatoon en modo aventura, con más acción.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "VERIFICAR"
+    }
+  },
+  {
+    "id": "persona-5-royal",
+    "title": "Persona 5 Royal",
+    "genres": [
+      "RPG"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "STYLISH",
+      "MELANCHOLIC"
+    ],
+    "vibes": [],
+    "personality": [
+      "STORY_SEEKER",
+      "STRATEGIST"
+    ],
+    "couple": [
+      "INTI_LIBRARY_MATCH"
+    ],
+    "vector": {
+      "pace": 0,
+      "social": -2,
+      "structure": -2,
+      "session": 2,
+      "mood": 0,
+      "challenge": 0
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Estilo, ladrones fantasma y una historia enorme. Inti lo está jugando.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "persona-3-reload",
+    "title": "Persona 3 Reload",
+    "genres": [
+      "RPG"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "MELANCHOLIC",
+      "DARK"
+    ],
+    "vibes": [],
+    "personality": [
+      "STORY_SEEKER"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": 0,
+      "social": -2,
+      "structure": -2,
+      "session": 2,
+      "mood": 1,
+      "challenge": 0
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Una torre, una hora oculta a medianoche y una historia que te marca.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "fire-emblem-three-houses",
+    "title": "Fire Emblem: Three Houses",
+    "genres": [
+      "STRATEGY",
+      "RPG"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "MELANCHOLIC",
+      "EPIC"
+    ],
+    "vibes": [],
+    "personality": [
+      "STRATEGIST",
+      "STORY_SEEKER"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": -1,
+      "social": -2,
+      "structure": -1,
+      "session": 2,
+      "mood": 0,
+      "challenge": 1
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Estrategia por turnos y decisiones que pesan.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "hades",
+    "title": "Hades",
+    "genres": [
+      "ROGUELIKE",
+      "ACTION"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "STYLISH"
+    ],
+    "vibes": [
+      "GOTH_VIBES"
+    ],
+    "personality": [
+      "SURVIVOR"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": 2,
+      "social": -2,
+      "structure": -1,
+      "session": 0,
+      "mood": 1,
+      "challenge": 2
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Escapar del inframundo: cada intento es distinto y muy adictivo.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "hades-2",
+    "title": "Hades II",
+    "genres": [
+      "ROGUELIKE",
+      "ACTION"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "STYLISH"
+    ],
+    "vibes": [
+      "GOTH_VIBES"
+    ],
+    "personality": [
+      "SURVIVOR"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": 2,
+      "social": -2,
+      "structure": -1,
+      "session": 0,
+      "mood": 1,
+      "challenge": 2
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "La secuela de Hades: más rápida, más oscura y con más magia.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "cyberpunk-2077",
+    "title": "Cyberpunk 2077",
+    "genres": [
+      "RPG",
+      "OPEN_WORLD",
+      "SHOOTER"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "DARK",
+      "STYLISH"
+    ],
+    "vibes": [],
+    "personality": [
+      "STORY_SEEKER",
+      "EXPLORER"
+    ],
+    "couple": [
+      "INTI_LIBRARY_MATCH"
+    ],
+    "vector": {
+      "pace": 1,
+      "social": -2,
+      "structure": 1,
+      "session": 2,
+      "mood": 1,
+      "challenge": 1
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Night City de noche. Una historia adulta y oscura.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "animal-crossing-nh",
+    "title": "Animal Crossing: New Horizons",
+    "genres": [
+      "COZY",
+      "SANDBOX"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "WHOLESOME",
+      "RELAXING"
+    ],
+    "vibes": [],
+    "personality": [
+      "CREATOR",
+      "COLLECTOR"
+    ],
+    "couple": [
+      "COUPLE_FRIENDLY"
+    ],
+    "vector": {
+      "pace": -2,
+      "social": 1,
+      "structure": 2,
+      "session": 1,
+      "mood": -2,
+      "challenge": -2
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Tu propia isla, a tu ritmo. Ideal para desconectarte.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON,LOC"
+    }
+  },
+  {
+    "id": "stardew-valley",
+    "title": "Stardew Valley",
+    "genres": [
+      "COZY",
+      "FARMING"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "WHOLESOME",
+      "RELAXING"
+    ],
+    "vibes": [],
+    "personality": [
+      "CREATOR"
+    ],
+    "couple": [
+      "DATE_NIGHT",
+      "COOP_HEAVY"
+    ],
+    "vector": {
+      "pace": -2,
+      "social": 1,
+      "structure": 1,
+      "session": 1,
+      "mood": -2,
+      "challenge": -1
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Granja, pueblo y misterios, y se puede jugar en pareja.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON,LOC"
+    }
+  },
+  {
+    "id": "pokopia",
+    "title": "Pokopia",
+    "genres": [
+      "COZY",
+      "SANDBOX"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "WHOLESOME"
+    ],
+    "vibes": [],
+    "personality": [
+      "CREATOR",
+      "COLLECTOR"
+    ],
+    "couple": [
+      "INTI_LIBRARY_MATCH"
+    ],
+    "vector": {
+      "pace": -2,
+      "social": 0,
+      "structure": 2,
+      "session": 1,
+      "mood": -2,
+      "challenge": -2
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Construye un lugar acogedor rodeado de Pokémon.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "VERIFICAR"
+    }
+  },
+  {
+    "id": "minecraft",
+    "title": "Minecraft",
+    "genres": [
+      "SANDBOX",
+      "SURVIVAL"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "RELAXING"
+    ],
+    "vibes": [],
+    "personality": [
+      "CREATOR",
+      "EXPLORER"
+    ],
+    "couple": [
+      "COUPLE_FRIENDLY",
+      "COOP_HEAVY"
+    ],
+    "vector": {
+      "pace": -1,
+      "social": 1,
+      "structure": 2,
+      "session": 1,
+      "mood": -1,
+      "challenge": -1
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Construir, sobrevivir y explorar, sola o juntos.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON,LOC"
+    }
+  },
+  {
+    "id": "tomodachi-life",
+    "title": "Tomodachi Life",
+    "genres": [
+      "COZY"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "LIGHTHEARTED"
+    ],
+    "vibes": [],
+    "personality": [
+      "CREATOR"
+    ],
+    "couple": [
+      "INTI_LIBRARY_MATCH"
+    ],
+    "vector": {
+      "pace": -2,
+      "social": -1,
+      "structure": 1,
+      "session": -1,
+      "mood": -2,
+      "challenge": -2
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Una isla con tus amigos convertidos en Miis. Puro caos tierno.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "unpacking",
+    "title": "Unpacking",
+    "genres": [
+      "PUZZLE",
+      "COZY"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "MELANCHOLIC",
+      "RELAXING"
+    ],
+    "vibes": [],
+    "personality": [
+      "CREATOR",
+      "STORY_SEEKER"
+    ],
+    "couple": [],
+    "vector": {
+      "pace": -2,
+      "social": -2,
+      "structure": -1,
+      "session": -1,
+      "mood": -1,
+      "challenge": -2
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Desempacar cajas y descubrir una vida a través de sus cosas.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "—"
+    }
+  },
+  {
+    "id": "it-takes-two",
+    "title": "It Takes Two",
+    "genres": [
+      "ADVENTURE",
+      "PLATFORMER"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "LIGHTHEARTED"
+    ],
+    "vibes": [],
+    "personality": [
+      "STORY_SEEKER"
+    ],
+    "couple": [
+      "DATE_NIGHT",
+      "COOP_HEAVY"
+    ],
+    "vector": {
+      "pace": 0,
+      "social": 2,
+      "structure": -2,
+      "session": 1,
+      "mood": -1,
+      "challenge": 0
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Hecho para dos: solo se puede jugar en equipo.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON,LOC"
+    }
+  },
+  {
+    "id": "overcooked-2",
+    "title": "Overcooked! 2",
+    "genres": [
+      "PARTY"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "CHAOTIC"
+    ],
+    "vibes": [],
+    "personality": [
+      "COMPETITOR"
+    ],
+    "couple": [
+      "COOP_HEAVY"
+    ],
+    "vector": {
+      "pace": 2,
+      "social": 2,
+      "structure": -1,
+      "session": -2,
+      "mood": -2,
+      "challenge": 1
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Cocinar juntos bajo presión. Prueba de fuego para la relación.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON,LOC"
+    }
+  },
+  {
+    "id": "dont-starve-together",
+    "title": "Don't Starve Together",
+    "genres": [
+      "SURVIVAL"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "DARK"
+    ],
+    "vibes": [
+      "GOTH_VIBES"
+    ],
+    "personality": [
+      "SURVIVOR"
+    ],
+    "couple": [
+      "COOP_HEAVY"
+    ],
+    "vector": {
+      "pace": 0,
+      "social": 2,
+      "structure": 2,
+      "session": 1,
+      "mood": 1,
+      "challenge": 2
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Sobrevivir juntos en un mundo extraño y gótico.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON,LOC"
+    }
+  },
+  {
+    "id": "monster-hunter-rise",
+    "title": "Monster Hunter Rise",
+    "genres": [
+      "ACTION",
+      "RPG"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "EPIC"
+    ],
+    "vibes": [],
+    "personality": [
+      "SURVIVOR",
+      "COLLECTOR"
+    ],
+    "couple": [
+      "COOP_HEAVY"
+    ],
+    "vector": {
+      "pace": 1,
+      "social": 2,
+      "structure": -1,
+      "session": 1,
+      "mood": 0,
+      "challenge": 2
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Cazar monstruos enormes en equipo.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON"
+    }
+  },
+  {
+    "id": "mario-party-jamboree",
+    "title": "Super Mario Party Jamboree",
+    "genres": [
+      "PARTY"
+    ],
+    "multiplayer": {
+      "online_coop": "VERIFICAR",
+      "online_versus": "VERIFICAR",
+      "local_wireless": "VERIFICAR",
+      "same_console": "VERIFICAR",
+      "requires_nso": "VERIFICAR",
+      "gameshare": "VERIFICAR"
+    },
+    "mood": [
+      "CHAOTIC"
+    ],
+    "vibes": [],
+    "personality": [
+      "COMPETITOR"
+    ],
+    "couple": [
+      "COMPETITIVE_COUPLE"
+    ],
+    "vector": {
+      "pace": 1,
+      "social": 2,
+      "structure": -2,
+      "session": -1,
+      "mood": -2,
+      "challenge": -1
+    },
+    "horror_level": 0,
+    "free_to_play": false,
+    "price_mxn": null,
+    "price_checked": null,
+    "why": "Tablero, minijuegos y traiciones amistosas.",
+    "status": "VERIFICAR",
+    "_hypothesis": {
+      "duo": "ON,LOC"
+    }
+  }
+]

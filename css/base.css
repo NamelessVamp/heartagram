@@ -1,0 +1,283 @@
+/* =============================================================
+   HEARTAGRAM :: base.css
+   Variables, reset, typography and layout primitives.
+   Visual effects (grain, glow, transitions) live in theme.css.
+   ============================================================= */
+
+:root {
+  /* Palette: Razorblade Romance — velvet black, crimson, rose, candlelight */
+  --color-bg: #0a0607;
+  --color-surface: #150a0c;
+  --color-surface-2: #1f0e12;
+  --color-border: #3d1a21;
+  --color-text: #f0e6e4;
+  --color-text-muted: #b59ea1;
+  --color-accent: #a3243b;
+  --color-accent-strong: #e0627a;
+  --color-danger: #7a1424;
+  --color-focus: #f2b8c2;
+
+  /* Typography */
+  --font-display: "Georgia", "Times New Roman", serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Consolas", "Courier New", monospace;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.5rem;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+
+  /* Shape and motion */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --content-width: 40rem;
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+}
+
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ---------- Typography ---------- */
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.lead {
+  font-size: var(--text-lg);
+  color: var(--color-text);
+}
+
+.hint {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 400;
+  margin-top: var(--space-6);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+strong {
+  color: var(--color-accent-strong);
+  font-weight: 600;
+}
+
+/* ---------- Layout ---------- */
+
+#app {
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4) var(--space-7);
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.card-list,
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-text);
+  font-weight: 600;
+  margin-top: var(--space-4);
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-strong);
+}
+
+.btn-ghost {
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+/* ---------- Badges ---------- */
+
+.badge {
+  display: inline-block;
+  padding: 2px var(--space-2);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-accent-strong);
+  letter-spacing: 0.08em;
+}
+
+.badge-legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Steps (family group tutorial) ---------- */
+
+.steps {
+  counter-reset: step;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.steps li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 2.25rem 1fr;
+  column-gap: var(--space-3);
+}
+
+.steps li::before {
+  content: counter(step);
+  grid-row: span 2;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 50%;
+  font-family: var(--font-display);
+  color: var(--color-accent-strong);
+}
+
+.steps span {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* ---------- Misc ---------- */
+
+.noscript {
+  padding: var(--space-6);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+/* ---------- Larger screens ---------- */
+
+@media (min-width: 48rem) {
+  .title {
+    font-size: var(--text-3xl);
+  }
+
+  #app {
+    padding-top: var(--space-7);
+  }
+}
+
+/* Headings receive focus on screen change for screen readers;
+   the outline is only useful for keyboard targets. */
+[tabindex="-1"]:focus {
+  outline: none;
+}

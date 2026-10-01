@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#0a0607" />
+    <title>Heartagram</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <main id="app">
+      <!-- INTRO -->
+      <section class="screen" data-screen="intro" aria-labelledby="intro-title">
+        <p class="eyebrow">Para Adri</p>
+        <h1 id="intro-title" class="title">Heartagram</h1>
+        <p class="lead">
+          Tu Nintendo Switch ya es tuya. Antes de elegir qué jugar, contesta
+          unas preguntas y te mostramos el camino.
+        </p>
+        <p class="hint">12 preguntas · menos de 3 minutos</p>
+        <button type="button" class="btn btn-primary" data-action="start">
+          Empezar
+        </button>
+      </section>
+
+      <!-- TEST -->
+      <section
+        class="screen"
+        data-screen="quiz"
+        aria-labelledby="quiz-question"
+        hidden
+      >
+        <div
+          class="quiz-progress"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="12"
+          aria-valuenow="0"
+        >
+          <div class="quiz-progress-bar" id="quiz-progress-bar"></div>
+        </div>
+        <p class="eyebrow" id="quiz-counter">Pregunta 1 de 12</p>
+        <h2 id="quiz-question" class="quiz-question"></h2>
+        <div
+          id="quiz-options"
+          class="quiz-options"
+          role="radiogroup"
+          aria-labelledby="quiz-question"
+        ></div>
+        <button type="button" class="btn btn-ghost" data-action="back">
+          Anterior
+        </button>
+      </section>
+
+      <!-- PERFIL -->
+      <section
+        class="screen"
+        data-screen="profile"
+        aria-labelledby="profile-title"
+        hidden
+      >
+        <p class="eyebrow">Tu perfil</p>
+        <h2 id="profile-title" class="title"></h2>
+        <p id="profile-description" class="lead"></p>
+        <canvas
+          id="profile-radar"
+          class="profile-radar"
+          width="320"
+          height="320"
+          role="img"
+          aria-label="Gráfica de tu perfil de jugadora"
+        ></canvas>
+        <button type="button" class="btn btn-primary" data-action="to-results">
+          Ver mis juegos
+        </button>
+      </section>
+
+      <!-- RECOMENDACIONES -->
+      <section
+        class="screen"
+        data-screen="results"
+        aria-labelledby="results-title"
+        hidden
+      >
+        <h2 id="results-title" class="title">Tus juegos</h2>
+
+        <h3 class="section-title">Para empezar</h3>
+        <div id="list-for-you" class="card-list"></div>
+
+        <h3 class="section-title">Te podrían atrapar</h3>
+        <div id="list-might-hook" class="card-list"></div>
+
+        <h3 class="section-title">Sal de tu zona</h3>
+        <div id="list-out-of-zone" class="card-list"></div>
+
+        <button type="button" class="btn btn-primary" data-action="to-duo">
+          Para jugar con Inti
+        </button>
+      </section>
+
+      <!-- DUO -->
+      <section
+        class="screen"
+        data-screen="duo"
+        aria-labelledby="duo-title"
+        hidden
+      >
+        <h2 id="duo-title" class="title">Para jugar con Inti</h2>
+        <p class="lead">
+          Los que Inti ya tiene aparecen primero: pueden jugarlos desde hoy.
+        </p>
+        <ul class="badge-legend">
+          <li><span class="badge">ONLINE</span> cada quien desde su casa</li>
+          <li>
+            <span class="badge">MISMO CUARTO</span> cada quien con su consola
+          </li>
+          <li><span class="badge">UNA CONSOLA</span> pantalla compartida</li>
+        </ul>
+        <div id="list-duo" class="card-list"></div>
+        <button type="button" class="btn btn-primary" data-action="to-carts">
+          Armar mi carrito
+        </button>
+      </section>
+
+      <!-- CARRITOS -->
+      <section
+        class="screen"
+        data-screen="carts"
+        aria-labelledby="carts-title"
+        hidden
+      >
+        <h2 id="carts-title" class="title">Tu presupuesto</h2>
+        <p class="lead">
+          Tienes <strong>$1,500 MXN</strong> para la eShop. Estas son tres
+          formas de usarlos.
+        </p>
+        <div id="list-carts" class="cart-list"></div>
+        <p class="hint">Los juegos gratis no cuentan contra tu presupuesto.</p>
+        <button type="button" class="btn btn-primary" data-action="to-gift">
+          Siguiente
+        </button>
+      </section>
+
+      <!-- REGALO (placeholder) -->
+      <section
+        class="screen"
+        data-screen="gift"
+        aria-labelledby="gift-title"
+        hidden
+      >
+        <h2 id="gift-title" class="title">Tu regalo</h2>
+        <div id="gift-slot" class="gift-slot">
+          <p class="lead">Pronto.</p>
+        </div>
+        <button type="button" class="btn btn-primary" data-action="to-family">
+          Activar el online
+        </button>
+      </section>
+
+      <!-- GRUPO FAMILIAR -->
+      <section
+        class="screen"
+        data-screen="family"
+        aria-labelledby="family-title"
+        hidden
+      >
+        <h2 id="family-title" class="title">Únete al grupo familiar</h2>
+        <p class="lead">
+          Así tienes Nintendo Switch Online y podemos jugar juntos.
+        </p>
+        <ol class="steps">
+          <li>
+            <strong>Crea tu cuenta Nintendo</strong>
+            <span
+              >Entra a accounts.nintendo.com y regístrate con tu correo, con
+              México como país.</span
+            >
+          </li>
+          <li>
+            <strong>Vincúlala a tu Switch</strong>
+            <span
+              >En la consola: Configuración, Usuarios, Añadir usuario, y vincula
+              tu cuenta.</span
+            >
+          </li>
+          <li>
+            <strong>Pásale tu correo a Inti</strong>
+            <span>Él te manda la invitación desde su cuenta.</span>
+          </li>
+          <li>
+            <strong>Acepta la invitación</strong>
+            <span
+              >Abre el correo de Nintendo y acepta. Listo, ya estás en el
+              grupo.</span
+            >
+          </li>
+        </ol>
+        <button type="button" class="btn btn-ghost" data-action="restart">
+          Volver al inicio
+        </button>
+      </section>
+    </main>
+
+    <noscript>
+      <p class="noscript">Heartagram necesita JavaScript para funcionar.</p>
+    </noscript>
+  </body>
+</html>

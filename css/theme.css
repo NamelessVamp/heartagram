@@ -1,0 +1,286 @@
+/* =============================================================
+   HEARTAGRAM :: theme.css
+   Razorblade Romance mood: velvet black, crimson glow, candlelight
+   flicker and film grain. All motion is disabled under
+   prefers-reduced-motion.
+   ============================================================= */
+
+body {
+  background:
+    radial-gradient(
+      ellipse at 50% -10%,
+      rgba(163, 36, 59, 0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 50% 120%,
+      rgba(122, 20, 36, 0.18),
+      transparent 55%
+    ),
+    var(--color-bg);
+  background-attachment: fixed;
+}
+
+/* ---------- Film grain ---------- */
+
+.grain {
+  position: fixed;
+  inset: -50%;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain-shift 0.8s steps(4) infinite;
+}
+
+@keyframes grain-shift {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-3%, 2%);
+  }
+  50% {
+    transform: translate(2%, -3%);
+  }
+  75% {
+    transform: translate(-2%, -1%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* ---------- Titles: crimson candlelight ---------- */
+
+.title {
+  color: var(--color-text);
+  text-shadow:
+    0 0 12px rgba(224, 98, 122, 0.35),
+    0 0 32px rgba(163, 36, 59, 0.35);
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 1px;
+  margin-top: var(--space-3);
+  background: linear-gradient(90deg, var(--color-accent-strong), transparent);
+}
+
+[data-screen="intro"] {
+  min-height: 80vh;
+  justify-content: center;
+}
+
+[data-screen="intro"] .title {
+  font-size: 3rem;
+  font-style: italic;
+  animation: candle 6s ease-in-out infinite;
+}
+
+@keyframes candle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.92;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  55% {
+    opacity: 0.95;
+  }
+}
+
+.eyebrow {
+  color: var(--color-accent-strong);
+}
+
+/* ---------- Screen transition ---------- */
+
+.screen:not([hidden]) {
+  animation: fade-in var(--transition-base) ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Quiz ---------- */
+
+.quiz-progress {
+  height: 2px;
+  background: var(--color-border);
+  overflow: hidden;
+}
+
+.quiz-progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent),
+    var(--color-accent-strong)
+  );
+  box-shadow: 0 0 8px var(--color-accent-strong);
+  transition: width var(--transition-base);
+}
+
+.quiz-question {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.quiz-options {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.quiz-option {
+  text-align: left;
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.quiz-option:hover {
+  border-color: var(--color-accent);
+  background: var(--color-surface-2);
+}
+
+.quiz-option[aria-checked="true"] {
+  border-color: var(--color-accent-strong);
+  background: var(--color-surface-2);
+  box-shadow: 0 0 16px rgba(224, 98, 122, 0.25);
+}
+
+/* ---------- Profile ---------- */
+
+.profile-radar {
+  align-self: center;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+}
+
+/* ---------- Game cards ---------- */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius-md);
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 400;
+}
+
+.card-price {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-accent-strong);
+}
+
+.card-why {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.card-owned {
+  font-size: var(--text-xs);
+  color: var(--color-focus);
+  letter-spacing: 0.05em;
+}
+
+.empty {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* ---------- Carts ---------- */
+
+.cart {
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.cart-name {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  margin-bottom: var(--space-3);
+}
+
+.cart-items li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px dashed var(--color-border);
+  font-size: var(--text-sm);
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  color: var(--color-accent-strong);
+}
+
+/* ---------- Gift ---------- */
+
+.gift-slot {
+  padding: var(--space-6);
+  border: 1px dashed var(--color-accent);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: inset 0 0 40px rgba(163, 36, 59, 0.15);
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .grain,
+  [data-screen="intro"] .title,
+  .screen:not([hidden]) {
+    animation: none;
+  }
+
+  .grain {
+    opacity: 0.04;
+  }
+}
