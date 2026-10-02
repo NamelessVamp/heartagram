@@ -127,9 +127,42 @@
           <li><span class="badge">UNA CONSOLA</span> pantalla compartida</li>
         </ul>
         <div id="list-duo" class="card-list"></div>
-        <button type="button" class="btn btn-primary" data-action="to-carts">
-          Armar mi carrito
+        <button type="button" class="btn btn-primary" data-action="to-wishlist">
+          Ver mi lista
         </button>
+      </section>
+
+      <!-- WISHLIST -->
+      <section
+        class="screen"
+        data-screen="wishlist"
+        aria-labelledby="wishlist-title"
+        hidden
+      >
+        <p class="eyebrow">Guardado en este dispositivo</p>
+
+        <h2 id="wishlist-title" class="title">Mi lista</h2>
+
+        <p class="lead">
+          Estos son los juegos que te llamaron la atención. Puedes cambiar la
+          lista cuando quieras.
+        </p>
+
+        <div id="list-wishlist" class="card-list" aria-live="polite"></div>
+
+        <div class="wishlist-actions">
+          <button
+            type="button"
+            class="btn btn-ghost"
+            data-action="clear-wishlist"
+          >
+            Vaciar lista
+          </button>
+
+          <button type="button" class="btn btn-primary" data-action="to-gift">
+            Ver mi regalo
+          </button>
+        </div>
       </section>
 
       <!-- CARRITOS -->

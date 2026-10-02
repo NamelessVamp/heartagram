@@ -4,6 +4,7 @@ import { computeProfile } from "./profile.js";
 import { rankGames, buildSections, buildDuo } from "./recommender.js";
 import { buildCarts } from "./carts.js";
 import * as ui from "./ui.js";
+import { clearFavorites, getFavoriteIds } from "./favorites.js";
 
 // ?preview shows unverified games so Inti can test before Phase 1 is done.
 const PREVIEW = new URLSearchParams(window.location.search).has("preview");
@@ -105,6 +106,18 @@ function finishQuiz() {
   showScreen("profile");
 }
 
+function getFavoriteGames() {
+  const favoriteIds = getFavoriteIds();
+
+  return favoriteIds
+    .map((id) => state.games.find((game) => game.id === id))
+    .filter(Boolean);
+}
+
+function refreshWishlist() {
+  ui.renderWishlist(getFavoriteGames());
+}
+
 const ACTIONS = {
   start: () => {
     state.index = 0;
@@ -124,7 +137,21 @@ const ACTIONS = {
   },
   "to-results": () => showScreen("results"),
   "to-duo": () => showScreen("duo"),
-  "to-carts": () => showScreen("carts"),
+  "to-wishlist": () => {
+    refreshWishlist();
+    showScreen("wishlist");
+  },
+
+  "clear-wishlist": () => {
+    const shouldClear = window.confirm(
+      "¿Quieres quitar todos los juegos de tu lista?",
+    );
+
+    if (!shouldClear) return;
+
+    clearFavorites();
+    refreshWishlist();
+  },
   "to-gift": () => showScreen("gift"),
   "to-family": () => showScreen("family"),
   restart: () => showScreen("intro"),
@@ -139,6 +166,7 @@ function bindActions() {
 
 async function init() {
   bindActions();
+  window.addEventListener("heartagram:favorites-changed", refreshWishlist);
   try {
     const [questions, archetypes, profileTexts, profileCombos, games] =
       await Promise.all([

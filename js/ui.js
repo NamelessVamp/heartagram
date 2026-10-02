@@ -2,6 +2,7 @@
 
 import { DIMENSIONS } from "./profile.js";
 import { duoBadges } from "./recommender.js";
+import { isFavorite, toggleFavorite } from "./favorites.js";
 
 const DIMENSION_LABELS = {
   pace: "Ritmo",
@@ -159,24 +160,68 @@ function drawRadar(canvas, vector) {
 
 /* ---------- Game cards ---------- */
 
-function gameCard(game, { showBadges = false } = {}) {
+function favoriteLabel(gameId) {
+  return isFavorite(gameId) ? "♥ En mi lista" : "♡ Me interesa";
+}
+
+function favoriteAriaLabel(game) {
+  return isFavorite(game.id)
+    ? `Quitar ${game.title} de mi lista`
+    : `Agregar ${game.title} a mi lista`;
+}
+
+function gameCard(game, { showBadges = false, showFavorite = true } = {}) {
   const card = el("article", "card");
+  card.dataset.gameId = game.id;
+
   card.append(
     el("h4", "card-title", game.title),
     el("p", "card-price", formatPrice(game)),
   );
 
-  if (game.why) card.append(el("p", "card-why", game.why));
-  if (game.couple.includes("INTI_LIBRARY_MATCH"))
+  if (game.why) {
+    card.append(el("p", "card-why", game.why));
+  }
+
+  if (game.couple.includes("INTI_LIBRARY_MATCH")) {
     card.append(el("p", "card-owned", "Inti ya lo tiene"));
+  }
 
   if (showBadges) {
     const badges = el("div", "card-badges");
-    duoBadges(game).forEach((label) =>
-      badges.append(el("span", "badge", label)),
-    );
+
+    duoBadges(game).forEach((label) => {
+      badges.append(el("span", "badge", label));
+    });
+
     card.append(badges);
   }
+
+  if (showFavorite) {
+    const favoriteButton = el(
+      "button",
+      "favorite-button",
+      favoriteLabel(game.id),
+    );
+
+    favoriteButton.type = "button";
+    favoriteButton.dataset.favoriteId = game.id;
+    favoriteButton.setAttribute("aria-label", favoriteAriaLabel(game));
+    favoriteButton.setAttribute("aria-pressed", String(isFavorite(game.id)));
+
+    favoriteButton.addEventListener("click", () => {
+      const selected = toggleFavorite(game.id);
+
+      favoriteButton.textContent = selected ? "♥ En mi lista" : "♡ Me interesa";
+
+      favoriteButton.setAttribute("aria-pressed", String(selected));
+
+      favoriteButton.setAttribute("aria-label", favoriteAriaLabel(game));
+    });
+
+    card.append(favoriteButton);
+  }
+
   return card;
 }
 
@@ -215,6 +260,18 @@ export function renderDuo(duo) {
     "list-duo",
     duo.map(({ game }) => game),
     { showBadges: true },
+  );
+}
+
+export function renderWishlist(games) {
+  renderList(
+    "list-wishlist",
+    games,
+    {
+      showBadges: true,
+      showFavorite: true,
+    },
+    "Todavía no has guardado ningún juego. Regresa a tus recomendaciones y marca ♡ Me interesa.",
   );
 }
 
