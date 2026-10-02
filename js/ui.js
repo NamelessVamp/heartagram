@@ -61,16 +61,23 @@ export function renderQuestion(question, index, total, selectedId, onSelect) {
 /* ---------- Profile ---------- */
 
 function findProfileCombo(combos, primaryId, secondaryId) {
-  const directKey = `${primaryId}|${secondaryId}`;
-  const reverseKey = `${secondaryId}|${primaryId}`;
-
-  return combos[directKey] ?? combos[reverseKey] ?? null;
+  return (
+    combos[`${primaryId}|${secondaryId}`] ??
+    combos[`${secondaryId}|${primaryId}`] ??
+    null
+  );
 }
 
-function buildFallbackProfileCopy(primaryText, secondaryText) {
+/**
+ * Builds the profile copy for any archetype pair.
+ * Hand-written combos win; otherwise the primary archetype leads
+ * and the secondary adds one closing line.
+ */
+function buildProfileCopy(primary, secondary, combo) {
+  if (combo) return combo;
   return {
-    summary: "Tu forma de jugar no cabe en una sola categoría.",
-    body: `${primaryText.description} ${secondaryText.description}`,
+    summary: primary.hook,
+    body: `${primary.body} ${secondary.also}`,
   };
 }
 
@@ -82,26 +89,21 @@ export function renderProfile(
 ) {
   const primaryId = profile.archetypes.primary;
   const secondaryId = profile.archetypes.secondary;
+  const primary = profileTexts[primaryId];
+  const secondary = profileTexts[secondaryId];
 
-  const findArchetype = (id) =>
-    archetypes.find((archetype) => archetype.id === id);
-
-  const primaryArchetype = findArchetype(primaryId);
-  const secondaryArchetype = findArchetype(secondaryId);
-
-  const primaryText = profileTexts[primaryId] ?? primaryArchetype;
-  const secondaryText = profileTexts[secondaryId] ?? secondaryArchetype;
-
-  const combo =
-    findProfileCombo(profileCombos, primaryId, secondaryId) ??
-    buildFallbackProfileCopy(primaryText, secondaryText);
+  const copy = buildProfileCopy(
+    primary,
+    secondary,
+    findProfileCombo(profileCombos, primaryId, secondaryId),
+  );
 
   document.getElementById("profile-title").textContent =
-    `${primaryText.title} · ${secondaryText.title}`;
-
-  document.getElementById("profile-summary").textContent = combo.summary;
-
-  document.getElementById("profile-body").textContent = combo.body;
+    `${primary.title} · ${secondary.title}`;
+  document.getElementById("profile-subtitle").textContent =
+    `${primary.subtitle} · ${secondary.subtitle}`;
+  document.getElementById("profile-summary").textContent = copy.summary;
+  document.getElementById("profile-body").textContent = copy.body;
 
   drawRadar(document.getElementById("profile-radar"), profile.vector);
 }

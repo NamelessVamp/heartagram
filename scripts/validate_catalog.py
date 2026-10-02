@@ -4,6 +4,7 @@ Usage:
     python scripts/validate_catalog.py            # report, VERIFICAR = warning
     python scripts/validate_catalog.py --strict   # pre-publish, VERIFICAR = failure
 """
+
 from __future__ import annotations
 
 import json
@@ -15,22 +16,95 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 
 DIMENSIONS = {"pace", "social", "structure", "session", "mood", "challenge"}
-ARCHETYPES = {"EXPLORER", "COMPETITOR", "COLLECTOR", "CREATOR",
-              "SURVIVOR", "STRATEGIST", "STORY_SEEKER", "HORROR_FAN"}
-TAGS = {
-    "genres": {"ACTION", "ADVENTURE", "RPG", "SHOOTER", "PLATFORMER", "PUZZLE", "SURVIVAL",
-               "HORROR", "COZY", "FARMING", "VISUAL_NOVEL", "RACING", "FIGHTING", "PARTY",
-               "SANDBOX", "OPEN_WORLD", "ROGUELIKE", "METROIDVANIA", "MOBA", "STRATEGY", "RHYTHM"},
-    "mood": {"LIGHTHEARTED", "WHOLESOME", "RELAXING", "MELANCHOLIC", "DARK", "GOTHIC", "CREEPY",
-             "CHAOTIC", "MYSTERIOUS", "STYLISH", "EPIC", "DARK_GOTHIC"},
-    "vibes": {"LOL_VIBES", "COD_VIBES", "GENSHIN_VIBES", "FNAF_VIBES", "CRY_OF_FEAR_VIBES", "GOTH_VIBES"},
-    "personality": ARCHETYPES,
-    "couple": {"INTI_LIBRARY_MATCH", "COUPLE_FRIENDLY", "COMPETITIVE_COUPLE", "COOP_HEAVY", "DATE_NIGHT"},
+ARCHETYPES = {
+    "EXPLORER",
+    "COMPETITOR",
+    "COLLECTOR",
+    "CREATOR",
+    "SURVIVOR",
+    "STRATEGIST",
+    "STORY_SEEKER",
+    "HORROR_FAN",
 }
-MULTIPLAYER_KEYS = {"online_coop", "online_versus", "local_wireless",
-                    "same_console", "requires_nso", "gameshare"}
-REQUIRED = {"id", "title", "genres", "multiplayer", "mood", "vibes", "personality", "couple",
-            "vector", "horror_level", "free_to_play", "price_mxn", "price_checked", "status"}
+TAGS = {
+    "genres": {
+        "ACTION",
+        "ADVENTURE",
+        "RPG",
+        "SHOOTER",
+        "PLATFORMER",
+        "PUZZLE",
+        "SURVIVAL",
+        "HORROR",
+        "COZY",
+        "FARMING",
+        "VISUAL_NOVEL",
+        "RACING",
+        "FIGHTING",
+        "PARTY",
+        "SANDBOX",
+        "OPEN_WORLD",
+        "ROGUELIKE",
+        "METROIDVANIA",
+        "MOBA",
+        "STRATEGY",
+        "RHYTHM",
+    },
+    "mood": {
+        "LIGHTHEARTED",
+        "WHOLESOME",
+        "RELAXING",
+        "MELANCHOLIC",
+        "DARK",
+        "GOTHIC",
+        "CREEPY",
+        "CHAOTIC",
+        "MYSTERIOUS",
+        "STYLISH",
+        "EPIC",
+        "DARK_GOTHIC",
+    },
+    "vibes": {
+        "LOL_VIBES",
+        "COD_VIBES",
+        "GENSHIN_VIBES",
+        "FNAF_VIBES",
+        "CRY_OF_FEAR_VIBES",
+        "GOTH_VIBES",
+    },
+    "personality": ARCHETYPES,
+    "couple": {
+        "INTI_LIBRARY_MATCH",
+        "COUPLE_FRIENDLY",
+        "COMPETITIVE_COUPLE",
+        "COOP_HEAVY",
+        "DATE_NIGHT",
+    },
+}
+MULTIPLAYER_KEYS = {
+    "online_coop",
+    "online_versus",
+    "local_wireless",
+    "same_console",
+    "requires_nso",
+    "gameshare",
+}
+REQUIRED = {
+    "id",
+    "title",
+    "genres",
+    "multiplayer",
+    "mood",
+    "vibes",
+    "personality",
+    "couple",
+    "vector",
+    "horror_level",
+    "free_to_play",
+    "price_mxn",
+    "price_checked",
+    "status",
+}
 ID_PATTERN = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 DATE_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
@@ -47,8 +121,20 @@ class Report:
         self.warnings.append(msg)
 
 
-def load(name: str) -> list[dict]:
-    return json.loads((DATA / name).read_text(encoding="utf-8"))
+def load(name: str) -> list:
+    """Loads a JSON file whose root is a list (games, questions)."""
+    data = json.loads((DATA / name).read_text(encoding="utf-8"))
+    if not isinstance(data, list):
+        raise TypeError(f"{name}: se esperaba una lista")
+    return data
+
+
+def load_map(name: str) -> dict:
+    """Loads a JSON file whose root is an object (profile texts, combos)."""
+    data = json.loads((DATA / name).read_text(encoding="utf-8"))
+    if not isinstance(data, dict):
+        raise TypeError(f"{name}: se esperaba un objeto")
+    return data
 
 
 def check_game(game: dict, report: Report, strict: bool) -> None:
@@ -91,7 +177,9 @@ def check_game(game: dict, report: Report, strict: bool) -> None:
         report.fail(f"{gid}: price_mxn debe ser entero >= 0")
     if game["free_to_play"] and price != 0:
         report.fail(f"{gid}: free_to_play con precio distinto de 0")
-    if not isinstance(game["price_checked"], str) or not DATE_PATTERN.match(game["price_checked"]):
+    if not isinstance(game["price_checked"], str) or not DATE_PATTERN.match(
+        game["price_checked"]
+    ):
         report.fail(f"{gid}: price_checked debe ser YYYY-MM-DD")
     unresolved = [k for k, v in game["multiplayer"].items() if not isinstance(v, bool)]
     if unresolved:
@@ -113,61 +201,37 @@ def check_questions(questions: list[dict], report: Report) -> None:
             if set(o.get("vibes", [])) - TAGS["vibes"]:
                 report.fail(f"{ref}: vibe desconocido")
 
+
 def check_profile_texts(
-    profile_texts: dict,
-    profile_combos: dict,
-    report: Report,
+    profile_texts: dict, profile_combos: dict, report: Report
 ) -> None:
     missing = ARCHETYPES - profile_texts.keys()
     extra = profile_texts.keys() - ARCHETYPES
-
     if missing:
-        report.fail(
-            f"profile_texts: faltan arquetipos {sorted(missing)}"
-        )
-
+        report.fail(f"profile_texts: faltan arquetipos {sorted(missing)}")
     if extra:
-        report.fail(
-            f"profile_texts: arquetipos desconocidos {sorted(extra)}"
-        )
+        report.fail(f"profile_texts: arquetipos desconocidos {sorted(extra)}")
 
+    required_fields = ("title", "subtitle", "hook", "body", "also")
     for archetype_id, text in profile_texts.items():
-        if not text.get("title"):
-            report.fail(
-                f"profile_texts.{archetype_id}: falta title"
-            )
-
-        if not text.get("description"):
-            report.fail(
-                f"profile_texts.{archetype_id}: falta description"
-            )
+        for field in required_fields:
+            if not text.get(field):
+                report.fail(f"profile_texts.{archetype_id}: falta {field}")
 
     for combo_key, combo in profile_combos.items():
         parts = combo_key.split("|")
-
         if len(parts) != 2:
-            report.fail(
-                f"profile_combos: clave inválida '{combo_key}'"
-            )
+            report.fail(f"profile_combos: clave inválida '{combo_key}'")
             continue
-
         unknown = set(parts) - ARCHETYPES
-
         if unknown:
             report.fail(
-                f"profile_combos.{combo_key}: "
-                f"arquetipos desconocidos {sorted(unknown)}"
+                f"profile_combos.{combo_key}: arquetipos desconocidos {sorted(unknown)}"
             )
+        for field in ("summary", "body"):
+            if not combo.get(field):
+                report.fail(f"profile_combos.{combo_key}: falta {field}")
 
-        if not combo.get("summary"):
-            report.fail(
-                f"profile_combos.{combo_key}: falta summary"
-            )
-
-        if not combo.get("body"):
-            report.fail(
-                f"profile_combos.{combo_key}: falta body"
-            )
 
 def main() -> int:
     strict = "--strict" in sys.argv
@@ -182,13 +246,15 @@ def main() -> int:
     check_questions(load("questions.json"), report)
 
     check_profile_texts(
-    load("profile_texts.json"),
-    load("profile_combos.json"),
-    report,
-)
+        load_map("profile_texts.json"),
+        load_map("profile_combos.json"),
+        report,
+    )
 
     verified = sum(g.get("status") == "VERIFICADO" for g in games)
-    print(f"[INIT] {len(games)} juegos · {verified} verificados · modo {'strict' if strict else 'reporte'}")
+    print(
+        f"[INIT] {len(games)} juegos · {verified} verificados · modo {'strict' if strict else 'reporte'}"
+    )
     pending = [w for w in report.warnings if "VERIFICAR" in w]
     other = [w for w in report.warnings if "VERIFICAR" not in w]
     if pending:
@@ -197,7 +263,11 @@ def main() -> int:
         print(f"[WARN] {w}")
     for e in report.errors:
         print(f"[FAIL] {e}")
-    print("[OK] catálogo válido" if not report.errors else f"[FAIL] {len(report.errors)} errores")
+    print(
+        "[OK] catálogo válido"
+        if not report.errors
+        else f"[FAIL] {len(report.errors)} errores"
+    )
     return 1 if report.errors else 0
 
 

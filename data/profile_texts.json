@@ -1,41 +1,58 @@
 {
   "EXPLORER": {
     "title": "La Errante",
-    "description": "No juegas para llegar rápido. Juegas para descubrir qué hay detrás de la siguiente colina."
+    "subtitle": "Exploradora",
+    "hook": "Siempre hay algo más allá del mapa.",
+    "body": "No juegas para llegar rápido. Te detienes a mirar, te desvías del camino y vuelves a ese lugar que nadie más notó. Los mundos grandes se sienten como casa.",
+    "also": "Y cuando algo te llama la atención, te desvías para descubrirlo."
   },
-
   "COMPETITOR": {
     "title": "La de la Grieta",
-    "description": "Hay algo satisfactorio en mejorar, ganar y volver a intentarlo una vez más."
+    "subtitle": "Rival",
+    "hook": "Perder solo es la primera ronda.",
+    "body": "Te gusta mejorar, medirte y volver a intentarlo una vez más. Ganar se siente bien, pero ganarle a alguien que conoces se siente mejor.",
+    "also": "Y cuando hay alguien enfrente, sale tu lado competitivo."
   },
-
   "COLLECTOR": {
     "title": "La Edad Dorada",
-    "description": "Siempre existe una última pieza, un personaje más o un secreto sin descubrir."
+    "subtitle": "Coleccionista",
+    "hook": "Siempre falta una pieza.",
+    "body": "Un personaje más, un objeto raro, una colección casi completa. Te gusta que tu inventario cuente todo lo que has recorrido.",
+    "also": "Y no te vas de un lugar sin llevarte algo brillante."
   },
-
   "CREATOR": {
     "title": "La Casa en Nebraska",
-    "description": "Disfrutas los juegos que te permiten construir algo propio y verlo crecer."
+    "subtitle": "Creadora",
+    "hook": "Lo mejor es lo que construyes tú.",
+    "body": "Disfrutas los juegos que te dejan hacer un lugar propio: decorarlo, cuidarlo y verlo crecer a tu ritmo. Para ti, el progreso es algo que se ve.",
+    "also": "Y en cualquier mundo terminas haciendo un rincón tuyo."
   },
-
   "SURVIVOR": {
     "title": "Tiempos Difíciles",
-    "description": "Los recursos escasos y los retos difíciles no te alejan. Te mantienen interesada."
+    "subtitle": "Sobreviviente",
+    "hook": "Lo difícil no te aleja. Te engancha.",
+    "body": "Pocos recursos, enemigos duros y decisiones bajo presión. Cada vez que sales viva de una situación imposible, quieres la siguiente.",
+    "also": "Y cuando las cosas se ponen difíciles, no te rindes."
   },
-
   "STRATEGIST": {
     "title": "El Árbol Familiar",
-    "description": "Te gusta cuando cada decisión tiene consecuencias y cada movimiento conecta con otro."
+    "subtitle": "Estratega",
+    "hook": "Cada movimiento conecta con otro.",
+    "body": "Te gusta entender cómo funciona un juego por dentro y encontrar la jugada que nadie vio. Pensar antes de actuar también es una forma de divertirse.",
+    "also": "Y antes de lanzarte, ya pensaste tres jugadas adelante."
   },
-
   "STORY_SEEKER": {
     "title": "La Hija del Predicador",
-    "description": "Los personajes, los secretos y las historias suelen quedarse contigo mucho después de terminar un juego."
+    "subtitle": "Narradora",
+    "hook": "Juegas por lo que se cuenta.",
+    "body": "Los personajes, los secretos y los finales que duelen se quedan contigo mucho después de apagar la consola. Una buena historia vale cada hora.",
+    "also": "Y lo que más recuerdas de un juego es su historia."
   },
-
   "HORROR_FAN": {
     "title": "La Guardia Nocturna",
-    "description": "Hay algo en la tensión, el misterio y la oscuridad que te hace querer seguir avanzando."
+    "subtitle": "Fan del horror",
+    "hook": "La oscuridad no te asusta. Te llama.",
+    "body": "La tensión, el silencio antes del susto y la sensación de que algo no está bien te hacen seguir avanzando. Te quedas en el turno de noche cuando otros se van.",
+    "also": "Y una parte de ti siempre busca la luz apagada."
   }
 }

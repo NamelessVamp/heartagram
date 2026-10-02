@@ -495,3 +495,17 @@ body {
     padding: 1.25rem;
   }
 }
+
+.profile-subtitle {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-accent-strong);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 48rem) {
+  [data-screen="profile"] .profile-subtitle {
+    grid-column: 1;
+  }
+}
