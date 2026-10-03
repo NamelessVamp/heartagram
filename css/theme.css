@@ -563,3 +563,40 @@ body {
     margin-top: 0;
   }
 }
+
+/* ---------- Returning home ---------- */
+
+.home-actions {
+  display: grid;
+  gap: var(--space-3);
+  width: 100%;
+  margin-top: var(--space-4);
+}
+
+.home-actions .btn {
+  width: 100%;
+  margin-top: 0;
+}
+
+.btn-text {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.btn-text:hover {
+  color: var(--color-accent-strong);
+}
+
+@media (min-width: 36rem) {
+  .home-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home-actions .btn-primary,
+  .home-actions .btn-text {
+    grid-column: 1 / -1;
+  }
+}

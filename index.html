@@ -17,15 +17,48 @@
       <!-- INTRO -->
       <section class="screen" data-screen="intro" aria-labelledby="intro-title">
         <p class="eyebrow">Para Adri</p>
-        <h1 id="intro-title" class="title">Heartagram</h1>
-        <p class="lead">
-          Tu Nintendo Switch ya es tuya. Antes de elegir qué jugar, contesta
-          unas preguntas y te mostramos el camino.
+        <p id="intro-lead" class="lead">
+          Tu Nintendo Switch ya es tuya. Antes de elegir qué jugar, descubre qué
+          tipo de jugadora eres.
         </p>
-        <p class="hint">12 preguntas · menos de 3 minutos</p>
-        <button type="button" class="btn btn-primary" data-action="start">
-          Empezar
-        </button>
+
+        <p id="intro-hint" class="hint">12 preguntas · menos de 3 minutos</p>
+
+        <div id="new-profile-actions">
+          <button type="button" class="btn btn-primary" data-action="start">
+            Descubrir mi perfil
+          </button>
+        </div>
+
+        <div id="returning-profile-actions" class="home-actions" hidden>
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-action="continue-profile"
+          >
+            Continuar con mi perfil
+          </button>
+
+          <button type="button" class="btn btn-ghost" data-action="to-results">
+            Explorar mis juegos
+          </button>
+
+          <button type="button" class="btn btn-ghost" data-action="to-wishlist">
+            Mi lista
+          </button>
+
+          <button type="button" class="btn btn-ghost" data-action="to-duo">
+            Jugar con Inti
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-text"
+            data-action="reset-profile"
+          >
+            Rehacer el test
+          </button>
+        </div>
       </section>
 
       <!-- TEST -->

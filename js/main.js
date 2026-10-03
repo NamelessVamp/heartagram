@@ -5,6 +5,11 @@ import { rankGames, buildSections, buildDuo } from "./recommender.js";
 import { buildCarts } from "./carts.js";
 import * as ui from "./ui.js";
 import { clearFavorites, getFavoriteIds } from "./favorites.js";
+import {
+  clearSavedProfile,
+  getSavedProfile,
+  saveProfile,
+} from "./profile-storage.js";
 
 // ?preview shows unverified games so Inti can test before Phase 1 is done.
 const PREVIEW = new URLSearchParams(window.location.search).has("preview");
@@ -12,6 +17,10 @@ const NEXT_QUESTION_DELAY_MS = 250;
 
 const state = {
   questions: [],
+  profile: null,
+  ranked: [],
+  sections: null,
+  duo: [],
   archetypes: [],
   profileTexts: {},
   profileCombos: {},
@@ -87,12 +96,26 @@ function renderCurrentQuestion() {
   );
 }
 
-function finishQuiz() {
-  const profile = computeProfile(state.questions, state.answers);
+function applyProfile(profile) {
   const ranked = rankGames(profile, state.games);
+
+  const savedProfile = getSavedProfile();
+
+  if (savedProfile) {
+    applyProfile(savedProfile);
+  }
+
+  renderHomeState();
+  ``;
+
   const sections = buildSections(profile, ranked);
+
   const duo = buildDuo(profile, ranked);
-  const carts = buildCarts(ranked, duo, sections.outOfZone);
+
+  state.profile = profile;
+  state.ranked = ranked;
+  state.sections = sections;
+  state.duo = duo;
 
   ui.renderProfile(
     profile,
@@ -100,9 +123,17 @@ function finishQuiz() {
     state.profileTexts,
     state.profileCombos,
   );
+
   ui.renderResults(sections);
   ui.renderDuo(duo);
-  ui.renderCarts(carts);
+  refreshWishlist();
+}
+
+function finishQuiz() {
+  const profile = computeProfile(state.questions, state.answers);
+
+  saveProfile(profile);
+  applyProfile(profile);
   showScreen("profile");
 }
 
@@ -118,6 +149,22 @@ function refreshWishlist() {
   ui.renderWishlist(getFavoriteGames());
 }
 
+function renderHomeState() {
+  const hasProfile = state.profile !== null;
+
+  document.getElementById("new-profile-actions").hidden = hasProfile;
+
+  document.getElementById("returning-profile-actions").hidden = !hasProfile;
+
+  document.getElementById("intro-lead").textContent = hasProfile
+    ? "Tu perfil, tus juegos y tu lista siguen aquí."
+    : "Tu Nintendo Switch ya es tuya. Antes de elegir qué jugar, descubre qué tipo de jugadora eres.";
+
+  document.getElementById("intro-hint").textContent = hasProfile
+    ? "Continúa donde lo dejaste."
+    : "12 preguntas · menos de 3 minutos";
+}
+
 const ACTIONS = {
   start: () => {
     state.index = 0;
@@ -125,6 +172,38 @@ const ACTIONS = {
     state.advancing = false;
     renderCurrentQuestion();
     showScreen("quiz");
+  },
+  "continue-profile": () => {
+    if (!state.profile) return;
+
+    ui.renderProfile(
+      state.profile,
+      state.archetypes,
+      state.profileTexts,
+      state.profileCombos,
+    );
+
+    showScreen("profile");
+  },
+
+  "reset-profile": () => {
+    const shouldReset = window.confirm(
+      "¿Quieres borrar tu perfil y volver a hacer el test? Tu lista de favoritos se conservará.",
+    );
+
+    if (!shouldReset) return;
+
+    clearSavedProfile();
+
+    state.profile = null;
+    state.ranked = [];
+    state.sections = null;
+    state.duo = [];
+    state.answers = {};
+    state.index = 0;
+
+    renderHomeState();
+    showScreen("intro");
   },
   back: () => {
     if (state.advancing) return;
@@ -154,7 +233,10 @@ const ACTIONS = {
   },
   "to-gift": () => showScreen("gift"),
   "to-family": () => showScreen("family"),
-  restart: () => showScreen("intro"),
+  restart: () => {
+    renderHomeState();
+    showScreen("intro");
+  },
 };
 
 function bindActions() {
