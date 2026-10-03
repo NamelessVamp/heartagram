@@ -515,18 +515,25 @@ body {
 .favorite-button {
   align-self: flex-start;
   margin-top: var(--space-2);
-  padding: 0.625em 0.875rem;
+  padding: 0.625rem 0.875rem;
   border: 1px solid rgba(224, 98, 122, 0.36);
   border-radius: var(--radius-sm);
   font-family: var(--font-mono);
-  font-size:0.75rem;
-  color: var(--color-text-mutedmuted);
-  letter-spacing: 0.055em;*  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
   transition:
-    color var(--transition-fastfast),
+    color var(--transition-fast),
     border-color var(--transition-fast),
     background var(--transition-fast),
     box-shadow var(--transition-fast);
+}
+
+.favorite-button:hover {
+  color: #fff1f3;
+  border-color: var(--color-accent-strong);
+  background: rgba(224, 98, 122, 0.08);
 }
 
 .favorite-button[aria-pressed="true"] {
@@ -600,3 +607,31 @@ body {
     grid-column: 1 / -1;
   }
 }
+
+/* ---------- Recurring home hero ---------- */
+
+.home-tagline {
+  max-width: 24ch;
+  margin-top: calc(var(--space-2) * -1);
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--color-accent-strong);
+  text-wrap: balance;
+}
+
+[data-screen="intro"] .lead {
+  max-width: 46ch;
+}
+
+#new-profile-actions,
+#returning-profile-actions {
+  width: 100%;
+  max-width: 38rem;
+}
+
+#new-profile-actions .btn {
+  width: 100%;
+}
+
