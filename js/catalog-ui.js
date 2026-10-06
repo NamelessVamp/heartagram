@@ -8,10 +8,7 @@ import {
   queryCatalog,
 } from "./catalog.js";
 
-import {
-  isFavorite,
-  toggleFavorite,
-} from "./favorites.js";
+import { isFavorite, toggleFavorite } from "./favorites.js";
 
 const PAGE_SIZE = 24;
 
@@ -150,25 +147,47 @@ function createCatalogCard(game) {
   openButton.setAttribute("aria-label", `Ver detalles de ${game.name}`);
 
   const media = createElement("div", "catalog-card-media");
-  const image = document.createElement("img");
   image.src = game.cover;
   image.alt = `Portada de ${game.name}`;
   image.loading = "lazy";
   image.decoding = "async";
+
+  image.addEventListener("error", () => {
+    image.remove();
+
+    media.append(
+      createElement(
+        "div",
+        "catalog-card-cover-fallback",
+        "PORTADA NO DISPONIBLE",
+      ),
+    );
+  });
+
+  media.append(image);
+
+  image.addEventListener("error", () => {
+    image.remove();
+
+    const fallback = createElement(
+      "div",
+      "catalog-card-cover-fallback",
+      "PORTADA NO DISPONIBLE",
+    );
+
+    fallback.setAttribute("aria-hidden", "true");
+    media.append(fallback);
+  });
+
   media.append(image);
 
   const body = createElement("div", "catalog-card-body");
   body.append(createElement("h3", "catalog-card-title", game.name));
 
-  const metadata = [
-    game.release_year,
-    game.game_type,
-  ].filter(Boolean);
+  const metadata = [game.release_year, game.game_type].filter(Boolean);
 
   if (metadata.length) {
-    body.append(
-      createElement("p", "catalog-card-meta", metadata.join(" · ")),
-    );
+    body.append(createElement("p", "catalog-card-meta", metadata.join(" · ")));
   }
 
   body.append(createBadges(game));
@@ -261,10 +280,7 @@ function renderDialogBadges(details) {
     .map((platform) => platform.abbreviation || platform.name)
     .filter(Boolean);
 
-  const labels = [
-    ...platforms,
-    ...(details.genres ?? []).slice(0, 3),
-  ];
+  const labels = [...platforms, ...(details.genres ?? []).slice(0, 3)];
 
   labels.forEach((label) => {
     elements.dialogBadges.append(createElement("span", "badge", label));
@@ -317,8 +333,7 @@ function renderDetails(indexGame, details) {
   elements.dialogStorySection.hidden = !hasStory;
   elements.dialogStory.textContent = details.storyline || "";
 
-  elements.dialogRelease.textContent =
-    details.release_date || "Por confirmar";
+  elements.dialogRelease.textContent = details.release_date || "Por confirmar";
   elements.dialogDevelopers.textContent = textOrFallback(details.developers);
   elements.dialogPublishers.textContent = textOrFallback(details.publishers);
   elements.dialogModes.textContent = textOrFallback(details.game_modes);

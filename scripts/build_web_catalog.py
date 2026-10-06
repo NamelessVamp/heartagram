@@ -15,6 +15,7 @@ content such as DLC, bundles, updates, seasons, mods, and add-on packs.
 
 from __future__ import annotations
 
+import re
 import argparse
 import json
 import shutil
@@ -150,6 +151,19 @@ def game_type_value(game: dict[str, Any]) -> str | None:
 
     return clean_text(game_type.get("type"))
 
+def igdb_image_url(
+    image_id: str | None,
+    size: str,
+) -> str | None:
+    """Build a clean IGDB image URL from an image ID."""
+
+    if not image_id:
+        return None
+
+    base = "https://" + "images.igdb.com"
+    path = f"/igdb/image/upload/t_{size}/{image_id}.jpg"
+
+    return base + path
 
 def parent_game_value(game: dict[str, Any]) -> dict[str, Any] | None:
     """Return a compact parent-game relationship when IGDB provides one."""
@@ -176,7 +190,10 @@ def compact_game(game: dict[str, Any], shard: int) -> dict[str, Any]:
         "igdb_id": game.get("igdb_id"),
         "name": clean_text(game.get("name")) or "Sin título",
         "slug": game.get("slug") or "",
-        "cover": cover.get("url"),
+        "cover": igdb_image_url(
+        cover.get("image_id"),
+        "cover_big",
+        ),
         "platforms": platform_codes(game.get("platforms")),
         "genres": string_list(game.get("genres")),
         "themes": string_list(game.get("themes")),
@@ -194,6 +211,12 @@ def compact_game(game: dict[str, Any], shard: int) -> dict[str, Any]:
 def detail_game(game: dict[str, Any]) -> dict[str, Any]:
     """Create a richer record loaded only when a game is opened."""
 
+    cover = (
+    game.get("cover")
+    if isinstance(game.get("cover"), dict)
+    else {}
+)
+    
     return {
         "igdb_id": game.get("igdb_id"),
         "name": clean_text(game.get("name")) or "Sin título",
@@ -210,9 +233,25 @@ def detail_game(game: dict[str, Any]) -> dict[str, Any]:
         "collections": string_list(game.get("collections")),
         "developers": string_list(game.get("developers")),
         "publishers": string_list(game.get("publishers")),
-        "cover": game.get("cover", {}),
-        "artworks": game.get("artworks", []),
-        "screenshots": game.get("screenshots", []),
+        "cover": {
+    "image_id": cover.get("image_id"),
+    "url": igdb_image_url(
+        cover.get("image_id"),
+        "cover_big",
+    ),
+    "url_2x": igdb_image_url(
+        cover.get("image_id"),
+        "cover_big_2x",
+    ),
+},
+        "artworks": clean_igdb_image_list(
+    game.get("artworks"),
+    "720p",
+),
+"screenshots": clean_igdb_image_list(
+    game.get("screenshots"),
+    "screenshot_big",
+),
         "release_date": game.get("release_date"),
         "rating": game.get("rating"),
         "rating_count": game.get("rating_count", 0),
@@ -223,6 +262,39 @@ def detail_game(game: dict[str, Any]) -> dict[str, Any]:
         "igdb_url": game.get("igdb_url"),
     }
 
+
+def clean_igdb_image_list(
+    values: Any,
+    size: str,
+) -> list[str]:
+    """Rebuild IGDB image URLs from IDs or existing URL strings."""
+
+    if not isinstance(values, list):
+        return []
+
+    cleaned: list[str] = []
+
+    for value in values:
+        if not isinstance(value, str):
+            continue
+
+        match = re.search(
+            r"/([a-zA-Z0-9_-]+)\.jpg",
+            value,
+        )
+
+        if not match:
+            continue
+
+        rebuilt = igdb_image_url(
+            match.group(1),
+            size,
+        )
+
+        if rebuilt:
+            cleaned.append(rebuilt)
+
+    return cleaned
 
 def exclusion_reason(game: Any) -> str | None:
     """Return why a source record should not enter the public explorer."""
