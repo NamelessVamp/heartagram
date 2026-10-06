@@ -484,4 +484,3 @@ export async function openCatalogGameDetails(game) {
   await initializeCatalogExplorer();
   await openDetails(game);
 }
-``;
