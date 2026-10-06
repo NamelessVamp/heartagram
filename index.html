@@ -44,7 +44,11 @@
           </button>
 
           <button type="button" class="btn btn-ghost" data-action="to-results">
-            Explorar mis juegos
+            Mis recomendaciones
+          </button>
+
+          <button type="button" class="btn btn-ghost" data-action="to-catalog">
+            Explorar juegos
           </button>
 
           <button type="button" class="btn btn-ghost" data-action="to-wishlist">
@@ -146,6 +150,105 @@
 
         <button type="button" class="btn btn-primary" data-action="to-duo">
           Para jugar con Inti
+        </button>
+      </section>
+
+      <!-- CATÁLOGO IGDB -->
+      <section
+        class="screen"
+        data-screen="catalog"
+        aria-labelledby="catalog-title"
+        hidden
+      >
+        <p class="eyebrow">Nintendo Switch · Switch 2</p>
+
+        <h2 id="catalog-title" class="title">Explorar juegos</h2>
+
+        <p class="lead">
+          Busca entre juegos de Nintendo Switch y Nintendo Switch 2. Guarda los
+          que te llamen la atención.
+        </p>
+
+        <div id="catalog-loading" class="catalog-status" role="status">
+          Cargando catálogo...
+        </div>
+
+        <div id="catalog-content" hidden>
+          <div class="catalog-toolbar">
+            <label class="catalog-field catalog-search">
+              <span>Buscar</span>
+
+              <input
+                id="catalog-query"
+                type="search"
+                placeholder="Nombre del juego..."
+                autocomplete="off"
+                spellcheck="false"
+              />
+            </label>
+
+            <label class="catalog-field">
+              <span>Plataforma</span>
+
+              <select id="catalog-platform">
+                <option value="ALL">Todas</option>
+                <option value="SWITCH">Nintendo Switch</option>
+                <option value="SWITCH_2">Nintendo Switch 2</option>
+              </select>
+            </label>
+
+            <label class="catalog-field">
+              <span>Género</span>
+
+              <select id="catalog-genre">
+                <option value="ALL">Todos</option>
+              </select>
+            </label>
+
+            <label class="catalog-field">
+              <span>Modo</span>
+
+              <select id="catalog-mode">
+                <option value="ALL">Todos</option>
+              </select>
+            </label>
+
+            <label class="catalog-field">
+              <span>Ordenar</span>
+
+              <select id="catalog-sort">
+                <option value="NAME">Nombre</option>
+                <option value="RATING">Mejor calificados</option>
+                <option value="NEWEST">Más recientes</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="catalog-summary">
+            <p id="catalog-count" aria-live="polite"></p>
+
+            <button id="catalog-clear" type="button" class="btn btn-text">
+              Limpiar filtros
+            </button>
+          </div>
+
+          <div id="catalog-grid" class="catalog-grid"></div>
+
+          <nav class="catalog-pagination" aria-label="Páginas del catálogo">
+            <button id="catalog-previous" type="button" class="btn btn-ghost">
+              Anterior
+            </button>
+
+            <p id="catalog-page" class="hint"></p>
+
+            <button id="catalog-next" type="button" class="btn btn-ghost">
+              Siguiente
+            </button>
+          </nav>
+        </div>
+
+        <button type="button" class="btn btn-ghost" data-action="restart">
+          Volver al inicio
         </button>
       </section>
 
@@ -284,6 +387,89 @@
         </button>
       </section>
     </main>
+
+    <dialog
+      id="catalog-dialog"
+      class="catalog-dialog"
+      aria-labelledby="catalog-dialog-title"
+    >
+      <article class="catalog-dialog-content">
+        <button
+          id="catalog-dialog-close"
+          type="button"
+          class="catalog-dialog-close"
+          aria-label="Cerrar detalles"
+        >
+          ×
+        </button>
+
+        <div id="catalog-dialog-loading" class="catalog-status">
+          Cargando detalles...
+        </div>
+
+        <div id="catalog-dialog-body" hidden>
+          <div class="catalog-dialog-copy">
+            <p id="catalog-dialog-platforms" class="eyebrow"></p>
+
+            <h2 id="catalog-dialog-title" class="catalog-dialog-title"></h2>
+
+            <div id="catalog-dialog-badges" class="card-badges"></div>
+
+            <button
+              id="catalog-dialog-favorite"
+              type="button"
+              class="favorite-button"
+            >
+              ♡ Me interesa
+            </button>
+
+            <section class="catalog-dialog-section">
+              <h3>De qué trata</h3>
+
+              <p id="catalog-dialog-summary"></p>
+            </section>
+
+            <section
+              id="catalog-dialog-story-section"
+              class="catalog-dialog-section"
+              hidden
+            >
+              <h3>La historia</h3>
+
+              <p id="catalog-dialog-story"></p>
+            </section>
+
+            <dl class="catalog-metadata">
+              <div>
+                <dt>Lanzamiento</dt>
+                <dd id="catalog-dialog-release"></dd>
+              </div>
+
+              <div>
+                <dt>Desarrollado por</dt>
+                <dd id="catalog-dialog-developers"></dd>
+              </div>
+
+              <div>
+                <dt>Publicado por</dt>
+                <dd id="catalog-dialog-publishers"></dd>
+              </div>
+
+              <div>
+                <dt>Modos</dt>
+                <dd id="catalog-dialog-modes"></dd>
+              </div>
+            </dl>
+          </div>
+
+          <div
+            id="catalog-dialog-gallery"
+            class="catalog-gallery"
+            aria-label="Capturas del juego"
+          ></div>
+        </div>
+      </article>
+    </dialog>
 
     <noscript>
       <p class="noscript">Heartagram necesita JavaScript para funcionar.</p>
