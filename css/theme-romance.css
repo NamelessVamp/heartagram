@@ -1,0 +1,263 @@
+/* =============================================================
+   HEARTAGRAM :: theme-romance.css
+   Hybrid mode. Intro and profile take the Razorblade Romance
+   cover: magenta field, engraved sunburst, gold title, black
+   velvet panels. Every other screen keeps the black sleeve look.
+   Activated by body[data-screen], set in main.js showScreen().
+   Loads after theme.css.
+   ============================================================= */
+
+:root {
+  --rr-cover: 214 36 122;
+  --rr-cover-deep: 168 20 92;
+  --rr-gold-light: 243 217 160;
+  --rr-gold-dark: 142 116 83;
+  --rr-ink-on-pink: 42 7 22;
+}
+
+/* ---------- Magenta field ---------- */
+
+body[data-screen="intro"],
+body[data-screen="profile"] {
+  background:
+    radial-gradient(
+      ellipse at 50% 28%,
+      rgb(255 214 232 / 0.35),
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 50% 110%,
+      rgb(var(--rr-cover-deep) / 0.9),
+      transparent 60%
+    ),
+    rgb(var(--rr-cover));
+  background-attachment: fixed;
+}
+
+/* Engraved sunburst behind the content, like the cover halo */
+body[data-screen="intro"]::before,
+body[data-screen="profile"]::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    repeating-conic-gradient(
+      from 0deg at 50% 26%,
+      rgb(255 255 255 / 0.07) 0deg 0.6deg,
+      transparent 0.6deg 5deg
+    ),
+    repeating-radial-gradient(
+      circle at 50% 26%,
+      transparent 0 38px,
+      rgb(255 255 255 / 0.05) 38px 39px
+    );
+  -webkit-mask-image: radial-gradient(
+    circle at 50% 26%,
+    #000 0 45%,
+    transparent 75%
+  );
+  mask-image: radial-gradient(circle at 50% 26%, #000 0 45%, transparent 75%);
+}
+
+/* ---------- Gold title ---------- */
+
+body[data-screen="intro"] .title,
+body[data-screen="profile"] .profile-title {
+  background: linear-gradient(
+    180deg,
+    rgb(var(--rr-gold-light)),
+    rgb(var(--rr-gold)) 55%,
+    rgb(var(--rr-gold-dark))
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 0 rgb(var(--rr-ink-on-pink) / 0.55))
+    drop-shadow(0 0 18px rgb(var(--rr-ink-on-pink) / 0.25));
+}
+
+body[data-screen="intro"] .title::after,
+body[data-screen="profile"] .title::after {
+  background: linear-gradient(
+    90deg,
+    rgb(var(--rr-gold-light)),
+    rgb(var(--rr-gold)) 50%,
+    transparent
+  );
+}
+
+/* ---------- Text on pink ---------- */
+
+body[data-screen="intro"] .eyebrow,
+body[data-screen="profile"] .eyebrow,
+body[data-screen="profile"] .profile-subtitle {
+  color: rgb(var(--rr-ink-on-pink));
+  font-weight: 700;
+}
+
+body[data-screen="intro"] .home-tagline {
+  color: rgb(var(--rr-white));
+  text-shadow: 0 1px 10px rgb(var(--rr-ink-on-pink) / 0.45);
+}
+
+body[data-screen="intro"] .lead,
+body[data-screen="intro"] .hint {
+  color: rgb(var(--rr-white));
+  text-shadow: 0 1px 8px rgb(var(--rr-ink-on-pink) / 0.4);
+}
+
+/* ---------- Buttons on pink: black velvet, like the vinyl sleeve ---------- */
+
+body[data-screen="intro"] .btn-primary,
+body[data-screen="profile"] .btn-primary {
+  border: 1px solid rgb(var(--rr-gold) / 0.7);
+  background: rgb(var(--rr-black));
+  color: rgb(var(--rr-gold-light));
+  box-shadow: 0 10px 28px rgb(var(--rr-ink-on-pink) / 0.45);
+}
+
+body[data-screen="intro"] .btn-primary:hover,
+body[data-screen="profile"] .btn-primary:hover {
+  background: rgb(var(--rr-ink));
+  color: rgb(var(--rr-white));
+  border-color: rgb(var(--rr-gold-light));
+}
+
+body[data-screen="intro"] .btn-ghost {
+  border-color: rgb(255 255 255 / 0.55);
+  background: rgb(var(--rr-black) / 0.28);
+  color: rgb(var(--rr-white));
+  backdrop-filter: blur(4px);
+}
+
+body[data-screen="intro"] .btn-ghost:hover {
+  border-color: rgb(var(--rr-white));
+  background: rgb(var(--rr-black) / 0.5);
+}
+
+body[data-screen="intro"] .btn-text {
+  color: rgb(var(--rr-ink-on-pink));
+  font-weight: 700;
+}
+
+body[data-screen="intro"] .btn-text:hover {
+  color: rgb(var(--rr-white));
+}
+
+/* ---------- Profile: reading panel on black velvet ---------- */
+
+body[data-screen="profile"] .profile-copy {
+  border-left: 2px solid rgb(var(--rr-gold));
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: rgb(var(--rr-black) / 0.78);
+  box-shadow: 0 18px 40px rgb(var(--rr-ink-on-pink) / 0.35);
+  backdrop-filter: blur(6px);
+}
+
+/* Radar sits on a black vinyl disc so its lines stay readable */
+body[data-screen="profile"] .profile-radar {
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at center,
+      rgb(var(--rr-cover)) 0 3%,
+      transparent 3.5%
+    ),
+    repeating-radial-gradient(
+      circle at center,
+      rgb(var(--rr-black)) 0 3px,
+      rgb(var(--rr-ink)) 3px 4px
+    );
+  box-shadow:
+    0 0 0 1px rgb(var(--rr-gold) / 0.5),
+    0 20px 50px rgb(var(--rr-ink-on-pink) / 0.5);
+  filter: none;
+}
+
+/* ---------- Focus ring visible on pink ---------- */
+
+body[data-screen="intro"] :focus-visible,
+body[data-screen="profile"] :focus-visible {
+  outline-color: rgb(var(--rr-white));
+}
+/* ---------- Profile layout repair ---------- */
+
+body[data-screen="profile"] #app {
+  width: 100%;
+  max-width: var(--shell-width);
+  margin-inline: auto;
+}
+
+body[data-screen="profile"] .screen[data-screen="profile"] {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "eyebrow"
+    "title"
+    "subtitle"
+    "copy"
+    "radar"
+    "action";
+  width: 100%;
+  max-width: var(--wide-width);
+  min-width: 0;
+  min-height: auto;
+  margin-inline: auto;
+  gap: var(--space-4);
+  align-content: start;
+}
+
+body[data-screen="profile"] .screen[data-screen="profile"] > .eyebrow {
+  grid-area: eyebrow;
+}
+
+body[data-screen="profile"] .profile-title {
+  grid-area: title;
+  min-width: 0;
+  max-width: none;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  overflow-wrap: break-word;
+}
+
+body[data-screen="profile"] .profile-subtitle {
+  grid-area: subtitle;
+}
+
+body[data-screen="profile"] .profile-copy {
+  grid-area: copy;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  margin-top: 0;
+}
+
+body[data-screen="profile"] .profile-radar {
+  grid-area: radar;
+  justify-self: center;
+  align-self: center;
+  width: min(100%, 320px);
+  height: auto;
+  margin: var(--space-4) 0;
+}
+
+body[data-screen="profile"] .screen[data-screen="profile"] > .btn {
+  grid-area: action;
+  width: 100%;
+}
+
+@media (min-width: 56rem) {
+  body[data-screen="profile"] .screen[data-screen="profile"] {
+    grid-template-columns: minmax(0, 1fr) 320px;
+    grid-template-areas:
+      "eyebrow radar"
+      "title radar"
+      "subtitle radar"
+      "copy radar"
+      "action action";
+    column-gap: var(--space-7);
+  }
+}

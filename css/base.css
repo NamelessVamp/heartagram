@@ -1,36 +1,62 @@
 /* =============================================================
    HEARTAGRAM :: base.css
-   Variables, reset, typography and layout primitives.
-   Visual effects (grain, glow, transitions) live in theme.css.
+   Design tokens, reset, typography, layout and primitives.
+   Components, screens and effects live in theme.css.
+   Rule: theme.css never hardcodes brand colors; it uses tokens.
    ============================================================= */
 
 :root {
-  /* Palette: Razorblade Romance — velvet black, crimson, rose, candlelight */
-  --color-bg: #0a0607;
-  --color-surface: #150a0c;
-  --color-surface-2: #1f0e12;
-  --color-border: #3d1a21;
-  --color-text: #f0e6e4;
-  --color-text-muted: #b59ea1;
-  --color-accent: #a3243b;
-  --color-accent-strong: #e0627a;
-  --color-danger: #7a1424;
-  --color-focus: #f2b8c2;
+  color-scheme: dark;
 
-  /* Typography */
+  /* ---------- Razorblade Romance palette ----------
+     Stored as RGB channels so any color can take alpha:
+     rgb(var(--rr-pink) / 0.3)                          */
+  --rr-black: 8 6 8;
+  --rr-ink: 18 9 14;
+  --rr-velvet: 29 12 21;
+  --rr-wine: 53 16 31;
+  --rr-plum: 104 21 55;
+  --rr-pink-deep: 168 31 88;
+  --rr-pink: 216 63 125;
+  --rr-hot-pink: 245 45 136;
+  --rr-blush: 237 140 175;
+  --rr-cream: 244 230 223;
+  --rr-white: 255 247 248;
+  --rr-gold: 199 165 111;
+  --rr-mauve: 201 174 184;
+
+  /* ---------- Semantic tokens ---------- */
+  --color-bg: rgb(var(--rr-black));
+  --color-surface: rgb(var(--rr-ink));
+  --color-surface-2: rgb(var(--rr-velvet));
+  --color-border: rgb(var(--rr-pink) / 0.26);
+  --color-border-strong: rgb(var(--rr-pink) / 0.6);
+  --color-text: rgb(var(--rr-cream));
+  --color-text-strong: rgb(var(--rr-white));
+  --color-text-muted: rgb(var(--rr-mauve));
+  --color-accent: rgb(var(--rr-pink-deep));
+  --color-accent-strong: rgb(var(--rr-pink));
+  --color-accent-hot: rgb(var(--rr-hot-pink));
+  --color-accent-soft: rgb(var(--rr-blush));
+  --color-gold: rgb(var(--rr-gold));
+  --color-danger: rgb(var(--rr-plum));
+  --color-focus: rgb(var(--rr-blush));
+
+  /* ---------- Typography ---------- */
   --font-display: "Georgia", "Times New Roman", serif;
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: "Consolas", "Courier New", monospace;
 
+  --text-2xs: 0.6875rem;
   --text-xs: 0.8125rem;
   --text-sm: 0.9375rem;
   --text-base: 1rem;
   --text-lg: 1.125rem;
   --text-xl: 1.5rem;
   --text-2xl: 2rem;
-  --text-3xl: 2.5rem;
+  --text-3xl: 2.75rem;
 
-  /* Spacing scale */
+  /* ---------- Spacing ---------- */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -38,14 +64,25 @@
   --space-5: 1.5rem;
   --space-6: 2rem;
   --space-7: 3rem;
+  --space-8: 4rem;
 
-  /* Shape and motion */
+  /* ---------- Shape, layout, motion ---------- */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 14px;
-  --content-width: 40rem;
+  --radius-pill: 999px;
+
+  --content-width: 40rem;   /* reading screens */
+  --wide-width: 64rem;      /* profile */
+  --shell-width: 76rem;     /* catalog, wishlist */
+
   --transition-fast: 150ms ease;
   --transition-base: 300ms ease;
+
+  --shadow-card:
+    0 14px 34px rgb(0 0 0 / 0.28),
+    inset 0 1px 0 rgb(var(--rr-white) / 0.03);
+  --shadow-glow: 0 0 22px rgb(var(--rr-pink) / 0.14);
 }
 
 /* ---------- Reset ---------- */
@@ -79,9 +116,14 @@ canvas {
   max-width: 100%;
 }
 
-button {
+button,
+input,
+select {
   font: inherit;
   color: inherit;
+}
+
+button {
   background: none;
   border: none;
   cursor: pointer;
@@ -102,19 +144,21 @@ ul {
   font-family: var(--font-display);
   font-size: var(--text-2xl);
   font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  color: var(--color-text-strong);
 }
 
 .eyebrow {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
-  color: var(--color-accent);
-  letter-spacing: 0.15em;
+  color: var(--color-gold);
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .lead {
+  max-width: 52ch;
   font-size: var(--text-lg);
   color: var(--color-text);
 }
@@ -125,32 +169,37 @@ ul {
 }
 
 .section-title {
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  font-weight: 400;
   margin-top: var(--space-6);
   padding-bottom: var(--space-2);
   border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 400;
+  color: var(--color-text-strong);
 }
 
 strong {
-  color: var(--color-accent-strong);
+  color: var(--color-accent-soft);
   font-weight: 600;
 }
 
-/* ---------- Layout ---------- */
+/* ---------- Layout ----------
+   #app is wide; each screen picks its own reading width. */
 
 #app {
   width: 100%;
-  max-width: var(--content-width);
+  max-width: var(--shell-width);
   margin: 0 auto;
-  padding: var(--space-6) var(--space-4) var(--space-7);
+  padding: var(--space-6) var(--space-4) var(--space-8);
 }
 
 .screen {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
 }
 
 .card-list,
@@ -166,34 +215,69 @@ strong {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: var(--space-2);
   min-height: 48px;
   padding: var(--space-3) var(--space-5);
+  border: 1px solid transparent;
   border-radius: var(--radius-md);
   font-size: var(--text-base);
   transition:
     background var(--transition-fast),
-    border-color var(--transition-fast);
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
 }
 
 .btn-primary {
-  background: var(--color-accent);
-  color: var(--color-text);
-  font-weight: 600;
   margin-top: var(--space-4);
+  background: linear-gradient(
+    135deg,
+    var(--color-accent),
+    var(--color-accent-strong)
+  );
+  color: var(--color-text-strong);
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgb(var(--rr-pink) / 0.22);
 }
 
 .btn-primary:hover {
-  background: var(--color-accent-strong);
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-strong),
+    var(--color-accent-hot)
+  );
+  box-shadow: 0 10px 30px rgb(var(--rr-hot-pink) / 0.3);
 }
 
 .btn-ghost {
-  border: 1px solid var(--color-border);
+  border-color: var(--color-border);
   color: var(--color-text-muted);
+  background: rgb(var(--rr-ink) / 0.6);
 }
 
 .btn-ghost:hover {
-  border-color: var(--color-accent);
+  border-color: var(--color-border-strong);
   color: var(--color-text);
+  background: rgb(var(--rr-pink) / 0.08);
+}
+
+.btn-text {
+  min-height: 40px;
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.btn-text:hover {
+  color: var(--color-accent-soft);
 }
 
 :focus-visible {
@@ -201,17 +285,25 @@ strong {
   outline-offset: 3px;
 }
 
+/* Headings receive focus on screen change for screen readers;
+   the outline is only useful for keyboard targets. */
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
 /* ---------- Badges ---------- */
 
 .badge {
   display: inline-block;
-  padding: 2px var(--space-2);
-  border: 1px solid var(--color-accent);
+  padding: 0.3rem 0.55rem;
+  border: 1px solid rgb(var(--rr-pink) / 0.4);
   border-radius: var(--radius-sm);
+  background: rgb(var(--rr-pink) / 0.05);
+  color: var(--color-accent-soft);
   font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  color: var(--color-accent-strong);
+  font-size: var(--text-2xs);
   letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .badge-legend {
@@ -222,41 +314,15 @@ strong {
   color: var(--color-text-muted);
 }
 
-/* ---------- Steps (family group tutorial) ---------- */
+/* ---------- States ---------- */
 
-.steps {
-  counter-reset: step;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-}
-
-.steps li {
-  counter-increment: step;
-  display: grid;
-  grid-template-columns: 2.25rem 1fr;
-  column-gap: var(--space-3);
-}
-
-.steps li::before {
-  content: counter(step);
-  grid-row: span 2;
-  display: grid;
-  place-items: center;
-  width: 2.25rem;
-  height: 2.25rem;
-  border: 1px solid var(--color-accent);
-  border-radius: 50%;
-  font-family: var(--font-display);
-  color: var(--color-accent-strong);
-}
-
-.steps span {
+.empty {
+  padding: var(--space-5);
+  border-left: 1px solid var(--color-accent-strong);
+  background: rgb(var(--rr-pink) / 0.05);
   color: var(--color-text-muted);
-  font-size: var(--text-sm);
+  font-style: italic;
 }
-
-/* ---------- Misc ---------- */
 
 .noscript {
   padding: var(--space-6);
@@ -274,10 +340,4 @@ strong {
   #app {
     padding-top: var(--space-7);
   }
-}
-
-/* Headings receive focus on screen change for screen readers;
-   the outline is only useful for keyboard targets. */
-[tabindex="-1"]:focus {
-  outline: none;
 }

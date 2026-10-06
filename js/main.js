@@ -78,6 +78,8 @@ function toPreviewGame(game) {
 }
 
 function showScreen(name) {
+  document.body.dataset.screen = name;
+
   document.querySelectorAll(".screen").forEach((screen) => {
     screen.hidden = screen.dataset.screen !== name;
   });
@@ -88,12 +90,11 @@ function showScreen(name) {
   });
 
   const heading = document.querySelector(
-    `[data-screen="${name}"] h1, ` + `[data-screen="${name}"] h2`,
+    `[data-screen="${name}"] h1, [data-screen="${name}"] h2`,
   );
 
   if (heading) {
     heading.tabIndex = -1;
-
     heading.focus({
       preventScroll: true,
     });
