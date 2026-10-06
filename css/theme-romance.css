@@ -389,3 +389,42 @@ body.has-app-navigation #app {
     white-space: nowrap;
   }
 }
+/* ---------- Compact catalog filters on mobile ---------- */
+
+@media (max-width: 42rem) {
+  .catalog-toolbar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+    padding: var(--space-3);
+  }
+
+  .catalog-search {
+    grid-column: 1 / -1;
+  }
+
+  .catalog-field {
+    min-width: 0;
+  }
+
+  .catalog-field input,
+  .catalog-field select {
+    min-width: 0;
+    min-height: 44px;
+    padding: 0.65rem 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .catalog-summary {
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+  }
+
+  #catalog-count {
+    font-size: 0.75rem;
+  }
+
+  #catalog-clear {
+    min-height: 44px;
+    padding-inline: 0;
+  }
+}
