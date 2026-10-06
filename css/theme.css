@@ -118,12 +118,12 @@ body {
    INTRO / HOME
    ============================================================= */
 
-[data-screen="intro"] {
+.screen[data-screen="intro"] {
   min-height: 78vh;
   justify-content: center;
 }
 
-[data-screen="intro"] .title {
+.screen[data-screen="intro"] .title {
   font-size: clamp(3rem, 12vw, 5rem);
   line-height: 1;
   animation: candle 6s ease-in-out infinite;
@@ -239,7 +239,7 @@ body {
    PROFILE
    ============================================================= */
 
-[data-screen="profile"] {
+.screen[data-screen="profile"] {
   max-width: var(--wide-width);
   min-height: 80vh;
   justify-content: center;
@@ -311,12 +311,12 @@ body {
     drop-shadow(0 0 28px rgb(var(--rr-pink-deep) / 0.2));
 }
 
-[data-screen="profile"] .btn-primary {
+.screen[data-screen="profile"] .btn-primary {
   width: 100%;
 }
 
 @media (min-width: 48rem) {
-  [data-screen="profile"] {
+  .screen[data-screen="profile"] {
     display: grid;
     grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
     column-gap: var(--space-7);
@@ -324,16 +324,16 @@ body {
     align-content: center;
   }
 
-  [data-screen="profile"] > * {
+  .screen[data-screen="profile"] > * {
     grid-column: 1;
   }
 
-  [data-screen="profile"] .profile-radar {
+  .screen[data-screen="profile"] .profile-radar {
     grid-column: 2;
     grid-row: 1 / span 4;
   }
 
-  [data-screen="profile"] .btn {
+  .screen[data-screen="profile"] .btn {
     grid-column: 1 / -1;
   }
 }
@@ -466,7 +466,7 @@ body {
    WISHLIST
    ============================================================= */
 
-[data-screen="wishlist"] {
+.screen[data-screen="wishlist"] {
   max-width: var(--wide-width);
 }
 
@@ -587,7 +587,7 @@ body {
    CATALOG EXPLORER
    ============================================================= */
 
-[data-screen="catalog"] {
+.screen[data-screen="catalog"] {
   max-width: var(--shell-width);
 }
 
@@ -1221,7 +1221,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .grain,
-  [data-screen="intro"] .title,
+  .screen[data-screen="intro"] .title,
   .screen:not([hidden]) {
     animation: none;
   }

@@ -345,3 +345,237 @@ body.has-app-navigation #app {
     transition: none;
   }
 }
+/* ---------- Motion refinement ---------- */
+
+/* Replace continuous decorative animation with a static atmosphere. */
+.grain,
+[data-screen="intro"] .title {
+  animation: none;
+}
+
+/* Keep the background ornament quieter behind readable content. */
+body[data-screen="intro"]::before,
+body[data-screen="profile"]::before {
+  opacity: 0.45;
+}
+
+@keyframes romance-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes romance-dialog-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Avoid stacking a screen animation with its children's animation. */
+  .screen:not([hidden]) {
+    animation: none;
+  }
+
+  .screen[data-screen="intro"]:not([hidden]) > * {
+    animation: romance-enter 420ms ease-out both;
+  }
+
+  .screen[data-screen="intro"]:not([hidden]) > :nth-child(2) {
+    animation-delay: 40ms;
+  }
+
+  .screen[data-screen="intro"]:not([hidden]) > :nth-child(3) {
+    animation-delay: 80ms;
+  }
+
+  .screen[data-screen="intro"]:not([hidden]) > :nth-child(4) {
+    animation-delay: 120ms;
+  }
+
+  .screen[data-screen="intro"]:not([hidden]) > :nth-child(5) {
+    animation-delay: 160ms;
+  }
+
+  .screen[data-screen="intro"]:not([hidden]) > :nth-child(n + 6) {
+    animation-delay: 200ms;
+  }
+
+  .screen:not([hidden]):not([data-screen="intro"]) {
+    animation: romance-enter 260ms ease-out both;
+  }
+
+  .catalog-dialog[open] {
+    animation: romance-dialog-enter 220ms ease-out both;
+  }
+
+  .btn,
+  .favorite-button,
+  .app-navigation-button {
+    transition:
+      transform 160ms ease,
+      color 160ms ease,
+      background 160ms ease,
+      border-color 160ms ease,
+      box-shadow 160ms ease;
+  }
+
+  .btn:active:not(:disabled),
+  .favorite-button:active:not(:disabled),
+  .app-navigation-button:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .home-actions .btn:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Override previous motion rules when reduced motion is requested. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .card:hover,
+  .catalog-card:hover,
+  .catalog-card:hover .catalog-card-media img {
+    transform: none;
+  }
+}
+/* ---------- Art direction: inspired, not a cover replica ---------- */
+
+body[data-screen="intro"],
+body[data-screen="profile"] {
+  background:
+    radial-gradient(
+      ellipse at 15% 0%,
+      rgb(var(--rr-pink) / 0.18),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 90% 90%,
+      rgb(var(--rr-plum) / 0.14),
+      transparent 55%
+    ),
+    var(--color-bg);
+}
+
+/* Remove the literal cover sunburst. */
+body[data-screen="intro"]::before,
+body[data-screen="profile"]::before {
+  content: none;
+}
+
+body[data-screen="intro"] .title,
+body[data-screen="profile"] .profile-title {
+  background: none;
+  color: var(--color-text-strong);
+  filter: none;
+  text-shadow: none;
+}
+
+body[data-screen="intro"] .title::after,
+body[data-screen="profile"] .title::after {
+  background: linear-gradient(
+    90deg,
+    var(--color-gold),
+    var(--color-accent-strong),
+    transparent
+  );
+}
+
+body[data-screen="intro"] .eyebrow,
+body[data-screen="profile"] .eyebrow,
+body[data-screen="profile"] .profile-subtitle {
+  color: var(--color-gold);
+  font-weight: 400;
+}
+
+body[data-screen="intro"] .home-tagline {
+  color: var(--color-accent-soft);
+  text-shadow: none;
+}
+
+body[data-screen="intro"] .lead {
+  color: var(--color-text);
+  text-shadow: none;
+}
+
+body[data-screen="intro"] .hint {
+  color: var(--color-text-muted);
+  text-shadow: none;
+}
+
+body[data-screen="intro"] .btn-primary,
+body[data-screen="profile"] .btn-primary {
+  border-color: var(--color-border-strong);
+  background: var(--color-accent);
+  color: var(--color-text-strong);
+  box-shadow: var(--shadow-card);
+}
+
+body[data-screen="intro"] .btn-primary:hover,
+body[data-screen="profile"] .btn-primary:hover {
+  border-color: var(--color-accent-soft);
+  background: var(--color-accent-strong);
+  color: var(--color-text-strong);
+}
+
+body[data-screen="intro"] .btn-ghost {
+  border-color: var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  backdrop-filter: none;
+}
+
+body[data-screen="intro"] .btn-ghost:hover {
+  border-color: var(--color-border-strong);
+  background: var(--color-surface-2);
+}
+
+body[data-screen="intro"] .btn-text {
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+body[data-screen="intro"] .btn-text:hover {
+  color: var(--color-accent-soft);
+}
+
+body[data-screen="profile"] .profile-copy {
+  border-left-color: var(--color-accent-strong);
+  background: var(--color-surface);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+body[data-screen="profile"] .profile-radar {
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: none;
+  filter: none;
+}
+
+body[data-screen="intro"] :focus-visible,
+body[data-screen="profile"] :focus-visible {
+  outline-color: var(--color-focus);
+}
