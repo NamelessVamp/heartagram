@@ -374,3 +374,18 @@ body.has-app-navigation #app {
     transform: none;
   }
 }
+/* ---------- Compact mobile navigation labels ---------- */
+
+@media (max-width: 42rem) {
+  .app-navigation-button {
+    font-size: 0;
+    overflow-wrap: normal;
+  }
+
+  .app-navigation-button::after {
+    content: attr(data-mobile-label);
+    font-size: 0.75rem;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+}

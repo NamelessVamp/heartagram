@@ -110,6 +110,8 @@ function ensureAppNavigation() {
     button.type = "button";
     button.className = "app-navigation-button";
     button.textContent = item.label;
+    button.dataset.mobileLabel =
+      item.screen === "results" ? "Juegos" : item.label;
     button.dataset.action = item.action;
     button.dataset.navScreen = item.screen;
 
