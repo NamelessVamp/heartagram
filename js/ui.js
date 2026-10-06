@@ -226,12 +226,15 @@ function gameCard(game, { showBadges = false, showFavorite = true } = {}) {
 }
 
 function renderList(
-  containerId,
+  containerTarget,
   games,
   options,
   emptyText = "Nada por aquí todavía.",
 ) {
-  const container = document.getElementById(containerId);
+  const container =
+    typeof containerTarget === "string"
+      ? document.getElementById(containerTarget)
+      : containerTarget;
   container.replaceChildren();
   if (games.length === 0) {
     container.append(el("p", "empty", emptyText));
@@ -263,16 +266,206 @@ export function renderDuo(duo) {
   );
 }
 
-export function renderWishlist(games) {
-  renderList(
-    "list-wishlist",
-    games,
-    {
-      showBadges: true,
-      showFavorite: true,
-    },
-    "Todavía no has guardado ningún juego. Regresa a tus recomendaciones y marca ♡ Me interesa.",
+function createWishlistHeading(title, description) {
+  const heading = el("header", "wishlist-section-heading");
+
+  heading.append(
+    el("h3", "wishlist-section-title", title),
+    el("p", "wishlist-section-description", description),
   );
+
+  return heading;
+}
+
+function createCatalogWishlistCard(
+  game,
+  { onOpenCatalogGame, onRemoveCatalogGame },
+) {
+  const card = el("article", "catalog-wishlist-card");
+
+  const media = el("div", "catalog-wishlist-media");
+
+  const image = document.createElement("img");
+
+  image.src = game.cover;
+  image.alt = `Portada de ${game.name}`;
+  image.loading = "lazy";
+  image.decoding = "async";
+
+  image.addEventListener(
+    "error",
+    () => {
+      image.remove();
+
+      if (media.querySelector(".catalog-card-cover-fallback")) {
+        return;
+      }
+
+      const fallback = el("div", "catalog-card-cover-fallback", "SIN PORTADA");
+
+      fallback.setAttribute("aria-hidden", "true");
+
+      media.append(fallback);
+    },
+    {
+      once: true,
+    },
+  );
+
+  media.append(image);
+
+  const copy = el("div", "catalog-wishlist-copy");
+
+  copy.append(el("h4", "catalog-wishlist-title", game.name));
+
+  const metadata = [
+    game.release_year,
+    ...(game.platforms ?? []).map((platform) =>
+      platform === "SWITCH_2" ? "Switch 2" : "Switch",
+    ),
+  ].filter(Boolean);
+
+  if (metadata.length) {
+    copy.append(el("p", "catalog-wishlist-meta", metadata.join(" · ")));
+  }
+
+  const badges = el("div", "card-badges");
+
+  (game.genres ?? []).slice(0, 3).forEach((genre) => {
+    badges.append(el("span", "badge", genre));
+  });
+
+  copy.append(badges);
+
+  const actions = el("div", "catalog-wishlist-actions");
+
+  const detailsButton = el("button", "btn btn-ghost", "Ver detalles");
+
+  detailsButton.type = "button";
+
+  detailsButton.addEventListener("click", () => {
+    onOpenCatalogGame?.(game);
+  });
+
+  const removeButton = el("button", "favorite-button", "♥ En mi lista");
+
+  removeButton.type = "button";
+  removeButton.setAttribute("aria-pressed", "true");
+
+  removeButton.setAttribute("aria-label", `Quitar ${game.name} de mi lista`);
+
+  removeButton.addEventListener("click", () => {
+    onRemoveCatalogGame?.(game);
+  });
+
+  actions.append(detailsButton, removeButton);
+
+  copy.append(actions);
+
+  card.append(media, copy);
+
+  return card;
+}
+
+export function renderWishlist({
+  curatedGames = [],
+  catalogGames = [],
+  catalogLoading = false,
+  catalogError = false,
+  onOpenCatalogGame,
+  onRemoveCatalogGame,
+} = {}) {
+  const container = document.getElementById("list-wishlist");
+
+  container.replaceChildren();
+
+  const hasCuratedGames = curatedGames.length > 0;
+
+  const hasCatalogGames = catalogGames.length > 0;
+
+  if (
+    !hasCuratedGames &&
+    !hasCatalogGames &&
+    !catalogLoading &&
+    !catalogError
+  ) {
+    container.append(
+      el(
+        "p",
+        "empty",
+        "Todavía no has guardado ningún juego. Explora tus recomendaciones o el catálogo y marca ♡ Me interesa.",
+      ),
+    );
+
+    return;
+  }
+
+  if (hasCuratedGames) {
+    const curatedSection = el("section", "wishlist-section");
+
+    const curatedList = el("div", "wishlist-curated-list");
+
+    curatedSection.append(
+      createWishlistHeading(
+        "Elegidos para ti",
+        "Juegos guardados desde tus recomendaciones personalizadas.",
+      ),
+      curatedList,
+    );
+
+    container.append(curatedSection);
+
+    renderList(
+      curatedList,
+      curatedGames,
+      {
+        showBadges: true,
+        showFavorite: true,
+      },
+      "",
+    );
+  }
+
+  const catalogSection = el("section", "wishlist-section");
+
+  const catalogList = el("div", "catalog-wishlist-list");
+
+  catalogSection.append(
+    createWishlistHeading(
+      "Descubiertos en Explorar",
+      "Juegos guardados mientras navegabas por el catálogo.",
+    ),
+    catalogList,
+  );
+
+  if (catalogLoading) {
+    catalogList.append(
+      el("p", "catalog-status", "Cargando juegos guardados..."),
+    );
+  } else if (catalogError) {
+    catalogList.append(
+      el("p", "empty", "No se pudieron cargar algunos juegos del catálogo."),
+    );
+  } else if (!hasCatalogGames) {
+    catalogList.append(
+      el("p", "empty", "Todavía no has guardado juegos desde Explorar."),
+    );
+  } else {
+    const fragment = document.createDocumentFragment();
+
+    catalogGames.forEach((game) => {
+      fragment.append(
+        createCatalogWishlistCard(game, {
+          onOpenCatalogGame,
+          onRemoveCatalogGame,
+        }),
+      );
+    });
+
+    catalogList.append(fragment);
+  }
+
+  container.append(catalogSection);
 }
 
 /* ---------- Carts ---------- */

@@ -5,7 +5,7 @@ import { rankGames, buildSections, buildDuo } from "./recommender.js";
 
 import * as ui from "./ui.js";
 
-import { clearFavorites, getFavoriteIds } from "./favorites.js";
+import { clearFavorites, getFavoriteIds, toggleFavorite } from "./favorites.js";
 
 import {
   clearSavedProfile,
@@ -13,7 +13,12 @@ import {
   saveProfile,
 } from "./profile-storage.js";
 
-import { initializeCatalogExplorer } from "./catalog-ui.js";
+import {
+  initializeCatalogExplorer,
+  openCatalogGameDetails,
+} from "./catalog-ui.js";
+
+import { resolveCatalogFavorites, splitFavoriteIds } from "./catalog.js";
 
 // ?preview shows unverified games during development.
 const PREVIEW = new URLSearchParams(window.location.search).has("preview");
@@ -156,7 +161,7 @@ function applyProfile(profile) {
   ui.renderResults(sections);
   ui.renderDuo(duo);
 
-  refreshWishlist();
+  void refreshWishlist();
 }
 
 function finishQuiz() {
@@ -169,16 +174,61 @@ function finishQuiz() {
   showScreen("profile");
 }
 
-function getFavoriteGames() {
-  const favoriteIds = getFavoriteIds();
+function getCuratedFavoriteGames(favoriteIds = getFavoriteIds()) {
+  const { curatedIds } = splitFavoriteIds(favoriteIds);
 
-  return favoriteIds
-    .map((id) => state.games.find((game) => game.id === id))
-    .filter(Boolean);
+  const wantedIds = new Set(curatedIds);
+
+  return state.games.filter((game) => wantedIds.has(game.id));
 }
 
-function refreshWishlist() {
-  ui.renderWishlist(getFavoriteGames());
+async function refreshWishlist() {
+  const favoriteIds = getFavoriteIds();
+
+  const { catalogIds } = splitFavoriteIds(favoriteIds);
+
+  const curatedGames = getCuratedFavoriteGames(favoriteIds);
+
+  ui.renderWishlist({
+    curatedGames,
+    catalogGames: [],
+    catalogLoading: catalogIds.length > 0,
+    catalogError: false,
+    onOpenCatalogGame: openCatalogGameDetails,
+    onRemoveCatalogGame: removeCatalogFavorite,
+  });
+
+  if (catalogIds.length === 0) {
+    return;
+  }
+
+  try {
+    const catalogGames = await resolveCatalogFavorites(favoriteIds);
+
+    ui.renderWishlist({
+      curatedGames,
+      catalogGames,
+      catalogLoading: false,
+      catalogError: false,
+      onOpenCatalogGame: openCatalogGameDetails,
+      onRemoveCatalogGame: removeCatalogFavorite,
+    });
+  } catch (error) {
+    ui.renderWishlist({
+      curatedGames,
+      catalogGames: [],
+      catalogLoading: false,
+      catalogError: true,
+      onOpenCatalogGame: openCatalogGameDetails,
+      onRemoveCatalogGame: removeCatalogFavorite,
+    });
+
+    console.error("No se pudieron cargar los favoritos de IGDB.", error);
+  }
+}
+
+function removeCatalogFavorite(game) {
+  toggleFavorite(`igdb:${game.igdb_id}`);
 }
 
 function renderHomeState() {
@@ -301,8 +351,8 @@ const ACTIONS = {
   },
 
   "to-wishlist": () => {
-    refreshWishlist();
     showScreen("wishlist");
+    void refreshWishlist();
   },
 
   "clear-wishlist": () => {
@@ -313,7 +363,7 @@ const ACTIONS = {
     if (!shouldClear) return;
 
     clearFavorites();
-    refreshWishlist();
+    void refreshWishlist();
   },
 
   "to-gift": () => {
@@ -345,7 +395,9 @@ function bindActions() {
 async function init() {
   bindActions();
 
-  window.addEventListener("heartagram:favorites-changed", refreshWishlist);
+  window.addEventListener("heartagram:favorites-changed", () => {
+    void refreshWishlist();
+  });
 
   try {
     const [questions, archetypes, profileTexts, profileCombos, games] =
@@ -370,7 +422,7 @@ async function init() {
     if (savedProfile) {
       applyProfile(savedProfile);
     } else {
-      refreshWishlist();
+      void refreshWishlist();
     }
 
     renderHomeState();
