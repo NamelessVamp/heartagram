@@ -273,9 +273,11 @@ export function findCatalogGamesByIds(catalog, catalogIds) {
     return [];
   }
 
-  const wantedIds = new Set(catalogIds);
+  const gamesById = new Map(catalog.games.map((game) => [game.igdb_id, game]));
 
-  return catalog.games.filter((game) => wantedIds.has(game.igdb_id));
+  return catalogIds
+    .map((catalogId) => gamesById.get(catalogId))
+    .filter(Boolean);
 }
 
 export async function resolveCatalogFavorites(favoriteIds) {
