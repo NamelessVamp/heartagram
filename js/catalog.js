@@ -150,8 +150,7 @@ export function queryCatalog(
     .filter((game) => matchesValue(game.genres, genre))
     .filter((game) => matchesValue(game.game_modes, mode))
     .filter(
-      (game) =>
-        !gameType || gameType === "ALL" || game.game_type === gameType,
+      (game) => !gameType || gameType === "ALL" || game.game_type === gameType,
     )
     .sort((left, right) => compareGames(left, right, sort));
 
@@ -226,4 +225,67 @@ export async function loadGameDetails(catalog, game) {
   }
 
   return details;
+}
+
+export function isCatalogFavoriteId(favoriteId) {
+  return typeof favoriteId === "string" && favoriteId.startsWith("igdb:");
+}
+
+export function catalogIdFromFavoriteId(favoriteId) {
+  if (!isCatalogFavoriteId(favoriteId)) {
+    return null;
+  }
+
+  const rawId = favoriteId.slice("igdb:".length);
+
+  const parsedId = Number(rawId);
+
+  if (!Number.isInteger(parsedId) || parsedId <= 0) {
+    return null;
+  }
+
+  return parsedId;
+}
+
+export function splitFavoriteIds(favoriteIds) {
+  const curatedIds = [];
+  const catalogIds = [];
+
+  for (const favoriteId of favoriteIds) {
+    const catalogId = catalogIdFromFavoriteId(favoriteId);
+
+    if (catalogId === null) {
+      curatedIds.push(favoriteId);
+      continue;
+    }
+
+    catalogIds.push(catalogId);
+  }
+
+  return {
+    curatedIds,
+    catalogIds,
+  };
+}
+
+export function findCatalogGamesByIds(catalog, catalogIds) {
+  if (!catalog || !Array.isArray(catalog.games) || !Array.isArray(catalogIds)) {
+    return [];
+  }
+
+  const wantedIds = new Set(catalogIds);
+
+  return catalog.games.filter((game) => wantedIds.has(game.igdb_id));
+}
+
+export async function resolveCatalogFavorites(favoriteIds) {
+  const { catalogIds } = splitFavoriteIds(favoriteIds);
+
+  if (catalogIds.length === 0) {
+    return [];
+  }
+
+  const catalog = await loadCatalog();
+
+  return findCatalogGamesByIds(catalog, catalogIds);
 }
