@@ -77,6 +77,73 @@ function toPreviewGame(game) {
   };
 }
 
+function ensureAppNavigation() {
+  if (document.getElementById("app-navigation")) {
+    return;
+  }
+
+  const navigation = document.createElement("nav");
+  navigation.id = "app-navigation";
+  navigation.className = "app-navigation";
+  navigation.setAttribute("aria-label", "Navegación principal");
+
+  const items = [
+    { label: "Inicio", screen: "intro", action: "restart" },
+    {
+      label: "Perfil",
+      screen: "profile",
+      action: "continue-profile",
+      requiresProfile: true,
+    },
+    {
+      label: "Recomendaciones",
+      screen: "results",
+      action: "to-results",
+      requiresProfile: true,
+    },
+    { label: "Explorar", screen: "catalog", action: "to-catalog" },
+    { label: "Mi lista", screen: "wishlist", action: "to-wishlist" },
+  ];
+
+  for (const item of items) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "app-navigation-button";
+    button.textContent = item.label;
+    button.dataset.action = item.action;
+    button.dataset.navScreen = item.screen;
+
+    if (item.requiresProfile) {
+      button.dataset.requiresProfile = "true";
+    }
+
+    navigation.append(button);
+  }
+
+  document.body.append(navigation);
+}
+
+function updateAppNavigation(screenName) {
+  ensureAppNavigation();
+
+  const navigation = document.getElementById("app-navigation");
+  const isQuiz = screenName === "quiz";
+
+  navigation.hidden = isQuiz;
+  document.body.classList.toggle("has-app-navigation", !isQuiz);
+
+  for (const button of navigation.querySelectorAll("button")) {
+    const requiresProfile = button.dataset.requiresProfile === "true";
+    button.disabled = requiresProfile && !state.profile;
+
+    if (button.dataset.navScreen === screenName) {
+      button.setAttribute("aria-current", "page");
+    } else {
+      button.removeAttribute("aria-current");
+    }
+  }
+}
+
 function showScreen(name) {
   document.body.dataset.screen = name;
 
@@ -84,13 +151,15 @@ function showScreen(name) {
     screen.hidden = screen.dataset.screen !== name;
   });
 
+  updateAppNavigation(name);
+
   window.scrollTo({
     top: 0,
     behavior: "instant",
   });
 
   const heading = document.querySelector(
-    `[data-screen="${name}"] h1, [data-screen="${name}"] h2`,
+    `.screen[data-screen="${name}"] h1, ` + `.screen[data-screen="${name}"] h2`,
   );
 
   if (heading) {
