@@ -295,24 +295,74 @@ function renderDialogBadges(details) {
 }
 
 function renderGallery(details) {
-  elements.dialogGallery.replaceChildren();
+  const gallery = elements.dialogGallery;
+  gallery.replaceChildren();
 
-  const images = [
+  const sources = [
     details.cover?.url_2x,
     ...(details.screenshots ?? []),
     ...(details.artworks ?? []),
-  ].filter(Boolean);
+  ]
+    .filter((source) => typeof source === "string" && source.trim().length > 0)
+    .slice(0, 6);
 
-  images.slice(0, 6).forEach((source, index) => {
+  const message = createElement(
+    "p",
+    "catalog-gallery-status",
+    sources.length
+      ? "Cargando imágenes..."
+      : "No hay imágenes disponibles para este juego.",
+  );
+
+  message.setAttribute("role", "status");
+  gallery.append(message);
+
+  if (sources.length === 0) {
+    return;
+  }
+
+  let pending = sources.length;
+  let loaded = 0;
+
+  function updateStatus() {
+    pending -= 1;
+
+    if (loaded > 0) {
+      message.remove();
+    } else if (pending === 0) {
+      message.textContent =
+        "No se pudieron cargar las imágenes. Los detalles del juego siguen disponibles.";
+    }
+  }
+
+  sources.forEach((source, index) => {
     const image = document.createElement("img");
-    image.src = source;
-    image.alt =
-      index === 0
-        ? `Portada de ${details.name}`
-        : `Imagen ${index + 1} de ${details.name}`;
-    image.loading = "lazy";
+
+    image.alt = `Imagen ${index + 1} de ${details.name}`;
     image.decoding = "async";
-    elements.dialogGallery.append(image);
+    image.hidden = true;
+
+    image.addEventListener(
+      "load",
+      () => {
+        loaded += 1;
+        image.hidden = false;
+        updateStatus();
+      },
+      { once: true },
+    );
+
+    image.addEventListener(
+      "error",
+      () => {
+        image.remove();
+        updateStatus();
+      },
+      { once: true },
+    );
+
+    gallery.append(image);
+    image.src = source;
   });
 }
 

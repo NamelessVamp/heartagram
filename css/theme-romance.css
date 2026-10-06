@@ -428,3 +428,16 @@ body.has-app-navigation #app {
     padding-inline: 0;
   }
 }
+
+/* ---------- Gallery loading and unavailable state ---------- */
+
+.catalog-gallery-status {
+  grid-column: 1 / -1;
+  padding: var(--space-4);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
