@@ -479,3 +479,9 @@ export async function initializeCatalogExplorer() {
 export function isCatalogInitialized() {
   return initialized;
 }
+
+export async function openCatalogGameDetails(game) {
+  await initializeCatalogExplorer();
+  await openDetails(game);
+}
+``;
