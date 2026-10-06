@@ -13,6 +13,8 @@ import {
   saveProfile,
 } from "./profile-storage.js";
 
+import { initializeCatalogExplorer } from "./catalog-ui.js";
+
 // ?preview shows unverified games during development.
 const PREVIEW = new URLSearchParams(window.location.search).has("preview");
 
@@ -277,6 +279,16 @@ const ACTIONS = {
     }
 
     showScreen("results");
+  },
+
+  "to-catalog": async () => {
+    showScreen("catalog");
+
+    try {
+      await initializeCatalogExplorer();
+    } catch (error) {
+      console.error("No se pudo iniciar el explorador de juegos.", error);
+    }
   },
 
   "to-duo": () => {

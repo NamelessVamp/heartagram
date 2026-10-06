@@ -142,46 +142,49 @@ function createCatalogCard(game) {
   const card = createElement("article", "catalog-card");
 
   const openButton = createElement("button", "catalog-card-open");
+
   openButton.type = "button";
   openButton.dataset.igdbId = String(game.igdb_id);
+
   openButton.setAttribute("aria-label", `Ver detalles de ${game.name}`);
 
   const media = createElement("div", "catalog-card-media");
+
+  const image = document.createElement("img");
+
   image.src = game.cover;
   image.alt = `Portada de ${game.name}`;
   image.loading = "lazy";
   image.decoding = "async";
 
-  image.addEventListener("error", () => {
-    image.remove();
+  image.addEventListener(
+    "error",
+    () => {
+      image.remove();
 
-    media.append(
-      createElement(
+      if (media.querySelector(".catalog-card-cover-fallback")) {
+        return;
+      }
+
+      const fallback = createElement(
         "div",
         "catalog-card-cover-fallback",
         "PORTADA NO DISPONIBLE",
-      ),
-    );
-  });
+      );
 
-  media.append(image);
+      fallback.setAttribute("aria-hidden", "true");
 
-  image.addEventListener("error", () => {
-    image.remove();
-
-    const fallback = createElement(
-      "div",
-      "catalog-card-cover-fallback",
-      "PORTADA NO DISPONIBLE",
-    );
-
-    fallback.setAttribute("aria-hidden", "true");
-    media.append(fallback);
-  });
+      media.append(fallback);
+    },
+    {
+      once: true,
+    },
+  );
 
   media.append(image);
 
   const body = createElement("div", "catalog-card-body");
+
   body.append(createElement("h3", "catalog-card-title", game.name));
 
   const metadata = [game.release_year, game.game_type].filter(Boolean);
@@ -191,6 +194,7 @@ function createCatalogCard(game) {
   }
 
   body.append(createBadges(game));
+
   openButton.append(media, body);
 
   const favoriteButton = createElement(
@@ -198,8 +202,10 @@ function createCatalogCard(game) {
     "favorite-button catalog-card-favorite",
     favoriteLabel(game),
   );
+
   favoriteButton.type = "button";
   favoriteButton.dataset.catalogFavorite = String(game.igdb_id);
+
   updateFavoriteButton(favoriteButton, game);
 
   favoriteButton.addEventListener("click", () => {
@@ -211,6 +217,7 @@ function createCatalogCard(game) {
   });
 
   card.append(openButton, favoriteButton);
+
   return card;
 }
 
