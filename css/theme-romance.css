@@ -1,189 +1,109 @@
 /* =============================================================
    HEARTAGRAM :: theme-romance.css
-   Hybrid mode. Intro and profile take the Razorblade Romance
-   cover: magenta field, engraved sunburst, gold title, black
-   velvet panels. Every other screen keeps the black sleeve look.
-   Activated by body[data-screen], set in main.js showScreen().
-   Loads after theme.css.
+   Romance-inspired refinement, profile layout, navigation
+   and motion. Loads after base.css and theme.css.
+   Screen layouts target .screen, never body.
    ============================================================= */
 
-:root {
-  --rr-cover: 214 36 122;
-  --rr-cover-deep: 168 20 92;
-  --rr-gold-light: 243 217 160;
-  --rr-gold-dark: 142 116 83;
-  --rr-ink-on-pink: 42 7 22;
-}
-
-/* ---------- Magenta field ---------- */
+/* ---------- Atmosphere ---------- */
 
 body[data-screen="intro"],
 body[data-screen="profile"] {
   background:
     radial-gradient(
-      ellipse at 50% 28%,
-      rgb(255 214 232 / 0.35),
-      transparent 45%
+      ellipse at 15% 0%,
+      rgb(var(--rr-pink) / 0.18),
+      transparent 55%
     ),
     radial-gradient(
-      ellipse at 50% 110%,
-      rgb(var(--rr-cover-deep) / 0.9),
-      transparent 60%
+      ellipse at 90% 90%,
+      rgb(var(--rr-plum) / 0.14),
+      transparent 55%
     ),
-    rgb(var(--rr-cover));
+    var(--color-bg);
   background-attachment: fixed;
 }
 
-/* Engraved sunburst behind the content, like the cover halo */
-body[data-screen="intro"]::before,
-body[data-screen="profile"]::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    repeating-conic-gradient(
-      from 0deg at 50% 26%,
-      rgb(255 255 255 / 0.07) 0deg 0.6deg,
-      transparent 0.6deg 5deg
-    ),
-    repeating-radial-gradient(
-      circle at 50% 26%,
-      transparent 0 38px,
-      rgb(255 255 255 / 0.05) 38px 39px
-    );
-  -webkit-mask-image: radial-gradient(
-    circle at 50% 26%,
-    #000 0 45%,
-    transparent 75%
-  );
-  mask-image: radial-gradient(circle at 50% 26%, #000 0 45%, transparent 75%);
-}
-
-/* ---------- Gold title ---------- */
+/* ---------- Editorial titles ---------- */
 
 body[data-screen="intro"] .title,
 body[data-screen="profile"] .profile-title {
-  background: linear-gradient(
-    180deg,
-    rgb(var(--rr-gold-light)),
-    rgb(var(--rr-gold)) 55%,
-    rgb(var(--rr-gold-dark))
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--color-text-strong);
   text-shadow: none;
-  filter: drop-shadow(0 2px 0 rgb(var(--rr-ink-on-pink) / 0.55))
-    drop-shadow(0 0 18px rgb(var(--rr-ink-on-pink) / 0.25));
 }
 
 body[data-screen="intro"] .title::after,
 body[data-screen="profile"] .title::after {
   background: linear-gradient(
     90deg,
-    rgb(var(--rr-gold-light)),
-    rgb(var(--rr-gold)) 50%,
+    var(--color-gold),
+    var(--color-accent-strong),
     transparent
   );
 }
 
-/* ---------- Text on pink ---------- */
-
 body[data-screen="intro"] .eyebrow,
 body[data-screen="profile"] .eyebrow,
 body[data-screen="profile"] .profile-subtitle {
-  color: rgb(var(--rr-ink-on-pink));
-  font-weight: 700;
+  color: var(--color-gold);
+  font-weight: 400;
 }
 
 body[data-screen="intro"] .home-tagline {
-  color: rgb(var(--rr-white));
-  text-shadow: 0 1px 10px rgb(var(--rr-ink-on-pink) / 0.45);
+  color: var(--color-accent-soft);
+  text-shadow: none;
 }
 
-body[data-screen="intro"] .lead,
+body[data-screen="intro"] .lead {
+  color: var(--color-text);
+}
+
 body[data-screen="intro"] .hint {
-  color: rgb(var(--rr-white));
-  text-shadow: 0 1px 8px rgb(var(--rr-ink-on-pink) / 0.4);
+  color: var(--color-text-muted);
 }
 
-/* ---------- Buttons on pink: black velvet, like the vinyl sleeve ---------- */
+/* ---------- Primary and secondary actions ---------- */
 
 body[data-screen="intro"] .btn-primary,
 body[data-screen="profile"] .btn-primary {
-  border: 1px solid rgb(var(--rr-gold) / 0.7);
-  background: rgb(var(--rr-black));
-  color: rgb(var(--rr-gold-light));
-  box-shadow: 0 10px 28px rgb(var(--rr-ink-on-pink) / 0.45);
+  border-color: var(--color-border-strong);
+  background: var(--color-accent);
+  color: var(--color-text-strong);
+  box-shadow: var(--shadow-card);
 }
 
 body[data-screen="intro"] .btn-primary:hover,
 body[data-screen="profile"] .btn-primary:hover {
-  background: rgb(var(--rr-ink));
-  color: rgb(var(--rr-white));
-  border-color: rgb(var(--rr-gold-light));
+  border-color: var(--color-accent-soft);
+  background: var(--color-accent-strong);
 }
 
 body[data-screen="intro"] .btn-ghost {
-  border-color: rgb(255 255 255 / 0.55);
-  background: rgb(var(--rr-black) / 0.28);
-  color: rgb(var(--rr-white));
-  backdrop-filter: blur(4px);
+  border-color: var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
 }
 
 body[data-screen="intro"] .btn-ghost:hover {
-  border-color: rgb(var(--rr-white));
-  background: rgb(var(--rr-black) / 0.5);
+  border-color: var(--color-border-strong);
+  background: var(--color-surface-2);
 }
 
 body[data-screen="intro"] .btn-text {
-  color: rgb(var(--rr-ink-on-pink));
-  font-weight: 700;
+  color: var(--color-text-muted);
+  font-weight: 400;
 }
 
 body[data-screen="intro"] .btn-text:hover {
-  color: rgb(var(--rr-white));
+  color: var(--color-accent-soft);
 }
-
-/* ---------- Profile: reading panel on black velvet ---------- */
-
-body[data-screen="profile"] .profile-copy {
-  border-left: 2px solid rgb(var(--rr-gold));
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  background: rgb(var(--rr-black) / 0.78);
-  box-shadow: 0 18px 40px rgb(var(--rr-ink-on-pink) / 0.35);
-  backdrop-filter: blur(6px);
-}
-
-/* Radar sits on a black vinyl disc so its lines stay readable */
-body[data-screen="profile"] .profile-radar {
-  border-radius: 50%;
-  background:
-    radial-gradient(
-      circle at center,
-      rgb(var(--rr-cover)) 0 3%,
-      transparent 3.5%
-    ),
-    repeating-radial-gradient(
-      circle at center,
-      rgb(var(--rr-black)) 0 3px,
-      rgb(var(--rr-ink)) 3px 4px
-    );
-  box-shadow:
-    0 0 0 1px rgb(var(--rr-gold) / 0.5),
-    0 20px 50px rgb(var(--rr-ink-on-pink) / 0.5);
-  filter: none;
-}
-
-/* ---------- Focus ring visible on pink ---------- */
 
 body[data-screen="intro"] :focus-visible,
 body[data-screen="profile"] :focus-visible {
-  outline-color: rgb(var(--rr-white));
+  outline-color: var(--color-focus);
 }
-/* ---------- Profile layout repair ---------- */
+
+/* ---------- Profile layout ---------- */
 
 body[data-screen="profile"] #app {
   width: 100%;
@@ -210,7 +130,7 @@ body[data-screen="profile"] .screen[data-screen="profile"] {
   align-content: start;
 }
 
-body[data-screen="profile"] .screen[data-screen="profile"] > .eyebrow {
+body[data-screen="profile"] .screen > .eyebrow {
   grid-area: eyebrow;
 }
 
@@ -233,6 +153,10 @@ body[data-screen="profile"] .profile-copy {
   min-width: 0;
   max-width: none;
   margin-top: 0;
+  border-left: 2px solid var(--color-accent-strong);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: var(--color-surface);
+  box-shadow: none;
 }
 
 body[data-screen="profile"] .profile-radar {
@@ -242,9 +166,13 @@ body[data-screen="profile"] .profile-radar {
   width: min(100%, 320px);
   height: auto;
   margin: var(--space-4) 0;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: none;
+  filter: none;
 }
 
-body[data-screen="profile"] .screen[data-screen="profile"] > .btn {
+body[data-screen="profile"] .screen > .btn {
   grid-area: action;
   width: 100%;
 }
@@ -261,7 +189,8 @@ body[data-screen="profile"] .screen[data-screen="profile"] > .btn {
     column-gap: var(--space-7);
   }
 }
-/* ---------- Persistent application navigation ---------- */
+
+/* ---------- Persistent navigation ---------- */
 
 body.has-app-navigation #app {
   padding-top: 7rem;
@@ -290,9 +219,6 @@ body.has-app-navigation #app {
   border-radius: var(--radius-sm);
   color: var(--color-text-muted);
   font-size: var(--text-sm);
-  transition:
-    color var(--transition-fast),
-    background var(--transition-fast);
 }
 
 .app-navigation-button:hover:not(:disabled) {
@@ -340,23 +266,12 @@ body.has-app-navigation #app {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .app-navigation-button {
-    transition: none;
-  }
-}
-/* ---------- Motion refinement ---------- */
+/* ---------- Motion ---------- */
 
-/* Replace continuous decorative animation with a static atmosphere. */
+/* Decorative elements stay static; motion supports interaction. */
 .grain,
-[data-screen="intro"] .title {
+.screen[data-screen="intro"] .title {
   animation: none;
-}
-
-/* Keep the background ornament quieter behind readable content. */
-body[data-screen="intro"]::before,
-body[data-screen="profile"]::before {
-  opacity: 0.45;
 }
 
 @keyframes romance-enter {
@@ -384,7 +299,6 @@ body[data-screen="profile"]::before {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  /* Avoid stacking a screen animation with its children's animation. */
   .screen:not([hidden]) {
     animation: none;
   }
@@ -445,7 +359,6 @@ body[data-screen="profile"]::before {
   }
 }
 
-/* Override previous motion rules when reduced motion is requested. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -460,122 +373,4 @@ body[data-screen="profile"]::before {
   .catalog-card:hover .catalog-card-media img {
     transform: none;
   }
-}
-/* ---------- Art direction: inspired, not a cover replica ---------- */
-
-body[data-screen="intro"],
-body[data-screen="profile"] {
-  background:
-    radial-gradient(
-      ellipse at 15% 0%,
-      rgb(var(--rr-pink) / 0.18),
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse at 90% 90%,
-      rgb(var(--rr-plum) / 0.14),
-      transparent 55%
-    ),
-    var(--color-bg);
-}
-
-/* Remove the literal cover sunburst. */
-body[data-screen="intro"]::before,
-body[data-screen="profile"]::before {
-  content: none;
-}
-
-body[data-screen="intro"] .title,
-body[data-screen="profile"] .profile-title {
-  background: none;
-  color: var(--color-text-strong);
-  filter: none;
-  text-shadow: none;
-}
-
-body[data-screen="intro"] .title::after,
-body[data-screen="profile"] .title::after {
-  background: linear-gradient(
-    90deg,
-    var(--color-gold),
-    var(--color-accent-strong),
-    transparent
-  );
-}
-
-body[data-screen="intro"] .eyebrow,
-body[data-screen="profile"] .eyebrow,
-body[data-screen="profile"] .profile-subtitle {
-  color: var(--color-gold);
-  font-weight: 400;
-}
-
-body[data-screen="intro"] .home-tagline {
-  color: var(--color-accent-soft);
-  text-shadow: none;
-}
-
-body[data-screen="intro"] .lead {
-  color: var(--color-text);
-  text-shadow: none;
-}
-
-body[data-screen="intro"] .hint {
-  color: var(--color-text-muted);
-  text-shadow: none;
-}
-
-body[data-screen="intro"] .btn-primary,
-body[data-screen="profile"] .btn-primary {
-  border-color: var(--color-border-strong);
-  background: var(--color-accent);
-  color: var(--color-text-strong);
-  box-shadow: var(--shadow-card);
-}
-
-body[data-screen="intro"] .btn-primary:hover,
-body[data-screen="profile"] .btn-primary:hover {
-  border-color: var(--color-accent-soft);
-  background: var(--color-accent-strong);
-  color: var(--color-text-strong);
-}
-
-body[data-screen="intro"] .btn-ghost {
-  border-color: var(--color-border);
-  background: var(--color-surface);
-  color: var(--color-text);
-  backdrop-filter: none;
-}
-
-body[data-screen="intro"] .btn-ghost:hover {
-  border-color: var(--color-border-strong);
-  background: var(--color-surface-2);
-}
-
-body[data-screen="intro"] .btn-text {
-  color: var(--color-text-muted);
-  font-weight: 400;
-}
-
-body[data-screen="intro"] .btn-text:hover {
-  color: var(--color-accent-soft);
-}
-
-body[data-screen="profile"] .profile-copy {
-  border-left-color: var(--color-accent-strong);
-  background: var(--color-surface);
-  box-shadow: none;
-  backdrop-filter: none;
-}
-
-body[data-screen="profile"] .profile-radar {
-  border-radius: var(--radius-lg);
-  background: var(--color-surface);
-  box-shadow: none;
-  filter: none;
-}
-
-body[data-screen="intro"] :focus-visible,
-body[data-screen="profile"] :focus-visible {
-  outline-color: var(--color-focus);
 }
