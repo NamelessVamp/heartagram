@@ -1,3 +1,5 @@
+import { catalogLabel } from "./catalog-labels.js";
+
 // All DOM rendering lives here. Logic modules never touch the DOM.
 
 import { DIMENSIONS } from "./profile.js";
@@ -332,7 +334,7 @@ function createCatalogWishlistCard(
   const badges = el("div", "card-badges");
 
   (game.genres ?? []).slice(0, 3).forEach((genre) => {
-    badges.append(el("span", "badge", genre));
+    badges.append(el("span", "badge", catalogLabel(genre)));
   });
 
   copy.append(badges);
