@@ -19,7 +19,12 @@ import {
   openCatalogGameDetails,
 } from "./catalog-ui.js";
 
-import { resolveCatalogFavorites, splitFavoriteIds } from "./catalog.js";
+import {
+  favoriteIdForCatalogGame,
+  resolveCatalogFavorites,
+  splitFavoriteIds,
+} from "./catalog.js";
+import { getOwnedGameIds, setOwnedGame } from "./library.js";
 
 // ?preview shows unverified games during development.
 const PREVIEW = new URLSearchParams(window.location.search).has("preview");
@@ -252,28 +257,90 @@ function finishQuiz() {
   showScreen("profile");
 }
 
-function getCuratedFavoriteGames(favoriteIds = getFavoriteIds()) {
-  const { curatedIds } = splitFavoriteIds(favoriteIds);
-
+function getCuratedGamesByIds(ids) {
+  const { curatedIds } = splitFavoriteIds(ids);
   const wantedIds = new Set(curatedIds);
 
   return state.games.filter((game) => wantedIds.has(game.id));
 }
 
+function moveGameToLibrary(gameId) {
+  if (getFavoriteIds().includes(gameId)) {
+    toggleFavorite(gameId);
+  }
+
+  setOwnedGame(gameId, true);
+}
+
+function removeGameFromLibrary(gameId) {
+  setOwnedGame(gameId, false);
+}
+
+function moveCatalogGameToLibrary(game) {
+  moveGameToLibrary(favoriteIdForCatalogGame(game));
+}
+
+function removeCatalogGameFromLibrary(game) {
+  removeGameFromLibrary(favoriteIdForCatalogGame(game));
+}
+
 async function refreshWishlist() {
   const favoriteIds = getFavoriteIds();
+  const ownedIds = getOwnedGameIds();
 
-  const { catalogIds } = splitFavoriteIds(favoriteIds);
+  const favoriteSet = new Set(favoriteIds);
 
-  const curatedGames = getCuratedFavoriteGames(favoriteIds);
+  const ownedSet = new Set(ownedIds);
 
-  ui.renderWishlist({
-    curatedGames,
-    catalogGames: [],
+  const interestedCuratedGames = getCuratedGamesByIds(favoriteIds).filter(
+    (game) => !ownedSet.has(game.id),
+  );
+
+  const ownedCuratedGames = getCuratedGamesByIds(ownedIds);
+
+  const requestedIds = [...new Set([...favoriteIds, ...ownedIds])];
+
+  const { catalogIds } = splitFavoriteIds(requestedIds);
+
+  const render = ({
+    catalogGames = [],
+    catalogLoading = false,
+    catalogError = false,
+  } = {}) => {
+    const interestedCatalogGames = catalogGames.filter((game) => {
+      const gameId = favoriteIdForCatalogGame(game);
+
+      return favoriteSet.has(gameId) && !ownedSet.has(gameId);
+    });
+
+    const ownedCatalogGames = catalogGames.filter((game) =>
+      ownedSet.has(favoriteIdForCatalogGame(game)),
+    );
+
+    ui.renderWishlist({
+      interestedCuratedGames,
+      interestedCatalogGames,
+      ownedCuratedGames,
+      ownedCatalogGames,
+      catalogLoading,
+      catalogError,
+
+      onOpenCatalogGame: openCatalogGameDetails,
+
+      onRemoveCatalogGame: removeCatalogFavorite,
+
+      onMoveCuratedToLibrary: (game) => moveGameToLibrary(game.id),
+
+      onRemoveCuratedFromLibrary: (game) => removeGameFromLibrary(game.id),
+
+      onMoveCatalogToLibrary: moveCatalogGameToLibrary,
+
+      onRemoveCatalogFromLibrary: removeCatalogGameFromLibrary,
+    });
+  };
+
+  render({
     catalogLoading: catalogIds.length > 0,
-    catalogError: false,
-    onOpenCatalogGame: openCatalogGameDetails,
-    onRemoveCatalogGame: removeCatalogFavorite,
   });
 
   if (catalogIds.length === 0) {
@@ -281,27 +348,17 @@ async function refreshWishlist() {
   }
 
   try {
-    const catalogGames = await resolveCatalogFavorites(favoriteIds);
+    const catalogGames = await resolveCatalogFavorites(requestedIds);
 
-    ui.renderWishlist({
-      curatedGames,
+    render({
       catalogGames,
-      catalogLoading: false,
-      catalogError: false,
-      onOpenCatalogGame: openCatalogGameDetails,
-      onRemoveCatalogGame: removeCatalogFavorite,
     });
   } catch (error) {
-    ui.renderWishlist({
-      curatedGames,
-      catalogGames: [],
-      catalogLoading: false,
+    render({
       catalogError: true,
-      onOpenCatalogGame: openCatalogGameDetails,
-      onRemoveCatalogGame: removeCatalogFavorite,
     });
 
-    console.error("No se pudieron cargar los favoritos de IGDB.", error);
+    console.error("No se pudieron cargar los juegos de IGDB.", error);
   }
 }
 
@@ -486,6 +543,10 @@ async function init() {
   bindActions();
 
   window.addEventListener("heartagram:favorites-changed", () => {
+    void refreshWishlist();
+  });
+
+  window.addEventListener("heartagram:library-changed", () => {
     void refreshWishlist();
   });
 

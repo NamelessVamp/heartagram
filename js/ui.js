@@ -172,63 +172,73 @@ function favoriteAriaLabel(game) {
     : `Agregar ${game.title} a mi lista`;
 }
 
-function gameCard(game, { showBadges = false, showFavorite = true } = {}) {
+function gameCard(game, options = {}) {
+  const {
+    showBadges = false,
+    showFavorite = true,
+    onMoveToLibrary = null,
+    onRemoveFromLibrary = null,
+    libraryMode = false,
+  } = options;
+
   const card = el("article", "card");
   card.dataset.gameId = game.id;
-
   card.append(el("h4", "card-title", game.title));
 
   const hasVisiblePrice =
     game.free_to_play === true ||
     (Number.isInteger(game.price_mxn) && game.price_mxn > 0);
 
-  if (hasVisiblePrice) {
-    card.append(el("p", "card-price", formatPrice(game)));
-  }
-
-  if (game.why) {
-    card.append(el("p", "card-why", game.why));
-  }
-
+  if (hasVisiblePrice) card.append(el("p", "card-price", formatPrice(game)));
+  if (game.why) card.append(el("p", "card-why", game.why));
   if (game.couple.includes("INTI_LIBRARY_MATCH")) {
     card.append(el("p", "card-owned", "Inti ya lo tiene"));
   }
 
   if (showBadges) {
     const badges = el("div", "card-badges");
-
-    duoBadges(game).forEach((label) => {
-      badges.append(el("span", "badge", label));
-    });
-
+    duoBadges(game).forEach((label) => badges.append(el("span", "badge", label)));
     card.append(badges);
   }
 
-  if (showFavorite) {
-    const favoriteButton = el(
-      "button",
-      "favorite-button",
-      favoriteLabel(game.id),
-    );
+  const actions = el("div", "library-card-actions");
 
+  if (showFavorite && !libraryMode) {
+    const favoriteButton = el("button", "favorite-button", favoriteLabel(game.id));
     favoriteButton.type = "button";
     favoriteButton.dataset.favoriteId = game.id;
     favoriteButton.setAttribute("aria-label", favoriteAriaLabel(game));
     favoriteButton.setAttribute("aria-pressed", String(isFavorite(game.id)));
-
     favoriteButton.addEventListener("click", () => {
       const selected = toggleFavorite(game.id);
-
       favoriteButton.textContent = selected ? "♥ En mi lista" : "♡ Me interesa";
-
       favoriteButton.setAttribute("aria-pressed", String(selected));
-
       favoriteButton.setAttribute("aria-label", favoriteAriaLabel(game));
     });
-
-    card.append(favoriteButton);
+    actions.append(favoriteButton);
   }
 
+  if (!libraryMode && typeof onMoveToLibrary === "function") {
+    const ownedButton = el("button", "library-button", "Ya lo tengo");
+    ownedButton.type = "button";
+    ownedButton.setAttribute("aria-label", `Mover ${game.title} a Mi biblioteca`);
+    ownedButton.addEventListener("click", () => onMoveToLibrary(game));
+    actions.append(ownedButton);
+  }
+
+  if (libraryMode && typeof onRemoveFromLibrary === "function") {
+    const removeButton = el(
+      "button",
+      "library-button library-button-remove",
+      "Quitar de mi biblioteca",
+    );
+    removeButton.type = "button";
+    removeButton.setAttribute("aria-label", `Quitar ${game.title} de Mi biblioteca`);
+    removeButton.addEventListener("click", () => onRemoveFromLibrary(game));
+    actions.append(removeButton);
+  }
+
+  if (actions.children.length > 0) card.append(actions);
   return card;
 }
 
@@ -284,195 +294,204 @@ function createWishlistHeading(title, description) {
   return heading;
 }
 
-function createCatalogWishlistCard(
-  game,
-  { onOpenCatalogGame, onRemoveCatalogGame },
-) {
+function createCatalogWishlistCard(game, options) {
+  const {
+    onOpenCatalogGame,
+    onRemoveCatalogGame,
+    onMoveToLibrary,
+    onRemoveFromLibrary,
+    libraryMode = false,
+  } = options;
+
   const card = el("article", "catalog-wishlist-card");
-
   const media = el("div", "catalog-wishlist-media");
-
   const image = document.createElement("img");
-
   image.src = game.cover;
   image.alt = `Portada de ${game.name}`;
   image.loading = "lazy";
   image.decoding = "async";
-
-  image.addEventListener(
-    "error",
-    () => {
-      image.remove();
-
-      if (media.querySelector(".catalog-card-cover-fallback")) {
-        return;
-      }
-
-      const fallback = el("div", "catalog-card-cover-fallback", "SIN PORTADA");
-
-      fallback.setAttribute("aria-hidden", "true");
-
-      media.append(fallback);
-    },
-    {
-      once: true,
-    },
-  );
-
+  image.addEventListener("error", () => {
+    image.remove();
+    if (media.querySelector(".catalog-card-cover-fallback")) return;
+    const fallback = el("div", "catalog-card-cover-fallback", "SIN PORTADA");
+    fallback.setAttribute("aria-hidden", "true");
+    media.append(fallback);
+  }, { once: true });
   media.append(image);
 
   const copy = el("div", "catalog-wishlist-copy");
-
   copy.append(el("h4", "catalog-wishlist-title", game.name));
-
   const metadata = [
     game.release_year,
     ...(game.platforms ?? []).map((platform) =>
-      platform === "SWITCH_2" ? "Switch 2" : "Switch",
-    ),
+      platform === "SWITCH_2" ? "Switch 2" : "Switch"),
   ].filter(Boolean);
-
   if (metadata.length) {
     copy.append(el("p", "catalog-wishlist-meta", metadata.join(" · ")));
   }
 
   const badges = el("div", "card-badges");
-
-  (game.genres ?? []).slice(0, 3).forEach((genre) => {
-    badges.append(el("span", "badge", catalogLabel(genre)));
-  });
-
+  (game.genres ?? []).slice(0, 3).forEach((genre) =>
+    badges.append(el("span", "badge", catalogLabel(genre))));
   copy.append(badges);
 
   const actions = el("div", "catalog-wishlist-actions");
-
   const detailsButton = el("button", "btn btn-ghost", "Ver detalles");
-
   detailsButton.type = "button";
+  detailsButton.addEventListener("click", () => onOpenCatalogGame?.(game));
+  actions.append(detailsButton);
 
-  detailsButton.addEventListener("click", () => {
-    onOpenCatalogGame?.(game);
-  });
+  if (!libraryMode) {
+    const removeButton = el("button", "favorite-button", "♥ En mi lista");
+    removeButton.type = "button";
+    removeButton.setAttribute("aria-pressed", "true");
+    removeButton.setAttribute("aria-label", `Quitar ${game.name} de mi lista`);
+    removeButton.addEventListener("click", () => onRemoveCatalogGame?.(game));
 
-  const removeButton = el("button", "favorite-button", "♥ En mi lista");
-
-  removeButton.type = "button";
-  removeButton.setAttribute("aria-pressed", "true");
-
-  removeButton.setAttribute("aria-label", `Quitar ${game.name} de mi lista`);
-
-  removeButton.addEventListener("click", () => {
-    onRemoveCatalogGame?.(game);
-  });
-
-  actions.append(detailsButton, removeButton);
+    const ownedButton = el("button", "library-button", "Ya lo tengo");
+    ownedButton.type = "button";
+    ownedButton.setAttribute("aria-label", `Mover ${game.name} a Mi biblioteca`);
+    ownedButton.addEventListener("click", () => onMoveToLibrary?.(game));
+    actions.append(removeButton, ownedButton);
+  } else {
+    const removeButton = el(
+      "button",
+      "library-button library-button-remove",
+      "Quitar de mi biblioteca",
+    );
+    removeButton.type = "button";
+    removeButton.setAttribute("aria-label", `Quitar ${game.name} de Mi biblioteca`);
+    removeButton.addEventListener("click", () => onRemoveFromLibrary?.(game));
+    actions.append(removeButton);
+  }
 
   copy.append(actions);
-
   card.append(media, copy);
-
   return card;
 }
 
-export function renderWishlist({
-  curatedGames = [],
-  catalogGames = [],
-  catalogLoading = false,
-  catalogError = false,
-  onOpenCatalogGame,
-  onRemoveCatalogGame,
-} = {}) {
+export function renderWishlist(options = {}) {
+  const {
+    interestedCuratedGames = [],
+    interestedCatalogGames = [],
+    ownedCuratedGames = [],
+    ownedCatalogGames = [],
+    catalogLoading = false,
+    catalogError = false,
+    onOpenCatalogGame,
+    onRemoveCatalogGame,
+    onMoveCuratedToLibrary,
+    onRemoveCuratedFromLibrary,
+    onMoveCatalogToLibrary,
+    onRemoveCatalogFromLibrary,
+  } = options;
+
   const container = document.getElementById("list-wishlist");
-
   container.replaceChildren();
+  const hasInterested = interestedCuratedGames.length > 0 || interestedCatalogGames.length > 0;
+  const hasOwned = ownedCuratedGames.length > 0 || ownedCatalogGames.length > 0;
 
-  const hasCuratedGames = curatedGames.length > 0;
-
-  const hasCatalogGames = catalogGames.length > 0;
-
-  if (
-    !hasCuratedGames &&
-    !hasCatalogGames &&
-    !catalogLoading &&
-    !catalogError
-  ) {
-    container.append(
-      el(
-        "p",
-        "empty",
-        "Todavía no has guardado ningún juego. Explora tus recomendaciones o el catálogo y marca ♡ Me interesa.",
-      ),
-    );
-
+  if (!hasInterested && !hasOwned && !catalogLoading && !catalogError) {
+    container.append(el(
+      "p",
+      "empty",
+      "Todavía no has guardado ningún juego. Explora tus recomendaciones o el catálogo y marca ♡ Me interesa.",
+    ));
     return;
   }
 
-  if (hasCuratedGames) {
-    const curatedSection = el("section", "wishlist-section");
+  const interestedSection = el("section", "wishlist-section");
+  const interestedContent = el("div", "wishlist-group");
+  interestedSection.append(
+    createWishlistHeading("Me interesa", "Juegos guardados para revisar, comparar o comprar después."),
+    interestedContent,
+  );
 
-    const curatedList = el("div", "wishlist-curated-list");
-
-    curatedSection.append(
-      createWishlistHeading(
-        "Elegidos para ti",
-        "Juegos guardados desde tus recomendaciones personalizadas.",
-      ),
-      curatedList,
+  if (interestedCuratedGames.length > 0) {
+    const list = el("div", "wishlist-curated-list");
+    interestedContent.append(
+      createWishlistHeading("Elegidos para ti", "Juegos guardados desde tus recomendaciones personalizadas."),
+      list,
     );
-
-    container.append(curatedSection);
-
-    renderList(
-      curatedList,
-      curatedGames,
-      {
-        showBadges: true,
-        showFavorite: true,
-      },
-      "",
-    );
+    renderList(list, interestedCuratedGames, {
+      showBadges: true,
+      showFavorite: true,
+      onMoveToLibrary: onMoveCuratedToLibrary,
+    }, "");
   }
 
-  const catalogSection = el("section", "wishlist-section");
-
   const catalogList = el("div", "catalog-wishlist-list");
-
-  catalogSection.append(
-    createWishlistHeading(
-      "Descubiertos en Explorar",
-      "Juegos guardados mientras navegabas por el catálogo.",
-    ),
+  interestedContent.append(
+    createWishlistHeading("Descubiertos en Explorar", "Juegos guardados mientras navegabas por el catálogo."),
     catalogList,
   );
 
-  if (catalogLoading) {
-    catalogList.append(
-      el("p", "catalog-status", "Cargando juegos guardados..."),
-    );
-  } else if (catalogError) {
-    catalogList.append(
-      el("p", "empty", "No se pudieron cargar algunos juegos del catálogo."),
-    );
-  } else if (!hasCatalogGames) {
-    catalogList.append(
-      el("p", "empty", "Todavía no has guardado juegos desde Explorar."),
-    );
+  if (catalogLoading && interestedCatalogGames.length === 0) {
+    catalogList.append(el("p", "catalog-status", "Cargando juegos guardados..."));
+  } else if (catalogError && interestedCatalogGames.length === 0) {
+    catalogList.append(el("p", "empty", "No se pudieron cargar algunos juegos del catálogo."));
+  } else if (interestedCatalogGames.length === 0) {
+    catalogList.append(el("p", "empty", "Todavía no has guardado juegos desde Explorar."));
   } else {
     const fragment = document.createDocumentFragment();
-
-    catalogGames.forEach((game) => {
-      fragment.append(
-        createCatalogWishlistCard(game, {
-          onOpenCatalogGame,
-          onRemoveCatalogGame,
-        }),
-      );
-    });
-
+    interestedCatalogGames.forEach((game) => fragment.append(
+      createCatalogWishlistCard(game, {
+        onOpenCatalogGame,
+        onRemoveCatalogGame,
+        onMoveToLibrary: onMoveCatalogToLibrary,
+        libraryMode: false,
+      }),
+    ));
     catalogList.append(fragment);
   }
+  container.append(interestedSection);
 
-  container.append(catalogSection);
+  const librarySection = el("section", "wishlist-section library-section");
+  const libraryContent = el("div", "wishlist-group");
+  librarySection.append(
+    createWishlistHeading(
+      "Mi biblioteca",
+      "Juegos que ya tienes. Esta sección seguirá aquí después de usar el regalo.",
+    ),
+    libraryContent,
+  );
+
+  if (!hasOwned && !catalogLoading) {
+    libraryContent.append(el(
+      "p",
+      "empty",
+      "Cuando ya tengas un juego, usa el botón ‘Ya lo tengo’ para moverlo aquí.",
+    ));
+  }
+
+  if (ownedCuratedGames.length > 0) {
+    const list = el("div", "wishlist-curated-list");
+    libraryContent.append(list);
+    renderList(list, ownedCuratedGames, {
+      showBadges: true,
+      showFavorite: false,
+      libraryMode: true,
+      onRemoveFromLibrary: onRemoveCuratedFromLibrary,
+    }, "");
+  }
+
+  if (ownedCatalogGames.length > 0) {
+    const list = el("div", "catalog-wishlist-list");
+    const fragment = document.createDocumentFragment();
+    ownedCatalogGames.forEach((game) => fragment.append(
+      createCatalogWishlistCard(game, {
+        onOpenCatalogGame,
+        onRemoveFromLibrary: onRemoveCatalogFromLibrary,
+        libraryMode: true,
+      }),
+    ));
+    list.append(fragment);
+    libraryContent.append(list);
+  } else if (catalogLoading && ownedCuratedGames.length === 0) {
+    libraryContent.append(el("p", "catalog-status", "Cargando Mi biblioteca..."));
+  }
+
+  container.append(librarySection);
 }
 
 /* ---------- Carts ---------- */
