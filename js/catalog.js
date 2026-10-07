@@ -57,6 +57,34 @@ export function clearCatalogCache() {
   shardCache.clear();
 }
 
+export function igdbImageUrl(value, size = "cover_big") {
+  if (typeof value !== "string" || !value.trim()) {
+    return "";
+  }
+
+  const raw = value.trim();
+  const absolute = raw.startsWith("//") ? `https:${raw}` : raw;
+
+  if (/^https?:\/\//i.test(absolute)) {
+    return absolute.replace(/\/t_[^/]+\//, `/t_${size}/`);
+  }
+
+  const fileName = absolute.split("/").pop();
+
+  if (!fileName) {
+    return "";
+  }
+
+  const normalizedFileName = /\.[a-z0-9]+$/i.test(fileName)
+    ? fileName
+    : `${fileName}.jpg`;
+
+  return (
+    "https://images.igdb.com/igdb/image/upload/" +
+    `t_${size}/${normalizedFileName}`
+  );
+}
+
 export function favoriteIdForCatalogGame(gameOrId) {
   const id =
     typeof gameOrId === "object" && gameOrId !== null

@@ -1,3 +1,4 @@
+import { igdbImageUrl } from "./catalog.js";
 import { catalogLabel, formatCatalogDate } from "./catalog-labels.js";
 
 // Renders HEARTAGRAM's broad IGDB catalog explorer.
@@ -5,6 +6,7 @@ import { catalogLabel, formatCatalogDate } from "./catalog-labels.js";
 import {
   favoriteIdForCatalogGame,
   getCatalogFacets,
+  igdbImageUrl,
   loadCatalog,
   loadGameDetails,
   queryCatalog,
@@ -155,7 +157,8 @@ function createCatalogCard(game) {
 
   const image = document.createElement("img");
 
-  image.src = game.cover;
+  image.src = igdbImageUrl(game.cover, "cover_big");
+
   image.alt = `Portada de ${game.name}`;
   image.loading = "lazy";
   image.decoding = "async";
@@ -312,6 +315,8 @@ function renderGallery(details) {
     ...(details.artworks ?? []),
   ]
     .filter((source) => typeof source === "string" && source.trim().length > 0)
+    .map((source) => igdbImageUrl(source, "screenshot_big"))
+    .filter(Boolean)
     .slice(0, 6);
 
   const message = createElement(
