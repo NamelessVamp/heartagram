@@ -25,12 +25,6 @@ function el(tag, className, text) {
   return node;
 }
 
-export function formatPrice(game) {
-  if (game.free_to_play) return "Gratis";
-  if (Number.isInteger(game.price_mxn))
-    return `$${game.price_mxn.toLocaleString("es-MX")} MXN`;
-  return "Precio por confirmar";
-}
 
 /* ---------- Quiz ---------- */
 
@@ -493,45 +487,4 @@ export function renderWishlist(options = {}) {
   }
 
   container.append(librarySection);
-}
-
-/* ---------- Carts ---------- */
-
-export function renderCarts(carts) {
-  const container = document.getElementById("list-carts");
-  container.replaceChildren();
-
-  if (carts.length === 0) {
-    container.append(
-      el(
-        "p",
-        "empty",
-        "Todavía no hay suficientes precios confirmados para construir combinaciones con los $1,500 MXN. Tus juegos guardados permanecen en Mi lista.",
-      ),
-    );
-
-    return;
-  }
-
-  for (const cart of carts) {
-    const box = el("article", "cart");
-    const items = el("ul", "cart-items");
-    cart.items.forEach(({ game }) => {
-      const row = el("li");
-      row.append(
-        el("span", null, game.title),
-        el("span", null, formatPrice(game)),
-      );
-      items.append(row);
-    });
-
-    const total = el("div", "cart-total");
-    total.append(
-      el("span", null, `Total $${cart.total.toLocaleString("es-MX")}`),
-      el("span", null, `Te quedan $${cart.remaining.toLocaleString("es-MX")}`),
-    );
-
-    box.append(el("h4", "cart-name", cart.name), items, total);
-    container.append(box);
-  }
 }

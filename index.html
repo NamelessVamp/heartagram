@@ -292,51 +292,64 @@
             Vaciar lista
           </button>
 
-          <button type="button" class="btn btn-primary" data-action="to-carts">
-            Ver opciones con $1,500
-          </button>
+          <button
+          type="button"
+          class="btn btn-primary"
+          data-action="to-gift"
+        >
+          Ver mi regalo
+        </button>
         </div>
       </section>
 
-      <!-- CARRITOS -->
-      <section
-        class="screen"
-        data-screen="carts"
-        aria-labelledby="carts-title"
-        hidden
-      >
-        <h2 id="carts-title" class="title">Tu presupuesto</h2>
-        <p class="lead">
-          Tienes <strong>$1,500 MXN</strong> para elegir tus primeros juegos.
-          Estas combinaciones están construidas con títulos cuyo precio ya está
-          disponible en HEARTAGRAM.
-        </p>
-        <div id="list-carts" class="cart-list"></div>
-        <p class="hint">
-          Los juegos gratis pueden acompañar cualquier selección. Los juegos sin
-          precio disponible permanecen en Mi lista, pero no entran en el
-          cálculo.
-        </p>
-        <button type="button" class="btn btn-primary" data-action="to-gift">
-          Siguiente
-        </button>
-      </section>
-
-      <!-- REGALO (placeholder) -->
+      <!-- REGALO -->
       <section
         class="screen"
         data-screen="gift"
         aria-labelledby="gift-title"
         hidden
       >
+        <p class="eyebrow">GUARDADO PARA TI</p>
         <h2 id="gift-title" class="title">Tu regalo</h2>
-        <div id="gift-slot" class="gift-slot">
-          <p class="lead">Pronto.</p>
+
+        <div id="gift-slot" class="gift-slot gift-reveal">
+          <p class="lead">Tu Switch ya era el comienzo.</p>
+          <p>
+            También tienes códigos de Nintendo eShop para elegir los juegos
+            que realmente quieras hacer tuyos.
+          </p>
+          <p>
+            Explora el catálogo, guarda opciones en Mi lista y canjea los
+            códigos cuando estés lista.
+          </p>
+
+          <div class="gift-code-list" aria-label="Códigos de Nintendo eShop">
+            <article class="gift-code-card">
+              <span class="gift-code-label">Código 01</span>
+              <strong class="gift-code-mask">XXXX-XXXX-XXXX-XXXX</strong>
+            </article>
+            <article class="gift-code-card">
+              <span class="gift-code-label">Código 02</span>
+              <strong class="gift-code-mask">XXXX-XXXX-XXXX-XXXX</strong>
+            </article>
+          </div>
+
+          <p class="hint">
+            Los códigos reales se entregan por separado dentro del regalo.
+          </p>
         </div>
-        <button type="button" class="btn btn-primary" data-action="to-family">
-          Activar el online
-        </button>
+
+        <div class="gift-actions">
+          <button type="button" class="btn btn-ghost" data-action="to-wishlist">
+            Volver a Mi lista
+          </button>
+          <button type="button" class="btn btn-primary" data-action="to-family">
+            Activar Nintendo Switch Online
+          </button>
+        </div>
       </section>
+
+
 
       <!-- GRUPO FAMILIAR -->
       <section

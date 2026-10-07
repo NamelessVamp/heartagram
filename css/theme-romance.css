@@ -472,3 +472,53 @@ body.has-app-navigation #app {
   .library-button { transition: color 160ms ease, background 160ms ease, border-color 160ms ease, transform 160ms ease; }
   .library-button:active { transform: translateY(1px); }
 }
+
+/* ---------- Gift code reveal ---------- */
+.gift-reveal {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.gift-code-list {
+  display: grid;
+  gap: var(--space-3);
+  margin-block: var(--space-3);
+}
+
+.gift-code-card {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: rgb(var(--rr-pink) / 0.06);
+}
+
+.gift-code-label {
+  color: var(--color-gold);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.gift-code-mask {
+  overflow-wrap: anywhere;
+  color: var(--color-text-strong);
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  letter-spacing: 0.08em;
+}
+
+.gift-actions {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+@media (min-width: 42rem) {
+  .gift-code-list,
+  .gift-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
