@@ -582,3 +582,14 @@ body.has-app-navigation #app {
     font-size: 0.78rem;
   }
 }
+/* ---------- Final navigation clearance ---------- */
+
+@media (min-width: 42.01rem) {
+  body.has-app-navigation #app {
+    padding-top: 10rem;
+  }
+
+  .screen[data-screen="gift"] {
+    padding-top: 0;
+  }
+}
