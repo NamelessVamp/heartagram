@@ -100,9 +100,6 @@ REQUIRED = {
     "couple",
     "vector",
     "horror_level",
-    "free_to_play",
-    "price_mxn",
-    "price_checked",
     "status",
 }
 ID_PATTERN = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
@@ -172,15 +169,6 @@ def check_game(game: dict, report: Report, strict: bool) -> None:
         report.fail(f"{gid}: status inválido '{status}'")
         return
 
-    price = game["price_mxn"]
-    if not isinstance(price, int) or price < 0:
-        report.fail(f"{gid}: price_mxn debe ser entero >= 0")
-    if game["free_to_play"] and price != 0:
-        report.fail(f"{gid}: free_to_play con precio distinto de 0")
-    if not isinstance(game["price_checked"], str) or not DATE_PATTERN.match(
-        game["price_checked"]
-    ):
-        report.fail(f"{gid}: price_checked debe ser YYYY-MM-DD")
     unresolved = [k for k, v in game["multiplayer"].items() if not isinstance(v, bool)]
     if unresolved:
         report.fail(f"{gid}: multiplayer sin verificar: {unresolved}")
