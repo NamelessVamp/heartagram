@@ -443,10 +443,22 @@ body.has-app-navigation #app {
 }
 
 /* ---------- Wishlist and owned library ---------- */
-.wishlist-group { display: grid; gap: var(--space-5); }
-.library-section { margin-top: var(--space-7); }
-.library-card-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
-.library-card-actions .favorite-button { margin-top: 0; }
+.wishlist-group {
+  display: grid;
+  gap: var(--space-5);
+}
+.library-section {
+  margin-top: var(--space-7);
+}
+.library-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+.library-card-actions .favorite-button {
+  margin-top: 0;
+}
 .library-button {
   min-height: 42px;
   padding: 0.65rem 0.9rem;
@@ -460,17 +472,44 @@ body.has-app-navigation #app {
   text-transform: uppercase;
   cursor: pointer;
 }
-.library-button:hover { border-color: var(--color-gold); background: rgb(var(--rr-gold) / 0.14); color: var(--color-text-strong); }
-.library-button-remove { border-color: var(--color-border); background: transparent; color: var(--color-text-muted); }
-.library-button-remove:hover { border-color: var(--color-accent-strong); background: rgb(var(--rr-pink) / 0.08); color: var(--color-accent-soft); }
-.catalog-wishlist-actions .library-button { flex: 1 1 100%; }
+.library-button:hover {
+  border-color: var(--color-gold);
+  background: rgb(var(--rr-gold) / 0.14);
+  color: var(--color-text-strong);
+}
+.library-button-remove {
+  border-color: var(--color-border);
+  background: transparent;
+  color: var(--color-text-muted);
+}
+.library-button-remove:hover {
+  border-color: var(--color-accent-strong);
+  background: rgb(var(--rr-pink) / 0.08);
+  color: var(--color-accent-soft);
+}
+.catalog-wishlist-actions .library-button {
+  flex: 1 1 100%;
+}
 @media (max-width: 42rem) {
-  .library-card-actions { display: grid; }
-  .library-card-actions > *, .catalog-wishlist-actions > * { width: 100%; }
+  .library-card-actions {
+    display: grid;
+  }
+  .library-card-actions > *,
+  .catalog-wishlist-actions > * {
+    width: 100%;
+  }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .library-button { transition: color 160ms ease, background 160ms ease, border-color 160ms ease, transform 160ms ease; }
-  .library-button:active { transform: translateY(1px); }
+  .library-button {
+    transition:
+      color 160ms ease,
+      background 160ms ease,
+      border-color 160ms ease,
+      transform 160ms ease;
+  }
+  .library-button:active {
+    transform: translateY(1px);
+  }
 }
 
 /* ---------- Gift code reveal ---------- */
@@ -520,5 +559,26 @@ body.has-app-navigation #app {
   .gift-code-list,
   .gift-actions {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+/* ---------- Gift screen spacing fixes ---------- */
+
+.screen[data-screen="gift"] {
+  padding-top: clamp(6rem, 10vw, 8rem);
+}
+
+.gift-code-mask {
+  font-size: clamp(0.82rem, 2vw, 1.2rem);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+@media (max-width: 42rem) {
+  .screen[data-screen="gift"] {
+    padding-top: 5rem;
+  }
+
+  .gift-code-mask {
+    font-size: 0.78rem;
   }
 }
