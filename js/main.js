@@ -24,6 +24,7 @@ import {
   splitFavoriteIds,
 } from "./catalog.js";
 import { getOwnedGameIds, setOwnedGame } from "./library.js";
+import { initializeLocalAssistant } from "./ai-assistant-ui.js";
 
 // ?preview shows unverified games during development.
 const PREVIEW = new URLSearchParams(window.location.search).has("preview");
@@ -484,6 +485,10 @@ const ACTIONS = {
     void refreshWishlist();
   },
 
+  "to-assistant": () => {
+    showScreen("assistant");
+  },
+
   "clear-wishlist": () => {
     const shouldClear = window.confirm(
       "¿Quieres quitar todos los juegos de tu lista?",
@@ -548,6 +553,11 @@ async function init() {
     state.profileCombos = profileCombos;
 
     state.games = PREVIEW ? games.map(toPreviewGame) : games;
+
+    initializeLocalAssistant({
+      getProfile: () => state.profile,
+      getGames: () => state.games,
+    });
 
     // Restore the profile only once, after all data is loaded.
     const savedProfile = getSavedProfile();

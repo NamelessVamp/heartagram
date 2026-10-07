@@ -54,6 +54,14 @@
 
           <button
             type="button"
+            class="btn btn-ghost"
+            data-action="to-assistant"
+          >
+            Pregúntale a HEARTAGRAM
+          </button>
+
+          <button
+            type="button"
             class="btn btn-text"
             data-action="reset-profile"
           >
@@ -296,6 +304,53 @@
             Ver mi regalo
           </button>
         </div>
+      </section>
+
+
+
+      <!-- ASISTENTE LOCAL -->
+      <section
+        class="screen"
+        data-screen="assistant"
+        aria-labelledby="assistant-title"
+        hidden
+      >
+        <p class="eyebrow">MODO LOCAL</p>
+        <h2 id="assistant-title" class="title">Pregúntale a HEARTAGRAM</h2>
+        <p class="lead">
+          Usa tu perfil, Me interesa y Mi biblioteca para orientarte. Todavía no
+          envía información a servicios externos.
+        </p>
+
+        <div class="assistant-prompts" aria-label="Preguntas sugeridas">
+          <button type="button" data-assistant-prompt="¿Qué debería jugar primero?">
+            ¿Qué debería jugar primero?
+          </button>
+          <button type="button" data-assistant-prompt="Quiero algo oscuro">
+            Quiero algo oscuro
+          </button>
+          <button type="button" data-assistant-prompt="¿Qué puedo jugar con Inti?">
+            ¿Qué puedo jugar con Inti?
+          </button>
+          <button type="button" data-assistant-prompt="¿Qué hay en Mi lista?">
+            ¿Qué hay en Mi lista?
+          </button>
+        </div>
+
+        <form id="assistant-form" class="assistant-form">
+          <label for="assistant-input">¿Qué te gustaría jugar?</label>
+          <textarea
+            id="assistant-input"
+            rows="4"
+            placeholder="Ejemplo: quiero algo oscuro, pero no demasiado difícil"
+          ></textarea>
+          <button type="submit" class="btn btn-primary">Preguntar</button>
+        </form>
+
+        <article class="assistant-response-card" aria-live="polite">
+          <p class="eyebrow">HEARTAGRAM</p>
+          <p id="assistant-response"></p>
+        </article>
       </section>
 
       <!-- REGALO -->

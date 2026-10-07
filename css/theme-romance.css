@@ -659,3 +659,56 @@ body.has-app-navigation #app {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* ---------- Local AI assistant ---------- */
+.assistant-prompts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-block: var(--space-4);
+}
+
+.assistant-prompts button {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: rgb(var(--rr-pink) / 0.06);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.assistant-form {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.assistant-form label {
+  color: var(--color-gold);
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.assistant-form textarea {
+  width: 100%;
+  resize: vertical;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: rgb(var(--rr-black) / 0.7);
+  color: var(--color-text-strong);
+  font: inherit;
+}
+
+.assistant-response-card {
+  margin-top: var(--space-5);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: rgb(var(--rr-pink) / 0.07);
+}
+
+.assistant-response-card p:last-child {
+  margin-bottom: 0;
+}
