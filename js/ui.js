@@ -180,11 +180,6 @@ function gameCard(game, options = {}) {
   card.dataset.gameId = game.id;
   card.append(el("h4", "card-title", game.title));
 
-  const hasVisiblePrice =
-    game.free_to_play === true ||
-    (Number.isInteger(game.price_mxn) && game.price_mxn > 0);
-
-  if (hasVisiblePrice) card.append(el("p", "card-price", formatPrice(game)));
   if (game.why) card.append(el("p", "card-why", game.why));
   if (game.couple.includes("INTI_LIBRARY_MATCH")) {
     card.append(el("p", "card-owned", "Inti ya lo tiene"));
