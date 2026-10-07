@@ -12,6 +12,7 @@ import {
 } from "./catalog.js";
 
 import { isFavorite, toggleFavorite } from "./favorites.js";
+import { isOwnedGame, setOwnedGame } from "./library.js";
 
 const PAGE_SIZE = 24;
 
@@ -63,6 +64,7 @@ function cacheElements() {
   elements.dialogTitle = byId("catalog-dialog-title");
   elements.dialogBadges = byId("catalog-dialog-badges");
   elements.dialogFavorite = byId("catalog-dialog-favorite");
+  elements.dialogOwned = byId("catalog-dialog-owned");
   elements.dialogSummary = byId("catalog-dialog-summary");
   elements.dialogStorySection = byId("catalog-dialog-story-section");
   elements.dialogStory = byId("catalog-dialog-story");
@@ -125,6 +127,33 @@ function updateFavoriteButton(button, game) {
 function toggleCatalogFavorite(game, button) {
   toggleFavorite(favoriteIdForCatalogGame(game));
   updateFavoriteButton(button, game);
+}
+
+function updateOwnedButton(button, game) {
+  const gameId = favoriteIdForCatalogGame(game);
+  const owned = isOwnedGame(gameId);
+
+  button.textContent = owned ? "✓ En Mi biblioteca" : "Ya lo tengo";
+  button.setAttribute("aria-pressed", String(owned));
+  button.setAttribute(
+    "aria-label",
+    owned
+      ? `Quitar ${game.name} de Mi biblioteca`
+      : `Agregar ${game.name} a Mi biblioteca`,
+  );
+}
+
+function toggleCatalogOwned(game, favoriteButton, ownedButton) {
+  const gameId = favoriteIdForCatalogGame(game);
+  const nextOwned = !isOwnedGame(gameId);
+
+  if (nextOwned && isFavorite(gameId)) {
+    toggleFavorite(gameId);
+  }
+
+  setOwnedGame(gameId, nextOwned);
+  updateFavoriteButton(favoriteButton, game);
+  updateOwnedButton(ownedButton, game);
 }
 
 function createBadges(game) {
@@ -219,11 +248,28 @@ function createCatalogCard(game) {
     toggleCatalogFavorite(game, favoriteButton);
   });
 
+  const ownedButton = createElement(
+    "button",
+    "library-button catalog-card-owned",
+    "Ya lo tengo",
+  );
+
+  ownedButton.type = "button";
+  ownedButton.dataset.catalogOwned = String(game.igdb_id);
+  updateOwnedButton(ownedButton, game);
+
+  ownedButton.addEventListener("click", () => {
+    toggleCatalogOwned(game, favoriteButton, ownedButton);
+  });
+
+  const actions = createElement("div", "catalog-card-actions");
+  actions.append(favoriteButton, ownedButton);
+
   openButton.addEventListener("click", () => {
     openDetails(game);
   });
 
-  card.append(openButton, favoriteButton);
+  card.append(openButton, actions);
 
   return card;
 }
@@ -412,6 +458,7 @@ function renderDetails(indexGame, details) {
   renderDialogBadges(details);
   renderGallery(details);
   updateFavoriteButton(elements.dialogFavorite, indexGame);
+  updateOwnedButton(elements.dialogOwned, indexGame);
 }
 
 async function openDetails(game) {
@@ -501,7 +548,23 @@ function bindEvents() {
     renderResults();
   });
 
+  elements.dialogOwned.addEventListener("click", () => {
+    if (!state.selectedGame) return;
+    toggleCatalogOwned(
+      state.selectedGame,
+      elements.dialogFavorite,
+      elements.dialogOwned,
+    );
+    renderResults();
+  });
+
   window.addEventListener("heartagram:favorites-changed", () => {
+    if (state.catalog) {
+      renderResults();
+    }
+  });
+
+  window.addEventListener("heartagram:library-changed", () => {
     if (state.catalog) {
       renderResults();
     }
