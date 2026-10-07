@@ -253,11 +253,11 @@ function renderList(
 export function renderResults(sections) {
   renderList(
     "list-for-you",
-    sections.forYou.map(({ game }) => game),
+    sections.forYou.slice(0, 3).map(({ game }) => game),
   );
   renderList(
     "list-might-hook",
-    sections.mightHook.map(({ game }) => game),
+    sections.mightHook.slice(0, 3).map(({ game }) => game),
   );
   renderList(
     "list-out-of-zone",
@@ -268,7 +268,7 @@ export function renderResults(sections) {
 export function renderDuo(duo) {
   renderList(
     "list-duo",
-    duo.map(({ game }) => game),
+    duo.slice(0, 3).map(({ game }) => game),
     { showBadges: true },
   );
 }

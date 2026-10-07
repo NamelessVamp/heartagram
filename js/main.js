@@ -169,6 +169,8 @@ function applyProfile(profile) {
   state.sections = sections;
   state.duo = duo;
 
+  refreshDiscoverProfile();
+
   ui.renderProfile(
     profile,
     state.archetypes,
