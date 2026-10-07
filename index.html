@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/shell.css?v=1" />
     <link rel="stylesheet" href="css/screens/home.css?v=1" />
     <link rel="stylesheet" href="css/screens/discover.css?v=1" />
+    <link rel="stylesheet" href="css/screens/catalog.css?v=1" />
     <script type="module" src="js/main.js"></script>
   </head>
   <body data-screen="intro">
@@ -276,35 +277,33 @@
         </section>
       </section>
 
-      <!-- CATÁLOGO IGDB -->
+      <!-- EXPLORAR REDESIGN-04 -->
       <section
-        class="screen"
+        class="screen catalog-screen"
         data-screen="catalog"
         aria-labelledby="catalog-title"
         hidden
       >
-        <p class="eyebrow">Nintendo Switch · Switch 2</p>
-
-        <h2 id="catalog-title" class="title">Explorar juegos</h2>
-
-        <p class="hint">
-          Explora juegos de Nintendo Switch y Switch 2. Guarda los que te
-          interesen o muévelos a Mi biblioteca cuando ya los tengas.
-        </p>
+        <header class="catalog-screen-header">
+          <p class="catalog-screen-kicker">Nintendo Switch · Switch 2</p>
+          <h2 id="catalog-title" class="catalog-screen-title">Explorar</h2>
+          <p class="catalog-screen-lead">
+            Busca, filtra y guarda juegos para tu próxima sesión.
+          </p>
+        </header>
 
         <div id="catalog-loading" class="catalog-status" role="status">
           Cargando catálogo...
         </div>
 
         <div id="catalog-content" hidden>
-          <div class="catalog-toolbar">
+          <div class="catalog-toolbar" aria-label="Filtros del catálogo">
             <label class="catalog-field catalog-search">
               <span>Buscar</span>
-
               <input
                 id="catalog-query"
                 type="search"
-                placeholder="Nombre del juego..."
+                placeholder="Buscar por nombre..."
                 autocomplete="off"
                 spellcheck="false"
               />
@@ -312,7 +311,6 @@
 
             <label class="catalog-field">
               <span>Plataforma</span>
-
               <select id="catalog-platform">
                 <option value="ALL">Todas</option>
                 <option value="SWITCH">Nintendo Switch</option>
@@ -322,7 +320,6 @@
 
             <label class="catalog-field">
               <span>Género</span>
-
               <select id="catalog-genre">
                 <option value="ALL">Todos</option>
               </select>
@@ -330,7 +327,6 @@
 
             <label class="catalog-field">
               <span>Modo</span>
-
               <select id="catalog-mode">
                 <option value="ALL">Todos</option>
               </select>
@@ -338,7 +334,6 @@
 
             <label class="catalog-field">
               <span>Ordenar</span>
-
               <select id="catalog-sort">
                 <option value="NAME">Nombre</option>
                 <option value="RATING">Mejor calificados</option>
@@ -349,7 +344,6 @@
 
           <div class="catalog-summary">
             <p id="catalog-count" aria-live="polite"></p>
-
             <button id="catalog-clear" type="button" class="btn btn-text">
               Limpiar filtros
             </button>
@@ -361,18 +355,12 @@
             <button id="catalog-previous" type="button" class="btn btn-ghost">
               Anterior
             </button>
-
             <p id="catalog-page" class="hint"></p>
-
             <button id="catalog-next" type="button" class="btn btn-ghost">
               Siguiente
             </button>
           </nav>
         </div>
-
-        <button type="button" class="btn btn-ghost" data-action="restart">
-          Volver al inicio
-        </button>
       </section>
 
       <!-- WISHLIST -->
