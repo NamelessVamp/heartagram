@@ -167,7 +167,7 @@ function favoriteAriaLabel(game) {
     : `Agregar ${game.title} a mi lista`;
 }
 
-function gameCard(game, options = {}) {
+export function gameCard(game, options = {}) {
   const {
     showBadges = false,
     showFavorite = true,

@@ -1,0 +1,201 @@
+/* REDESIGN-03: Descubrir */
+.discover-screen {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-content: start;
+}
+
+.discover-header {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 58rem;
+}
+
+.discover-title {
+  margin: 0;
+  color: var(--shell-text);
+  font-family: Georgia, serif;
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.discover-lead {
+  max-width: 45rem;
+  margin: 0;
+  color: var(--shell-text-muted);
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.65;
+}
+
+.discover-profile {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: end;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+  border: 1px solid var(--shell-border-strong);
+  border-radius: var(--shell-radius-md);
+  background:
+    linear-gradient(135deg, rgb(210 47 121 / 0.13), transparent 58%),
+    var(--shell-surface);
+}
+
+.discover-profile-copy {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.discover-eyebrow,
+.discover-section-kicker {
+  margin: 0;
+  color: var(--shell-gold);
+  font-family: ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.discover-profile-title,
+.discover-section-title {
+  margin: 0;
+  color: var(--shell-text);
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.discover-profile-title {
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+}
+
+.discover-profile-subtitle {
+  margin: 0;
+  color: var(--shell-text-muted);
+}
+
+.discover-section {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.discover-section-heading {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.discover-section-title {
+  font-size: clamp(1.65rem, 3vw, 2.6rem);
+}
+
+.discover-section-copy {
+  max-width: 45rem;
+  margin: 0;
+  color: var(--shell-text-muted);
+  line-height: 1.55;
+}
+
+.discover-grid,
+.discover-duo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.discover-screen .card-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.discover-screen .card {
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+}
+
+.discover-screen #list-out-of-zone {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.discover-screen #list-out-of-zone .card {
+  max-width: 52rem;
+  border-color: var(--shell-border-strong);
+}
+
+.discover-moods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.discover-mood-button {
+  min-height: 2.75rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--shell-border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--shell-text-muted);
+  cursor: pointer;
+}
+
+.discover-mood-button[aria-pressed="true"] {
+  border-color: var(--shell-border-strong);
+  background: rgb(210 47 121 / 0.18);
+  color: var(--shell-text);
+}
+
+.discover-mood-results {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.discover-mood-card {
+  display: grid;
+  gap: 0.65rem;
+  min-height: 9rem;
+  padding: 1rem;
+  border: 1px solid var(--shell-border);
+  border-radius: var(--shell-radius-sm);
+  background: var(--shell-surface);
+}
+
+.discover-mood-card h4,
+.discover-mood-card p {
+  margin: 0;
+}
+
+.discover-mood-card h4 {
+  color: var(--shell-text);
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+}
+
+.discover-mood-card p {
+  color: var(--shell-text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 70rem) {
+  .discover-screen .card-list,
+  .discover-mood-results {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 48rem) {
+  .discover-profile {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .discover-profile .btn {
+    justify-self: start;
+  }
+
+  .discover-screen .card-list,
+  .discover-mood-results {
+    grid-template-columns: 1fr;
+  }
+}

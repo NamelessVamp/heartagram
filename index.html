@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/reset.css?v=1" />
     <link rel="stylesheet" href="css/shell.css?v=1" />
     <link rel="stylesheet" href="css/screens/home.css?v=1" />
+    <link rel="stylesheet" href="css/screens/discover.css?v=1" />
     <script type="module" src="js/main.js"></script>
   </head>
   <body data-screen="intro">
@@ -193,27 +194,86 @@
         </button>
       </section>
 
-      <!-- RECOMENDACIONES -->
+      <!-- DESCUBRIR REDESIGN-03 -->
       <section
-        class="screen"
+        class="screen discover-screen"
         data-screen="results"
         aria-labelledby="results-title"
         hidden
       >
-        <h2 id="results-title" class="title">Tus juegos</h2>
+        <header class="discover-header">
+          <p class="discover-eyebrow">Hecho alrededor de cómo juegas</p>
+          <h2 id="results-title" class="discover-title">Descubrir</h2>
+          <p class="discover-lead">
+            Recomendaciones personales, moods temporales y juegos para compartir.
+          </p>
+        </header>
 
-        <h3 class="section-title">Para empezar</h3>
-        <div id="list-for-you" class="card-list"></div>
+        <article class="discover-profile">
+          <div class="discover-profile-copy">
+            <p class="discover-section-kicker">Tu perfil</p>
+            <h3 id="discover-profile-title" class="discover-profile-title"></h3>
+            <p id="discover-profile-subtitle" class="discover-profile-subtitle"></p>
+          </div>
+          <button type="button" class="btn btn-ghost" data-action="continue-profile">
+            Ver perfil completo
+          </button>
+        </article>
 
-        <h3 class="section-title">Te podrían atrapar</h3>
-        <div id="list-might-hook" class="card-list"></div>
+        <section class="discover-section" aria-labelledby="discover-for-you-title">
+          <header class="discover-section-heading">
+            <p class="discover-section-kicker">Tu punto de partida</p>
+            <h3 id="discover-for-you-title" class="discover-section-title">Para ti</h3>
+            <p class="discover-section-copy">
+              Las opciones con mejor afinidad según tu perfil actual.
+            </p>
+          </header>
+          <div id="list-for-you" class="card-list"></div>
+        </section>
 
-        <h3 class="section-title">Sal de tu zona</h3>
-        <div id="list-out-of-zone" class="card-list"></div>
+        <section class="discover-section" aria-labelledby="discover-hook-title">
+          <header class="discover-section-heading">
+            <p class="discover-section-kicker">También podrían atraparte</p>
+            <h3 id="discover-hook-title" class="discover-section-title">Sigue explorando</h3>
+          </header>
+          <div id="list-might-hook" class="card-list"></div>
+        </section>
 
-        <button type="button" class="btn btn-primary" data-action="to-duo">
-          Para jugar con Inti
-        </button>
+        <section class="discover-section" aria-labelledby="discover-mood-title">
+          <header class="discover-section-heading">
+            <p class="discover-section-kicker">Elige cómo quieres sentir la sesión</p>
+            <h3 id="discover-mood-title" class="discover-section-title">Según tu mood</h3>
+            <p class="discover-section-copy">
+              Estos filtros son temporales y no modifican tu perfil guardado.
+            </p>
+          </header>
+          <div class="discover-moods" role="group" aria-label="Filtrar por mood">
+            <button type="button" class="discover-mood-button" data-discover-mood="DARK">Oscuro</button>
+            <button type="button" class="discover-mood-button" data-discover-mood="RELAXED">Relajado</button>
+            <button type="button" class="discover-mood-button" data-discover-mood="COMPETITIVE">Competitivo</button>
+            <button type="button" class="discover-mood-button" data-discover-mood="EXPLORE">Explorar</button>
+          </div>
+          <div id="discover-mood-results" class="discover-mood-results"></div>
+        </section>
+
+        <section id="discover-duo" class="discover-section" aria-labelledby="discover-duo-title">
+          <header class="discover-section-heading">
+            <p class="discover-section-kicker">Para compartir</p>
+            <h3 id="discover-duo-title" class="discover-section-title">Para jugar con Inti</h3>
+            <p class="discover-section-copy">
+              Los juegos que Inti ya tiene aparecen primero.
+            </p>
+          </header>
+          <div id="list-duo" class="card-list"></div>
+        </section>
+
+        <section class="discover-section" aria-labelledby="discover-out-title">
+          <header class="discover-section-heading">
+            <p class="discover-section-kicker">Una recomendación inesperada</p>
+            <h3 id="discover-out-title" class="discover-section-title">Sal de tu zona</h3>
+          </header>
+          <div id="list-out-of-zone" class="card-list"></div>
+        </section>
       </section>
 
       <!-- CATÁLOGO IGDB -->
@@ -312,30 +372,6 @@
 
         <button type="button" class="btn btn-ghost" data-action="restart">
           Volver al inicio
-        </button>
-      </section>
-
-      <!-- DUO -->
-      <section
-        class="screen"
-        data-screen="duo"
-        aria-labelledby="duo-title"
-        hidden
-      >
-        <h2 id="duo-title" class="title">Para jugar con Inti</h2>
-        <p class="lead">
-          Los que Inti ya tiene aparecen primero: pueden jugarlos desde hoy.
-        </p>
-        <ul class="badge-legend">
-          <li><span class="badge">ONLINE</span> cada quien desde su casa</li>
-          <li>
-            <span class="badge">MISMO CUARTO</span> cada quien con su consola
-          </li>
-          <li><span class="badge">UNA CONSOLA</span> pantalla compartida</li>
-        </ul>
-        <div id="list-duo" class="card-list"></div>
-        <button type="button" class="btn btn-primary" data-action="to-wishlist">
-          Ver mi lista
         </button>
       </section>
 

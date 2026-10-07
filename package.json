@@ -3,6 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node tests/run-qa.mjs && node tests/catalog-favorites-qa.mjs && node tests/catalog-labels-qa.mjs && node tests/library-qa.mjs && node tests/ai-context-qa.mjs && node tests/ai-local-qa.mjs && node tests/app-shell-qa.mjs && node tests/home-dashboard-qa.mjs"
+    "test": "node tests/run-qa.mjs && node tests/catalog-favorites-qa.mjs && node tests/catalog-labels-qa.mjs && node tests/library-qa.mjs && node tests/ai-context-qa.mjs && node tests/ai-local-qa.mjs && node tests/app-shell-qa.mjs && node tests/home-dashboard-qa.mjs && node tests/discover-ui-qa.mjs"
   }
 }

@@ -3,6 +3,7 @@
 import { computeProfile } from "./profile.js";
 import { updateAppShellNavigation } from "./app-shell.js";
 import { renderHomeDashboard } from "./home-dashboard.js";
+import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js";
 import { rankGames, buildSections, buildDuo } from "./recommender.js";
 
 import * as ui from "./ui.js";
@@ -422,7 +423,11 @@ const ACTIONS = {
       return;
     }
 
-    showScreen("duo");
+    showScreen("results");
+    document.getElementById("discover-duo")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   },
 
   "to-wishlist": () => {
@@ -512,6 +517,12 @@ async function init() {
     initializeLocalAssistant({
       getProfile: () => state.profile,
       getGames: () => state.games,
+    });
+
+    initializeDiscoverUI({
+      getGames: () => state.games,
+      getProfile: () => state.profile,
+      getArchetypes: () => state.archetypes,
     });
 
     // Restore the profile only once, after all data is loaded.
