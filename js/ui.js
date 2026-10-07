@@ -176,10 +176,15 @@ function gameCard(game, { showBadges = false, showFavorite = true } = {}) {
   const card = el("article", "card");
   card.dataset.gameId = game.id;
 
-  card.append(
-    el("h4", "card-title", game.title),
-    el("p", "card-price", formatPrice(game)),
-  );
+  card.append(el("h4", "card-title", game.title));
+
+  const hasVisiblePrice =
+    game.free_to_play === true ||
+    (Number.isInteger(game.price_mxn) && game.price_mxn > 0);
+
+  if (hasVisiblePrice) {
+    card.append(el("p", "card-price", formatPrice(game)));
+  }
 
   if (game.why) {
     card.append(el("p", "card-why", game.why));
@@ -477,7 +482,14 @@ export function renderCarts(carts) {
   container.replaceChildren();
 
   if (carts.length === 0) {
-    container.append(el("p", "empty", "Los precios se están confirmando."));
+    container.append(
+      el(
+        "p",
+        "empty",
+        "Todavía no hay suficientes precios confirmados para construir combinaciones con los $1,500 MXN. Tus juegos guardados permanecen en Mi lista.",
+      ),
+    );
+
     return;
   }
 
