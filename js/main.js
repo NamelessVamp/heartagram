@@ -2,6 +2,7 @@
 
 import { computeProfile } from "./profile.js";
 import { rankGames, buildSections, buildDuo } from "./recommender.js";
+import { buildCarts } from "./carts.js";
 
 import * as ui from "./ui.js";
 
@@ -36,6 +37,7 @@ const state = {
   ranked: [],
   sections: null,
   duo: [],
+  carts: [],
 
   index: 0,
   answers: {},
@@ -223,6 +225,8 @@ function applyProfile(profile) {
   state.sections = sections;
   state.duo = duo;
 
+  const carts = buildCarts(ranked, duo, sections.outOfZone);
+
   ui.renderProfile(
     profile,
     state.archetypes,
@@ -232,6 +236,8 @@ function applyProfile(profile) {
 
   ui.renderResults(sections);
   ui.renderDuo(duo);
+
+  ui.renderCarts(carts);
 
   void refreshWishlist();
 }
@@ -383,6 +389,7 @@ const ACTIONS = {
     clearSavedProfile();
 
     state.profile = null;
+    state.carts = [];
     state.ranked = [];
     state.sections = null;
     state.duo = [];
@@ -425,6 +432,17 @@ const ACTIONS = {
   "to-wishlist": () => {
     showScreen("wishlist");
     void refreshWishlist();
+  },
+
+  "to-carts": () => {
+    if (!state.profile) {
+      showScreen("intro");
+      return;
+    }
+
+    ui.renderCarts(state.carts);
+
+    showScreen("carts");
   },
 
   "clear-wishlist": () => {
