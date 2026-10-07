@@ -593,3 +593,43 @@ body.has-app-navigation #app {
     padding-top: 0;
   }
 }
+
+/* ---------- Nintendo eShop redemption guide ---------- */
+.redeem-guide {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: rgb(var(--rr-white) / 0.025);
+  text-align: left;
+}
+
+.redeem-guide summary {
+  color: var(--color-accent-soft);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.redeem-guide[open] summary {
+  margin-bottom: var(--space-3);
+}
+
+.redeem-steps {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--color-text);
+}
+/* ---------- Desktop navigation surface ---------- */
+
+@media (min-width: 42.01rem) {
+  .app-navigation {
+    background: rgb(8 6 8 / 0.98);
+    box-shadow:
+      0 12px 32px rgb(0 0 0 / 0.45),
+      inset 0 0 0 1px rgb(var(--rr-pink) / 0.08);
+    backdrop-filter: blur(18px);
+  }
+}
