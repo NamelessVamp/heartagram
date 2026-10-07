@@ -2,6 +2,7 @@
 
 import { computeProfile } from "./profile.js";
 import { updateAppShellNavigation } from "./app-shell.js";
+import { renderHomeDashboard } from "./home-dashboard.js";
 import { rankGames, buildSections, buildDuo } from "./recommender.js";
 
 import * as ui from "./ui.js";
@@ -176,6 +177,12 @@ function applyProfile(profile) {
 
   ui.renderResults(sections);
   ui.renderDuo(duo);
+
+  renderHomeDashboard({
+    profile: state.profile,
+    archetypes: state.archetypes,
+    sections: state.sections,
+  });
 
   void refreshWishlist();
 }
@@ -468,10 +475,20 @@ async function init() {
   bindActions();
 
   window.addEventListener("heartagram:favorites-changed", () => {
+    renderHomeDashboard({
+      profile: state.profile,
+      archetypes: state.archetypes,
+      sections: state.sections,
+    });
     void refreshWishlist();
   });
 
   window.addEventListener("heartagram:library-changed", () => {
+    renderHomeDashboard({
+      profile: state.profile,
+      archetypes: state.archetypes,
+      sections: state.sections,
+    });
     void refreshWishlist();
   });
 
@@ -503,6 +520,11 @@ async function init() {
     if (savedProfile) {
       applyProfile(savedProfile);
     } else {
+      renderHomeDashboard({
+        profile: null,
+        archetypes: state.archetypes,
+        sections: null,
+      });
       void refreshWishlist();
     }
 

@@ -12,64 +12,127 @@
     <link rel="stylesheet" href="css/tokens.css?v=1" />
     <link rel="stylesheet" href="css/reset.css?v=1" />
     <link rel="stylesheet" href="css/shell.css?v=1" />
+    <link rel="stylesheet" href="css/screens/home.css?v=1" />
     <script type="module" src="js/main.js"></script>
   </head>
   <body data-screen="intro">
     <div class="grain" aria-hidden="true"></div>
 
     <main id="app">
-      <!-- INTRO -->
-      <section class="screen" data-screen="intro" aria-labelledby="intro-title">
-        <p class="eyebrow">Para Adri</p>
+      <!-- INICIO REDESIGN-02 -->
+      <section
+        class="screen home-screen"
+        data-screen="intro"
+        aria-labelledby="intro-title"
+      >
+        <header class="home-header">
+          <p class="home-kicker">Para Adri</p>
+          <h1 id="intro-title" class="home-title">Heartagram</h1>
+          <p class="home-subtitle">
+            Tu espacio para descubrir, guardar y elegir la próxima aventura.
+          </p>
+        </header>
 
-        <h1 id="intro-title" class="title">Heartagram</h1>
-
-        <p class="home-tagline">A road map for your next adventure.</p>
-        <p id="intro-lead" class="lead">
-          Tu Nintendo Switch ya es tuya. Antes de elegir qué jugar, descubre qué
-          tipo de jugadora eres.
-        </p>
-
-        <p id="intro-hint" class="hint">12 preguntas · menos de 3 minutos</p>
-
-        <div id="new-profile-actions">
-          <button type="button" class="btn btn-primary" data-action="start">
-            Descubrir mi perfil
-          </button>
+        <div id="home-new-state" class="home-empty-card" hidden>
+          <p class="home-label">Empieza por tu perfil</p>
+          <h2 class="home-card-title">Descubre qué tipo de jugadora eres.</h2>
+          <p id="intro-lead" class="home-card-copy">
+            Doce elecciones rápidas para comenzar a encontrar juegos que encajen
+            contigo.
+          </p>
+          <p id="intro-hint" class="hint">12 preguntas · menos de 3 minutos</p>
+          <div id="new-profile-actions" class="home-secondary-actions">
+            <button type="button" class="btn btn-primary" data-action="start">
+              Descubrir mi perfil
+            </button>
+            <button type="button" class="btn btn-ghost" data-action="to-catalog">
+              Explorar juegos
+            </button>
+            <button type="button" class="btn btn-ghost" data-action="to-gift">
+              Ver mi regalo
+            </button>
+          </div>
         </div>
 
-        <div id="returning-profile-actions" class="home-actions" hidden>
-          <button
-            type="button"
-            class="btn btn-primary"
-            data-action="continue-profile"
-          >
-            Continuar con mi perfil
-          </button>
+        <div id="home-returning-state" hidden>
+          <article class="home-primary-card">
+            <div class="home-primary-copy">
+              <p class="home-label">Continuar</p>
+              <h2 class="home-card-title">Tu perfil, tus juegos y tu lista siguen aquí.</h2>
+              <p class="home-card-copy">
+                Retoma tus recomendaciones o decide qué te gustaría jugar hoy.
+              </p>
+            </div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-action="to-results"
+            >
+              Ir a Descubrir
+            </button>
+          </article>
 
-          <button type="button" class="btn btn-ghost" data-action="to-duo">
-            Jugar con Inti
-          </button>
+          <div class="home-grid">
+            <article class="home-panel">
+              <div>
+                <p class="home-label">Tu perfil</p>
+                <h2 id="home-profile-primary" class="home-card-title"></h2>
+                <p id="home-profile-secondary" class="home-card-copy"></p>
+              </div>
+              <div class="home-panel-actions">
+                <button
+                  type="button"
+                  class="btn btn-ghost"
+                  data-action="continue-profile"
+                >
+                  Ver perfil completo
+                </button>
+                <button type="button" class="btn btn-text" data-action="reset-profile">
+                  Rehacer test
+                </button>
+              </div>
+            </article>
 
-          <button type="button" class="btn btn-ghost" data-action="to-gift">
-            Mi regalo
-          </button>
+            <article class="home-panel">
+              <div>
+                <p class="home-label">Para hoy</p>
+                <h2 id="home-recommendation-title" class="home-card-title"></h2>
+                <p id="home-recommendation-copy" class="home-card-copy"></p>
+              </div>
+              <div class="home-panel-actions">
+                <button type="button" class="btn btn-ghost" data-action="to-results">
+                  Ver por qué
+                </button>
+              </div>
+            </article>
+          </div>
 
-          <button
-            type="button"
-            class="btn btn-ghost"
-            data-action="to-assistant"
-          >
-            Pregúntale a HEARTAGRAM
-          </button>
+          <section aria-labelledby="home-space-title">
+            <p id="home-space-title" class="home-label">Tu espacio</p>
+            <div class="home-stats">
+              <button type="button" class="home-stat" data-action="to-wishlist">
+                <span id="home-favorite-count" class="home-stat-value">0</span>
+                <span class="home-stat-label">en Me interesa</span>
+              </button>
+              <button type="button" class="home-stat" data-action="to-wishlist">
+                <span id="home-owned-count" class="home-stat-value">0</span>
+                <span class="home-stat-label">en Mi biblioteca</span>
+              </button>
+              <button type="button" class="home-stat" data-action="to-duo">
+                <span class="home-stat-value">2P</span>
+                <span class="home-stat-label">Jugar con Inti</span>
+              </button>
+            </div>
+          </section>
 
-          <button
-            type="button"
-            class="btn btn-text"
-            data-action="reset-profile"
-          >
-            Rehacer el test
-          </button>
+          <div id="returning-profile-actions" class="home-secondary-actions">
+            <button type="button" class="btn btn-ghost" data-action="to-gift">
+              Mi regalo
+            </button>
+            <button type="button" class="btn btn-ghost" data-action="to-assistant">
+              Abrir Chat
+            </button>
+          </div>
         </div>
       </section>
 
