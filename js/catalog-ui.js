@@ -1,4 +1,3 @@
-import { igdbImageUrl } from "./catalog.js";
 import { catalogLabel, formatCatalogDate } from "./catalog-labels.js";
 
 // Renders HEARTAGRAM's broad IGDB catalog explorer.
