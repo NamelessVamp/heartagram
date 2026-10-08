@@ -30,6 +30,7 @@ const state = {
 
 const elements = {};
 let initialized = false;
+let dialogReturnFocus = null;
 
 function byId(id) {
   const element = document.getElementById(id);
@@ -43,6 +44,8 @@ function byId(id) {
 
 function cacheElements() {
   elements.loading = byId("catalog-loading");
+  elements.statusLabel = byId("catalog-status-label");
+  elements.retry = byId("catalog-retry");
   elements.content = byId("catalog-content");
   elements.query = byId("catalog-query");
   elements.platform = byId("catalog-platform");
@@ -50,6 +53,7 @@ function cacheElements() {
   elements.mode = byId("catalog-mode");
   elements.sort = byId("catalog-sort");
   elements.count = byId("catalog-count");
+  elements.activeFilters = byId("catalog-active-filters");
   elements.clear = byId("catalog-clear");
   elements.grid = byId("catalog-grid");
   elements.previous = byId("catalog-previous");
@@ -171,6 +175,88 @@ function createBadges(game) {
   return container;
 }
 
+// HEARTAGRAM_EXPLORE_P14
+function hasActiveFilters() {
+  return Boolean(
+    state.query.trim() ||
+    state.platform !== "ALL" ||
+    state.genre !== "ALL" ||
+    state.mode !== "ALL" ||
+    state.sort !== "NAME"
+  );
+}
+
+function renderActiveFilters() {
+  const filters = [
+    state.query.trim() ? ["query", `Buscar: ${state.query.trim()}`] : null,
+    state.platform !== "ALL" ? ["platform", platformLabel(state.platform)] : null,
+    state.genre !== "ALL" ? ["genre", catalogLabel(state.genre)] : null,
+    state.mode !== "ALL" ? ["mode", catalogLabel(state.mode)] : null,
+    state.sort !== "NAME"
+      ? ["sort", state.sort === "RATING" ? "Mejor calificados" : "Más recientes"]
+      : null,
+  ].filter(Boolean);
+
+  elements.activeFilters.replaceChildren();
+  filters.forEach(([key, label]) => {
+    const chip = createElement("button", "catalog-filter-chip", label);
+    chip.type = "button";
+    chip.dataset.clearCatalogFilter = key;
+    chip.setAttribute("aria-label", `Quitar filtro ${label}`);
+    chip.addEventListener("click", () => clearSingleFilter(key));
+    elements.activeFilters.append(chip);
+  });
+  elements.clear.hidden = filters.length === 0;
+}
+
+function clearSingleFilter(key) {
+  if (key === "query") {
+    state.query = "";
+    elements.query.value = "";
+  } else if (key === "sort") {
+    state.sort = "NAME";
+    elements.sort.value = "NAME";
+  } else if (["platform", "genre", "mode"].includes(key)) {
+    state[key] = "ALL";
+    elements[key].value = "ALL";
+  }
+  state.page = 1;
+  renderResults();
+}
+
+function createCatalogEmptyState() {
+  const panel = createElement("section", "catalog-empty-state");
+  const mark = createElement("span", "catalog-empty-mark", "◇");
+  mark.setAttribute("aria-hidden", "true");
+  panel.append(
+    mark,
+    createElement("h3", "catalog-empty-title", "Sin señales con esos filtros"),
+    createElement("p", "catalog-empty-copy", "Prueba otra búsqueda o vuelve al catálogo completo."),
+  );
+  const reset = createElement("button", "btn btn-ghost", "Limpiar filtros");
+  reset.type = "button";
+  reset.addEventListener("click", resetFilters);
+  panel.append(reset);
+  return panel;
+}
+
+function renderCatalogSkeletons(count = 8) {
+  elements.grid.replaceChildren();
+  const fragment = document.createDocumentFragment();
+  for (let index = 0; index < count; index += 1) {
+    const card = createElement("article", "catalog-card catalog-card-skeleton");
+    card.setAttribute("aria-hidden", "true");
+    card.append(
+      createElement("div", "catalog-skeleton-media"),
+      createElement("div", "catalog-skeleton-line catalog-skeleton-title"),
+      createElement("div", "catalog-skeleton-line"),
+      createElement("div", "catalog-skeleton-line catalog-skeleton-short"),
+    );
+    fragment.append(card);
+  }
+  elements.grid.append(fragment);
+}
+
 function createCatalogCard(game) {
   const card = createElement("article", "catalog-card");
 
@@ -200,10 +286,17 @@ function createCatalogCard(game) {
         return;
       }
 
+      const initials = game.name
+        .split(/\s+/)
+        .filter(Boolean)
+        .slice(0, 3)
+        .map((word) => word[0])
+        .join("")
+        .toUpperCase();
       const fallback = createElement(
         "div",
         "catalog-card-cover-fallback",
-        "PORTADA NO DISPONIBLE",
+        initials || "◇",
       );
 
       fallback.setAttribute("aria-hidden", "true");
@@ -289,13 +382,7 @@ function renderResults() {
   elements.grid.replaceChildren();
 
   if (result.total === 0) {
-    elements.grid.append(
-      createElement(
-        "p",
-        "empty catalog-empty",
-        "No encontramos juegos con esos filtros.",
-      ),
-    );
+    elements.grid.append(createCatalogEmptyState());
   } else {
     const fragment = document.createDocumentFragment();
 
@@ -305,6 +392,8 @@ function renderResults() {
 
     elements.grid.append(fragment);
   }
+
+  renderActiveFilters();
 
   elements.count.textContent =
     result.total === 1
@@ -462,6 +551,7 @@ function renderDetails(indexGame, details) {
 }
 
 async function openDetails(game) {
+  dialogReturnFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
   elements.dialogLoading.hidden = false;
   elements.dialogLoading.textContent = "Cargando detalles...";
   elements.dialogBody.hidden = true;
@@ -486,6 +576,13 @@ function closeDialog() {
   if (elements.dialog.open) {
     elements.dialog.close();
   }
+}
+
+function restoreDialogFocus() {
+  if (dialogReturnFocus?.isConnected) {
+    dialogReturnFocus.focus({ preventScroll: true });
+  }
+  dialogReturnFocus = null;
 }
 
 function bindEvents() {
@@ -520,21 +617,26 @@ function bindEvents() {
   });
 
   elements.clear.addEventListener("click", resetFilters);
+  elements.retry.addEventListener("click", () => {
+    initialized = false;
+    void initializeCatalogExplorer();
+  });
 
   elements.previous.addEventListener("click", () => {
     if (state.page <= 1) return;
     state.page -= 1;
     renderResults();
-    elements.grid.scrollIntoView({ behavior: "smooth", block: "start" });
+    elements.grid.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
   });
 
   elements.next.addEventListener("click", () => {
     state.page += 1;
     renderResults();
-    elements.grid.scrollIntoView({ behavior: "smooth", block: "start" });
+    elements.grid.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
   });
 
   elements.dialogClose.addEventListener("click", closeDialog);
+  elements.dialog.addEventListener("close", restoreDialogFocus);
 
   elements.dialog.addEventListener("click", (event) => {
     if (event.target === elements.dialog) {
@@ -578,7 +680,8 @@ export async function initializeCatalogExplorer() {
   bindEvents();
 
   elements.loading.hidden = false;
-  elements.loading.textContent = "Cargando catálogo...";
+  elements.statusLabel.textContent = "Cargando catálogo...";
+  elements.retry.hidden = true;
   elements.content.hidden = true;
 
   try {
@@ -588,16 +691,18 @@ export async function initializeCatalogExplorer() {
     fillSelect(elements.genre, state.facets.genres, "Todos");
     fillSelect(elements.mode, state.facets.modes, "Todos");
 
-    renderResults();
+    elements.content.hidden = false;
+    renderCatalogSkeletons();
+    requestAnimationFrame(renderResults);
 
     elements.loading.hidden = true;
-    elements.content.hidden = false;
     initialized = true;
 
     return state.catalog;
   } catch (error) {
-    elements.loading.textContent =
-      "El catálogo todavía no está disponible en esta versión.";
+    elements.statusLabel.textContent =
+      "No se pudo abrir el catálogo. La colección local sigue disponible.";
+    elements.retry.hidden = false;
     console.error(error);
     throw error;
   }

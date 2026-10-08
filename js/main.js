@@ -20,7 +20,7 @@ import {
 import {
   initializeCatalogExplorer,
   openCatalogGameDetails,
-} from "./catalog-ui.js";
+} from "./catalog-ui.js?v=p14";
 
 import {
   favoriteIdForCatalogGame,

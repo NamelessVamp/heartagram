@@ -17,9 +17,9 @@
     <link rel="stylesheet" href="css/screens/quiz.css?v=1" />
     <link rel="stylesheet" href="css/screens/profile.css?v=1" />
     <link rel="stylesheet" href="css/screens/discover.css?v=p13" />
-    <link rel="stylesheet" href="css/screens/catalog.css?v=1" />
+    <link rel="stylesheet" href="css/screens/catalog.css?v=p14" />
     <link rel="stylesheet" href="css/screens/collection.css?v=1" />
-    <script type="module" src="js/main.js?v=p13"></script>
+    <script type="module" src="js/main.js?v=p14"></script>
     <script type="module" src="js/visual-system.js"></script>
     <link rel="stylesheet" href="css/screens/chat.css?v=1" />
     <link rel="stylesheet" href="css/screens/chat-refined.css?v=1" />
@@ -314,7 +314,10 @@
         </header>
 
         <div id="catalog-loading" class="catalog-status" role="status">
-          Cargando catálogo...
+          <span id="catalog-status-label">Cargando catálogo...</span>
+          <button id="catalog-retry" type="button" class="btn btn-ghost" hidden>
+            Reintentar
+          </button>
         </div>
 
         <div id="catalog-content" hidden>
@@ -364,8 +367,11 @@
           </div>
 
           <div class="catalog-summary">
-            <p id="catalog-count" aria-live="polite"></p>
-            <button id="catalog-clear" type="button" class="btn btn-text">
+            <div>
+              <p id="catalog-count" aria-live="polite"></p>
+              <div id="catalog-active-filters" class="catalog-active-filters" aria-label="Filtros activos"></div>
+            </div>
+            <button id="catalog-clear" type="button" class="btn btn-text" hidden>
               Limpiar filtros
             </button>
           </div>

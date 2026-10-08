@@ -332,3 +332,127 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* HEARTAGRAM_EXPLORE_P14 */
+.catalog-status {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.catalog-status .btn { margin: 0; }
+
+.catalog-active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-top: .55rem;
+}
+.catalog-filter-chip {
+  min-height: 2rem;
+  padding: .35rem .65rem;
+  border: 1px solid rgb(var(--rr-pink) / .35);
+  border-radius: 999px;
+  background: rgb(var(--rr-pink) / .08);
+  color: var(--shell-text-muted);
+  font-family: var(--font-mono);
+  font-size: .62rem;
+  cursor: pointer;
+}
+.catalog-filter-chip::after { content: " ×"; color: var(--shell-accent-soft); }
+.catalog-filter-chip:is(:hover, :focus-visible) {
+  border-color: var(--shell-accent-soft);
+  color: var(--shell-text);
+}
+
+.catalog-card-media { position: relative; overflow: hidden; background: var(--shell-bg); }
+.catalog-card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 220ms ease; }
+.catalog-card:hover .catalog-card-media img { transform: scale(1.025); }
+.catalog-card-cover-fallback {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle, rgb(var(--rr-pink) / .2), transparent 57%),
+    repeating-linear-gradient(135deg, rgb(var(--rr-white) / .025) 0 1px, transparent 1px 12px);
+  color: rgb(var(--rr-gold) / .72);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-style: italic;
+}
+.catalog-card-actions button[aria-pressed="true"] {
+  border-color: var(--shell-accent-soft);
+  background: rgb(var(--rr-pink) / .16);
+  color: var(--shell-text);
+}
+
+.catalog-empty-state {
+  grid-column: 1 / -1;
+  display: grid;
+  justify-items: start;
+  gap: .7rem;
+  min-height: 18rem;
+  padding: clamp(1.4rem, 4vw, 3rem);
+  border: 1px dashed var(--shell-border-strong);
+  border-radius: var(--shell-radius-md);
+  background: linear-gradient(145deg, rgb(var(--rr-pink) / .07), transparent), var(--shell-surface);
+}
+.catalog-empty-mark { color: var(--shell-accent-soft); font-size: 2rem; }
+.catalog-empty-title { margin: 0; color: var(--shell-text); font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 400; }
+.catalog-empty-copy { margin: 0; color: var(--shell-text-muted); }
+.catalog-empty-state .btn { margin-top: .5rem; }
+
+.catalog-card-skeleton { min-height: 27rem; padding: 0 1rem 1rem; pointer-events: none; }
+.catalog-skeleton-media,
+.catalog-skeleton-line {
+  background: linear-gradient(90deg, rgb(var(--rr-white) / .04), rgb(var(--rr-white) / .09), rgb(var(--rr-white) / .04));
+  background-size: 220% 100%;
+  animation: catalog-skeleton 1.2s linear infinite;
+}
+.catalog-skeleton-media { aspect-ratio: 3 / 4; margin: 0 -1rem 1rem; border-bottom: 1px solid var(--shell-border); }
+.catalog-skeleton-line { height: .75rem; margin-top: .7rem; border-radius: 99px; }
+.catalog-skeleton-title { height: 1.35rem; width: 80%; }
+.catalog-skeleton-short { width: 55%; }
+@keyframes catalog-skeleton { to { background-position: -220% 0; } }
+
+.catalog-dialog { overflow: auto; }
+.catalog-dialog-close {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  margin-left: auto;
+  border: 1px solid var(--shell-border-strong);
+  border-radius: 50%;
+  background: var(--shell-bg);
+  color: var(--shell-text);
+  cursor: pointer;
+}
+.catalog-dialog-section h3,
+.catalog-metadata dt {
+  color: var(--shell-gold);
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.catalog-gallery { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .65rem; }
+.catalog-gallery img { width: 100%; min-height: 10rem; height: 100%; object-fit: cover; border: 1px solid var(--shell-border); border-radius: .55rem; }
+.catalog-gallery img:first-of-type { grid-column: 1 / -1; }
+.catalog-gallery-status { grid-column: 1 / -1; color: var(--shell-text-muted); }
+
+@media(prefers-reduced-motion:reduce) {
+  .catalog-card-media img { transition: none; }
+  .catalog-skeleton-media, .catalog-skeleton-line { animation: none; }
+}
+@media(max-width:48rem) {
+  .catalog-active-filters { margin-top: .75rem; }
+  .catalog-gallery { grid-template-columns: 1fr; }
+  .catalog-gallery img:first-of-type { grid-column: auto; }
+}
