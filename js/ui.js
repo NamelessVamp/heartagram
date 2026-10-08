@@ -381,16 +381,11 @@ export function renderWishlist(options = {}) {
   const hasInterested = interestedCuratedGames.length > 0 || interestedCatalogGames.length > 0;
   const hasOwned = ownedCuratedGames.length > 0 || ownedCatalogGames.length > 0;
 
-  if (!hasInterested && !hasOwned && !catalogLoading && !catalogError) {
-    container.append(el(
-      "p",
-      "empty",
-      "Todavía no has guardado ningún juego. Explora tus recomendaciones o el catálogo y marca ♡ Me interesa.",
-    ));
-    return;
-  }
-
   const interestedSection = el("section", "wishlist-section");
+  interestedSection.id = "collection-panel-interested";
+  interestedSection.dataset.collectionPanel = "interested";
+  interestedSection.setAttribute("role", "tabpanel");
+  interestedSection.setAttribute("aria-labelledby", "collection-tab-interested");
   const interestedContent = el("div", "wishlist-group");
   interestedSection.append(
     createWishlistHeading("Me interesa", "Juegos guardados para revisar, comparar o comprar después."),
@@ -437,6 +432,10 @@ export function renderWishlist(options = {}) {
   container.append(interestedSection);
 
   const librarySection = el("section", "wishlist-section library-section");
+  librarySection.id = "collection-panel-owned";
+  librarySection.dataset.collectionPanel = "owned";
+  librarySection.setAttribute("role", "tabpanel");
+  librarySection.setAttribute("aria-labelledby", "collection-tab-owned");
   const libraryContent = el("div", "wishlist-group");
   librarySection.append(
     createWishlistHeading(
@@ -482,4 +481,15 @@ export function renderWishlist(options = {}) {
   }
 
   container.append(librarySection);
+
+  const counts = {
+    interested: interestedCuratedGames.length + interestedCatalogGames.length,
+    owned: ownedCuratedGames.length + ownedCatalogGames.length,
+  };
+
+  window.dispatchEvent(
+    new CustomEvent("heartagram:collection-rendered", {
+      detail: { counts },
+    }),
+  );
 }

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/screens/home.css?v=1" />
     <link rel="stylesheet" href="css/screens/discover.css?v=1" />
     <link rel="stylesheet" href="css/screens/catalog.css?v=1" />
+    <link rel="stylesheet" href="css/screens/collection.css?v=1" />
     <script type="module" src="js/main.js"></script>
   </head>
   <body data-screen="intro">
@@ -363,39 +364,57 @@
         </div>
       </section>
 
-      <!-- WISHLIST -->
+      <!-- MI LISTA REDESIGN-05 -->
       <section
-        class="screen"
+        class="screen collection-screen"
         data-screen="wishlist"
         aria-labelledby="wishlist-title"
         hidden
       >
-        <p class="eyebrow">Guardado en este dispositivo</p>
+        <header class="collection-header">
+          <p class="collection-kicker">Guardado en este dispositivo</p>
+          <h2 id="wishlist-title" class="collection-title">Mi lista</h2>
+          <p class="collection-lead">
+            Separa lo que te interesa de los juegos que ya forman parte de tu biblioteca.
+          </p>
+        </header>
 
-        <h2 id="wishlist-title" class="title">Mi lista</h2>
-
-        <p class="lead">
-          Estos son los juegos que te llamaron la atención. Puedes cambiar la
-          lista cuando quieras.
-        </p>
-
-        <div id="list-wishlist" class="card-list" aria-live="polite"></div>
-
-        <div class="wishlist-actions">
+        <div class="collection-tabs" role="tablist" aria-label="Colecciones">
           <button
+            id="collection-tab-interested"
             type="button"
-            class="btn btn-ghost"
-            data-action="clear-wishlist"
+            class="collection-tab"
+            role="tab"
+            aria-controls="collection-panel-interested"
+            data-collection-tab="interested"
           >
-            Vaciar lista
+            <span>Me interesa</span>
+            <span id="collection-interested-count" class="collection-tab-count">0</span>
           </button>
+          <button
+            id="collection-tab-owned"
+            type="button"
+            class="collection-tab"
+            role="tab"
+            aria-controls="collection-panel-owned"
+            data-collection-tab="owned"
+          >
+            <span>Mi biblioteca</span>
+            <span id="collection-owned-count" class="collection-tab-count">0</span>
+          </button>
+        </div>
 
-          <button type="button" class="btn btn-primary" data-action="to-gift">
-            Ver mi regalo
+        <div id="list-wishlist" aria-live="polite"></div>
+
+        <div class="collection-actions">
+          <button type="button" class="btn btn-ghost" data-action="clear-wishlist">
+            Vaciar Me interesa
+          </button>
+          <button type="button" class="btn btn-primary" data-action="to-catalog">
+            Explorar juegos
           </button>
         </div>
       </section>
-
 
 
       <!-- ASISTENTE LOCAL -->

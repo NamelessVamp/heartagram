@@ -4,6 +4,7 @@ import { computeProfile } from "./profile.js";
 import { updateAppShellNavigation } from "./app-shell.js";
 import { renderHomeDashboard } from "./home-dashboard.js";
 import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js";
+import { initializeCollectionUI } from "./collection-ui.js";
 import { rankGames, buildSections, buildDuo } from "./recommender.js";
 
 import * as ui from "./ui.js";
@@ -526,6 +527,8 @@ async function init() {
       getProfile: () => state.profile,
       getArchetypes: () => state.archetypes,
     });
+
+    initializeCollectionUI();
 
     // Restore the profile only once, after all data is loaded.
     const savedProfile = getSavedProfile();
