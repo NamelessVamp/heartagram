@@ -37,6 +37,8 @@ export function countCollectionItems({
 
 export function applyCollectionTab(value) {
   const active = normalizeCollectionTab(value);
+  const screen = document.querySelector('[data-screen="wishlist"]');
+  if (screen) screen.dataset.collectionActive = active;
 
   document.querySelectorAll("[data-collection-tab]").forEach((button) => {
     const selected = button.dataset.collectionTab === active;
@@ -80,6 +82,9 @@ export function initializeCollectionUI() {
 
     if (interestedCount) interestedCount.textContent = String(counts.interested);
     if (ownedCount) ownedCount.textContent = String(counts.owned);
+
+    const clearInterested = document.getElementById("collection-clear-interested");
+    if (clearInterested) clearInterested.hidden = counts.interested === 0;
 
     applyCollectionTab(readCollectionTab());
   });

@@ -576,3 +576,55 @@ export function renderWishlist(options = {}) {
     }),
   );
 }
+
+
+// HEARTAGRAM_COLLECTION_P15
+function decorateCollectionPanel(panel, type) {
+  if (!panel) return;
+  panel.classList.toggle("collection-panel-interested", type === "interested");
+  panel.classList.toggle("collection-panel-owned", type === "owned");
+
+  panel.querySelectorAll(".card, .catalog-wishlist-card").forEach((card) => {
+    card.dataset.collectionType = type;
+    if (type === "owned" && !card.querySelector(".collection-owned-seal")) {
+      const seal = document.createElement("span");
+      seal.className = "collection-owned-seal";
+      seal.textContent = "EN TU BIBLIOTECA";
+      card.prepend(seal);
+    }
+  });
+
+  const empty = panel.querySelector(".empty");
+  if (!empty || empty.dataset.collectionEnhanced === "true") return;
+  empty.dataset.collectionEnhanced = "true";
+  empty.classList.add("collection-empty-state");
+  empty.replaceChildren();
+
+  const mark = document.createElement("span");
+  mark.className = "collection-empty-mark";
+  mark.setAttribute("aria-hidden", "true");
+  mark.textContent = type === "owned" ? "◇" : "♡";
+
+  const title = document.createElement("h3");
+  title.className = "collection-empty-title";
+  title.textContent = type === "owned" ? "Tu biblioteca está lista para crecer" : "Todavía no has apartado ningún juego";
+
+  const copy = document.createElement("p");
+  copy.className = "collection-empty-copy";
+  copy.textContent = type === "owned"
+    ? "Marca Ya lo tengo desde Explorar o mueve aquí un juego de Me interesa."
+    : "Explora el catálogo y guarda juegos para revisarlos después.";
+
+  const action = document.createElement("button");
+  action.type = "button";
+  action.className = "btn btn-primary";
+  action.dataset.action = "to-catalog";
+  action.textContent = "Explorar juegos";
+
+  empty.append(mark, title, copy, action);
+}
+
+window.addEventListener("heartagram:collection-rendered", () => {
+  decorateCollectionPanel(document.getElementById("collection-panel-interested"), "interested");
+  decorateCollectionPanel(document.getElementById("collection-panel-owned"), "owned");
+});

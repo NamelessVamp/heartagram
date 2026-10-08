@@ -223,3 +223,106 @@
     width: 100%;
   }
 }
+
+
+/* HEARTAGRAM_COLLECTION_P15 */
+.collection-screen {
+  --collection-accent: var(--shell-accent-soft);
+}
+.collection-screen[data-collection-active="owned"] {
+  --collection-accent: var(--shell-gold);
+}
+.collection-tab:first-child::before { content: "♡"; color: var(--shell-accent-soft); }
+.collection-tab:last-child::before { content: "◇"; color: var(--shell-gold); }
+.collection-tab[aria-selected="true"] {
+  box-shadow: inset 0 -2px 0 var(--collection-accent);
+}
+
+.collection-panel-interested,
+.collection-panel-owned {
+  position: relative;
+  padding-top: 1rem;
+}
+.collection-panel-interested::before,
+.collection-panel-owned::before {
+  content: "WISHLIST // SAVED SIGNALS";
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: rgb(var(--rr-gold) / .36);
+  font-family: var(--font-mono);
+  font-size: .56rem;
+  letter-spacing: .12em;
+}
+.collection-panel-owned::before { content: "ARCHIVE // OWNED GAMES"; }
+
+.collection-panel-interested .card,
+.collection-panel-interested .catalog-wishlist-card {
+  border-top-color: var(--shell-accent-soft);
+}
+.collection-panel-owned .card,
+.collection-panel-owned .catalog-wishlist-card {
+  border-color: rgb(var(--rr-gold) / .3);
+  background:
+    linear-gradient(145deg, rgb(var(--rr-gold) / .055), transparent 55%),
+    var(--shell-surface);
+}
+.collection-owned-seal {
+  position: absolute;
+  z-index: 3;
+  top: .75rem;
+  right: .75rem;
+  padding: .3rem .48rem;
+  border: 1px solid rgb(var(--rr-gold) / .48);
+  border-radius: .25rem;
+  background: rgb(var(--rr-black) / .82);
+  color: var(--shell-gold);
+  font-family: var(--font-mono);
+  font-size: .52rem;
+  letter-spacing: .1em;
+}
+.collection-screen .card,
+.collection-screen .catalog-wishlist-card { position: relative; overflow: hidden; }
+
+.collection-empty-state {
+  display: grid;
+  justify-items: start;
+  gap: .75rem;
+  min-height: 17rem;
+  padding: clamp(1.5rem, 4vw, 3rem) !important;
+  border-color: var(--collection-accent) !important;
+  background:
+    radial-gradient(circle at 90% 10%, rgb(var(--rr-pink) / .12), transparent 30%),
+    var(--shell-surface) !important;
+}
+.collection-panel-owned .collection-empty-state {
+  background:
+    radial-gradient(circle at 90% 10%, rgb(var(--rr-gold) / .1), transparent 30%),
+    var(--shell-surface) !important;
+}
+.collection-empty-mark { color: var(--collection-accent); font-size: 2rem; }
+.collection-empty-title {
+  margin: 0;
+  color: var(--shell-text);
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 400;
+}
+.collection-empty-copy { max-width: 48ch; margin: 0; color: var(--shell-text-muted); line-height: 1.6; }
+.collection-empty-state .btn { margin-top: .5rem; color: white; }
+
+.collection-panel-owned .favorite-button { display: none; }
+.collection-panel-owned .library-button-remove {
+  border-color: rgb(var(--rr-gold) / .3);
+  color: var(--shell-text-muted);
+}
+.collection-panel-interested .library-button::before { content: "◇ "; color: var(--shell-gold); }
+
+.collection-screen[data-collection-active="owned"] #collection-clear-interested { display: none !important; }
+.collection-actions { justify-content: space-between; }
+
+@media(max-width:48rem) {
+  .collection-panel-interested::before,
+  .collection-panel-owned::before { position: static; display: block; margin-bottom: .75rem; }
+  .collection-owned-seal { top: .6rem; right: .6rem; }
+}
