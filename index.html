@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/screens/collection.css?v=1" />
     <script type="module" src="js/main.js"></script>
     <link rel="stylesheet" href="css/screens/chat.css?v=1" />
+    <link rel="stylesheet" href="css/screens/chat-refined.css?v=1" />
   </head>
   <body data-screen="intro">
     <div class="grain" aria-hidden="true"></div>
@@ -422,7 +423,7 @@
       <section class="screen chat-screen" data-screen="assistant" aria-labelledby="assistant-title" hidden>
         <h2 id="assistant-title">Chat</h2>
         <div class="chat-layout">
-          <details class="chat-history" open>
+          <details class="chat-history">
             <summary>Conversaciones</summary>
             <button id="chat-new" type="button">Nueva conversación</button>
             <div id="chat-threads"></div>
@@ -431,7 +432,7 @@
           <div class="chat-conversation">
             <div class="chat-context">Contexto: perfil, Me interesa y Mi biblioteca. Historial guardado en este navegador.</div>
             <div class="chat-body">
-              <div id="chat-empty"><h3>¿Qué te gustaría jugar?</h3></div>
+              <div id="chat-empty"><h3>¿Por dónde empezamos?</h3></div>
               <div id="chat-messages" role="log" aria-label="Mensajes de la conversación" aria-live="polite"></div>
               <div id="chat-starters">
                 <button type="button" data-assistant-prompt="¿Qué debería jugar primero?">Elige algo de mi biblioteca</button>

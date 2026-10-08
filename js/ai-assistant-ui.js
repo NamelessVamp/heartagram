@@ -38,6 +38,7 @@ export function initializeLocalAssistant({getProfile,getGames}) {
       const p=document.createElement("p"); p.textContent=message.content; article.append(label,p);log.append(article);
     }
     byId("chat-starters").hidden=Boolean(thread?.messages.length);
+    document.querySelector(".chat-screen").classList.toggle("chat-is-empty", !thread?.messages.length);
     byId("chat-empty").hidden=Boolean(thread?.messages.length);
     requestAnimationFrame(()=>{const body=document.querySelector(".chat-body"); if(body) body.scrollTop=body.scrollHeight;});
   }
@@ -57,6 +58,19 @@ export function initializeLocalAssistant({getProfile,getGames}) {
     thread.messages=thread.messages.slice(-40); input.value="";persist();render();input.focus();
   }
   input.maxLength=MAX_MESSAGE_LENGTH;
+  const sendButton=form.querySelector('[type="submit"]');
+  sendButton.textContent="↑";
+  function resizeComposer() {
+    input.style.height="44px";
+    input.style.height=Math.min(input.scrollHeight,160)+"px";
+    sendButton.disabled=!input.value.trim();
+  }
+  input.addEventListener("input",resizeComposer);
+  form.addEventListener("submit",()=>requestAnimationFrame(resizeComposer));
+  input.addEventListener("keydown",()=>requestAnimationFrame(resizeComposer));
+  document.querySelectorAll("[data-assistant-prompt]").forEach(b=>b.addEventListener("click",()=>requestAnimationFrame(resizeComposer)));
+  resizeComposer();
+
   form.addEventListener("submit",e=>{e.preventDefault();send();});
   input.addEventListener("keydown",e=>{if(shouldSend(e)){e.preventDefault();send();}});
   byId("chat-new").onclick=newThread;
