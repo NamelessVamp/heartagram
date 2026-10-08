@@ -124,3 +124,85 @@ body[data-screen="assistant"] .app-sidebar-nav {
 .shell-chat-history[data-integrated="true"] {
   overflow-x: hidden !important;
 }
+
+
+/* P0 friendly provider/network error */
+.chat-error-panel {
+  display: grid;
+  gap: .55rem;
+  margin-top: .8rem;
+  padding: 1rem;
+  border: 1px solid rgb(var(--rr-pink) / .42);
+  border-left: 3px solid var(--shell-accent);
+  border-radius: .75rem;
+  background: linear-gradient(135deg, rgb(var(--rr-pink) / .1), transparent), rgb(var(--rr-ink));
+}
+.chat-error-eyebrow {
+  color: var(--shell-gold);
+  font-family: var(--font-mono);
+  font-size: .66rem;
+  letter-spacing: .12em;
+}
+.chat-error-title { color: var(--shell-text); font-size: 1rem; }
+.chat-error-panel .chat-inline-error { margin: 0; color: var(--shell-text-muted); line-height: 1.55; }
+.chat-retry-action { justify-self: start; margin-top: .2rem; }
+
+
+/* Chat conversation editorial refinement */
+body[data-screen="assistant"] .chat-conversation::before {
+  content: "HEARTAGRAM // CONVERSATION SIGNAL";
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: rgb(var(--rr-gold) / 0.32);
+  font-family: var(--font-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.13em;
+  pointer-events: none;
+}
+
+body[data-screen="assistant"] .chat-user {
+  border: 1px solid rgb(var(--rr-pink) / 0.14);
+  background:
+    linear-gradient(
+      135deg,
+      rgb(var(--rr-pink) / 0.14),
+      rgb(var(--rr-wine) / 0.22)
+    );
+}
+
+body[data-screen="assistant"] .chat-assistant {
+  position: relative;
+}
+
+body[data-screen="assistant"] .chat-assistant::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: 0.3rem;
+  width: 2px;
+  height: 3rem;
+  border-radius: 2px;
+  background:
+    linear-gradient(
+      var(--shell-accent-soft),
+      transparent
+    );
+}
+
+body[data-screen="assistant"] .chat-privacy {
+  max-width: 52rem;
+  margin-inline: auto;
+  color: var(--shell-text-muted);
+  font-size: 0.72rem;
+}
+
+@media (max-width: 48rem) {
+  body[data-screen="assistant"] .chat-conversation::before {
+    display: none;
+  }
+
+  body[data-screen="assistant"] .chat-assistant::before {
+    display: none;
+  }
+}
