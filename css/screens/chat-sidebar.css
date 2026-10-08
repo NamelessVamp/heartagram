@@ -1,0 +1,22 @@
+/* Unified chat history, desktop only. Existing drawer remains on compact screens. */
+@media (min-width: 1025px) {
+  body[data-screen="assistant"]:not(.sidebar-collapsed) .app-sidebar {
+    display:flex; flex-direction:column; height:100dvh; overflow:hidden;
+  }
+  .app-sidebar .shell-new-chat {flex-shrink:0; width:100%; min-height:44px; margin:.7rem 0; text-align:left; border-radius:999px;}
+  .app-sidebar .shell-chat-history[data-integrated="true"] {
+    position:static; display:block; flex:1 1 auto; min-height:0; width:100%; max-width:none;
+    overflow:auto; margin:.75rem 0; padding:0; border:0; background:transparent; box-shadow:none;
+  }
+  .shell-chat-history[data-integrated="true"] > summary {display:none;}
+  .shell-chat-heading {font-size:.75rem; opacity:.65; margin:.5rem 0;}
+  .shell-chat-history:not([data-integrated="true"]) .shell-chat-heading {display:none;}
+  .shell-chat-history[data-integrated="true"] #chat-threads {display:grid; gap:.2rem;}
+  .shell-chat-history[data-integrated="true"] #chat-threads button {
+    width:100%; min-height:44px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+    text-align:left; border:0; border-radius:.7rem; padding:.6rem .7rem;
+  }
+  .shell-chat-history[data-integrated="true"] #chat-threads button[aria-pressed="true"] {background:rgba(190,65,115,.2);}
+  .shell-chat-history[data-integrated="true"] #chat-delete {font-size:.75rem; min-height:44px; margin-top:.5rem;}
+  body[data-screen="assistant"]:not(.sidebar-collapsed) .app-sidebar-secondary {margin-top:0; flex-shrink:0;}
+}

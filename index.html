@@ -20,7 +20,11 @@
     <link rel="stylesheet" href="css/screens/chat.css?v=1" />
     <link rel="stylesheet" href="css/screens/chat-refined.css?v=1" />
     <link rel="stylesheet" href="css/screens/secondary.css?v=1" />
-  </head>
+    <link rel="stylesheet" href="css/screens/chat-ux-v2.css?v=1" />
+  <link rel="stylesheet" href="css/screens/chat-sidebar.css?v=1" />
+<script type="module" src="js/chat-sidebar.js"></script>
+  <script type="module" src="js/chat-menu-popover.js"></script>
+</head>
   <body data-screen="intro">
     <div class="grain" aria-hidden="true"></div>
 
@@ -447,7 +451,8 @@
             </form>
           </div>
         </div>
-        <p id="chat-status" role="status">Las respuestas actuales son sugerencias básicas por reglas; todavía no interpretan el historial.</p>
+        <p id="chat-status" role="status">Al enviar, compartes el contexto de juegos y el historial reciente con Gemini.</p>
+<details class="chat-privacy"><summary>Privacidad del chat</summary><p>Al enviar, el perfil de juegos, la colección seleccionada y el historial reciente se comparten con Google Gemini. La clave permanece en el servidor.</p></details>
       </section>
 
       <!-- REGALO -->
