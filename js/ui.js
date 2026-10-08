@@ -1,6 +1,8 @@
+import { PLAYER_DIMENSIONS, PLAYER_DIMENSION_LABELS, normalizedTraitPercent, traitSignal } from "./player-journey.js?v=p1";
 import { catalogLabel } from "./catalog-labels.js";
 import { igdbImageUrl } from "./catalog.js";
 
+// HEARTAGRAM_DISCOVER_P13
 // All DOM rendering lives here. Logic modules never touch the DOM.
 
 import { DIMENSIONS } from "./profile.js";
@@ -28,32 +30,56 @@ function el(tag, className, text) {
 
 /* ---------- Quiz ---------- */
 
+// HEARTAGRAM_PLAYER_JOURNEY_P1
 export function renderQuestion(question, index, total, selectedId, onSelect) {
+  const current = index + 1;
   document.getElementById("quiz-counter").textContent =
-    `Pregunta ${index + 1} de ${total}`;
+    `⟦ SIGNAL ${String(current).padStart(2, "0")} / ${String(total).padStart(2, "0")} ⟧`;
   document.getElementById("quiz-question").textContent = question.text;
 
   const bar = document.getElementById("quiz-progress-bar");
-  bar.style.width = `${(index / total) * 100}%`;
-  bar.parentElement.setAttribute("aria-valuenow", String(index));
+  bar.style.width = `${(current / total) * 100}%`;
+  bar.parentElement.setAttribute("aria-valuenow", String(current));
+  bar.parentElement.setAttribute("aria-valuetext", `Señal ${current} de ${total}`);
 
   const container = document.getElementById("quiz-options");
   container.replaceChildren();
 
-  for (const option of question.options) {
-    const button = el("button", "quiz-option", option.text);
+  question.options.forEach((option, optionIndex) => {
+    const button = el("button", "quiz-option");
     button.type = "button";
     button.setAttribute("role", "radio");
     button.setAttribute("aria-checked", String(option.id === selectedId));
+    button.tabIndex = option.id === selectedId || (!selectedId && optionIndex === 0) ? 0 : -1;
+
+    const number = el("span", "quiz-option-index", String(optionIndex + 1).padStart(2, "0"));
+    number.setAttribute("aria-hidden", "true");
+    const copy = el("span", "quiz-option-copy", option.text);
+    button.append(number, copy);
+
     button.addEventListener("click", () => {
-      container
-        .querySelectorAll(".quiz-option")
-        .forEach((b) => b.setAttribute("aria-checked", "false"));
+      container.querySelectorAll(".quiz-option").forEach((candidate) => {
+        candidate.setAttribute("aria-checked", "false");
+        candidate.tabIndex = -1;
+      });
       button.setAttribute("aria-checked", "true");
+      button.tabIndex = 0;
       onSelect(option.id);
     });
     container.append(button);
-  }
+  });
+
+  container.onkeydown = (event) => {
+    if (!["ArrowDown", "ArrowRight", "ArrowUp", "ArrowLeft"].includes(event.key)) return;
+    event.preventDefault();
+    const options = [...container.querySelectorAll(".quiz-option")];
+    const activeIndex = Math.max(0, options.indexOf(document.activeElement));
+    const direction = ["ArrowDown", "ArrowRight"].includes(event.key) ? 1 : -1;
+    const target = options[(activeIndex + direction + options.length) % options.length];
+    options.forEach((option) => { option.tabIndex = -1; });
+    target.tabIndex = 0;
+    target.focus();
+  };
 }
 
 /* ---------- Profile ---------- */
@@ -96,12 +122,29 @@ export function renderProfile(
     findProfileCombo(profileCombos, primaryId, secondaryId),
   );
 
-  document.getElementById("profile-title").textContent =
-    `${primary.title} · ${secondary.title}`;
+  document.getElementById("profile-title").textContent = primary.title;
   document.getElementById("profile-subtitle").textContent =
-    `${primary.subtitle} · ${secondary.subtitle}`;
+    `${primary.subtitle} // señal secundaria: ${secondary.title}`;
   document.getElementById("profile-summary").textContent = copy.summary;
   document.getElementById("profile-body").textContent = copy.body;
+
+  const traits = document.getElementById("profile-traits");
+  traits.replaceChildren();
+  PLAYER_DIMENSIONS.forEach((dimension) => {
+    const value = profile.vector[dimension] ?? 0;
+    const card = el("article", "profile-trait");
+    const head = el("div", "profile-trait-head");
+    head.append(
+      el("span", "profile-trait-label", PLAYER_DIMENSION_LABELS[dimension]),
+      el("span", "profile-trait-value", traitSignal(value)),
+    );
+    const track = el("div", "profile-trait-track");
+    const fill = el("div", "profile-trait-fill");
+    fill.style.width = `${normalizedTraitPercent(value)}%`;
+    track.append(fill);
+    card.append(head, track);
+    traits.append(card);
+  });
 
   drawRadar(document.getElementById("profile-radar"), profile.vector);
 }
@@ -174,11 +217,35 @@ export function gameCard(game, options = {}) {
     onMoveToLibrary = null,
     onRemoveFromLibrary = null,
     libraryMode = false,
+    variant = "default",
+    sequence = null,
   } = options;
 
-  const card = el("article", "card");
+  const card = el("article", `card card-${variant}`);
   card.dataset.gameId = game.id;
-  card.append(el("h4", "card-title", game.title));
+  card.dataset.cardVariant = variant;
+
+  if (sequence != null) {
+    card.append(el("p", "card-sequence", `MATCH ${String(sequence).padStart(2, "0")}`));
+  }
+
+  const art = el("div", "card-signal-art");
+  art.setAttribute("aria-hidden", "true");
+  const initials = game.title
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 3)
+    .map((word) => word[0])
+    .join("")
+    .toUpperCase();
+  art.append(el("span", "card-signal-initials", initials));
+  card.append(art, el("h4", "card-title", game.title));
+
+  const safeGenres = Array.isArray(game.genres) ? game.genres.slice(0, 3) : [];
+  if (safeGenres.length) {
+    const meta = el("p", "card-signal-meta", safeGenres.join(" // "));
+    card.append(meta);
+  }
 
   if (game.why) card.append(el("p", "card-why", game.why));
   if (game.couple.includes("INTI_LIBRARY_MATCH")) {
@@ -250,18 +317,34 @@ function renderList(
   games.forEach((game) => container.append(gameCard(game, options)));
 }
 
+// HEARTAGRAM_DISCOVER_P13
 export function renderResults(sections) {
-  renderList(
-    "list-for-you",
-    sections.forYou.slice(0, 3).map(({ game }) => game),
-  );
+  const forYou = document.getElementById("list-for-you");
+  const matches = sections.forYou.slice(0, 3).map(({ game }) => game);
+  forYou.replaceChildren();
+
+  if (!matches.length) {
+    forYou.append(el("p", "empty", "Todavía no hay una señal principal."));
+  } else {
+    forYou.append(gameCard(matches[0], { variant: "hero", sequence: 1 }));
+    if (matches.length > 1) {
+      const support = el("div", "discover-support-grid");
+      matches.slice(1).forEach((game, index) => {
+        support.append(gameCard(game, { variant: "support", sequence: index + 2 }));
+      });
+      forYou.append(support);
+    }
+  }
+
   renderList(
     "list-might-hook",
     sections.mightHook.slice(0, 3).map(({ game }) => game),
+    { variant: "archive" },
   );
   renderList(
     "list-out-of-zone",
     sections.outOfZone ? [sections.outOfZone.game] : [],
+    { variant: "wildcard", sequence: "X" },
   );
 }
 
@@ -269,7 +352,7 @@ export function renderDuo(duo) {
   renderList(
     "list-duo",
     duo.slice(0, 3).map(({ game }) => game),
-    { showBadges: true },
+    { variant: "duo" },
   );
 }
 

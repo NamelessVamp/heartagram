@@ -3,11 +3,11 @@
 import { computeProfile } from "./profile.js";
 import { updateAppShellNavigation } from "./app-shell.js";
 import { renderHomeDashboard } from "./home-dashboard.js";
-import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js";
+import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js?v=p13";
 import { initializeCollectionUI } from "./collection-ui.js";
 import { rankGames, buildSections, buildDuo } from "./recommender.js";
 
-import * as ui from "./ui.js";
+import * as ui from "./ui.js?v=p13";
 
 import { clearFavorites, getFavoriteIds, toggleFavorite } from "./favorites.js";
 

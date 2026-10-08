@@ -21,7 +21,13 @@ const MOOD_CONFIG = {
   EXPLORE: {
     label: "Explorar",
     score: (game) =>
-      Number(game?.vector?.freedom ?? 0) + Number(game?.vector?.story ?? 0),
+      Number(
+        game?.vector?.freedom ??
+        game?.vector?.structure ??
+        0
+      ) +
+      Number(game?.vector?.story ?? 0) +
+      Number(game?.personality?.includes?.("EXPLORER") ?? false) * 2,
   },
 };
 
@@ -29,7 +35,7 @@ export function selectMoodGames(games, mood, limit = 3) {
   const config = MOOD_CONFIG[mood] ?? MOOD_CONFIG.DARK;
 
   return [...(Array.isArray(games) ? games : [])]
-    .filter((game) => game?.status === "VERIFICADO")
+    .filter((game) => game && game.title && game.vector)
     .sort((a, b) => config.score(b) - config.score(a))
     .slice(0, limit);
 }
@@ -46,6 +52,10 @@ export function discoverProfileNames(profile, archetypes = []) {
 function createMoodCard(game) {
   const card = document.createElement("article");
   card.className = "discover-mood-card";
+
+  const signal = document.createElement("span");
+  signal.className = "discover-mood-signal";
+  signal.textContent = "MOOD MATCH";
 
   const title = document.createElement("h4");
   title.textContent = game.title;
@@ -71,7 +81,7 @@ function createMoodCard(game) {
     updateButton();
   });
 
-  card.append(title, copy, button);
+  card.append(signal, title, copy, button);
   return card;
 }
 
@@ -80,7 +90,9 @@ export function refreshDiscoverProfile() {
   const title = document.getElementById("discover-profile-title");
   const subtitle = document.getElementById("discover-profile-subtitle");
   if (title) title.textContent = names.primary;
-  if (subtitle) subtitle.textContent = names.secondary;
+  if (subtitle) subtitle.textContent = names.secondary
+    ? `Señal secundaria // ${names.secondary}`
+    : "Perfil en calibración";
 }
 
 export function initializeDiscoverUI({ getGames, getProfile, getArchetypes }) {

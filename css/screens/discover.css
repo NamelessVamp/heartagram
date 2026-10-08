@@ -199,3 +199,142 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* HEARTAGRAM_DISCOVER_P13 */
+.discover-profile::before { display: none !important; }
+
+.discover-profile {
+  position: relative;
+  min-height: 11rem;
+  padding-right: clamp(1.25rem, 4vw, 4rem);
+  overflow: hidden;
+}
+.discover-profile::after {
+  content: "PLAYER SIGNAL";
+  position: absolute;
+  right: -1rem;
+  bottom: -.18em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(var(--rr-pink) / .1);
+  font-family: var(--font-display);
+  font-size: clamp(3.6rem, 9vw, 8rem);
+  font-style: italic;
+  line-height: .8;
+  pointer-events: none;
+}
+.discover-profile > * { position: relative; z-index: 1; }
+.discover-profile-subtitle {
+  color: var(--shell-gold);
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+#list-for-you {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.35fr) minmax(18rem, .65fr) !important;
+  gap: 1rem;
+}
+.discover-support-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.discover-screen .card {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: .7rem;
+  overflow: hidden;
+}
+.card-signal-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 7rem;
+  border: 1px solid rgb(var(--rr-pink) / .16);
+  border-radius: .7rem;
+  background:
+    radial-gradient(circle, rgb(var(--rr-pink) / .18), transparent 58%),
+    repeating-linear-gradient(135deg, rgb(var(--rr-white) / .025) 0 1px, transparent 1px 12px);
+  color: rgb(var(--rr-gold) / .62);
+}
+.card-signal-art::before,
+.card-signal-art::after {
+  content: "";
+  position: absolute;
+  width: 42%;
+  aspect-ratio: 1;
+  border: 1px solid rgb(var(--rr-pink) / .22);
+  transform: rotate(36deg);
+}
+.card-signal-art::after { width: 25%; transform: rotate(-18deg); border-color: rgb(var(--rr-gold) / .18); }
+.card-signal-initials {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-style: italic;
+}
+.card-sequence,
+.card-signal-meta {
+  margin: 0;
+  color: var(--shell-gold);
+  font-family: var(--font-mono);
+  font-size: .6rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.card-hero {
+  min-height: 27rem;
+  padding: clamp(1.25rem, 3vw, 2rem) !important;
+  border-color: var(--shell-border-strong) !important;
+  background: linear-gradient(145deg, rgb(var(--rr-pink) / .18), transparent 58%), var(--shell-surface) !important;
+}
+.card-hero .card-signal-art { min-height: 14rem; }
+.card-hero .card-title { font-size: clamp(2rem, 4vw, 4rem); line-height: .98; }
+.card-hero .card-why { max-width: 55ch; font-size: 1rem; line-height: 1.65; }
+.card-support { padding: 1rem !important; }
+.card-support .card-signal-art { min-height: 5rem; }
+.card-support .card-title { font-size: 1.35rem; }
+.card-archive .card-signal-art { min-height: 6rem; opacity: .76; }
+.card-duo::before {
+  content: "PLAYER 01 + PLAYER 02";
+  color: var(--shell-gold);
+  font-family: var(--font-mono);
+  font-size: .56rem;
+  letter-spacing: .1em;
+}
+.card-wildcard {
+  max-width: none !important;
+  grid-template-columns: minmax(10rem, .38fr) minmax(0, 1fr);
+  align-items: center;
+  border-style: dashed !important;
+}
+.card-wildcard .card-signal-art { grid-row: 1 / span 5; min-height: 12rem; }
+
+.discover-mood-button::before { margin-right: .35rem; }
+.discover-mood-button[data-discover-mood="DARK"]::before { content: "🌒"; }
+.discover-mood-button[data-discover-mood="RELAXED"]::before { content: "☁"; }
+.discover-mood-button[data-discover-mood="COMPETITIVE"]::before { content: "⚔"; }
+.discover-mood-button[data-discover-mood="EXPLORE"]::before { content: "◇"; }
+.discover-mood-signal {
+  color: var(--shell-gold);
+  font-family: var(--font-mono);
+  font-size: .56rem;
+  letter-spacing: .12em;
+}
+
+@media(max-width:70rem){
+  #list-for-you { grid-template-columns: 1fr !important; }
+  .discover-support-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media(max-width:48rem){
+  .discover-support-grid { grid-template-columns: 1fr; }
+  .card-hero { min-height: auto; }
+  .card-hero .card-signal-art { min-height: 9rem; }
+  .card-wildcard { grid-template-columns: 1fr; }
+  .card-wildcard .card-signal-art { grid-row: auto; min-height: 8rem; }
+}

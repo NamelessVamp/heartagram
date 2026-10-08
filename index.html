@@ -14,10 +14,12 @@
     <link rel="stylesheet" href="css/shell.css?v=1" />
     <link rel="stylesheet" href="css/visual-system.css?v=1" />
     <link rel="stylesheet" href="css/screens/home.css?v=1" />
-    <link rel="stylesheet" href="css/screens/discover.css?v=1" />
+    <link rel="stylesheet" href="css/screens/quiz.css?v=1" />
+    <link rel="stylesheet" href="css/screens/profile.css?v=1" />
+    <link rel="stylesheet" href="css/screens/discover.css?v=p13" />
     <link rel="stylesheet" href="css/screens/catalog.css?v=1" />
     <link rel="stylesheet" href="css/screens/collection.css?v=1" />
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/main.js?v=p13"></script>
     <script type="module" src="js/visual-system.js"></script>
     <link rel="stylesheet" href="css/screens/chat.css?v=1" />
     <link rel="stylesheet" href="css/screens/chat-refined.css?v=1" />
@@ -200,9 +202,18 @@
           role="img"
           aria-label="Gráfica de tu perfil de jugadora"
         ></canvas>
-        <button type="button" class="btn btn-primary" data-action="to-results">
-          Ver mis juegos
-        </button>
+        <section id="profile-traits" class="profile-traits" aria-label="Señales de tu perfil"></section>
+        <p class="profile-flex-note">
+          Este perfil es un punto de partida, no una caja. Los moods y lo que quieras jugar hoy siempre pueden cambiar tus recomendaciones.
+        </p>
+        <div class="profile-actions">
+          <button type="button" class="btn btn-ghost" data-action="reset-profile">
+            Rehacer test
+          </button>
+          <button type="button" class="btn btn-primary" data-action="to-results">
+            Ver mis juegos
+          </button>
+        </div>
       </section>
 
       <!-- DESCUBRIR REDESIGN-03 -->
