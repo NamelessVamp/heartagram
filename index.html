@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/screens/catalog.css?v=1" />
     <link rel="stylesheet" href="css/screens/collection.css?v=1" />
     <script type="module" src="js/main.js"></script>
+    <link rel="stylesheet" href="css/screens/chat.css?v=1" />
   </head>
   <body data-screen="intro">
     <div class="grain" aria-hidden="true"></div>
@@ -417,49 +418,34 @@
       </section>
 
 
-      <!-- ASISTENTE LOCAL -->
-      <section
-        class="screen"
-        data-screen="assistant"
-        aria-labelledby="assistant-title"
-        hidden
-      >
-        <p class="eyebrow">MODO LOCAL</p>
-        <h2 id="assistant-title" class="title">Pregúntale a HEARTAGRAM</h2>
-        <p class="lead">
-          Usa tu perfil, Me interesa y Mi biblioteca para orientarte. Todavía no
-          envía información a servicios externos.
-        </p>
-
-        <div class="assistant-prompts" aria-label="Preguntas sugeridas">
-          <button type="button" data-assistant-prompt="¿Qué debería jugar primero?">
-            ¿Qué debería jugar primero?
-          </button>
-          <button type="button" data-assistant-prompt="Quiero algo oscuro">
-            Quiero algo oscuro
-          </button>
-          <button type="button" data-assistant-prompt="¿Qué puedo jugar con Inti?">
-            ¿Qué puedo jugar con Inti?
-          </button>
-          <button type="button" data-assistant-prompt="¿Qué hay en Mi lista?">
-            ¿Qué hay en Mi lista?
-          </button>
+      <!-- CHAT REDESIGN-06 -->
+      <section class="screen chat-screen" data-screen="assistant" aria-labelledby="assistant-title" hidden>
+        <h2 id="assistant-title">Chat</h2>
+        <div class="chat-layout">
+          <details class="chat-history" open>
+            <summary>Conversaciones</summary>
+            <button id="chat-new" type="button">Nueva conversación</button>
+            <div id="chat-threads"></div>
+            <button id="chat-delete" type="button">Eliminar conversación</button>
+          </details>
+          <div class="chat-conversation">
+            <div class="chat-context">Contexto: perfil, Me interesa y Mi biblioteca. Historial guardado en este navegador.</div>
+            <div class="chat-body">
+              <div id="chat-empty"><h3>¿Qué te gustaría jugar?</h3></div>
+              <div id="chat-messages" role="log" aria-label="Mensajes de la conversación" aria-live="polite"></div>
+              <div id="chat-starters">
+                <button type="button" data-assistant-prompt="¿Qué debería jugar primero?">Elige algo de mi biblioteca</button>
+                <button type="button" data-assistant-prompt="Quiero algo oscuro">Algo oscuro</button>
+                <button type="button" data-assistant-prompt="¿Qué puedo jugar con Inti?">Jugar con Inti</button>
+              </div>
+            </div>
+            <form id="assistant-form">
+              <textarea id="assistant-input" rows="2" aria-label="Mensaje" placeholder="Escribe un mensaje..."></textarea>
+              <button type="submit" aria-label="Enviar mensaje">Enviar</button>
+            </form>
+          </div>
         </div>
-
-        <form id="assistant-form" class="assistant-form">
-          <label for="assistant-input">¿Qué te gustaría jugar?</label>
-          <textarea
-            id="assistant-input"
-            rows="4"
-            placeholder="Ejemplo: quiero algo oscuro, pero no demasiado difícil"
-          ></textarea>
-          <button type="submit" class="btn btn-primary">Preguntar</button>
-        </form>
-
-        <article class="assistant-response-card" aria-live="polite">
-          <p class="eyebrow">HEARTAGRAM</p>
-          <p id="assistant-response"></p>
-        </article>
+        <p id="chat-status" role="status">Las respuestas actuales son sugerencias básicas por reglas; todavía no interpretan el historial.</p>
       </section>
 
       <!-- REGALO -->

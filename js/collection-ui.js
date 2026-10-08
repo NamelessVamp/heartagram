@@ -56,6 +56,17 @@ export function initializeCollectionUI() {
   if (!buttons.length) return;
 
   buttons.forEach((button) => {
+    button.addEventListener("keydown", (event) => {
+      const keys = ["ArrowLeft", "ArrowRight", "Home", "End"];
+      if (!keys.includes(event.key)) return;
+      event.preventDefault();
+      const index = buttons.indexOf(button);
+      const next = event.key === "Home" ? 0 : event.key === "End" ? buttons.length - 1
+        : (index + (event.key === "ArrowRight" ? 1 : -1) + buttons.length) % buttons.length;
+      const target = buttons[next];
+      applyCollectionTab(writeCollectionTab(target.dataset.collectionTab));
+      target.focus();
+    });
     button.addEventListener("click", () => {
       const active = writeCollectionTab(button.dataset.collectionTab);
       applyCollectionTab(active);

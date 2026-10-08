@@ -1,0 +1,15 @@
+import assert from "node:assert/strict";
+import {normalizeThreads,loadThreads,saveThreads,shouldSend} from "../js/chat-store.js";
+const data=new Map();const storage={getItem:k=>data.get(k),setItem:(k,v)=>data.set(k,v)};
+assert.deepEqual(loadThreads(storage),[]);
+const threads=[{id:"one",title:"Prueba",messages:[{role:"user",content:"Hola"}]}];
+assert.equal(saveThreads(threads,storage),true);
+assert.deepEqual(loadThreads(storage),threads);
+data.set("heartagram:chat-threads","broken");assert.deepEqual(loadThreads(storage),[]);
+assert.equal(normalizeThreads([{id:"x",messages:[{role:"system",content:"bad"}]}])[0].messages.length,0);
+assert.equal(shouldSend({key:"Enter",shiftKey:false,isComposing:false}),true);
+assert.equal(shouldSend({key:"Enter",shiftKey:true}),false);
+assert.equal(shouldSend({key:"Enter",isComposing:true}),false);
+assert.equal(normalizeThreads(Array.from({length:30},(_,i)=>({id:String(i),messages:[]}))).length,20);
+assert.equal(saveThreads(threads,{setItem(){throw Error();}}),false);
+console.log("[OK] historial, limites, datos corruptos, Enter y composicion de teclado");
