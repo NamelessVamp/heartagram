@@ -61,8 +61,8 @@ export function initializeLocalAssistant({getProfile,getGames}) {
   const sendButton=form.querySelector('[type="submit"]');
   sendButton.textContent="↑";
   function resizeComposer() {
-    input.style.height="44px";
-    input.style.height=Math.min(input.scrollHeight,160)+"px";
+    input.style.height="48px";
+    input.style.height=Math.min(input.scrollHeight,160)+"px"; input.style.overflowY=input.scrollHeight>160?"auto":"hidden";
     sendButton.disabled=!input.value.trim();
   }
   input.addEventListener("input",resizeComposer);

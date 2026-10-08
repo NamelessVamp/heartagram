@@ -38,3 +38,32 @@ body[data-screen="assistant"] #app { height:100dvh; min-height:0; padding-top:1r
  .chat-history { max-width:calc(100% - 1rem); }
  .chat-screen #assistant-form { width:calc(100% - 1rem); }
 }
+
+/* Chat viewport and composer fixes */
+body[data-screen="assistant"] #app {
+  height: 100dvh;
+  box-sizing: border-box;
+}
+
+#app > .chat-screen {
+  overflow: hidden;
+}
+
+.chat-screen > h2,
+.chat-screen > #chat-status {
+  flex-shrink: 0;
+}
+
+.chat-screen > #chat-status {
+  padding-bottom: 0.35rem;
+  line-height: 1.4;
+}
+
+.chat-screen #assistant-input {
+  min-height: 48px;
+  overflow-y: hidden;
+}
+
+.chat-screen #assistant-form {
+  flex-shrink: 0;
+}
