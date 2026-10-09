@@ -1,0 +1,25 @@
+{
+  "scope": "switch_only",
+  "evaluated": 27287,
+  "recommendations": {
+    "keep": 25344,
+    "manual_review": 1839,
+    "hide_by_default": 104
+  },
+  "explicit_ai_disclosures": 1,
+  "common_signals": {
+    "missing_company": 27287,
+    "missing_release_date": 27287,
+    "no_engagement_signal": 19513,
+    "sparse_description": 1602,
+    "missing_genres": 1441,
+    "missing_supporting_media": 954,
+    "very_short_title": 184,
+    "title_starts_with_symbol": 31,
+    "keyword_style_title": 30,
+    "generic_title": 18,
+    "repeated_character_title": 3,
+    "explicit_ai_disclosure": 1
+  },
+  "method_note": "Este reporte mide completitud y señales de confianza del registro. No determina por sí solo si un juego o una portada fueron generados por IA."
+}
