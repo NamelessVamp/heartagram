@@ -7,3 +7,6 @@ __pycache__/
 data/catalog_igdb.full.json
 data/catalog_igdb.json
 data/catalog_igdb_details/
+# Nintendo Store local sync artifacts
+data/nintendo_probe/
+data/nintendo_catalog_backups/

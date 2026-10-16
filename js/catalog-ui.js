@@ -314,7 +314,7 @@ function createCatalogCard(game) {
 
   body.append(createElement("h3", "catalog-card-title", game.name));
 
-  const metadata = [game.release_year, catalogLabel(game.game_type)].filter(
+  const metadata = [game.release_year, game.price_label, catalogLabel(game.game_type)].filter(
     Boolean,
   );
 
@@ -525,13 +525,13 @@ function renderDetails(indexGame, details) {
   state.selectedGame = indexGame;
 
   const platforms = (details.platforms ?? [])
-    .map((platform) => platform.name)
+    .map((platform) => typeof platform === "string" ? platformLabel(platform) : platform.name)
     .filter(Boolean);
 
   elements.dialogPlatforms.textContent = textOrFallback(platforms);
   elements.dialogTitle.textContent = details.name;
   elements.dialogSummary.textContent =
-    details.summary || "IGDB todavía no tiene una descripción para este juego.";
+    details.summary || "Nintendo Store Mexico no tiene una descripcion disponible.";
 
   const hasStory = Boolean(details.storyline);
   elements.dialogStorySection.hidden = !hasStory;

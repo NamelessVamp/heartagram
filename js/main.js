@@ -20,13 +20,13 @@ import {
 import {
   initializeCatalogExplorer,
   openCatalogGameDetails,
-} from "./catalog-ui.js?v=p14";
+} from "./catalog-ui.js?v=np1";
 
 import {
   favoriteIdForCatalogGame,
   resolveCatalogFavorites,
   splitFavoriteIds,
-} from "./catalog.js";
+} from "./catalog.js?v=np1";
 import { getOwnedGameIds, setOwnedGame } from "./library.js";
 import { initializeLocalAssistant } from "./ai-assistant-ui.js";
 
@@ -302,12 +302,12 @@ async function refreshWishlist() {
       catalogError: true,
     });
 
-    console.error("No se pudieron cargar los juegos de IGDB.", error);
+    console.error("No se pudieron cargar los juegos del catalogo activo.", error);
   }
 }
 
 function removeCatalogFavorite(game) {
-  toggleFavorite(`igdb:${game.igdb_id}`);
+  toggleFavorite(favoriteIdForCatalogGame(game));
 }
 
 function renderHomeState() {

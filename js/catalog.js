@@ -1,7 +1,16 @@
+import { NINTENDO_INDEX_PATH, adaptNintendoCatalog } from "./nintendo-catalog.js?v=np1";
+
 // Loads and queries the broad IGDB catalog used by HEARTAGRAM's explorer.
 // The compact index is loaded once. Detail shards are loaded only when needed.
 
-const INDEX_PATH = "data/catalog_igdb.json";
+// HEARTAGRAM_NINTENDO_PREVIEW
+const SEARCH_PARAMS =
+  typeof window !== "undefined"
+    ? new URLSearchParams(window.location.search)
+    : new URLSearchParams();
+
+const USE_NINTENDO = SEARCH_PARAMS.get("catalog") === "nintendo";
+const INDEX_PATH = USE_NINTENDO ? NINTENDO_INDEX_PATH : "data/catalog_igdb.json";
 const DEFAULT_PAGE_SIZE = 24;
 
 let catalogPromise = null;
@@ -42,7 +51,7 @@ function validateCatalog(payload) {
 export function loadCatalog() {
   if (!catalogPromise) {
     catalogPromise = fetchJson(INDEX_PATH)
-      .then(validateCatalog)
+      .then((payload) => validateCatalog(USE_NINTENDO ? adaptNintendoCatalog(payload) : payload))
       .catch((error) => {
         catalogPromise = null;
         throw error;
@@ -86,12 +95,12 @@ export function igdbImageUrl(value, size = "cover_big") {
 }
 
 export function favoriteIdForCatalogGame(gameOrId) {
-  const id =
-    typeof gameOrId === "object" && gameOrId !== null
-      ? gameOrId.igdb_id
-      : gameOrId;
-
-  return `igdb:${id}`;
+  if (typeof gameOrId === "object" && gameOrId !== null) {
+    return gameOrId.catalog_id || `igdb:${gameOrId.igdb_id}`;
+  }
+  const raw = String(gameOrId ?? "");
+  if (raw.startsWith("nintendo:") || raw.startsWith("igdb:")) return raw;
+  return `${USE_NINTENDO ? "nintendo:MX" : "igdb"}:${raw}`;
 }
 
 export function getCatalogFacets(catalog) {
@@ -230,6 +239,10 @@ export async function loadShard(catalog, shardNumber) {
 }
 
 export async function loadGameDetails(catalog, game) {
+  if (game?.catalog_source === "nintendo") {
+    return { ...game, cover: game.cover_detail, platforms: game.platform_details };
+  }
+
   if (!game || !Number.isInteger(game.igdb_id)) {
     throw new TypeError("El juego no contiene un IGDB ID válido.");
   }
@@ -256,7 +269,7 @@ export async function loadGameDetails(catalog, game) {
 }
 
 export function isCatalogFavoriteId(favoriteId) {
-  return typeof favoriteId === "string" && favoriteId.startsWith("igdb:");
+  return typeof favoriteId === "string" && (favoriteId.startsWith("igdb:") || favoriteId.startsWith("nintendo:MX:"));
 }
 
 export function catalogIdFromFavoriteId(favoriteId) {
@@ -264,7 +277,7 @@ export function catalogIdFromFavoriteId(favoriteId) {
     return null;
   }
 
-  const rawId = favoriteId.slice("igdb:".length);
+  const rawId = favoriteId.startsWith("nintendo:MX:") ? favoriteId.slice("nintendo:MX:".length) : favoriteId.slice("igdb:".length);
 
   const parsedId = Number(rawId);
 
