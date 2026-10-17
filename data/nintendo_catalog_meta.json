@@ -22,5 +22,18 @@
   "validation_report": "data/nintendo_probe/nintendo_catalog_validation.json",
   "catalog_file": "data/nintendo_catalog.json",
   "extras_file": "data/nintendo_catalog_extras.json",
-  "rollback_catalog_untouched": "data/catalog_igdb.json"
+  "rollback_catalog_untouched": "data/catalog_igdb.json",
+  "enriched_at": "2026-10-16T23:58:26.893911+00:00",
+  "enrichment_source": "Nintendo Store Mexico merchandisedGrid",
+  "enrichment_coverage": {
+    "visible": {
+      "matched": 318,
+      "total": 318
+    },
+    "extras": {
+      "matched": 157,
+      "total": 157
+    },
+    "raw_products": 475
+  }
 }
