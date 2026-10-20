@@ -1,4 +1,4 @@
-﻿# H.E.A.R.T.A.G.R.A.M. — ROADMAP
+# H.E.A.R.T.A.G.R.A.M. — ROADMAP
 
 ```text
 ╔══════════════════════════════════════════════════════════════╗
@@ -103,7 +103,7 @@ La release v1.1 convierte HEARTAGRAM en un companion beginner-first para una Nin
 - [x] `git diff --check` limpio.
 - [x] Backups locales excluidos mediante `.gitignore`.
 - [x] Rama `release/v1.1-nintendo-primary` sincronizada con origin.
-- [ ] Actualizar README y ROADMAP para v1.1.
+- [x] Actualizar README y ROADMAP para v1.1.
 - [ ] Integrar la rama de release en `main`.
 - [ ] Crear tag `v1.1.0`.
 - [ ] Publicar y probar la versión final desde `main`.
@@ -152,4 +152,3 @@ La release v1.1 convierte HEARTAGRAM en un companion beginner-first para una Nin
 ```text
 [RELEASE CANDIDATE] v1.1 :: siguiente → documentación, merge, tag y smoke test final
 ```
-
