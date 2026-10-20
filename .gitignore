@@ -10,3 +10,4 @@ data/catalog_igdb_details/
 # Nintendo Store local sync artifacts
 data/nintendo_probe/
 data/nintendo_catalog_backups/
+data/getting_started_backups/
