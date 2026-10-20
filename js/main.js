@@ -3,11 +3,11 @@
 import { computeProfile } from "./profile.js";
 import { updateAppShellNavigation } from "./app-shell.js";
 import { renderHomeDashboard } from "./home-dashboard.js";
-import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js?v=np5";
-import { initializeCollectionUI } from "./collection-ui.js?v=np5";
+import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js?v=v110";
+import { initializeCollectionUI } from "./collection-ui.js?v=v110";
 import { rankGames, buildSections, buildDuo } from "./recommender.js";
 
-import * as ui from "./ui.js?v=np5";
+import * as ui from "./ui.js?v=v110";
 
 import { clearFavorites, getFavoriteIds, toggleFavorite } from "./favorites.js";
 
@@ -20,15 +20,16 @@ import {
 import {
   initializeCatalogExplorer,
   openCatalogGameDetails,
-} from "./catalog-ui.js?v=np5";
+} from "./catalog-ui.js?v=v110";
 
 import {
   favoriteIdForCatalogGame,
   resolveCatalogFavorites,
   splitFavoriteIds,
-} from "./catalog.js?v=np5";
+} from "./catalog.js?v=v110";
 import { getOwnedGameIds, setOwnedGame } from "./library.js";
 import { initializeLocalAssistant } from "./ai-assistant-ui.js";
+import { initializeGettingStarted } from "./getting-started.js";
 
 // ?preview shows unverified games during development.
 const PREVIEW = new URLSearchParams(window.location.search).has("preview");
@@ -453,6 +454,8 @@ const ACTIONS = {
     void refreshWishlist();
   },
 
+  "to-getting-started": () => { initializeGettingStarted(); showScreen("getting-started"); },
+
   "to-gift": () => {
     showScreen("gift");
   },
@@ -529,6 +532,7 @@ async function init() {
     });
 
     initializeCollectionUI();
+    initializeGettingStarted();
 
     // Restore the profile only once, after all data is loaded.
     const savedProfile = getSavedProfile();

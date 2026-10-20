@@ -15,7 +15,7 @@ console.log("[OK] conserva cinco destinos principales");
 
 assert.deepEqual(
   SECONDARY_NAV_ITEMS.map(({ label }) => label),
-  ["Mi perfil", "Mi regalo"],
+  ["Inicia aquí", "Mi perfil", "Mi regalo"],
 );
 console.log("[OK] separa los destinos secundarios");
 

@@ -1,110 +1,154 @@
-# H.E.A.R.T.A.G.R.A.M. — ROADMAP.md
+# H.E.A.R.T.A.G.R.A.M. — ROADMAP
 
-```
+```text
 ╔══════════════════════════════════════════════════════════════╗
-║  H.E.A.R.T.A.G.R.A.M. :: ROADMAP                                       ║
-║  ─────────────────────────────────────────────────────────── ║
-║  fuente    : SPECS v0.2                                      ║
-║  deadline  : 29 oct 2026 (llegada de la Switch 2 nueva)      ║
-║  status    : [INIT]                                          ║
+║  H.E.A.R.T.A.G.R.A.M. :: ROADMAP                            ║
+║  ──────────────────────────────────────────────────────────  ║
+║  baseline  : SPECS v0.2                                     ║
+║  release   : v1.1.0                                         ║
+║  objetivo  : 29 oct 2026                                    ║
+║  estado    : [RELEASE CANDIDATE]                            ║
 ╚══════════════════════════════════════════════════════════════╝
 ```
 
-── ⋆⋅✦⋅⋆ ──
+La release v1.1 convierte HEARTAGRAM en un companion beginner-first para una Nintendo Switch 2 restaurada y preparada para Adri. El código de la rama `release/v1.1-nintendo-primary` está validado; quedan actividades de entrega, publicación e integración en `main`.
 
 ## ⟦ DECISIONES CERRADAS ⟧
 
 | Tema | Decisión |
-|---|---|
-| Nombre | H.E.A.R.T.A.G.R.A.M. (provisional hasta que haya uno mejor) |
-| Grupo familiar | Inti es el administrador |
-| Regalo | $1,500 MXN en código eShop; integración en la página por definir |
-| Test | Adriana lo puede hacer sola o con Inti |
-| NFC | Sí, sticker en la caja; se hace al final |
+| --- | --- |
+| Nombre del proyecto | H.E.A.R.T.A.G.R.A.M. |
+| Nombre de onboarding | Inicia aquí |
+| Consola | Nintendo Switch 2 restaurada y preparada para Adri |
+| Grupo familiar | Inti administra la invitación |
+| Códigos eShop | Se entregan por separado; nunca en claro dentro del repositorio |
+| Catálogo visible | Nintendo Store México |
+| Rollback | IGDB mediante `?catalog=igdb` |
+| Colección | Me interesa y Mi biblioteca son estados separados |
+| Chat | Gemini con clave fuera del cliente e historial local |
+| Navegación móvil | Cinco destinos principales; Inicia aquí se abre desde el sidebar en escritorio y desde Mi regalo en móvil |
 
-**Implicación del test:** las preguntas se escriben en segunda persona dirigidas a ella y deben funcionar igual si Inti está presente o no. Sin preguntas que requieran que Inti responda.
+## ⟦ FASE 0 — DISEÑO Y BASE TÉCNICA ⟧
 
-**Implicación del código:** si se muestra en la página, solo con reveal cifrado (frase-clave → descifrado en el navegador). Nunca en claro en el repo ni en el HTML.
+- [x] SPECS v0.2.
+- [x] ROADMAP inicial.
+- [x] CODESTYLE.
+- [x] Diseño de 12 preguntas.
+- [x] Ocho arquetipos.
+- [x] Catálogo curado inicial.
+- [x] Repositorio y estructura web estática.
 
-── ⋆⋅✦⋅⋆ ──
+## ⟦ FASE 1 — EXPERIENCIA PRINCIPAL ⟧
 
-## ⟦ FASE 0 — DISEÑO ⟧ (sem 1 · 1–7 oct) · se puede hacer desde la laptop de Emerson
+- [x] Intro e Inicio.
+- [x] Motor del test.
+- [x] Cálculo de perfil y gráfica radar.
+- [x] Motor de recomendaciones.
+- [x] Afinidad, tolerancia al horror y salida de zona.
+- [x] Recomendaciones para jugar con Inti.
+- [x] App shell responsive.
+- [x] Navegación Inicio, Descubrir, Explorar, Mi lista y Chat.
+- [x] Mi perfil y Mi regalo como destinos secundarios.
 
-- [x] SPECS v0.2
-- [x] ROADMAP
-- [ ] Diseño del test: 10–12 preguntas, opciones y pesos por dimensión y arquetipo
-- [ ] Definir los arquetipos finales (nombre + descripción + estética)
-- [ ] Lista semilla del catálogo: 50 juegos (sin precios aún)
-- [ ] README.md
-- [ ] CODESTYLE.md
+## ⟦ FASE 2 — COLECCIÓN Y ASISTENTE ⟧
 
-## ⟦ FASE 1 — CATÁLOGO ⟧ (sem 2 · 8–14 oct) · PC personal
+- [x] Favoritos persistentes.
+- [x] Mi lista dividida entre Me interesa y Mi biblioteca.
+- [x] Exclusión de juegos propios desde Me interesa.
+- [x] Chat con Gemini.
+- [x] Historial de conversaciones en el navegador.
+- [x] Contexto de IA limitado al perfil y la colección.
+- [x] Clave de Gemini fuera del cliente.
 
-- [ ] Inti comparte su biblioteca → poblar `INTI_LIBRARY_MATCH`
-- [ ] Verificar en eShop MX: disponibilidad + precio + fecha (`status: VERIFICADO`)
-- [ ] Verificar multiplayer por juego: online / local inalámbrico / misma consola / NSO
-- [ ] Verificar GameShare en los juegos candidatos a Duo Pack
-- [ ] Tags capas 3–6 para los 50 juegos
-- [ ] `games.json` y `questions.json` v1
-- [ ] Ampliar a 100+ juegos si el tiempo alcanza
+## ⟦ FASE 3 — NINTENDO STORE MÉXICO ⟧
 
-## ⟦ FASE 2 — BUILD v1 ⟧ (sem 3 · 15–21 oct) · PC personal
+- [x] Probar y extraer información de Nintendo Store México.
+- [x] Construir snapshot combinado.
+- [x] Normalizar y enriquecer productos.
+- [x] Adaptar 318 productos oficiales al contrato del catálogo.
+- [x] Crear `NINTENDO_PRODUCT_SCHEMA.md`.
+- [x] Crear vista editorial dedicada para productos Nintendo.
+- [x] Validar metadata enriquecida contra el contrato del modal.
+- [x] Convertir Nintendo en la fuente predeterminada del navegador.
+- [x] Conservar IGDB mediante `?catalog=igdb`.
+- [x] Mantener IGDB como runtime heredado de pruebas Node.
+- [x] Añadir QA de fuente principal y rollback.
 
-- [ ] Repo en GitHub personal + `.venv` no aplica (proyecto web estático)
-- [ ] Estructura: `index.html`, `/css`, `/js`, `/data`
-- [ ] Intro
-- [ ] Motor del test (lee `questions.json`, calcula vector + arquetipos)
-- [ ] Pantalla de perfil + gráfica radar
-- [ ] Motor de recomendación (coseno + bonus + penalización por horror)
-- [ ] Bloques: Para empezar / Te podrían atrapar / Sal de tu zona
-- [ ] Sección "Para jugar con Inti" con insignias ONLINE · MISMO CUARTO · UNA CONSOLA
-- [ ] 3 carritos ≤ $1,500 (mínimo 1 Duo Pack)
-- [ ] Tutorial del grupo familiar
-- [ ] Placeholder de la sección del regalo
-- [ ] Publicar en GitHub Pages (sin compartir el enlace)
+## ⟦ FASE 4 — INICIA AQUÍ ⟧
 
-## ⟦ FASE 3 — UI + QA ⟧ (sem 4 · 22–27 oct)
+- [x] Diseñar experiencia beginner-first.
+- [x] Reflejar el regalo real: consola restaurada, mica, funda, Joy-Con 2, dock y cables originales.
+- [x] Explicar que no incluye microSD Express.
+- [x] Crear cuatro capítulos y 17 pasos marcables.
+- [x] Configuración inicial, cuenta Nintendo, actualizaciones y cuidados.
+- [x] Nintendo Switch Online familiar y canje seguro.
+- [x] Persistir progreso en `localStorage`.
+- [x] Añadir acceso desde sidebar y Mi regalo.
+- [x] Mantener cinco destinos principales en navegación móvil.
+- [x] Añadir QA automatizado.
+- [x] Validar visualmente progreso, acordeones y responsive.
 
-- [ ] Estética goth / horror atmosférico (sin jumpscares)
-- [ ] Mobile-first, contraste AA
-- [ ] QA con 4 perfiles simulados (horror, cozy, competitiva, perfil probable de Adriana)
-- [ ] Revisar que ningún carrito pase de $1,500
-- [ ] Revisar que no haya códigos en el repo ni en el HTML
-- [ ] Prueba completa desde el celular
+## ⟦ FASE 5 — QA Y RELEASE v1.1 ⟧
 
-## ⟦ FASE 4 — ENTREGA ⟧ (28–29 oct)
+- [x] QA con perfiles horror, cozy, competitivo y probable Adri.
+- [x] QA de favoritos mixtos.
+- [x] QA de biblioteca.
+- [x] QA de contexto IA.
+- [x] QA del app shell.
+- [x] QA de Inicio, Descubrir, Explorar y Mi lista.
+- [x] QA del catálogo Nintendo y detalle editorial.
+- [x] QA de Nintendo como fuente principal.
+- [x] QA de Inicia aquí.
+- [x] `npm test` completo.
+- [x] `git diff --check` limpio.
+- [x] Backups locales excluidos mediante `.gitignore`.
+- [x] Rama `release/v1.1-nintendo-primary` sincronizada con origin.
+- [x] Actualizar README y ROADMAP para v1.1.
+- [ ] Integrar la rama de release en `main`.
+- [ ] Crear tag `v1.1.0`.
+- [ ] Publicar y probar la versión final desde `main`.
 
-- [ ] Integrar el código de $1,500 (reveal cifrado u otro método elegido)
-- [ ] Grabar el sticker NFC con la URL
-- [ ] Checklist de traspaso de la consola (SPECS §10)
-- [ ] Revalidar precios de los juegos recomendados
-- [ ] Entrega
+## ⟦ FASE 6 — PREPARACIÓN FÍSICA Y ENTREGA ⟧
 
-── ⋆⋅✦⋅⋆ ──
+- [ ] Restaurar la Nintendo Switch 2 a configuración de fábrica antes de entregarla.
+- [ ] Limpiar consola, Joy-Con 2, dock y cables.
+- [ ] Revisar la mica y colocar todo dentro de la funda o empaque acordado.
+- [ ] Confirmar que no se entrega una microSD Express.
+- [ ] Obtener los códigos Nintendo eShop definitivos.
+- [ ] Entregar los códigos por separado sin almacenarlos en Git.
+- [ ] Confirmar la URL pública final.
+- [ ] Grabar el sticker NFC con la URL final.
+- [ ] Probar la experiencia completa desde el móvil que usará Adri.
+- [ ] Verificar invitación al grupo familiar de Nintendo Switch Online.
+- [ ] Entregar el regalo.
 
 ## ⟦ POST-ENTREGA ⟧
 
-### v2 — Datos vivos
-- [ ] Investigar fuente de precios MXN (eShop / DekuDeals / IGDB / RAWG) y sus términos de uso
-- [ ] Cloudflare Worker para precios, descuentos y portadas
-- [ ] Alertas de descuento en juegos de su lista
+### v1.1.x — mantenimiento
 
-### v3 — Agente
-- [ ] Agente Gemini vía Worker (API key fuera del cliente)
-- [ ] Solo recomienda del catálogo verificado
-- [ ] Feedback me gustó / no me gustó en `localStorage`
+- [ ] Corregir defectos observados durante la configuración real.
+- [ ] Revisar productos Nintendo incompletos o sin metadata enriquecida.
+- [ ] Añadir favicon y metadatos de publicación.
+- [ ] Revisar accesibilidad con teclado y lector de pantalla.
 
-── ⋆⋅✦⋅⋆ ──
+### v1.2 — experiencia viva
 
-## ⟦ RIESGOS ⟧
+- [ ] Sincronización controlada de nuevos snapshots Nintendo.
+- [ ] Mejorar filtros y ordenamiento con campos Nintendo confirmados.
+- [ ] Añadir feedback explícito a recomendaciones sin convertirlo en scoring opaco.
+- [ ] Evaluar alertas de descuento compatibles con privacidad y términos de la fuente.
+
+## ⟦ RIESGOS ACTIVOS ⟧
 
 | Riesgo | Mitigación |
-|---|---|
-| Sin fuente de precios MXN | v1 con precios manuales + fecha de verificación |
-| Poco tiempo para 150+ juegos | v1 sale con 50 bien curados; se amplía después |
-| Repo público rompe la sorpresa | No compartir el enlace; nada sensible en el repo |
-| Bloqueo de sitios de juegos en la laptop de Emerson | Fases 1–4 solo en PC personal |
+| --- | --- |
+| Código eShop expuesto | Entregar códigos por separado y mantenerlos fuera de Git, HTML y JavaScript |
+| Estado local perdido | Explicar que perfil, colección, guía e historial viven en el navegador actual |
+| Producto Nintendo incompleto | Mostrar únicamente campos presentes; no inventar precio, modo o disponibilidad |
+| Regresión al integrar en main | Ejecutar `npm test`, `git diff --check` y smoke test desde `main` |
+| Experiencia móvil no representativa | Probar la URL final en el dispositivo que usará Adri |
+| Sorpresa publicada antes de tiempo | No compartir la URL pública hasta decidir la entrega |
 
-```
-[INIT] ROADMAP v1 :: siguiente → diseño del test
+```text
+[RELEASE CANDIDATE] v1.1 :: siguiente → documentación, merge, tag y smoke test final
 ```
