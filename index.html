@@ -6,28 +6,29 @@
     <meta name="robots" content="noindex, nofollow" />
     <meta name="theme-color" content="#080608" />
     <title>Heartagram</title>
-    <link rel="stylesheet" href="css/base.css?v=5" />
-    <link rel="stylesheet" href="css/theme.css?v=5" />
-    <link rel="stylesheet" href="css/theme-romance.css?v=5" />
-    <link rel="stylesheet" href="css/tokens.css?v=1" />
-    <link rel="stylesheet" href="css/reset.css?v=1" />
-    <link rel="stylesheet" href="css/shell.css?v=1" />
-    <link rel="stylesheet" href="css/visual-system.css?v=1" />
-    <link rel="stylesheet" href="css/screens/home.css?v=1" />
-    <link rel="stylesheet" href="css/screens/quiz.css?v=1" />
-    <link rel="stylesheet" href="css/screens/profile.css?v=1" />
-    <link rel="stylesheet" href="css/screens/discover.css?v=p13" />
-    <link rel="stylesheet" href="css/screens/catalog.css?v=p14" />
-    <link rel="stylesheet" href="css/screens/collection.css?v=p15" />
-    <script type="module" src="js/main.js?v=np1"></script>
+    <link rel="stylesheet" href="css/base.css?v=np5" />
+    <link rel="stylesheet" href="css/theme.css?v=np5" />
+    <link rel="stylesheet" href="css/theme-romance.css?v=np5" />
+    <link rel="stylesheet" href="css/tokens.css?v=np5" />
+    <link rel="stylesheet" href="css/reset.css?v=np5" />
+    <link rel="stylesheet" href="css/shell.css?v=np5" />
+    <link rel="stylesheet" href="css/visual-system.css?v=np5" />
+    <link rel="stylesheet" href="css/screens/home.css?v=np5" />
+    <link rel="stylesheet" href="css/screens/quiz.css?v=np5" />
+    <link rel="stylesheet" href="css/screens/profile.css?v=np5" />
+    <link rel="stylesheet" href="css/screens/discover.css?v=np5" />
+    <link rel="stylesheet" href="css/screens/catalog.css?v=np5" />
+    <link rel="stylesheet" href="css/screens/collection.css?v=np5" />
+    <script type="module" src="js/main.js?v=np5"></script>
     <script type="module" src="js/visual-system.js"></script>
-    <link rel="stylesheet" href="css/screens/chat.css?v=1" />
-    <link rel="stylesheet" href="css/screens/chat-refined.css?v=1" />
-    <link rel="stylesheet" href="css/screens/secondary.css?v=1" />
-    <link rel="stylesheet" href="css/screens/chat-ux-v2.css?v=1" />
-  <link rel="stylesheet" href="css/screens/chat-sidebar.css?v=1" />
+    <link rel="stylesheet" href="css/screens/chat.css?v=np5" />
+    <link rel="stylesheet" href="css/screens/chat-refined.css?v=np5" />
+    <link rel="stylesheet" href="css/screens/secondary.css?v=np5" />
+    <link rel="stylesheet" href="css/screens/chat-ux-v2.css?v=np5" />
+  <link rel="stylesheet" href="css/screens/chat-sidebar.css?v=np5" />
 <script type="module" src="js/chat-sidebar.js"></script>
   <script type="module" src="js/chat-menu-popover.js"></script>
+  <link rel="stylesheet" href="css/screens/nintendo-product-detail.css?v=np5" />
 </head>
   <body data-screen="intro">
     <div class="grain" aria-hidden="true"></div>
@@ -663,11 +664,35 @@
             </dl>
           </div>
 
+          <section id="catalog-dialog-nintendo" class="catalog-nintendo-details" hidden>
+              <div class="catalog-price-panel">
+                <p class="catalog-price-kicker">Nintendo Store México</p>
+                <p id="catalog-dialog-price" class="catalog-price"></p>
+                <p id="catalog-dialog-sale" class="catalog-price-sale" hidden></p>
+              </div>
+              <dl class="catalog-metadata catalog-metadata-nintendo">
+                <div><dt>Clasificación</dt><dd id="catalog-dialog-rating"></dd></div>
+                <div><dt>Jugadores</dt><dd id="catalog-dialog-players"></dd></div>
+                <div><dt>Formas de juego</dt><dd id="catalog-dialog-ways"></dd></div>
+                <div><dt>Disponibilidad</dt><dd id="catalog-dialog-availability"></dd></div>
+              </dl>
+              <div id="catalog-dialog-content-descriptors" class="catalog-detail-chip-group" hidden>
+                <p class="catalog-detail-chip-title">Descriptores de contenido</p>
+                <div id="catalog-dialog-content-descriptor-list" class="catalog-detail-chips"></div>
+              </div>
+              <div id="catalog-dialog-features" class="catalog-detail-chip-group" hidden>
+                <p class="catalog-detail-chip-title">Características</p>
+                <div id="catalog-dialog-feature-list" class="catalog-detail-chips"></div>
+              </div>
+              <p id="catalog-dialog-demo" class="catalog-demo-signal" hidden>Demo disponible en Nintendo Store México</p>
+            </section>
           <div
             id="catalog-dialog-gallery"
             class="catalog-gallery"
             aria-label="Capturas del juego"
           ></div>
+          <section id="nintendo-product-detail" hidden></section>
+          <!-- HEARTAGRAM_NINTENDO_EDITORIAL_DETAIL_NP5 -->
         </div>
       </article>
     </dialog>

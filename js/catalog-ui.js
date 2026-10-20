@@ -14,6 +14,7 @@ import {
 import { isFavorite, toggleFavorite } from "./favorites.js";
 import { isOwnedGame, setOwnedGame } from "./library.js";
 
+import { isNintendoDetail, renderNintendoProductDetail } from "./nintendo-product-detail.js?v=np5";
 const PAGE_SIZE = 24;
 
 const state = {
@@ -77,6 +78,19 @@ function cacheElements() {
   elements.dialogPublishers = byId("catalog-dialog-publishers");
   elements.dialogModes = byId("catalog-dialog-modes");
   elements.dialogGallery = byId("catalog-dialog-gallery");
+  elements.nintendoProductDetail = byId("nintendo-product-detail");
+  elements.dialogNintendo = byId("catalog-dialog-nintendo");
+  elements.dialogPrice = byId("catalog-dialog-price");
+  elements.dialogSale = byId("catalog-dialog-sale");
+  elements.dialogRating = byId("catalog-dialog-rating");
+  elements.dialogPlayers = byId("catalog-dialog-players");
+  elements.dialogWays = byId("catalog-dialog-ways");
+  elements.dialogAvailability = byId("catalog-dialog-availability");
+  elements.dialogContentDescriptors = byId("catalog-dialog-content-descriptors");
+  elements.dialogContentDescriptorList = byId("catalog-dialog-content-descriptor-list");
+  elements.dialogFeatures = byId("catalog-dialog-features");
+  elements.dialogFeatureList = byId("catalog-dialog-feature-list");
+  elements.dialogDemo = byId("catalog-dialog-demo");
 }
 
 function createElement(tag, className, text) {
@@ -513,6 +527,41 @@ function renderGallery(details) {
   });
 }
 
+function priceAmount(value) {
+  if (value === null || value === undefined || value === "") return null;
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+function formatPrice(value, currency = "MXN") {
+  const amount = priceAmount(value);
+  if (amount === null) return "Precio no disponible";
+  return new Intl.NumberFormat("es-MX", { style: "currency", currency, maximumFractionDigits: 2 }).format(amount);
+}
+function fillDetailChips(container, section, values = []) {
+  container.replaceChildren();
+  const safeValues = [...new Set(values.filter(Boolean))];
+  section.hidden = safeValues.length === 0;
+  safeValues.forEach((value) => container.append(createElement("span", "catalog-detail-chip", value)));
+}
+function renderNintendoDetails(details) {
+  const isNintendo = details.catalog_source === "nintendo";
+  elements.dialogNintendo.hidden = !isNintendo;
+  if (!isNintendo) return;
+  const currency = details.price_currency || "MXN";
+  const regular = priceAmount(details.regular_price);
+  const sale = priceAmount(details.sale_price);
+  elements.dialogPrice.textContent = formatPrice(sale ?? regular, currency);
+  const hasSale = sale !== null && regular !== null && sale < regular;
+  elements.dialogSale.hidden = !hasSale;
+  elements.dialogSale.textContent = hasSale ? `Antes ${formatPrice(regular, currency)} · ${details.percent_off || 0}% de descuento` : "";
+  elements.dialogRating.textContent = details.content_rating?.label || "No disponible";
+  elements.dialogPlayers.textContent = details.player_count || "No disponible";
+  elements.dialogWays.textContent = textOrFallback(details.ways_to_play);
+  elements.dialogAvailability.textContent = textOrFallback(details.availability);
+  fillDetailChips(elements.dialogContentDescriptorList, elements.dialogContentDescriptors, details.content_descriptors);
+  fillDetailChips(elements.dialogFeatureList, elements.dialogFeatures, [...(details.features ?? []), ...(details.nso_features ?? [])]);
+  elements.dialogDemo.hidden = !details.demo_nsuid;
+}
 function textOrFallback(values, fallback = "No disponible") {
   if (Array.isArray(values)) {
     return values.length ? values.join(", ") : fallback;
@@ -522,6 +571,18 @@ function textOrFallback(values, fallback = "No disponible") {
 }
 
 function renderDetails(indexGame, details) {
+  state.selectedGame = indexGame;
+  const useNintendoDetail = isNintendoDetail(details, indexGame);
+  const legacyCopy = elements.dialogBody.querySelector(".catalog-dialog-copy");
+  elements.nintendoProductDetail.hidden = !useNintendoDetail;
+  if (legacyCopy) legacyCopy.hidden = useNintendoDetail;
+  elements.dialogGallery.hidden = useNintendoDetail;
+  if (elements.dialogNintendo) elements.dialogNintendo.hidden = true;
+  if (useNintendoDetail) {
+    renderNintendoProductDetail(elements.nintendoProductDetail, details, indexGame);
+    return;
+  }
+
   state.selectedGame = indexGame;
 
   const platforms = (details.platforms ?? [])
@@ -543,6 +604,7 @@ function renderDetails(indexGame, details) {
   elements.dialogModes.textContent = textOrFallback(
     (details.game_modes ?? []).map(catalogLabel),
   );
+
 
   renderDialogBadges(details);
   renderGallery(details);

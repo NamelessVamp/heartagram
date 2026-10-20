@@ -456,3 +456,16 @@
   .catalog-gallery { grid-template-columns: 1fr; }
   .catalog-gallery img:first-of-type { grid-column: auto; }
 }
+
+
+/* HEARTAGRAM_NINTENDO_MODAL_ENRICHMENT */
+.catalog-nintendo-details { display: grid; gap: 1rem; margin-top: 1rem; }
+.catalog-price-panel { padding: 1rem; border: 1px solid rgb(var(--rr-gold) / .32); border-radius: var(--shell-radius-sm); background: linear-gradient(135deg, rgb(var(--rr-gold) / .1), transparent); }
+.catalog-price-kicker, .catalog-detail-chip-title { margin: 0 0 .4rem; color: var(--shell-gold); font-family: var(--font-mono); font-size: .64rem; letter-spacing: .12em; text-transform: uppercase; }
+.catalog-price { margin: 0; color: var(--shell-text); font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 3rem); font-style: italic; }
+.catalog-price-sale { margin: .35rem 0 0; color: var(--shell-accent-soft); font-family: var(--font-mono); font-size: .72rem; }
+.catalog-metadata-nintendo { margin-top: 0; }
+.catalog-detail-chip-group { display: grid; gap: .45rem; }
+.catalog-detail-chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.catalog-detail-chip { padding: .35rem .55rem; border: 1px solid var(--shell-border); border-radius: 999px; background: rgb(var(--rr-white) / .035); color: var(--shell-text-muted); font-family: var(--font-mono); font-size: .62rem; }
+.catalog-demo-signal { margin: 0; padding: .75rem .9rem; border-left: 2px solid var(--shell-accent-soft); background: rgb(var(--rr-pink) / .08); color: var(--shell-text); font-family: var(--font-mono); font-size: .72rem; }
