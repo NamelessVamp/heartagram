@@ -192,3 +192,46 @@
     }
   }
 }
+
+/* ---------- v1.2.3 · Trucos y secretos ---------- */
+@layer screens {
+  .guide-tips {
+    display: grid;
+    gap: var(--sp-3);
+  }
+
+  .guide-tips-lead {
+    max-width: 60ch;
+    color: var(--text-muted);
+  }
+
+  .guide-tip {
+    display: grid;
+    gap: var(--sp-1);
+    padding: var(--sp-4) 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .guide-tip strong {
+    color: var(--text);
+  }
+
+  .guide-tip p {
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+    line-height: 1.6;
+  }
+
+  .guide-tip-tag {
+    justify-self: start;
+    padding: 0 var(--sp-2);
+    border: 1px solid var(--accent-line);
+    border-radius: var(--r-pill);
+    color: var(--accent-hover);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+    text-transform: uppercase;
+  }
+}
