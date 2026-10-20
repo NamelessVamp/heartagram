@@ -18,7 +18,7 @@ const counts = countCollectionItems({
   ownedCatalogGames: [{}, {}],
 });
 assert.deepEqual(counts, { interested: 3, owned: 3 });
-console.log("[OK] cuenta juegos curados e IGDB por segmento");
+console.log("[OK] cuenta juegos curados y Nintendo por segmento");
 
 const data = new Map();
 const storage = {

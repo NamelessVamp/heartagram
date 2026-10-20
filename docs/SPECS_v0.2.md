@@ -262,7 +262,7 @@ Máximo 8 cuentas; solo el administrador añade miembros.
 |---|---|---|---|
 | Frontend | HTML/CSS/JS vanilla en GitHub Pages | Igual | Igual |
 | Datos | `games.json`, `questions.json` | + datos vivos vía Cloudflare Worker | Igual |
-| IA | Ninguna | Ninguna | Agente Gemini vía Worker |
+| IA | Ninguna | Ninguna | Fuera del alcance de la versión pública |
 | Entorno | Cuenta GitHub personal, PC personal | Igual | Igual |
 
 **Privacidad del repo:** GitHub Pages en plan gratuito requiere repo público. Mientras sea sorpresa, no compartir el enlace; los códigos de eShop nunca entran al repo.

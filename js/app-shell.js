@@ -5,7 +5,6 @@ const NAV_ICON_MARKUP = {
   discover: '<path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="m19 16 .8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/>',
   explore: '<circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2.1 4.9-4.9 2.1 2.1-4.9z"/>',
   list: '<path d="M12 20.2 4.6 13A4.8 4.8 0 0 1 11.4 6L12 6.7l.6-.7a4.8 4.8 0 0 1 6.8 7z"/>',
-  chat: '<path d="M4 5.5h16v11H9l-5 3z"/><path d="M8 10h8M8 13h5"/>',
   start: '<circle cx="12" cy="12" r="8.5"/><path d="M10 8.5 15.5 12 10 15.5z"/>',
   profile: '<circle cx="12" cy="8" r="3.2"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/>',
   gift: '<path d="M4 10h16v10H4zM3 7h18v3H3zM12 7v13"/><path d="M12 7C9 7 7 6.2 7 4.7 7 3.6 7.8 3 8.9 3 10.8 3 12 7 12 7Zm0 0c3 0 5-.8 5-2.3C17 3.6 16.2 3 15.1 3 13.2 3 12 7 12 7Z"/>',
@@ -29,7 +28,6 @@ export const PRIMARY_NAV_ITEMS = [
   },
   { label: "Explorar", icon: "explore", screen: "catalog", action: "to-catalog" },
   { label: "Mi lista", icon: "list", screen: "wishlist", action: "to-wishlist" },
-  { label: "Chat", icon: "chat", screen: "assistant", action: "to-assistant" },
 ];
 
 export const SECONDARY_NAV_ITEMS = [

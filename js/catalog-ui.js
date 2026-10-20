@@ -1,11 +1,11 @@
 import { catalogLabel, formatCatalogDate } from "./catalog-labels.js";
 
-// Renders HEARTAGRAM's broad IGDB catalog explorer.
+// Renders the Nintendo Store Mexico catalog explorer.
 
 import {
   favoriteIdForCatalogGame,
   getCatalogFacets,
-  igdbImageUrl,
+  catalogImageUrl,
   loadCatalog,
   loadGameDetails,
   queryCatalog,
@@ -277,7 +277,7 @@ function createCatalogCard(game) {
   const openButton = createElement("button", "catalog-card-open");
 
   openButton.type = "button";
-  openButton.dataset.igdbId = String(game.igdb_id);
+  openButton.dataset.catalogId = String(game.nsuid);
 
   openButton.setAttribute("aria-label", `Ver detalles de ${game.name}`);
 
@@ -285,7 +285,7 @@ function createCatalogCard(game) {
 
   const image = document.createElement("img");
 
-  image.src = igdbImageUrl(game.cover, "cover_big");
+  image.src = catalogImageUrl(game.cover, "cover_big");
 
   image.alt = `Portada de ${game.name}`;
   image.loading = "lazy";
@@ -347,7 +347,7 @@ function createCatalogCard(game) {
   );
 
   favoriteButton.type = "button";
-  favoriteButton.dataset.catalogFavorite = String(game.igdb_id);
+  favoriteButton.dataset.catalogFavorite = String(game.nsuid);
 
   updateFavoriteButton(favoriteButton, game);
 
@@ -362,7 +362,7 @@ function createCatalogCard(game) {
   );
 
   ownedButton.type = "button";
-  ownedButton.dataset.catalogOwned = String(game.igdb_id);
+  ownedButton.dataset.catalogOwned = String(game.nsuid);
   updateOwnedButton(ownedButton, game);
 
   ownedButton.addEventListener("click", () => {
@@ -463,7 +463,7 @@ function renderGallery(details) {
     ...(details.artworks ?? []),
   ]
     .filter((source) => typeof source === "string" && source.trim().length > 0)
-    .map((source) => igdbImageUrl(source, "screenshot_big"))
+    .map((source) => catalogImageUrl(source, "screenshot_big"))
     .filter(Boolean)
     .slice(0, 6);
 

@@ -1,5 +1,5 @@
 // Manages Adri's owned-game library in localStorage.
-// IDs may belong to curated games or use the igdb:<id> format.
+// IDs may belong to curated games or use the nintendo:MX:<nsuid> format.
 
 const STORAGE_KEY = "heartagram:library";
 

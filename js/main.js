@@ -28,7 +28,6 @@ import {
   splitFavoriteIds,
 } from "./catalog.js?v=v110";
 import { getOwnedGameIds, setOwnedGame } from "./library.js";
-import { initializeLocalAssistant } from "./ai-assistant-ui.js";
 import { initializeGettingStarted } from "./getting-started.js";
 
 // ?preview shows unverified games during development.
@@ -439,10 +438,6 @@ const ACTIONS = {
     void refreshWishlist();
   },
 
-  "to-assistant": () => {
-    showScreen("assistant");
-  },
-
   "clear-wishlist": () => {
     const shouldClear = window.confirm(
       "¿Quieres quitar todos los juegos de tu lista?",
@@ -519,11 +514,6 @@ async function init() {
     state.profileCombos = profileCombos;
 
     state.games = PREVIEW ? games.map(toPreviewGame) : games;
-
-    initializeLocalAssistant({
-      getProfile: () => state.profile,
-      getGames: () => state.games,
-    });
 
     initializeDiscoverUI({
       getGames: () => state.games,

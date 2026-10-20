@@ -220,7 +220,7 @@ body.has-app-shell .app-navigation {
     inset: auto 0 0;
     z-index: 60;
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     min-height: var(--shell-mobile-nav-height);
     padding: 0.35rem max(0.35rem, env(safe-area-inset-right))
       max(0.35rem, env(safe-area-inset-bottom))
