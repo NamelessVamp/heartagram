@@ -128,3 +128,44 @@
     }
   }
 }
+
+/* ---------- v1.2 polish: cover strip ---------- */
+@layer screens {
+  .home-primary-card {
+    overflow: hidden;
+  }
+
+  .home-cover-strip {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--sp-3);
+    margin-bottom: var(--sp-4);
+  }
+
+  .home-cover-strip img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: var(--r-md);
+    box-shadow: var(--shadow-lg);
+    object-fit: cover;
+  }
+
+  .home-cover-strip img:nth-child(even) {
+    transform: translateY(var(--sp-4));
+  }
+
+  .home-cover-strip img:nth-child(n + 4) {
+    display: none;
+  }
+
+  @media (min-width: 40rem) {
+    .home-cover-strip {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .home-cover-strip img:nth-child(n + 4) {
+      display: block;
+    }
+  }
+}

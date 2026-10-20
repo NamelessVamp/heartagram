@@ -1,5 +1,5 @@
 import { PLAYER_DIMENSIONS, PLAYER_DIMENSION_LABELS, normalizedTraitPercent, traitSignal } from "./player-journey.js?v=p1";
-import { catalogLabel } from "./catalog-labels.js";
+import { catalogLabel, curatedGenreLabel } from "./catalog-labels.js";
 import { catalogImageUrl } from "./catalog.js";
 
 // HEARTAGRAM_DISCOVER_P13
@@ -231,13 +231,6 @@ export function gameCard(game, options = {}) {
 
   const art = el("div", "card-signal-art");
   art.setAttribute("aria-hidden", "true");
-  const initials = game.title
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 3)
-    .map((word) => word[0])
-    .join("")
-    .toUpperCase();
   if (game.cover_url) {
     const cover = document.createElement("img");
     cover.className = "card-signal-cover";
@@ -258,7 +251,7 @@ export function gameCard(game, options = {}) {
 
   const safeGenres = Array.isArray(game.genres) ? game.genres.slice(0, 3) : [];
   if (safeGenres.length) {
-    const meta = el("p", "card-signal-meta", safeGenres.join(" // "));
+    const meta = el("p", "card-signal-meta", safeGenres.map(curatedGenreLabel).join(" · "));
     card.append(meta);
   }
 
@@ -401,7 +394,7 @@ function createCatalogWishlistCard(game, options) {
   image.addEventListener("error", () => {
     image.remove();
     if (media.querySelector(".catalog-card-cover-fallback")) return;
-    const fallback = el("div", "catalog-card-cover-fallback", "SIN PORTADA");
+    const fallback = el("div", "catalog-card-cover-fallback", "H");
     fallback.setAttribute("aria-hidden", "true");
     media.append(fallback);
   }, { once: true });

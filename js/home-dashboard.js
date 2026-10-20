@@ -55,6 +55,8 @@ export function renderHomeDashboard({
 
   if (!model.hasProfile) return model;
 
+  renderHomeCovers(sections);
+
   byId("home-profile-primary").textContent = model.primaryName;
   byId("home-profile-secondary").textContent = model.secondaryName;
   byId("home-favorite-count").textContent = String(model.favoriteCount);
@@ -75,4 +77,35 @@ export function renderHomeDashboard({
   }
 
   return model;
+}
+
+const HOME_COVER_LIMIT = 4;
+
+export function homeCoverGames(sections, limit = HOME_COVER_LIMIT) {
+  const pool = [...(sections?.forYou ?? []), ...(sections?.mightHook ?? [])]
+    .map((entry) => entry?.game ?? entry);
+  const seen = new Set();
+  return pool
+    .filter((game) => game?.cover_url && !seen.has(game.id) && seen.add(game.id))
+    .slice(0, limit);
+}
+
+function renderHomeCovers(sections) {
+  const strip = document.getElementById("home-cover-strip");
+  if (!strip) return;
+  const games = homeCoverGames(sections);
+  strip.replaceChildren();
+  games.forEach((game) => {
+    const image = document.createElement("img");
+    image.src = game.cover_url;
+    image.alt = "";
+    image.loading = "lazy";
+    image.decoding = "async";
+    image.addEventListener("error", () => {
+      image.remove();
+      strip.hidden = strip.childElementCount === 0;
+    }, { once: true });
+    strip.append(image);
+  });
+  strip.hidden = games.length === 0;
 }

@@ -300,18 +300,7 @@ function createCatalogCard(game) {
         return;
       }
 
-      const initials = game.name
-        .split(/\s+/)
-        .filter(Boolean)
-        .slice(0, 3)
-        .map((word) => word[0])
-        .join("")
-        .toUpperCase();
-      const fallback = createElement(
-        "div",
-        "catalog-card-cover-fallback",
-        initials || "◇",
-      );
+      const fallback = createElement("div", "catalog-card-cover-fallback", "H");
 
       fallback.setAttribute("aria-hidden", "true");
 

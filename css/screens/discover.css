@@ -105,3 +105,25 @@
     }
   }
 }
+
+/* ---------- v1.2 polish: compact profile strip ---------- */
+@layer screens {
+  .discover-profile {
+    gap: var(--sp-3);
+    padding: var(--sp-4) var(--sp-5);
+  }
+
+  .discover-profile-copy {
+    gap: var(--sp-1);
+  }
+
+  .discover-profile-title {
+    font-size: var(--fs-xl);
+  }
+
+  @media (min-width: 40rem) {
+    .discover-profile {
+      padding: var(--sp-4) var(--sp-6);
+    }
+  }
+}

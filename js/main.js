@@ -3,12 +3,12 @@ const DATA_VERSION = "120";
 
 import { computeProfile } from "./profile.js";
 import { updateAppShellNavigation } from "./app-shell.js";
-import { renderHomeDashboard } from "./home-dashboard.js";
-import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js?v=v110";
-import { initializeCollectionUI } from "./collection-ui.js?v=v110";
+import { renderHomeDashboard } from "./home-dashboard.js?v=v120";
+import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js?v=v120";
+import { initializeCollectionUI } from "./collection-ui.js?v=v120";
 import { rankGames, buildSections, buildDuo } from "./recommender.js";
 
-import * as ui from "./ui.js?v=v110";
+import * as ui from "./ui.js?v=v120";
 
 import { clearFavorites, getFavoriteIds, toggleFavorite } from "./favorites.js";
 
@@ -21,13 +21,13 @@ import {
 import {
   initializeCatalogExplorer,
   openCatalogGameDetails,
-} from "./catalog-ui.js?v=v110";
+} from "./catalog-ui.js?v=v120";
 
 import {
   favoriteIdForCatalogGame,
   resolveCatalogFavorites,
   splitFavoriteIds,
-} from "./catalog.js?v=v110";
+} from "./catalog.js?v=v120";
 import { getOwnedGameIds, setOwnedGame } from "./library.js";
 import { initializeGettingStarted } from "./getting-started.js";
 

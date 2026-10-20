@@ -629,3 +629,89 @@
     overflow-wrap: anywhere;
   }
 }
+
+/* ---------- v1.2 polish: posters and fallbacks ---------- */
+@layer components {
+  /* Without a cover the art becomes a typographic poster.
+     The h4 stays in the DOM for screen readers. */
+  .card-signal-art:not(.has-cover) {
+    place-items: end start;
+    padding: var(--sp-5);
+  }
+
+  .card-signal-art:not(.has-cover) + .card-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .card-signal-fallback {
+    max-width: 100%;
+    color: var(--text);
+    font-size: var(--fs-2xl);
+    font-style: normal;
+    text-align: left;
+  }
+
+  /* Featured "Para ti" card: cover bleeds, copy sits on top. */
+  .card-hero {
+    justify-content: flex-end;
+    min-height: 24rem;
+    padding: var(--sp-6);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .card-hero .card-signal-art {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    aspect-ratio: auto;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .card-hero .card-signal-art::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 20%, rgb(10 8 10 / 0.6) 55%, var(--ink-950) 100%);
+  }
+
+  .card-hero .card-signal-fallback {
+    display: none;
+  }
+
+  .card-hero .card-signal-art:not(.has-cover) + .card-title {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
+    white-space: normal;
+  }
+
+  .card-hero .card-title {
+    max-width: 22ch;
+    font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+  }
+
+  .card-hero .card-why {
+    color: var(--text);
+  }
+
+  /* Explorar fallback: brand mark instead of game initials. */
+  .catalog-card-cover-fallback {
+    color: var(--accent-line);
+    font: italic 3rem / 1 var(--font-display);
+  }
+
+  @media (min-width: 64rem) {
+    .card-hero {
+      min-height: 30rem;
+    }
+  }
+}
