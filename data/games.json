@@ -575,49 +575,6 @@
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000020840/60eebc8f7133f685eddbffbe43c8da617ba0a5d699f2008f9c31c6119d1792af"
   },
   {
-    "id": "resident-evil-tbd",
-    "title": "Resident Evil (título por definir)",
-    "genres": [
-      "HORROR",
-      "ACTION"
-    ],
-    "multiplayer": {
-      "online_coop": false,
-      "online_versus": false,
-      "local_wireless": false,
-      "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
-    },
-    "mood": [
-      "DARK",
-      "CREEPY"
-    ],
-    "vibes": [],
-    "personality": [
-      "HORROR_FAN",
-      "SURVIVOR"
-    ],
-    "couple": [],
-    "vector": {
-      "pace": 1,
-      "social": -2,
-      "structure": -1,
-      "session": 0,
-      "mood": 2,
-      "challenge": 1
-    },
-    "horror_level": 3,
-    "free_to_play": false,
-    "price_mxn": null,
-    "price_checked": null,
-    "why": "El clásico del survival horror. Pasillos, recursos y tensión.",
-    "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "VERIFICAR"
-    }
-  },
-  {
     "id": "zelda-botw",
     "title": "The Legend of Zelda: Breath of the Wild",
     "genres": [

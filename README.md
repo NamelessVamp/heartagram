@@ -1,17 +1,25 @@
 # H.E.A.R.T.A.G.R.A.M.
 
-HEARTAGRAM es una experiencia estática de Nintendo Switch 2 creada para Adri. Ayuda a comenzar desde cero, descubrir juegos, guardar intereses y separar la colección propia.
+HEARTAGRAM es una experiencia web estática para la primera Nintendo Switch 2 de Adri. Le ayuda a empezar desde cero, conocer su perfil de jugadora, descubrir juegos y llevar su colección.
+
+**Sitio:** https://namelessvamp.github.io/heartagram/
 
 ## Funciones
 
-- **Inicia aquí:** guía beginner-first de 17 pasos con progreso local.
-- **Perfil:** 12 preguntas y ocho arquetipos.
-- **Descubrir:** recomendaciones deterministas desde `data/games.json`.
-- **Explorar:** catálogo Nintendo Store México procesado en `data/nintendo_catalog.json`.
-- **Mi lista:** Me interesa y Mi biblioteca, guardadas en `localStorage`.
-- **Mi regalo:** instrucciones de canje y acceso al grupo familiar.
+- **Inicia aquí:** guía de 17 pasos para configurar la consola, con progreso guardado.
+- **Test y perfil:** 12 preguntas, 8 arquetipos y una carta coleccionable con radar y rasgos.
+- **Descubrir:** recomendaciones por pestañas (Para ti, Moods, Jugar con Inti y Sal de tu zona), con rotación diaria y el botón "Otras opciones".
+- **Explorar:** catálogo de Nintendo Store México con búsqueda, filtros y detalle de cada juego.
+- **Mi lista:** Me interesa y Mi biblioteca, guardadas en el navegador.
+- **Mi regalo:** instrucciones de canje y del grupo familiar.
 
-La aplicación no utiliza IA, backend propio, credenciales ni catálogo heredado. Los códigos Nintendo eShop reales nunca se guardan en Git.
+## Motor de recomendaciones
+
+No usa IA ni servidor. Combina el catálogo curado (`data/games.json`) con los productos de Nintendo Store México, traducidos a las seis dimensiones del perfil. Agrega variedad por saga y género, rotación diaria, excluye lo que ya está en Mi biblioteca y toma en cuenta lo que está en Me interesa.
+
+## Estilo visual: Midnight Bouquet
+
+Noche azul medianoche, luna, mariposas, flores, cristales y una ventana con gato. Los motivos (zorro, pluma, flor espiritual, murciélago, gema, rosa, luna, estrella y nota) son formas propias inspiradas en los personajes favoritos de Adri. No usa arte oficial de ningún personaje.
 
 ## Ejecución local
 
@@ -28,16 +36,14 @@ npm test
 git diff --check
 ```
 
-## Publicación
+## Estructura
 
-El sitio está preparado para GitHub Pages desde la raíz de `main`. El repositorio debe ser público para usar Pages con GitHub Free.
-
-## Datos
-
-- `data/games.json`: catálogo curado para recomendaciones.
-- `data/nintendo_catalog.json`: catálogo visible en Explorar.
-- `data/nintendo_catalog_meta.json` y `data/nintendo_catalog_extras.json`: soporte del pipeline Nintendo.
+- `css/tokens.css` → `base` → `layout` → `components` → `screens/*` → `theme-bouquet.css`, ordenados con `@layer` y sin `!important`.
+- `js/main.js`: estado y navegación.
+- `js/recommend-v2.js`: motor de recomendaciones.
+- `js/bouquet.js`: decoraciones visuales.
+- `data/`: catálogo curado, catálogo Nintendo, preguntas y arquetipos.
 
 ## Privacidad
 
-El perfil, el progreso y las colecciones permanecen en el navegador. No se envían a un servidor de HEARTAGRAM.
+El perfil, el progreso y las listas se quedan en el navegador. Los códigos de Nintendo eShop nunca se guardan en el repositorio.

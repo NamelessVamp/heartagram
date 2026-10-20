@@ -1041,3 +1041,32 @@
     color: var(--on-accent);
   }
 }
+
+/* ---------- v1.2.2 · Cleanup ---------- */
+@layer theme {
+  .bq-note,
+  .bq-sidebar-note {
+    display: none;
+  }
+
+  .bq-motif-blossom {
+    color: #c9a7ff;
+    filter: drop-shadow(0 0 12px rgb(201 167 255 / 0.7));
+  }
+
+  .bq-quote-sign {
+    color: var(--text-faint);
+    font: 600 var(--fs-xs) / 1 var(--font-sans);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* The hero already has the main action; this card only repeated it. */
+  #home-returning-state .home-primary-card {
+    display: none;
+  }
+
+  .discover-section-heading .discover-reroll {
+    order: 3;
+  }
+}

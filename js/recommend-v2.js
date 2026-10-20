@@ -164,17 +164,20 @@ const REASONS = [
   ["pace", -1, (g) => has(g.genres, "Simulación"), "Para jugar con calma, sin presión."],
 ];
 
-export function reasonFor(game, profile) {
+export function reasonFor(game, profile, used = new Set()) {
   if (game.why) return game.why;
   const vector = profile?.vector ?? {};
   const options = REASONS.filter(([, , test]) => test(game))
     .sort((a, b) => (vector[b[0]] ?? 0) * b[1] - (vector[a[0]] ?? 0) * a[1]);
-  return options[0]?.[3] ?? "Disponible en Nintendo Store México.";
+  const pick = options.find((option) => !used.has(option[3])) ?? options[0];
+  const text = pick?.[3] ?? "Disponible en Nintendo Store México.";
+  used.add(text);
+  return text;
 }
 
-function withWhy(entry, profile) {
+function withWhy(entry, profile, used) {
   if (!entry || entry.game.why) return entry;
-  return { ...entry, game: { ...entry.game, why: reasonFor(entry.game, profile) } };
+  return { ...entry, game: { ...entry.game, why: reasonFor(entry.game, profile, used) } };
 }
 
 function diversePick(ranked, count, used) {
@@ -227,10 +230,11 @@ export function buildRecommendations(profile, {
     })
     .sort((a, b) => b.score - a.score);
 
+  const reasons = new Set();
   const used = { ids: new Set(), families: new Set() };
-  const forYou = diversePick(ranked, LIMITS.FOR_YOU, used).map((entry) => withWhy(entry, profile));
-  const mightHook = diversePick(ranked, LIMITS.MIGHT_HOOK, used).map((entry) => withWhy(entry, profile));
-  const outOfZone = withWhy(pickOutOfZone(profile, ranked, used), profile);
+  const forYou = diversePick(ranked, LIMITS.FOR_YOU, used).map((entry) => withWhy(entry, profile, reasons));
+  const mightHook = diversePick(ranked, LIMITS.MIGHT_HOOK, used).map((entry) => withWhy(entry, profile, reasons));
+  const outOfZone = withWhy(pickOutOfZone(profile, ranked, used), profile, reasons);
 
   const duoRanked = ranked
     .map((entry) => ({
@@ -243,7 +247,7 @@ export function buildRecommendations(profile, {
       Number(has(b.game.couple, "INTI_LIBRARY_MATCH")) - Number(has(a.game.couple, "INTI_LIBRARY_MATCH")) ||
       b.score - a.score);
   const duo = diversePick(duoRanked, LIMITS.DUO, { ids: new Set(), families: new Set() })
-    .map((entry) => withWhy(entry, profile));
+    .map((entry) => withWhy(entry, profile, reasons));
 
   return { ranked, sections: { forYou, mightHook, outOfZone }, duo, pool };
 }

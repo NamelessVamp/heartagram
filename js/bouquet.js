@@ -75,7 +75,6 @@ function decorateHero() {
   art.append(make("span", "bq-moon"));
   for (let index = 0; index < 5; index += 1) art.append(make("span", "bq-flower", FLOWER));
   for (let index = 0; index < 3; index += 1) art.append(butterfly());
-  art.append(note("Good games, brighter days, together ♡"));
   header.prepend(art);
 }
 
@@ -192,8 +191,6 @@ function listen() {
 
 decorateSky();
 decorateHero();
-decorateNotes();
-decorateSidebar();
 decorateQuiz();
 decorateProfile();
 decorateCollection();
@@ -211,6 +208,7 @@ const MOTIF_PATHS = {
   crescent: '<path d="M40 6a27 27 0 1 0 18 40A21 21 0 1 1 40 6z"/>',
   star: '<path d="M32 4l6 22 22 6-22 6-6 22-6-22L4 32l22-6z"/>',
   note: '<path d="M24 46V14l26-6v32" fill="none" stroke="currentColor" stroke-width="4"/><ellipse cx="17" cy="46" rx="8" ry="6"/><ellipse cx="43" cy="40" rx="8" ry="6"/>',
+  blossom: '<path d="M32 10c6 8 6 16 0 22-6-6-6-14 0-22zM54 32c-8 6-16 6-22 0 6-6 14-6 22 0zM32 54c-6-8-6-16 0-22 6 6 6 14 0 22zM10 32c8-6 16-6 22 0-6 6-14 6-22 0z"/><circle cx="32" cy="32" r="5" fill="#fff" fill-opacity=".7"/><g fill="currentColor" fill-opacity=".8"><circle cx="32" cy="3" r="2.5"/><circle cx="61" cy="32" r="2.5"/><circle cx="32" cy="61" r="2.5"/><circle cx="3" cy="32" r="2.5"/><circle cx="52.5" cy="11.5" r="2"/><circle cx="52.5" cy="52.5" r="2"/><circle cx="11.5" cy="52.5" r="2"/><circle cx="11.5" cy="11.5" r="2"/></g>',
   heart: '<path d="M32 56C8 40 4 26 12 16c8-8 18-4 20 4 2-8 12-12 20-4 8 10 4 24-20 40z"/>',
 };
 
@@ -226,7 +224,7 @@ const ARCHETYPE_MOTIFS = {
   COMPETITOR: ["feather", "PLUMA REBELDE"],
   COLLECTOR: ["gem", "GEMA DEL CAOS"],
   CREATOR: ["note", "VOZ DE ESTRELLA"],
-  SURVIVOR: ["bat", "ALAS DE MEDIANOCHE"],
+  SURVIVOR: ["blossom", "FE INQUEBRANTABLE"],
   STRATEGIST: ["crescent", "LUNA ESTRATEGA"],
   STORY_SEEKER: ["rose", "ROSA AZUL"],
   HORROR_FAN: ["bat", "ROSA DE MEDIANOCHE"],
@@ -284,7 +282,7 @@ function decorateHeaderMotifs() {
   const groups = [
     [".discover-header", ["feather", "butterfly", "star"]],
     [".catalog-screen-header", ["star", "note", "butterfly"]],
-    [".guide-hero > div:first-child", ["fox", "crescent"]],
+    [".guide-hero > div:first-child", ["fox", "blossom", "crescent"]],
     ["#app > .gift-screen", ["rose", "gem"]],
   ];
   for (const [selector, names] of groups) {
@@ -316,7 +314,7 @@ function decorateHeaderMotifs() {
   }
 }
 
-const OPTION_MOTIFS = ["fox", "feather", "heart", "crescent", "gem", "rose", "star", "bat"];
+const OPTION_MOTIFS = ["fox", "feather", "heart", "crescent", "gem", "rose", "star", "bat", "blossom"];
 
 function decorateQuizOptions() {
   const container = document.getElementById("quiz-options");
