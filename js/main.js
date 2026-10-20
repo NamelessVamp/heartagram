@@ -1,3 +1,4 @@
+const DATA_VERSION = "112";
 // App entry: loads data, keeps quiz state and switches screens.
 
 import { computeProfile } from "./profile.js";
@@ -53,7 +54,7 @@ const state = {
 };
 
 async function loadJson(path) {
-  const response = await fetch(path);
+  const response = await fetch(`${path}?v=${DATA_VERSION}`);
 
   if (!response.ok) {
     throw new Error(`No se pudo cargar ${path}`);

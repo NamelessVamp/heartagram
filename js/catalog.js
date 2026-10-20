@@ -1,3 +1,4 @@
+const DATA_VERSION = "112";
 import { NINTENDO_INDEX_PATH, adaptNintendoCatalog } from "./nintendo-catalog.js?v=v111";
 
 // Nintendo-only catalog runtime for the public static build.
@@ -13,7 +14,7 @@ function normalizeText(value) {
 }
 
 async function fetchJson(path) {
-  const response = await fetch(path);
+  const response = await fetch(`${path}?v=${DATA_VERSION}`);
   if (!response.ok) throw new Error(`No se pudo cargar ${path} (${response.status})`);
   return response.json();
 }
