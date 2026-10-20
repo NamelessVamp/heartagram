@@ -1065,36 +1065,6 @@ body {
   font-size: var(--text-sm);
 }
 
-.cart {
-  padding: var(--space-4);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background: var(--color-surface);
-}
-
-.cart-name {
-  margin-bottom: var(--space-3);
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
-  font-weight: 400;
-}
-
-.cart-items li {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--space-3);
-  padding: var(--space-2) 0;
-  border-bottom: 1px dashed var(--color-border);
-  font-size: var(--text-sm);
-}
-
-.cart-total {
-  display: flex;
-  justify-content: space-between;
-  margin-top: var(--space-3);
-  color: var(--color-gold);
-  font-family: var(--font-mono);
-}
 
 /* =============================================================
    RESPONSIVE

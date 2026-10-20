@@ -3,7 +3,6 @@
   --visual-line: rgb(var(--rr-pink) / 0.18);
   --visual-glow: rgb(var(--rr-hot-pink) / 0.16);
   --visual-gold-soft: rgb(var(--rr-gold) / 0.72);
-  --visual-panel: linear-gradient(145deg, rgb(var(--rr-pink) / 0.09), transparent 54%), rgb(var(--rr-ink));
 }
 
 body.has-app-shell::before {

@@ -1,6 +1,5 @@
 /* HEARTAGRAM P1.1 // SIGNAL TEST */
 .screen[data-screen="quiz"] {
-  --signal-progress: 0%;
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr);

@@ -162,10 +162,6 @@ body.sidebar-collapsed #app {
   padding-top: 0;
 }
 
-body.has-app-shell .app-navigation {
-  display: none !important;
-}
-
 .mobile-navigation {
   display: none;
 }

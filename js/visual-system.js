@@ -30,16 +30,6 @@ function decorateHome() {
   header.append(note, orbit);
 }
 
-function decorateChatEmpty() {
-  const empty = document.getElementById('chat-empty');
-  if (!empty || empty.querySelector('.visual-empty-art')) return;
-  const art = document.createElement('div');
-  art.className = 'visual-empty-art';
-  art.textContent = '·  ·   ✦   ·  ·\n   ·   ♡   ·\n·  ·   ✦   ·  ·';
-  art.setAttribute('aria-hidden', 'true');
-  empty.prepend(art);
-}
-
 function decorateScreenLabels() {
   const labels = [
     ['.discover-header', 'DISCOVERY // FOR ADRI'],
@@ -59,7 +49,6 @@ function decorateScreenLabels() {
 function installVisualSystem() {
   installAtmosphere();
   decorateHome();
-  decorateChatEmpty();
   decorateScreenLabels();
 }
 
