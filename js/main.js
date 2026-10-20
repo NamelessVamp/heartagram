@@ -1,4 +1,4 @@
-const DATA_VERSION = "112";
+const DATA_VERSION = "120";
 // App entry: loads data, keeps quiz state and switches screens.
 
 import { computeProfile } from "./profile.js";

@@ -238,7 +238,22 @@ export function gameCard(game, options = {}) {
     .map((word) => word[0])
     .join("")
     .toUpperCase();
-  art.append(el("span", "card-signal-initials", initials));
+  if (game.cover_url) {
+    const cover = document.createElement("img");
+    cover.className = "card-signal-cover";
+    cover.src = game.cover_url;
+    cover.alt = "";
+    cover.loading = "lazy";
+    cover.decoding = "async";
+    cover.addEventListener("error", () => {
+      art.classList.remove("has-cover");
+      cover.replaceWith(el("span", "card-signal-fallback", game.title));
+    }, { once: true });
+    art.classList.add("has-cover");
+    art.append(cover);
+  } else {
+    art.append(el("span", "card-signal-fallback", game.title));
+  }
   card.append(art, el("h4", "card-title", game.title));
 
   const safeGenres = Array.isArray(game.genres) ? game.genres.slice(0, 3) : [];
