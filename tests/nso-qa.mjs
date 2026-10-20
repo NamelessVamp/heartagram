@@ -2,11 +2,42 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
 const html = readFileSync("index.html", "utf8");
-const family = html.slice(html.indexOf('data-screen="family"'));
-assert.ok(family.includes('id="nso-title"'), "La sección Online debe estar en la pantalla del grupo familiar");
-for (const topic of ["Paquete de expansión", "GameCube", "hasta 8 cuentas", "No existe un plan para dos", "$1,649", "renovación automática"]) {
-  assert.ok(html.includes(topic), `Falta: ${topic}`);
+const start = html.indexOf('id="nso-title"');
+assert.ok(start >= 0, "Falta la guia Nintendo Switch Online");
+const section = html.slice(start, html.indexOf("</section>", start));
+
+assert.ok(section.includes("Familiar + Paquete de expansión"), "Falta el plan Expansión");
+for (const benefit of [
+  "Juego en línea",
+  "Guardado de partidas en la nube",
+  "GameCube",
+  "Nintendo 64",
+  "Game Boy Advance",
+  "Virtual Boy",
+  "SEGA Genesis",
+  "Mario Kart 8 Deluxe",
+  "Happy Home Paradise",
+  "Octo Expansion",
+  "Breath of the Wild",
+  "Tears of the Kingdom",
+]) {
+  assert.ok(section.includes(benefit), `Falta el beneficio: ${benefit}`);
 }
-assert.equal((html.match(/<article class="nso-plan/g) ?? []).length, 2, "Deben compararse dos planes");
-console.log("[OK] Sección Nintendo Switch Online: planes, precios, grupo familiar y GameCube");
-console.log("\n[OK] QA de Nintendo Switch Online completo");
+
+for (const removed of [
+  "Nintendo Switch Online</h4>",
+  "Por qué familiar si somos dos",
+  "No existe un plan para dos",
+  "Precio al año",
+  "Todo lo del plan normal",
+  "$1,029",
+  "$1,649",
+  "$2,058",
+  "Precios de referencia",
+]) {
+  assert.equal(section.includes(removed), false, `Contenido que debia eliminarse: ${removed}`);
+}
+
+assert.equal((section.match(/<article class="nso-plan/g) ?? []).length, 1, "Debe quedar un solo plan");
+console.log("[OK] NSO muestra solo Familiar + Paquete de expansion, sin precios ni comparaciones");
+console.log("\n[OK] QA de Nintendo Switch Online simplificado completo");
