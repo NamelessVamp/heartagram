@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#080608" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2216%22 fill=%22%23080608%22/><text x=%2232%22 y=%2243%22 text-anchor=%22middle%22 font-size=%2236%22 fill=%22%23ff9fc9%22>H</text></svg>" />
+    <title>Heartagram</title>
+    <link rel="stylesheet" href="css/base.css?v=v110" />
+    <link rel="stylesheet" href="css/theme.css?v=v110" />
+    <link rel="stylesheet" href="css/theme-romance.css?v=v110" />
+    <link rel="stylesheet" href="css/tokens.css?v=v110" />
+    <link rel="stylesheet" href="css/reset.css?v=v110" />
+    <link rel="stylesheet" href="css/shell.css?v=v110" />
+    <link rel="stylesheet" href="css/visual-system.css?v=v110" />
+    <link rel="stylesheet" href="css/screens/home.css?v=v110" />
+    <link rel="stylesheet" href="css/screens/quiz.css?v=v110" />
+    <link rel="stylesheet" href="css/screens/profile.css?v=v110" />
+    <link rel="stylesheet" href="css/screens/discover.css?v=v110" />
+    <link rel="stylesheet" href="css/screens/catalog.css?v=v110" />
+    <link rel="stylesheet" href="css/screens/collection.css?v=v110" />
+    <script type="module" src="js/main.js?v=v110"></script>
+    <script type="module" src="js/visual-system.js"></script>
+    <link rel="stylesheet" href="css/screens/secondary.css?v=v110" />
+  <link rel="stylesheet" href="css/screens/nintendo-product-detail.css?v=v110" />
+    <link rel="stylesheet" href="css/screens/getting-started.css?v=v110" />
+</head>
+  <body data-screen="intro">
+    <div class="grain" aria-hidden="true"></div>
+
+    <main id="app">
+      <!-- INICIO REDESIGN-02 -->
+      <section
+        class="screen home-screen"
+        data-screen="intro"
+        aria-labelledby="intro-title"
+      >
+        <header class="home-header">
+          <p class="home-kicker">Para Adri</p>
+          <h1 id="intro-title" class="home-title">Heartagram</h1>
+          <p class="home-subtitle">
+            Tu espacio para descubrir, guardar y elegir la próxima aventura.
+          </p>
+        </header>
+
+        <div id="home-new-state" class="home-empty-card" hidden>
+          <p class="home-label">Empieza por tu perfil</p>
+          <h2 class="home-card-title">Descubre qué tipo de jugadora eres.</h2>
+          <p id="intro-lead" class="home-card-copy">
+            Doce elecciones rápidas para comenzar a encontrar juegos que encajen
+            contigo.
+          </p>
+          <p id="intro-hint" class="hint">12 preguntas · menos de 3 minutos</p>
+          <div id="new-profile-actions" class="home-secondary-actions">
+            <button type="button" class="btn btn-primary" data-action="start">
+              Descubrir mi perfil
+            </button>
+            <button type="button" class="btn btn-ghost" data-action="to-catalog">
+              Explorar juegos
+            </button>
+            <button type="button" class="btn btn-ghost" data-action="to-gift">
+              Ver mi regalo
+            </button>
+          </div>
+        </div>
+
+        <div id="home-returning-state" hidden>
+          <article class="home-primary-card">
+            <div class="home-primary-copy">
+              <p class="home-label">Continuar</p>
+              <h2 class="home-card-title">Tu perfil, tus juegos y tu lista siguen aquí.</h2>
+              <p class="home-card-copy">
+                Retoma tus recomendaciones o decide qué te gustaría jugar hoy.
+              </p>
+            </div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-action="to-results"
+            >
+              Ir a Descubrir
+            </button>
+          </article>
+
+          <div class="home-grid">
+            <article class="home-panel">
+              <div>
+                <p class="home-label">Tu perfil</p>
+                <h2 id="home-profile-primary" class="home-card-title"></h2>
+                <p id="home-profile-secondary" class="home-card-copy"></p>
+              </div>
+              <div class="home-panel-actions">
+                <button
+                  type="button"
+                  class="btn btn-ghost"
+                  data-action="continue-profile"
+                >
+                  Ver perfil completo
+                </button>
+                <button type="button" class="btn btn-text" data-action="reset-profile">
+                  Rehacer test
+                </button>
+              </div>
+            </article>
+
+            <article class="home-panel">
+              <div>
+                <p class="home-label">Para hoy</p>
+                <h2 id="home-recommendation-title" class="home-card-title"></h2>
+                <p id="home-recommendation-copy" class="home-card-copy"></p>
+              </div>
+              <div class="home-panel-actions">
+                <button type="button" class="btn btn-ghost" data-action="to-results">
+                  Ver por qué
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <section aria-labelledby="home-space-title">
+            <p id="home-space-title" class="home-label">Tu espacio</p>
+            <div class="home-stats">
+              <button type="button" class="home-stat" data-action="to-wishlist">
+                <span id="home-favorite-count" class="home-stat-value">0</span>
+                <span class="home-stat-label">en Me interesa</span>
+              </button>
+              <button type="button" class="home-stat" data-action="to-wishlist">
+                <span id="home-owned-count" class="home-stat-value">0</span>
+                <span class="home-stat-label">en Mi biblioteca</span>
+              </button>
+              <button type="button" class="home-stat" data-action="to-duo">
+                <span class="home-stat-value">2P</span>
+                <span class="home-stat-label">Jugar con Inti</span>
+              </button>
+            </div>
+          </section>
+
+          <div id="returning-profile-actions" class="home-secondary-actions">
+            <button type="button" class="btn btn-ghost" data-action="to-gift">
+              Mi regalo
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- INICIA AQUI -->
+      <section class="screen getting-started-screen" data-screen="getting-started" aria-labelledby="getting-started-title" hidden>
+        <header class="guide-hero"><div><p class="guide-kicker">Tu Nintendo Switch 2 · desde cero</p><h2 id="getting-started-title" class="guide-title">Inicia aquí</h2><p class="guide-lead">Esta consola fue restaurada y preparada para ti. Sigue la guía a tu ritmo: no necesitas saber nada de Nintendo antes de empezar.</p></div><aside class="guide-progress"><p class="guide-kicker">Tu progreso</p><div class="guide-track" role="progressbar" aria-valuemin="0" aria-valuemax="17" aria-valuenow="0"><div class="guide-bar" data-guide-bar></div></div><p data-guide-label>0 de 17 pasos completados</p></aside></header>
+        <section><p class="guide-kicker">Antes de encenderla</p><h3>Lo que recibiste</h3><div class="guide-inventory"><article class="guide-card"><strong>La consola</strong><span>Nintendo Switch 2 restaurada, con mica instalada y lista para una configuración nueva.</span></article><article class="guide-card"><strong>Para jugar</strong><span>Joy-Con 2 y funda para proteger la consola.</span></article><article class="guide-card"><strong>Para la televisión</strong><span>Dock, cargador y cables originales.</span></article></div><p class="guide-note"><strong>No incluye microSD Express.</strong> Puedes empezar con el almacenamiento interno y decidir después si necesitas más espacio.</p></section>
+        <div class="guide-chapters"><details class="guide-chapter" open><summary><span class="guide-number">01</span><span><h3>Prepara tu consola</h3><p>Revisa las piezas, colócala bien y enciéndela.</p></span></summary><div class="guide-body"><label class="guide-step"><input type="checkbox" data-guide-step="check-console"><span><strong>Comprueba lo que viene en el regalo</strong><p>Localiza la consola, los dos Joy-Con 2, la funda, el dock, el cargador y los cables. La mica ya protege la pantalla.</p></span></label><label class="guide-step"><input type="checkbox" data-guide-step="place-console"><span><strong>Elige dónde configurarla</strong><p>Usa una mesa estable y deja libres las rejillas de ventilación. Evita cama, sofá o cobijas mientras esté encendida.</p></span></label><label class="guide-step"><input type="checkbox" data-guide-step="connect-power"><span><strong>Conecta el cargador y enciéndela</strong><p>Conecta la corriente a la consola o al dock y pulsa una vez el botón POWER de la parte superior.</p></span></label></div></details><details class="guide-chapter"><summary><span class="guide-number">02</span><span><h3>Hazla tuya</h3><p>Idioma, internet, usuario y cuenta Nintendo.</p></span></summary><div class="guide-body"><label class="guide-step"><input type="checkbox" data-guide-step="choose-language"><span><strong>Elige idioma, región y zona horaria</strong><p>Selecciona Español, México y la zona horaria correspondiente.</p></span></label><label class="guide-step"><input type="checkbox" data-guide-step="connect-wifi"><span><strong>Conéctala a Wi-Fi</strong><p>Elige el nombre de tu red, escribe la contraseña y espera la confirmación.</p></span></label><label class="guide-step"><input type="checkbox" data-guide-step="create-user"><span><strong>Crea tu usuario</strong><p>Elige un icono y el nombre que quieras ver en HOME.</p></span></label><label class="guide-step"><input type="checkbox" data-guide-step="link-account"><span><strong>Crea o vincula tu cuenta Nintendo</strong><p>Usa tu propio correo y guarda la contraseña. Antes de comprar o canjear, comprueba que la eShop muestra tu usuario.</p></span></label></div></details><details class="guide-chapter"><summary><span class="guide-number">03</span><span><h3>Déjala lista</h3><p>Actualizaciones, pantalla, descanso y juego online.</p></span></summary><div class="guide-body"><label class="guide-step"><input type="checkbox" data-guide-step="update-console"><span><strong>Actualiza la consola</strong><p>Desde Configuración de la consola, entra en Consola y busca la actualización. Déjala conectada a internet y corriente.</p></span></label><label class="guide-step"><input type="checkbox" data-guide-step="update-controllers"><span><strong>Actualiza los Joy-Con 2</strong><p>En Configuración, abre Controles y sensores y busca la actualización de controles.</p></span></label><label class="guide-step"><input type="checkbox" data-guide-step="adjust-display"><span><strong>Ajusta brillo y volumen</strong><p>Mantén pulsado HOME para abrir ajustes rápidos. Empieza con brillo automático y volumen cómodo.</p></span></label><label class="guide-step"><input type="checkbox" data-guide-step="adjust-sleep"><span><strong>Configura el modo de espera</strong><p>Revisa Modo de espera para que la pantalla se apague cuando no uses la consola.</p></span></label><label class="guide-step"><input type="checkbox" data-guide-step="join-family"><span><strong>Únete al grupo familiar de Inti</strong><p>Cuando tu cuenta esté lista, pasa a Inti el correo usado y acepta la invitación que recibas.</p></span></label></div></details><details class="guide-chapter"><summary><span class="guide-number">04</span><span><h3>Empieza a jugar</h3><p>HOME, eShop, códigos, descargas y cuidados.</p></span></summary><div class="guide-body"><label class="guide-step"><input type="checkbox" data-guide-step="learn-home"><span><strong>Conoce el menú HOME</strong><p>Desde HOME abres juegos, Álbum, Nintendo eShop, Configuración y tu usuario.</p></span></label><label class="guide-step"><input type="checkbox" data-guide-step="open-eshop"><span><strong>Abre Nintendo eShop</strong><p>Selecciona el icono de la bolsa en HOME y elige tu usuario.</p></span></label><label class="guide-step"><input type="checkbox" data-guide-step="redeem-code"><span><strong>Canjea un código cuando estés lista</strong><p>En eShop, elige ingresar código, escribe los 16 caracteres y revisa el contenido antes de confirmar.</p></span></label><label class="guide-step"><input type="checkbox" data-guide-step="download-game"><span><strong>Descarga tu primer juego</strong><p>Después de comprar o canjear, vuelve a HOME y revisa el progreso de descarga.</p></span></label><label class="guide-step"><input type="checkbox" data-guide-step="protect-console"><span><strong>Cuida la consola</strong><p>Guárdala en la funda al transportarla, evita líquidos y calor, y límpiala con un paño suave y seco.</p></span></label></div></details></div>
+        <footer class="guide-footer"><button type="button" class="btn btn-text" data-guide-reset>Reiniciar progreso</button><div><button type="button" class="btn btn-ghost" data-action="to-gift">Ver mi regalo</button> <button type="button" class="btn btn-primary" data-action="to-catalog">Elegir mi primer juego</button></div></footer>
+      </section>
+
+      <!-- TEST -->
+      <section
+        class="screen"
+        data-screen="quiz"
+        aria-labelledby="quiz-question"
+        hidden
+      >
+        <div
+          class="quiz-progress"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="12"
+          aria-valuenow="0"
+        >
+          <div class="quiz-progress-bar" id="quiz-progress-bar"></div>
+        </div>
+        <p class="eyebrow" id="quiz-counter">Pregunta 1 de 12</p>
+        <h2 id="quiz-question" class="quiz-question"></h2>
+        <div
+          id="quiz-options"
+          class="quiz-options"
+          role="radiogroup"
+          aria-labelledby="quiz-question"
+        ></div>
+        <button type="button" class="btn btn-ghost" data-action="back">
+          Anterior
+        </button>
+      </section>
+
+      <!-- PERFIL -->
+      <section
+        class="screen secondary-screen profile-screen"
+        data-screen="profile"
+        aria-labelledby="profile-title"
+        hidden
+      >
+        <p class="eyebrow">Tu perfil</p>
+        <h2 id="profile-title" class="title profile-title"></h2>
+        <p id="profile-subtitle" class="profile-subtitle"></p>
+
+        <div class="profile-copy">
+          <p id="profile-summary" class="profile-summary"></p>
+          <p id="profile-body" class="profile-body"></p>
+        </div>
+        <canvas
+          id="profile-radar"
+          class="profile-radar"
+          width="320"
+          height="320"
+          role="img"
+          aria-label="Gráfica de tu perfil de jugadora"
+        ></canvas>
+        <section id="profile-traits" class="profile-traits" aria-label="Señales de tu perfil"></section>
+        <p class="profile-flex-note">
+          Este perfil es un punto de partida, no una caja. Los moods y lo que quieras jugar hoy siempre pueden cambiar tus recomendaciones.
+        </p>
+        <div class="profile-actions">
+          <button type="button" class="btn btn-ghost" data-action="reset-profile">
+            Rehacer test
+          </button>
+          <button type="button" class="btn btn-primary" data-action="to-results">
+            Ver mis juegos
+          </button>
+        </div>
+      </section>
+
+      <!-- DESCUBRIR REDESIGN-03 -->
+      <section
+        class="screen discover-screen"
+        data-screen="results"
+        aria-labelledby="results-title"
+        hidden
+      >
+        <header class="discover-header">
+          <p class="discover-eyebrow">Hecho alrededor de cómo juegas</p>
+          <h2 id="results-title" class="discover-title">Descubrir</h2>
+          <p class="discover-lead">
+            Recomendaciones personales, moods temporales y juegos para compartir.
+          </p>
+        </header>
+
+        <article class="discover-profile">
+          <div class="discover-profile-copy">
+            <p class="discover-section-kicker">Tu perfil</p>
+            <h3 id="discover-profile-title" class="discover-profile-title"></h3>
+            <p id="discover-profile-subtitle" class="discover-profile-subtitle"></p>
+          </div>
+          <button type="button" class="btn btn-ghost" data-action="continue-profile">
+            Ver perfil completo
+          </button>
+        </article>
+
+        <section class="discover-section" aria-labelledby="discover-for-you-title">
+          <header class="discover-section-heading">
+            <p class="discover-section-kicker">Tu punto de partida</p>
+            <h3 id="discover-for-you-title" class="discover-section-title">Para ti</h3>
+            <p class="discover-section-copy">
+              Las opciones con mejor afinidad según tu perfil actual.
+            </p>
+          </header>
+          <div id="list-for-you" class="card-list"></div>
+        </section>
+
+        <section class="discover-section" aria-labelledby="discover-hook-title">
+          <header class="discover-section-heading">
+            <p class="discover-section-kicker">También podrían atraparte</p>
+            <h3 id="discover-hook-title" class="discover-section-title">Sigue explorando</h3>
+          </header>
+          <div id="list-might-hook" class="card-list"></div>
+        </section>
+
+        <section class="discover-section" aria-labelledby="discover-mood-title">
+          <header class="discover-section-heading">
+            <p class="discover-section-kicker">Elige cómo quieres sentir la sesión</p>
+            <h3 id="discover-mood-title" class="discover-section-title">Según tu mood</h3>
+            <p class="discover-section-copy">
+              Estos filtros son temporales y no modifican tu perfil guardado.
+            </p>
+          </header>
+          <div class="discover-moods" role="group" aria-label="Filtrar por mood">
+            <button type="button" class="discover-mood-button" data-discover-mood="DARK">Oscuro</button>
+            <button type="button" class="discover-mood-button" data-discover-mood="RELAXED">Relajado</button>
+            <button type="button" class="discover-mood-button" data-discover-mood="COMPETITIVE">Competitivo</button>
+            <button type="button" class="discover-mood-button" data-discover-mood="EXPLORE">Explorar</button>
+          </div>
+          <div id="discover-mood-results" class="discover-mood-results"></div>
+        </section>
+
+        <section id="discover-duo" class="discover-section" aria-labelledby="discover-duo-title">
+          <header class="discover-section-heading">
+            <p class="discover-section-kicker">Para compartir</p>
+            <h3 id="discover-duo-title" class="discover-section-title">Para jugar con Inti</h3>
+            <p class="discover-section-copy">
+              Los juegos que Inti ya tiene aparecen primero.
+            </p>
+          </header>
+          <div id="list-duo" class="card-list"></div>
+        </section>
+
+        <section class="discover-section" aria-labelledby="discover-out-title">
+          <header class="discover-section-heading">
+            <p class="discover-section-kicker">Una recomendación inesperada</p>
+            <h3 id="discover-out-title" class="discover-section-title">Sal de tu zona</h3>
+          </header>
+          <div id="list-out-of-zone" class="card-list"></div>
+        </section>
+      </section>
+
+      <!-- EXPLORAR REDESIGN-04 -->
+      <section
+        class="screen catalog-screen"
+        data-screen="catalog"
+        aria-labelledby="catalog-title"
+        hidden
+      >
+        <header class="catalog-screen-header">
+          <p class="catalog-screen-kicker">Nintendo Switch · Switch 2</p>
+          <h2 id="catalog-title" class="catalog-screen-title">Explorar</h2>
+          <p class="catalog-screen-lead">
+            Busca, filtra y guarda juegos para tu próxima sesión.
+          </p>
+        </header>
+
+        <div id="catalog-loading" class="catalog-status" role="status">
+          <span id="catalog-status-label">Cargando catálogo...</span>
+          <button id="catalog-retry" type="button" class="btn btn-ghost" hidden>
+            Reintentar
+          </button>
+        </div>
+
+        <div id="catalog-content" hidden>
+          <div class="catalog-toolbar" aria-label="Filtros del catálogo">
+            <label class="catalog-field catalog-search">
+              <span>Buscar</span>
+              <input
+                id="catalog-query"
+                type="search"
+                placeholder="Buscar por nombre..."
+                autocomplete="off"
+                spellcheck="false"
+              />
+            </label>
+
+            <label class="catalog-field">
+              <span>Plataforma</span>
+              <select id="catalog-platform">
+                <option value="ALL">Todas</option>
+                <option value="SWITCH">Nintendo Switch</option>
+                <option value="SWITCH_2">Nintendo Switch 2</option>
+              </select>
+            </label>
+
+            <label class="catalog-field">
+              <span>Género</span>
+              <select id="catalog-genre">
+                <option value="ALL">Todos</option>
+              </select>
+            </label>
+
+            <label class="catalog-field">
+              <span>Modo</span>
+              <select id="catalog-mode">
+                <option value="ALL">Todos</option>
+              </select>
+            </label>
+
+            <label class="catalog-field">
+              <span>Ordenar</span>
+              <select id="catalog-sort">
+                <option value="NAME">Nombre</option>
+                <option value="RATING">Mejor calificados</option>
+                <option value="NEWEST">Más recientes</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="catalog-summary">
+            <div>
+              <p id="catalog-count" aria-live="polite"></p>
+              <div id="catalog-active-filters" class="catalog-active-filters" aria-label="Filtros activos"></div>
+            </div>
+            <button id="catalog-clear" type="button" class="btn btn-text" hidden>
+              Limpiar filtros
+            </button>
+          </div>
+
+          <div id="catalog-grid" class="catalog-grid"></div>
+
+          <nav class="catalog-pagination" aria-label="Páginas del catálogo">
+            <button id="catalog-previous" type="button" class="btn btn-ghost">
+              Anterior
+            </button>
+            <p id="catalog-page" class="hint"></p>
+            <button id="catalog-next" type="button" class="btn btn-ghost">
+              Siguiente
+            </button>
+          </nav>
+        </div>
+      </section>
+
+      <!-- MI LISTA REDESIGN-05 -->
+      <section
+        class="screen collection-screen"
+        data-screen="wishlist"
+        aria-labelledby="wishlist-title"
+        hidden
+      >
+        <header class="collection-header">
+          <p class="collection-kicker">Guardado en este dispositivo</p>
+          <h2 id="wishlist-title" class="collection-title">Mi lista</h2>
+          <p class="collection-lead">
+            Separa lo que te interesa de los juegos que ya forman parte de tu biblioteca.
+          </p>
+        </header>
+
+        <div class="collection-tabs" role="tablist" aria-label="Colecciones">
+          <button
+            id="collection-tab-interested"
+            type="button"
+            class="collection-tab"
+            role="tab"
+            aria-controls="collection-panel-interested"
+            data-collection-tab="interested"
+          >
+            <span>Me interesa</span>
+            <span id="collection-interested-count" class="collection-tab-count">0</span>
+          </button>
+          <button
+            id="collection-tab-owned"
+            type="button"
+            class="collection-tab"
+            role="tab"
+            aria-controls="collection-panel-owned"
+            data-collection-tab="owned"
+          >
+            <span>Mi biblioteca</span>
+            <span id="collection-owned-count" class="collection-tab-count">0</span>
+          </button>
+        </div>
+
+        <div id="list-wishlist" aria-live="polite"></div>
+
+        <div class="collection-actions">
+          <button id="collection-clear-interested" type="button" class="btn btn-ghost" data-action="clear-wishlist">
+            Vaciar Me interesa
+          </button>
+          <button type="button" class="btn btn-primary" data-action="to-catalog">
+            Explorar juegos
+          </button>
+        </div>
+      </section>
+
+
+
+      <!-- REGALO -->
+      <section
+        class="screen secondary-screen gift-screen"
+        data-screen="gift"
+        aria-labelledby="gift-title"
+        hidden
+      >
+        <p class="eyebrow">GUARDADO PARA TI</p>
+        <h2 id="gift-title" class="title">Tu regalo</h2>
+
+        <div id="gift-slot" class="gift-slot gift-reveal">
+          <p class="lead">Tu Switch ya era el comienzo.</p>
+          <p>
+            También tienes códigos de Nintendo eShop para elegir los juegos que
+            realmente quieras hacer tuyos.
+          </p>
+          <p>
+            Explora el catálogo, guarda opciones en Mi lista y canjea los
+            códigos cuando estés lista.
+          </p>
+
+          <div class="gift-code-list" aria-label="Códigos de Nintendo eShop">
+            <article class="gift-code-card">
+              <span class="gift-code-label">Código 01</span>
+              <strong class="gift-code-mask">XXXX-XXXX-XXXX-XXXX</strong>
+            </article>
+            <article class="gift-code-card">
+              <span class="gift-code-label">Código 02</span>
+              <strong class="gift-code-mask">XXXX-XXXX-XXXX-XXXX</strong>
+            </article>
+          </div>
+
+          <p class="hint">
+            Los códigos reales se entregan por separado dentro del regalo.
+          </p>
+
+          <details class="redeem-guide">
+            <summary>Cómo canjear los códigos</summary>
+            <ol class="redeem-steps">
+              <li>Conecta la consola a internet.</li>
+              <li>Abre Nintendo eShop desde el menú HOME.</li>
+              <li>Selecciona la cuenta Nintendo que recibirá el contenido.</li>
+              <li>Selecciona Ingresar código en el menú de la izquierda.</li>
+              <li>Ingresa el código de 16 caracteres y confirma el canje.</li>
+            </ol>
+            <p class="hint">
+              Revisa que estés usando la cuenta Nintendo correcta antes de confirmar.
+            </p>
+          </details>
+        </div>
+
+        <div class="gift-actions">
+          <button type="button" class="btn btn-ghost" data-action="to-getting-started">
+            Abrir Inicia aquí
+          </button>
+          <button type="button" class="btn btn-primary" data-action="to-family">
+            Activar Nintendo Switch Online
+          </button>
+        </div>
+      </section>
+
+      <!-- GRUPO FAMILIAR -->
+      <section
+        class="screen secondary-screen family-screen"
+        data-screen="family"
+        aria-labelledby="family-title"
+        hidden
+      >
+        <h2 id="family-title" class="title">Únete al grupo familiar</h2>
+        <p class="lead">
+          Así tienes Nintendo Switch Online y podemos jugar juntos.
+        </p>
+        <ol class="steps">
+          <li>
+            <strong>Crea tu cuenta Nintendo</strong>
+            <span
+              >Entra a accounts.nintendo.com y regístrate con tu correo, con
+              México como país.</span
+            >
+          </li>
+          <li>
+            <strong>Vincúlala a tu Switch</strong>
+            <span
+              >En la consola: Configuración, Usuarios, Añadir usuario, y vincula
+              tu cuenta.</span
+            >
+          </li>
+          <li>
+            <strong>Pásale tu correo a Inti</strong>
+            <span>Él te manda la invitación desde su cuenta.</span>
+          </li>
+          <li>
+            <strong>Acepta la invitación</strong>
+            <span
+              >Abre el correo de Nintendo y acepta. Listo, ya estás en el
+              grupo.</span
+            >
+          </li>
+        </ol>
+        <button type="button" class="btn btn-ghost" data-action="restart">
+          Volver al inicio
+        </button>
+      </section>
+    </main>
+
+    <dialog
+      id="catalog-dialog"
+      class="catalog-dialog"
+      aria-labelledby="catalog-dialog-title"
+    >
+      <article class="catalog-dialog-content">
+        <button
+          id="catalog-dialog-close"
+          type="button"
+          class="catalog-dialog-close"
+          aria-label="Cerrar detalles"
+        >
+          ×
+        </button>
+
+        <div id="catalog-dialog-loading" class="catalog-status">
+          Cargando detalles...
+        </div>
+
+        <div id="catalog-dialog-body" hidden>
+          <div class="catalog-dialog-copy">
+            <p id="catalog-dialog-platforms" class="eyebrow"></p>
+
+            <h2 id="catalog-dialog-title" class="catalog-dialog-title"></h2>
+
+            <div id="catalog-dialog-badges" class="card-badges"></div>
+
+            <div class="catalog-dialog-actions">
+              <button
+                id="catalog-dialog-favorite"
+                type="button"
+                class="favorite-button"
+              >
+                ♡ Me interesa
+              </button>
+
+              <button
+                id="catalog-dialog-owned"
+                type="button"
+                class="library-button"
+              >
+                Ya lo tengo
+              </button>
+            </div>
+
+            <section class="catalog-dialog-section">
+              <h3>De qué trata</h3>
+
+              <p id="catalog-dialog-summary"></p>
+            </section>
+
+            <section
+              id="catalog-dialog-story-section"
+              class="catalog-dialog-section"
+              hidden
+            >
+              <h3>La historia</h3>
+
+              <p id="catalog-dialog-story"></p>
+            </section>
+
+            <dl class="catalog-metadata">
+              <div>
+                <dt>Lanzamiento</dt>
+                <dd id="catalog-dialog-release"></dd>
+              </div>
+
+              <div>
+                <dt>Desarrollado por</dt>
+                <dd id="catalog-dialog-developers"></dd>
+              </div>
+
+              <div>
+                <dt>Publicado por</dt>
+                <dd id="catalog-dialog-publishers"></dd>
+              </div>
+
+              <div>
+                <dt>Modos</dt>
+                <dd id="catalog-dialog-modes"></dd>
+              </div>
+            </dl>
+          </div>
+
+          <section id="catalog-dialog-nintendo" class="catalog-nintendo-details" hidden>
+              <div class="catalog-price-panel">
+                <p class="catalog-price-kicker">Nintendo Store México</p>
+                <p id="catalog-dialog-price" class="catalog-price"></p>
+                <p id="catalog-dialog-sale" class="catalog-price-sale" hidden></p>
+              </div>
+              <dl class="catalog-metadata catalog-metadata-nintendo">
+                <div><dt>Clasificación</dt><dd id="catalog-dialog-rating"></dd></div>
+                <div><dt>Jugadores</dt><dd id="catalog-dialog-players"></dd></div>
+                <div><dt>Formas de juego</dt><dd id="catalog-dialog-ways"></dd></div>
+                <div><dt>Disponibilidad</dt><dd id="catalog-dialog-availability"></dd></div>
+              </dl>
+              <div id="catalog-dialog-content-descriptors" class="catalog-detail-chip-group" hidden>
+                <p class="catalog-detail-chip-title">Descriptores de contenido</p>
+                <div id="catalog-dialog-content-descriptor-list" class="catalog-detail-chips"></div>
+              </div>
+              <div id="catalog-dialog-features" class="catalog-detail-chip-group" hidden>
+                <p class="catalog-detail-chip-title">Características</p>
+                <div id="catalog-dialog-feature-list" class="catalog-detail-chips"></div>
+              </div>
+              <p id="catalog-dialog-demo" class="catalog-demo-signal" hidden>Demo disponible en Nintendo Store México</p>
+            </section>
+          <div
+            id="catalog-dialog-gallery"
+            class="catalog-gallery"
+            aria-label="Capturas del juego"
+          ></div>
+          <section id="nintendo-product-detail" hidden></section>
+          <!-- HEARTAGRAM_NINTENDO_EDITORIAL_DETAIL_NP5 -->
+        </div>
+      </article>
+    </dialog>
+
+    <noscript>
+      <p class="noscript">Heartagram necesita JavaScript para funcionar.</p>
+    </noscript>
+  </body>
+</html>

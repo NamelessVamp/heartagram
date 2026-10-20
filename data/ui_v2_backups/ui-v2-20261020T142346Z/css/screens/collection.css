@@ -1,0 +1,328 @@
+/* REDESIGN-05: Mi lista */
+.collection-screen {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-content: start;
+}
+
+.collection-header {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 58rem;
+}
+
+.collection-kicker {
+  margin: 0;
+  color: var(--shell-gold);
+  font-family: ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.collection-title {
+  margin: 0;
+  color: var(--shell-text);
+  font-family: Georgia, serif;
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.collection-lead {
+  max-width: 46rem;
+  margin: 0;
+  color: var(--shell-text-muted);
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.65;
+}
+
+.collection-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(100%, 42rem);
+  padding: 0.35rem;
+  border: 1px solid var(--shell-border);
+  border-radius: var(--shell-radius-md);
+  background: var(--shell-surface);
+}
+
+.collection-tab {
+  display: flex;
+  justify-content: center;
+  gap: 0.65rem;
+  align-items: center;
+  min-height: 3rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid transparent;
+  border-radius: calc(var(--shell-radius-md) - 0.2rem);
+  background: transparent;
+  color: var(--shell-text-muted);
+  cursor: pointer;
+}
+
+.collection-tab[aria-selected="true"] {
+  border-color: var(--shell-border-strong);
+  background: rgb(210 47 121 / 0.16);
+  color: var(--shell-text);
+}
+
+.collection-tab-count {
+  display: grid;
+  place-items: center;
+  min-width: 1.75rem;
+  min-height: 1.75rem;
+  padding-inline: 0.4rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-family: ui-monospace, monospace;
+  font-size: 0.7rem;
+}
+
+.collection-screen #list-wishlist {
+  display: block;
+  width: 100%;
+}
+
+.collection-screen .wishlist-section {
+  display: grid;
+  gap: 1.25rem;
+  width: 100%;
+  margin: 0;
+}
+
+.collection-screen .wishlist-section + .wishlist-section {
+  padding: 0;
+  border: 0;
+}
+
+.collection-screen .wishlist-section-heading {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+}
+
+.collection-screen .wishlist-section-title {
+  margin: 0;
+  color: var(--shell-text);
+  font-family: Georgia, serif;
+  font-size: clamp(1.65rem, 3vw, 2.6rem);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.collection-screen .wishlist-section-description {
+  max-width: 52rem;
+  margin: 0;
+  color: var(--shell-text-muted);
+  line-height: 1.55;
+}
+
+.collection-screen .wishlist-group {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.collection-screen .wishlist-curated-list,
+.collection-screen .catalog-wishlist-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.collection-screen .wishlist-curated-list > .wishlist-section-heading,
+.collection-screen .catalog-wishlist-list + .wishlist-section-heading {
+  grid-column: 1 / -1;
+}
+
+.collection-screen .card,
+.collection-screen .catalog-wishlist-card {
+  height: 100%;
+  margin: 0;
+  border-color: var(--shell-border);
+  background: var(--shell-surface);
+  box-shadow: none;
+}
+
+.collection-screen .catalog-wishlist-card {
+  grid-template-columns: minmax(7rem, 9rem) minmax(0, 1fr);
+}
+
+.collection-screen .catalog-wishlist-copy {
+  padding: 1rem;
+}
+
+.collection-screen .catalog-wishlist-actions,
+.collection-screen .library-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+.collection-screen .catalog-wishlist-actions button,
+.collection-screen .library-card-actions button {
+  min-height: 2.65rem;
+  margin: 0;
+}
+
+.collection-screen .empty,
+.collection-screen .catalog-status {
+  grid-column: 1 / -1;
+  padding: 1.25rem;
+  border: 1px dashed var(--shell-border);
+  border-radius: var(--shell-radius-sm);
+  background: rgb(210 47 121 / 0.04);
+  color: var(--shell-text-muted);
+}
+
+.collection-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--shell-border);
+}
+
+.collection-actions .btn {
+  margin: 0;
+}
+
+@media (max-width: 70rem) {
+  .collection-screen .wishlist-curated-list,
+  .collection-screen .catalog-wishlist-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 48rem) {
+  .collection-tabs {
+    width: 100%;
+  }
+
+  .collection-tab {
+    padding-inline: 0.45rem;
+  }
+
+  .collection-screen .catalog-wishlist-card {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-screen .catalog-wishlist-media {
+    min-height: 15rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--shell-border);
+  }
+
+  .collection-actions {
+    display: grid;
+  }
+
+  .collection-actions .btn {
+    width: 100%;
+  }
+}
+
+
+/* HEARTAGRAM_COLLECTION_P15 */
+.collection-screen {
+  --collection-accent: var(--shell-accent-soft);
+}
+.collection-screen[data-collection-active="owned"] {
+  --collection-accent: var(--shell-gold);
+}
+.collection-tab:first-child::before { content: "♡"; color: var(--shell-accent-soft); }
+.collection-tab:last-child::before { content: "◇"; color: var(--shell-gold); }
+.collection-tab[aria-selected="true"] {
+  box-shadow: inset 0 -2px 0 var(--collection-accent);
+}
+
+.collection-panel-interested,
+.collection-panel-owned {
+  position: relative;
+  padding-top: 1rem;
+}
+.collection-panel-interested::before,
+.collection-panel-owned::before {
+  content: "WISHLIST // SAVED SIGNALS";
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: rgb(var(--rr-gold) / .36);
+  font-family: var(--font-mono);
+  font-size: .56rem;
+  letter-spacing: .12em;
+}
+.collection-panel-owned::before { content: "ARCHIVE // OWNED GAMES"; }
+
+.collection-panel-interested .card,
+.collection-panel-interested .catalog-wishlist-card {
+  border-top-color: var(--shell-accent-soft);
+}
+.collection-panel-owned .card,
+.collection-panel-owned .catalog-wishlist-card {
+  border-color: rgb(var(--rr-gold) / .3);
+  background:
+    linear-gradient(145deg, rgb(var(--rr-gold) / .055), transparent 55%),
+    var(--shell-surface);
+}
+.collection-owned-seal {
+  position: absolute;
+  z-index: 3;
+  top: .75rem;
+  right: .75rem;
+  padding: .3rem .48rem;
+  border: 1px solid rgb(var(--rr-gold) / .48);
+  border-radius: .25rem;
+  background: rgb(var(--rr-black) / .82);
+  color: var(--shell-gold);
+  font-family: var(--font-mono);
+  font-size: .52rem;
+  letter-spacing: .1em;
+}
+.collection-screen .card,
+.collection-screen .catalog-wishlist-card { position: relative; overflow: hidden; }
+
+.collection-empty-state {
+  display: grid;
+  justify-items: start;
+  gap: .75rem;
+  min-height: 17rem;
+  padding: clamp(1.5rem, 4vw, 3rem) !important;
+  border-color: var(--collection-accent) !important;
+  background:
+    radial-gradient(circle at 90% 10%, rgb(var(--rr-pink) / .12), transparent 30%),
+    var(--shell-surface) !important;
+}
+.collection-panel-owned .collection-empty-state {
+  background:
+    radial-gradient(circle at 90% 10%, rgb(var(--rr-gold) / .1), transparent 30%),
+    var(--shell-surface) !important;
+}
+.collection-empty-mark { color: var(--collection-accent); font-size: 2rem; }
+.collection-empty-title {
+  margin: 0;
+  color: var(--shell-text);
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 400;
+}
+.collection-empty-copy { max-width: 48ch; margin: 0; color: var(--shell-text-muted); line-height: 1.6; }
+.collection-empty-state .btn { margin-top: .5rem; color: white; }
+
+.collection-panel-owned .favorite-button { display: none; }
+.collection-panel-owned .library-button-remove {
+  border-color: rgb(var(--rr-gold) / .3);
+  color: var(--shell-text-muted);
+}
+.collection-panel-interested .library-button::before { content: "◇ "; color: var(--shell-gold); }
+
+.collection-screen[data-collection-active="owned"] #collection-clear-interested { display: none !important; }
+.collection-actions { justify-content: space-between; }
+
+@media(max-width:48rem) {
+  .collection-panel-interested::before,
+  .collection-panel-owned::before { position: static; display: block; margin-bottom: .75rem; }
+  .collection-owned-seal { top: .6rem; right: .6rem; }
+}

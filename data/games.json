@@ -7,10 +7,10 @@
       "ADVENTURE"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": true,
+      "same_console": true,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -41,7 +41,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Sustos con humor: la tensión de FNAF, pero sin traumas.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
     }
@@ -55,10 +55,10 @@
       "PUZZLE"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -86,7 +86,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Corto, inquietante y precioso. Pura atmósfera de pesadilla.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -100,10 +100,10 @@
       "PUZZLE"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -131,7 +131,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "La secuela: más grande, más oscura y más perturbadora.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -143,10 +143,10 @@
       "HORROR"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -173,7 +173,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Freddy en una plaza enorme, de noche. Ya sabes cómo va esto.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -185,10 +185,10 @@
       "HORROR"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -215,7 +215,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Los turnos de noche clásicos de FNAF, reunidos en un solo juego.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -228,10 +228,10 @@
       "SURVIVAL"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -260,7 +260,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Horror de supervivencia con una historia triste que no se olvida.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -273,10 +273,10 @@
       "SURVIVAL"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -304,7 +304,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Un bosque, recursos escasos y noches que se sienten eternas.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -316,10 +316,10 @@
       "ADVENTURE"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -346,7 +346,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Pescas de día. De noche, el mar se vuelve algo más.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -359,10 +359,10 @@
       "ROGUELIKE"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -389,7 +389,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Un juego de cartas que no es lo que parece. Mejor no saber más.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -402,10 +402,10 @@
       "ACTION"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -432,7 +432,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Gótico, brutal y hermoso. Difícil a propósito.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -445,10 +445,10 @@
       "ACTION"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -479,7 +479,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Tierno por fuera, oscuro por dentro: tú diriges la secta.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "VERIFICAR"
     }
@@ -491,10 +491,10 @@
       "METROIDVANIA"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -522,7 +522,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Un reino subterráneo enorme, melancólico y lleno de secretos.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -534,10 +534,10 @@
       "METROIDVANIA"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -565,7 +565,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "La secuela de Hollow Knight: más rápida y todavía más difícil.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -578,10 +578,10 @@
       "ACTION"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -608,7 +608,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "El clásico del survival horror. Pasillos, recursos y tensión.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "VERIFICAR"
     }
@@ -621,10 +621,10 @@
       "ADVENTURE"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -652,7 +652,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Si te gustaba explorar Teyvat, este es el mundo abierto que lo inspiró.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -665,10 +665,10 @@
       "ADVENTURE"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -697,7 +697,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Hyrule otra vez, ahora con islas en el cielo y cosas para construir.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -709,10 +709,10 @@
       "ADVENTURE"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -741,7 +741,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "El clásico de Zelda, rehecho para tu consola.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -754,10 +754,10 @@
       "PUZZLE"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -784,7 +784,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Zelda como protagonista: resuelves todo con creatividad.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -796,10 +796,10 @@
       "RPG"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -829,7 +829,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Pokémon en una ciudad: explorar, capturar y coleccionar.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "VERIFICAR"
     }
@@ -842,10 +842,10 @@
       "RPG"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": true,
+      "same_console": true,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -875,7 +875,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Mundo abierto de Pokémon para recorrer, solo o con alguien.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
     }
@@ -889,10 +889,10 @@
       "SURVIVAL"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -922,7 +922,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Un universo infinito para explorar, y Inti ya está ahí.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON"
     }
@@ -934,10 +934,10 @@
       "METROIDVANIA"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -964,7 +964,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Huye de algo que te persigue en una estación hostil.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -977,10 +977,10 @@
       "ADVENTURE"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1006,7 +1006,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Exploración en primera persona en planetas misteriosos.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -1018,10 +1018,10 @@
       "RPG"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1047,7 +1047,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Un RPG épico con una historia que pega fuerte.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -1059,10 +1059,10 @@
       "MOBA"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": true,
+      "same_console": true,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1092,7 +1092,7 @@
     "price_mxn": 0,
     "price_checked": null,
     "why": "Es un MOBA, como LoL, pero con Pokémon. Y es gratis.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
     }
@@ -1104,10 +1104,10 @@
       "SHOOTER"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1137,7 +1137,7 @@
     "price_mxn": 0,
     "price_checked": null,
     "why": "Battle royale gratis. Si te gustaba CoD Mobile, aquí hay adrenalina.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON"
     }
@@ -1149,10 +1149,10 @@
       "SHOOTER"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": true,
+      "same_console": true,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1181,7 +1181,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Shooter por equipos, pero con tinta. Rápido y con mucho estilo.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
     }
@@ -1193,10 +1193,10 @@
       "RACING"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": true,
+      "same_console": true,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1226,7 +1226,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "El clásico para retar a Inti. Ya lo tiene, así que pueden jugar hoy.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
     }
@@ -1239,10 +1239,10 @@
       "PARTY"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": true,
+      "same_console": true,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1269,7 +1269,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Peleas caóticas entre personajes de Nintendo y muchos más.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
     }
@@ -1281,10 +1281,10 @@
       "SHOOTER"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1315,7 +1315,7 @@
     "price_mxn": 0,
     "price_checked": null,
     "why": "Héroes con roles, como en LoL, pero en shooter. Gratis.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON"
     }
@@ -1328,10 +1328,10 @@
       "ACTION"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": true,
+      "same_console": true,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1358,7 +1358,7 @@
     "price_mxn": 0,
     "price_checked": null,
     "why": "Futbol con coches. Suena raro y es adictivo. Gratis.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
     }
@@ -1370,10 +1370,10 @@
       "PARTY"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1401,7 +1401,7 @@
     "price_mxn": 0,
     "price_checked": null,
     "why": "Carreras de obstáculos caóticas para reírse. Gratis.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON"
     }
@@ -1414,10 +1414,10 @@
       "SHOOTER"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1445,7 +1445,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Splatoon en modo aventura, con más acción.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "VERIFICAR"
     }
@@ -1457,10 +1457,10 @@
       "RPG"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1489,7 +1489,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Estilo, ladrones fantasma y una historia enorme. Inti lo está jugando.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -1501,10 +1501,10 @@
       "RPG"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1530,7 +1530,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Una torre, una hora oculta a medianoche y una historia que te marca.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -1543,10 +1543,10 @@
       "RPG"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1573,7 +1573,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Estrategia por turnos y decisiones que pesan.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -1586,10 +1586,10 @@
       "ACTION"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1616,7 +1616,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Escapar del inframundo: cada intento es distinto y muy adictivo.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -1629,10 +1629,10 @@
       "ACTION"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1659,7 +1659,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "La secuela de Hades: más rápida, más oscura y con más magia.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -1673,10 +1673,10 @@
       "SHOOTER"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1705,7 +1705,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Night City de noche. Una historia adulta y oscura.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -1718,10 +1718,10 @@
       "SANDBOX"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": true,
+      "same_console": true,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1750,7 +1750,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Tu propia isla, a tu ritmo. Ideal para desconectarte.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
     }
@@ -1763,10 +1763,10 @@
       "FARMING"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": true,
+      "same_console": true,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1795,7 +1795,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Granja, pueblo y misterios, y se puede jugar en pareja.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
     }
@@ -1808,10 +1808,10 @@
       "SANDBOX"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1839,7 +1839,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Construye un lugar acogedor rodeado de Pokémon.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "VERIFICAR"
     }
@@ -1852,10 +1852,10 @@
       "SURVIVAL"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": true,
+      "same_console": true,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1884,7 +1884,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Construir, sobrevivir y explorar, sola o juntos.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
     }
@@ -1896,10 +1896,10 @@
       "COZY"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1926,7 +1926,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Una isla con tus amigos convertidos en Miis. Puro caos tierno.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -1939,10 +1939,10 @@
       "COZY"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": false,
+      "online_versus": false,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -1969,7 +1969,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Desempacar cajas y descubrir una vida a través de sus cosas.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
     }
@@ -1982,10 +1982,10 @@
       "PLATFORMER"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": true,
+      "same_console": true,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -2013,7 +2013,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Hecho para dos: solo se puede jugar en equipo.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
     }
@@ -2025,10 +2025,10 @@
       "PARTY"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": true,
+      "same_console": true,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -2055,7 +2055,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Cocinar juntos bajo presión. Prueba de fuego para la relación.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
     }
@@ -2067,10 +2067,10 @@
       "SURVIVAL"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": true,
+      "same_console": true,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -2099,7 +2099,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Sobrevivir juntos en un mundo extraño y gótico.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
     }
@@ -2112,10 +2112,10 @@
       "RPG"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": false,
+      "same_console": false,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -2143,7 +2143,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Cazar monstruos enormes en equipo.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON"
     }
@@ -2155,10 +2155,10 @@
       "PARTY"
     ],
     "multiplayer": {
-      "online_coop": "VERIFICAR",
-      "online_versus": "VERIFICAR",
-      "local_wireless": "VERIFICAR",
-      "same_console": "VERIFICAR",
+      "online_coop": true,
+      "online_versus": true,
+      "local_wireless": true,
+      "same_console": true,
       "requires_nso": "VERIFICAR",
       "gameshare": "VERIFICAR"
     },
@@ -2185,7 +2185,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Tablero, minijuegos y traiciones amistosas.",
-    "status": "VERIFICAR",
+    "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
     }
