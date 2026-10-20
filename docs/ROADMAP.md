@@ -2,7 +2,7 @@
 
 ```text
 release   : v1.1.1 static Nintendo
-estado    : [STATIC RELEASE CANDIDATE]
+estado    : [PUBLISHED]
 objetivo  : publicación en GitHub Pages y entrega
 ```
 
@@ -20,13 +20,13 @@ objetivo  : publicación en GitHub Pages y entrega
 
 ## Publicación
 
-- [ ] Ejecutar QA completo y smoke test local.
-- [ ] Revisar que no existan secretos ni artefactos privados rastreados.
-- [ ] Integrar `release/v1.1.1-static-nintendo` en `main`.
-- [ ] Crear tag `v1.1.1`.
-- [ ] Hacer público el repositorio.
-- [ ] Activar GitHub Pages desde `main` y `/`.
-- [ ] Probar la URL pública en escritorio y móvil.
+- [x] Ejecutar QA completo y smoke test local.
+- [x] Revisar que no existan secretos ni artefactos privados rastreados.
+- [x] Integrar `release/v1.1.1-static-nintendo` en `main`.
+- [x] Crear tag `v1.1.1`.
+- [x] Hacer público el repositorio.
+- [x] Activar GitHub Pages desde `main` y `/`.
+- [x] Probar la URL pública en escritorio y móvil.
 
 ## Entrega
 
