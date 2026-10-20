@@ -29,6 +29,7 @@ import {
 } from "./catalog.js?v=v110";
 import { getOwnedGameIds, setOwnedGame } from "./library.js";
 import { initializeLocalAssistant } from "./ai-assistant-ui.js";
+import { initializeGettingStarted } from "./getting-started.js";
 
 // ?preview shows unverified games during development.
 const PREVIEW = new URLSearchParams(window.location.search).has("preview");
@@ -453,6 +454,8 @@ const ACTIONS = {
     void refreshWishlist();
   },
 
+  "to-getting-started": () => { initializeGettingStarted(); showScreen("getting-started"); },
+
   "to-gift": () => {
     showScreen("gift");
   },
@@ -529,6 +532,7 @@ async function init() {
     });
 
     initializeCollectionUI();
+    initializeGettingStarted();
 
     // Restore the profile only once, after all data is loaded.
     const savedProfile = getSavedProfile();

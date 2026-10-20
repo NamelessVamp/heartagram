@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#080608" />
+    <title>Heartagram</title>
+    <link rel="stylesheet" href="css/base.css?v=v110" />
+    <link rel="stylesheet" href="css/theme.css?v=v110" />
+    <link rel="stylesheet" href="css/theme-romance.css?v=v110" />
+    <link rel="stylesheet" href="css/tokens.css?v=v110" />
+    <link rel="stylesheet" href="css/reset.css?v=v110" />
+    <link rel="stylesheet" href="css/shell.css?v=v110" />
+    <link rel="stylesheet" href="css/visual-system.css?v=v110" />
+    <link rel="stylesheet" href="css/screens/home.css?v=v110" />
+    <link rel="stylesheet" href="css/screens/quiz.css?v=v110" />
+    <link rel="stylesheet" href="css/screens/profile.css?v=v110" />
+    <link rel="stylesheet" href="css/screens/discover.css?v=v110" />
+    <link rel="stylesheet" href="css/screens/catalog.css?v=v110" />
+    <link rel="stylesheet" href="css/screens/collection.css?v=v110" />
+    <script type="module" src="js/main.js?v=v110"></script>
+    <script type="module" src="js/visual-system.js"></script>
+    <link rel="stylesheet" href="css/screens/chat.css?v=v110" />
+    <link rel="stylesheet" href="css/screens/chat-refined.css?v=v110" />
+    <link rel="stylesheet" href="css/screens/secondary.css?v=v110" />
+    <link rel="stylesheet" href="css/screens/chat-ux-v2.css?v=v110" />
+  <link rel="stylesheet" href="css/screens/chat-sidebar.css?v=v110" />
+<script type="module" src="js/chat-sidebar.js"></script>
+  <script type="module" src="js/chat-menu-popover.js"></script>
+  <link rel="stylesheet" href="css/screens/nintendo-product-detail.css?v=v110" />
+</head>
+  <body data-screen="intro">
+    <div class="grain" aria-hidden="true"></div>
+
+    <main id="app">
+      <!-- INICIO REDESIGN-02 -->
+      <section
+        class="screen home-screen"
+        data-screen="intro"
+        aria-labelledby="intro-title"
+      >
+        <header class="home-header">
+          <p class="home-kicker">Para Adri</p>
+          <h1 id="intro-title" class="home-title">Heartagram</h1>
+          <p class="home-subtitle">
+            Tu espacio para descubrir, guardar y elegir la próxima aventura.
+          </p>
+        </header>
+
+        <div id="home-new-state" class="home-empty-card" hidden>
+          <p class="home-label">Empieza por tu perfil</p>
+          <h2 class="home-card-title">Descubre qué tipo de jugadora eres.</h2>
+          <p id="intro-lead" class="home-card-copy">
+            Doce elecciones rápidas para comenzar a encontrar juegos que encajen
+            contigo.
+          </p>
+          <p id="intro-hint" class="hint">12 preguntas · menos de 3 minutos</p>
+          <div id="new-profile-actions" class="home-secondary-actions">
+            <button type="button" class="btn btn-primary" data-action="start">
+              Descubrir mi perfil
+            </button>
+            <button type="button" class="btn btn-ghost" data-action="to-catalog">
+              Explorar juegos
+            </button>
+            <button type="button" class="btn btn-ghost" data-action="to-gift">
+              Ver mi regalo
+            </button>
+          </div>
+        </div>
+
+        <div id="home-returning-state" hidden>
+          <article class="home-primary-card">
+            <div class="home-primary-copy">
+              <p class="home-label">Continuar</p>
+              <h2 class="home-card-title">Tu perfil, tus juegos y tu lista siguen aquí.</h2>
+              <p class="home-card-copy">
+                Retoma tus recomendaciones o decide qué te gustaría jugar hoy.
+              </p>
+            </div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-action="to-results"
+            >
+              Ir a Descubrir
+            </button>
+          </article>
+
+          <div class="home-grid">
+            <article class="home-panel">
+              <div>
+                <p class="home-label">Tu perfil</p>
+                <h2 id="home-profile-primary" class="home-card-title"></h2>
+                <p id="home-profile-secondary" class="home-card-copy"></p>
+              </div>
+              <div class="home-panel-actions">
+                <button
+                  type="button"
+                  class="btn btn-ghost"
+                  data-action="continue-profile"
+                >
+                  Ver perfil completo
+                </button>
+                <button type="button" class="btn btn-text" data-action="reset-profile">
+                  Rehacer test
+                </button>
+              </div>
+            </article>
+
+            <article class="home-panel">
+              <div>
+                <p class="home-label">Para hoy</p>
+                <h2 id="home-recommendation-title" class="home-card-title"></h2>
+                <p id="home-recommendation-copy" class="home-card-copy"></p>
+              </div>
+              <div class="home-panel-actions">
+                <button type="button" class="btn btn-ghost" data-action="to-results">
+                  Ver por qué
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <section aria-labelledby="home-space-title">
+            <p id="home-space-title" class="home-label">Tu espacio</p>
+            <div class="home-stats">
+              <button type="button" class="home-stat" data-action="to-wishlist">
+                <span id="home-favorite-count" class="home-stat-value">0</span>
+                <span class="home-stat-label">en Me interesa</span>
+              </button>
+              <button type="button" class="home-stat" data-action="to-wishlist">
+                <span id="home-owned-count" class="home-stat-value">0</span>
+                <span class="home-stat-label">en Mi biblioteca</span>
+              </button>
+              <button type="button" class="home-stat" data-action="to-duo">
+                <span class="home-stat-value">2P</span>
+                <span class="home-stat-label">Jugar con Inti</span>
+              </button>
+            </div>
+          </section>
+
+          <div id="returning-profile-actions" class="home-secondary-actions">
+            <button type="button" class="btn btn-ghost" data-action="to-gift">
+              Mi regalo
+            </button>
+            <button type="button" class="btn btn-ghost" data-action="to-assistant">
+              Abrir Chat
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEST -->
+      <section
+        class="screen"
+        data-screen="quiz"
+        aria-labelledby="quiz-question"
+        hidden
+      >
+        <div
+          class="quiz-progress"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="12"
+          aria-valuenow="0"
+        >
+          <div class="quiz-progress-bar" id="quiz-progress-bar"></div>
+        </div>
+        <p class="eyebrow" id="quiz-counter">Pregunta 1 de 12</p>
+        <h2 id="quiz-question" class="quiz-question"></h2>
+        <div
+          id="quiz-options"
+          class="quiz-options"
+          role="radiogroup"
+          aria-labelledby="quiz-question"
+        ></div>
+        <button type="button" class="btn btn-ghost" data-action="back">
+          Anterior
+        </button>
+      </section>
+
+      <!-- PERFIL -->
+      <section
+        class="screen secondary-screen profile-screen"
+        data-screen="profile"
+        aria-labelledby="profile-title"
+        hidden
+      >
+        <p class="eyebrow">Tu perfil</p>
+        <h2 id="profile-title" class="title profile-title"></h2>
+        <p id="profile-subtitle" class="profile-subtitle"></p>
+
+        <div class="profile-copy">
+          <p id="profile-summary" class="profile-summary"></p>
+          <p id="profile-body" class="profile-body"></p>
+        </div>
+        <canvas
+          id="profile-radar"
+          class="profile-radar"
+          width="320"
+          height="320"
+          role="img"
+          aria-label="Gráfica de tu perfil de jugadora"
+        ></canvas>
+        <section id="profile-traits" class="profile-traits" aria-label="Señales de tu perfil"></section>
+        <p class="profile-flex-note">
+          Este perfil es un punto de partida, no una caja. Los moods y lo que quieras jugar hoy siempre pueden cambiar tus recomendaciones.
+        </p>
+        <div class="profile-actions">
+          <button type="button" class="btn btn-ghost" data-action="reset-profile">
+            Rehacer test
+          </button>
+          <button type="button" class="btn btn-primary" data-action="to-results">
+            Ver mis juegos
+          </button>
+        </div>
+      </section>
+
+      <!-- DESCUBRIR REDESIGN-03 -->
+      <section
+        class="screen discover-screen"
+        data-screen="results"
+        aria-labelledby="results-title"
+        hidden
+      >
+        <header class="discover-header">
+          <p class="discover-eyebrow">Hecho alrededor de cómo juegas</p>
+          <h2 id="results-title" class="discover-title">Descubrir</h2>
+          <p class="discover-lead">
+            Recomendaciones personales, moods temporales y juegos para compartir.
+          </p>
+        </header>
+
+        <article class="discover-profile">
+          <div class="discover-profile-copy">
+            <p class="discover-section-kicker">Tu perfil</p>
+            <h3 id="discover-profile-title" class="discover-profile-title"></h3>
+            <p id="discover-profile-subtitle" class="discover-profile-subtitle"></p>
+          </div>
+          <button type="button" class="btn btn-ghost" data-action="continue-profile">
+            Ver perfil completo
+          </button>
+        </article>
+
+        <section class="discover-section" aria-labelledby="discover-for-you-title">
+          <header class="discover-section-heading">
+            <p class="discover-section-kicker">Tu punto de partida</p>
+            <h3 id="discover-for-you-title" class="discover-section-title">Para ti</h3>
+            <p class="discover-section-copy">
+              Las opciones con mejor afinidad según tu perfil actual.
+            </p>
+          </header>
+          <div id="list-for-you" class="card-list"></div>
+        </section>
+
+        <section class="discover-section" aria-labelledby="discover-hook-title">
+          <header class="discover-section-heading">
+            <p class="discover-section-kicker">También podrían atraparte</p>
+            <h3 id="discover-hook-title" class="discover-section-title">Sigue explorando</h3>
+          </header>
+          <div id="list-might-hook" class="card-list"></div>
+        </section>
+
+        <section class="discover-section" aria-labelledby="discover-mood-title">
+          <header class="discover-section-heading">
+            <p class="discover-section-kicker">Elige cómo quieres sentir la sesión</p>
+            <h3 id="discover-mood-title" class="discover-section-title">Según tu mood</h3>
+            <p class="discover-section-copy">
+              Estos filtros son temporales y no modifican tu perfil guardado.
+            </p>
+          </header>
+          <div class="discover-moods" role="group" aria-label="Filtrar por mood">
+            <button type="button" class="discover-mood-button" data-discover-mood="DARK">Oscuro</button>
+            <button type="button" class="discover-mood-button" data-discover-mood="RELAXED">Relajado</button>
+            <button type="button" class="discover-mood-button" data-discover-mood="COMPETITIVE">Competitivo</button>
+            <button type="button" class="discover-mood-button" data-discover-mood="EXPLORE">Explorar</button>
+          </div>
+          <div id="discover-mood-results" class="discover-mood-results"></div>
+        </section>
+
+        <section id="discover-duo" class="discover-section" aria-labelledby="discover-duo-title">
+          <header class="discover-section-heading">
+            <p class="discover-section-kicker">Para compartir</p>
+            <h3 id="discover-duo-title" class="discover-section-title">Para jugar con Inti</h3>
+            <p class="discover-section-copy">
+              Los juegos que Inti ya tiene aparecen primero.
+            </p>
+          </header>
+          <div id="list-duo" class="card-list"></div>
+        </section>
+
+        <section class="discover-section" aria-labelledby="discover-out-title">
+          <header class="discover-section-heading">
+            <p class="discover-section-kicker">Una recomendación inesperada</p>
+            <h3 id="discover-out-title" class="discover-section-title">Sal de tu zona</h3>
+          </header>
+          <div id="list-out-of-zone" class="card-list"></div>
+        </section>
+      </section>
+
+      <!-- EXPLORAR REDESIGN-04 -->
+      <section
+        class="screen catalog-screen"
+        data-screen="catalog"
+        aria-labelledby="catalog-title"
+        hidden
+      >
+        <header class="catalog-screen-header">
+          <p class="catalog-screen-kicker">Nintendo Switch · Switch 2</p>
+          <h2 id="catalog-title" class="catalog-screen-title">Explorar</h2>
+          <p class="catalog-screen-lead">
+            Busca, filtra y guarda juegos para tu próxima sesión.
+          </p>
+        </header>
+
+        <div id="catalog-loading" class="catalog-status" role="status">
+          <span id="catalog-status-label">Cargando catálogo...</span>
+          <button id="catalog-retry" type="button" class="btn btn-ghost" hidden>
+            Reintentar
+          </button>
+        </div>
+
+        <div id="catalog-content" hidden>
+          <div class="catalog-toolbar" aria-label="Filtros del catálogo">
+            <label class="catalog-field catalog-search">
+              <span>Buscar</span>
+              <input
+                id="catalog-query"
+                type="search"
+                placeholder="Buscar por nombre..."
+                autocomplete="off"
+                spellcheck="false"
+              />
+            </label>
+
+            <label class="catalog-field">
+              <span>Plataforma</span>
+              <select id="catalog-platform">
+                <option value="ALL">Todas</option>
+                <option value="SWITCH">Nintendo Switch</option>
+                <option value="SWITCH_2">Nintendo Switch 2</option>
+              </select>
+            </label>
+
+            <label class="catalog-field">
+              <span>Género</span>
+              <select id="catalog-genre">
+                <option value="ALL">Todos</option>
+              </select>
+            </label>
+
+            <label class="catalog-field">
+              <span>Modo</span>
+              <select id="catalog-mode">
+                <option value="ALL">Todos</option>
+              </select>
+            </label>
+
+            <label class="catalog-field">
+              <span>Ordenar</span>
+              <select id="catalog-sort">
+                <option value="NAME">Nombre</option>
+                <option value="RATING">Mejor calificados</option>
+                <option value="NEWEST">Más recientes</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="catalog-summary">
+            <div>
+              <p id="catalog-count" aria-live="polite"></p>
+              <div id="catalog-active-filters" class="catalog-active-filters" aria-label="Filtros activos"></div>
+            </div>
+            <button id="catalog-clear" type="button" class="btn btn-text" hidden>
+              Limpiar filtros
+            </button>
+          </div>
+
+          <div id="catalog-grid" class="catalog-grid"></div>
+
+          <nav class="catalog-pagination" aria-label="Páginas del catálogo">
+            <button id="catalog-previous" type="button" class="btn btn-ghost">
+              Anterior
+            </button>
+            <p id="catalog-page" class="hint"></p>
+            <button id="catalog-next" type="button" class="btn btn-ghost">
+              Siguiente
+            </button>
+          </nav>
+        </div>
+      </section>
+
+      <!-- MI LISTA REDESIGN-05 -->
+      <section
+        class="screen collection-screen"
+        data-screen="wishlist"
+        aria-labelledby="wishlist-title"
+        hidden
+      >
+        <header class="collection-header">
+          <p class="collection-kicker">Guardado en este dispositivo</p>
+          <h2 id="wishlist-title" class="collection-title">Mi lista</h2>
+          <p class="collection-lead">
+            Separa lo que te interesa de los juegos que ya forman parte de tu biblioteca.
+          </p>
+        </header>
+
+        <div class="collection-tabs" role="tablist" aria-label="Colecciones">
+          <button
+            id="collection-tab-interested"
+            type="button"
+            class="collection-tab"
+            role="tab"
+            aria-controls="collection-panel-interested"
+            data-collection-tab="interested"
+          >
+            <span>Me interesa</span>
+            <span id="collection-interested-count" class="collection-tab-count">0</span>
+          </button>
+          <button
+            id="collection-tab-owned"
+            type="button"
+            class="collection-tab"
+            role="tab"
+            aria-controls="collection-panel-owned"
+            data-collection-tab="owned"
+          >
+            <span>Mi biblioteca</span>
+            <span id="collection-owned-count" class="collection-tab-count">0</span>
+          </button>
+        </div>
+
+        <div id="list-wishlist" aria-live="polite"></div>
+
+        <div class="collection-actions">
+          <button id="collection-clear-interested" type="button" class="btn btn-ghost" data-action="clear-wishlist">
+            Vaciar Me interesa
+          </button>
+          <button type="button" class="btn btn-primary" data-action="to-catalog">
+            Explorar juegos
+          </button>
+        </div>
+      </section>
+
+
+      <!-- CHAT REDESIGN-06 -->
+      <section class="screen chat-screen" data-screen="assistant" aria-labelledby="assistant-title" hidden>
+        <h2 id="assistant-title">Chat</h2>
+        <div class="chat-layout">
+          <details class="chat-history">
+            <summary>Conversaciones</summary>
+            <button id="chat-new" type="button">Nueva conversación</button>
+            <div id="chat-threads"></div>
+            <button id="chat-delete" type="button">Eliminar conversación</button>
+          </details>
+          <div class="chat-conversation">
+            <div class="chat-context">Contexto: perfil, Me interesa y Mi biblioteca. Historial guardado en este navegador.</div>
+            <div class="chat-body">
+              <div id="chat-empty"><h3>¿Por dónde empezamos?</h3></div>
+              <div id="chat-messages" role="log" aria-label="Mensajes de la conversación" aria-live="polite"></div>
+              <div id="chat-starters">
+                <button type="button" data-assistant-prompt="¿Qué debería jugar primero?">Elige algo de mi biblioteca</button>
+                <button type="button" data-assistant-prompt="Quiero algo oscuro">Algo oscuro</button>
+                <button type="button" data-assistant-prompt="¿Qué puedo jugar con Inti?">Jugar con Inti</button>
+              </div>
+            </div>
+            <form id="assistant-form">
+              <textarea id="assistant-input" rows="2" aria-label="Mensaje" placeholder="Escribe un mensaje..."></textarea>
+              <button type="submit" aria-label="Enviar mensaje">Enviar</button>
+            </form>
+          </div>
+        </div>
+        <p id="chat-status" role="status">Al enviar, compartes el contexto de juegos y el historial reciente con Gemini.</p>
+<details class="chat-privacy"><summary>Privacidad del chat</summary><p>Al enviar, el perfil de juegos, la colección seleccionada y el historial reciente se comparten con Google Gemini. La clave permanece en el servidor.</p></details>
+      </section>
+
+      <!-- REGALO -->
+      <section
+        class="screen secondary-screen gift-screen"
+        data-screen="gift"
+        aria-labelledby="gift-title"
+        hidden
+      >
+        <p class="eyebrow">GUARDADO PARA TI</p>
+        <h2 id="gift-title" class="title">Tu regalo</h2>
+
+        <div id="gift-slot" class="gift-slot gift-reveal">
+          <p class="lead">Tu Switch ya era el comienzo.</p>
+          <p>
+            También tienes códigos de Nintendo eShop para elegir los juegos que
+            realmente quieras hacer tuyos.
+          </p>
+          <p>
+            Explora el catálogo, guarda opciones en Mi lista y canjea los
+            códigos cuando estés lista.
+          </p>
+
+          <div class="gift-code-list" aria-label="Códigos de Nintendo eShop">
+            <article class="gift-code-card">
+              <span class="gift-code-label">Código 01</span>
+              <strong class="gift-code-mask">XXXX-XXXX-XXXX-XXXX</strong>
+            </article>
+            <article class="gift-code-card">
+              <span class="gift-code-label">Código 02</span>
+              <strong class="gift-code-mask">XXXX-XXXX-XXXX-XXXX</strong>
+            </article>
+          </div>
+
+          <p class="hint">
+            Los códigos reales se entregan por separado dentro del regalo.
+          </p>
+
+          <details class="redeem-guide">
+            <summary>Cómo canjear los códigos</summary>
+            <ol class="redeem-steps">
+              <li>Conecta la consola a internet.</li>
+              <li>Abre Nintendo eShop desde el menú HOME.</li>
+              <li>Selecciona la cuenta Nintendo que recibirá el contenido.</li>
+              <li>Selecciona Ingresar código en el menú de la izquierda.</li>
+              <li>Ingresa el código de 16 caracteres y confirma el canje.</li>
+            </ol>
+            <p class="hint">
+              Revisa que estés usando la cuenta Nintendo correcta antes de confirmar.
+            </p>
+          </details>
+        </div>
+
+        <div class="gift-actions">
+          <button type="button" class="btn btn-ghost" data-action="to-wishlist">
+            Volver a Mi lista
+          </button>
+          <button type="button" class="btn btn-primary" data-action="to-family">
+            Activar Nintendo Switch Online
+          </button>
+        </div>
+      </section>
+
+      <!-- GRUPO FAMILIAR -->
+      <section
+        class="screen secondary-screen family-screen"
+        data-screen="family"
+        aria-labelledby="family-title"
+        hidden
+      >
+        <h2 id="family-title" class="title">Únete al grupo familiar</h2>
+        <p class="lead">
+          Así tienes Nintendo Switch Online y podemos jugar juntos.
+        </p>
+        <ol class="steps">
+          <li>
+            <strong>Crea tu cuenta Nintendo</strong>
+            <span
+              >Entra a accounts.nintendo.com y regístrate con tu correo, con
+              México como país.</span
+            >
+          </li>
+          <li>
+            <strong>Vincúlala a tu Switch</strong>
+            <span
+              >En la consola: Configuración, Usuarios, Añadir usuario, y vincula
+              tu cuenta.</span
+            >
+          </li>
+          <li>
+            <strong>Pásale tu correo a Inti</strong>
+            <span>Él te manda la invitación desde su cuenta.</span>
+          </li>
+          <li>
+            <strong>Acepta la invitación</strong>
+            <span
+              >Abre el correo de Nintendo y acepta. Listo, ya estás en el
+              grupo.</span
+            >
+          </li>
+        </ol>
+        <button type="button" class="btn btn-ghost" data-action="restart">
+          Volver al inicio
+        </button>
+      </section>
+    </main>
+
+    <dialog
+      id="catalog-dialog"
+      class="catalog-dialog"
+      aria-labelledby="catalog-dialog-title"
+    >
+      <article class="catalog-dialog-content">
+        <button
+          id="catalog-dialog-close"
+          type="button"
+          class="catalog-dialog-close"
+          aria-label="Cerrar detalles"
+        >
+          ×
+        </button>
+
+        <div id="catalog-dialog-loading" class="catalog-status">
+          Cargando detalles...
+        </div>
+
+        <div id="catalog-dialog-body" hidden>
+          <div class="catalog-dialog-copy">
+            <p id="catalog-dialog-platforms" class="eyebrow"></p>
+
+            <h2 id="catalog-dialog-title" class="catalog-dialog-title"></h2>
+
+            <div id="catalog-dialog-badges" class="card-badges"></div>
+
+            <div class="catalog-dialog-actions">
+              <button
+                id="catalog-dialog-favorite"
+                type="button"
+                class="favorite-button"
+              >
+                ♡ Me interesa
+              </button>
+
+              <button
+                id="catalog-dialog-owned"
+                type="button"
+                class="library-button"
+              >
+                Ya lo tengo
+              </button>
+            </div>
+
+            <section class="catalog-dialog-section">
+              <h3>De qué trata</h3>
+
+              <p id="catalog-dialog-summary"></p>
+            </section>
+
+            <section
+              id="catalog-dialog-story-section"
+              class="catalog-dialog-section"
+              hidden
+            >
+              <h3>La historia</h3>
+
+              <p id="catalog-dialog-story"></p>
+            </section>
+
+            <dl class="catalog-metadata">
+              <div>
+                <dt>Lanzamiento</dt>
+                <dd id="catalog-dialog-release"></dd>
+              </div>
+
+              <div>
+                <dt>Desarrollado por</dt>
+                <dd id="catalog-dialog-developers"></dd>
+              </div>
+
+              <div>
+                <dt>Publicado por</dt>
+                <dd id="catalog-dialog-publishers"></dd>
+              </div>
+
+              <div>
+                <dt>Modos</dt>
+                <dd id="catalog-dialog-modes"></dd>
+              </div>
+            </dl>
+          </div>
+
+          <section id="catalog-dialog-nintendo" class="catalog-nintendo-details" hidden>
+              <div class="catalog-price-panel">
+                <p class="catalog-price-kicker">Nintendo Store México</p>
+                <p id="catalog-dialog-price" class="catalog-price"></p>
+                <p id="catalog-dialog-sale" class="catalog-price-sale" hidden></p>
+              </div>
+              <dl class="catalog-metadata catalog-metadata-nintendo">
+                <div><dt>Clasificación</dt><dd id="catalog-dialog-rating"></dd></div>
+                <div><dt>Jugadores</dt><dd id="catalog-dialog-players"></dd></div>
+                <div><dt>Formas de juego</dt><dd id="catalog-dialog-ways"></dd></div>
+                <div><dt>Disponibilidad</dt><dd id="catalog-dialog-availability"></dd></div>
+              </dl>
+              <div id="catalog-dialog-content-descriptors" class="catalog-detail-chip-group" hidden>
+                <p class="catalog-detail-chip-title">Descriptores de contenido</p>
+                <div id="catalog-dialog-content-descriptor-list" class="catalog-detail-chips"></div>
+              </div>
+              <div id="catalog-dialog-features" class="catalog-detail-chip-group" hidden>
+                <p class="catalog-detail-chip-title">Características</p>
+                <div id="catalog-dialog-feature-list" class="catalog-detail-chips"></div>
+              </div>
+              <p id="catalog-dialog-demo" class="catalog-demo-signal" hidden>Demo disponible en Nintendo Store México</p>
+            </section>
+          <div
+            id="catalog-dialog-gallery"
+            class="catalog-gallery"
+            aria-label="Capturas del juego"
+          ></div>
+          <section id="nintendo-product-detail" hidden></section>
+          <!-- HEARTAGRAM_NINTENDO_EDITORIAL_DETAIL_NP5 -->
+        </div>
+      </article>
+    </dialog>
+
+    <noscript>
+      <p class="noscript">Heartagram necesita JavaScript para funcionar.</p>
+    </noscript>
+  </body>
+</html>
