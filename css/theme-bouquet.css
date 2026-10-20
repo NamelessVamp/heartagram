@@ -1,0 +1,1072 @@
+/* HEARTAGRAM · Midnight Bouquet
+   Night sky, moon, butterflies, flowers and crystals.
+   Inspired by Adri's favorites without using any character artwork. */
+
+/* Token overrides stay unlayered so they win over tokens.css by load order. */
+:root {
+  --ink-950: #0a0a18;
+  --ink-900: #11112a;
+  --ink-850: #17163a;
+  --ink-800: #201d4a;
+  --text: #f4effc;
+  --text-muted: #b9b0d4;
+  --text-faint: #8077a3;
+  --line: rgb(190 170 255 / 0.12);
+  --line-strong: rgb(200 180 255 / 0.22);
+  --accent: #e86fa6;
+  --accent-hover: #f590c0;
+  --accent-soft: rgb(232 111 166 / 0.16);
+  --accent-line: rgb(232 111 166 / 0.5);
+  --accent-glow: rgb(232 111 166 / 0.22);
+  --gold: #e0bf74;
+  --gold-soft: rgb(224 191 116 / 0.12);
+  --gold-line: rgb(224 191 116 / 0.42);
+  --violet: #9d7fe0;
+  --violet-soft: rgb(157 127 224 / 0.16);
+  --emily: #8fb4e6;
+  --moon: #dbe7ff;
+  --surface: rgb(22 19 54 / 0.72);
+  --surface-2: rgb(32 27 72 / 0.82);
+  --surface-3: rgb(46 38 96 / 0.9);
+  --art: radial-gradient(circle at 70% 22%, rgb(143 180 230 / 0.35), transparent 50%),
+    linear-gradient(160deg, #2b2466, #130f33);
+  --color-border: rgb(200 180 255 / 0.18);
+  --font-display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-hand: "Dancing Script", "Segoe Script", "Brush Script MT", cursive;
+  --bq-glow: 0 0 26px rgb(232 111 166 / 0.28);
+}
+
+@layer theme {
+  /* ---------- Night sky ---------- */
+  html {
+    background:
+      radial-gradient(70rem 40rem at 85% -10%, rgb(143 180 230 / 0.18), transparent 60%),
+      radial-gradient(50rem 40rem at 0% 100%, rgb(157 127 224 / 0.16), transparent 60%),
+      linear-gradient(180deg, #0e0c26, var(--ink-950) 60%);
+    background-attachment: fixed;
+  }
+
+  body {
+    background: transparent;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      radial-gradient(1.2px 1.2px at 12% 18%, rgb(255 255 255 / 0.8), transparent 70%),
+      radial-gradient(1px 1px at 68% 32%, rgb(255 255 255 / 0.6), transparent 70%),
+      radial-gradient(1.4px 1.4px at 38% 74%, rgb(219 231 255 / 0.7), transparent 70%),
+      radial-gradient(1px 1px at 88% 82%, rgb(255 255 255 / 0.5), transparent 70%),
+      radial-gradient(1.6px 1.6px at 52% 8%, rgb(245 144 192 / 0.6), transparent 70%);
+    background-size: 380px 380px, 520px 520px, 440px 440px, 300px 300px, 640px 640px;
+    opacity: 0.7;
+  }
+
+  .bq-sky {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  /* ---------- Butterfly ---------- */
+  .bq-butterfly {
+    display: block;
+    width: 2rem;
+    color: var(--emily);
+    filter: drop-shadow(0 0 10px rgb(143 180 230 / 0.8));
+  }
+
+  .bq-butterfly svg {
+    width: 100%;
+    height: auto;
+    animation: bq-flutter 2.4s ease-in-out infinite;
+  }
+
+  .bq-sky .bq-butterfly {
+    position: absolute;
+    width: 1.5rem;
+    opacity: 0.4;
+    animation: bq-drift 22s ease-in-out infinite;
+  }
+
+  .bq-sky .bq-butterfly:nth-child(1) { top: 14%; left: 6%; }
+  .bq-sky .bq-butterfly:nth-child(2) { top: 62%; left: 92%; animation-delay: -6s; }
+  .bq-sky .bq-butterfly:nth-child(3) { top: 84%; left: 18%; animation-delay: -12s; color: var(--accent-hover); }
+  .bq-sky .bq-butterfly:nth-child(4) { top: 30%; left: 96%; animation-delay: -3s; width: 1.1rem; }
+  .bq-sky .bq-butterfly:nth-child(5) { top: 48%; left: 3%; animation-delay: -9s; width: 1rem; color: var(--violet); }
+
+  @keyframes bq-flutter {
+    0%, 100% { transform: scaleX(1); }
+    50% { transform: scaleX(0.55); }
+  }
+
+  @keyframes bq-drift {
+    0%, 100% { translate: 0 0; }
+    33% { translate: 2.5rem -3rem; }
+    66% { translate: -1.5rem -1rem; }
+  }
+
+  /* ---------- Shell ---------- */
+  .app-sidebar {
+    border-right-color: var(--line);
+    background: linear-gradient(180deg, rgb(20 18 50 / 0.94), rgb(10 10 24 / 0.97));
+    backdrop-filter: blur(12px);
+  }
+
+  .app-sidebar-brand-mark {
+    border-color: var(--accent-line);
+    background: var(--accent-soft);
+    box-shadow: var(--bq-glow);
+    color: var(--accent-hover);
+  }
+
+  .app-sidebar-brand-subtitle {
+    font-size: 1.35rem;
+  }
+
+  .shell-nav-button[aria-current="page"] {
+    background: linear-gradient(90deg, rgb(232 111 166 / 0.3), rgb(157 127 224 / 0.12));
+    box-shadow: inset 2px 0 0 var(--accent);
+  }
+
+  .bq-sidebar-note {
+    display: none;
+  }
+
+  .mobile-navigation {
+    border-top-color: var(--line-strong);
+    background: rgb(14 13 36 / 0.94);
+  }
+
+  .mobile-nav-button[aria-current="page"] {
+    background: var(--accent-soft);
+    color: var(--accent-hover);
+  }
+
+  @media (min-width: 64rem) {
+    .bq-sidebar-note {
+      display: block;
+      margin: auto var(--sp-2) 0;
+      color: var(--accent-hover);
+      font: 1.45rem / 1.15 var(--font-hand);
+      text-shadow: 0 0 16px rgb(232 111 166 / 0.45);
+      transform: rotate(-6deg);
+    }
+
+    body:not(.sidebar-collapsed) .app-sidebar-secondary {
+      margin-top: var(--sp-6);
+    }
+
+    body.sidebar-collapsed .bq-sidebar-note {
+      display: none;
+    }
+  }
+
+  /* ---------- Type and buttons ---------- */
+  .home-title,
+  .discover-title,
+  .catalog-screen-title,
+  .collection-title,
+  .guide-title,
+  .secondary-screen > .title {
+    font-weight: 500;
+    text-shadow: 0 0 40px rgb(232 111 166 / 0.25);
+  }
+
+  .home-kicker,
+  .discover-eyebrow,
+  .catalog-screen-kicker,
+  .collection-kicker,
+  .guide-hero > div > .guide-kicker,
+  .secondary-screen > .eyebrow {
+    color: var(--accent-hover);
+  }
+
+  .btn {
+    border-radius: var(--r-pill);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #f07bb0, #d9558f);
+    box-shadow: 0 6px 22px rgb(232 111 166 / 0.35);
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--accent-hover), #e06aa0);
+  }
+
+  .btn-ghost {
+    border-color: var(--line-strong);
+    background: rgb(32 27 72 / 0.55);
+  }
+
+  .favorite-button[aria-pressed="true"] {
+    box-shadow: var(--bq-glow);
+  }
+
+  /* ---------- Surfaces ---------- */
+  .home-empty-card,
+  .home-primary-card,
+  .home-panel,
+  .home-stat,
+  .discover-profile,
+  .card,
+  .discover-mood-card,
+  .catalog-wishlist-card,
+  .profile-copy,
+  .gift-slot,
+  .guide-progress,
+  .guide-card,
+  .guide-chapter,
+  .family-screen .steps li,
+  .catalog-status {
+    border-color: var(--line-strong);
+    backdrop-filter: blur(10px);
+  }
+
+  .home-empty-card,
+  .home-primary-card,
+  .discover-profile {
+    background:
+      radial-gradient(30rem 16rem at 100% 0%, var(--violet-soft), transparent 60%),
+      var(--surface);
+  }
+
+  .card {
+    transition:
+      border-color var(--dur) var(--ease),
+      box-shadow var(--dur) var(--ease),
+      translate var(--dur) var(--ease);
+  }
+
+  .card:hover {
+    border-color: var(--accent-line);
+    box-shadow: var(--bq-glow);
+    translate: 0 -2px;
+  }
+
+  /* ---------- Handwritten notes ---------- */
+  .home-header,
+  .discover-header,
+  .catalog-screen-header,
+  .collection-header,
+  .guide-hero > div:first-child,
+  #app > .gift-screen {
+    position: relative;
+  }
+
+  .discover-header,
+  .catalog-screen-header,
+  .collection-header {
+    max-width: none;
+  }
+
+  .bq-note {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 15rem;
+    color: var(--accent-hover);
+    font: 1.6rem / 1.15 var(--font-hand);
+    text-align: center;
+    text-shadow: 0 0 18px rgb(232 111 166 / 0.45);
+    transform: rotate(-7deg);
+    pointer-events: none;
+  }
+
+  .profile-copy .bq-note {
+    position: static;
+    justify-self: end;
+    max-width: none;
+    font-size: 1.35rem;
+    transform: rotate(-3deg);
+  }
+
+  @media (max-width: 63.99rem) {
+    .bq-note {
+      position: static;
+      justify-self: start;
+      max-width: none;
+      font-size: 1.3rem;
+      text-align: left;
+      transform: rotate(-3deg);
+    }
+  }
+
+  /* ---------- Inicio: night hero ---------- */
+  .home-header {
+    align-content: end;
+    max-width: none;
+    min-height: 21rem;
+    padding: var(--sp-8) var(--sp-6);
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-xl);
+    background:
+      radial-gradient(26rem 20rem at 80% 25%, rgb(143 180 230 / 0.3), transparent 65%),
+      linear-gradient(160deg, #221d55, #0f0d2a 70%);
+    box-shadow: 0 30px 80px rgb(0 0 0 / 0.45);
+    isolation: isolate;
+  }
+
+  .home-header > :not(.bq-hero-art) {
+    position: relative;
+    z-index: 1;
+  }
+
+  .bq-hero-art {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .bq-moon {
+    position: absolute;
+    top: 10%;
+    right: 8%;
+    width: clamp(4.5rem, 14vw, 9rem);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 62% 38%, rgb(160 180 220 / 0.45) 0 7%, transparent 8%),
+      radial-gradient(circle at 38% 64%, rgb(160 180 220 / 0.35) 0 5%, transparent 6%),
+      radial-gradient(circle at 35% 32%, #ffffff, var(--moon) 45%, #9fb5df 78%, #7489bd);
+    box-shadow:
+      0 0 60px 16px rgb(190 215 255 / 0.35),
+      0 0 140px 40px rgb(143 180 230 / 0.2);
+  }
+
+  .bq-hero-art .bq-flower {
+    position: absolute;
+    bottom: -0.75rem;
+    width: 3rem;
+    color: #c35a9b;
+    filter: drop-shadow(0 0 10px rgb(195 90 155 / 0.6));
+  }
+
+  .bq-hero-art .bq-flower:nth-of-type(2) { left: 4%; width: 2.5rem; }
+  .bq-hero-art .bq-flower:nth-of-type(3) { left: 11%; bottom: 0.5rem; color: #9d5fd1; }
+  .bq-hero-art .bq-flower:nth-of-type(4) { right: 4%; width: 3.5rem; }
+  .bq-hero-art .bq-flower:nth-of-type(5) { right: 13%; bottom: 0.25rem; width: 2.25rem; color: #e086c0; }
+  .bq-hero-art .bq-flower:nth-of-type(6) { right: 22%; bottom: -1rem; width: 2.75rem; color: #9d5fd1; }
+
+  .bq-hero-art .bq-butterfly {
+    position: absolute;
+    width: 2.75rem;
+    animation: bq-drift 14s ease-in-out infinite;
+  }
+
+  .bq-hero-art .bq-butterfly:nth-of-type(7) { top: 52%; right: 30%; }
+  .bq-hero-art .bq-butterfly:nth-of-type(8) { top: 20%; right: 36%; width: 1.5rem; animation-delay: -5s; color: var(--accent-hover); }
+  .bq-hero-art .bq-butterfly:nth-of-type(9) { bottom: 22%; right: 8%; width: 1.75rem; animation-delay: -9s; }
+
+  .bq-hero-art .bq-note {
+    top: auto;
+    right: 4%;
+    bottom: 30%;
+  }
+
+  @media (max-width: 63.99rem) {
+    .bq-hero-art .bq-note {
+      position: absolute;
+      top: var(--sp-5);
+      right: auto;
+      bottom: auto;
+      left: var(--sp-5);
+      max-width: 11rem;
+      font-size: 1.2rem;
+    }
+
+    .bq-hero-art .bq-butterfly:nth-of-type(7) {
+      top: 38%;
+      right: 12%;
+    }
+  }
+
+  @media (min-width: 40rem) {
+    .home-header {
+      min-height: 26rem;
+      padding: var(--sp-12) var(--sp-10);
+    }
+  }
+
+  /* ---------- Test ---------- */
+  .quiz-progress {
+    position: relative;
+    height: 3px;
+    margin-top: var(--sp-4);
+    overflow: visible;
+    background: rgb(255 255 255 / 0.12);
+  }
+
+  .quiz-progress-bar {
+    background: linear-gradient(90deg, var(--accent), var(--violet));
+    box-shadow: 0 0 12px var(--accent-glow);
+  }
+
+  .bq-progress-wing {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 2rem;
+    transform: translate(-50%, -55%);
+    transition: left 300ms var(--ease);
+  }
+
+  .quiz-option {
+    min-height: 5rem;
+    background: rgb(24 21 56 / 0.75);
+    backdrop-filter: blur(8px);
+  }
+
+  .quiz-option:hover {
+    border-color: var(--accent-line);
+    box-shadow: var(--bq-glow);
+  }
+
+  .quiz-option[aria-checked="true"] {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent), var(--bq-glow);
+  }
+
+  /* ---------- Perfil: collectible card ---------- */
+  #app > .profile-screen {
+    grid-template-areas:
+      "eyebrow"
+      "title"
+      "subtitle"
+      "tarot"
+      "copy"
+      "radar"
+      "traits"
+      "note"
+      "actions";
+  }
+
+  .bq-tarot {
+    grid-area: tarot;
+    justify-self: center;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto auto;
+    width: min(100%, 17rem);
+    aspect-ratio: 2 / 3;
+    padding: var(--sp-3);
+    overflow: hidden;
+    border: 1px solid var(--accent-line);
+    border-radius: var(--r-lg);
+    background: linear-gradient(160deg, #2a2160, #120f30);
+    box-shadow:
+      0 0 0 4px var(--ink-950),
+      0 0 0 5px var(--accent-line),
+      0 0 44px rgb(232 111 166 / 0.3);
+  }
+
+  .bq-tarot-art {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-md);
+    background:
+      radial-gradient(circle at 50% 30%, rgb(143 180 230 / 0.35), transparent 55%),
+      linear-gradient(180deg, #2b2668, #151238);
+  }
+
+  .bq-tarot .bq-moon {
+    top: 14%;
+    left: 50%;
+    right: auto;
+    width: 44%;
+    translate: -50% 0;
+  }
+
+  .bq-tarot .bq-butterfly {
+    position: absolute;
+    bottom: 18%;
+    left: 18%;
+    width: 2.25rem;
+  }
+
+  .bq-tarot .bq-butterfly:nth-of-type(3) {
+    right: 16%;
+    bottom: 32%;
+    left: auto;
+    width: 1.5rem;
+    color: var(--accent-hover);
+  }
+
+  .bq-tarot-stars {
+    position: absolute;
+    right: 0;
+    bottom: var(--sp-3);
+    left: 0;
+    color: var(--gold);
+    letter-spacing: 0.4em;
+    text-align: center;
+  }
+
+  .bq-tarot-name {
+    padding-top: var(--sp-3);
+    color: var(--text);
+    font: 600 1.3rem / 1.1 var(--font-display);
+    letter-spacing: 0.08em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .bq-tarot-meta {
+    color: var(--accent-hover);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.2em;
+    text-align: center;
+  }
+
+  .profile-radar {
+    filter: drop-shadow(0 0 12px rgb(232 111 166 / 0.35));
+  }
+
+  @media (min-width: 64rem) {
+    #app > .profile-screen {
+      grid-template-columns: 17rem minmax(0, 1fr) 18rem;
+      grid-template-areas:
+        "tarot eyebrow radar"
+        "tarot title radar"
+        "tarot subtitle radar"
+        "tarot copy radar"
+        "traits traits traits"
+        "note note note"
+        "actions actions actions";
+      column-gap: var(--sp-10);
+    }
+  }
+
+  /* ---------- Descubrir: framed feature ---------- */
+  .card-hero {
+    border-color: var(--accent-line);
+    box-shadow:
+      0 0 0 5px rgb(10 10 24 / 0.9),
+      0 0 0 6px rgb(232 111 166 / 0.35),
+      0 30px 70px rgb(0 0 0 / 0.5);
+  }
+
+  .card-hero::before {
+    content: "✦";
+    position: absolute;
+    top: var(--sp-4);
+    right: var(--sp-5);
+    z-index: 1;
+    color: var(--gold);
+    font-size: var(--fs-lg);
+  }
+
+  .discover-mood-button[aria-pressed="true"] {
+    border-color: transparent;
+    background: linear-gradient(135deg, #f07bb0, #d9558f);
+    color: var(--on-accent);
+  }
+
+  /* ---------- Explorar ---------- */
+  .catalog-field input,
+  .catalog-field select {
+    background: rgb(20 18 48 / 0.8);
+  }
+
+  .catalog-search input {
+    border-radius: var(--r-pill);
+    padding-inline: var(--sp-5);
+  }
+
+  .catalog-card-media {
+    box-shadow: 0 12px 30px rgb(0 0 0 / 0.45);
+    transition: box-shadow var(--dur) var(--ease);
+  }
+
+  .catalog-card-media::after {
+    box-shadow: inset 0 0 0 1px var(--line-strong);
+  }
+
+  .catalog-card-open:hover .catalog-card-media {
+    box-shadow:
+      0 0 0 1px var(--accent-line),
+      0 0 30px rgb(232 111 166 / 0.4);
+  }
+
+  /* ---------- Mi lista: crystals ---------- */
+  .collection-tabs {
+    border-color: var(--line-strong);
+    background: rgb(20 18 48 / 0.8);
+  }
+
+  .collection-tab[aria-selected="true"] {
+    background: linear-gradient(135deg, #f07bb0, #d9558f);
+    box-shadow: var(--bq-glow);
+    color: var(--on-accent);
+  }
+
+  #collection-tab-owned[aria-selected="true"] {
+    background: linear-gradient(135deg, #ecd08f, #c99a4a);
+    color: var(--ink-950);
+  }
+
+  #collection-tab-interested[aria-selected="true"] .collection-tab-count {
+    background: rgb(255 255 255 / 0.25);
+    color: var(--on-accent);
+  }
+
+  #collection-tab-owned[aria-selected="true"] .collection-tab-count {
+    background: rgb(10 10 24 / 0.2);
+    color: var(--ink-950);
+  }
+
+  .bq-crystals {
+    display: none;
+  }
+
+  @media (min-width: 64rem) {
+    .bq-crystals {
+      position: absolute;
+      top: -0.5rem;
+      right: 18rem;
+      display: flex;
+      align-items: flex-end;
+      gap: var(--sp-1);
+      color: #b062cf;
+      filter: drop-shadow(0 0 14px rgb(176 98 207 / 0.6));
+      pointer-events: none;
+    }
+
+    .bq-crystals svg {
+      width: 1.5rem;
+      height: auto;
+    }
+
+    .bq-crystals svg:nth-child(2) {
+      width: 2.25rem;
+      color: #d07ad9;
+    }
+  }
+
+  /* ---------- Inicia aquí y Mi regalo ---------- */
+  .guide-bar {
+    background: linear-gradient(90deg, var(--accent), var(--violet));
+  }
+
+  .guide-number {
+    color: var(--accent-hover);
+  }
+
+  .gift-slot {
+    border-color: var(--gold-line);
+    box-shadow:
+      0 0 0 4px var(--ink-950),
+      0 0 0 5px var(--gold-line);
+  }
+
+  /* ---------- Save toast ---------- */
+  .bq-toast {
+    position: fixed;
+    bottom: calc(var(--mobile-nav) + var(--sp-4) + env(safe-area-inset-bottom));
+    left: 50%;
+    z-index: 60;
+    padding: var(--sp-2) var(--sp-4);
+    border: 1px solid var(--accent-line);
+    border-radius: var(--r-pill);
+    background: rgb(17 16 42 / 0.95);
+    box-shadow: var(--bq-glow);
+    color: var(--text);
+    font: 600 var(--fs-xs) / 1.4 var(--font-mono);
+    letter-spacing: 0.08em;
+    opacity: 0;
+    translate: -50% 1rem;
+    transition:
+      opacity 200ms var(--ease),
+      translate 200ms var(--ease);
+    pointer-events: none;
+  }
+
+  .bq-toast.is-visible {
+    opacity: 1;
+    translate: -50% 0;
+  }
+
+  @media (min-width: 40rem) {
+    .bq-toast {
+      bottom: var(--sp-6);
+    }
+  }
+
+  /* ---------- Easter egg ---------- */
+  .bq-burst .bq-butterfly {
+    --bq-x: 0;
+    position: fixed;
+    top: -3rem;
+    z-index: 70;
+    width: 2rem;
+    animation: bq-fall 3.6s ease-in forwards;
+  }
+
+  @keyframes bq-fall {
+    to {
+      translate: var(--bq-x) 112vh;
+      rotate: 30deg;
+    }
+  }
+}
+
+/* ---------- v1.2.1 · Mockup parity and character motifs ---------- */
+@layer theme {
+  /* The floating sky read as broken "x" shapes over content. */
+  .bq-sky {
+    display: none;
+  }
+
+  .bq-butterfly svg {
+    animation-name: bq-flutter-soft;
+  }
+
+  @keyframes bq-flutter-soft {
+    0%, 100% { transform: scaleX(1); }
+    50% { transform: scaleX(0.72); }
+  }
+
+  .bq-motif {
+    display: block;
+    width: 2rem;
+    color: var(--violet);
+    filter: drop-shadow(0 0 10px rgb(157 127 224 / 0.6));
+  }
+
+  .bq-motif svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .bq-motif-fox,
+  .bq-motif-heart,
+  .bq-motif-rose { color: var(--accent-hover); }
+  .bq-motif-feather,
+  .bq-motif-crescent { color: var(--violet); }
+  .bq-motif-star,
+  .bq-motif-note { color: var(--gold); }
+  .bq-motif-gem,
+  .bq-motif-bat { color: var(--emily); }
+
+  /* ---------- Inicio: window, curtains, cat, actions, covers ---------- */
+  .bq-window {
+    display: none;
+  }
+
+  .bq-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-3);
+    margin-top: var(--sp-3);
+  }
+
+  .home-header .home-cover-strip {
+    max-width: 30rem;
+    margin: var(--sp-4) 0 var(--sp-2);
+  }
+
+  #new-profile-actions [data-action="start"],
+  #new-profile-actions [data-action="to-catalog"],
+  .home-primary-card > .btn {
+    display: none;
+  }
+
+  @media (min-width: 64rem) {
+    .bq-window {
+      position: absolute;
+      top: 4%;
+      right: 3%;
+      display: block;
+      width: auto;
+      height: 92%;
+      aspect-ratio: 200 / 260;
+    }
+
+    .bq-window svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .home-header .bq-moon {
+      top: 20%;
+      right: calc(3% + 5.5rem);
+      width: 7.5rem;
+    }
+
+    .bq-hero-art .bq-note {
+      right: calc(3% + 19rem);
+      bottom: 16%;
+    }
+
+    .bq-hero-art .bq-butterfly:nth-of-type(7) { top: 46%; right: calc(3% + 13rem); }
+    .bq-hero-art .bq-butterfly:nth-of-type(8) { top: 14%; right: calc(3% + 17rem); }
+  }
+
+  /* ---------- Header motif clusters ---------- */
+  .bq-header-motifs {
+    display: none;
+  }
+
+  @media (min-width: 64rem) {
+    .bq-header-motifs {
+      position: absolute;
+      top: 3.5rem;
+      right: 17rem;
+      display: flex;
+      align-items: flex-end;
+      gap: var(--sp-3);
+      pointer-events: none;
+    }
+
+    .bq-header-motifs > :nth-child(2) {
+      width: 2.75rem;
+      translate: 0 -1rem;
+    }
+
+    .bq-header-motifs > :nth-child(3) {
+      width: 1.25rem;
+    }
+  }
+
+  .bq-big-heart {
+    display: none;
+  }
+
+  @media (min-width: 40rem) {
+    .bq-big-heart {
+      position: absolute;
+      top: -0.5rem;
+      right: 15rem;
+      display: block;
+      width: 4.5rem;
+      filter: drop-shadow(0 0 26px rgb(232 111 166 / 0.7));
+      animation: bq-pulse 3.2s ease-in-out infinite;
+    }
+  }
+
+  @keyframes bq-pulse {
+    0%, 100% { scale: 1; }
+    50% { scale: 1.08; }
+  }
+
+  .bq-crystals .bq-motif {
+    width: 1.75rem;
+  }
+
+  .bq-crystals .bq-motif:nth-child(1) { color: var(--accent-hover); }
+  .bq-crystals .bq-motif:nth-child(2) { width: 2.5rem; color: var(--violet); }
+  .bq-crystals .bq-motif:nth-child(3) { color: var(--emily); }
+
+  @media (min-width: 64rem) {
+    .bq-crystals {
+      right: 21rem;
+    }
+  }
+
+  .bq-quote {
+    display: grid;
+    justify-items: start;
+    gap: var(--sp-1);
+    padding: var(--sp-6) 0 var(--sp-2);
+  }
+
+  .bq-quote-bat {
+    width: 2.5rem;
+  }
+
+  .bq-quote-text {
+    color: var(--text);
+    font: italic 1.5rem / 1.3 var(--font-display);
+  }
+
+  .bq-quote-sign {
+    color: var(--accent-hover);
+    font: 1.2rem / 1 var(--font-hand);
+  }
+
+  /* ---------- Test: motif cards ---------- */
+  .quiz-option {
+    grid-template-columns: 3rem minmax(0, 1fr);
+  }
+
+  .quiz-option-index {
+    display: none;
+  }
+
+  .bq-opt-icon {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.55rem;
+    border-radius: var(--r-md);
+    background: var(--violet-soft);
+  }
+
+  .quiz-option[aria-checked="true"] .bq-opt-icon {
+    background: var(--accent);
+    color: var(--on-accent);
+    filter: none;
+  }
+
+  /* ---------- Perfil: archetype motif ---------- */
+  .bq-tarot-art .bq-tarot-motif {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    width: 38%;
+    translate: -50% 0;
+    filter: drop-shadow(0 0 18px rgb(232 111 166 / 0.7));
+  }
+
+  /* ---------- Descubrir: tabs, reroll, compact list ---------- */
+  .discover-screen {
+    gap: var(--sp-8);
+  }
+
+  .discover-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+  }
+
+  .discover-tab {
+    min-height: 2.5rem;
+    padding: 0 var(--sp-5);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-pill);
+    background: rgb(20 18 48 / 0.8);
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+  }
+
+  .discover-tab:hover {
+    color: var(--text);
+  }
+
+  .discover-tab[aria-selected="true"] {
+    border-color: transparent;
+    background: linear-gradient(135deg, #f07bb0, #d9558f);
+    box-shadow: var(--bq-glow);
+    color: var(--on-accent);
+  }
+
+  .discover-reroll {
+    justify-self: start;
+    margin-top: var(--sp-2);
+  }
+
+  .discover-support-grid .card {
+    display: grid;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    align-items: start;
+    gap: var(--sp-1) var(--sp-4);
+    padding: var(--sp-3);
+  }
+
+  .discover-support-grid .card > * {
+    grid-column: 2;
+  }
+
+  .discover-support-grid .card-signal-art {
+    grid-column: 1;
+    grid-row: 1 / span 5;
+    aspect-ratio: 3 / 4;
+    padding: 0;
+  }
+
+  .discover-support-grid .card-signal-fallback {
+    display: none;
+  }
+
+  .discover-support-grid .card-signal-art:not(.has-cover) + .card-title {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
+    white-space: normal;
+  }
+
+  .discover-support-grid .card-title {
+    font-size: var(--fs-lg);
+  }
+
+  .discover-support-grid .card-why {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  /* ---------- Explorar: heart over the cover ---------- */
+  .catalog-card {
+    position: relative;
+  }
+
+  .bq-cover-heart {
+    position: absolute;
+    top: var(--sp-2);
+    right: var(--sp-2);
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 50%;
+    background: rgb(10 10 24 / 0.72);
+    color: var(--text);
+    backdrop-filter: blur(6px);
+  }
+
+  .bq-cover-heart svg {
+    width: 1rem;
+  }
+
+  .bq-cover-heart[data-on="true"] {
+    border-color: transparent;
+    background: var(--accent);
+    box-shadow: var(--bq-glow);
+    color: var(--on-accent);
+  }
+}
+
+/* ---------- v1.2.2 · Cleanup ---------- */
+@layer theme {
+  .bq-note,
+  .bq-sidebar-note {
+    display: none;
+  }
+
+  .bq-motif-blossom {
+    color: #c9a7ff;
+    filter: drop-shadow(0 0 12px rgb(201 167 255 / 0.7));
+  }
+
+  .bq-quote-sign {
+    color: var(--text-faint);
+    font: 600 var(--fs-xs) / 1 var(--font-sans);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* The hero already has the main action; this card only repeated it. */
+  #home-returning-state .home-primary-card {
+    display: none;
+  }
+
+  .discover-section-heading .discover-reroll {
+    order: 3;
+  }
+}

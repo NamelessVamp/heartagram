@@ -1,14 +1,15 @@
-const DATA_VERSION = "112";
+const DATA_VERSION = "122";
 // App entry: loads data, keeps quiz state and switches screens.
 
 import { computeProfile } from "./profile.js";
 import { updateAppShellNavigation } from "./app-shell.js";
-import { renderHomeDashboard } from "./home-dashboard.js";
-import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js?v=v110";
-import { initializeCollectionUI } from "./collection-ui.js?v=v110";
-import { rankGames, buildSections, buildDuo } from "./recommender.js";
+import { renderHomeDashboard } from "./home-dashboard.js?v=v122";
+import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js?v=v122";
+import { initializeCollectionUI } from "./collection-ui.js?v=v122";
+import { buildRecommendations } from "./recommend-v2.js?v=v122";
+import { activateDiscoverTab, initializeDiscoverTabs } from "./discover-tabs.js?v=v122";
 
-import * as ui from "./ui.js?v=v110";
+import * as ui from "./ui.js?v=v122";
 
 import { clearFavorites, getFavoriteIds, toggleFavorite } from "./favorites.js";
 
@@ -21,13 +22,14 @@ import {
 import {
   initializeCatalogExplorer,
   openCatalogGameDetails,
-} from "./catalog-ui.js?v=v110";
+} from "./catalog-ui.js?v=v122";
 
 import {
   favoriteIdForCatalogGame,
+  loadCatalog,
   resolveCatalogFavorites,
   splitFavoriteIds,
-} from "./catalog.js?v=v110";
+} from "./catalog.js?v=v122";
 import { getOwnedGameIds, setOwnedGame } from "./library.js";
 import { initializeGettingStarted } from "./getting-started.js";
 
@@ -42,6 +44,9 @@ const state = {
   profileTexts: {},
   profileCombos: {},
   games: [],
+  pool: [],
+  catalogGames: null,
+  reroll: 0,
 
   profile: null,
   ranked: [],
@@ -159,12 +164,36 @@ function renderCurrentQuestion() {
  * Important:
  * This function must never call itself.
  */
+const DAY_KEY = new Date().toISOString().slice(0, 10);
+
+function recommendationInputs() {
+  return {
+    curated: state.games,
+    catalog: state.catalogGames ?? [],
+    ownedIds: getOwnedGameIds(),
+    favoriteIds: getFavoriteIds(),
+    seed: `${DAY_KEY}|${state.reroll}`,
+  };
+}
+
+let catalogPoolRequested = false;
+
+// Loads the Nintendo catalog once and refreshes the recommendations with it.
+function ensureCatalogPool() {
+  if (catalogPoolRequested || state.catalogGames) return;
+  catalogPoolRequested = true;
+  loadCatalog()
+    .then((catalog) => {
+      state.catalogGames = catalog.games;
+      if (state.profile) applyProfile(state.profile);
+    })
+    .catch((error) => console.error("Recomendaciones sin catálogo Nintendo.", error));
+}
+
 function applyProfile(profile) {
-  const ranked = rankGames(profile, state.games);
-
-  const sections = buildSections(profile, ranked);
-
-  const duo = buildDuo(profile, ranked);
+  const { ranked, sections, duo, pool } = buildRecommendations(profile, recommendationInputs());
+  state.pool = pool;
+  ensureCatalogPool();
 
   state.profile = profile;
   state.ranked = ranked;
@@ -428,6 +457,7 @@ const ACTIONS = {
     }
 
     showScreen("results");
+    activateDiscoverTab("duo");
     document.getElementById("discover-duo")?.scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -452,6 +482,11 @@ const ACTIONS = {
 
   "to-getting-started": () => { initializeGettingStarted(); showScreen("getting-started"); },
 
+  "reroll-recommendations": () => {
+    if (!state.profile) return;
+    state.reroll += 1;
+    applyProfile(state.profile);
+  },
   "to-gift": () => {
     showScreen("gift");
   },
@@ -517,12 +552,13 @@ async function init() {
     state.games = PREVIEW ? games.map(toPreviewGame) : games;
 
     initializeDiscoverUI({
-      getGames: () => state.games,
+      getGames: () => (state.pool.length ? state.pool : state.games),
       getProfile: () => state.profile,
       getArchetypes: () => state.archetypes,
     });
 
     initializeCollectionUI();
+    initializeDiscoverTabs();
     initializeGettingStarted();
 
     // Restore the profile only once, after all data is loaded.

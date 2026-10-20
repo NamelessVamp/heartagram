@@ -1,21 +1,87 @@
-/* HEARTAGRAM redesign tokens */
+/* HEARTAGRAM · Visual System v2 · "Noche editorial"
+   Cascade order is declared once here. Later layers always win,
+   so the system needs no override flags. */
+@layer base, layout, components, screens, theme;
+
 :root {
-  --shell-bg: #080608;
-  --shell-surface: #110a10;
-  --shell-surface-raised: #191017;
-  --shell-border: rgb(204 48 110 / 0.35);
-  --shell-border-strong: rgb(232 64 132 / 0.68);
-  --shell-text: #f4e9ee;
-  --shell-text-muted: #c9b5bf;
-  --shell-accent: #d22f79;
-  --shell-accent-soft: #ef8bb7;
-  --shell-gold: #d6b06c;
-  --shell-sidebar-expanded: 13.5rem;
-  --shell-sidebar-collapsed: 4.75rem;
-  --shell-mobile-nav-height: 4.5rem;
-  --shell-content-max: 92rem;
-  --shell-radius-sm: 0.75rem;
-  --shell-radius-md: 1.1rem;
-  --shell-shadow: 0 22px 60px rgb(0 0 0 / 0.38);
-  --shell-ease: 180ms ease;
+  color-scheme: dark;
+
+  /* Palette */
+  --ink-950: #0a080a;
+  --ink-900: #121012;
+  --ink-850: #181418;
+  --ink-800: #201a1f;
+  --text: #f4eef1;
+  --text-muted: #a99ba2;
+  --text-faint: #786b71;
+  --line: rgb(255 255 255 / 0.08);
+  --line-strong: rgb(255 255 255 / 0.16);
+  --accent: #e24a85;
+  --accent-hover: #ef6a9d;
+  --accent-soft: rgb(226 74 133 / 0.14);
+  --accent-line: rgb(226 74 133 / 0.45);
+  --accent-glow: rgb(226 74 133 / 0.16);
+  --gold: #cfa968;
+  --gold-soft: rgb(207 169 104 / 0.12);
+  --gold-line: rgb(207 169 104 / 0.38);
+  --on-accent: #ffffff;
+
+  /* Surfaces */
+  --bg: var(--ink-950);
+  --surface: var(--ink-900);
+  --surface-2: var(--ink-850);
+  --surface-3: var(--ink-800);
+  --art: radial-gradient(120% 120% at 0% 0%, rgb(226 74 133 / 0.3), transparent 55%),
+    linear-gradient(160deg, var(--ink-800), var(--ink-950));
+
+  /* Read by js/ui.js to draw the profile radar */
+  --color-border: rgb(255 255 255 / 0.12);
+  --color-text-muted: var(--text-muted);
+  --color-accent-strong: var(--accent);
+
+  /* Type: serif for display only, sans for everything else */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  --font-mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+  --fs-display: clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem);
+  --fs-hero: clamp(3rem, 2rem + 5vw, 5.5rem);
+
+  /* Space: 4px base */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.25rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+
+  /* Shape */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 20px;
+  --r-pill: 999px;
+
+  /* Layout. Breakpoints (not tokenizable in @media): 40rem · 64rem · 80rem */
+  --content-max: 72rem;
+  --reading-max: 44rem;
+  --sidebar: 15rem;
+  --rail: 4.5rem;
+  --mobile-nav: 4.25rem;
+  --z-sticky: 5;
+  --z-nav: 50;
+
+  /* Motion and depth */
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur: 160ms;
+  --shadow-lg: 0 24px 64px rgb(0 0 0 / 0.5);
 }

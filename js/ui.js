@@ -1,5 +1,5 @@
-import { PLAYER_DIMENSIONS, PLAYER_DIMENSION_LABELS, normalizedTraitPercent, traitSignal } from "./player-journey.js?v=p1";
-import { catalogLabel } from "./catalog-labels.js";
+import { PLAYER_DIMENSIONS, PLAYER_DIMENSION_LABELS, normalizedTraitPercent, traitSignal } from "./player-journey.js?v=p2";
+import { catalogLabel, curatedGenreLabel } from "./catalog-labels.js";
 import { catalogImageUrl } from "./catalog.js";
 
 // HEARTAGRAM_DISCOVER_P13
@@ -34,13 +34,13 @@ function el(tag, className, text) {
 export function renderQuestion(question, index, total, selectedId, onSelect) {
   const current = index + 1;
   document.getElementById("quiz-counter").textContent =
-    `⟦ SIGNAL ${String(current).padStart(2, "0")} / ${String(total).padStart(2, "0")} ⟧`;
+    `Pregunta ${current} de ${total}`;
   document.getElementById("quiz-question").textContent = question.text;
 
   const bar = document.getElementById("quiz-progress-bar");
   bar.style.width = `${(current / total) * 100}%`;
   bar.parentElement.setAttribute("aria-valuenow", String(current));
-  bar.parentElement.setAttribute("aria-valuetext", `Señal ${current} de ${total}`);
+  bar.parentElement.setAttribute("aria-valuetext", `Pregunta ${current} de ${total}`);
 
   const container = document.getElementById("quiz-options");
   container.replaceChildren();
@@ -124,7 +124,7 @@ export function renderProfile(
 
   document.getElementById("profile-title").textContent = primary.title;
   document.getElementById("profile-subtitle").textContent =
-    `${primary.subtitle} // señal secundaria: ${secondary.title}`;
+    `${primary.subtitle} · También: ${secondary.title}`;
   document.getElementById("profile-summary").textContent = copy.summary;
   document.getElementById("profile-body").textContent = copy.body;
 
@@ -231,19 +231,27 @@ export function gameCard(game, options = {}) {
 
   const art = el("div", "card-signal-art");
   art.setAttribute("aria-hidden", "true");
-  const initials = game.title
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 3)
-    .map((word) => word[0])
-    .join("")
-    .toUpperCase();
-  art.append(el("span", "card-signal-initials", initials));
+  if (game.cover_url) {
+    const cover = document.createElement("img");
+    cover.className = "card-signal-cover";
+    cover.src = game.cover_url;
+    cover.alt = "";
+    cover.loading = "lazy";
+    cover.decoding = "async";
+    cover.addEventListener("error", () => {
+      art.classList.remove("has-cover");
+      cover.replaceWith(el("span", "card-signal-fallback", game.title));
+    }, { once: true });
+    art.classList.add("has-cover");
+    art.append(cover);
+  } else {
+    art.append(el("span", "card-signal-fallback", game.title));
+  }
   card.append(art, el("h4", "card-title", game.title));
 
   const safeGenres = Array.isArray(game.genres) ? game.genres.slice(0, 3) : [];
   if (safeGenres.length) {
-    const meta = el("p", "card-signal-meta", safeGenres.join(" // "));
+    const meta = el("p", "card-signal-meta", safeGenres.map(curatedGenreLabel).join(" · "));
     card.append(meta);
   }
 
@@ -338,7 +346,7 @@ export function renderResults(sections) {
 
   renderList(
     "list-might-hook",
-    sections.mightHook.slice(0, 3).map(({ game }) => game),
+    sections.mightHook.slice(0, 6).map(({ game }) => game),
     { variant: "archive" },
   );
   renderList(
@@ -386,7 +394,7 @@ function createCatalogWishlistCard(game, options) {
   image.addEventListener("error", () => {
     image.remove();
     if (media.querySelector(".catalog-card-cover-fallback")) return;
-    const fallback = el("div", "catalog-card-cover-fallback", "SIN PORTADA");
+    const fallback = el("div", "catalog-card-cover-fallback", "H");
     fallback.setAttribute("aria-hidden", "true");
     media.append(fallback);
   }, { once: true });

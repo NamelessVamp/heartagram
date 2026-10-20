@@ -44,7 +44,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000001620/2b166fb3197dacfde1d939acd6a976b9fbe3b1a32c54f9f0d2c8d23efb22412d"
   },
   {
     "id": "little-nightmares",
@@ -482,7 +483,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "VERIFICAR"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/f4bf3b2748a6571b0f0c62369b733a8386347abdb158fb985f9ffdf36a5567a6"
   },
   {
     "id": "hollow-knight",
@@ -525,7 +527,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000003208/4643fb058642335c523910f3a7910575f56372f612f7c0c9a497aaae978d3e51"
   },
   {
     "id": "hollow-knight-silksong",
@@ -568,50 +571,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
-    }
-  },
-  {
-    "id": "resident-evil-tbd",
-    "title": "Resident Evil (título por definir)",
-    "genres": [
-      "HORROR",
-      "ACTION"
-    ],
-    "multiplayer": {
-      "online_coop": false,
-      "online_versus": false,
-      "local_wireless": false,
-      "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
     },
-    "mood": [
-      "DARK",
-      "CREEPY"
-    ],
-    "vibes": [],
-    "personality": [
-      "HORROR_FAN",
-      "SURVIVOR"
-    ],
-    "couple": [],
-    "vector": {
-      "pace": 1,
-      "social": -2,
-      "structure": -1,
-      "session": 0,
-      "mood": 2,
-      "challenge": 1
-    },
-    "horror_level": 3,
-    "free_to_play": false,
-    "price_mxn": null,
-    "price_checked": null,
-    "why": "El clásico del survival horror. Pasillos, recursos y tensión.",
-    "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "VERIFICAR"
-    }
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000020840/60eebc8f7133f685eddbffbe43c8da617ba0a5d699f2008f9c31c6119d1792af"
   },
   {
     "id": "zelda-botw",
@@ -655,7 +616,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000000025/7137262b5a64d921e193653f8aa0b722925abc5680380ca0e18a5cfd91697f58"
   },
   {
     "id": "zelda-totk",
@@ -700,7 +662,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000063714/956c12eb1a4c9e68b494cca7efd23d20ba8a789a5eb02589affae64bc6bc3282"
   },
   {
     "id": "zelda-oot-2026",
@@ -787,7 +750,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000084618/e3a49cf14180cec09c515595fb7121b048a0f8327eae2d248909d0f0c64a9dc9"
   },
   {
     "id": "pokemon-legends-za",
@@ -832,7 +796,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "VERIFICAR"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000094234/1bc76cfb165917ffd9cf4fd0c8a8eaa2ba423c148cd2c59303c29f178eeecf8a"
   },
   {
     "id": "pokemon-scarlet-violet",
@@ -925,7 +890,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000044642/f3f84d6a2032dfb10ef4106f6b62e46775247a2e9493bd52dde5b83d55e42a4d"
   },
   {
     "id": "metroid-dread",
@@ -967,7 +933,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000042924/c7e6839975afd46893274cf7cfdb63b39a54d6f700938bcd1c8849ac66755d00"
   },
   {
     "id": "metroid-prime-4",
@@ -1009,7 +976,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000084766/1bcf06d845f9027b4330e8d07658845a2fe3d66882bdaeb70325aeb35c54f1c9"
   },
   {
     "id": "xenoblade-3",
@@ -1050,7 +1018,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000053336/e933b48650b33b355e9cf2583da5c94b77180e40fb02d050041083dd62f4df39"
   },
   {
     "id": "pokemon-unite",
@@ -1095,7 +1064,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000043292/91e382e3e87726746dc714d3cab616a57ead6d797cff8c2f757b448534ce7cf4"
   },
   {
     "id": "fortnite",
@@ -1140,7 +1110,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000010192/a527817db47c1aafb78e2cc4ad92e70c9efce0aef494230e950751498e8b3880"
   },
   {
     "id": "splatoon-3",
@@ -1184,7 +1155,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000046395/4555efa9f2061f7d1e1646ab3d3af790a7491270b1b3e32e730273e9ac096827"
   },
   {
     "id": "mario-kart-world",
@@ -1229,7 +1201,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000095431/ff853740995f9bef45e3534b4eb3ba224a96f6bd8300a18caec18e17e5d82238"
   },
   {
     "id": "smash-ultimate",
@@ -1272,7 +1245,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000012332/ac4d1fc9824876ce756406f0525d50c57ded4b2a666f6dfe40a6ac5c3563fad9"
   },
   {
     "id": "overwatch-2",
@@ -1318,7 +1292,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000103930/a474c79bdf5cd6fe6adda3c56fe4835729b4653387ed2ed53439c5fbb48f3ed5"
   },
   {
     "id": "rocket-league",
@@ -1361,7 +1336,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000000457/93d8c90d84e815f9177a587d0693504f81d19f85ef9bf2484ac5ad54478b3876"
   },
   {
     "id": "fall-guys",
@@ -1404,7 +1380,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000042975/937afd0c84319831009b44c93369faf0a2c926a454809f73523df9bfb6cf6233"
   },
   {
     "id": "splatoon-raiders",
@@ -1448,7 +1425,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "VERIFICAR"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000122824/cf587e01f6f115398f411f280dba21e025795eb69f234a41722341ea999d170d"
   },
   {
     "id": "persona-5-royal",
@@ -1533,7 +1511,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000100149/b755e5038e7fb59e09abe48fd4db575a346ceea53c4d146d7bb6e32b0fea3c0d"
   },
   {
     "id": "fire-emblem-three-houses",
@@ -1576,7 +1555,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000007606/c499fdc86779ca95e61daed1f94288a245d196360d278138e56d44097d1a3878"
   },
   {
     "id": "hades",
@@ -1619,7 +1599,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000033131/dbc8c55a21688b446a5c57711b726956483a14ef8c5ddb861f897c0595ccb6b5"
   },
   {
     "id": "hades-2",
@@ -1662,7 +1643,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000060675/a9a30b2adb707f5922eb2a845f821c99516a69e023751491b10584ac1352462f"
   },
   {
     "id": "cyberpunk-2077",
@@ -1708,7 +1690,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "—"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000095547/f172668ac499434b33917199f2021f753d42b73862d76d3c93d04a474dade847"
   },
   {
     "id": "animal-crossing-nh",
@@ -1753,7 +1736,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000027619/9989957eae3a6b545194c42fec2071675c34aadacd65e6b33fdfe7b3b6a86c3a"
   },
   {
     "id": "stardew-valley",
@@ -1798,7 +1782,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000001801/3dd0951e2fa3808ab27af1d998a9d0a18d77809118437d1972124b6219246420"
   },
   {
     "id": "pokopia",
@@ -1842,7 +1827,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "VERIFICAR"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000107421/ccb2d70f7ad6878b78d366898a0f0baf94a2d3350b76725c88b591453a797502"
   },
   {
     "id": "minecraft",
@@ -1887,7 +1873,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000000964/a28a81253e919298beab2295e39a56b7a5140ef15abdb56135655e5c221b2a3a"
   },
   {
     "id": "tomodachi-life",
@@ -2016,7 +2003,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000049281/e7200824041808289d4a65589ed368f7e08dc2e538a5fd7ee9f8d39e58015c24"
   },
   {
     "id": "overcooked-2",
@@ -2058,7 +2046,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000003402/057249cf707a2a733c876c0eb453bb018ee6ea09f3aea5c350f4d76f70840d00"
   },
   {
     "id": "dont-starve-together",
@@ -2146,7 +2135,8 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000029016/b6ca09e9a7f6faf27641f62dabe64c6ff97b4f326aa478379e3c112aa28eb9ab"
   },
   {
     "id": "mario-party-jamboree",
@@ -2188,6 +2178,7 @@
     "status": "VERIFICADO",
     "_hypothesis": {
       "duo": "ON,LOC"
-    }
+    },
+    "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000084608/ba0572bf9d840b03bf9958809943fb3c76c3adfd6d8f2704b0f1b766f8aa4027"
   }
 ]

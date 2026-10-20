@@ -244,7 +244,7 @@ function createCatalogEmptyState() {
   mark.setAttribute("aria-hidden", "true");
   panel.append(
     mark,
-    createElement("h3", "catalog-empty-title", "Sin señales con esos filtros"),
+    createElement("h3", "catalog-empty-title", "Sin resultados con esos filtros"),
     createElement("p", "catalog-empty-copy", "Prueba otra búsqueda o vuelve al catálogo completo."),
   );
   const reset = createElement("button", "btn btn-ghost", "Limpiar filtros");
@@ -300,18 +300,7 @@ function createCatalogCard(game) {
         return;
       }
 
-      const initials = game.name
-        .split(/\s+/)
-        .filter(Boolean)
-        .slice(0, 3)
-        .map((word) => word[0])
-        .join("")
-        .toUpperCase();
-      const fallback = createElement(
-        "div",
-        "catalog-card-cover-fallback",
-        initials || "◇",
-      );
+      const fallback = createElement("div", "catalog-card-cover-fallback", "H");
 
       fallback.setAttribute("aria-hidden", "true");
 

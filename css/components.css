@@ -1,0 +1,717 @@
+/* Shared components. Screens only add layout, never restyle these. */
+@layer components {
+  /* ---------- Page header ---------- */
+  .home-header,
+  .discover-header,
+  .catalog-screen-header,
+  .collection-header {
+    display: grid;
+    gap: var(--sp-3);
+    max-width: 48rem;
+  }
+
+  /* ---------- Labels ---------- */
+  .home-label,
+  .discover-section-kicker,
+  .guide-kicker,
+  .eyebrow,
+  .npd-eyebrow,
+  .npd-label,
+  .catalog-field > span,
+  .gift-code-label,
+  .card-signal-meta,
+  .discover-mood-signal {
+    color: var(--text-faint);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* The single signature gesture: razor line + accent kicker. */
+  .home-kicker,
+  .discover-eyebrow,
+  .catalog-screen-kicker,
+  .collection-kicker,
+  .guide-hero > div > .guide-kicker,
+  .secondary-screen > .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-3);
+    color: var(--accent-hover);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .home-kicker::before,
+  .discover-eyebrow::before,
+  .catalog-screen-kicker::before,
+  .collection-kicker::before,
+  .guide-hero > div > .guide-kicker::before,
+  .secondary-screen > .eyebrow::before {
+    content: "";
+    width: 1.5rem;
+    height: 1px;
+    background: currentColor;
+  }
+
+  /* ---------- Titles and copy ---------- */
+  .home-title,
+  .discover-title,
+  .catalog-screen-title,
+  .collection-title,
+  .guide-title,
+  .secondary-screen > .title {
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: var(--fs-display);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+
+  .home-subtitle,
+  .discover-lead,
+  .catalog-screen-lead,
+  .collection-lead,
+  .guide-lead,
+  .secondary-screen > .lead {
+    max-width: 60ch;
+    color: var(--text-muted);
+    font-size: var(--fs-lg);
+    line-height: 1.6;
+  }
+
+  .home-card-title,
+  .discover-section-title,
+  .discover-profile-title,
+  .wishlist-section-title,
+  .catalog-empty-title,
+  .collection-empty-title,
+  .getting-started-screen h3 {
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  .home-card-copy,
+  .discover-section-copy,
+  .wishlist-section-description,
+  .catalog-empty-copy,
+  .collection-empty-copy {
+    max-width: 60ch;
+    color: var(--text-muted);
+  }
+
+  .hint {
+    color: var(--text-faint);
+    font-size: var(--fs-sm);
+  }
+
+  /* ---------- Surfaces ---------- */
+  .home-empty-card,
+  .home-primary-card,
+  .home-panel,
+  .home-stat,
+  .discover-profile,
+  .card,
+  .discover-mood-card,
+  .catalog-wishlist-card,
+  .profile-copy,
+  .gift-slot,
+  .guide-progress,
+  .guide-card,
+  .guide-chapter,
+  .family-screen .steps li {
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    background: var(--surface);
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-2);
+    min-height: 2.75rem;
+    padding: var(--sp-2) var(--sp-5);
+    border: 1px solid transparent;
+    border-radius: var(--r-md);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    transition:
+      background var(--dur) var(--ease),
+      border-color var(--dur) var(--ease),
+      color var(--dur) var(--ease);
+  }
+
+  .btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background: var(--accent-hover);
+  }
+
+  .btn-ghost {
+    border-color: var(--line-strong);
+    background: var(--surface-2);
+    color: var(--text);
+  }
+
+  .btn-ghost:hover:not(:disabled) {
+    border-color: var(--text-faint);
+    background: var(--surface-3);
+  }
+
+  .btn-text {
+    min-height: 2.5rem;
+    padding: 0 var(--sp-2);
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .btn-text:hover {
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  /* ---------- Toggle buttons: Me interesa / Ya lo tengo ---------- */
+  .favorite-button,
+  .library-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-2);
+    min-height: 2.5rem;
+    padding: 0 var(--sp-4);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-md);
+    background: transparent;
+    color: var(--text);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    transition:
+      background var(--dur) var(--ease),
+      border-color var(--dur) var(--ease),
+      color var(--dur) var(--ease);
+  }
+
+  .favorite-button:hover,
+  .library-button:hover {
+    border-color: var(--text-faint);
+    background: var(--surface-2);
+  }
+
+  .favorite-button[aria-pressed="true"] {
+    border-color: var(--accent-line);
+    background: var(--accent-soft);
+    color: var(--accent-hover);
+  }
+
+  .library-button[aria-pressed="true"] {
+    border-color: var(--gold-line);
+    background: var(--gold-soft);
+    color: var(--gold);
+  }
+
+  .library-button-remove {
+    color: var(--text-muted);
+  }
+
+  /* ---------- Chips ---------- */
+  .card-badges,
+  .npd-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+  }
+
+  .badge,
+  .npd-tag,
+  .catalog-detail-chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.5rem;
+    padding: 0 var(--sp-2);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-pill);
+    color: var(--text-muted);
+    font-size: var(--fs-xs);
+    white-space: nowrap;
+  }
+
+  .card-owned,
+  .collection-owned-seal {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.5rem;
+    padding: 0 var(--sp-2);
+    border: 1px solid var(--gold-line);
+    border-radius: var(--r-pill);
+    background: var(--gold-soft);
+    color: var(--gold);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+  }
+
+  .discover-mood-button,
+  .catalog-filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    min-height: 2.25rem;
+    padding: 0 var(--sp-4);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-pill);
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    transition:
+      background var(--dur) var(--ease),
+      border-color var(--dur) var(--ease),
+      color var(--dur) var(--ease);
+  }
+
+  .discover-mood-button:hover,
+  .catalog-filter-chip:hover {
+    border-color: var(--text-faint);
+    color: var(--text);
+  }
+
+  .discover-mood-button[aria-pressed="true"] {
+    border-color: var(--accent-line);
+    background: var(--accent-soft);
+    color: var(--text);
+  }
+
+  .catalog-filter-chip::after {
+    content: "×";
+    color: var(--text-faint);
+  }
+
+  /* ---------- Form fields ---------- */
+  .catalog-field {
+    display: grid;
+    gap: var(--sp-2);
+    min-width: 0;
+  }
+
+  .catalog-field input,
+  .catalog-field select {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0 var(--sp-3);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-md);
+    background: var(--surface);
+    color: var(--text);
+    font-size: var(--fs-sm);
+  }
+
+  .catalog-field input::placeholder {
+    color: var(--text-faint);
+  }
+
+  .catalog-field input:focus-visible,
+  .catalog-field select:focus-visible {
+    border-color: var(--accent);
+    outline: 2px solid var(--accent-soft);
+    outline-offset: 0;
+  }
+
+  .catalog-field option {
+    background: var(--surface);
+    color: var(--text);
+  }
+
+  /* ---------- Status and empty states ---------- */
+  .catalog-status {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-4);
+    padding: var(--sp-4) var(--sp-5);
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    background: var(--surface);
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+  }
+
+  .empty {
+    padding: var(--sp-6);
+    border: 1px dashed var(--line-strong);
+    border-radius: var(--r-lg);
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+    text-align: center;
+  }
+
+  .catalog-empty-state,
+  .collection-empty-state {
+    display: grid;
+    grid-column: 1 / -1;
+    justify-items: center;
+    gap: var(--sp-3);
+    padding: var(--sp-12) var(--sp-6);
+    border: 1px dashed var(--line-strong);
+    border-radius: var(--r-xl);
+    text-align: center;
+  }
+
+  .catalog-empty-mark,
+  .collection-empty-mark {
+    color: var(--accent);
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .catalog-empty-state .btn,
+  .collection-empty-state .btn {
+    margin-top: var(--sp-2);
+  }
+
+  /* ---------- Game card (curated recommendations) ---------- */
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-3);
+    min-width: 0;
+    padding: var(--sp-4);
+    transition: border-color var(--dur) var(--ease);
+  }
+
+  .card:hover {
+    border-color: var(--line-strong);
+  }
+
+  .card-sequence {
+    display: none;
+  }
+
+  .card-signal-art {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: var(--r-md);
+    background: var(--art);
+  }
+
+  .card-signal-initials {
+    color: rgb(255 255 255 / 0.55);
+    font: italic 2.5rem / 1 var(--font-display);
+  }
+
+  .card-title {
+    color: var(--text);
+    font: var(--fs-xl) / 1.2 var(--font-display);
+  }
+
+  .card-why {
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+    line-height: 1.6;
+  }
+
+  .library-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+    margin-top: auto;
+    padding-top: var(--sp-2);
+  }
+
+  .card-hero {
+    padding: var(--sp-5);
+  }
+
+  .card-hero .card-signal-art {
+    aspect-ratio: 2 / 1;
+  }
+
+  .card-hero .card-signal-initials {
+    font-size: 4rem;
+  }
+
+  .card-hero .card-title {
+    font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
+  }
+
+  .card-hero .card-why {
+    max-width: 60ch;
+    font-size: var(--fs-md);
+  }
+
+  .card-wildcard {
+    border-style: dashed;
+  }
+
+  @media (min-width: 40rem) {
+    .card-wildcard {
+      display: grid;
+      grid-template-columns: 14rem minmax(0, 1fr);
+      align-content: start;
+      gap: var(--sp-3) var(--sp-6);
+    }
+
+    .card-wildcard > * {
+      grid-column: 2;
+    }
+
+    .card-wildcard .card-signal-art {
+      grid-column: 1;
+      grid-row: 1 / span 6;
+      aspect-ratio: 3 / 4;
+    }
+  }
+
+  /* ---------- Cover fallback and skeletons ---------- */
+  .catalog-card-cover-fallback {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    background: var(--art);
+    color: rgb(255 255 255 / 0.55);
+    font: italic 2.5rem / 1 var(--font-display);
+  }
+
+  .catalog-card-skeleton {
+    display: grid;
+    gap: var(--sp-2);
+    pointer-events: none;
+  }
+
+  .catalog-skeleton-media,
+  .catalog-skeleton-line {
+    background: linear-gradient(90deg, var(--surface-2), var(--surface-3), var(--surface-2));
+    background-size: 200% 100%;
+    animation: skeleton 1.2s linear infinite;
+  }
+
+  .catalog-skeleton-media {
+    aspect-ratio: 3 / 4;
+    border-radius: var(--r-md);
+  }
+
+  .catalog-skeleton-line {
+    height: 0.75rem;
+    border-radius: var(--r-pill);
+  }
+
+  .catalog-skeleton-title {
+    width: 80%;
+  }
+
+  .catalog-skeleton-short {
+    width: 50%;
+  }
+
+  @keyframes skeleton {
+    to {
+      background-position: -200% 0;
+    }
+  }
+
+  /* ---------- Dialog: full screen on mobile, window from 40rem ---------- */
+  .catalog-dialog {
+    width: 100%;
+    max-width: none;
+    height: 100dvh;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    border: 0;
+    background: var(--surface);
+    color: var(--text);
+    overscroll-behavior: contain;
+  }
+
+  .catalog-dialog::backdrop {
+    background: rgb(0 0 0 / 0.72);
+    backdrop-filter: blur(6px);
+  }
+
+  .catalog-dialog-content {
+    position: relative;
+    padding: var(--sp-4) var(--sp-4) var(--sp-10);
+  }
+
+  .catalog-dialog-close {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: auto;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-pill);
+    background: var(--surface-2);
+    color: var(--text);
+    font-size: 1.375rem;
+    line-height: 1;
+  }
+
+  .catalog-dialog-close:hover {
+    background: var(--surface-3);
+  }
+
+  @media (min-width: 40rem) {
+    .catalog-dialog {
+      width: min(64rem, 100vw - 2rem);
+      height: auto;
+      max-height: calc(100dvh - 2rem);
+      margin: auto;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--r-xl);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .catalog-dialog-content {
+      padding: var(--sp-6) var(--sp-10) var(--sp-10);
+    }
+  }
+}
+
+/* ---------- Official covers on curated cards ---------- */
+@layer components {
+  .card-signal-art {
+    position: relative;
+  }
+
+  .card-signal-art.has-cover {
+    background: var(--surface-2);
+  }
+
+  .card-signal-cover {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-signal-fallback {
+    max-width: 85%;
+    color: rgb(255 255 255 / 0.72);
+    font: italic var(--fs-xl) / 1.15 var(--font-display);
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .card-hero .card-signal-fallback {
+    font-size: var(--fs-2xl);
+  }
+
+  .card-title {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* ---------- v1.2 polish: posters and fallbacks ---------- */
+@layer components {
+  /* Without a cover the art becomes a typographic poster.
+     The h4 stays in the DOM for screen readers. */
+  .card-signal-art:not(.has-cover) {
+    place-items: end start;
+    padding: var(--sp-5);
+  }
+
+  .card-signal-art:not(.has-cover) + .card-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .card-signal-fallback {
+    max-width: 100%;
+    color: var(--text);
+    font-size: var(--fs-2xl);
+    font-style: normal;
+    text-align: left;
+  }
+
+  /* Featured "Para ti" card: cover bleeds, copy sits on top. */
+  .card-hero {
+    justify-content: flex-end;
+    min-height: 24rem;
+    padding: var(--sp-6);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .card-hero .card-signal-art {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    aspect-ratio: auto;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .card-hero .card-signal-art::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 20%, rgb(10 8 10 / 0.6) 55%, var(--ink-950) 100%);
+  }
+
+  .card-hero .card-signal-fallback {
+    display: none;
+  }
+
+  .card-hero .card-signal-art:not(.has-cover) + .card-title {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
+    white-space: normal;
+  }
+
+  .card-hero .card-title {
+    max-width: 22ch;
+    font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+  }
+
+  .card-hero .card-why {
+    color: var(--text);
+  }
+
+  /* Explorar fallback: brand mark instead of game initials. */
+  .catalog-card-cover-fallback {
+    color: var(--accent-line);
+    font: italic 3rem / 1 var(--font-display);
+  }
+
+  @media (min-width: 64rem) {
+    .card-hero {
+      min-height: 30rem;
+    }
+  }
+}
