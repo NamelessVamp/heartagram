@@ -15,3 +15,6 @@ data/getting_started_backups/
 data/release_docs_backups/
 data/static_nintendo_backups/
 static_nintendo_cleanup_audit.txt
+
+prepare_ui_audit_v12.py
+ui_audit_v12.txt
