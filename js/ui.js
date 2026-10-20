@@ -34,13 +34,13 @@ function el(tag, className, text) {
 export function renderQuestion(question, index, total, selectedId, onSelect) {
   const current = index + 1;
   document.getElementById("quiz-counter").textContent =
-    `⟦ SIGNAL ${String(current).padStart(2, "0")} / ${String(total).padStart(2, "0")} ⟧`;
+    `Pregunta ${current} de ${total}`;
   document.getElementById("quiz-question").textContent = question.text;
 
   const bar = document.getElementById("quiz-progress-bar");
   bar.style.width = `${(current / total) * 100}%`;
   bar.parentElement.setAttribute("aria-valuenow", String(current));
-  bar.parentElement.setAttribute("aria-valuetext", `Señal ${current} de ${total}`);
+  bar.parentElement.setAttribute("aria-valuetext", `Pregunta ${current} de ${total}`);
 
   const container = document.getElementById("quiz-options");
   container.replaceChildren();
@@ -124,7 +124,7 @@ export function renderProfile(
 
   document.getElementById("profile-title").textContent = primary.title;
   document.getElementById("profile-subtitle").textContent =
-    `${primary.subtitle} // señal secundaria: ${secondary.title}`;
+    `${primary.subtitle} · También: ${secondary.title}`;
   document.getElementById("profile-summary").textContent = copy.summary;
   document.getElementById("profile-body").textContent = copy.body;
 

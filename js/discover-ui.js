@@ -91,7 +91,7 @@ export function refreshDiscoverProfile() {
   const subtitle = document.getElementById("discover-profile-subtitle");
   if (title) title.textContent = names.primary;
   if (subtitle) subtitle.textContent = names.secondary
-    ? `Señal secundaria // ${names.secondary}`
+    ? `También: ${names.secondary}`
     : "Perfil en calibración";
 }
 
