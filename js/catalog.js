@@ -1,15 +1,21 @@
-import { NINTENDO_INDEX_PATH, adaptNintendoCatalog } from "./nintendo-catalog.js?v=np1";
+import { NINTENDO_INDEX_PATH, adaptNintendoCatalog } from "./nintendo-catalog.js?v=v110";
 
 // Loads and queries the broad IGDB catalog used by HEARTAGRAM's explorer.
 // The compact index is loaded once. Detail shards are loaded only when needed.
 
 // HEARTAGRAM_NINTENDO_PREVIEW
-const SEARCH_PARAMS =
-  typeof window !== "undefined"
-    ? new URLSearchParams(window.location.search)
-    : new URLSearchParams();
+// HEARTAGRAM_CATALOG_SOURCE_V110
+export function catalogModeFromSearch(search = "") {
+  const requested = new URLSearchParams(search).get("catalog");
+  return requested === "igdb" ? "igdb" : "nintendo";
+}
 
-const USE_NINTENDO = SEARCH_PARAMS.get("catalog") === "nintendo";
+const CATALOG_MODE =
+  typeof window === "undefined"
+    ? "igdb"
+    : catalogModeFromSearch(window.location.search);
+
+const USE_NINTENDO = CATALOG_MODE === "nintendo";
 const INDEX_PATH = USE_NINTENDO ? NINTENDO_INDEX_PATH : "data/catalog_igdb.json";
 const DEFAULT_PAGE_SIZE = 24;
 
