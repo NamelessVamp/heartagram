@@ -9,7 +9,7 @@ const section = html.slice(start, html.indexOf("</section>", start));
 assert.ok(section.includes("Familiar + Paquete de expansión"), "Falta el plan Expansión");
 for (const benefit of [
   "Juego en línea",
-  "Guardado de partidas en la nube",
+  "guardado de partidas en la nube",
   "GameCube",
   "Nintendo 64",
   "Game Boy Advance",
