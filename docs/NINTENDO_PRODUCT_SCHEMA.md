@@ -161,7 +161,7 @@ A publishable snapshot must satisfy all of these conditions:
 Old IDs should not be deleted automatically.
 
 ```text
-igdb:<id> -> migration review by normalized title
+Legacy catalog IDs -> ignored by the Nintendo-only static runtime
 curated-id -> preserve until a confident Nintendo product match exists
 nintendo:MX:<nsuid> -> final preferred ID
 ```

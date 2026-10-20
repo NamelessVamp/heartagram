@@ -48,22 +48,22 @@ check("agrega un juego curado", () => {
   assert.equal(isOwnedGame("persona-5-royal"), true);
 });
 
-check("agrega un juego IGDB", () => {
-  assert.equal(setOwnedGame("igdb:72", true), true);
+check("agrega un producto Nintendo", () => {
+  assert.equal(setOwnedGame("nintendo:MX:70010000000123", true), true);
 
-  assert.equal(isOwnedGame("igdb:72"), true);
+  assert.equal(isOwnedGame("nintendo:MX:70010000000123"), true);
 });
 
 check("no duplica juegos", () => {
-  setOwnedGame("igdb:72", true);
+  setOwnedGame("nintendo:MX:70010000000123", true);
 
-  assert.deepEqual(getOwnedGameIds(), ["persona-5-royal", "igdb:72"]);
+  assert.deepEqual(getOwnedGameIds(), ["persona-5-royal", "nintendo:MX:70010000000123"]);
 });
 
 check("toggle elimina un juego existente", () => {
   assert.equal(toggleOwnedGame("persona-5-royal"), false);
 
-  assert.deepEqual(getOwnedGameIds(), ["igdb:72"]);
+  assert.deepEqual(getOwnedGameIds(), ["nintendo:MX:70010000000123"]);
 });
 
 check("toggle agrega un juego ausente", () => {
@@ -83,7 +83,7 @@ check("tolera localStorage corrupto", () => {
 });
 
 check("limpia la biblioteca", () => {
-  setOwnedGame("igdb:72", true);
+  setOwnedGame("nintendo:MX:70010000000123", true);
 
   clearLibrary();
 

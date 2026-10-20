@@ -1,6 +1,6 @@
 import { PLAYER_DIMENSIONS, PLAYER_DIMENSION_LABELS, normalizedTraitPercent, traitSignal } from "./player-journey.js?v=p1";
 import { catalogLabel } from "./catalog-labels.js";
-import { igdbImageUrl } from "./catalog.js";
+import { catalogImageUrl } from "./catalog.js";
 
 // HEARTAGRAM_DISCOVER_P13
 // All DOM rendering lives here. Logic modules never touch the DOM.
@@ -379,7 +379,7 @@ function createCatalogWishlistCard(game, options) {
   const card = el("article", "catalog-wishlist-card");
   const media = el("div", "catalog-wishlist-media");
   const image = document.createElement("img");
-  image.src = igdbImageUrl(game.cover, "cover_big");
+  image.src = catalogImageUrl(game.cover, "cover_big");
   image.alt = `Portada de ${game.name}`;
   image.loading = "lazy";
   image.decoding = "async";

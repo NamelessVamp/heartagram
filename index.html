@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="theme-color" content="#080608" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2216%22 fill=%22%23080608%22/><text x=%2232%22 y=%2243%22 text-anchor=%22middle%22 font-size=%2236%22 fill=%22%23ff9fc9%22>H</text></svg>" />
     <title>Heartagram</title>
     <link rel="stylesheet" href="css/base.css?v=v110" />
     <link rel="stylesheet" href="css/theme.css?v=v110" />
@@ -21,13 +22,7 @@
     <link rel="stylesheet" href="css/screens/collection.css?v=v110" />
     <script type="module" src="js/main.js?v=v110"></script>
     <script type="module" src="js/visual-system.js"></script>
-    <link rel="stylesheet" href="css/screens/chat.css?v=v110" />
-    <link rel="stylesheet" href="css/screens/chat-refined.css?v=v110" />
     <link rel="stylesheet" href="css/screens/secondary.css?v=v110" />
-    <link rel="stylesheet" href="css/screens/chat-ux-v2.css?v=v110" />
-  <link rel="stylesheet" href="css/screens/chat-sidebar.css?v=v110" />
-<script type="module" src="js/chat-sidebar.js"></script>
-  <script type="module" src="js/chat-menu-popover.js"></script>
   <link rel="stylesheet" href="css/screens/nintendo-product-detail.css?v=v110" />
     <link rel="stylesheet" href="css/screens/getting-started.css?v=v110" />
 </head>
@@ -144,9 +139,6 @@
           <div id="returning-profile-actions" class="home-secondary-actions">
             <button type="button" class="btn btn-ghost" data-action="to-gift">
               Mi regalo
-            </button>
-            <button type="button" class="btn btn-ghost" data-action="to-assistant">
-              Abrir Chat
             </button>
           </div>
         </div>
@@ -453,36 +445,6 @@
       </section>
 
 
-      <!-- CHAT REDESIGN-06 -->
-      <section class="screen chat-screen" data-screen="assistant" aria-labelledby="assistant-title" hidden>
-        <h2 id="assistant-title">Chat</h2>
-        <div class="chat-layout">
-          <details class="chat-history">
-            <summary>Conversaciones</summary>
-            <button id="chat-new" type="button">Nueva conversación</button>
-            <div id="chat-threads"></div>
-            <button id="chat-delete" type="button">Eliminar conversación</button>
-          </details>
-          <div class="chat-conversation">
-            <div class="chat-context">Contexto: perfil, Me interesa y Mi biblioteca. Historial guardado en este navegador.</div>
-            <div class="chat-body">
-              <div id="chat-empty"><h3>¿Por dónde empezamos?</h3></div>
-              <div id="chat-messages" role="log" aria-label="Mensajes de la conversación" aria-live="polite"></div>
-              <div id="chat-starters">
-                <button type="button" data-assistant-prompt="¿Qué debería jugar primero?">Elige algo de mi biblioteca</button>
-                <button type="button" data-assistant-prompt="Quiero algo oscuro">Algo oscuro</button>
-                <button type="button" data-assistant-prompt="¿Qué puedo jugar con Inti?">Jugar con Inti</button>
-              </div>
-            </div>
-            <form id="assistant-form">
-              <textarea id="assistant-input" rows="2" aria-label="Mensaje" placeholder="Escribe un mensaje..."></textarea>
-              <button type="submit" aria-label="Enviar mensaje">Enviar</button>
-            </form>
-          </div>
-        </div>
-        <p id="chat-status" role="status">Al enviar, compartes el contexto de juegos y el historial reciente con Gemini.</p>
-<details class="chat-privacy"><summary>Privacidad del chat</summary><p>Al enviar, el perfil de juegos, la colección seleccionada y el historial reciente se comparten con Google Gemini. La clave permanece en el servidor.</p></details>
-      </section>
 
       <!-- REGALO -->
       <section

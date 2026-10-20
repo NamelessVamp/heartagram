@@ -55,7 +55,6 @@ export function adaptNintendoProduct(product) {
   return {
     catalog_source: "nintendo",
     catalog_id: `nintendo:MX:${nsuid}`,
-    igdb_id: Number(nsuid),
     nsuid,
     name: title,
     title,
@@ -103,7 +102,7 @@ export function adaptNintendoCatalog(payload) {
   const products = Array.isArray(payload?.products) ? payload.products : payload?.games;
   if (!Array.isArray(products)) throw new TypeError("Nintendo catalog has no products array");
   return {
-    meta: { source: "nintendo_mx", region: "MX", locale: "es-MX", preview: true },
+    meta: { source: "nintendo_mx", region: "MX", locale: "es-MX", static: true },
     games: products.map(adaptNintendoProduct),
   };
 }

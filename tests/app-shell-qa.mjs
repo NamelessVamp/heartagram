@@ -9,9 +9,9 @@ import {
 
 assert.deepEqual(
   PRIMARY_NAV_ITEMS.map(({ label }) => label),
-  ["Inicio", "Descubrir", "Explorar", "Mi lista", "Chat"],
+  ["Inicio", "Descubrir", "Explorar", "Mi lista"],
 );
-console.log("[OK] conserva cinco destinos principales");
+console.log("[OK] conserva cuatro destinos principales");
 
 assert.deepEqual(
   SECONDARY_NAV_ITEMS.map(({ label }) => label),

@@ -26,7 +26,7 @@
 ## ⟦ 2. SEGURIDAD ⟧ [BLOCKER]
 
 - **Ningún código eShop en el repo, HTML, JS ni JSON.** Ni de prueba.
-- **Ninguna API key en el cliente.** Todo pasa por el Worker (v2+).
+- **Sin credenciales en el runtime.** La versión pública es completamente estática.
 - Datos de Adriana solo en `localStorage`. Nada se envía a terceros en v1.
 - `.gitignore` incluye `.venv/`, `.env`, `*.secret`, `secrets/`.
 
