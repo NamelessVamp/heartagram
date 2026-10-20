@@ -17,7 +17,7 @@ export function normalizedTraitPercent(value) {
 
 export function traitSignal(value) {
   const score = Number(value) || 0;
-  if (score >= 1.15) return "ALTO";
-  if (score <= -1.15) return "BAJO";
+  if (score >= 0.45) return "ALTO";
+  if (score <= -0.45) return "BAJO";
   return "MEDIO";
 }

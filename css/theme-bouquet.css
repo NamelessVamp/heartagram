@@ -718,3 +718,326 @@
     }
   }
 }
+
+/* ---------- v1.2.1 · Mockup parity and character motifs ---------- */
+@layer theme {
+  /* The floating sky read as broken "x" shapes over content. */
+  .bq-sky {
+    display: none;
+  }
+
+  .bq-butterfly svg {
+    animation-name: bq-flutter-soft;
+  }
+
+  @keyframes bq-flutter-soft {
+    0%, 100% { transform: scaleX(1); }
+    50% { transform: scaleX(0.72); }
+  }
+
+  .bq-motif {
+    display: block;
+    width: 2rem;
+    color: var(--violet);
+    filter: drop-shadow(0 0 10px rgb(157 127 224 / 0.6));
+  }
+
+  .bq-motif svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .bq-motif-fox,
+  .bq-motif-heart,
+  .bq-motif-rose { color: var(--accent-hover); }
+  .bq-motif-feather,
+  .bq-motif-crescent { color: var(--violet); }
+  .bq-motif-star,
+  .bq-motif-note { color: var(--gold); }
+  .bq-motif-gem,
+  .bq-motif-bat { color: var(--emily); }
+
+  /* ---------- Inicio: window, curtains, cat, actions, covers ---------- */
+  .bq-window {
+    display: none;
+  }
+
+  .bq-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-3);
+    margin-top: var(--sp-3);
+  }
+
+  .home-header .home-cover-strip {
+    max-width: 30rem;
+    margin: var(--sp-4) 0 var(--sp-2);
+  }
+
+  #new-profile-actions [data-action="start"],
+  #new-profile-actions [data-action="to-catalog"],
+  .home-primary-card > .btn {
+    display: none;
+  }
+
+  @media (min-width: 64rem) {
+    .bq-window {
+      position: absolute;
+      top: 4%;
+      right: 3%;
+      display: block;
+      width: auto;
+      height: 92%;
+      aspect-ratio: 200 / 260;
+    }
+
+    .bq-window svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .home-header .bq-moon {
+      top: 20%;
+      right: calc(3% + 5.5rem);
+      width: 7.5rem;
+    }
+
+    .bq-hero-art .bq-note {
+      right: calc(3% + 19rem);
+      bottom: 16%;
+    }
+
+    .bq-hero-art .bq-butterfly:nth-of-type(7) { top: 46%; right: calc(3% + 13rem); }
+    .bq-hero-art .bq-butterfly:nth-of-type(8) { top: 14%; right: calc(3% + 17rem); }
+  }
+
+  /* ---------- Header motif clusters ---------- */
+  .bq-header-motifs {
+    display: none;
+  }
+
+  @media (min-width: 64rem) {
+    .bq-header-motifs {
+      position: absolute;
+      top: 3.5rem;
+      right: 17rem;
+      display: flex;
+      align-items: flex-end;
+      gap: var(--sp-3);
+      pointer-events: none;
+    }
+
+    .bq-header-motifs > :nth-child(2) {
+      width: 2.75rem;
+      translate: 0 -1rem;
+    }
+
+    .bq-header-motifs > :nth-child(3) {
+      width: 1.25rem;
+    }
+  }
+
+  .bq-big-heart {
+    display: none;
+  }
+
+  @media (min-width: 40rem) {
+    .bq-big-heart {
+      position: absolute;
+      top: -0.5rem;
+      right: 15rem;
+      display: block;
+      width: 4.5rem;
+      filter: drop-shadow(0 0 26px rgb(232 111 166 / 0.7));
+      animation: bq-pulse 3.2s ease-in-out infinite;
+    }
+  }
+
+  @keyframes bq-pulse {
+    0%, 100% { scale: 1; }
+    50% { scale: 1.08; }
+  }
+
+  .bq-crystals .bq-motif {
+    width: 1.75rem;
+  }
+
+  .bq-crystals .bq-motif:nth-child(1) { color: var(--accent-hover); }
+  .bq-crystals .bq-motif:nth-child(2) { width: 2.5rem; color: var(--violet); }
+  .bq-crystals .bq-motif:nth-child(3) { color: var(--emily); }
+
+  @media (min-width: 64rem) {
+    .bq-crystals {
+      right: 21rem;
+    }
+  }
+
+  .bq-quote {
+    display: grid;
+    justify-items: start;
+    gap: var(--sp-1);
+    padding: var(--sp-6) 0 var(--sp-2);
+  }
+
+  .bq-quote-bat {
+    width: 2.5rem;
+  }
+
+  .bq-quote-text {
+    color: var(--text);
+    font: italic 1.5rem / 1.3 var(--font-display);
+  }
+
+  .bq-quote-sign {
+    color: var(--accent-hover);
+    font: 1.2rem / 1 var(--font-hand);
+  }
+
+  /* ---------- Test: motif cards ---------- */
+  .quiz-option {
+    grid-template-columns: 3rem minmax(0, 1fr);
+  }
+
+  .quiz-option-index {
+    display: none;
+  }
+
+  .bq-opt-icon {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.55rem;
+    border-radius: var(--r-md);
+    background: var(--violet-soft);
+  }
+
+  .quiz-option[aria-checked="true"] .bq-opt-icon {
+    background: var(--accent);
+    color: var(--on-accent);
+    filter: none;
+  }
+
+  /* ---------- Perfil: archetype motif ---------- */
+  .bq-tarot-art .bq-tarot-motif {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    width: 38%;
+    translate: -50% 0;
+    filter: drop-shadow(0 0 18px rgb(232 111 166 / 0.7));
+  }
+
+  /* ---------- Descubrir: tabs, reroll, compact list ---------- */
+  .discover-screen {
+    gap: var(--sp-8);
+  }
+
+  .discover-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+  }
+
+  .discover-tab {
+    min-height: 2.5rem;
+    padding: 0 var(--sp-5);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-pill);
+    background: rgb(20 18 48 / 0.8);
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+  }
+
+  .discover-tab:hover {
+    color: var(--text);
+  }
+
+  .discover-tab[aria-selected="true"] {
+    border-color: transparent;
+    background: linear-gradient(135deg, #f07bb0, #d9558f);
+    box-shadow: var(--bq-glow);
+    color: var(--on-accent);
+  }
+
+  .discover-reroll {
+    justify-self: start;
+    margin-top: var(--sp-2);
+  }
+
+  .discover-support-grid .card {
+    display: grid;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    align-items: start;
+    gap: var(--sp-1) var(--sp-4);
+    padding: var(--sp-3);
+  }
+
+  .discover-support-grid .card > * {
+    grid-column: 2;
+  }
+
+  .discover-support-grid .card-signal-art {
+    grid-column: 1;
+    grid-row: 1 / span 5;
+    aspect-ratio: 3 / 4;
+    padding: 0;
+  }
+
+  .discover-support-grid .card-signal-fallback {
+    display: none;
+  }
+
+  .discover-support-grid .card-signal-art:not(.has-cover) + .card-title {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
+    white-space: normal;
+  }
+
+  .discover-support-grid .card-title {
+    font-size: var(--fs-lg);
+  }
+
+  .discover-support-grid .card-why {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  /* ---------- Explorar: heart over the cover ---------- */
+  .catalog-card {
+    position: relative;
+  }
+
+  .bq-cover-heart {
+    position: absolute;
+    top: var(--sp-2);
+    right: var(--sp-2);
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 50%;
+    background: rgb(10 10 24 / 0.72);
+    color: var(--text);
+    backdrop-filter: blur(6px);
+  }
+
+  .bq-cover-heart svg {
+    width: 1rem;
+  }
+
+  .bq-cover-heart[data-on="true"] {
+    border-color: transparent;
+    background: var(--accent);
+    box-shadow: var(--bq-glow);
+    color: var(--on-accent);
+  }
+}

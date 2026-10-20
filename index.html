@@ -7,25 +7,25 @@
     <meta name="theme-color" content="#080608" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2216%22 fill=%22%23080608%22/><text x=%2232%22 y=%2243%22 text-anchor=%22middle%22 font-size=%2236%22 fill=%22%23ff9fc9%22>H</text></svg>" />
     <title>Heartagram</title>
-    <script type="module" src="js/main.js?v=v120"></script>
-    <script type="module" src="js/bouquet.js?v=v120"></script>
+    <script type="module" src="js/main.js?v=v121"></script>
+    <script type="module" src="js/bouquet.js?v=v121"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Dancing+Script:wght@500;600&display=swap" />
-    <link rel="stylesheet" href="css/tokens.css?v=ui4" />
-    <link rel="stylesheet" href="css/base.css?v=ui4" />
-    <link rel="stylesheet" href="css/layout.css?v=ui4" />
-    <link rel="stylesheet" href="css/components.css?v=ui4" />
-    <link rel="stylesheet" href="css/screens/home.css?v=ui4" />
-    <link rel="stylesheet" href="css/screens/quiz.css?v=ui4" />
-    <link rel="stylesheet" href="css/screens/discover.css?v=ui4" />
-    <link rel="stylesheet" href="css/screens/catalog.css?v=ui4" />
-    <link rel="stylesheet" href="css/screens/nintendo-product-detail.css?v=ui4" />
-    <link rel="stylesheet" href="css/screens/collection.css?v=ui4" />
-    <link rel="stylesheet" href="css/screens/getting-started.css?v=ui4" />
-    <link rel="stylesheet" href="css/screens/secondary.css?v=ui4" />
-    <link rel="stylesheet" href="css/screens/profile.css?v=ui4" />
-    <link rel="stylesheet" href="css/theme-bouquet.css?v=ui4" />
+    <link rel="stylesheet" href="css/tokens.css?v=ui5" />
+    <link rel="stylesheet" href="css/base.css?v=ui5" />
+    <link rel="stylesheet" href="css/layout.css?v=ui5" />
+    <link rel="stylesheet" href="css/components.css?v=ui5" />
+    <link rel="stylesheet" href="css/screens/home.css?v=ui5" />
+    <link rel="stylesheet" href="css/screens/quiz.css?v=ui5" />
+    <link rel="stylesheet" href="css/screens/discover.css?v=ui5" />
+    <link rel="stylesheet" href="css/screens/catalog.css?v=ui5" />
+    <link rel="stylesheet" href="css/screens/nintendo-product-detail.css?v=ui5" />
+    <link rel="stylesheet" href="css/screens/collection.css?v=ui5" />
+    <link rel="stylesheet" href="css/screens/getting-started.css?v=ui5" />
+    <link rel="stylesheet" href="css/screens/secondary.css?v=ui5" />
+    <link rel="stylesheet" href="css/screens/profile.css?v=ui5" />
+    <link rel="stylesheet" href="css/theme-bouquet.css?v=ui5" />
   </head>
   <body data-screen="intro">
 
@@ -245,10 +245,17 @@
           </button>
         </article>
 
-        <section class="discover-section" aria-labelledby="discover-for-you-title">
+        <div class="discover-tabs" role="tablist" aria-label="Secciones de Descubrir">
+          <button type="button" class="discover-tab" role="tab" data-discover-tab="foryou">Para ti</button>
+          <button type="button" class="discover-tab" role="tab" data-discover-tab="moods">Moods</button>
+          <button type="button" class="discover-tab" role="tab" data-discover-tab="duo">Jugar con Inti</button>
+          <button type="button" class="discover-tab" role="tab" data-discover-tab="zone">Sal de tu zona</button>
+        </div>
+        <section class="discover-section" aria-labelledby="discover-for-you-title" data-discover-panel="foryou">
           <header class="discover-section-heading">
             <p class="discover-section-kicker">Tu punto de partida</p>
             <h3 id="discover-for-you-title" class="discover-section-title">Para ti</h3>
+            <button type="button" class="btn btn-ghost discover-reroll" data-action="reroll-recommendations">Otras opciones ✦</button>
             <p class="discover-section-copy">
               Las opciones con mejor afinidad según tu perfil actual.
             </p>
@@ -256,7 +263,7 @@
           <div id="list-for-you" class="card-list"></div>
         </section>
 
-        <section class="discover-section" aria-labelledby="discover-hook-title">
+        <section class="discover-section" aria-labelledby="discover-hook-title" data-discover-panel="foryou">
           <header class="discover-section-heading">
             <p class="discover-section-kicker">También podrían atraparte</p>
             <h3 id="discover-hook-title" class="discover-section-title">Sigue explorando</h3>
@@ -264,7 +271,7 @@
           <div id="list-might-hook" class="card-list"></div>
         </section>
 
-        <section class="discover-section" aria-labelledby="discover-mood-title">
+        <section class="discover-section" aria-labelledby="discover-mood-title" data-discover-panel="moods">
           <header class="discover-section-heading">
             <p class="discover-section-kicker">Elige cómo quieres sentir la sesión</p>
             <h3 id="discover-mood-title" class="discover-section-title">Según tu mood</h3>
@@ -281,7 +288,7 @@
           <div id="discover-mood-results" class="discover-mood-results"></div>
         </section>
 
-        <section id="discover-duo" class="discover-section" aria-labelledby="discover-duo-title">
+        <section id="discover-duo" class="discover-section" aria-labelledby="discover-duo-title" data-discover-panel="duo">
           <header class="discover-section-heading">
             <p class="discover-section-kicker">Para compartir</p>
             <h3 id="discover-duo-title" class="discover-section-title">Para jugar con Inti</h3>
@@ -292,7 +299,7 @@
           <div id="list-duo" class="card-list"></div>
         </section>
 
-        <section class="discover-section" aria-labelledby="discover-out-title">
+        <section class="discover-section" aria-labelledby="discover-out-title" data-discover-panel="zone">
           <header class="discover-section-heading">
             <p class="discover-section-kicker">Una recomendación inesperada</p>
             <h3 id="discover-out-title" class="discover-section-title">Sal de tu zona</h3>

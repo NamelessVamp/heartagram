@@ -1,4 +1,4 @@
-const DATA_VERSION = "120";
+const DATA_VERSION = "121";
 import { NINTENDO_INDEX_PATH, adaptNintendoCatalog } from "./nintendo-catalog.js?v=v111";
 
 // Nintendo-only catalog runtime for the public static build.

@@ -1,4 +1,4 @@
-import { PLAYER_DIMENSIONS, PLAYER_DIMENSION_LABELS, normalizedTraitPercent, traitSignal } from "./player-journey.js?v=p1";
+import { PLAYER_DIMENSIONS, PLAYER_DIMENSION_LABELS, normalizedTraitPercent, traitSignal } from "./player-journey.js?v=p2";
 import { catalogLabel, curatedGenreLabel } from "./catalog-labels.js";
 import { catalogImageUrl } from "./catalog.js";
 
@@ -346,7 +346,7 @@ export function renderResults(sections) {
 
   renderList(
     "list-might-hook",
-    sections.mightHook.slice(0, 3).map(({ game }) => game),
+    sections.mightHook.slice(0, 6).map(({ game }) => game),
     { variant: "archive" },
   );
   renderList(
