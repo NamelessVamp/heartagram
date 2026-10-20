@@ -1,7 +1,7 @@
 /* HEARTAGRAM · Visual System v2 · "Noche editorial"
    Cascade order is declared once here. Later layers always win,
    so the system needs no override flags. */
-@layer base, layout, components, screens;
+@layer base, layout, components, screens, theme;
 
 :root {
   color-scheme: dark;

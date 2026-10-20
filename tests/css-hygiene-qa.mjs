@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
 import { join } from "node:path";
 
-const VERSION = "ui3";
+const VERSION = "ui4";
 const EXPECTED = [
   "css/tokens.css",
   "css/base.css",
@@ -17,6 +17,7 @@ const EXPECTED = [
   "css/screens/getting-started.css",
   "css/screens/secondary.css",
   "css/screens/profile.css",
+  "css/theme-bouquet.css",
 ];
 
 const walk = (dir) => readdirSync(dir).flatMap((name) => {
@@ -41,7 +42,7 @@ console.log("[OK] Sin hojas CSS huérfanas");
 
 const files = EXPECTED.map((path) => strip(readFileSync(path, "utf8")));
 const css = files.join("\n");
-assert.match(files[0], /^\s*@layer base, layout, components, screens;/, "tokens.css debe declarar las capas primero");
+assert.match(files[0], /^\s*@layer base, layout, components, screens, theme;/, "tokens.css debe declarar las capas primero");
 console.log("[OK] Capas de cascada declaradas en tokens.css");
 
 const defined = new Set([...css.matchAll(/(--[\w-]+)\s*:/g)].map((m) => m[1]));
