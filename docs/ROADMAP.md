@@ -33,6 +33,11 @@ sitio     : https://namelessvamp.github.io/heartagram/
 - [x] Pestañas de Descubrir accesibles.
 - [x] GitHub Actions: Pages solo publica si `npm test` pasa.
 
+### v1.3 · Midnight Bouquet Scrapbook
+- [x] Fase 1: Inicio como portada de diario y Mi lista como álbum de polaroids.
+- [x] Fase 2: Perfil como carta de tarot gótica.
+- [x] Fase 3: Descubrir, Mi regalo y estados vacíos.
+
 ## Entrega (Inti)
 - [ ] Restaurar y limpiar la Nintendo Switch 2.
 - [ ] Preparar funda, mica, Joy-Con 2, dock y cables.

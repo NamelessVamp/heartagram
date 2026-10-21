@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
 import { join } from "node:path";
 
-const VERSION = "ui9";
+const VERSION = "ui13";
 const EXPECTED = [
   "css/tokens.css",
   "css/base.css",
@@ -18,6 +18,7 @@ const EXPECTED = [
   "css/screens/secondary.css",
   "css/screens/profile.css",
   "css/theme-bouquet.css",
+  "css/theme-scrapbook.css",
 ];
 
 const walk = (dir) => readdirSync(dir).flatMap((name) => {
