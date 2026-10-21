@@ -308,3 +308,343 @@
     }
   }
 }
+
+/* ---------- v1.3 · Fase 2: Perfil como carta de tarot gótica ---------- */
+@layer theme {
+  .bq-tarot {
+    padding: var(--sp-4);
+    border: 1px solid var(--gold-line);
+    border-radius: var(--r-md);
+    background:
+      radial-gradient(circle at 50% 0%, rgb(224 191 116 / 0.18), transparent 55%),
+      linear-gradient(180deg, #2a1730, #120a1a);
+    box-shadow:
+      0 0 0 4px var(--ink-950),
+      0 0 0 5px var(--gold-line),
+      0 0 0 9px var(--ink-950),
+      0 0 0 10px rgb(224 191 116 / 0.25),
+      0 30px 60px rgb(0 0 0 / 0.55);
+    rotate: -1.5deg;
+  }
+
+  .bq-tarot::before,
+  .bq-tarot::after {
+    content: "✦";
+    position: absolute;
+    color: var(--gold);
+    font-size: var(--fs-sm);
+    line-height: 1;
+  }
+
+  .bq-tarot {
+    position: relative;
+  }
+
+  .bq-tarot::before {
+    top: var(--sp-2);
+    left: var(--sp-2);
+  }
+
+  .bq-tarot::after {
+    right: var(--sp-2);
+    bottom: var(--sp-2);
+  }
+
+  .bq-tarot-art {
+    border-color: var(--gold-line);
+  }
+
+  .bq-tarot-name {
+    color: var(--gold);
+    font-family: var(--font-display);
+    letter-spacing: 0.14em;
+  }
+
+  .bq-tarot-meta {
+    color: var(--text-muted);
+    font-family: var(--font-type);
+  }
+
+  .profile-screen > .eyebrow {
+    color: var(--accent-hover);
+    font: 600 1.5rem / 1 var(--font-hand);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .profile-screen > .eyebrow::before {
+    display: none;
+  }
+
+  .profile-copy {
+    position: relative;
+    border: 0;
+    border-radius: 2px;
+    background: var(--paper);
+    box-shadow: var(--polaroid-shadow);
+    color: var(--paper-ink);
+    rotate: 0.6deg;
+  }
+
+  .profile-copy::before {
+    content: "";
+    position: absolute;
+    top: -0.6rem;
+    left: var(--sp-6);
+    width: 4.5rem;
+    height: 1.2rem;
+    background: var(--tape-rose);
+    rotate: -5deg;
+  }
+
+  .profile-summary {
+    color: var(--paper-ink);
+  }
+
+  .profile-body {
+    color: var(--paper-ink-muted);
+  }
+
+  .profile-traits .profile-trait {
+    border-color: rgb(224 191 116 / 0.25);
+    background:
+      linear-gradient(180deg, rgb(224 191 116 / 0.06), transparent),
+      var(--surface);
+  }
+
+  .profile-trait-label {
+    font-family: var(--font-type);
+  }
+
+  .profile-trait-fill {
+    background: linear-gradient(90deg, var(--wine), var(--accent), var(--gold));
+  }
+
+  .profile-flex-note {
+    color: var(--text-muted);
+    font: 1.25rem / 1.4 var(--font-hand);
+  }
+}
+
+/* ---------- v1.3 · Fase 3: Descubrir, Mi regalo y estados vacíos ---------- */
+@layer theme {
+  /* Descubrir: la recomendación principal como foto pegada en el diario. */
+  .discover-header .discover-eyebrow {
+    color: var(--accent-hover);
+    font: 600 1.4rem / 1 var(--font-hand);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .discover-header .discover-eyebrow::before {
+    display: none;
+  }
+
+  .discover-profile {
+    position: relative;
+    border: 0;
+    border-radius: 2px;
+    background: var(--paper);
+    box-shadow: var(--polaroid-shadow);
+    rotate: -0.5deg;
+  }
+
+  .discover-profile {
+    --text: var(--paper-ink);
+    --text-muted: var(--paper-ink-muted);
+    --text-faint: var(--paper-ink-muted);
+    --line-strong: rgb(43 27 37 / 0.3);
+    --surface-2: transparent;
+  }
+
+  .discover-profile .discover-section-kicker {
+    font-family: var(--font-type);
+  }
+
+  .card-hero {
+    border: 8px solid var(--paper);
+    border-bottom-width: 28px;
+    border-radius: 2px;
+    box-shadow: var(--polaroid-shadow);
+    rotate: -0.8deg;
+  }
+
+  .card-hero::after {
+    content: "";
+    position: absolute;
+    top: -0.9rem;
+    left: 50%;
+    z-index: 3;
+    width: 5.5rem;
+    height: 1.4rem;
+    background: var(--tape);
+    translate: -50% 0;
+    rotate: 3deg;
+  }
+
+  .discover-section-title {
+    font-family: var(--font-display);
+  }
+
+  .discover-section-kicker {
+    font-family: var(--font-type);
+    letter-spacing: 0.08em;
+  }
+
+  /* Mi regalo: una caja abierta con tarjetas de papel. */
+  .gift-screen > .eyebrow {
+    color: var(--accent-hover);
+    font: 600 1.5rem / 1 var(--font-hand);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .gift-screen > .eyebrow::before {
+    display: none;
+  }
+
+  .gift-slot {
+    position: relative;
+    border-color: var(--wine);
+    background:
+      repeating-linear-gradient(90deg, transparent 0 46%, rgb(139 30 63 / 0.55) 46% 54%, transparent 54% 100%),
+      var(--surface);
+    background-size: 100% 1.4rem;
+    background-repeat: no-repeat;
+  }
+
+  .gift-slot::before {
+    content: "";
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    width: 3.2rem;
+    height: 3.2rem;
+    background: var(--rose-pressed) center / contain no-repeat;
+    translate: -50% 0;
+  }
+
+  .gift-code-card {
+    --text: var(--paper-ink);
+    --text-faint: var(--paper-ink-muted);
+    border: 0;
+    border-radius: 2px;
+    background: var(--paper);
+    box-shadow: var(--polaroid-shadow);
+    rotate: -1deg;
+  }
+
+  .gift-code-card:nth-child(even) {
+    rotate: 1.2deg;
+  }
+
+  .gift-code-label {
+    font-family: var(--font-type);
+  }
+
+  .gift-code-mask {
+    color: var(--wine);
+    font-family: var(--font-type);
+  }
+
+  /* Estados vacíos: una nota de papel en vez de un recuadro punteado. */
+  .catalog-empty-state,
+  .collection-empty-state,
+  .empty {
+    --text: var(--paper-ink);
+    --text-muted: var(--paper-ink-muted);
+    position: relative;
+    border: 0;
+    border-radius: 2px;
+    background: var(--paper);
+    box-shadow: var(--polaroid-shadow);
+    color: var(--paper-ink);
+    rotate: -0.8deg;
+  }
+
+  :is(.catalog-empty-state, .collection-empty-state, .empty)::before {
+    content: "";
+    position: absolute;
+    top: -0.6rem;
+    left: 50%;
+    width: 4.5rem;
+    height: 1.2rem;
+    background: var(--tape);
+    translate: -50% 0;
+    rotate: -3deg;
+  }
+
+  :is(.catalog-empty-title, .collection-empty-title) {
+    color: var(--paper-ink);
+    font: 600 1.6rem / 1.1 var(--font-hand);
+  }
+
+  :is(.catalog-empty-mark, .collection-empty-mark) {
+    color: var(--wine);
+  }
+}
+
+/* ---------- v1.3 · Ajustes de pulido ---------- */
+/* Unlayered so they override the token values defined above. */
+:root {
+  --tape: rgb(226 205 168 / 0.9);
+  --tape-rose: rgb(214 130 168 / 0.85);
+}
+
+@layer theme {
+  /* Secondary buttons sitting on paper use ink, not the dark glass style. */
+  :is(.discover-profile, .profile-copy, .catalog-empty-state, .collection-empty-state, .empty) .btn-ghost {
+    border-color: rgb(43 27 37 / 0.35);
+    background: transparent;
+    color: var(--paper-ink);
+  }
+
+  :is(.discover-profile, .profile-copy, .catalog-empty-state, .collection-empty-state, .empty) .btn-ghost:hover {
+    border-color: var(--wine);
+    background: rgb(43 27 37 / 0.06);
+  }
+
+  /* Mi lista is a scrapbook screen: handwritten kicker like Descubrir and Perfil. */
+  .collection-header .collection-kicker {
+    color: var(--accent-hover);
+    font: 600 1.5rem / 1 var(--font-hand);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .collection-header .collection-kicker::before {
+    display: none;
+  }
+
+  /* Empty notes read better as a note, not a full-width banner. */
+  .collection-screen :is(.collection-empty-state, .empty) {
+    max-width: 40rem;
+    margin-inline: auto;
+  }
+
+  /* Mi regalo: ribbon along the top edge instead of a loose tab. */
+  .gift-slot {
+    border-color: var(--gold-line);
+    background:
+      linear-gradient(180deg, rgb(139 30 63 / 0.65) 0 0.6rem, transparent 0.6rem),
+      var(--surface);
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+
+  .gift-slot::before {
+    top: -1.7rem;
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  /* "GUARDADO PARA TI" is uppercase in the HTML; render it as handwriting. */
+  .gift-screen > .eyebrow {
+    display: block;
+    text-transform: lowercase;
+  }
+
+  .gift-screen > .eyebrow::first-letter {
+    text-transform: uppercase;
+  }
+}
