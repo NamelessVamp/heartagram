@@ -1,0 +1,310 @@
+/* HEARTAGRAM · Midnight Bouquet Scrapbook (v1.3 · fase 1)
+   Maximalismo con reglas: papel, cinta, polaroids, flores prensadas y sellos.
+   Vive en Inicio y Mi lista. Explorar, detalle, Inicia aquí y guías quedan tranquilos. */
+
+:root {
+  --paper: #efe4d3;
+  --paper-2: #e4d6c1;
+  --paper-ink: #2b1b25;
+  --paper-ink-muted: #5c4652;
+  --paper-line: rgb(43 27 37 / 0.18);
+  --tape: rgb(236 222 196 / 0.62);
+  --tape-rose: rgb(232 160 190 / 0.55);
+  --wine: #8b1e3f;
+  --font-type: "Special Elite", "Courier New", monospace;
+  --polaroid-shadow: 0 14px 30px rgb(0 0 0 / 0.45);
+  --rose-pressed: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M30 44c-8 6-16 10-22 12 6-8 14-12 22-12z' fill='%23455a3c'/%3E%3Cpath d='M36 44c6 4 12 10 16 16-8-4-14-8-16-16z' fill='%23455a3c'/%3E%3Ccircle cx='32' cy='30' r='16' fill='%237d2348'/%3E%3Cpath d='M20 30c2-10 14-14 22-8-6-2-14 0-16 8 0 6 6 10 12 8-8 6-18 2-18-8z' fill='%23a8326a'/%3E%3Cpath d='M30 26c4-4 10-2 10 4s-6 8-10 4c4 0 6-2 6-4s-4-4-6 0z' fill='%23c9578a'/%3E%3C/svg%3E");
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@layer theme {
+  /* ---------- Film grain over the whole night ---------- */
+  .app-shell::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background-image: var(--grain);
+    opacity: 0.05;
+    pointer-events: none;
+  }
+
+  /* ---------- Shared scrapbook pieces ---------- */
+  .home-panel,
+  .home-stat {
+    position: relative;
+  }
+
+  .home-panel::before,
+  .collection-screen .card::before,
+  .collection-screen .catalog-wishlist-card::before {
+    content: "";
+    position: absolute;
+    top: -0.6rem;
+    left: 50%;
+    z-index: 2;
+    width: 4.5rem;
+    height: 1.2rem;
+    background: var(--tape);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.25);
+    translate: -50% 0;
+    rotate: -4deg;
+    pointer-events: none;
+  }
+
+  .home-panel:nth-child(even)::before,
+  .collection-screen :is(.card, .catalog-wishlist-card):nth-child(even)::before {
+    background: var(--tape-rose);
+    rotate: 5deg;
+  }
+
+  /* ---------- Inicio: portada de diario ---------- */
+  .home-header .home-kicker {
+    color: var(--accent-hover);
+    font: 600 1.6rem / 1 var(--font-hand);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .home-header .home-kicker::before {
+    display: none;
+  }
+
+  .home-header .home-kicker::after {
+    content: " ♡";
+  }
+
+  .home-header .home-title {
+    background: linear-gradient(180deg, #f6c6dc, #d9709f 70%, #a8326a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-shadow: none;
+    text-transform: uppercase;
+  }
+
+  .home-header .home-cover-strip {
+    gap: var(--sp-4);
+    padding-top: var(--sp-2);
+  }
+
+  .home-header .home-cover-strip img {
+    border: 6px solid var(--paper);
+    border-bottom-width: 22px;
+    border-radius: 2px;
+    box-shadow: var(--polaroid-shadow);
+    rotate: -3deg;
+  }
+
+  .home-header .home-cover-strip img:nth-child(even) {
+    rotate: 2.5deg;
+  }
+
+  .home-header .home-cover-strip img:nth-child(3) {
+    rotate: -1deg;
+  }
+
+  .home-panel,
+  .home-stat {
+    border-color: rgb(232 160 190 / 0.22);
+    background:
+      linear-gradient(180deg, rgb(255 255 255 / 0.04), transparent 40%),
+      var(--surface);
+  }
+
+  .home-panel:nth-child(odd) {
+    rotate: -0.6deg;
+  }
+
+  .home-panel:nth-child(even) {
+    rotate: 0.5deg;
+  }
+
+  .home-panel .home-label,
+  #home-space-title {
+    color: var(--accent-hover);
+    font-family: var(--font-type);
+    letter-spacing: 0.08em;
+  }
+
+  .home-stat-value {
+    color: var(--accent-hover);
+    font-size: 2.4rem;
+  }
+
+  .home-screen::after {
+    content: "";
+    justify-self: end;
+    width: 5rem;
+    height: 5rem;
+    margin-top: calc(var(--sp-8) * -1);
+    background: var(--rose-pressed) center / contain no-repeat;
+    opacity: 0.85;
+    rotate: 18deg;
+    pointer-events: none;
+  }
+
+  /* ---------- Mi lista: álbum de polaroids ---------- */
+  .collection-screen .wishlist-curated-list,
+  .collection-screen .catalog-wishlist-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-8) var(--sp-4);
+    padding-top: var(--sp-3);
+  }
+
+  .collection-screen .card,
+  .collection-screen .catalog-wishlist-card {
+    --text: var(--paper-ink);
+    --text-muted: var(--paper-ink-muted);
+    --text-faint: var(--paper-ink-muted);
+    --line: var(--paper-line);
+    --line-strong: rgb(43 27 37 / 0.35);
+    --surface-2: var(--paper-2);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+    padding: var(--sp-2) var(--sp-2) var(--sp-4);
+    overflow: visible;
+    border: 0;
+    border-radius: 2px;
+    background: var(--paper);
+    box-shadow: var(--polaroid-shadow);
+    color: var(--paper-ink);
+    rotate: -1.4deg;
+    transition: rotate var(--dur) var(--ease), scale var(--dur) var(--ease);
+  }
+
+  .collection-screen :is(.card, .catalog-wishlist-card):nth-child(even) {
+    rotate: 1.2deg;
+  }
+
+  .collection-screen :is(.card, .catalog-wishlist-card):nth-child(3n) {
+    rotate: -0.4deg;
+  }
+
+  .collection-screen :is(.card, .catalog-wishlist-card):hover {
+    border: 0;
+    box-shadow: var(--polaroid-shadow);
+    rotate: 0deg;
+    scale: 1.02;
+    translate: none;
+  }
+
+  .collection-screen :is(.card, .catalog-wishlist-card)::after {
+    content: "";
+    position: absolute;
+    right: -0.9rem;
+    bottom: -0.9rem;
+    z-index: 2;
+    width: 2.6rem;
+    height: 2.6rem;
+    background: var(--rose-pressed) center / contain no-repeat;
+    pointer-events: none;
+  }
+
+  .collection-screen :is(.card, .catalog-wishlist-card):not(:nth-child(3n + 1))::after {
+    display: none;
+  }
+
+  .collection-screen .card-signal-art {
+    --text: #f4effc;
+    aspect-ratio: 4 / 3;
+    border-radius: 1px;
+  }
+
+  .collection-screen .catalog-wishlist-media {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    border-radius: 1px;
+  }
+
+  .collection-screen .catalog-wishlist-copy {
+    padding: var(--sp-1) var(--sp-1) 0;
+  }
+
+  .collection-screen :is(.card-title, .catalog-wishlist-title) {
+    color: var(--paper-ink);
+    font: 600 1.15rem / 1.15 var(--font-hand);
+  }
+
+  .collection-screen :is(.card-why, .catalog-wishlist-meta, .card-signal-meta) {
+    color: var(--paper-ink-muted);
+    font-family: var(--font-type);
+    font-size: var(--fs-xs);
+  }
+
+  .collection-screen .card-why {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .collection-screen :is(.favorite-button, .library-button, .btn-ghost, .btn-text) {
+    min-height: 2.1rem;
+    border-color: rgb(43 27 37 / 0.3);
+    background: transparent;
+    color: var(--paper-ink);
+  }
+
+  .collection-screen .favorite-button[aria-pressed="true"] {
+    border-color: var(--wine);
+    background: rgb(139 30 63 / 0.1);
+    color: var(--wine);
+  }
+
+  .collection-screen .collection-owned-seal {
+    top: var(--sp-3);
+    left: var(--sp-3);
+    padding: 0 var(--sp-2);
+    border: 2px solid var(--wine);
+    border-radius: 2px;
+    background: rgb(239 228 211 / 0.88);
+    color: var(--wine);
+    font: 700 var(--fs-xs) / 1.6 var(--font-type);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    rotate: -8deg;
+  }
+
+  .collection-screen .wishlist-group .wishlist-section-title {
+    color: var(--accent-hover);
+    font: 600 1.6rem / 1.1 var(--font-hand);
+  }
+
+  .collection-screen .collection-empty-state,
+  .collection-screen .empty {
+    border: 0;
+    background: var(--paper);
+    box-shadow: var(--polaroid-shadow);
+    color: var(--paper-ink);
+    rotate: -0.8deg;
+  }
+
+  .collection-screen .collection-empty-state :is(.collection-empty-title, .collection-empty-copy) {
+    color: var(--paper-ink);
+  }
+
+  @media (min-width: 64rem) {
+    .collection-screen .wishlist-curated-list,
+    .collection-screen .catalog-wishlist-list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .collection-screen .wishlist-curated-list,
+    .collection-screen .catalog-wishlist-list {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .collection-screen :is(.card, .catalog-wishlist-card):hover {
+      scale: 1;
+    }
+  }
+}
