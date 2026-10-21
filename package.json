@@ -3,6 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node tests/run-qa.mjs && node tests/catalog-favorites-qa.mjs && node tests/catalog-labels-qa.mjs && node tests/library-qa.mjs && node tests/app-shell-qa.mjs && node tests/home-dashboard-qa.mjs && node tests/discover-ui-qa.mjs && node tests/catalog-layout-qa.mjs && node tests/collection-ui-qa.mjs && node tests/nintendo-catalog-qa.mjs && node tests/nintendo-product-detail-qa.mjs && node tests/getting-started-qa.mjs && node tests/static-runtime-qa.mjs && node tests/css-hygiene-qa.mjs && node tests/real-flow-qa.mjs && node tests/covers-qa.mjs && node tests/ui-polish-qa.mjs && node tests/bouquet-qa.mjs && node tests/recommend-v2-qa.mjs && node tests/guide-tips-qa.mjs && node tests/nso-qa.mjs"
+    "test": "node tests/run-qa.mjs && node tests/catalog-favorites-qa.mjs && node tests/catalog-labels-qa.mjs && node tests/library-qa.mjs && node tests/app-shell-qa.mjs && node tests/home-dashboard-qa.mjs && node tests/discover-ui-qa.mjs && node tests/catalog-layout-qa.mjs && node tests/collection-ui-qa.mjs && node tests/nintendo-catalog-qa.mjs && node tests/nintendo-product-detail-qa.mjs && node tests/getting-started-qa.mjs && node tests/static-runtime-qa.mjs && node tests/css-hygiene-qa.mjs && node tests/real-flow-qa.mjs && node tests/covers-qa.mjs && node tests/ui-polish-qa.mjs && node tests/bouquet-qa.mjs && node tests/recommend-v2-qa.mjs && node tests/guide-tips-qa.mjs && node tests/nso-qa.mjs && node tests/release-hygiene-qa.mjs"
   }
 }
