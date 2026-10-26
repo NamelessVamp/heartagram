@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
 import { join } from "node:path";
 
-const VERSION = "ui19";
+const VERSION = "ui20";
 const EXPECTED = [
   "css/tokens.css",
   "css/base.css",

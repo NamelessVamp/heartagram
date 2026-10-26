@@ -676,7 +676,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 20%, rgb(10 8 10 / 0.6) 55%, var(--ink-950) 100%);
+    background: linear-gradient(180deg, rgb(10 8 10 / 0.15) 0%, rgb(10 8 10 / 0.7) 35%, rgb(10 8 10 / 0.92) 65%, var(--ink-950) 100%);
   }
 
   .card-hero .card-signal-fallback {
