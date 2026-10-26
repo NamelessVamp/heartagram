@@ -31,7 +31,8 @@ export function deriveHomeModel({
       ? archetypeName(archetypes, profile.archetypes?.secondary)
       : null,
     recommendation,
-    favoriteCount: new Set(favoriteIds).size,
+    // Mi lista shows owned games under Mi biblioteca only, so Inicio counts them once.
+    favoriteCount: new Set(favoriteIds.filter((id) => !ownedIds.includes(id))).size,
     ownedCount: new Set(ownedIds).size,
     guide: { done, total, started: done > 0, complete: done >= total },
   };

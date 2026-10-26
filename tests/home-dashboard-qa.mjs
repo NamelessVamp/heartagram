@@ -50,6 +50,11 @@ assert.equal(firstVisit.favoriteCount, 0);
 assert.equal(firstVisit.ownedCount, 0);
 console.log("[OK] construye Inicio sin perfil");
 
+const overlap = deriveHomeModel({ favoriteIds: ["dredge", "hades"], ownedIds: ["hades"] });
+assert.equal(overlap.favoriteCount, 1);
+assert.equal(overlap.ownedCount, 1);
+console.log("[OK] un juego en la biblioteca no se cuenta también en Me interesa");
+
 const total = GETTING_STARTED_STEPS.length;
 assert.deepEqual(firstVisit.guide, { done: 0, total, started: false, complete: false });
 const midGuide = deriveHomeModel({ guideSteps: [GETTING_STARTED_STEPS[0], GETTING_STARTED_STEPS[1], "paso-inventado"] });
