@@ -32,7 +32,10 @@ const state = {
 };
 
 const elements = {};
-let initialized = false;
+// One in-flight load, and listeners bound once, however often Explorar is opened.
+let initPromise = null;
+let eventsBound = false;
+const renderedGames = new Map();
 let dialogReturnFocus = null;
 
 function byId(id) {
@@ -346,6 +349,8 @@ function renderResults() {
   });
 
   state.page = result.page;
+  renderedGames.clear();
+  result.games.forEach((game) => renderedGames.set(String(game.nsuid), game));
   elements.grid.replaceChildren();
 
   if (result.total === 0) {
@@ -462,8 +467,7 @@ function bindEvents() {
 
   elements.clear.addEventListener("click", resetFilters);
   elements.retry.addEventListener("click", () => {
-    initialized = false;
-    void initializeCatalogExplorer();
+    void initializeCatalogExplorer().catch(() => {});
   });
 
   elements.previous.addEventListener("click", () => {
@@ -488,24 +492,36 @@ function bindEvents() {
     }
   });
 
-  window.addEventListener("heartagram:favorites-changed", () => {
-    if (state.catalog) {
-      renderResults();
-    }
-  });
+  // Update buttons in place: rebuilding the grid would drop keyboard focus.
+  window.addEventListener("heartagram:favorites-changed", refreshCardButtons);
+  window.addEventListener("heartagram:library-changed", refreshCardButtons);
+}
 
-  window.addEventListener("heartagram:library-changed", () => {
-    if (state.catalog) {
-      renderResults();
-    }
+function refreshCardButtons() {
+  elements.grid.querySelectorAll("[data-catalog-favorite]").forEach((button) => {
+    const game = renderedGames.get(button.dataset.catalogFavorite);
+    if (game) updateFavoriteButton(button, game);
+  });
+  elements.grid.querySelectorAll("[data-catalog-owned]").forEach((button) => {
+    const game = renderedGames.get(button.dataset.catalogOwned);
+    if (game) updateOwnedButton(button, game);
   });
 }
 
-export async function initializeCatalogExplorer() {
-  if (initialized) return state.catalog;
+export function initializeCatalogExplorer() {
+  initPromise ??= loadExplorer().catch((error) => {
+    initPromise = null;
+    throw error;
+  });
+  return initPromise;
+}
 
-  cacheElements();
-  bindEvents();
+async function loadExplorer() {
+  if (!eventsBound) {
+    cacheElements();
+    bindEvents();
+    eventsBound = true;
+  }
 
   elements.loading.hidden = false;
   elements.statusLabel.textContent = "Cargando catálogo...";
@@ -524,7 +540,6 @@ export async function initializeCatalogExplorer() {
     requestAnimationFrame(renderResults);
 
     elements.loading.hidden = true;
-    initialized = true;
 
     return state.catalog;
   } catch (error) {
