@@ -270,6 +270,7 @@
   .home-header > :not(.bq-hero-art) {
     position: relative;
     z-index: 1;
+    min-width: 0;
   }
 
   .bq-hero-art {

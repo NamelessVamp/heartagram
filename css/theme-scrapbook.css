@@ -79,6 +79,8 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    /* The word cannot wrap, so cap the size by viewport width on phones. */
+    font-size: min(var(--fs-hero), 10vw);
     font-style: normal;
     font-weight: 600;
     letter-spacing: 0.02em;
