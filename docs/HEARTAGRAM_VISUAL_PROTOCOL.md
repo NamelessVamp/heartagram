@@ -41,7 +41,6 @@ It must never become a generic store, corporate dashboard, or imitation of anoth
 - Descubrir: editorial recommendation spread.
 - Explorar: practical visual archive.
 - Mi lista: personal relic collection.
-- Chat: conversational discovery companion.
 - Regalo: primary emotional reveal.
 - Grupo familiar: shared-play connection.
 

@@ -23,7 +23,7 @@ Catalog scripts (Python, run from the repo root with the `.venv` interpreter):
 .\.venv\Scripts\python.exe scripts\validate_nintendo_mx_catalog.py
 ```
 
-At the time of writing, `validate_catalog.py` exits with `[FAIL] 49 errores` on the curated set (unverified multiplayer fields), and `validate_nintendo_mx_catalog.py` needs `data/nintendo_probe/`, which is gitignored and absent from a fresh checkout.
+At the time of writing, `validate_catalog.py` exits with `[FAIL] 5 errores`: five curated games still have `gameshare: "VERIFICAR"`. `scripts/verify_curated_multiplayer.py` resolves them from the official product pages (`--apply` writes `games.json`), but it needs access to www.nintendo.com, which the work network blocks. `validate_nintendo_mx_catalog.py` needs `data/nintendo_probe/`, which is gitignored and absent from a fresh checkout.
 
 ## Deploy
 
@@ -55,8 +55,9 @@ A single-page vanilla-ES-module app. There is no server and no AI. All user stat
 
 **Cache busting is manual.** Every local JS and CSS URL carries a version query, and two constants in JS hold the data version. Bumping a version means changing all of these together:
 
-- `?v=` on the module imports in `js/main.js`, and on `index.html`'s script and stylesheet tags. The current JS value is `v122`; the current CSS value is `ui13`.
-- `DATA_VERSION` in `js/main.js` and `js/catalog.js`, currently `"122"`.
+- `?v=` on the module imports in `js/main.js`, and on `index.html`'s script and stylesheet tags. The current JS value is `v130`; the current CSS value is `ui13`.
+- Every import of `./catalog.js` (in `main.js`, `catalog-ui.js`, `ui.js`, `nintendo-product-detail.js`) must use the same `?v=`. A different query string loads a second module instance with its own catalog cache.
+- `DATA_VERSION` in `js/main.js` and `js/catalog.js`, currently `"130"`.
 - The literal versions asserted in `tests/bouquet-qa.mjs`, `tests/css-hygiene-qa.mjs`, and `tests/scrapbook-qa.mjs`.
 
 **Preview flag.** `?preview` in the URL makes `main.js` include unverified seed games through `toPreviewGame()`. This is for development only.
@@ -68,7 +69,7 @@ A single-page vanilla-ES-module app. There is no server and no AI. All user stat
 3. `validate_nintendo_mx_catalog.py` checks the draft.
 4. `publish_nintendo_mx_snapshot.py` copies the validated draft to `data/nintendo_catalog*.json`, writes metadata, and keeps a backup of the previous snapshot.
 
-`enrich_nintendo_catalog_from_raw.py` and `inspect_nintendo_mx_records.py` are supporting and diagnostic tools. Treat `data/nintendo_catalog*.json` as generated output. These scripts make network requests, so run them only when a catalog update is requested. Their schema is in `docs/NINTENDO_PRODUCT_SCHEMA.md`.
+`enrich_nintendo_catalog_from_raw.py` and `inspect_nintendo_mx_records.py` are supporting and diagnostic tools. Each catalog product carries a `url_key`; its official page is `https://www.nintendo.com/es-mx/store/products/<url_key>/`. In Explorar, the "Modo" filter reads `ways_to_play`, because `game_modes` is always empty for Nintendo products. Treat `data/nintendo_catalog*.json` as generated output. These scripts make network requests, so run them only when a catalog update is requested. Their schema is in `docs/NINTENDO_PRODUCT_SCHEMA.md`.
 
 ## Conventions
 
