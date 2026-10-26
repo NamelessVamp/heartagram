@@ -1,5 +1,5 @@
 // HEARTAGRAM · Recommendation engine v2.
-// Pure functions, no DOM. Mixes the 50 curated games with the Nintendo Store
+// Pure functions, no DOM. Mixes the curated games with the Nintendo Store
 // Mexico catalog, adds daily rotation, diversity and owned-game exclusion.
 import { scoreGame, duoBadges } from "./recommender.js";
 

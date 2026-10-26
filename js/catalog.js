@@ -90,7 +90,8 @@ export function getCatalogFacets(catalog) {
   const genres = new Set(), modes = new Set(), platforms = new Set(), types = new Set();
   for (const game of catalog.games) {
     game.genres?.forEach((value) => genres.add(value));
-    game.game_modes?.forEach((value) => modes.add(value));
+    // Nintendo Store only publishes ways to play; game_modes stays empty.
+    game.ways_to_play?.forEach((value) => modes.add(value));
     game.platforms?.forEach((value) => platforms.add(value));
     if (game.game_type) types.add(game.game_type);
   }
@@ -103,10 +104,6 @@ function matchesValue(values, selected) {
 }
 
 function compareGames(left, right, sort) {
-  if (sort === "RATING") {
-    const difference = (right.rating ?? -1) - (left.rating ?? -1);
-    if (difference) return difference;
-  }
   if (sort === "NEWEST") {
     const difference = (right.release_year ?? -1) - (left.release_year ?? -1);
     if (difference) return difference;
@@ -124,7 +121,7 @@ export function queryCatalog(catalog, {
     .filter((game) => !normalizedQuery || normalizeText(game.name).includes(normalizedQuery))
     .filter((game) => matchesValue(game.platforms, platform))
     .filter((game) => matchesValue(game.genres, genre))
-    .filter((game) => matchesValue(game.game_modes, mode))
+    .filter((game) => matchesValue(game.ways_to_play, mode))
     .filter((game) => !gameType || gameType === "ALL" || game.game_type === gameType)
     .sort((left, right) => compareGames(left, right, sort));
   const total = filtered.length;

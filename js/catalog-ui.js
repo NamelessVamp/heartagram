@@ -206,9 +206,7 @@ function renderActiveFilters() {
     state.platform !== "ALL" ? ["platform", platformLabel(state.platform)] : null,
     state.genre !== "ALL" ? ["genre", catalogLabel(state.genre)] : null,
     state.mode !== "ALL" ? ["mode", catalogLabel(state.mode)] : null,
-    state.sort !== "NAME"
-      ? ["sort", state.sort === "RATING" ? "Mejor calificados" : "Más recientes"]
-      : null,
+    state.sort !== "NAME" ? ["sort", "Más recientes"] : null,
   ].filter(Boolean);
 
   elements.activeFilters.replaceChildren();
