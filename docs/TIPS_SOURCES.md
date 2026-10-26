@@ -16,6 +16,7 @@ them on a console set to Spanish (Mexico) before the gift.
 | Stop charging around 90 %, may still hit 100 % to calibrate | High (Nintendo support, press) | https://www.tomsguide.com/gaming/nintendo/nintendo-switch-2-will-help-save-your-battery-with-a-new-setting |
 | Console PIN (System Lock in the Americas page, Console Lock elsewhere), needs 20.1.0 | High (Nintendo article 68216) | https://en-americas-support.nintendo.com/app/answers/detail/a_id/68216 |
 | Only microSD Express cards, power off first, label facing away | High (Nintendo support) | https://www.nintendo.com/au/support/articles/how-to-insert-remove-microsd-express-cards-on-nintendo-switch-2 |
+| Swap A and B system-wide, under Controllers & Accessories (the on-screen prompts may not change: one report) | High that the option exists (Nintendo's System Settings Overview, Spanish pages call the menu "Controles y accesorios"); Medium on the prompts | https://en-americas-support.nintendo.com/app/answers/detail/a_id/68229 |
 | Mouse sensitivity and surfaces to avoid | High (Nintendo article 68334) | https://en-americas-support.nintendo.com/app/answers/detail/a_id/68334 |
 | GL/GR only from Quick Settings during play, per game and user, five presets | High (Nintendo article 68185) | https://en-americas-support.nintendo.com/app/answers/detail/a_id/68185 |
 | Update controllers and dock | High (Nintendo support) | https://en-americas-support.nintendo.com/app/answers/detail/a_id/68354 |
@@ -36,7 +37,6 @@ them on a console set to Spanish (Mexico) before the gift.
 Not confirmed by Nintendo's pages or not suitable for this guide.
 
 - Bluetooth audio shortcut inside Quick Settings: the official Quick Settings list has no such item.
-- Swapping A and B system-wide: reported by outlets, no official page found.
 - Remapping the C button: not confirmed.
 - Unpairing every controller with the sync button, and mixing a Joy-Con with a Joy-Con 2: single or no sources.
 - Charging a phone from the console: no evidence the console outputs power for it.
