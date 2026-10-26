@@ -28,6 +28,28 @@ them on a console set to Spanish (Mexico) before the gift.
 | Wake sounds: same button three times, each sounds different | Medium (Nintendo video, press) | https://gonintendo.com/contents/49007-switch-2-continues-switch-style-unlocks-but-with-new-sounds |
 | Switch 1 games: free updates and paid Switch 2 Editions | High (press); the current list is on nintendo.com | https://www.xataka.com.mx/videojuegos/estos-juegos-nintendo-se-actualizaran-gratis-switch-2-zelda-mario-pokemon-se-veran-mejor-que-nunca/amp |
 
+## Added from community sources (second pass)
+
+Unofficial sources are allowed here, so each row says how many independent sources agree.
+Reddit could not be searched (its domain is blocked for the search tool); the forums reached
+were ResetEra, Nintendo Life and GameFAQs. SEO pages that repeat the same text across
+unrelated domains were ignored.
+
+| Tip | Confidence | Source |
+|---|---|---|
+| Do not peel the factory screen film; a protector can go on top | High (Nintendo's European manual, reported by 8+ outlets) | https://www.nintendolife.com/news/2025/06/psa-switch-2s-screen-comes-with-a-pre-applied-film-layer-dont-peel-it-off and https://www.techradar.com/gaming/nintendo-switch/no-you-shouldnt-peel-off-the-nintendo-switch-2-screens-protective-layer |
+| The original Switch charger works plugged straight into the Switch 2, not through the dock | High (Nintendo support note) | Nintendo support, battery article https://en-americas-support.nintendo.com/app/answers/detail/a_id/68272 (re-check wording) |
+| Shorter sleep timer to save battery | Medium (How-To Geek; the setting exists on Nintendo's sleep page) | https://www.howtogeek.com/nintendo-switch-2-settings-you-should-change-right-away/ |
+| Calibrate sticks, clean with a dry toothbrush, service if it persists | High (Nintendo articles 68192 and 68504) | https://en-americas-support.nintendo.com/app/answers/detail/a_id/68192 and https://en-americas-support.nintendo.com/app/answers/detail/a_id/68504/ |
+| Remap or disable the C button; capture on GL/GR | Medium (How-To Geek, Nintendo Life) | https://www.howtogeek.com/i-remapped-my-switch-2-c-button-you-should-too/ and https://www.nintendolife.com/news/2025/06/psa-got-a-switch-2-pro-controller-this-little-capture-trick-is-a-game-changer |
+| Hidden HDR brightness page (press Y) | Medium (ResetEra thread, How-To Geek) | https://www.resetera.com/threads/switch-2-hdr-hidden-setting-mlig.1211766/ |
+| Same RGB range on console and TV | Medium (forum advice; Nintendo lists the RGB Range setting) | https://www.resetera.com/threads/switch-2-hdr-hidden-setting-mlig.1211766/ and https://www.nintendo.com/en-gb/Support/Troubleshooting/How-to-Adjust-the-Display-Settings-on-Nintendo-Switch-2-2889732.html |
+| GameShare: only a Switch 2 hosts, guests may use a Switch 1, join from the HOME icon | High (Nintendo article 68405) | https://en-americas-support.nintendo.com/app/answers/detail/a_id/68405 |
+| Game-Key Cards: unlock a download, need free space, work in another Switch 2 | High (Nintendo article 68415) | https://en-americas-support.nintendo.com/app/answers/detail/a_id/68415 |
+| eShop wishlist heart; sale alerts are not reliable | Medium (outlets disagree on how alerts arrive) | https://www.gfinityesports.com/article/how-to-wishlist-nintendo-switch-2-games-get-sale-notifications and https://www.nintendolife.com/forums/nintendo-switch/eshop_wish_list_sale_notifications |
+| Wind Waker inverted camera, fix from the ZL quick menu | Medium (one Nintendo Life PSA, 2025) | https://www.nintendolife.com/news/2025/06/psa-remember-you-can-fix-the-camera-in-zelda-the-wind-waker-on-switch-2 |
+| Musical easter egg in the grip/order menu | Medium (one Nintendo Life report, 2025) | https://www.nintendolife.com/news/2025/05/random-switch-2s-controller-settings-hide-a-neat-musical-secret |
+
 ## Removed
 
 - "Skip the user selection screen": only documented for the original Switch, and only with a single profile. Nothing confirms it on the Switch 2.
@@ -42,3 +64,6 @@ Not confirmed by Nintendo's pages or not suitable for this guide.
 - Charging a phone from the console: no evidence the console outputs power for it.
 - Accessibility extras (text size, bold, contrast, screen reader): the screen reader needs system 22.0.0 and its Spanish support is unconfirmed.
 - Deal channels and the giveaway: promotion. DekuDeals stays as the community tip.
+- Turning off the headphone volume limit: it is a hearing-protection cap, so it is not recommended to a newcomer.
+- 4K, 120 Hz and VRR in TV mode: sources conflict, and Nintendo retracted its own VRR claim.
+- Reverse charging a phone, USB mouse support and 3D-printed mouse grips: unconfirmed or niche.
