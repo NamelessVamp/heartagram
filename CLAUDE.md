@@ -42,12 +42,16 @@ A single-page vanilla-ES-module app. There is no server and no AI. All user stat
 **Recommendations are two layers.**
 
 - `js/recommender.js` holds `scoreGame` (profile-vector similarity plus archetype, vibe and horror adjustments) and `duoBadges`.
-- `js/recommend-v2.js` is the layer the UI calls. `buildPool()` merges curated games with Nintendo products, translated into the same six-dimension vector by `nintendoToCandidate()`. `buildRecommendations()` keeps only `status === "VERIFICADO"` entries, applies daily rotation (seed `DAY_KEY|reroll`, set in `main.js`), diversity by saga (`familyKey`) and genre (`PER_GENRE`), and excludes owned games.
+- `js/recommend-v2.js` is the layer the UI calls. `buildPool()` merges curated games with Nintendo products, translated into the same six-dimension vector by `nintendoToCandidate()`. `reasonFor()` builds the line shown for Nintendo products from catalog facts only (ways to play, features, genres, rating); the profile just picks which one. `tests/recommend-v2-qa.mjs` fails on filler phrases and on claims the data does not back, so new reasons must state a fact, never a mood. `buildRecommendations()` keeps only `status === "VERIFICADO"` entries, applies daily rotation (seed `DAY_KEY|reroll`, set in `main.js`), diversity by saga (`familyKey`) and genre (`PER_GENRE`), and excludes owned games.
 - Both are pure functions. Keep them free of DOM access.
 
 **Catalog IDs.** `js/nintendo-catalog.js` adapts the raw store payload into the shape `catalog.js` expects. Nintendo products use IDs of the form `nintendo:MX:<nsuid>` (10–20 digits). Curated games use slugs such as `luigis-mansion-3`. The helpers `favoriteIdForCatalogGame` and `catalogIdFromFavoriteId` in `js/catalog.js` convert between the two forms. The product dialog in Explorar is rendered entirely by `js/nintendo-product-detail.js` (minified); `catalog-ui.js` only opens it and gives its title the `catalog-dialog-title` id the dialog's `aria-labelledby` points to.
 
 **Inicio actions.** The hero buttons (`#home-action-guide`, `#home-action-profile`) are plain HTML. `renderHomeDashboard()` in `js/home-dashboard.js` sets them from the profile and the guide progress: "Inicia aquí" is the primary button until all guide steps are done, then the profile action takes over. `showScreen("intro")` re-renders it so progress made on the guide screen shows up on return.
+
+**Saved state.** `js/profile-storage.js` validates a saved profile on read and drops one it cannot use (older builds saved profiles without `vibes`, which used to stop startup). Favorites, library and profile writes fall back to memory when `localStorage` is blocked or full. A game can be saved under a curated id or a `nintendo:MX:` id, so ownership is also matched by normalized title (`omitOwned`, `titleKeys` in `js/recommend-v2.js`).
+
+**Explorar.** `initializeCatalogExplorer()` is one memoized promise and binds listeners once. Favorite and library changes update the existing card buttons in place (`refreshCardButtons`) instead of rebuilding the grid, which would drop keyboard focus.
 
 **Persistence and events.** All state is in `localStorage` under `heartagram:*` keys: profile, favorites (Me interesa), library (Mi biblioteca), getting-started progress, sidebar state, and collection tab. `js/favorites.js` and `js/library.js` dispatch `heartagram:favorites-changed` and `heartagram:library-changed`. `main.js` listens for them and re-renders the home dashboard and wishlist.
 
@@ -57,7 +61,7 @@ A single-page vanilla-ES-module app. There is no server and no AI. All user stat
 
 **Cache busting is manual.** Every local JS and CSS URL carries a version query, and two constants in JS hold the data version. Bumping a version means changing all of these together:
 
-- `?v=` on the module imports in `js/main.js`, and on `index.html`'s script and stylesheet tags. The current JS value is `v131`; the current CSS value is `ui15`.
+- `?v=` on the module imports in `js/main.js`, and on `index.html`'s script and stylesheet tags. The current JS value is `v132`; the current CSS value is `ui16`. `favorites.js`, `library.js`, `profile-storage.js` and `getting-started.js` are imported without a query, so changing them does not bust the cache by itself.
 - Every import of `./catalog.js` (in `main.js`, `catalog-ui.js`, `ui.js`, `nintendo-product-detail.js`) must use the same `?v=`. A different query string loads a second module instance with its own catalog cache.
 - `DATA_VERSION` in `js/main.js` and `js/catalog.js`, currently `"130"`.
 - The literal versions asserted in `tests/bouquet-qa.mjs`, `tests/css-hygiene-qa.mjs`, and `tests/scrapbook-qa.mjs`.
@@ -78,7 +82,7 @@ A single-page vanilla-ES-module app. There is no server and no AI. All user stat
 - **Data placeholders.** Unconfirmed fields are `"VERIFICAR"` or `null`. Never invent values. Prices are integer MXN with a `price_checked` date (`YYYY-MM-DD`).
 - **Restricted content.** No eShop codes, keys, or credentials anywhere in the repo, fixtures and tests included. `.env` holds local secrets and is gitignored; do not print or commit it.
 - **Language.** All visible text is Spanish, including toasts and labels built in `js/bouquet.js`. Only game titles and proper nouns stay in English.
-- **Content rules.** Relevant emoji, symbols (`✦ ♡ ◈ →`) and micro-ASCII are welcome in the UI in moderation; keep code and commits emoji-free. No religious iconography in the UI.
+- **Content rules.** Relevant emoji, symbols (`✦ ♡ ◈ →`) and micro-ASCII are welcome in the UI in moderation; keep code and commits emoji-free. In HTML, wrap each emoji in a `span` with `aria-hidden="true"` (`bouquet-qa.mjs` checks this). No religious iconography in the UI.
 - **Accessibility.** Use semantic elements (`main`, `section`, `button`), not `div` with `onclick`. Spanish `alt` text on every image. Quiz options must be keyboard-navigable. Respect `prefers-reduced-motion`. Base text is at least 16px.
 - **Python scripts.** `pathlib` for paths, type hints, output tags `[OK]` / `[WARN]` / `[FAIL]`, and a non-zero exit code when validation fails.
 - **Release hygiene.** `tests/release-hygiene-qa.mjs` requires `docs/ROADMAP.md` to mention `v1.2.3` and to be free of "NFC". Keep that section intact when updating the roadmap.
