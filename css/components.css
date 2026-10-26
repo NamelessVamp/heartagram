@@ -242,8 +242,7 @@
   }
 
   .badge,
-  .npd-tag,
-  .catalog-detail-chip {
+  .npd-tag {
     display: inline-flex;
     align-items: center;
     min-height: 1.5rem;

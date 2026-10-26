@@ -36,8 +36,6 @@ export function loadCatalog() {
   return catalogPromise;
 }
 
-export function clearCatalogCache() { catalogPromise = null; }
-
 export function catalogImageUrl(value) {
   if (typeof value !== "string") return "";
   const source = value.trim();

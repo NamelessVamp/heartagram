@@ -30,10 +30,6 @@ export function getSavedProfile() {
   }
 }
 
-export function hasSavedProfile() {
-  return getSavedProfile() !== null;
-}
-
 export function clearSavedProfile() {
   window.localStorage.removeItem(PROFILE_KEY);
 }
