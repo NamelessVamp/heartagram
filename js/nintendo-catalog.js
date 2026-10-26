@@ -41,10 +41,19 @@ function platformDetails(platforms) {
   }));
 }
 
+// Store titles carry trademark symbols and a redundant "Edición Estándar" prefix.
+export function displayTitle(raw) {
+  return String(raw ?? "")
+    .replace(/[™®©]/g, "")
+    .replace(/^Edici[oó]n Est[aá]ndar\s+/i, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
 export function adaptNintendoProduct(product) {
   const nsuid = String(product.nsuid ?? "").trim();
   if (!/^\d{10,20}$/.test(nsuid)) throw new TypeError("Invalid Nintendo NSUID");
-  const title = product.title || product.normalized_title || nsuid;
+  const title = displayTitle(product.title || product.normalized_title) || nsuid;
   const rawReleaseDate = product.release_date || null;
   const releaseDate = typeof rawReleaseDate === "string"
     ? rawReleaseDate.slice(0, 10)

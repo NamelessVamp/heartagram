@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { adaptNintendoCatalog } from "../js/nintendo-catalog.js";
+import { adaptNintendoCatalog, displayTitle } from "../js/nintendo-catalog.js";
 const payload = JSON.parse(await readFile(new URL("../data/nintendo_catalog.json", import.meta.url), "utf-8"));
 const catalog = adaptNintendoCatalog(payload);
 assert.equal(catalog.games.length, 318);
@@ -16,3 +16,13 @@ assert.ok(enriched.screenshots.length > 0);
 assert.ok(enriched.content_rating?.label);
 assert.equal(typeof enriched.regular_price, "number");
 console.log("[OK] Nintendo enriched metadata maps to the modal contract");
+
+assert.equal(displayTitle("Pokémon™ Scarlet"), "Pokémon Scarlet");
+assert.equal(displayTitle("Rocket League®"), "Rocket League");
+assert.equal(displayTitle("Edición Estándar WWE 2K25"), "WWE 2K25");
+assert.equal(displayTitle("Animal Crossing™: New Horizons – Nintendo Switch™ 2 Edition"), "Animal Crossing: New Horizons – Nintendo Switch 2 Edition");
+assert.equal(displayTitle("Edición dorada de Star Wars Outlaws"), "Edición dorada de Star Wars Outlaws");
+assert.equal(displayTitle(null), "");
+const dirty = catalog.games.filter((game) => /[™®©]/.test(game.name) || /^Edici[oó]n Est[aá]ndar/i.test(game.name));
+assert.deepEqual(dirty.map((game) => game.name), [], "Títulos con símbolos o prefijo redundante");
+console.log("[OK] Los títulos del catálogo salen sin ™ ® © ni prefijos redundantes");
