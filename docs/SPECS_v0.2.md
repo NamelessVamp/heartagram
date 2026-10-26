@@ -252,7 +252,7 @@ Máximo 8 cuentas; solo el administrador añade miembros.
 
 - Goth / horror atmosférico a su gusto (FNAF, Cry of Fear): oscuro, grano, luz tenue. Sin jumpscares.
 - Mobile-first, contraste AA, texto ≥ 16 px.
-- Sin emojis Unicode estándar.
+- Emojis relevantes y símbolos con moderación, sin saturar.
 
 ── ⋆⋅✦⋅⋆ ──
 

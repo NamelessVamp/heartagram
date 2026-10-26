@@ -19,7 +19,7 @@
 - **Production-ready:** nada de código muerto, `console.log` de prueba ni TODOs sin dueño.
 - **Depurable:** funciones cortas, una responsabilidad, nombres que expliquen.
 - **Comentarios solo cuando hagan falta:** explican el *por qué*, no el *qué*.
-- **Sin emojis Unicode** en código, UI ni commits.
+- **Emojis con moderación en la UI:** emojis relevantes, símbolos (`✦ ♡ ◈ →`) y micro-ASCII le dan vida a la interfaz sin saturarla. Sin emojis en código ni commits.
 
 ── ⋆⋅✦⋅⋆ ──
 
@@ -40,8 +40,8 @@
   - variables y funciones: `camelCase`
   - constantes: `UPPER_SNAKE_CASE`
   - archivos: `kebab-case.js`
-- Funciones puras en la lógica (`profile.js`, `recommender.js`, `carts.js`): reciben datos y regresan datos, sin tocar el DOM.
-- El DOM solo se manipula en `ui.js` y `main.js`.
+- Funciones puras en la lógica (`profile.js`, `recommender.js`, `recommend-v2.js`, `catalog.js`, `nintendo-catalog.js`): reciben datos y regresan datos, sin tocar el DOM.
+- El DOM se manipula en `main.js`, `ui.js` y los módulos de cada pantalla (`*-ui.js`, `home-dashboard.js`, `bouquet.js`, etc.).
 - Sin números mágicos: pesos y umbrales en un objeto de configuración.
 
 ```js
