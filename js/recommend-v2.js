@@ -114,6 +114,9 @@ export function nintendoToCandidate(game) {
     personality,
     vibes: [],
     horror_level: horrorLevel,
+    rating,
+    platforms: Array.isArray(game?.platforms) ? game.platforms : [],
+    player_count: game?.player_count ?? null,
     couple: [],
     multiplayer: {
       online_coop: w("Cooperativo en línea") || w("Juega en línea con amigos"),
@@ -147,30 +150,55 @@ export function buildPool(curated = [], catalog = []) {
   return pool;
 }
 
+// Every reason states something the Nintendo Store data confirms. The profile only
+// decides which one is shown first, so no line claims more than the catalog says.
 const REASONS = [
-  ["social", 1, (g) => g.multiplayer?.same_console, "Pueden jugarlo juntos en la misma consola."],
-  ["social", 1, (g) => has(g.genres, "Fiesta"), "Hecho para reírse en grupo."],
-  ["structure", 1, (g) => has(g.features, "Exploración") || has(g.features, "Libertad de movimiento"), "Un mundo para explorar a tu ritmo."],
-  ["structure", 1, (g) => has(g.features, "Crea y juega") || has(g.features, "Personajes personalizables"), "Para crear y personalizar a tu manera."],
-  ["structure", 1, (g) => has(g.features, "Elige tu propio camino"), "Tus decisiones cambian el camino."],
-  ["session", 1, (g) => has(g.genres, "Juego de rol"), "Una aventura larga para perderte en ella."],
-  ["session", 1, (g) => has(g.features, "Personajes con voz") || has(g.genres, "Aventura narrativa"), "Historia y personajes que se quedan contigo."],
-  ["mood", 1, (g) => has(g.features, "Supervivencia"), "Supervivencia con tensión y atmósfera."],
-  ["mood", 1, (g) => g.horror_level > 0, "Un tono más oscuro, como te gusta."],
-  ["challenge", 1, (g) => has(g.features, "Recomenzar de cero tras las derrotas"), "Cada intento te hace mejor."],
-  ["challenge", 1, (g) => has(g.ways_to_play, "Compite en línea") || has(g.features, "Clasificación en línea"), "Para medirte contra otros."],
-  ["challenge", -1, (g) => has(g.features, "Elige el nivel de dificultad"), "Puedes ajustar la dificultad cuando quieras."],
-  ["pace", 1, (g) => has(g.genres, "Acción"), "Acción directa desde el primer minuto."],
-  ["pace", -1, (g) => has(g.genres, "Simulación"), "Para jugar con calma, sin presión."],
+  { dim: "social", sign: 1, weight: 1.2, when: (g) => has(g.ways_to_play, "Cooperativo en línea"), text: "Tiene modo cooperativo en línea." },
+  { dim: "social", sign: 1, weight: 1.1, when: (g) => has(g.ways_to_play, "Juntos en una consola"), text: "Se puede jugar entre varios en la misma consola." },
+  { dim: "social", sign: 1, weight: 1, when: (g) => has(g.ways_to_play, "Juega en línea con amigos"), text: "Puedes jugarlo en línea con amigos." },
+  { dim: "social", sign: 1, weight: 1, when: (g) => (g.ways_to_play ?? []).some((way) => way.startsWith("GameShare")), text: "Con GameShare puedes jugarlo sin que la otra persona lo tenga." },
+  { dim: "social", sign: 1, weight: 1, when: (g) => has(g.genres, "Fiesta"), text: "Es un juego de fiesta, con minijuegos para varios." },
+  { dim: "social", sign: -1, weight: 1, when: (g) => g.player_count === "Un jugador", text: "Se juega en solitario." },
+  { dim: "structure", sign: 1, weight: 1.2, when: (g) => has(g.features, "Exploración") || has(g.features, "Libertad de movimiento"), text: "Tiene exploración libre." },
+  { dim: "structure", sign: 1, weight: 1.1, when: (g) => has(g.features, "Crea y juega"), text: "Te deja construir y crear." },
+  { dim: "structure", sign: 1, weight: 1, when: (g) => has(g.features, "Personajes personalizables"), text: "Puedes personalizar a tu personaje." },
+  { dim: "structure", sign: 1, weight: 1, when: (g) => has(g.features, "Elige tu propio camino"), text: "Tus decisiones cambian cómo sigue la historia." },
+  { dim: "session", sign: 1, weight: 1, when: (g) => has(g.features, "Mejora tus atributos"), text: "Tu personaje mejora conforme avanzas." },
+  { dim: "session", sign: 1, weight: 0.8, when: (g) => has(g.genres, "Aventura narrativa"), text: "Es una aventura narrativa, centrada en la historia." },
+  { dim: "session", sign: 1, weight: 0.7, when: (g) => has(g.genres, "Juego de rol"), text: "Es un juego de rol." },
+  { dim: "session", sign: 1, weight: 0.7, when: (g) => has(g.genres, "Estrategia"), text: "Es un juego de estrategia." },
+  { dim: "session", sign: -1, weight: 1, when: (g) => has(g.features, "Minijuegos"), text: "Se juega en minijuegos cortos." },
+  { dim: "mood", sign: 1, weight: 1.2, when: (g) => g.horror_level > 0, text: "Tiene un tono oscuro y de miedo." },
+  { dim: "mood", sign: 1, weight: 1, when: (g) => has(g.features, "Supervivencia"), text: "Es un juego de supervivencia." },
+  { dim: "mood", sign: -1, weight: 1, when: (g) => g.rating === "a", text: "Es apto para todo público." },
+  { dim: "challenge", sign: 1, weight: 1.2, when: (g) => has(g.features, "Recomenzar de cero tras las derrotas"), text: "Cada derrota te manda al inicio, así que se juega por intentos." },
+  { dim: "challenge", sign: 1, weight: 1, when: (g) => has(g.features, "Clasificación en línea"), text: "Tiene clasificación en línea para medirte con otros." },
+  { dim: "challenge", sign: 1, weight: 1, when: (g) => has(g.ways_to_play, "Compite en línea"), text: "Tiene partidas competitivas en línea." },
+  { dim: "challenge", sign: 1, weight: 0.8, when: (g) => has(g.genres, "Lucha"), text: "Es un juego de lucha." },
+  { dim: "challenge", sign: -1, weight: 1, when: (g) => has(g.features, "Elige el nivel de dificultad"), text: "Puedes elegir la dificultad." },
+  { dim: "pace", sign: 1, weight: 0.7, when: (g) => has(g.genres, "Acción"), text: "Es un juego de acción." },
+  { dim: "pace", sign: 1, weight: 0.7, when: (g) => has(g.genres, "Carreras"), text: "Es un juego de carreras." },
+  { dim: "pace", sign: 1, weight: 0.7, when: (g) => has(g.genres, "Disparos"), text: "Es un juego de disparos." },
+  { dim: "pace", sign: -1, weight: 0.7, when: (g) => has(g.genres, "Simulación"), text: "Es una simulación." },
+  { dim: "pace", sign: -1, weight: 0.7, when: (g) => has(g.genres, "Rompecabezas"), text: "Es un juego de rompecabezas." },
 ];
+
+function genreFallback(game) {
+  const names = (game.genres ?? []).slice(0, 2).map((genre) => genre.toLowerCase().replace(/^juego de /, ""));
+  if (names.length) return `Es un juego de ${names.join(" y ")}.`;
+  return has(game.platforms, "SWITCH_2") ? "Para Nintendo Switch 2." : "Para Nintendo Switch.";
+}
 
 export function reasonFor(game, profile, used = new Set()) {
   if (game.why) return game.why;
   const vector = profile?.vector ?? {};
-  const options = REASONS.filter(([, , test]) => test(game))
-    .sort((a, b) => (vector[b[0]] ?? 0) * b[1] - (vector[a[0]] ?? 0) * a[1]);
-  const pick = options.find((option) => !used.has(option[3])) ?? options[0];
-  const text = pick?.[3] ?? "Disponible en Nintendo Store México.";
+  const options = REASONS
+    .filter(({ when }) => when(game))
+    .map((reason) => ({ reason, fit: (vector[reason.dim] ?? 0) * reason.sign * reason.weight }))
+    .filter(({ fit }) => fit >= 0)
+    .sort((a, b) => b.fit - a.fit);
+  const pick = options.find(({ reason }) => !used.has(reason.text)) ?? options[0];
+  const text = pick?.reason.text ?? genreFallback(game);
   used.add(text);
   return text;
 }

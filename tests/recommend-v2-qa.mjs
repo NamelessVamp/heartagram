@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { computeProfile, DIMENSIONS } from "../js/profile.js";
 import { adaptNintendoCatalog } from "../js/nintendo-catalog.js";
-import { buildRecommendations, nintendoToCandidate, familyKey } from "../js/recommend-v2.js";
+import { buildRecommendations, nintendoToCandidate, familyKey, reasonFor } from "../js/recommend-v2.js";
 
 const questions = JSON.parse(readFileSync("data/questions.json", "utf8"));
 const curated = JSON.parse(readFileSync("data/games.json", "utf8"));
@@ -51,5 +51,39 @@ const genres = {};
 shownOf(today).forEach(({ game }) => { const key = game.genres?.[0] ?? ""; genres[key] = (genres[key] ?? 0) + 1; });
 assert.ok(Math.max(...Object.values(genres)) <= 4, `Género repetido: ${JSON.stringify(genres)}`);
 console.log("[OK] Variedad: sin sagas repetidas y máximo 4 juegos del mismo género");
+
+// Reasons must be facts the catalog confirms, never filler.
+const GENERIC = /alrededor de tu|se quedan contigo|sin presión|desde el primer minuto|perderte en ella|que encaja con este mood|pega fuerte|mucho estilo|ideal para|adictiv|experiencia|rehecho/i;
+curated.forEach((game) => assert.doesNotMatch(game.why, GENERIC, `${game.id}: frase genérica "${game.why}"`));
+
+const FACTS = [
+  [/cooperativo en línea/i, (c) => c.ways_to_play.includes("Cooperativo en línea")],
+  [/misma consola/i, (c) => c.ways_to_play.includes("Juntos en una consola")],
+  [/en línea con amigos/i, (c) => c.ways_to_play.includes("Juega en línea con amigos")],
+  [/GameShare/i, (c) => c.ways_to_play.some((way) => way.startsWith("GameShare"))],
+  [/exploración libre/i, (c) => c.features.includes("Exploración") || c.features.includes("Libertad de movimiento")],
+  [/construir y crear/i, (c) => c.features.includes("Crea y juega")],
+  [/supervivencia/i, (c) => c.features.includes("Supervivencia")],
+  [/tono oscuro y de miedo/i, (c) => c.horror_level > 0],
+  [/todo público/i, (c) => c.rating === "a"],
+  [/se juega en solitario/i, (c) => c.player_count === "Un jugador"],
+  [/derrota te manda al inicio/i, (c) => c.features.includes("Recomenzar de cero tras las derrotas")],
+  [/elegir la dificultad/i, (c) => c.features.includes("Elige el nivel de dificultad")],
+];
+const reasonProfiles = [0, 1, 2, 3].map(profileFor);
+let checked = 0;
+for (const product of catalog) {
+  const candidate = nintendoToCandidate(product);
+  for (const reasonProfile of reasonProfiles) {
+    const text = reasonFor(candidate, reasonProfile, new Set());
+    assert.ok(text.length > 8, `${product.name}: razón vacía`);
+    assert.doesNotMatch(text, GENERIC, `${product.name}: frase genérica "${text}"`);
+    for (const [pattern, holds] of FACTS) {
+      if (pattern.test(text)) assert.ok(holds(candidate), `${product.name}: "${text}" no está respaldado por los datos`);
+    }
+    checked += 1;
+  }
+}
+console.log(`[OK] ${checked} razones de recomendación: ninguna genérica y todas respaldadas por los datos`);
 
 console.log("\n[OK] QA del motor de recomendaciones v2 completo");
