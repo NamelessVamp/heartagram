@@ -1,7 +1,7 @@
 # H.E.A.R.T.A.G.R.A.M. — ROADMAP
 
 ```text
-release   : v1.2.3
+release   : v1.3.0
 estado    : [PUBLISHED]
 sitio     : https://namelessvamp.github.io/heartagram/
 ```

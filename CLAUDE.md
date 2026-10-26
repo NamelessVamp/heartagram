@@ -91,5 +91,5 @@ A single-page vanilla-ES-module app. There is no server and no AI. All user stat
 - Do NOT reintroduce: Chat, Gemini, Python backend, IGDB, NFC.
 - NSO guide: no prices and no comparison with the basic NSO tier.
 - Code and technical docs in English; UI copy in Spanish (Mexico).
-- Full history and decisions: see docs/HANDOFF.md
+- Full history and decisions: see docs/Handoff.md
 - Never read or print .env contents.
