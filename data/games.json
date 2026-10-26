@@ -42,9 +42,6 @@
     "price_checked": null,
     "why": "Sustos con humor: la tensión de FNAF, pero sin traumas.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON,LOC"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000001620/2b166fb3197dacfde1d939acd6a976b9fbe3b1a32c54f9f0d2c8d23efb22412d"
   },
   {
@@ -87,10 +84,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Corto, inquietante y precioso. Pura atmósfera de pesadilla.",
-    "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    }
+    "status": "VERIFICADO"
   },
   {
     "id": "little-nightmares-2",
@@ -132,10 +126,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "La secuela: más grande, más oscura y más perturbadora.",
-    "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    }
+    "status": "VERIFICADO"
   },
   {
     "id": "fnaf-security-breach",
@@ -174,10 +165,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Freddy en una plaza enorme, de noche. Ya sabes cómo va esto.",
-    "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    }
+    "status": "VERIFICADO"
   },
   {
     "id": "fnaf-help-wanted",
@@ -216,10 +204,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Los turnos de noche clásicos de FNAF, reunidos en un solo juego.",
-    "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    }
+    "status": "VERIFICADO"
   },
   {
     "id": "signalis",
@@ -261,10 +246,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Horror de supervivencia con una historia triste que no se olvida.",
-    "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    }
+    "status": "VERIFICADO"
   },
   {
     "id": "darkwood",
@@ -305,10 +287,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Un bosque, recursos escasos y noches que se sienten eternas.",
-    "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    }
+    "status": "VERIFICADO"
   },
   {
     "id": "dredge",
@@ -347,10 +326,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Pescas de día. De noche, el mar se vuelve algo más.",
-    "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    }
+    "status": "VERIFICADO"
   },
   {
     "id": "inscryption",
@@ -390,10 +366,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Un juego de cartas que no es lo que parece. Mejor no saber más.",
-    "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    }
+    "status": "VERIFICADO"
   },
   {
     "id": "blasphemous",
@@ -433,10 +406,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Gótico, brutal y hermoso. Difícil a propósito.",
-    "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    }
+    "status": "VERIFICADO"
   },
   {
     "id": "cult-of-the-lamb",
@@ -481,9 +451,6 @@
     "price_checked": null,
     "why": "Tierno por fuera, oscuro por dentro: tú diriges la secta.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "VERIFICAR"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/f4bf3b2748a6571b0f0c62369b733a8386347abdb158fb985f9ffdf36a5567a6"
   },
   {
@@ -525,9 +492,6 @@
     "price_checked": null,
     "why": "Un reino subterráneo enorme, melancólico y lleno de secretos.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000003208/4643fb058642335c523910f3a7910575f56372f612f7c0c9a497aaae978d3e51"
   },
   {
@@ -569,9 +533,6 @@
     "price_checked": null,
     "why": "La secuela de Hollow Knight: más rápida y todavía más difícil.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000020840/60eebc8f7133f685eddbffbe43c8da617ba0a5d699f2008f9c31c6119d1792af"
   },
   {
@@ -614,9 +575,6 @@
     "price_checked": null,
     "why": "Si te gustaba explorar Teyvat, este es el mundo abierto que lo inspiró.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000000025/7137262b5a64d921e193653f8aa0b722925abc5680380ca0e18a5cfd91697f58"
   },
   {
@@ -660,9 +618,6 @@
     "price_checked": null,
     "why": "Hyrule otra vez, ahora con islas en el cielo y cosas para construir.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000063714/956c12eb1a4c9e68b494cca7efd23d20ba8a789a5eb02589affae64bc6bc3282"
   },
   {
@@ -704,10 +659,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "El clásico de Zelda, rehecho para tu consola.",
-    "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    }
+    "status": "VERIFICADO"
   },
   {
     "id": "zelda-echoes-of-wisdom",
@@ -748,9 +700,6 @@
     "price_checked": null,
     "why": "Zelda como protagonista: resuelves todo con creatividad.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000084618/e3a49cf14180cec09c515595fb7121b048a0f8327eae2d248909d0f0c64a9dc9"
   },
   {
@@ -794,9 +743,6 @@
     "price_checked": null,
     "why": "Pokémon en una ciudad: explorar, capturar y coleccionar.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "VERIFICAR"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000094234/1bc76cfb165917ffd9cf4fd0c8a8eaa2ba423c148cd2c59303c29f178eeecf8a"
   },
   {
@@ -840,10 +786,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Mundo abierto de Pokémon para recorrer, solo o con alguien.",
-    "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON,LOC"
-    }
+    "status": "VERIFICADO"
   },
   {
     "id": "no-mans-sky",
@@ -888,9 +831,6 @@
     "price_checked": null,
     "why": "Un universo infinito para explorar, y Inti ya está ahí.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000044642/f3f84d6a2032dfb10ef4106f6b62e46775247a2e9493bd52dde5b83d55e42a4d"
   },
   {
@@ -931,9 +871,6 @@
     "price_checked": null,
     "why": "Huye de algo que te persigue en una estación hostil.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000042924/c7e6839975afd46893274cf7cfdb63b39a54d6f700938bcd1c8849ac66755d00"
   },
   {
@@ -974,9 +911,6 @@
     "price_checked": null,
     "why": "Exploración en primera persona en planetas misteriosos.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000084766/1bcf06d845f9027b4330e8d07658845a2fe3d66882bdaeb70325aeb35c54f1c9"
   },
   {
@@ -1016,9 +950,6 @@
     "price_checked": null,
     "why": "Un RPG épico con una historia que pega fuerte.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000053336/e933b48650b33b355e9cf2583da5c94b77180e40fb02d050041083dd62f4df39"
   },
   {
@@ -1062,9 +993,6 @@
     "price_checked": null,
     "why": "Es un MOBA, como LoL, pero con Pokémon. Y es gratis.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON,LOC"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000043292/91e382e3e87726746dc714d3cab616a57ead6d797cff8c2f757b448534ce7cf4"
   },
   {
@@ -1108,9 +1036,6 @@
     "price_checked": null,
     "why": "Battle royale gratis. Si te gustaba CoD Mobile, aquí hay adrenalina.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000010192/a527817db47c1aafb78e2cc4ad92e70c9efce0aef494230e950751498e8b3880"
   },
   {
@@ -1153,9 +1078,6 @@
     "price_checked": null,
     "why": "Shooter por equipos, pero con tinta. Rápido y con mucho estilo.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON,LOC"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000046395/4555efa9f2061f7d1e1646ab3d3af790a7491270b1b3e32e730273e9ac096827"
   },
   {
@@ -1199,9 +1121,6 @@
     "price_checked": null,
     "why": "El clásico para retar a Inti. Ya lo tiene, así que pueden jugar hoy.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON,LOC"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000095431/ff853740995f9bef45e3534b4eb3ba224a96f6bd8300a18caec18e17e5d82238"
   },
   {
@@ -1243,9 +1162,6 @@
     "price_checked": null,
     "why": "Peleas caóticas entre personajes de Nintendo y muchos más.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON,LOC"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000012332/ac4d1fc9824876ce756406f0525d50c57ded4b2a666f6dfe40a6ac5c3563fad9"
   },
   {
@@ -1290,9 +1206,6 @@
     "price_checked": null,
     "why": "Héroes con roles, como en LoL, pero en shooter. Gratis.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000103930/a474c79bdf5cd6fe6adda3c56fe4835729b4653387ed2ed53439c5fbb48f3ed5"
   },
   {
@@ -1334,9 +1247,6 @@
     "price_checked": null,
     "why": "Futbol con coches. Suena raro y es adictivo. Gratis.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON,LOC"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000000457/93d8c90d84e815f9177a587d0693504f81d19f85ef9bf2484ac5ad54478b3876"
   },
   {
@@ -1378,9 +1288,6 @@
     "price_checked": null,
     "why": "Carreras de obstáculos caóticas para reírse. Gratis.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000042975/937afd0c84319831009b44c93369faf0a2c926a454809f73523df9bfb6cf6233"
   },
   {
@@ -1423,9 +1330,6 @@
     "price_checked": null,
     "why": "Splatoon en modo aventura, con más acción.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "VERIFICAR"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000122824/cf587e01f6f115398f411f280dba21e025795eb69f234a41722341ea999d170d"
   },
   {
@@ -1467,10 +1371,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Estilo, ladrones fantasma y una historia enorme. Inti lo está jugando.",
-    "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    }
+    "status": "VERIFICADO"
   },
   {
     "id": "persona-3-reload",
@@ -1509,9 +1410,6 @@
     "price_checked": null,
     "why": "Una torre, una hora oculta a medianoche y una historia que te marca.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000100149/b755e5038e7fb59e09abe48fd4db575a346ceea53c4d146d7bb6e32b0fea3c0d"
   },
   {
@@ -1553,9 +1451,6 @@
     "price_checked": null,
     "why": "Estrategia por turnos y decisiones que pesan.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000007606/c499fdc86779ca95e61daed1f94288a245d196360d278138e56d44097d1a3878"
   },
   {
@@ -1597,9 +1492,6 @@
     "price_checked": null,
     "why": "Escapar del inframundo: cada intento es distinto y muy adictivo.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000033131/dbc8c55a21688b446a5c57711b726956483a14ef8c5ddb861f897c0595ccb6b5"
   },
   {
@@ -1641,9 +1533,6 @@
     "price_checked": null,
     "why": "La secuela de Hades: más rápida, más oscura y con más magia.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000060675/a9a30b2adb707f5922eb2a845f821c99516a69e023751491b10584ac1352462f"
   },
   {
@@ -1688,9 +1577,6 @@
     "price_checked": null,
     "why": "Night City de noche. Una historia adulta y oscura.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000095547/f172668ac499434b33917199f2021f753d42b73862d76d3c93d04a474dade847"
   },
   {
@@ -1734,9 +1620,6 @@
     "price_checked": null,
     "why": "Tu propia isla, a tu ritmo. Ideal para desconectarte.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON,LOC"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000027619/9989957eae3a6b545194c42fec2071675c34aadacd65e6b33fdfe7b3b6a86c3a"
   },
   {
@@ -1780,9 +1663,6 @@
     "price_checked": null,
     "why": "Granja, pueblo y misterios, y se puede jugar en pareja.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON,LOC"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000001801/3dd0951e2fa3808ab27af1d998a9d0a18d77809118437d1972124b6219246420"
   },
   {
@@ -1825,9 +1705,6 @@
     "price_checked": null,
     "why": "Construye un lugar acogedor rodeado de Pokémon.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "VERIFICAR"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000107421/ccb2d70f7ad6878b78d366898a0f0baf94a2d3350b76725c88b591453a797502"
   },
   {
@@ -1871,9 +1748,6 @@
     "price_checked": null,
     "why": "Construir, sobrevivir y explorar, sola o juntos.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON,LOC"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000000964/a28a81253e919298beab2295e39a56b7a5140ef15abdb56135655e5c221b2a3a"
   },
   {
@@ -1913,10 +1787,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Una isla con tus amigos convertidos en Miis. Puro caos tierno.",
-    "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    }
+    "status": "VERIFICADO"
   },
   {
     "id": "unpacking",
@@ -1956,10 +1827,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Desempacar cajas y descubrir una vida a través de sus cosas.",
-    "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "—"
-    }
+    "status": "VERIFICADO"
   },
   {
     "id": "it-takes-two",
@@ -2001,9 +1869,6 @@
     "price_checked": null,
     "why": "Hecho para dos: solo se puede jugar en equipo.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON,LOC"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000049281/e7200824041808289d4a65589ed368f7e08dc2e538a5fd7ee9f8d39e58015c24"
   },
   {
@@ -2044,9 +1909,6 @@
     "price_checked": null,
     "why": "Cocinar juntos bajo presión. Prueba de fuego para la relación.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON,LOC"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000003402/057249cf707a2a733c876c0eb453bb018ee6ea09f3aea5c350f4d76f70840d00"
   },
   {
@@ -2088,10 +1950,7 @@
     "price_mxn": null,
     "price_checked": null,
     "why": "Sobrevivir juntos en un mundo extraño y gótico.",
-    "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON,LOC"
-    }
+    "status": "VERIFICADO"
   },
   {
     "id": "monster-hunter-rise",
@@ -2133,9 +1992,6 @@
     "price_checked": null,
     "why": "Cazar monstruos enormes en equipo.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000029016/b6ca09e9a7f6faf27641f62dabe64c6ff97b4f326aa478379e3c112aa28eb9ab"
   },
   {
@@ -2176,9 +2032,6 @@
     "price_checked": null,
     "why": "Tablero, minijuegos y traiciones amistosas.",
     "status": "VERIFICADO",
-    "_hypothesis": {
-      "duo": "ON,LOC"
-    },
     "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000084608/ba0572bf9d840b03bf9958809943fb3c76c3adfd6d8f2704b0f1b766f8aa4027"
   }
 ]

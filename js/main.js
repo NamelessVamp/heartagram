@@ -33,9 +33,6 @@ import {
 import { getOwnedGameIds, setOwnedGame } from "./library.js";
 import { initializeGettingStarted } from "./getting-started.js";
 
-// ?preview shows unverified games during development.
-const PREVIEW = new URLSearchParams(window.location.search).has("preview");
-
 const NEXT_QUESTION_DELAY_MS = 250;
 
 const state = {
@@ -66,31 +63,6 @@ async function loadJson(path) {
   }
 
   return response.json();
-}
-
-/**
- * Preview only:
- * treats seed multiplayer hypotheses as verified data.
- * This transformation is never used in production.
- */
-function toPreviewGame(game) {
-  const duo = game._hypothesis?.duo ?? "";
-
-  const online = duo.includes("ON");
-  const local = duo.includes("LOC");
-
-  return {
-    ...game,
-    status: "VERIFICADO",
-
-    multiplayer: {
-      ...game.multiplayer,
-      online_coop: online,
-      online_versus: online,
-      local_wireless: local,
-      same_console: local,
-    },
-  };
 }
 
 function updateAppNavigation(screenName) {
@@ -549,7 +521,7 @@ async function init() {
     state.profileTexts = profileTexts;
     state.profileCombos = profileCombos;
 
-    state.games = PREVIEW ? games.map(toPreviewGame) : games;
+    state.games = games;
 
     initializeDiscoverUI({
       getGames: () => (state.pool.length ? state.pool : state.games),
