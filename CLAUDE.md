@@ -87,6 +87,7 @@ A single-page vanilla-ES-module app. There is no server and no AI. All user stat
 - **Data placeholders.** Unconfirmed fields are `"VERIFICAR"` or `null`. Never invent values. Prices are integer MXN with a `price_checked` date (`YYYY-MM-DD`).
 - **Restricted content.** No eShop codes, keys, or credentials anywhere in the repo, fixtures and tests included. `.env` holds local secrets and is gitignored; do not print or commit it.
 - **Language.** All visible text is Spanish, including toasts and labels built in `js/bouquet.js`. Only game titles and proper nouns stay in English.
+- **Tips and tricks.** Every tip in the guide must be confirmed by a Nintendo page or a reliable outlet; `docs/TIPS_SOURCES.md` records the source and confidence of each, and what was left out and why. Add a row there with any new tip, and keep `tests/guide-tips-qa.mjs` in step.
 - **Content rules.** Relevant emoji, symbols (`✦ ♡ ◈ →`) and micro-ASCII are welcome in the UI in moderation; keep code and commits emoji-free. In HTML, wrap each emoji in a `span` with `aria-hidden="true"` (`bouquet-qa.mjs` checks this). No religious iconography in the UI.
 - **Accessibility.** Use semantic elements (`main`, `section`, `button`), not `div` with `onclick`. Spanish `alt` text on every image. Quiz options must be keyboard-navigable. Respect `prefers-reduced-motion`. Base text is at least 16px.
 - **Python scripts.** `pathlib` for paths, type hints, output tags `[OK]` / `[WARN]` / `[FAIL]`, and a non-zero exit code when validation fails.
