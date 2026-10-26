@@ -50,7 +50,7 @@ const defined = new Set([...css.matchAll(/(--[\w-]+)\s*:/g)].map((m) => m[1]));
 const used = new Set([...css.matchAll(/var\(\s*(--[\w-]+)/g)].map((m) => m[1]));
 const undefinedVars = [...used].filter((name) => !defined.has(name));
 assert.deepEqual(undefinedVars, [], `Variables sin definir: ${undefinedVars.join(", ")}`);
-for (const token of ["--color-border", "--color-text-muted", "--color-accent-strong"]) {
+for (const token of ["--text", "--accent-hover"]) {
   assert.ok(defined.has(token), `${token} lo usa el radar de js/ui.js`);
 }
 console.log("[OK] Variables definidas, incluidas las del radar");

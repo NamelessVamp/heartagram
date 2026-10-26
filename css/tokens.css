@@ -34,11 +34,6 @@
   --art: radial-gradient(120% 120% at 0% 0%, rgb(226 74 133 / 0.3), transparent 55%),
     linear-gradient(160deg, var(--ink-800), var(--ink-950));
 
-  /* Read by js/ui.js to draw the profile radar */
-  --color-border: rgb(255 255 255 / 0.12);
-  --color-text-muted: var(--text-muted);
-  --color-accent-strong: var(--accent);
-
   /* Type: serif for display only, sans for everything else */
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;

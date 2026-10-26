@@ -30,7 +30,6 @@
   --surface-3: rgb(46 38 96 / 0.9);
   --art: radial-gradient(circle at 70% 22%, rgb(143 180 230 / 0.35), transparent 50%),
     linear-gradient(160deg, #2b2466, #130f33);
-  --color-border: rgb(200 180 255 / 0.18);
   --font-display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --font-hand: "Dancing Script", "Segoe Script", "Brush Script MT", cursive;
   --bq-glow: 0 0 26px rgb(232 111 166 / 0.28);
@@ -474,7 +473,7 @@
 
   @media (min-width: 64rem) {
     #app > .profile-screen {
-      grid-template-columns: 17rem minmax(0, 1fr) 18rem;
+      grid-template-columns: 17rem minmax(0, 1fr) 23rem;
       grid-template-areas:
         "tarot eyebrow radar"
         "tarot title radar"
@@ -697,6 +696,15 @@
   .bq-motif-note { color: var(--gold); }
   .bq-motif-gem,
   .bq-motif-bat { color: var(--emily); }
+
+  /* On phones the title is as wide as the hero, so keep the moon above it. */
+  @media (max-width: 39.99rem) {
+    .home-header .bq-moon {
+      top: 4%;
+      right: 6%;
+      width: 3.5rem;
+    }
+  }
 
   /* ---------- Inicio: window, curtains, cat, actions, covers ---------- */
   .bq-window {

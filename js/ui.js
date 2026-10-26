@@ -17,7 +17,7 @@ const DIMENSION_LABELS = {
   challenge: "Reto",
 };
 
-const RADAR = { SIZE: 320, RADIUS: 110, RINGS: 4 };
+const RADAR = { SIZE: 380, RADIUS: 130, RINGS: 4 };
 
 function el(tag, className, text) {
   const node = document.createElement(tag);
@@ -164,7 +164,7 @@ function drawRadar(canvas, vector) {
     center + Math.sin(angle(i)) * r,
   ];
 
-  ctx.strokeStyle = color("--color-border");
+  ctx.strokeStyle = "rgba(200, 180, 255, 0.34)";
   ctx.lineWidth = 1;
   for (let ring = 1; ring <= RADAR.RINGS; ring++) {
     ctx.beginPath();
@@ -175,12 +175,12 @@ function drawRadar(canvas, vector) {
     ctx.stroke();
   }
 
-  ctx.fillStyle = color("--color-text-muted");
-  ctx.font = "12px system-ui, sans-serif";
+  ctx.fillStyle = color("--text");
+  ctx.font = "600 15px system-ui, sans-serif";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
   DIMENSIONS.forEach((dim, i) =>
-    ctx.fillText(DIMENSION_LABELS[dim], ...point(i, RADAR.RADIUS + 22)),
+    ctx.fillText(DIMENSION_LABELS[dim], ...point(i, RADAR.RADIUS + 28)),
   );
 
   // Vector values are -2..+2; map to 0..1 of the radius.
@@ -189,11 +189,20 @@ function drawRadar(canvas, vector) {
     ctx.lineTo(...point(i, (((vector[dim] ?? 0) + 2) / 4) * RADAR.RADIUS)),
   );
   ctx.closePath();
-  ctx.fillStyle = "rgba(224, 98, 122, 0.25)";
-  ctx.strokeStyle = color("--color-accent-strong");
-  ctx.lineWidth = 2;
+  ctx.fillStyle = "rgba(232, 111, 166, 0.38)";
+  ctx.strokeStyle = color("--accent-hover");
+  ctx.lineWidth = 2.5;
   ctx.fill();
   ctx.stroke();
+
+  // A dot on each vertex makes low values readable on the web.
+  ctx.fillStyle = color("--accent-hover");
+  DIMENSIONS.forEach((dim, i) => {
+    const [x, y] = point(i, (((vector[dim] ?? 0) + 2) / 4) * RADAR.RADIUS);
+    ctx.beginPath();
+    ctx.arc(x, y, 4, 0, Math.PI * 2);
+    ctx.fill();
+  });
 }
 
 /* ---------- Game cards ---------- */
