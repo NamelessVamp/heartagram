@@ -3,6 +3,9 @@
 
 const STORAGE_KEY = "heartagram:library";
 
+// Keeps the session working when storage is full or blocked (private mode).
+let memoryLibrary = null;
+
 function normalizeIds(value) {
   if (!Array.isArray(value)) {
     return [];
@@ -16,6 +19,8 @@ function normalizeIds(value) {
 }
 
 function readLibrary() {
+  if (memoryLibrary) return memoryLibrary;
+
   try {
     const stored = JSON.parse(window.localStorage.getItem(STORAGE_KEY) ?? "[]");
 
@@ -28,7 +33,12 @@ function readLibrary() {
 function writeLibrary(ids) {
   const normalized = normalizeIds(ids);
 
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(normalized));
+  try {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(normalized));
+    memoryLibrary = null;
+  } catch {
+    memoryLibrary = normalized;
+  }
 
   return normalized;
 }

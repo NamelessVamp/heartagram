@@ -3,7 +3,12 @@
 
 const STORAGE_KEY = "heartagram:favorites";
 
+// Keeps the session working when storage is full or blocked (private mode).
+let memoryFavorites = null;
+
 function readFavorites() {
+  if (memoryFavorites) return memoryFavorites;
+
   try {
     const stored = JSON.parse(window.localStorage.getItem(STORAGE_KEY) ?? "[]");
 
@@ -14,7 +19,14 @@ function readFavorites() {
 }
 
 function writeFavorites(ids) {
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify([...new Set(ids)]));
+  const unique = [...new Set(ids)];
+
+  try {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(unique));
+    memoryFavorites = null;
+  } catch {
+    memoryFavorites = unique;
+  }
 }
 
 export function getFavoriteIds() {

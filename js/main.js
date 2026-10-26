@@ -529,10 +529,22 @@ async function init() {
 
     // Restore the profile only once, after all data is loaded.
     const savedProfile = getSavedProfile();
+    let restored = false;
 
     if (savedProfile) {
-      applyProfile(savedProfile);
-    } else {
+      try {
+        applyProfile(savedProfile);
+        restored = true;
+      } catch (error) {
+        // A profile the app cannot render must not block the start screen.
+        console.error("Se descartó un perfil guardado que no se pudo usar.", error);
+        clearSavedProfile();
+        state.profile = null;
+        state.sections = null;
+      }
+    }
+
+    if (!restored) {
       renderHomeDashboard({
         profile: null,
         archetypes: state.archetypes,
