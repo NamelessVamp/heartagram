@@ -3,35 +3,35 @@
   "source": "nintendo_mx",
   "region": "MX",
   "locale": "es-MX",
-  "published_at": "2026-10-09T18:16:24+00:00",
-  "visible_product_count": 318,
-  "extra_product_count": 157,
-  "all_product_count": 475,
+  "published_at": "2026-10-26T19:19:19+00:00",
+  "visible_product_count": 331,
+  "extra_product_count": 163,
+  "all_product_count": 494,
   "platform_counts": {
-    "SWITCH": 191,
-    "SWITCH_2": 341
+    "SWITCH": 193,
+    "SWITCH_2": 367
   },
   "product_type_counts": {
-    "game": 312,
+    "game": 325,
     "bundle": 6,
-    "dlc": 112,
+    "dlc": 117,
     "demo": 1,
-    "upgrade_pack": 44
+    "upgrade_pack": 45
   },
   "validation_report": "data/nintendo_probe/nintendo_catalog_validation.json",
   "catalog_file": "data/nintendo_catalog.json",
   "extras_file": "data/nintendo_catalog_extras.json",
-  "enriched_at": "2026-10-16T23:58:26.893911+00:00",
+  "enriched_at": "2026-10-26T19:19:19.696731+00:00",
   "enrichment_source": "Nintendo Store Mexico merchandisedGrid",
   "enrichment_coverage": {
     "visible": {
-      "matched": 318,
-      "total": 318
+      "matched": 331,
+      "total": 331
     },
     "extras": {
-      "matched": 157,
-      "total": 157
+      "matched": 163,
+      "total": 163
     },
-    "raw_products": 475
+    "raw_products": 494
   }
 }

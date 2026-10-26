@@ -1,4 +1,4 @@
-const DATA_VERSION = "135";
+const DATA_VERSION = "20261026";
 import { NINTENDO_INDEX_PATH, adaptNintendoCatalog } from "./nintendo-catalog.js?v=v136";
 
 // Nintendo-only catalog runtime for the public static build.

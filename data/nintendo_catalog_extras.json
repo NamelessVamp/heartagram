@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
   "source": "nintendo_mx",
-  "generated_at": "2026-10-09T18:08:40+00:00",
-  "product_count": 157,
+  "generated_at": "2026-10-26T19:19:19+00:00",
+  "product_count": 163,
   "products": [
     {
       "schema_version": "1.0.0",
@@ -55,7 +55,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000028846",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700028846",
       "url_key": "atelier-ryza-secret-trilogy-deluxe-pack-switch-2",
       "features": [
@@ -137,7 +137,7 @@
       ],
       "related_products": [],
       "raw_id": "70010000061846",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7100061846",
       "url_key": "bayonetta-origins-cereza-and-the-lost-demon-switch",
       "features": [
@@ -169,6 +169,85 @@
       ],
       "edition_label": "Standard Edition",
       "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/0f496a0e23a24e9689becc02d1299367_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70070000038870",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch_2",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70070000038870",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Bluey's Happy Snaps: Edición de Lujo",
+      "normalized_title": "Bluey's Happy Snaps: Edición de Lujo",
+      "description": null,
+      "product_type": "dlc",
+      "edition_type": "standard",
+      "family_id": "bluey-s-happy-snaps-edicion-de-lujo-adb24ee2",
+      "platforms": [
+        "SWITCH_2"
+      ],
+      "genres": [
+        "Aventura"
+      ],
+      "publishers": [
+        "Gameloft"
+      ],
+      "developers": [],
+      "release_date": "2026-10-15T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000038870/92ec08858a0b61c35817d3e7f4005bd0823c94768aef5da7ed22bc37346eb0b0",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112751/951c594f2574cbcfe1b825f8d4bca496e0b090d26b982a5339d6e4ecc0bc722a",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112751/46dea93056ba8985a890a3298cdc6b3b052072f36eb6ae61950d76aaa975594c",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112751/0dae4366132de81b20dafac7faf120d6be3e6b0c6f98dc7d892166c652172857",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112751/6c31d19e65ce3b451e89c0895f9847b206955dc693cc8cde5a85cc50b8a49710",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112751/ec5316d73195dec49c6b1de8fc415d2636e3a7e978e2389b7058b7466effe735",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112751/59bd5b775234cb48cd6bc29b3d38dc88e78c00a7ecb868739c89e9ee39a5e7cc"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 969,
+      "sale_price": null,
+      "sale_end": null,
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Nuevos lanzamientos",
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70070000038870",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
+      "sku": "7700038870",
+      "url_key": "blueys-happy-snaps-deluxe-edition-switch-2",
+      "features": [],
+      "ways_to_play": [
+        "Juntos en una consola",
+        "Partidas en grupo"
+      ],
+      "player_count": "2+",
+      "nso_features": [
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "a",
+        "label": "Todo Publico",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Sin Descriptores"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 0,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000112751/Video/e37d902217f1fb3c762b962172d2d3709a123f91c1afa08a6f8f8b92599cdfbd",
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000112751/Video/4080615045a9815ef2912cda0b4bf9215456a92e72a6f4c4ba31f2692e7d612d"
+      ],
+      "edition_label": "ROM Bundle"
     },
     {
       "schema_version": "1.0.0",
@@ -219,7 +298,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000010945",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700010945",
       "url_key": "cadence-of-hyrule-crypt-of-the-necrodancer-featuring-the-legend-of-zelda-plus-cadence-of-hyrule-season-pass-switch",
       "features": [
@@ -250,6 +329,164 @@
       "demo_nsuid": null,
       "percent_off": 0,
       "videos": [],
+      "edition_label": "ROM Bundle"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70070000038712",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch_2",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70070000038712",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Call of Duty®: Modern Warfare® 4 - Edición Bóveda",
+      "normalized_title": "Call of Duty: Modern Warfare 4 - Edición Bóveda",
+      "description": null,
+      "product_type": "dlc",
+      "edition_type": "standard",
+      "family_id": "call-of-duty-modern-warfare-4-edicion-boveda-af5421d6",
+      "platforms": [
+        "SWITCH_2"
+      ],
+      "genres": [],
+      "publishers": [
+        "Activision"
+      ],
+      "developers": [],
+      "release_date": "2026-10-16T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000038712/ac97d442ae293e2761998fbf2cad3a328f3d9baa7ad65ae0ddf3e78806c2069d",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000038706/26502a8ffc109a2c85434fcd7c4f23a9852d3ed2dd1202e3931e33a33672c5cc",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000038706/33fd1ea3f673714dc18221d4339632369063e8dcb8414b2fce6259f0342f893c",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000038706/0162b4b3ab1fcc4437be27fba4a0b4f618a769ac186ae873b91d902617ad37c7",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000038706/5760d3d1ef82fdbdef9157c5cc2b9c3d6d1c2d0d025a3fb4f714ffb133011dd5",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000038706/f8608713dd9410e27aae9a140b0a21fc35a8516e34d2d50cb6701c0e50eb612f",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000038706/8b851f14b536b842110ab1cae7d199742294652a07c8586091ca0ee71eeec66c"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 1999,
+      "sale_price": null,
+      "sale_end": null,
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Nuevos lanzamientos",
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70070000038712",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
+      "sku": "7700038712",
+      "url_key": "call-of-duty-modern-warfare-4-vault-edition-switch-2",
+      "features": [],
+      "ways_to_play": [],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Juego en línea",
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "c",
+        "label": "Adultos +18 Años",
+        "system": "SMEC",
+        "requires_age_gate": true
+      },
+      "content_descriptors": [
+        "Derramamiento de sangre",
+        "Violencia intensa",
+        "Lenguaje fuerte",
+        "Uso de drogas",
+        "Interacción de usuarios",
+        "Compras dentro del juego"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 0,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70070000038706/Video/ad42a58e4244fc4cf5f3a6aa4df282e71df40a5b6370e3af0532253bbb5e8793"
+      ],
+      "edition_label": "ROM Bundle"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70070000038706",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch_2",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70070000038706",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Call of Duty®: Modern Warfare® 4 - Edición Estándar",
+      "normalized_title": "Call of Duty: Modern Warfare 4 - Edición Estándar",
+      "description": null,
+      "product_type": "dlc",
+      "edition_type": "standard",
+      "family_id": "call-of-duty-modern-warfare-4-edicion-estandar-1357a8e5",
+      "platforms": [
+        "SWITCH_2"
+      ],
+      "genres": [],
+      "publishers": [
+        "Activision"
+      ],
+      "developers": [],
+      "release_date": "2026-10-16T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000038706/cd5297ceff4255500c2e7f7b3099b481fb4fb5e56d109c1437c8f667ad6d77c2",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000038706/26502a8ffc109a2c85434fcd7c4f23a9852d3ed2dd1202e3931e33a33672c5cc",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000038706/33fd1ea3f673714dc18221d4339632369063e8dcb8414b2fce6259f0342f893c",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000038706/0162b4b3ab1fcc4437be27fba4a0b4f618a769ac186ae873b91d902617ad37c7",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000038706/5760d3d1ef82fdbdef9157c5cc2b9c3d6d1c2d0d025a3fb4f714ffb133011dd5",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000038706/f8608713dd9410e27aae9a140b0a21fc35a8516e34d2d50cb6701c0e50eb612f",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000038706/8b851f14b536b842110ab1cae7d199742294652a07c8586091ca0ee71eeec66c"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 1499,
+      "sale_price": null,
+      "sale_end": null,
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Nuevos lanzamientos",
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70070000038706",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
+      "sku": "7700038706",
+      "url_key": "call-of-duty-modern-warfare-4-standard-edition-switch-2",
+      "features": [],
+      "ways_to_play": [],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Juego en línea",
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "c",
+        "label": "Adultos +18 Años",
+        "system": "SMEC",
+        "requires_age_gate": true
+      },
+      "content_descriptors": [
+        "Derramamiento de sangre",
+        "Violencia intensa",
+        "Lenguaje fuerte",
+        "Uso de drogas",
+        "Interacción de usuarios",
+        "Compras dentro del juego"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 0,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70070000038706/Video/ad42a58e4244fc4cf5f3a6aa4df282e71df40a5b6370e3af0532253bbb5e8793"
+      ],
       "edition_label": "ROM Bundle"
     },
     {
@@ -292,8 +529,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 259.99,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 129.48,
+      "sale_end": "2026-11-09T07:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -301,7 +538,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000014143",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700014143",
       "url_key": "cozy-grove-plus-new-neighbears-bundle-switch",
       "features": [
@@ -324,7 +561,7 @@
         "Compras dentro del juego"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 50.2,
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000035711/Video/a9a1b48a86dedc680841e6eedee63e312f984eb40886ee754094908e5d32908d"
       ],
@@ -379,7 +616,7 @@
       ],
       "related_products": [],
       "raw_id": "70050000070399",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500070399",
       "url_key": "cozy-grove-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -458,7 +695,7 @@
       ],
       "related_products": [],
       "raw_id": "70050000073922",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500073922",
       "url_key": "cozy-grove-camp-spirit-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -538,7 +775,7 @@
       ],
       "related_products": [],
       "raw_id": "70050000068870",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500068870",
       "url_key": "culdcept-begins-upgrade-pack-switch-2",
       "features": [],
@@ -571,6 +808,95 @@
     },
     {
       "schema_version": "1.0.0",
+      "id": "nintendo:MX:70050000082667",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70050000082667",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Cult of the Lamb – Nintendo Switch 2 Edition Upgrade Pack",
+      "normalized_title": "Cult of the Lamb – Nintendo Switch 2 Edition Upgrade Pack",
+      "description": null,
+      "product_type": "upgrade_pack",
+      "edition_type": "switch_2",
+      "family_id": "cult-of-the-lamb-cf7bd460",
+      "platforms": [
+        "SWITCH_2"
+      ],
+      "genres": [
+        "Acción",
+        "Aventura"
+      ],
+      "publishers": [
+        "Devolver Digital"
+      ],
+      "developers": [],
+      "release_date": "2022-08-11T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70050000082667/b0ba9b904d00d804ececf20a094607d24fba6fdaedd8d9854b2a7c664818df77",
+      "hero_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000141412/976923041627f5795e18d77dc8ab77bff4d001884783beadb001c25faa54e810",
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/a3ea5ffab983d5397ef89af106c02c0ca89a1edfa9af093fdb58ce1e5a32b44b",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/36a694ef1a732bbd6428068648a093dbe76c1f204c136edbb8ae66bcbec6f06b",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/7f505f751c3e7bfecd02da24c746b5d08b893d04e7a54b0aa039154c72c4ac21",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/cd177f2bd6a67d2c1c18d7a96dd506a172725e42cf852ceaa802607bb8be2f06",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/9123adb7d5df3386a91dfff7d8a42b6448ca50a7fa2b3b3c7f64c01f4987e49f",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/a0d661e63859f1566e9ba84d8de57e5c1803e9762b05f48b90a85a9daf1e35f8"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 0,
+      "sale_price": null,
+      "sale_end": null,
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Nuevos lanzamientos",
+        "Disponible ya"
+      ],
+      "related_products": [
+        "nintendo:MX:70010000047973",
+        "nintendo:MX:70010000141412"
+      ],
+      "raw_id": "70050000082667",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
+      "sku": "7500082667",
+      "url_key": "cult-of-the-lamb-nintendo-switch-2-edition-upgrade-pack-switch-2",
+      "features": [
+        "Elige el nivel de dificultad",
+        "Niveles y mapas aleatorios",
+        "Recomenzar de cero tras las derrotas"
+      ],
+      "ways_to_play": [
+        "Juntos en una consola",
+        "Partidas en grupo"
+      ],
+      "player_count": "2+",
+      "nso_features": [
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "b15",
+        "label": "+15 Años",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Sangre",
+        "Humor vulgar",
+        "Violencia de fantasia"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 0,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000047973/Video/ed3a99f3f946da3008368386dbf7c2c24d0804adcc3796ef6f63583154dadacb",
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000047973/Video/27660653d52e544345b79bd4dee73f5202457d488aafc4ebbee64d58a67dd898"
+      ],
+      "edition_label": "Standard Edition"
+    },
+    {
+      "schema_version": "1.0.0",
       "id": "nintendo:MX:70070000015085",
       "source": "nintendo_mx",
       "source_catalog": "nintendo_switch",
@@ -599,7 +925,7 @@
       "developers": [],
       "release_date": "2022-08-11T00:00:00.000Z",
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000015085/72d53f2e326c1fa785d5ebc53fce0ece8e0d0424336e689d826297f72e2134e6",
-      "hero_url": null,
+      "hero_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000141412/976923041627f5795e18d77dc8ab77bff4d001884783beadb001c25faa54e810",
       "screenshots": [
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/a3ea5ffab983d5397ef89af106c02c0ca89a1edfa9af093fdb58ce1e5a32b44b",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/36a694ef1a732bbd6428068648a093dbe76c1f204c136edbb8ae66bcbec6f06b",
@@ -619,7 +945,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000015085",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700015085",
       "url_key": "cult-of-the-lamb-cultist-edition-switch",
       "features": [
@@ -684,7 +1010,7 @@
       "developers": [],
       "release_date": "2022-08-11T00:00:00.000Z",
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000017710/ab08f5485bb53358b65f28668f958cb25ff3aee82e7a6b0fb5bb5fb2d3a121c6",
-      "hero_url": null,
+      "hero_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000141412/976923041627f5795e18d77dc8ab77bff4d001884783beadb001c25faa54e810",
       "screenshots": [
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/a3ea5ffab983d5397ef89af106c02c0ca89a1edfa9af093fdb58ce1e5a32b44b",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/36a694ef1a732bbd6428068648a093dbe76c1f204c136edbb8ae66bcbec6f06b",
@@ -704,7 +1030,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000017710",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700017710",
       "url_key": "cult-of-the-lamb-heretic-edition-switch",
       "features": [
@@ -769,7 +1095,7 @@
       "developers": [],
       "release_date": "2022-08-11T00:00:00.000Z",
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000023237/ff6cbc3516e0e57ac51e0b7fb7751512de5d5c91da886b05952dc9721ba7a9c5",
-      "hero_url": null,
+      "hero_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000141412/976923041627f5795e18d77dc8ab77bff4d001884783beadb001c25faa54e810",
       "screenshots": [
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/a3ea5ffab983d5397ef89af106c02c0ca89a1edfa9af093fdb58ce1e5a32b44b",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/36a694ef1a732bbd6428068648a093dbe76c1f204c136edbb8ae66bcbec6f06b",
@@ -780,8 +1106,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 522,
-      "sale_price": 182.7,
-      "sale_end": "2026-10-20T06:59:59Z",
+      "sale_price": null,
+      "sale_end": null,
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -789,7 +1115,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000023237",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700023237",
       "url_key": "cult-of-the-lamb-sinful-edition-switch",
       "features": [
@@ -817,7 +1143,7 @@
         "Violencia de fantasia"
       ],
       "demo_nsuid": null,
-      "percent_off": 65,
+      "percent_off": 0,
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000047973/Video/ed3a99f3f946da3008368386dbf7c2c24d0804adcc3796ef6f63583154dadacb",
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000047973/Video/27660653d52e544345b79bd4dee73f5202457d488aafc4ebbee64d58a67dd898"
@@ -854,7 +1180,7 @@
       "developers": [],
       "release_date": "2022-08-11T00:00:00.000Z",
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000033321/6dcdad746a8ffe62bcb3378ee7bf0e0bd5c68ef10f7dc83abaebd398b3e1b66c",
-      "hero_url": null,
+      "hero_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000141412/976923041627f5795e18d77dc8ab77bff4d001884783beadb001c25faa54e810",
       "screenshots": [
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/a3ea5ffab983d5397ef89af106c02c0ca89a1edfa9af093fdb58ce1e5a32b44b",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/36a694ef1a732bbd6428068648a093dbe76c1f204c136edbb8ae66bcbec6f06b",
@@ -874,7 +1200,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000033321",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700033321",
       "url_key": "cult-of-the-lamb-the-one-who-waits-switch",
       "features": [
@@ -939,7 +1265,7 @@
       "developers": [],
       "release_date": "2022-08-11T00:00:00.000Z",
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000025274/6a0b07d096c6374733d577ed584a3a6ddc4a500adf57160c6aeb03549f2f0dbc",
-      "hero_url": null,
+      "hero_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000141412/976923041627f5795e18d77dc8ab77bff4d001884783beadb001c25faa54e810",
       "screenshots": [
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/a3ea5ffab983d5397ef89af106c02c0ca89a1edfa9af093fdb58ce1e5a32b44b",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/36a694ef1a732bbd6428068648a093dbe76c1f204c136edbb8ae66bcbec6f06b",
@@ -959,7 +1285,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000025274",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700025274",
       "url_key": "cult-of-the-lamb-unholy-edition-switch",
       "features": [
@@ -1024,7 +1350,7 @@
       "developers": [],
       "release_date": "2022-08-11T00:00:00.000Z",
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000033359/6e8d3722849fcee30050b46fcbe51998941c7088bcb902d23b795a50b1c7691c",
-      "hero_url": null,
+      "hero_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000141412/976923041627f5795e18d77dc8ab77bff4d001884783beadb001c25faa54e810",
       "screenshots": [
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/a3ea5ffab983d5397ef89af106c02c0ca89a1edfa9af093fdb58ce1e5a32b44b",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/36a694ef1a732bbd6428068648a093dbe76c1f204c136edbb8ae66bcbec6f06b",
@@ -1044,7 +1370,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000033359",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700033359",
       "url_key": "cult-of-the-lamb-woolhaven-edition-switch",
       "features": [
@@ -1129,7 +1455,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000014286",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700014286",
       "url_key": "cuphead-and-the-delicious-last-course-switch",
       "features": [
@@ -1212,7 +1538,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000034289",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700034289",
       "url_key": "deadzone-rogue-deluxe-edition-switch-2",
       "features": [
@@ -1290,7 +1616,7 @@
       ],
       "related_products": [],
       "raw_id": "70050000056741",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500056741",
       "url_key": "demons-of-the-aril-rift-70050000056741-switch-2",
       "features": [],
@@ -1368,7 +1694,7 @@
         "nintendo:MX:70010000103978"
       ],
       "raw_id": "70070000036666",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700036666",
       "url_key": "denshattack-digital-deluxe-edition-switch-2",
       "features": [
@@ -1393,6 +1719,89 @@
       "percent_off": 0,
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000103978/Video/86a24e1c8eb7b005e39eedde1f187a6c07d14963fb5d4fce797b124f412e2078"
+      ],
+      "edition_label": "ROM Bundle"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70070000040027",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch_2",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70070000040027",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Digital Deluxe Edition",
+      "normalized_title": "Digital Deluxe Edition",
+      "description": null,
+      "product_type": "dlc",
+      "edition_type": "digital_deluxe",
+      "family_id": "-da39a3ee",
+      "platforms": [
+        "SWITCH"
+      ],
+      "genres": [
+        "Aventura narrativa"
+      ],
+      "publishers": [
+        "AdHoc Studio"
+      ],
+      "developers": [],
+      "release_date": "2026-01-28T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000040027/881771375ef5f10ed50f39af8c3abedf375f82d7bdafe7ec7df4a437b4b55bb7",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/1f4303452b6844359165469c4f6125dc_1024",
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000110051/1b704f6b17d318c7d284859d08863ea0ea0816a22f38258a525bf4bc21fb73a0",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000110051/b33dcad11f8c65aca40901f45bf6a4ac4e470ed441c2059e17de4cbb51a1384a",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000110051/ec35adfdb02a4662900622fd0206efa1ccb5d5a333a5832e8b6da13826a5e916",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000110051/11083368f2c2c571aea3330907ecda78b59979a20da5cac43bf9ccf5e04ae6d8",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000110051/6dcc43445a88bb460f38f36fce6eb230dbcb245b33aaa03760a2d2384aab23ee",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000110051/06cb0c7bc3589f078009f679eba5114acfc30ebc5217dcd1cdf0b1c5a6251879"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 409.99,
+      "sale_price": null,
+      "sale_end": null,
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Nuevos lanzamientos",
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70070000040027",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
+      "sku": "7700040027",
+      "url_key": "digital-deluxe-edition-70070000040027-switch",
+      "features": [
+        "Acertijos y deducción",
+        "Personajes con voz"
+      ],
+      "ways_to_play": [],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "c",
+        "label": "Adultos +18 Años",
+        "system": "SMEC",
+        "requires_age_gate": true
+      },
+      "content_descriptors": [
+        "Derramamiento de sangre",
+        "Violencia intensa",
+        "Desnudez parcial",
+        "Contenido sexual",
+        "Lenguaje fuerte",
+        "Uso de Drogas y Alcohol"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 0,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000110051/Video/a9547ad13b28a14e852a40f1aac86391eb1d58db2d277e325051cf7a4825b0c7"
       ],
       "edition_label": "ROM Bundle"
     },
@@ -1426,7 +1835,7 @@
       "developers": [],
       "release_date": "2026-03-25T00:00:00.000Z",
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000029986/aeb31557c92a3b2fd945553a97aad7902173974bbdc6917366ab85c3b101d3e7",
-      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/23138de8367a4517abd6d00580da7847_1024",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/d1253a44901943e2874585b7487a02e3_1024",
       "screenshots": [
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000122446/de243c1983a837dccd5c75eab0b9cd317d1a199063bb7f023c4e9278cc489c03",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000122446/4def5e2aa5e0828b9fc23d6078a13bf9a6728a7641783a447b65f9ce5bf19e45",
@@ -1437,8 +1846,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1480,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 888,
+      "sale_end": "2026-11-05T07:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -1446,7 +1855,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000029986",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700029986",
       "url_key": "disney-dreamlight-valleyultimate-edition-switch",
       "features": [
@@ -1474,7 +1883,7 @@
         "Compras dentro del juego"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 40,
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000122446/Video/347e91abfb38927d4fd480d5206affcc80ef7c0ce2b494576935798796c83611",
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000122446/Video/09e2bd0dc41f0b4f8f45e5161ba908ca935087ef06742a8f7413f106b539ca4c"
@@ -1511,7 +1920,7 @@
       "developers": [],
       "release_date": "2026-03-25T00:00:00.000Z",
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000035261/1104fd7691c0698f4455d3a99c3ad8d612003bc3eee79a82921c3be1e2d88354",
-      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/23138de8367a4517abd6d00580da7847_1024",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/d1253a44901943e2874585b7487a02e3_1024",
       "screenshots": [
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000122446/de243c1983a837dccd5c75eab0b9cd317d1a199063bb7f023c4e9278cc489c03",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000122446/4def5e2aa5e0828b9fc23d6078a13bf9a6728a7641783a447b65f9ce5bf19e45",
@@ -1522,8 +1931,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 925,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 647.5,
+      "sale_end": "2026-11-05T07:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -1531,7 +1940,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000035261",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700035261",
       "url_key": "disney-dreamlight-valleyhoneyglow-woods-edition-switch",
       "features": [
@@ -1559,7 +1968,7 @@
         "Compras dentro del juego"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 30,
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000122446/Video/347e91abfb38927d4fd480d5206affcc80ef7c0ce2b494576935798796c83611",
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000122446/Video/09e2bd0dc41f0b4f8f45e5161ba908ca935087ef06742a8f7413f106b539ca4c"
@@ -1596,7 +2005,7 @@
       "developers": [],
       "release_date": "2026-03-25T00:00:00.000Z",
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000029980/f62ca92dadb5fe46e1bfc48838731a39eecdf0d49cbb5ab3ce47fe9d8371e065",
-      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/23138de8367a4517abd6d00580da7847_1024",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/d1253a44901943e2874585b7487a02e3_1024",
       "screenshots": [
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000122446/de243c1983a837dccd5c75eab0b9cd317d1a199063bb7f023c4e9278cc489c03",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000122446/4def5e2aa5e0828b9fc23d6078a13bf9a6728a7641783a447b65f9ce5bf19e45",
@@ -1607,8 +2016,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1059,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 635.4,
+      "sale_end": "2026-11-05T07:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -1616,7 +2025,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000029980",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700029980",
       "url_key": "disney-dreamlight-valleywishblossom-ranch-edition-switch",
       "features": [
@@ -1644,7 +2053,7 @@
         "Compras dentro del juego"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 40,
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000122446/Video/347e91abfb38927d4fd480d5206affcc80ef7c0ce2b494576935798796c83611",
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000122446/Video/09e2bd0dc41f0b4f8f45e5161ba908ca935087ef06742a8f7413f106b539ca4c"
@@ -1681,7 +2090,7 @@
       "developers": [],
       "release_date": "2026-03-25T00:00:00.000Z",
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70050000071151/5a04a6b664ade432be377f8d76ba1e19a3a5883901d1fa8240a4966c81d303b5",
-      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/23138de8367a4517abd6d00580da7847_1024",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/d1253a44901943e2874585b7487a02e3_1024",
       "screenshots": [
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000122446/de243c1983a837dccd5c75eab0b9cd317d1a199063bb7f023c4e9278cc489c03",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000122446/4def5e2aa5e0828b9fc23d6078a13bf9a6728a7641783a447b65f9ce5bf19e45",
@@ -1701,7 +2110,7 @@
       ],
       "related_products": [],
       "raw_id": "70050000071151",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500071151",
       "url_key": "disney-dreamlight-valley-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -1788,7 +2197,7 @@
         "nintendo:MX:70010000105331"
       ],
       "raw_id": "70050000064415",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500064415",
       "url_key": "dispatch-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -1867,7 +2276,7 @@
       ],
       "related_products": [],
       "raw_id": "70050000062442",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500062442",
       "url_key": "donkey-kong-bananza-dk-island-and-emerald-rush-70050000062442-switch-2",
       "features": [],
@@ -1933,7 +2342,7 @@
         "nintendo:MX:70010000056316"
       ],
       "raw_id": "70070000018012",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700018012",
       "url_key": "dragon-quest-monsters-the-dark-prince-digital-deluxe-edition-switch",
       "features": [],
@@ -2005,7 +2414,7 @@
       "availability": [],
       "related_products": [],
       "raw_id": "70070000033882",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700033882",
       "url_key": "ea-sports-fc-26-icons-edition-switch-2",
       "features": [
@@ -2093,7 +2502,7 @@
       "availability": [],
       "related_products": [],
       "raw_id": "70070000035280",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700035280",
       "url_key": "ea-sports-fc-26-the-worlds-game-edition-switch-2",
       "features": [
@@ -2174,8 +2583,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1999,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 1499.25,
+      "sale_end": "2026-11-01T06:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -2185,7 +2594,7 @@
         "nintendo:MX:70010000110123"
       ],
       "raw_id": "70070000036530",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700036530",
       "url_key": "ea-sports-fc-27-ultimate-edition-70070000036530-switch-2",
       "features": [
@@ -2219,7 +2628,7 @@
         "Compras dentro del juego (Incluye artículos aleatorios)"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 25,
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000110123/Video/47b412281bef75c5e2f6a74f60758c2e8bde05bb61ab79b7bbb85bdab015d7cf",
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000110123/Video/436e687daffe4fad93f4d79c0d0c66bb93cae39acc6a20e6948907f24e4a83ea"
@@ -2275,7 +2684,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000034128",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700034128",
       "url_key": "ea-sports-madden-nfl-27-deluxe-edition-70070000034128-switch-2",
       "features": [
@@ -2357,8 +2766,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 2599,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 1299.5,
+      "sale_end": "2026-11-07T07:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -2366,7 +2775,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000033143",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700033143",
       "url_key": "wwe-2k26-attitude-era-edition-switch-2",
       "features": [
@@ -2403,7 +2812,7 @@
         "Compras dentro del juego (Incluye artículos aleatorios)"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 50,
       "videos": [],
       "edition_label": "ROM Bundle"
     },
@@ -2458,7 +2867,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000027900",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700027900",
       "url_key": "wwe-2k25-deadman-edition-switch-2",
       "features": [
@@ -2550,7 +2959,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000033406",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700033406",
       "url_key": "digimon-story-time-stranger-ultimate-edition-switch-2",
       "features": [
@@ -2621,8 +3030,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1649,
-      "sale_price": 1319.2,
-      "sale_end": "2026-10-12T06:59:59Z",
+      "sale_price": null,
+      "sale_end": null,
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -2630,7 +3039,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000033404",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700033404",
       "url_key": "digimon-story-time-stranger-deluxe-edition-switch-2",
       "features": [
@@ -2657,7 +3066,7 @@
         "Compras dentro del juego"
       ],
       "demo_nsuid": null,
-      "percent_off": 20,
+      "percent_off": 0,
       "videos": [],
       "edition_label": "ROM Bundle"
     },
@@ -2710,7 +3119,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000029713",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700029713",
       "url_key": "dragon-ball-sparking-zero-deluxe-edition-switch-2",
       "features": [
@@ -2798,7 +3207,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000029524",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700029524",
       "url_key": "dragon-quest-vii-reimagined-digital-deluxe-edition-switch-2",
       "features": [
@@ -2872,8 +3281,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1189,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 713.4,
+      "sale_end": "2026-11-01T06:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -2881,7 +3290,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000029618",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700029618",
       "url_key": "persona-3-reload-digital-deluxe-edition-switch-2",
       "features": [
@@ -2908,7 +3317,7 @@
         "Violencia"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 40,
       "videos": [],
       "edition_label": "ROM Bundle"
     },
@@ -2952,8 +3361,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 899,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 269.7,
+      "sale_end": "2026-11-01T06:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -2961,7 +3370,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000027749",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700027749",
       "url_key": "sonic-x-shadow-generations-digital-deluxe-edition-switch-2",
       "features": [
@@ -2986,7 +3395,7 @@
         "Compras dentro del juego"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 70,
       "videos": [],
       "edition_label": "ROM Bundle"
     },
@@ -3039,7 +3448,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000029619",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700029619",
       "url_key": "persona-3-reload-digital-premium-edition-switch-2",
       "features": [
@@ -3121,7 +3530,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000030230",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700030230",
       "url_key": "wwe-2k25-farewell-tour-edition-switch-2",
       "features": [
@@ -3205,8 +3614,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1899,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 949.5,
+      "sale_end": "2026-11-07T07:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -3214,7 +3623,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000033142",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700033142",
       "url_key": "wwe-2k26-king-of-kings-edition-switch-2",
       "features": [
@@ -3251,7 +3660,7 @@
         "Compras dentro del juego (Incluye artículos aleatorios)"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 50,
       "videos": [],
       "edition_label": "ROM Bundle"
     },
@@ -3296,8 +3705,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 2999,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 1499.5,
+      "sale_end": "2026-11-07T07:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -3305,7 +3714,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000033144",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700033144",
       "url_key": "wwe-2k26-monday-night-war-edition-switch-2",
       "features": [
@@ -3342,7 +3751,7 @@
         "Compras dentro del juego (Incluye artículos aleatorios)"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 50,
       "videos": [],
       "edition_label": "ROM Bundle"
     },
@@ -3397,7 +3806,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000027901",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700027901",
       "url_key": "wwe-2k25-the-bloodline-edition-switch-2",
       "features": [
@@ -3480,8 +3889,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1839,
-      "sale_price": 1287.3,
-      "sale_end": "2026-10-12T06:59:59Z",
+      "sale_price": null,
+      "sale_end": null,
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -3489,7 +3898,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000029715",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700029715",
       "url_key": "dragon-ball-sparking-zero-ultimate-edition-switch-2",
       "features": [
@@ -3521,7 +3930,7 @@
         "Compras dentro del juego"
       ],
       "demo_nsuid": null,
-      "percent_off": 30,
+      "percent_off": 0,
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000102645/Video/04d4692f11c4339cc1124cca0f8e42c88674bae0524c071ad3cd645306e4da0b",
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000102645/Video/b39490dcdb3862a2a938167feb3eba89070e5061cddfae04dc8254e070ddfb03"
@@ -3578,7 +3987,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000027766",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700027766",
       "url_key": "fantasy-life-i-the-girl-who-steals-time-digital-deluxe-edition-switch",
       "features": [
@@ -3664,7 +4073,7 @@
       ],
       "related_products": [],
       "raw_id": "70050000057695",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500057695",
       "url_key": "fantasy-life-i-the-girl-who-steals-time-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -3699,6 +4108,90 @@
       "percent_off": 0,
       "videos": [],
       "edition_label": "Standard Edition"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70070000035973",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch_2",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70070000035973",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "FINAL FANTASY RESONANCE Digital Deluxe Edition",
+      "normalized_title": "FINAL FANTASY RESONANCE Digital Deluxe Edition",
+      "description": null,
+      "product_type": "dlc",
+      "edition_type": "digital_deluxe",
+      "family_id": "final-fantasy-resonance-7a4c3f44",
+      "platforms": [
+        "SWITCH_2"
+      ],
+      "genres": [
+        "Juego de rol"
+      ],
+      "publishers": [
+        "SQUARE ENIX"
+      ],
+      "developers": [],
+      "release_date": "2026-10-22T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000035973/04e6690fd02b01cdd0f95ff4b558404433e62f60847bcce3f8138cfa48424575",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000117100/34ee79b147d6fba61ce74c4efb0f8ac42890765253280d21c90ba94093d403a6",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000117100/b75217192395f4a538c4d4456870a700295fa1eedf2d95c574a31d639bf06a45",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000117100/2a7d0115869090cc01b64dc3e8306cf6e8f61ad5f7bcd3fcd88548181404da3c",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000117100/23b04b077c6fe1cd1e2bb3f1f1f9e75e61fd6a76506427b3b2661f50cc0aba51",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000117100/8c2ce79a4d541248bcf28d97816e921ecaab967eed705f2bb03e23f643c5e419",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000117100/d807e25b5a5acb0553bad1ea61b5b8a23d42734fe752d6402a39fc38e0c49951"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 1000,
+      "sale_price": null,
+      "sale_end": null,
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Nuevos lanzamientos",
+        "Disponible ya"
+      ],
+      "related_products": [
+        "nintendo:MX:70010000117100"
+      ],
+      "raw_id": "70070000035973",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
+      "sku": "7700035973",
+      "url_key": "final-fantasy-resonance-digital-deluxe-edition-switch-2",
+      "features": [
+        "Arte pixelado",
+        "Elige el nivel de dificultad",
+        "Mejora tus atributos",
+        "Personajes con voz"
+      ],
+      "ways_to_play": [],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "b",
+        "label": "+12 Años",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Violencia de fantasia",
+        "Lenguaje",
+        "Temas insinuantes"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 0,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000117100/Video/7b39c166f6009465e07f8ec0cf646ecd641a455935791f292bbd51358c4894f0"
+      ],
+      "edition_label": "ROM Bundle"
     },
     {
       "schema_version": "1.0.0",
@@ -3754,7 +4247,7 @@
         "nintendo:MX:70050000059204"
       ],
       "raw_id": "70070000029310",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700029310",
       "url_key": "final-fantasy-tactics-the-ivalice-chronicles-deluxe-edition-switch",
       "features": [
@@ -3839,7 +4332,7 @@
         "nintendo:MX:70070000029310"
       ],
       "raw_id": "70050000059204",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500059204",
       "url_key": "final-fantasy-tactics-the-ivalice-chronicles-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -3922,7 +4415,7 @@
         "nintendo:MX:70010000112477"
       ],
       "raw_id": "70070000032074",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700032074",
       "url_key": "final-fantasy-vii-rebirth-digital-deluxe-edition-switch-2",
       "features": [
@@ -4004,7 +4497,7 @@
         "nintendo:MX:70010000101698"
       ],
       "raw_id": "70070000030729",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700030729",
       "url_key": "final-fantasy-vii-remake-intergrade-digital-deluxe-edition-switch-2",
       "features": [
@@ -4085,7 +4578,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000006542",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700006542",
       "url_key": "fire-emblem-three-houses-plus-expansion-pass-switch",
       "features": [
@@ -4169,7 +4662,7 @@
         "nintendo:MX:70070000028508"
       ],
       "raw_id": "70070000020305",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700020305",
       "url_key": "fortnite-plus-lego-fortnite-odyssey-switch",
       "features": [
@@ -4252,7 +4745,7 @@
         "nintendo:MX:70070000020305"
       ],
       "raw_id": "70070000028508",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700028508",
       "url_key": "fortnite-plus-lego-fortnite-odyssey-switch-2",
       "features": [
@@ -4336,7 +4829,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000035964",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700035964",
       "url_key": "granblue-fantasy-relink-endless-ragnarok-special-edition-switch-2",
       "features": [
@@ -4430,7 +4923,7 @@
         "nintendo:MX:70010000060675"
       ],
       "raw_id": "70050000062070",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500062070",
       "url_key": "hades-ii-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -4491,7 +4984,7 @@
       "developers": [],
       "release_date": "2025-11-13T00:00:00.000Z",
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70050000064217/b0ca2045b2a2f46b7c7ec8251c164daa6102201dacdae8b91ac2120074f7d810",
-      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/d95c144d4f014db2803c73edd0b5d322_1024",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/4f3f1bca17b441188502812639039eeb_1024",
       "screenshots": [
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109159/d90032d33a19100a6ab97184f990376d99f2ec5bb25b31c93c1f42e032d5c170",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109159/527875949fca13e022fac0c628a32119067d24d5403c451dd6c848adb1eb5e17",
@@ -4502,8 +4995,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 149,
-      "sale_price": 81.95,
-      "sale_end": "2026-10-19T06:59:59Z",
+      "sale_price": null,
+      "sale_end": null,
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -4514,7 +5007,7 @@
         "nintendo:MX:70010000074491"
       ],
       "raw_id": "70050000064217",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500064217",
       "url_key": "hello-kitty-island-adventure-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -4540,7 +5033,7 @@
         "Interacción de usuarios"
       ],
       "demo_nsuid": null,
-      "percent_off": 45,
+      "percent_off": 0,
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000109159/Video/6f34e0f97e27b702a69c6a8c6a8f439c5366b2183b54c1c69cfee3ed68be292a"
       ],
@@ -4576,7 +5069,7 @@
       "developers": [],
       "release_date": "2025-11-13T00:00:00.000Z",
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000025715/7c607b26c76807867b005386f0a4e13de06213aee01d1a8b981bb2661f8ed44c",
-      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/d95c144d4f014db2803c73edd0b5d322_1024",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/4f3f1bca17b441188502812639039eeb_1024",
       "screenshots": [
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109159/d90032d33a19100a6ab97184f990376d99f2ec5bb25b31c93c1f42e032d5c170",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109159/527875949fca13e022fac0c628a32119067d24d5403c451dd6c848adb1eb5e17",
@@ -4596,7 +5089,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000025715",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700025715",
       "url_key": "hello-kitty-island-adventure-deluxe-edition-switch",
       "features": [
@@ -4665,8 +5158,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 436.99,
-      "sale_price": 327.74,
-      "sale_end": "2026-10-19T06:59:59Z",
+      "sale_price": null,
+      "sale_end": null,
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -4674,7 +5167,7 @@
       ],
       "related_products": [],
       "raw_id": "70050000069966",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500069966",
       "url_key": "hello-kitty-island-adventure-city-town-70050000069966-switch",
       "features": [],
@@ -4691,7 +5184,7 @@
         "Sin Descriptores"
       ],
       "demo_nsuid": null,
-      "percent_off": 25,
+      "percent_off": 0,
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70050000069966/Video/482863f4c2a22bec1bf8d9260c7ed943dda161f035fbb67a5391972549945381"
       ],
@@ -4744,7 +5237,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000027672",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700027672",
       "url_key": "hogwarts-legacy-digital-deluxe-edition-switch-2",
       "features": [],
@@ -4825,7 +5318,7 @@
         "nintendo:MX:70010000117998"
       ],
       "raw_id": "70050000069063",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500069063",
       "url_key": "hollow-knight-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -4907,7 +5400,7 @@
         "nintendo:MX:70010000020840"
       ],
       "raw_id": "70050000061852",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500061852",
       "url_key": "hollow-knight-silksong-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -4986,7 +5479,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000012376",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700012376",
       "url_key": "hyrule-warriors-age-of-calamity-plus-hyrule-warriors-age-of-calamity-expansion-pass-switch",
       "features": [
@@ -5068,7 +5561,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000018018",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700018018",
       "url_key": "infinity-strash-dragon-quest-the-adventure-of-dai-digital-deluxe-edition-switch",
       "features": [
@@ -5151,7 +5644,7 @@
         "nintendo:MX:70010000113087"
       ],
       "raw_id": "70070000036099",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700036099",
       "url_key": "inkonbini-one-store-many-stories-digital-deluxe-edition-switch-2",
       "features": [],
@@ -5223,7 +5716,7 @@
         "nintendo:MX:70010000049281"
       ],
       "raw_id": "70070000014924",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700014924",
       "url_key": "it-takes-two-switch",
       "features": [],
@@ -5298,7 +5791,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000014916",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700014916",
       "url_key": "it-takes-two-friends-pass-switch",
       "features": [],
@@ -5372,12 +5865,11 @@
       "free_to_play": false,
       "demo_available": true,
       "availability": [
-        "Nuevos lanzamientos",
         "Disponible ya"
       ],
       "related_products": [],
       "raw_id": "70070000036603",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700036603",
       "url_key": "kingdom-hearts-collection-i-iii-switch-2",
       "features": [
@@ -5403,88 +5895,6 @@
       "demo_nsuid": null,
       "percent_off": 0,
       "videos": [],
-      "edition_label": "ROM Bundle"
-    },
-    {
-      "schema_version": "1.0.0",
-      "id": "nintendo:MX:70070000031005",
-      "source": "nintendo_mx",
-      "source_catalog": "nintendo_switch_2",
-      "region": "MX",
-      "locale": "es-MX",
-      "nsuid": "70070000031005",
-      "product_code": null,
-      "slug": null,
-      "store_url": null,
-      "title": "La Edición Digital Deluxe i",
-      "normalized_title": "La Edición Digital Deluxe i",
-      "description": null,
-      "product_type": "dlc",
-      "edition_type": "digital_deluxe",
-      "family_id": "la-edicion-digital-deluxe-i-23d15a1e",
-      "platforms": [
-        "SWITCH"
-      ],
-      "genres": [
-        "Aventura narrativa"
-      ],
-      "publishers": [
-        "AdHoc Studio"
-      ],
-      "developers": [],
-      "release_date": "2026-01-28T00:00:00.000Z",
-      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000031005/41f7d541312e539b4f6303cb92537347f94f8072a9e2e277b85efbab9371be69",
-      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/1f4303452b6844359165469c4f6125dc_1024",
-      "screenshots": [
-        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000110051/1b704f6b17d318c7d284859d08863ea0ea0816a22f38258a525bf4bc21fb73a0",
-        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000110051/b33dcad11f8c65aca40901f45bf6a4ac4e470ed441c2059e17de4cbb51a1384a",
-        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000110051/ec35adfdb02a4662900622fd0206efa1ccb5d5a333a5832e8b6da13826a5e916",
-        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000110051/11083368f2c2c571aea3330907ecda78b59979a20da5cac43bf9ccf5e04ae6d8",
-        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000110051/6dcc43445a88bb460f38f36fce6eb230dbcb245b33aaa03760a2d2384aab23ee",
-        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000110051/06cb0c7bc3589f078009f679eba5114acfc30ebc5217dcd1cdf0b1c5a6251879"
-      ],
-      "price_currency": "MXN",
-      "regular_price": 409.99,
-      "sale_price": null,
-      "sale_end": null,
-      "free_to_play": false,
-      "demo_available": true,
-      "availability": [
-        "Disponible ya"
-      ],
-      "related_products": [],
-      "raw_id": "70070000031005",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
-      "sku": "7700031005",
-      "url_key": "digital-deluxe-edition-70070000031005-switch",
-      "features": [
-        "Acertijos y deducción",
-        "Personajes con voz"
-      ],
-      "ways_to_play": [],
-      "player_count": "Un jugador",
-      "nso_features": [
-        "Guardado de datos en la nube"
-      ],
-      "content_rating": {
-        "code": "c",
-        "label": "Adultos +18 Años",
-        "system": "SMEC",
-        "requires_age_gate": true
-      },
-      "content_descriptors": [
-        "Derramamiento de sangre",
-        "Violencia intensa",
-        "Desnudez parcial",
-        "Contenido sexual",
-        "Lenguaje fuerte",
-        "Uso de Drogas y Alcohol"
-      ],
-      "demo_nsuid": null,
-      "percent_off": 0,
-      "videos": [
-        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000110051/Video/a9547ad13b28a14e852a40f1aac86391eb1d58db2d277e325051cf7a4825b0c7"
-      ],
       "edition_label": "ROM Bundle"
     },
     {
@@ -5537,7 +5947,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000036661",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700036661",
       "url_key": "lego-batman-legacy-of-the-dark-knight-deluxe-edition-switch-2",
       "features": [
@@ -5623,7 +6033,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000029920",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700029920",
       "url_key": "little-nightmares-iii-deluxe-edition-switch-2",
       "features": [
@@ -5699,8 +6109,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1199,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 599.5,
+      "sale_end": "2026-11-01T06:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -5708,7 +6118,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000015127",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700015127",
       "url_key": "the-elder-scrolls-v-skyrim-anniversary-edition-switch",
       "features": [
@@ -5739,7 +6149,7 @@
         "Uso de alcohol"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 50,
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000001369/Video/234eaa659f75c1fc665f66855778cd85eba6cc3e90468c7bedd9093494bdefbc",
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000001369/Video/08218a165525e4718fd577afc5e4717099650318acba31fa1b31b174a4f2b526"
@@ -5796,7 +6206,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000009533",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700009533",
       "url_key": "luigis-mansion-3-plus-multiplayer-pack-set-switch",
       "features": [
@@ -5878,7 +6288,7 @@
       ],
       "related_products": [],
       "raw_id": "70050000061432",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500061432",
       "url_key": "lynked-banner-of-the-spark-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -5960,7 +6370,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000014384",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700014384",
       "url_key": "mario-plus-rabbids-sparks-of-hope-gold-edition-switch",
       "features": [
@@ -6042,7 +6452,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000018644",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700018644",
       "url_key": "mario-plus-rabbids-sparks-of-hope-plus-rayman-edition-switch",
       "features": [
@@ -6126,7 +6536,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000033532",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700033532",
       "url_key": "metal-gear-solid-master-collection-vol-2-switch-2",
       "features": [
@@ -6214,7 +6624,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000016597",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700016597",
       "url_key": "minecraft-deluxe-collection-switch",
       "features": [
@@ -6299,14 +6709,13 @@
       "free_to_play": false,
       "demo_available": true,
       "availability": [
-        "Nuevos lanzamientos",
         "Disponible ya"
       ],
       "related_products": [
         "nintendo:MX:70010000110905"
       ],
       "raw_id": "70070000036386",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700036386",
       "url_key": "minecraft-dungeons-ii-deluxe-edition-switch-2",
       "features": [],
@@ -6369,12 +6778,12 @@
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/5398352a41cf424fe01abebf96fa94d79e0075989653cfd8be1d0cb68a6340c4",
       "hero_url": null,
       "screenshots": [
-        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/f2f841669fa0d7ad23a4855b107c1ab7c61817bff7d90292a7a301aecdb54f33",
-        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/99f1d7d939feb8f71150f3725581119c0dc99109d3332293f1cb8bf0270892ad",
-        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/9f7c9d9171f74257d685fda5215df5ca68849f60b74b2dd50891d1056e3f0319",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/36619fd96e2d169e6bce5eda626ef7ede441b47b35206dc02259768fde70d79a",
-        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/61a522f84fa33b28bc9a5f1d69338518c556900dedb39ad0888d16ac03803bac",
-        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/9176ae6a5fd9c434a881ccac212353666b9cf97085d8cb021160161735a212b4"
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/9f7c9d9171f74257d685fda5215df5ca68849f60b74b2dd50891d1056e3f0319",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/30e41f02ddb63aebe6bd5c7627175e51668fde6d0a3b54e96d55a745f5636342",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/9f85f3909b09507f48649ed70b87a9732c8759843c78a1dfa535ac4667521cf5",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/0b6b992ae7bd312152f659bea661ebc81c4c440b4edc018e4ed683768e05da7e",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/a705a4cb515f42b79e2c286403a28bac85d1641b85552d0902d176acfae56ca1"
       ],
       "price_currency": "MXN",
       "regular_price": 749,
@@ -6388,7 +6797,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000040855",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700040855",
       "url_key": "minecraft-deluxe-collection-switch-2",
       "features": [],
@@ -6443,12 +6852,12 @@
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040889/eca91b94490d73e7b7033c1fa9d1a014c2d64610f026572bba3bfc819fc245c3",
       "hero_url": null,
       "screenshots": [
-        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/f2f841669fa0d7ad23a4855b107c1ab7c61817bff7d90292a7a301aecdb54f33",
-        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/99f1d7d939feb8f71150f3725581119c0dc99109d3332293f1cb8bf0270892ad",
-        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/9f7c9d9171f74257d685fda5215df5ca68849f60b74b2dd50891d1056e3f0319",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/36619fd96e2d169e6bce5eda626ef7ede441b47b35206dc02259768fde70d79a",
-        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/61a522f84fa33b28bc9a5f1d69338518c556900dedb39ad0888d16ac03803bac",
-        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/9176ae6a5fd9c434a881ccac212353666b9cf97085d8cb021160161735a212b4"
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/9f7c9d9171f74257d685fda5215df5ca68849f60b74b2dd50891d1056e3f0319",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/30e41f02ddb63aebe6bd5c7627175e51668fde6d0a3b54e96d55a745f5636342",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/9f85f3909b09507f48649ed70b87a9732c8759843c78a1dfa535ac4667521cf5",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/0b6b992ae7bd312152f659bea661ebc81c4c440b4edc018e4ed683768e05da7e",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000040855/a705a4cb515f42b79e2c286403a28bac85d1641b85552d0902d176acfae56ca1"
       ],
       "price_currency": "MXN",
       "regular_price": 937,
@@ -6462,7 +6871,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000040889",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700040889",
       "url_key": "minecraft-ultimate-collection-switch-2",
       "features": [],
@@ -6541,7 +6950,7 @@
         "nintendo:MX:70010000084569"
       ],
       "raw_id": "70050000070352",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500070352",
       "url_key": "minishoot-adventures-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -6616,7 +7025,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000013808",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700013808",
       "url_key": "monster-hunter-rise-plus-sunbreak-switch",
       "features": [],
@@ -6681,8 +7090,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1364,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 341,
+      "sale_end": "2026-11-05T07:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -6690,7 +7099,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000013813",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700013813",
       "url_key": "monster-hunter-rise-plus-sunbreak-deluxe-switch",
       "features": [],
@@ -6713,7 +7122,7 @@
         "Compras dentro del juego"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 75,
       "videos": [],
       "edition_label": "ROM Bundle"
     },
@@ -6755,8 +7164,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1006,
-      "sale_price": 201.2,
-      "sale_end": "2026-10-16T06:59:59Z",
+      "sale_price": null,
+      "sale_end": null,
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -6764,7 +7173,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000011160",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700011160",
       "url_key": "monster-hunter-rise-deluxe-edition-switch",
       "features": [],
@@ -6787,7 +7196,7 @@
         "Compras dentro del juego"
       ],
       "demo_nsuid": null,
-      "percent_off": 80,
+      "percent_off": 0,
       "videos": [],
       "edition_label": "ROM Bundle"
     },
@@ -6832,8 +7241,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 941,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 282.3,
+      "sale_end": "2026-11-05T07:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -6843,7 +7252,7 @@
         "nintendo:MX:70010000028503"
       ],
       "raw_id": "70070000012150",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700012150",
       "url_key": "monster-hunter-stories-2-wings-of-ruin-deluxe-edition-switch",
       "features": [
@@ -6876,7 +7285,7 @@
         "Compras dentro del juego"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 70,
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000028503/Video/76b4aa00e73d148acfbbfc6d39fe5417becd760f1f0c98428618bf4505dc3505",
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000028503/Video/26308934692c13ea93b4de9ca4ac189de4ab61338c4595ada4768abec4fa65e1",
@@ -6927,8 +7336,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1695,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 1118.7,
+      "sale_end": "2026-11-05T07:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -6938,7 +7347,7 @@
         "nintendo:MX:70010000097756"
       ],
       "raw_id": "70070000031462",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700031462",
       "url_key": "monster-hunter-stories-3-twisted-reflection-deluxe-edition-switch-2",
       "features": [
@@ -6963,7 +7372,7 @@
         "Compras dentro del juego"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 34,
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000097756/Video/be50f9bd21508903590f356e52eba2c2429c3dec8bbeaf8e41bfe4529045105c",
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000097756/Video/61eaab9071098acc81021aa2660215e0fd3c41c18dc3f39f4f3fb5f185c43e24",
@@ -7014,8 +7423,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1883,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 1318.1,
+      "sale_end": "2026-11-05T07:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -7023,7 +7432,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000031463",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700031463",
       "url_key": "monster-hunter-stories-3-twisted-reflection-premium-deluxe-edition-switch-2",
       "features": [
@@ -7048,7 +7457,7 @@
         "Compras dentro del juego"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 30,
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000097756/Video/be50f9bd21508903590f356e52eba2c2429c3dec8bbeaf8e41bfe4529045105c",
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000097756/Video/61eaab9071098acc81021aa2660215e0fd3c41c18dc3f39f4f3fb5f185c43e24",
@@ -7101,8 +7510,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 80,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 64,
+      "sale_end": "2026-11-06T07:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -7110,7 +7519,7 @@
       ],
       "related_products": [],
       "raw_id": "70050000073617",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500073617",
       "url_key": "moonlight-peaks-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -7133,7 +7542,7 @@
         "Uso de alcohol"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 20,
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000126913/Video/d4492a0524fb51bc1e25e29ab7d7b51aad489d9d812fe8d06c21932105eff2df"
       ],
@@ -7186,7 +7595,7 @@
       "availability": [],
       "related_products": [],
       "raw_id": "70070000018343",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700018343",
       "url_key": "nba-2k24-black-mamba-edition-switch",
       "features": [
@@ -7271,7 +7680,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000030933",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700030933",
       "url_key": "nba-2k26-slam-edition-switch-2",
       "features": [
@@ -7338,7 +7747,7 @@
       "developers": [],
       "release_date": "2022-10-07T00:00:00.000Z",
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70050000057983/a1d330fb3a94710f8170d279aabe94eca29c5cd72916b8b8b1c20d15c64000f3",
-      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/75f2bff8098d43738abd524b2f492e59_1024",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/908dd4a24c2344448cac068d9824ea4f_1024",
       "screenshots": [
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000099217/96db5cbc020c2e1a7ca5d54e4efdafe520768311e65f1568e366d4eb265c3bdd",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000099217/79d77af66c759876cea184a02d9426791bab76864ea0b20100d2a9ac25d44db6",
@@ -7358,7 +7767,7 @@
       ],
       "related_products": [],
       "raw_id": "70050000057983",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500057983",
       "url_key": "no-mans-sky-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -7445,7 +7854,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000035433",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700035433",
       "url_key": "onimusha-wots-deluxe-edition-switch-2",
       "features": [
@@ -7526,7 +7935,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000035439",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700035439",
       "url_key": "onimusha-wots-premium-deluxe-edition-switch-2",
       "features": [
@@ -7610,7 +8019,7 @@
         "nintendo:MX:70010000098973"
       ],
       "raw_id": "70070000036529",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700036529",
       "url_key": "orbitals-deluxe-edition-switch-2",
       "features": [
@@ -7699,7 +8108,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000010201",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700010201",
       "url_key": "overcooked-2-gourmet-edition-switch",
       "features": [
@@ -7774,8 +8183,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 249,
-      "sale_price": 174.3,
-      "sale_end": "2026-10-17T06:59:59Z",
+      "sale_price": null,
+      "sale_end": null,
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -7786,7 +8195,7 @@
         "nintendo:MX:70010000112136"
       ],
       "raw_id": "70050000065231",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500065231",
       "url_key": "overcooked-2-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -7814,7 +8223,7 @@
       },
       "content_descriptors": [],
       "demo_nsuid": null,
-      "percent_off": 30,
+      "percent_off": 0,
       "videos": [],
       "edition_label": "Standard Edition"
     },
@@ -7867,7 +8276,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000029711",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700029711",
       "url_key": "pac-man-world-2-re-pac-deluxe-edition-switch-2",
       "features": [
@@ -7899,6 +8308,93 @@
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000100042/Video/d377a80ac8423248c956aeac218e70f8e836a3c1cb9d126e4e0d5acb9ca64482",
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000100042/Video/2383caff13c64a770ddaeb424ad49f8e5d36e96677590f4e8b65cde437e1ff2f"
+      ],
+      "edition_label": "ROM Bundle"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70070000041192",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch_2",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70070000041192",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Paquete de Fire Emblem™: Fortune’s Weave (Juego + Pase de expansión)",
+      "normalized_title": "Paquete de Fire Emblem: Fortune’s Weave (Juego + Pase de expansión)",
+      "description": null,
+      "product_type": "dlc",
+      "edition_type": "bundle",
+      "family_id": "de-fire-emblem-fortune-s-weave-e6f755a7",
+      "platforms": [
+        "SWITCH_2"
+      ],
+      "genres": [
+        "Estrategia",
+        "Juego de rol"
+      ],
+      "publishers": [
+        "Nintendo"
+      ],
+      "developers": [],
+      "release_date": "2026-09-17T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000041192/f1f3342cd63933cf67bfaf78a1c416eaebc6262306411bc48fea73bfb61821ef",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000126929/ff416413a2538f8e4076a8b60b0f831c75a1eb3892150ff6678f3ddedfe6ad0e",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000126929/fd6c879e721bda20368cc54211204e18bf901fd0592d978f2ee5b0c3ea62024f",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000126929/267e834209458da357b62923b565b64e3d165560430298a9e2f968ea6d86b4bf",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000126929/c55a797880e0d1f336206e33741471b43eebaaa0c81c937ec69b6288071e754b",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000126929/c325ef5a227059aa661bec4a94c6b5360d4e9380785df0f7c979abae361306c6",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000126929/b4755c9c15ce2c6a8b03d173f5532359a292df1d8f485afb8068a29c1393bb8d"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 2159,
+      "sale_price": null,
+      "sale_end": null,
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Nuevos lanzamientos",
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70070000041192",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
+      "sku": "7700041192",
+      "url_key": "fire-emblem-fortunes-weave-bundle-game-plus-expansion-pass-switch-2",
+      "features": [
+        "Elige el nivel de dificultad",
+        "Mejora tus atributos",
+        "Personajes con voz",
+        "Romance"
+      ],
+      "ways_to_play": [],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "b15",
+        "label": "+15 Años",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Violencia de fantasia",
+        "Lenguaje moderado",
+        "Temas insinuantes",
+        "Uso de alcohol",
+        "Compras dentro del juego"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 0,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000126929/Video/237bb7ac5eeb3e72853b773ef7f74e3b28bddc7eeb9158acbcb1e8862434a70b",
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000126929/Video/e04eca99e84505b3299969466d4c68deefaca638a9341101b9fb4c59789d9a32",
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000126929/Video/8b820b9ced01edeb4b1af4870a315dbea459fe9c75f871389ce0e346236bf64b"
       ],
       "edition_label": "ROM Bundle"
     },
@@ -7951,7 +8447,7 @@
         "nintendo:MX:70010000110440"
       ],
       "raw_id": "70050000064914",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500064914",
       "url_key": "animal-crossing-new-horizons-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [],
@@ -8007,7 +8503,7 @@
       "developers": [],
       "release_date": "2023-10-26T00:00:00.000Z",
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70050000065068/a294cad18c599b9638f92d9726a71e6d5ffe671a374a5adfedb8ce646f0feb99",
-      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/16079fefe67f4f0d91bc7be1b3045b8e_1024",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/5ee8b50385a64bb49ffb1a84dd583fd3_1024",
       "screenshots": [
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000111452/d018a0805ae6611d187a62616485b78932411bf0a0dc7e706f65c0b44a870dcd",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000111452/9d11412443a32373815867cc6138e3a62c266ca6c1bc2ead5f445c5991f1373e",
@@ -8030,7 +8526,7 @@
         "nintendo:MX:70010000111452"
       ],
       "raw_id": "70050000065068",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500065068",
       "url_key": "dave-the-diver-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -8113,7 +8609,7 @@
         "nintendo:MX:70010000089073"
       ],
       "raw_id": "70050000073921",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500073921",
       "url_key": "fitness-boxing-3-your-personal-trainer-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -8198,7 +8694,7 @@
         "nintendo:MX:70010000096829"
       ],
       "raw_id": "70050000056893",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500056893",
       "url_key": "kirby-and-the-forgotten-land-nintendo-switch-2-edition-plus-star-crossed-world-upgrade-pack-switch-2",
       "features": [
@@ -8285,7 +8781,7 @@
         "nintendo:MX:70010000094234"
       ],
       "raw_id": "70050000058383",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500058383",
       "url_key": "pokemon-legends-z-a-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -8374,7 +8870,7 @@
         "nintendo:MX:70010000084766"
       ],
       "raw_id": "70050000062489",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500062489",
       "url_key": "metroid-prime-4-beyond-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -8464,7 +8960,7 @@
         "nintendo:MX:70010000135059"
       ],
       "raw_id": "70050000081248",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500081248",
       "url_key": "pikmin-4-nintendo-switch-2-edition-plus-dandori-academy-upgrade-pack-switch-2",
       "features": [
@@ -8537,7 +9033,7 @@
       "developers": [],
       "release_date": "2026-02-05T00:00:00.000Z",
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70050000067309/95dbce46ffbe632089717c5dc5f8583584c617f0c8a8752145528f71615eb717",
-      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/7725d034e13e48718e66065150674e6a_1024",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/2d693b30492a40d2a71c3b56b2d8215b_1024",
       "screenshots": [
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000113451/35e901ab5cece58a66e2808a857c65ee15cbc658f414dd564b83854c1720fe4a",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000113451/76ddb275c0f01100ea55b35cebf6d77c4816792b5217dbdcaefc0013b0d35780",
@@ -8560,7 +9056,7 @@
         "nintendo:MX:70010000099268"
       ],
       "raw_id": "70050000067309",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500067309",
       "url_key": "super-bomberman-collection-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -8645,7 +9141,7 @@
         "nintendo:MX:70010000115567"
       ],
       "raw_id": "70050000069229",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500069229",
       "url_key": "super-mario-bros-wonder-nintendo-switch-2-edition-plus-meetup-in-bellabel-park-upgrade-pack-switch-2",
       "features": [
@@ -8738,7 +9234,7 @@
         "nintendo:MX:70010000096825"
       ],
       "raw_id": "70050000056961",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500056961",
       "url_key": "super-mario-party-jamboree-nintendo-switch-2-edition-plus-jamboree-tv-upgrade-pack-switch-2",
       "features": [
@@ -8825,7 +9321,7 @@
         "nintendo:MX:70010000096817"
       ],
       "raw_id": "70050000057001",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500057001",
       "url_key": "the-legend-of-zelda-breath-of-the-wild-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -8906,7 +9402,7 @@
         "nintendo:MX:70010000096821"
       ],
       "raw_id": "70050000056960",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500056960",
       "url_key": "the-legend-of-zelda-tears-of-the-kingdom-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -8992,7 +9488,7 @@
         "nintendo:MX:70010000000707"
       ],
       "raw_id": "70050000075154",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500075154",
       "url_key": "xenoblade-chronicles-2-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -9078,7 +9574,7 @@
         "nintendo:MX:70010000122696"
       ],
       "raw_id": "70050000075214",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500075214",
       "url_key": "xenoblade-chronicles-3-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [],
@@ -9160,7 +9656,7 @@
         "nintendo:MX:70010000088832"
       ],
       "raw_id": "70050000070210",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500070210",
       "url_key": "xenoblade-chronicles-x-definitive-edition-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -9254,7 +9750,7 @@
         "nintendo:MX:70010000122671"
       ],
       "raw_id": "70050000074839",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500074839",
       "url_key": "xenoblade-chronicles-definitive-edition-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -9338,7 +9834,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000037147",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700037147",
       "url_key": "pokemon-pokopia-bundle-game-plus-expansion-pass-switch-2",
       "features": [
@@ -9429,7 +9925,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000016793",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700016793",
       "url_key": "splatoon-3-bundle-game-plus-expansion-pass-switch",
       "features": [
@@ -9512,7 +10008,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000014505",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700014505",
       "url_key": "pokemon-scarlet-and-pokemon-violet-double-pack-switch",
       "features": [
@@ -9599,7 +10095,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000030721",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700030721",
       "url_key": "donkey-kong-bananza-bundle-game-plus-dk-island-and-emerald-rush-dlc-switch-2",
       "features": [
@@ -9687,7 +10183,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000030229",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700030229",
       "url_key": "wwe-2k25-farewell-tour-bundle-switch-2",
       "features": [
@@ -9780,7 +10276,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000000661",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700000661",
       "url_key": "xenoblade-chronicles-2-and-xenoblade-chronicles-2-expansion-pass-bundle-switch",
       "features": [
@@ -9867,7 +10363,7 @@
         "nintendo:MX:70010000066005"
       ],
       "raw_id": "70070000017952",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700017952",
       "url_key": "persona-5-tactica-digital-deluxe-edition-switch",
       "features": [
@@ -9941,8 +10437,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1399,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 629.55,
+      "sale_end": "2026-11-07T07:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -9950,7 +10446,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000030520",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700030520",
       "url_key": "pga-tour-2k25-legend-edition-year-2-switch-2",
       "features": [
@@ -9982,7 +10478,7 @@
         "Compras dentro del juego"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 55,
       "videos": [],
       "edition_label": "ROM Bundle"
     },
@@ -10026,8 +10522,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1199,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 539.55,
+      "sale_end": "2026-11-07T07:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -10035,7 +10531,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000030519",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700030519",
       "url_key": "pga-tour-2k25-pro-edition-switch-2",
       "features": [
@@ -10067,7 +10563,7 @@
         "Compras dentro del juego"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 55,
       "videos": [],
       "edition_label": "ROM Bundle"
     },
@@ -10122,7 +10618,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000018036",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700018036",
       "url_key": "pikmin-1-plus-2-bundle-switch",
       "features": [
@@ -10205,7 +10701,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000013722",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700013722",
       "url_key": "portal-companion-collection-switch",
       "features": [
@@ -10292,7 +10788,7 @@
         "nintendo:MX:70010000101665"
       ],
       "raw_id": "70070000032339",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700032339",
       "url_key": "pragmata-deluxe-edition-switch-2",
       "features": [
@@ -10375,7 +10871,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000034591",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700034591",
       "url_key": "assassins-creed-shadows-premium-edition-switch-2",
       "features": [
@@ -10458,7 +10954,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000023599",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700023599",
       "url_key": "prince-of-persia-the-lost-crown-complete-edition-switch",
       "features": [
@@ -10541,7 +11037,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000027548",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700027548",
       "url_key": "raidou-remastered-the-mystery-of-the-soulless-army-digital-deluxe-edition-switch-2",
       "features": [
@@ -10614,8 +11110,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1059,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 847.2,
+      "sale_end": "2026-11-01T06:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -10625,7 +11121,7 @@
         "nintendo:MX:70010000109876"
       ],
       "raw_id": "70070000032627",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700032627",
       "url_key": "reanimal-digital-deluxe-edition-switch-2",
       "features": [
@@ -10659,7 +11155,7 @@
         "Compras dentro del juego"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 20,
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000109876/Video/efc071860d54e374641d46f2e8d865952f7edb30330d23b9fb5273a66f49636a"
       ],
@@ -10716,7 +11212,7 @@
       ],
       "related_products": [],
       "raw_id": "70050000066614",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500066614",
       "url_key": "red-dead-redemption-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -10792,8 +11288,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1507,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 1054.9,
+      "sale_end": "2026-11-05T07:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -10803,7 +11299,7 @@
         "nintendo:MX:70010000101675"
       ],
       "raw_id": "70070000031398",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700031398",
       "url_key": "resident-evil-requiem-deluxe-edition-switch-2",
       "features": [
@@ -10834,7 +11330,7 @@
         "Compras dentro del juego"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 30,
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000101675/Video/3afb1e8476afa64e2daecbef88c5dd49b60972379f62b566407b2c39eaeb5cdd",
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000101675/Video/58d0eae115a7b67e6fc104c9d2cf6421879e02d8a26f6dd0532b8ff01cfe599a"
@@ -10890,7 +11386,7 @@
       ],
       "related_products": [],
       "raw_id": "70050000059270",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500059270",
       "url_key": "romancing-saga-2-revenge-of-the-seven-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -10977,7 +11473,7 @@
         "nintendo:MX:70050000057075"
       ],
       "raw_id": "70070000027085",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700027085",
       "url_key": "rune-factory-guardians-of-azuma-digital-deluxe-edition-switch",
       "features": [
@@ -11064,7 +11560,7 @@
         "nintendo:MX:70070000027085"
       ],
       "raw_id": "70050000057075",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500057075",
       "url_key": "rune-factory-guardians-of-azuma-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -11145,7 +11641,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000040290",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700040290",
       "url_key": "runescape-dragonwilds-deluxe-edition-switch-2",
       "features": [
@@ -11230,7 +11726,7 @@
       ],
       "related_products": [],
       "raw_id": "70050000057013",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500057013",
       "url_key": "shadow-labyrinth-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -11307,7 +11803,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000027475",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700027475",
       "url_key": "shadow-labyrinth-deluxe-edition-switch",
       "features": [
@@ -11364,7 +11860,7 @@
       "developers": [],
       "release_date": "2025-06-05T00:00:00.000Z",
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000029835/174adb80c537e634ef1a036e26a1f18eef1364d9e66712b3539b6ffa16ecf440",
-      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/cec90af40f154c7bb9e6eb6b48d1e46a_1024",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/9fe792dd2bfb48da8d33cf1636fa02e1_1024",
       "screenshots": [
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000097159/f0c5024c33cc07a18a2dbd55b62596a522f0a1fcd3988db564774f159134b7cf",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000097159/c9cee6145468f21a748da44ba118813e886607828e4604bfecf09d4d2bbb9943",
@@ -11374,8 +11870,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1819,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 909.5,
+      "sale_end": "2026-11-07T07:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -11383,7 +11879,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000029835",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700029835",
       "url_key": "sid-meiers-civilization-vii-settlers-edition-switch",
       "features": [
@@ -11417,7 +11913,7 @@
         "Compras dentro del juego"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 50,
       "videos": [],
       "edition_label": "ROM Bundle"
     },
@@ -11450,7 +11946,7 @@
       "developers": [],
       "release_date": "2025-06-05T00:00:00.000Z",
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000023898/8e01917c11e5cd6bff7320f2231f9ced469a477523f2fc012f7891b39a34347b",
-      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/cec90af40f154c7bb9e6eb6b48d1e46a_1024",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/9fe792dd2bfb48da8d33cf1636fa02e1_1024",
       "screenshots": [
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000097159/f0c5024c33cc07a18a2dbd55b62596a522f0a1fcd3988db564774f159134b7cf",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000097159/c9cee6145468f21a748da44ba118813e886607828e4604bfecf09d4d2bbb9943",
@@ -11460,8 +11956,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1499,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 749.5,
+      "sale_end": "2026-11-07T07:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -11469,7 +11965,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000023898",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700023898",
       "url_key": "sid-meiers-civilization-vii-deluxe-edition-switch",
       "features": [
@@ -11503,7 +11999,7 @@
         "Compras dentro del juego"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 50,
       "videos": [],
       "edition_label": "ROM Bundle"
     },
@@ -11536,7 +12032,7 @@
       "developers": [],
       "release_date": "2025-06-05T00:00:00.000Z",
       "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70050000057147/1ca572f11b42c1851e4c24afe3988bf24868641021b0bfcde89165371e8185c7",
-      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/cec90af40f154c7bb9e6eb6b48d1e46a_1024",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/9fe792dd2bfb48da8d33cf1636fa02e1_1024",
       "screenshots": [
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000097159/f0c5024c33cc07a18a2dbd55b62596a522f0a1fcd3988db564774f159134b7cf",
         "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000097159/c9cee6145468f21a748da44ba118813e886607828e4604bfecf09d4d2bbb9943",
@@ -11555,7 +12051,7 @@
       ],
       "related_products": [],
       "raw_id": "70050000057147",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500057147",
       "url_key": "sid-meiers-civilization-vii-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -11642,7 +12138,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000017787",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700017787",
       "url_key": "sonic-origins-plus-switch",
       "features": [
@@ -11714,8 +12210,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 1220,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 1037,
+      "sale_end": "2026-11-17T07:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -11723,7 +12219,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000038490",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700038490",
       "url_key": "star-trek-voyager-across-the-unknown-captains-collection-switch-2",
       "features": [
@@ -11745,7 +12241,7 @@
         "Lenguaje"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 15,
       "videos": [
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000108172/Video/86de55cacdf3ef85e8f211822d8179d0ca11ffb7c7401b97a1fd1fc60297c5b2",
         "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000108172/Video/d4df5113911f7f2f6935641eb0941b3808572816199b3e9969f77637557e7471",
@@ -11805,7 +12301,7 @@
         "nintendo:MX:70010000108172"
       ],
       "raw_id": "70070000033065",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700033065",
       "url_key": "star-trek-voyager-across-the-unknown-deluxe-edition-switch-2",
       "features": [
@@ -11885,7 +12381,7 @@
         "nintendo:MX:70010000105384"
       ],
       "raw_id": "70050000061921",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500061921",
       "url_key": "stardew-valley-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [],
@@ -11962,7 +12458,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000037248",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700037248",
       "url_key": "starseeker-astroneer-expeditions-founders-edition-switch-2",
       "features": [
@@ -12054,7 +12550,7 @@
         "nintendo:MX:70050000057069"
       ],
       "raw_id": "70070000027086",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700027086",
       "url_key": "story-of-seasons-grand-bazaar-digital-deluxe-edition-switch",
       "features": [
@@ -12136,7 +12632,7 @@
         "nintendo:MX:70070000027086"
       ],
       "raw_id": "70050000057069",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500057069",
       "url_key": "story-of-seasons-grand-bazaar-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -12210,7 +12706,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000027440",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700027440",
       "url_key": "street-fighter-6-years-1-2-fighters-edition-switch-2",
       "features": [],
@@ -12294,7 +12790,7 @@
       ],
       "related_products": [],
       "raw_id": "70050000069097",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7500069097",
       "url_key": "subnautica-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -12379,7 +12875,7 @@
         "nintendo:MX:70010000120682"
       ],
       "raw_id": "70050000071291",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7500071291",
       "url_key": "tales-of-the-shire-a-the-lord-of-the-rings-game-nintendo-switch-2-edition-upgrade-pack-switch-2",
       "features": [
@@ -12456,7 +12952,7 @@
         "nintendo:MX:70010000039366"
       ],
       "raw_id": "70070000024444",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700024444",
       "url_key": "teenage-mutant-ninja-turtles-shredders-revenge-ultimate-edition-switch",
       "features": [
@@ -12545,7 +13041,7 @@
         "nintendo:MX:70010000116884"
       ],
       "raw_id": "70070000033129",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700033129",
       "url_key": "the-adventures-of-elliot-the-millennium-tales-digital-deluxe-edition-switch-2",
       "features": [
@@ -12632,7 +13128,7 @@
         "nintendo:MX:70010000103529"
       ],
       "raw_id": "70070000038015",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700038015",
       "url_key": "the-elder-scrolls-iv-oblivion-remastered-deluxe-edition-switch-2",
       "features": [
@@ -12712,7 +13208,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000000783",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700000783",
       "url_key": "the-legend-of-zelda-breath-of-the-wild-and-the-legend-of-zelda-breath-of-the-wild-expansion-pass-bundle-switch",
       "features": [
@@ -12790,7 +13286,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000025386",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700025386",
       "url_key": "tony-hawks-pro-skater-3-plus-4-digital-deluxe-edition-switch",
       "features": [],
@@ -12851,8 +13347,8 @@
       ],
       "price_currency": "MXN",
       "regular_price": 999,
-      "sale_price": null,
-      "sale_end": null,
+      "sale_price": 549.45,
+      "sale_end": "2026-11-01T06:59:59Z",
       "free_to_play": false,
       "demo_available": true,
       "availability": [
@@ -12860,7 +13356,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000027243",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700027243",
       "url_key": "tony-hawks-pro-skater-3-plus-4-standard-edition-70070000027243-switch",
       "features": [],
@@ -12882,7 +13378,7 @@
         "Interacción de usuarios"
       ],
       "demo_nsuid": null,
-      "percent_off": 0,
+      "percent_off": 45,
       "videos": [],
       "edition_label": "ROM Bundle"
     },
@@ -12935,7 +13431,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000030448",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700030448",
       "url_key": "two-point-museum-explorer-edition-switch-2",
       "features": [],
@@ -13007,7 +13503,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000014933",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:18+00:00",
       "sku": "7700014933",
       "url_key": "xenoblade-chronicles-3-plus-xenoblade-chronicles-3-expansion-pass-switch",
       "features": [],
@@ -13087,7 +13583,7 @@
       ],
       "related_products": [],
       "raw_id": "70070000030873",
-      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "fetched_at": "2026-10-26T19:19:19+00:00",
       "sku": "7700030873",
       "url_key": "yakuza-kiwami-3-and-dark-ties-deluxe-edition-switch-2",
       "features": [
