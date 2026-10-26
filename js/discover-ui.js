@@ -1,5 +1,5 @@
-import { curatedGenreLabel } from "./catalog-labels.js";
 import { isFavorite, toggleFavorite } from "./favorites.js";
+import { reasonFor } from "./recommend-v2.js?v=v132";
 
 let profileProvider = () => null;
 let archetypesProvider = () => [];
@@ -63,7 +63,7 @@ function createMoodCard(game) {
   title.textContent = game.title;
 
   const copy = document.createElement("p");
-  copy.textContent = game.why || (game.genres ?? []).map(curatedGenreLabel).join(" · ");
+  copy.textContent = reasonFor(game, profileProvider());
 
   const button = document.createElement("button");
   button.type = "button";

@@ -5,8 +5,8 @@ const html = readFileSync("index.html", "utf8");
 const css = readFileSync("css/theme-bouquet.css", "utf8");
 const js = readFileSync("js/bouquet.js", "utf8");
 
-assert.ok(html.includes('href="css/theme-bouquet.css?v=ui15"'), "index.html no carga theme-bouquet.css");
-assert.ok(html.includes('src="js/bouquet.js?v=v131"'), "index.html no carga bouquet.js");
+assert.ok(html.includes('href="css/theme-bouquet.css?v=ui16"'), "index.html no carga theme-bouquet.css");
+assert.ok(html.includes('src="js/bouquet.js?v=v132"'), "index.html no carga bouquet.js");
 assert.ok(html.indexOf("theme-bouquet.css") > html.indexOf("screens/profile.css"), "theme-bouquet.css debe cargar al final");
 console.log("[OK] Midnight Bouquet cargado al final de la cascada");
 
@@ -21,5 +21,25 @@ for (const need of ["prefers-reduced-motion", "ArrowUp", "heartagram:favorites-c
   assert.ok(js.includes(need), `bouquet.js no incluye ${need}`);
 }
 console.log("[OK] Decoraciones propias, movimiento reducido, guardado y easter egg");
+
+// Emojis add life, but a screen reader should not read them out.
+const bare = html.replace(/<span[^>]*aria-hidden="true"[^>]*>[^<]*<\/span>/g, "").replace(/<script[\s\S]*?<\/script>/g, "");
+const loose = bare.match(/\p{Emoji_Presentation}/gu) ?? [];
+assert.deepEqual(loose, [], `Emojis fuera de aria-hidden en index.html: ${loose.join(" ")}`);
+assert.ok((html.match(/<span[^>]*aria-hidden="true"[^>]*>\p{Emoji_Presentation}/gu) ?? []).length >= 10, "Faltan emojis en pestañas y cifras");
+console.log("[OK] Los emojis del HTML están ocultos para lectores de pantalla");
+
+// The saved-game emoji and the guide celebration must respect reduced motion and page load.
+assert.match(js, /function floatEmoji[\s\S]*?if \(reduceMotion\) return;/, "floatEmoji debe respetar movimiento reducido");
+assert.match(css, /@media \(prefers-reduced-motion: reduce\) {\s*\.bq-float/, "Falta el CSS de movimiento reducido para .bq-float");
+assert.match(js, /document.body.dataset.screen === "getting-started"/, "La celebración solo debe ocurrir en la guía");
+console.log("[OK] Animaciones de guardado y celebración respetan movimiento reducido");
+
+// All visible text is Spanish.
+const ENGLISH = /PLAYER TWO|UNLOCKED|SAVING|SAVED TO|MOOD MATCH|Good games|happier me/;
+for (const [name, text] of [["index.html", html], ["js/bouquet.js", js], ["js/discover-ui.js", readFileSync("js/discover-ui.js", "utf8")]]) {
+  assert.doesNotMatch(text, ENGLISH, `Texto en inglés en ${name}`);
+}
+console.log("[OK] Sin frases en inglés en la interfaz");
 
 console.log("\n[OK] QA de Midnight Bouquet completo");

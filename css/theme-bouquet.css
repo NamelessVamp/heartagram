@@ -641,6 +641,41 @@
     }
   }
 
+  /* ---------- Floating emoji when a game is saved ---------- */
+  .bq-float {
+    position: fixed;
+    z-index: 65;
+    font-size: 1.75rem;
+    line-height: 1;
+    pointer-events: none;
+    translate: -50% -50%;
+    animation: bq-float 1.1s var(--ease) forwards;
+  }
+
+  @keyframes bq-float {
+    0% {
+      opacity: 0;
+      scale: 0.5;
+    }
+
+    20% {
+      opacity: 1;
+      scale: 1.25;
+    }
+
+    100% {
+      opacity: 0;
+      scale: 1;
+      translate: -50% calc(-50% - 4.5rem);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bq-float {
+      display: none;
+    }
+  }
+
   /* ---------- Easter egg ---------- */
   .bq-burst .bq-butterfly {
     --bq-x: 0;

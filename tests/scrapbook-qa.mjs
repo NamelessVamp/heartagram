@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 const html = readFileSync("index.html", "utf8");
 const css = readFileSync("css/theme-scrapbook.css", "utf8");
 
-assert.ok(html.includes('href="css/theme-scrapbook.css?v=ui15"'), "Falta theme-scrapbook.css con ui15");
+assert.ok(html.includes('href="css/theme-scrapbook.css?v=ui16"'), "Falta theme-scrapbook.css con ui16");
 assert.ok(html.indexOf("theme-scrapbook.css") > html.indexOf("theme-bouquet.css"), "Scrapbook debe cargar después de Midnight Bouquet");
 assert.ok(html.includes("family=Special+Elite"), "Falta la fuente de máquina de escribir");
 console.log("[OK] Scrapbook cargado al final de la cascada con su tipografía");

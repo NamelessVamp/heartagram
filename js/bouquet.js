@@ -108,8 +108,7 @@ function showToast(text) {
 const KONAMI = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
 let konamiIndex = 0;
 
-function burst() {
-  showToast("✦ JUGADORA 2 DESBLOQUEADA ✦");
+function petals() {
   if (reduceMotion) return;
   const layer = make("div", "bq-burst");
   layer.setAttribute("aria-hidden", "true");
@@ -125,9 +124,74 @@ function burst() {
   setTimeout(() => layer.remove(), 5200);
 }
 
+function burst() {
+  showToast("✦ JUGADORA 2 DESBLOQUEADA ✦");
+  petals();
+}
+
+// An emoji that rises from where the user just tapped, so saving a game feels alive.
+let lastPoint = null;
+
+function floatEmoji(emoji) {
+  if (reduceMotion) return;
+  const node = make("span", "bq-float");
+  node.textContent = emoji;
+  node.setAttribute("aria-hidden", "true");
+  const point = lastPoint ?? { x: window.innerWidth / 2, y: window.innerHeight * 0.75 };
+  node.style.left = `${point.x}px`;
+  node.style.top = `${point.y}px`;
+  document.body.append(node);
+  node.addEventListener("animationend", () => node.remove(), { once: true });
+  setTimeout(() => node.remove(), 1600);
+}
+
+function trackTapPoint() {
+  // detail === 0 means the click came from the keyboard, so use the focused control.
+  window.addEventListener("click", (event) => {
+    const target = document.activeElement;
+    if (event.detail === 0 && target instanceof HTMLElement) {
+      const box = target.getBoundingClientRect();
+      lastPoint = { x: box.left + box.width / 2, y: box.top + box.height / 2 };
+    } else {
+      lastPoint = { x: event.clientX, y: event.clientY };
+    }
+  }, { capture: true });
+}
+
+function announceChange(event, { listName, addedText, emoji }) {
+  const { ids = [], changedId = null } = event.detail ?? {};
+  if (changedId === null) {
+    showToast(`${listName} quedó vacía`);
+    return;
+  }
+  const added = ids.includes(changedId);
+  showToast(added ? addedText : `Quitado de ${listName}`);
+  if (added) floatEmoji(emoji);
+}
+
+function celebrateGuide() {
+  showToast("🎉 ¡Tu Switch 2 quedó lista!");
+  petals();
+}
+
+// Only celebrate when the last step is ticked on the guide screen, not on page load.
+function watchGuideCompletion() {
+  const screen = document.querySelector('[data-screen="getting-started"]');
+  if (!screen) return;
+  let wasComplete = screen.classList.contains("is-complete");
+  new MutationObserver(() => {
+    const complete = screen.classList.contains("is-complete");
+    if (complete && !wasComplete && document.body.dataset.screen === "getting-started") celebrateGuide();
+    wasComplete = complete;
+  }).observe(screen, { attributes: true, attributeFilter: ["class"] });
+}
+
 function listen() {
-  window.addEventListener("heartagram:favorites-changed", () => showToast("♡ MI LISTA ACTUALIZADA ✦"));
-  window.addEventListener("heartagram:library-changed", () => showToast("◆ MI BIBLIOTECA ACTUALIZADA ✦"));
+  trackTapPoint();
+  window.addEventListener("heartagram:favorites-changed", (event) =>
+    announceChange(event, { listName: "Mi lista", addedText: "💗 Guardado en Mi lista", emoji: "💗" }));
+  window.addEventListener("heartagram:library-changed", (event) =>
+    announceChange(event, { listName: "Mi biblioteca", addedText: "🎮 Ya está en Mi biblioteca", emoji: "🎮" }));
   window.addEventListener("keydown", (event) => {
     const key = event.key.length === 1 ? event.key.toLowerCase() : event.key;
     konamiIndex = key === KONAMI[konamiIndex] ? konamiIndex + 1 : Number(key === KONAMI[0]);
@@ -306,3 +370,4 @@ decorateHeaderMotifs();
 decorateQuizOptions();
 decorateTarotMotif();
 decorateCatalogHearts();
+watchGuideCompletion();

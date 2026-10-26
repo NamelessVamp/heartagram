@@ -7,26 +7,26 @@
     <meta name="theme-color" content="#0a0a18" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2216%22 fill=%22%23080608%22/><text x=%2232%22 y=%2243%22 text-anchor=%22middle%22 font-size=%2236%22 fill=%22%23ff9fc9%22>H</text></svg>" />
     <title>Heartagram</title>
-    <script type="module" src="js/main.js?v=v131"></script>
-    <script type="module" src="js/bouquet.js?v=v131"></script>
+    <script type="module" src="js/main.js?v=v132"></script>
+    <script type="module" src="js/bouquet.js?v=v132"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Dancing+Script:wght@500;600&family=Special+Elite&display=swap" />
-    <link rel="stylesheet" href="css/tokens.css?v=ui15" />
-    <link rel="stylesheet" href="css/base.css?v=ui15" />
-    <link rel="stylesheet" href="css/layout.css?v=ui15" />
-    <link rel="stylesheet" href="css/components.css?v=ui15" />
-    <link rel="stylesheet" href="css/screens/home.css?v=ui15" />
-    <link rel="stylesheet" href="css/screens/quiz.css?v=ui15" />
-    <link rel="stylesheet" href="css/screens/discover.css?v=ui15" />
-    <link rel="stylesheet" href="css/screens/catalog.css?v=ui15" />
-    <link rel="stylesheet" href="css/screens/nintendo-product-detail.css?v=ui15" />
-    <link rel="stylesheet" href="css/screens/collection.css?v=ui15" />
-    <link rel="stylesheet" href="css/screens/getting-started.css?v=ui15" />
-    <link rel="stylesheet" href="css/screens/secondary.css?v=ui15" />
-    <link rel="stylesheet" href="css/screens/profile.css?v=ui15" />
-    <link rel="stylesheet" href="css/theme-bouquet.css?v=ui15" />
-    <link rel="stylesheet" href="css/theme-scrapbook.css?v=ui15" />
+    <link rel="stylesheet" href="css/tokens.css?v=ui16" />
+    <link rel="stylesheet" href="css/base.css?v=ui16" />
+    <link rel="stylesheet" href="css/layout.css?v=ui16" />
+    <link rel="stylesheet" href="css/components.css?v=ui16" />
+    <link rel="stylesheet" href="css/screens/home.css?v=ui16" />
+    <link rel="stylesheet" href="css/screens/quiz.css?v=ui16" />
+    <link rel="stylesheet" href="css/screens/discover.css?v=ui16" />
+    <link rel="stylesheet" href="css/screens/catalog.css?v=ui16" />
+    <link rel="stylesheet" href="css/screens/nintendo-product-detail.css?v=ui16" />
+    <link rel="stylesheet" href="css/screens/collection.css?v=ui16" />
+    <link rel="stylesheet" href="css/screens/getting-started.css?v=ui16" />
+    <link rel="stylesheet" href="css/screens/secondary.css?v=ui16" />
+    <link rel="stylesheet" href="css/screens/profile.css?v=ui16" />
+    <link rel="stylesheet" href="css/theme-bouquet.css?v=ui16" />
+    <link rel="stylesheet" href="css/theme-scrapbook.css?v=ui16" />
   </head>
   <body data-screen="intro">
 
@@ -120,14 +120,14 @@
             <div class="home-stats">
               <button type="button" class="home-stat" data-action="to-wishlist">
                 <span id="home-favorite-count" class="home-stat-value">0</span>
-                <span class="home-stat-label">en Me interesa</span>
+                <span class="home-stat-label"><span aria-hidden="true">💗</span> en Me interesa</span>
               </button>
               <button type="button" class="home-stat" data-action="to-wishlist">
                 <span id="home-owned-count" class="home-stat-value">0</span>
-                <span class="home-stat-label">en Mi biblioteca</span>
+                <span class="home-stat-label"><span aria-hidden="true">🎮</span> en Mi biblioteca</span>
               </button>
               <button type="button" class="home-stat" data-action="to-duo">
-                <span class="home-stat-value">2P</span>
+                <span class="home-stat-value" aria-hidden="true">👯</span>
                 <span class="home-stat-label">Jugar con Inti</span>
               </button>
             </div>
@@ -282,16 +282,16 @@
         </article>
 
         <div class="discover-tabs" role="tablist" aria-label="Secciones de Descubrir">
-          <button type="button" class="discover-tab" role="tab" data-discover-tab="foryou" aria-controls="list-for-you list-might-hook">Para ti</button>
-          <button type="button" class="discover-tab" role="tab" data-discover-tab="moods" aria-controls="discover-mood-results">Moods</button>
-          <button type="button" class="discover-tab" role="tab" data-discover-tab="duo" aria-controls="discover-duo">Jugar con Inti</button>
-          <button type="button" class="discover-tab" role="tab" data-discover-tab="zone" aria-controls="list-out-of-zone">Sal de tu zona</button>
+          <button type="button" class="discover-tab" role="tab" data-discover-tab="foryou" aria-controls="list-for-you list-might-hook"><span aria-hidden="true">✨</span> Para ti</button>
+          <button type="button" class="discover-tab" role="tab" data-discover-tab="moods" aria-controls="discover-mood-results"><span aria-hidden="true">🌙</span> Moods</button>
+          <button type="button" class="discover-tab" role="tab" data-discover-tab="duo" aria-controls="discover-duo"><span aria-hidden="true">👯</span> Jugar con Inti</button>
+          <button type="button" class="discover-tab" role="tab" data-discover-tab="zone" aria-controls="list-out-of-zone"><span aria-hidden="true">🦋</span> Sal de tu zona</button>
         </div>
         <section class="discover-section" aria-labelledby="discover-for-you-title" role="tabpanel" data-discover-panel="foryou">
           <header class="discover-section-heading">
             <p class="discover-section-kicker">Tu punto de partida</p>
             <h3 id="discover-for-you-title" class="discover-section-title">Para ti</h3>
-            <button type="button" class="btn btn-ghost discover-reroll" data-action="reroll-recommendations">Otras opciones ✦</button>
+            <button type="button" class="btn btn-ghost discover-reroll" data-action="reroll-recommendations">Otras opciones <span aria-hidden="true">🎲</span></button>
             <p class="discover-section-copy">
               Los que mejor encajan con tu perfil.
             </p>
@@ -316,10 +316,10 @@
             </p>
           </header>
           <div class="discover-moods" role="group" aria-label="Filtrar por mood">
-            <button type="button" class="discover-mood-button" data-discover-mood="DARK">Oscuro</button>
-            <button type="button" class="discover-mood-button" data-discover-mood="RELAXED">Relajado</button>
-            <button type="button" class="discover-mood-button" data-discover-mood="COMPETITIVE">Competitivo</button>
-            <button type="button" class="discover-mood-button" data-discover-mood="EXPLORE">Explorar</button>
+            <button type="button" class="discover-mood-button" data-discover-mood="DARK"><span aria-hidden="true">🦇</span> Oscuro</button>
+            <button type="button" class="discover-mood-button" data-discover-mood="RELAXED"><span aria-hidden="true">🌿</span> Relajado</button>
+            <button type="button" class="discover-mood-button" data-discover-mood="COMPETITIVE"><span aria-hidden="true">⚔️</span> Competitivo</button>
+            <button type="button" class="discover-mood-button" data-discover-mood="EXPLORE"><span aria-hidden="true">🧭</span> Explorar</button>
           </div>
           <div id="discover-mood-results" class="discover-mood-results"></div>
         </section>
@@ -459,7 +459,7 @@
             aria-controls="collection-panel-interested"
             data-collection-tab="interested"
           >
-            <span>Me interesa</span>
+            <span><span aria-hidden="true">💗</span> Me interesa</span>
             <span id="collection-interested-count" class="collection-tab-count">0</span>
           </button>
           <button
@@ -470,7 +470,7 @@
             aria-controls="collection-panel-owned"
             data-collection-tab="owned"
           >
-            <span>Mi biblioteca</span>
+            <span><span aria-hidden="true">🎮</span> Mi biblioteca</span>
             <span id="collection-owned-count" class="collection-tab-count">0</span>
           </button>
         </div>
