@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { adaptNintendoCatalog, displayTitle } from "../js/nintendo-catalog.js";
+import { countOnSale, queryCatalog } from "../js/catalog.js";
 const payload = JSON.parse(await readFile(new URL("../data/nintendo_catalog.json", import.meta.url), "utf-8"));
 const catalog = adaptNintendoCatalog(payload);
 assert.equal(catalog.games.length, 318);
@@ -42,3 +43,17 @@ assert.equal(after.price_label, "$97.00");
 const onSaleNow = adaptNintendoCatalog(payload, Date.parse("2026-10-26T12:00:00Z")).games.filter((game) => game.sale_price !== null);
 assert.equal(onSaleNow.length, 3, "El 26 de octubre solo siguen vigentes 3 ofertas");
 console.log("[OK] Una oferta vencida deja de mostrarse y la vigente conserva su precio y descuento");
+
+// Filter, count and sort by discount, with the clock fixed so the result does not drift.
+const snapshot = adaptNintendoCatalog(payload, Date.parse("2026-10-26T12:00:00Z"));
+assert.equal(countOnSale(snapshot), 3);
+const sales = queryCatalog(snapshot, { onSale: true, sort: "DISCOUNT" });
+assert.equal(sales.total, 3);
+assert.ok(sales.games.every((game) => game.sale_price !== null && game.percent_off > 0));
+assert.ok(sales.games.every((game, index, list) => index === 0 || list[index - 1].percent_off >= game.percent_off), "Orden por descuento");
+assert.equal(queryCatalog(snapshot, {}).total, 318, "Sin filtro se ven todos");
+const sample = snapshot.games.find((game) => game.name === "Among Us");
+assert.equal(sample.regular_price_label, "$97.00");
+assert.equal(snapshot.meta.priced_at, payload.generated_at);
+assert.equal(sample.priced_at, payload.generated_at);
+console.log("[OK] Explorar puede filtrar y ordenar por oferta, y cada juego conoce la fecha de sus precios");

@@ -33,14 +33,18 @@ function activeSalePrice(product, now) {
   return Number.isFinite(end) && end <= now ? null : sale;
 }
 
-function priceLabel(product, now) {
-  const value = activeSalePrice(product, now) ?? numericPrice(product.regular_price);
+function formatMoney(value, currency) {
   if (value === null) return null;
   return new Intl.NumberFormat("es-MX", {
     style: "currency",
-    currency: product.price_currency || "MXN",
+    currency: currency || "MXN",
     maximumFractionDigits: 2,
   }).format(value);
+}
+
+function priceLabel(product, now) {
+  const value = activeSalePrice(product, now) ?? numericPrice(product.regular_price);
+  return formatMoney(value, product.price_currency);
 }
 
 function platformDetails(platforms) {
@@ -59,7 +63,7 @@ export function displayTitle(raw) {
     .trim();
 }
 
-export function adaptNintendoProduct(product, now = Date.now()) {
+export function adaptNintendoProduct(product, now = Date.now(), pricedAt = null) {
   const nsuid = String(product.nsuid ?? "").trim();
   if (!/^\d{10,20}$/.test(nsuid)) throw new TypeError("Invalid Nintendo NSUID");
   const title = displayTitle(product.title || product.normalized_title) || nsuid;
@@ -92,6 +96,8 @@ export function adaptNintendoProduct(product, now = Date.now()) {
     sale_price: onSale ? product.sale_price : null,
     price_currency: product.price_currency || "MXN",
     price_label: priceLabel(product, now),
+    regular_price_label: formatMoney(numericPrice(product.regular_price), product.price_currency),
+    priced_at: pricedAt,
     summary: product.description || "Producto oficial de Nintendo Store Mexico.",
     storyline: null,
     developers: Array.isArray(product.developers) ? product.developers : [],
@@ -120,8 +126,9 @@ export function adaptNintendoProduct(product, now = Date.now()) {
 export function adaptNintendoCatalog(payload, now = Date.now()) {
   const products = Array.isArray(payload?.products) ? payload.products : payload?.games;
   if (!Array.isArray(products)) throw new TypeError("Nintendo catalog has no products array");
+  const pricedAt = payload?.generated_at ?? null;
   return {
-    meta: { source: "nintendo_mx", region: "MX", locale: "es-MX", static: true },
-    games: products.map((product) => adaptNintendoProduct(product, now)),
+    meta: { source: "nintendo_mx", region: "MX", locale: "es-MX", static: true, priced_at: pricedAt },
+    games: products.map((product) => adaptNintendoProduct(product, now, pricedAt)),
   };
 }

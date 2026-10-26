@@ -3,13 +3,13 @@ const DATA_VERSION = "130";
 
 import { computeProfile } from "./profile.js";
 import { updateAppShellNavigation } from "./app-shell.js";
-import { initializeHomeCounts, renderHomeDashboard } from "./home-dashboard.js?v=v133";
-import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js?v=v133";
-import { initializeCollectionUI } from "./collection-ui.js?v=v133";
-import { buildRecommendations, omitOwned } from "./recommend-v2.js?v=v133";
-import { activateDiscoverTab, initializeDiscoverTabs } from "./discover-tabs.js?v=v133";
+import { initializeHomeCounts, renderHomeDashboard } from "./home-dashboard.js?v=v134";
+import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js?v=v134";
+import { initializeCollectionUI } from "./collection-ui.js?v=v134";
+import { buildRecommendations, omitOwned } from "./recommend-v2.js?v=v134";
+import { activateDiscoverTab, initializeDiscoverTabs } from "./discover-tabs.js?v=v134";
 
-import * as ui from "./ui.js?v=v133";
+import * as ui from "./ui.js?v=v134";
 
 import { clearFavorites, getFavoriteIds, toggleFavorite } from "./favorites.js";
 
@@ -22,14 +22,14 @@ import {
 import {
   initializeCatalogExplorer,
   openCatalogGameDetails,
-} from "./catalog-ui.js?v=v133";
+} from "./catalog-ui.js?v=v134";
 
 import {
   favoriteIdForCatalogGame,
   loadCatalog,
   resolveCatalogFavorites,
   splitFavoriteIds,
-} from "./catalog.js?v=v133";
+} from "./catalog.js?v=v134";
 import { getOwnedGameIds, setOwnedGame } from "./library.js";
 import { initializeGettingStarted } from "./getting-started.js";
 

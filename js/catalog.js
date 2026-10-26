@@ -1,5 +1,5 @@
 const DATA_VERSION = "130";
-import { NINTENDO_INDEX_PATH, adaptNintendoCatalog } from "./nintendo-catalog.js?v=v133";
+import { NINTENDO_INDEX_PATH, adaptNintendoCatalog } from "./nintendo-catalog.js?v=v134";
 
 // Nintendo-only catalog runtime for the public static build.
 const DEFAULT_PAGE_SIZE = 24;
@@ -84,6 +84,10 @@ export async function resolveCatalogFavorites(values) {
   return findCatalogGamesByIds(await loadCatalog(), catalogIds);
 }
 
+export function countOnSale(catalog) {
+  return catalog.games.filter((game) => game.sale_price !== null).length;
+}
+
 export function getCatalogFacets(catalog) {
   const genres = new Set(), modes = new Set(), platforms = new Set(), types = new Set();
   for (const game of catalog.games) {
@@ -102,6 +106,10 @@ function matchesValue(values, selected) {
 }
 
 function compareGames(left, right, sort) {
+  if (sort === "DISCOUNT") {
+    const difference = (right.percent_off ?? 0) - (left.percent_off ?? 0);
+    if (difference) return difference;
+  }
   if (sort === "NEWEST") {
     const difference = (right.release_year ?? -1) - (left.release_year ?? -1);
     if (difference) return difference;
@@ -111,7 +119,7 @@ function compareGames(left, right, sort) {
 
 export function queryCatalog(catalog, {
   query = "", platform = "ALL", genre = "ALL", mode = "ALL",
-  gameType = "ALL", sort = "NAME", page = 1, pageSize = DEFAULT_PAGE_SIZE,
+  gameType = "ALL", onSale = false, sort = "NAME", page = 1, pageSize = DEFAULT_PAGE_SIZE,
 } = {}) {
   const safePageSize = Math.max(1, Number(pageSize) || DEFAULT_PAGE_SIZE);
   const normalizedQuery = normalizeText(query);
@@ -121,6 +129,7 @@ export function queryCatalog(catalog, {
     .filter((game) => matchesValue(game.genres, genre))
     .filter((game) => matchesValue(game.ways_to_play, mode))
     .filter((game) => !gameType || gameType === "ALL" || game.game_type === gameType)
+    .filter((game) => !onSale || game.sale_price !== null)
     .sort((left, right) => compareGames(left, right, sort));
   const total = filtered.length;
   const pages = Math.max(1, Math.ceil(total / safePageSize));

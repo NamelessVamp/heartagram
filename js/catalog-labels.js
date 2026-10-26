@@ -14,6 +14,20 @@ export function catalogLabel(value) {
   return CATALOG_LABELS_ES[value] ?? value;
 }
 
+// Store dates are UTC timestamps; show them as Mexico City sees them.
+const SALE_END_DATE = new Intl.DateTimeFormat("es-MX", { day: "numeric", month: "long", timeZone: "America/Mexico_City" });
+const PRICED_AT_DATE = new Intl.DateTimeFormat("es-MX", { day: "numeric", month: "long", year: "numeric", timeZone: "America/Mexico_City" });
+
+export function formatSaleEnd(iso) {
+  const time = Date.parse(iso);
+  return Number.isFinite(time) ? SALE_END_DATE.format(time) : "";
+}
+
+export function formatPricedAt(iso) {
+  const time = Date.parse(iso);
+  return Number.isFinite(time) ? PRICED_AT_DATE.format(time) : "";
+}
+
 // Curated games use tags like OPEN_WORLD; this turns them into readable Spanish.
 const CURATED_GENRES_ES = {
   ACTION: "Acción", ADVENTURE: "Aventura", CARD: "Cartas", COZY: "Tranquilo",

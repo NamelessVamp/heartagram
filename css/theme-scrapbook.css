@@ -258,6 +258,10 @@
     color: var(--wine);
   }
 
+  .collection-screen .catalog-wishlist-sale {
+    color: var(--wine);
+  }
+
   .collection-screen .collection-owned-seal {
     top: var(--sp-3);
     left: var(--sp-3);

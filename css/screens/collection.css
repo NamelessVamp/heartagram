@@ -137,6 +137,12 @@
     font-size: var(--fs-xs);
   }
 
+  .catalog-wishlist-sale {
+    color: var(--accent-hover);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+  }
+
   .catalog-wishlist-actions {
     display: flex;
     flex-wrap: wrap;

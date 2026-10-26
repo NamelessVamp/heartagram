@@ -15,6 +15,8 @@ const requiredIds = [
   "catalog-genre",
   "catalog-mode",
   "catalog-sort",
+  "catalog-sale",
+  "catalog-price-note",
   "catalog-count",
   "catalog-clear",
   "catalog-grid",

@@ -54,6 +54,8 @@ A single-page vanilla-ES-module app. There is no server and no AI. All user stat
 
 **Explorar.** `initializeCatalogExplorer()` is one memoized promise and binds listeners once. Favorite and library changes update the existing card buttons in place (`refreshCardButtons`) instead of rebuilding the grid, which would drop keyboard focus.
 
+**Sales.** The catalog is a snapshot, so `activeSalePrice()` in `js/nintendo-catalog.js` counts a sale only until its `sale_end`; an expired one falls back to the regular price (the clock is a parameter, so tests pin it). Explorar has a "Solo en oferta" filter with its count, a "Mayor descuento" sort, a discount badge and end date on cards, the same in the game detail and in Mi lista, and a note with the snapshot date (`priced_at`, from the catalog's `generated_at`). Refresh the catalog with the `scripts/` pipeline before relying on prices.
+
 **Counts and re-ranking.** Inicio shows the numbers Mi lista resolved (`initializeHomeCounts`, fed by `heartagram:collection-rendered`), so an id that no longer exists in the catalog is neither listed nor counted; it stays in storage untouched. When the catalog arrives while Descubrir is open, `main.js` sets `rerankPending` and re-ranks on the next screen change, so cards never reshuffle under the user.
 
 **Persistence and events.** All state is in `localStorage` under `heartagram:*` keys: profile, favorites (Me interesa), library (Mi biblioteca), getting-started progress, sidebar state, and collection tab. `js/favorites.js` and `js/library.js` dispatch `heartagram:favorites-changed` and `heartagram:library-changed`. `main.js` listens for them and re-renders the home dashboard and wishlist.
@@ -64,7 +66,7 @@ A single-page vanilla-ES-module app. There is no server and no AI. All user stat
 
 **Cache busting is manual.** Every local JS and CSS URL carries a version query, and two constants in JS hold the data version. Bumping a version means changing all of these together:
 
-- `?v=` on the module imports in `js/main.js`, and on `index.html`'s script and stylesheet tags. The current JS value is `v132`; the current CSS value is `ui16`. `favorites.js`, `library.js`, `profile-storage.js` and `getting-started.js` are imported without a query, so changing them does not bust the cache by itself.
+- `?v=` on the module imports in `js/main.js`, and on `index.html`'s script and stylesheet tags. The current JS value is `v134`; the current CSS value is `ui17`. `favorites.js`, `library.js`, `profile-storage.js` and `getting-started.js` are imported without a query, so changing them does not bust the cache by itself.
 - Every import of `./catalog.js` (in `main.js`, `catalog-ui.js`, `ui.js`, `nintendo-product-detail.js`) must use the same `?v=`. A different query string loads a second module instance with its own catalog cache.
 - `DATA_VERSION` in `js/main.js` and `js/catalog.js`, currently `"130"`.
 - The literal versions asserted in `tests/bouquet-qa.mjs`, `tests/css-hygiene-qa.mjs`, and `tests/scrapbook-qa.mjs`.

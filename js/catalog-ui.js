@@ -1,20 +1,21 @@
-import { catalogLabel } from "./catalog-labels.js";
+import { catalogLabel, formatPricedAt, formatSaleEnd } from "./catalog-labels.js";
 
 // Renders the Nintendo Store Mexico catalog explorer.
 
 import {
+  countOnSale,
   favoriteIdForCatalogGame,
   getCatalogFacets,
   catalogImageUrl,
   loadCatalog,
   loadGameDetails,
   queryCatalog,
-} from "./catalog.js?v=v133";
+} from "./catalog.js?v=v134";
 
 import { isFavorite, toggleFavorite } from "./favorites.js";
 import { isOwnedGame, setOwnedGame } from "./library.js";
 
-import { renderNintendoProductDetail } from "./nintendo-product-detail.js?v=v133";
+import { renderNintendoProductDetail } from "./nintendo-product-detail.js?v=v134";
 
 const PAGE_SIZE = 24;
 // The dialog is labelled by the product title once the detail is rendered.
@@ -27,6 +28,7 @@ const state = {
   platform: "ALL",
   genre: "ALL",
   mode: "ALL",
+  onSale: false,
   sort: "NAME",
   page: 1,
 };
@@ -58,6 +60,9 @@ function cacheElements() {
   elements.genre = byId("catalog-genre");
   elements.mode = byId("catalog-mode");
   elements.sort = byId("catalog-sort");
+  elements.sale = byId("catalog-sale");
+  elements.saleLabel = byId("catalog-sale-label");
+  elements.priceNote = byId("catalog-price-note");
   elements.count = byId("catalog-count");
   elements.activeFilters = byId("catalog-active-filters");
   elements.clear = byId("catalog-clear");
@@ -175,7 +180,8 @@ function renderActiveFilters() {
     state.platform !== "ALL" ? ["platform", platformLabel(state.platform)] : null,
     state.genre !== "ALL" ? ["genre", catalogLabel(state.genre)] : null,
     state.mode !== "ALL" ? ["mode", catalogLabel(state.mode)] : null,
-    state.sort !== "NAME" ? ["sort", "Más recientes"] : null,
+    state.onSale ? ["onSale", "En oferta"] : null,
+    state.sort !== "NAME" ? ["sort", state.sort === "DISCOUNT" ? "Mayor descuento" : "Más recientes"] : null,
   ].filter(Boolean);
 
   elements.activeFilters.replaceChildren();
@@ -197,6 +203,9 @@ function clearSingleFilter(key) {
   } else if (key === "sort") {
     state.sort = "NAME";
     elements.sort.value = "NAME";
+  } else if (key === "onSale") {
+    state.onSale = false;
+    elements.sale.checked = false;
   } else if (["platform", "genre", "mode"].includes(key)) {
     state[key] = "ALL";
     elements[key].value = "ALL";
@@ -292,6 +301,12 @@ function createCatalogCard(game) {
     body.append(createElement("p", "catalog-card-meta", metadata.join(" · ")));
   }
 
+  if (game.sale_price !== null) {
+    media.append(createElement("span", "catalog-card-sale", `−${Math.round(game.percent_off)} %`));
+    const until = game.sale_end ? ` · hasta el ${formatSaleEnd(game.sale_end)}` : "";
+    body.append(createElement("p", "catalog-card-sale-note", `Antes ${game.regular_price_label}${until}`));
+  }
+
   body.append(createBadges(game));
 
   openButton.append(media, body);
@@ -343,6 +358,7 @@ function renderResults() {
     platform: state.platform,
     genre: state.genre,
     mode: state.mode,
+    onSale: state.onSale,
     sort: state.sort,
     page: state.page,
     pageSize: PAGE_SIZE,
@@ -382,10 +398,12 @@ function resetFilters() {
   state.platform = "ALL";
   state.genre = "ALL";
   state.mode = "ALL";
+  state.onSale = false;
   state.sort = "NAME";
   state.page = 1;
 
   elements.query.value = "";
+  elements.sale.checked = false;
   elements.platform.value = "ALL";
   elements.genre.value = "ALL";
   elements.mode.value = "ALL";
@@ -465,6 +483,12 @@ function bindEvents() {
     renderResults();
   });
 
+  elements.sale.addEventListener("change", () => {
+    state.onSale = elements.sale.checked;
+    state.page = 1;
+    renderResults();
+  });
+
   elements.clear.addEventListener("click", resetFilters);
   elements.retry.addEventListener("click", () => {
     void initializeCatalogExplorer().catch(() => {});
@@ -534,6 +558,14 @@ async function loadExplorer() {
 
     fillSelect(elements.genre, state.facets.genres, "Todos");
     fillSelect(elements.mode, state.facets.modes, "Todos");
+
+    const onSale = countOnSale(state.catalog);
+    elements.saleLabel.textContent = `Solo en oferta (${onSale})`;
+    elements.sale.disabled = onSale === 0;
+    const pricedAt = formatPricedAt(state.catalog.meta?.priced_at);
+    elements.priceNote.textContent = pricedAt
+      ? `Precios y ofertas de Nintendo Store México al ${pricedAt}. Pueden haber cambiado: confírmalos en la eShop antes de comprar.`
+      : "";
 
     elements.content.hidden = false;
     renderCatalogSkeletons();

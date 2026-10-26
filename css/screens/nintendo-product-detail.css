@@ -58,6 +58,27 @@
     text-decoration: line-through;
   }
 
+  .npd-sale-badge {
+    justify-self: start;
+    padding: 0.15rem var(--sp-3);
+    border: 1px solid var(--accent-line);
+    border-radius: var(--r-pill);
+    background: var(--wine);
+    color: var(--on-accent);
+    font-size: var(--fs-sm);
+    font-weight: 700;
+  }
+
+  .npd-sale-until {
+    color: var(--accent-hover);
+    font-size: var(--fs-sm);
+  }
+
+  .npd-priced-at {
+    color: var(--text-faint);
+    font-size: var(--fs-xs);
+  }
+
   .npd-actions {
     display: flex;
     flex-wrap: wrap;
