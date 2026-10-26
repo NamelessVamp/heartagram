@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { computeProfile, DIMENSIONS } from "../js/profile.js";
 import { adaptNintendoCatalog } from "../js/nintendo-catalog.js";
-import { buildRecommendations, nintendoToCandidate, familyKey, reasonFor } from "../js/recommend-v2.js";
+import { buildRecommendations, nintendoToCandidate, familyKey, reasonFor, omitOwned } from "../js/recommend-v2.js";
 
 const questions = JSON.parse(readFileSync("data/questions.json", "utf8"));
 const curated = JSON.parse(readFileSync("data/games.json", "utf8"));
@@ -60,6 +60,12 @@ assert.equal(ownedViaStore.ranked.some(({ game }) => game.id === "luigis-mansion
 const favoriteViaStore = buildRecommendations(profile, { ...base, favoriteIds: [luigiStoreId], seed: "t" });
 assert.ok(favoriteViaStore.ranked.length > 0);
 console.log("[OK] Un juego guardado con id de Nintendo tampoco se recomienda en su versión curada");
+
+const poolWithoutOwned = omitOwned(today.pool, { ownedIds: [luigiStoreId, "hades"], curated, catalog });
+assert.equal(poolWithoutOwned.some((game) => game.id === "luigis-mansion-3" || game.id === "hades"), false);
+assert.equal(poolWithoutOwned.length, today.pool.length - 2);
+assert.equal(omitOwned(today.pool, { curated, catalog }).length, today.pool.length);
+console.log("[OK] omitOwned quita los juegos propios por id o por título y no toca el resto");
 
 // Reasons must be facts the catalog confirms, never filler.
 const GENERIC = /alrededor de tu|se quedan contigo|sin presión|desde el primer minuto|perderte en ella|que encaja con este mood|pega fuerte|mucho estilo|ideal para|adictiv|experiencia|rehecho/i;

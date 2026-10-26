@@ -6,7 +6,7 @@ import { updateAppShellNavigation } from "./app-shell.js";
 import { renderHomeDashboard } from "./home-dashboard.js?v=v131";
 import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js?v=v131";
 import { initializeCollectionUI } from "./collection-ui.js?v=v131";
-import { buildRecommendations } from "./recommend-v2.js?v=v131";
+import { buildRecommendations, omitOwned } from "./recommend-v2.js?v=v131";
 import { activateDiscoverTab, initializeDiscoverTabs } from "./discover-tabs.js?v=v131";
 
 import * as ui from "./ui.js?v=v131";
@@ -34,6 +34,15 @@ import { getOwnedGameIds, setOwnedGame } from "./library.js";
 import { initializeGettingStarted } from "./getting-started.js";
 
 const NEXT_QUESTION_DELAY_MS = 250;
+
+// The pending "next question" step, so leaving the quiz can cancel it.
+let questionTimer = null;
+
+function cancelPendingQuestion() {
+  window.clearTimeout(questionTimer);
+  questionTimer = null;
+  state.advancing = false;
+}
 
 const state = {
   questions: [],
@@ -80,6 +89,9 @@ function showScreen(name) {
 
   updateAppNavigation(name);
 
+  // Leaving the quiz in the 250 ms between answers must not jump back into it.
+  if (name !== "quiz") cancelPendingQuestion();
+
   // Guide progress can change on another screen, so refresh the home actions on return.
   if (name === "intro") {
     renderHomeDashboard({
@@ -122,7 +134,8 @@ function renderCurrentQuestion() {
       state.advancing = true;
       state.answers[question.id] = optionId;
 
-      window.setTimeout(() => {
+      questionTimer = window.setTimeout(() => {
+        questionTimer = null;
         state.advancing = false;
 
         const isLastQuestion = state.index >= state.questions.length - 1;
@@ -145,7 +158,12 @@ function renderCurrentQuestion() {
  * Important:
  * This function must never call itself.
  */
-const DAY_KEY = new Date().toISOString().slice(0, 10);
+// Local date, so the daily rotation turns over at local midnight, not at 18:00 in Mexico.
+function todayKey() {
+  const now = new Date();
+  const pad = (value) => String(value).padStart(2, "0");
+  return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+}
 
 function recommendationInputs() {
   return {
@@ -153,7 +171,7 @@ function recommendationInputs() {
     catalog: state.catalogGames ?? [],
     ownedIds: getOwnedGameIds(),
     favoriteIds: getFavoriteIds(),
-    seed: `${DAY_KEY}|${state.reroll}`,
+    seed: `${todayKey()}|${state.reroll}`,
   };
 }
 
@@ -168,7 +186,10 @@ function ensureCatalogPool() {
       state.catalogGames = catalog.games;
       if (state.profile) applyProfile(state.profile);
     })
-    .catch((error) => console.error("Recomendaciones sin catálogo Nintendo.", error));
+    .catch((error) => {
+      catalogPoolRequested = false;
+      console.error("Recomendaciones sin catálogo Nintendo.", error);
+    });
 }
 
 function applyProfile(profile) {
@@ -342,9 +363,9 @@ function renderHomeState() {
 
 const ACTIONS = {
   start: () => {
+    cancelPendingQuestion();
     state.index = 0;
     state.answers = {};
-    state.advancing = false;
 
     renderCurrentQuestion();
     showScreen("quiz");
@@ -518,7 +539,11 @@ async function init() {
     state.games = games;
 
     initializeDiscoverUI({
-      getGames: () => (state.pool.length ? state.pool : state.games),
+      getGames: () => omitOwned(state.pool.length ? state.pool : state.games, {
+        ownedIds: getOwnedGameIds(),
+        curated: state.games,
+        catalog: state.catalogGames ?? [],
+      }),
       getProfile: () => state.profile,
       getArchetypes: () => state.archetypes,
     });

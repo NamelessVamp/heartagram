@@ -3,6 +3,7 @@ import { isFavorite, toggleFavorite } from "./favorites.js";
 
 let profileProvider = () => null;
 let archetypesProvider = () => [];
+let rerenderMood = null;
 
 const MOOD_CONFIG = {
   DARK: {
@@ -93,6 +94,7 @@ export function refreshDiscoverProfile() {
   if (subtitle) subtitle.textContent = names.secondary
     ? `También: ${names.secondary}`
     : "Perfil en calibración";
+  rerenderMood?.();
 }
 
 export function initializeDiscoverUI({ getGames, getProfile, getArchetypes }) {
@@ -104,7 +106,10 @@ export function initializeDiscoverUI({ getGames, getProfile, getArchetypes }) {
 
   if (!buttons.length || !container) return;
 
+  let activeMood = "DARK";
+
   const renderMood = (mood) => {
+    activeMood = mood;
     buttons.forEach((button) => {
       button.setAttribute(
         "aria-pressed",
@@ -121,8 +126,10 @@ export function initializeDiscoverUI({ getGames, getProfile, getArchetypes }) {
     button.addEventListener("click", () => renderMood(button.dataset.discoverMood));
   });
 
+  rerenderMood = () => renderMood(activeMood);
+  window.addEventListener("heartagram:library-changed", rerenderMood);
+
   refreshDiscoverProfile();
-  renderMood("DARK");
 }
 
 export { MOOD_CONFIG };

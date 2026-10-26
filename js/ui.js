@@ -270,6 +270,7 @@ export function gameCard(game, options = {}) {
     const favoriteButton = el("button", "favorite-button", favoriteLabel(game.id));
     favoriteButton.type = "button";
     favoriteButton.dataset.favoriteId = game.id;
+    favoriteButton.dataset.gameTitle = game.title;
     favoriteButton.setAttribute("aria-label", favoriteAriaLabel(game));
     favoriteButton.setAttribute("aria-pressed", String(isFavorite(game.id)));
     favoriteButton.addEventListener("click", () => {
@@ -502,7 +503,7 @@ export function renderWishlist(options = {}) {
   if (catalogLoading && interestedCatalogGames.length === 0) {
     catalogList.append(el("p", "catalog-status", "Cargando juegos guardados..."));
   } else if (catalogError && interestedCatalogGames.length === 0) {
-    catalogList.append(el("p", "empty", "No se pudieron cargar algunos juegos del catálogo."));
+    catalogList.append(el("p", "catalog-status", "No se pudieron cargar algunos juegos del catálogo."));
   } else if (interestedCatalogGames.length === 0) {
     catalogList.append(el("p", "empty", "Todavía no has guardado juegos desde Explorar."));
   } else {
@@ -598,6 +599,9 @@ function decorateCollectionPanel(panel, type) {
     }
   });
 
+  // The full empty state only makes sense when the panel has no cards at all.
+  if (panel.querySelector(".card, .catalog-wishlist-card")) return;
+
   const empty = panel.querySelector(".empty");
   if (!empty || empty.dataset.collectionEnhanced === "true") return;
   empty.dataset.collectionEnhanced = "true";
@@ -627,6 +631,21 @@ function decorateCollectionPanel(panel, type) {
 
   empty.append(mark, title, copy, action);
 }
+
+// Cards are drawn once, so a change made elsewhere (Mi lista, another card) must
+// reach every favorite button that is already on screen.
+function syncFavoriteButtons() {
+  document.querySelectorAll(".favorite-button[data-favorite-id]").forEach((button) => {
+    const selected = isFavorite(button.dataset.favoriteId);
+    button.textContent = selected ? "♥ En mi lista" : "♡ Me interesa";
+    button.setAttribute("aria-pressed", String(selected));
+    if (button.dataset.gameTitle) {
+      button.setAttribute("aria-label", favoriteAriaLabel({ id: button.dataset.favoriteId, title: button.dataset.gameTitle }));
+    }
+  });
+}
+
+window.addEventListener("heartagram:favorites-changed", syncFavoriteButtons);
 
 window.addEventListener("heartagram:collection-rendered", () => {
   decorateCollectionPanel(document.getElementById("collection-panel-interested"), "interested");

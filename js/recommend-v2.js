@@ -246,6 +246,13 @@ function titleKeys(ids, curated, catalog) {
   return new Set([...ids].map((id) => titles.get(id)).filter(Boolean).map(normalizeTitle));
 }
 
+/** Drops games the user already owns, whichever id they were saved under. */
+export function omitOwned(games, { ownedIds = [], curated = [], catalog = [] } = {}) {
+  const owned = new Set(ownedIds);
+  const ownedKeys = titleKeys(owned, curated, catalog);
+  return games.filter((game) => !owned.has(game.id) && !ownedKeys.has(normalizeTitle(game.title)));
+}
+
 export function buildRecommendations(profile, {
   curated = [], catalog = [], ownedIds = [], favoriteIds = [], seed = "0",
 } = {}) {
