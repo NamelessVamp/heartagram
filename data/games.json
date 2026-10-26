@@ -761,11 +761,11 @@
     ],
     "multiplayer": {
       "online_coop": false,
-      "online_versus": false,
-      "local_wireless": false,
+      "online_versus": true,
+      "local_wireless": true,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": true,
+      "gameshare": false
     },
     "mood": [
       "LIGHTHEARTED"
@@ -1793,12 +1793,12 @@
       "SANDBOX"
     ],
     "multiplayer": {
-      "online_coop": false,
+      "online_coop": true,
       "online_versus": false,
-      "local_wireless": false,
+      "local_wireless": true,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": true,
+      "gameshare": true
     },
     "mood": [
       "WHOLESOME"
