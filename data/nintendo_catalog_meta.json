@@ -4,7 +4,6 @@
   "region": "MX",
   "locale": "es-MX",
   "published_at": "2026-10-09T18:16:24+00:00",
-  "preview_only": true,
   "visible_product_count": 318,
   "extra_product_count": 157,
   "all_product_count": 475,
@@ -22,7 +21,6 @@
   "validation_report": "data/nintendo_probe/nintendo_catalog_validation.json",
   "catalog_file": "data/nintendo_catalog.json",
   "extras_file": "data/nintendo_catalog_extras.json",
-  "rollback_catalog_untouched": "data/catalog_igdb.json",
   "enriched_at": "2026-10-16T23:58:26.893911+00:00",
   "enrichment_source": "Nintendo Store Mexico merchandisedGrid",
   "enrichment_coverage": {

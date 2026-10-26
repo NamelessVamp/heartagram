@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Publish a validated Nintendo Mexico snapshot for HEARTAGRAM preview.
+"""Publish a validated Nintendo Mexico snapshot for HEARTAGRAM.
 
-This script does not modify JavaScript and does not delete IGDB data. It copies
-validated Nintendo drafts into stable preview filenames under data/ and creates
-metadata plus a rollback backup when a prior Nintendo snapshot exists.
+This script does not modify JavaScript. It copies validated Nintendo drafts
+into stable filenames under data/ and creates metadata plus a rollback backup
+when a prior Nintendo snapshot exists.
 """
 
 from __future__ import annotations
@@ -89,7 +89,6 @@ def main() -> int:
         "region": "MX",
         "locale": "es-MX",
         "published_at": utc_now(),
-        "preview_only": True,
         "visible_product_count": len(products),
         "extra_product_count": len(extra_products),
         "all_product_count": len(products) + len(extra_products),
@@ -98,18 +97,15 @@ def main() -> int:
         "validation_report": "data/nintendo_probe/nintendo_catalog_validation.json",
         "catalog_file": "data/nintendo_catalog.json",
         "extras_file": "data/nintendo_catalog_extras.json",
-        "rollback_catalog_untouched": "data/catalog_igdb.json",
     }
     TARGET_META.write_text(json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    print(f"[OK] Nintendo preview catalog: {TARGET_CATALOG.relative_to(ROOT)}")
+    print(f"[OK] Nintendo catalog: {TARGET_CATALOG.relative_to(ROOT)}")
     print(f"[OK] Nintendo extras: {TARGET_EXTRAS.relative_to(ROOT)}")
     print(f"[OK] Nintendo metadata: {TARGET_META.relative_to(ROOT)}")
     print(f"[CHECK] Visible products: {len(products)}")
     print(f"[CHECK] Extras: {len(extra_products)}")
     print(f"[CHECK] Backups created: {len(backups)}")
-    print("[SAFE] Existing IGDB files were not modified or deleted.")
-    print("[NEXT] Audit catalog.js and catalog-ui.js before enabling Nintendo preview.")
     return 0
 
 
