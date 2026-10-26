@@ -26,3 +26,19 @@ assert.equal(displayTitle(null), "");
 const dirty = catalog.games.filter((game) => /[™®©]/.test(game.name) || /^Edici[oó]n Est[aá]ndar/i.test(game.name));
 assert.deepEqual(dirty.map((game) => game.name), [], "Títulos con símbolos o prefijo redundante");
 console.log("[OK] Los títulos del catálogo salen sin ™ ® © ni prefijos redundantes");
+
+// A sale past its end date is over; the snapshot must not show its price as current.
+const among = payload.products.find((product) => product.title === "Among Us");
+assert.ok(among?.sale_price && among.sale_end, "Among Us debe traer una oferta en el catálogo");
+const during = adaptNintendoCatalog(payload, Date.parse(among.sale_end) - 86_400_000).games.find((game) => game.name === "Among Us");
+const after = adaptNintendoCatalog(payload, Date.parse(among.sale_end) + 86_400_000).games.find((game) => game.name === "Among Us");
+assert.equal(during.sale_price, among.sale_price);
+assert.equal(during.percent_off, 40);
+assert.equal(during.price_label, "$58.20");
+assert.equal(after.sale_price, null);
+assert.equal(after.percent_off, 0);
+assert.equal(after.sale_end, null);
+assert.equal(after.price_label, "$97.00");
+const onSaleNow = adaptNintendoCatalog(payload, Date.parse("2026-10-26T12:00:00Z")).games.filter((game) => game.sale_price !== null);
+assert.equal(onSaleNow.length, 3, "El 26 de octubre solo siguen vigentes 3 ofertas");
+console.log("[OK] Una oferta vencida deja de mostrarse y la vigente conserva su precio y descuento");
