@@ -656,9 +656,9 @@
     },
     "horror_level": 0,
     "free_to_play": false,
-    "price_mxn": null,
-    "price_checked": null,
-    "why": "El primer Zelda en 3D, de Nintendo 64.",
+    "price_mxn": 1500,
+    "price_checked": "2026-10-26",
+    "why": "Ocarina of Time, el primer Zelda en 3D.",
     "status": "VERIFICADO"
   },
   {
