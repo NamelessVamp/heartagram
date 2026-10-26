@@ -21,5 +21,8 @@ prepare_ui_audit_*.py
 ui_audit_*.txt
 static_nintendo_cleanup_audit.txt
 
+# Ad-hoc probe with public store keys inline: never commit it
+/probe_full_catalog.py
+
 # Local design-review screenshots from scripts/capture_screens.mjs
 screens/

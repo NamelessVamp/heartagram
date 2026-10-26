@@ -13,8 +13,9 @@
 import { spawn } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { createServer } from "node:http";
+import { createServer as createNetServer } from "node:net";
 import { tmpdir } from "node:os";
-import { extname, join, normalize, resolve } from "node:path";
+import { extname, join, normalize, resolve, sep } from "node:path";
 
 const ROOT = resolve(import.meta.dirname, "..");
 const args = process.argv.slice(2);
@@ -50,7 +51,7 @@ function startServer() {
   const server = createServer((request, response) => {
     const path = normalize(decodeURIComponent(new URL(request.url, "http://x").pathname)).replace(/^([/\\])+/, "");
     const file = join(ROOT, path === "" ? "index.html" : path);
-    if (!file.startsWith(ROOT) || !existsSync(file) || !statSync(file).isFile()) {
+    if (!file.startsWith(ROOT + sep) || !existsSync(file) || !statSync(file).isFile()) {
       response.writeHead(404).end();
       return;
     }
@@ -59,14 +60,49 @@ function startServer() {
   return new Promise((done) => server.listen(0, "127.0.0.1", () => done(server)));
 }
 
-async function capture({ label, width, height, mobile }, browser, baseUrl) {
-  const port = 9300 + Math.floor(Math.random() * 500);
-  const profile = join(tmpdir(), `heartagram-capture-${label}-${Date.now()}`);
+// Asks the OS for a free port so two runs (or other tools) never collide.
+function freePort() {
+  return new Promise((done, fail) => {
+    const probe = createNetServer();
+    probe.once("error", fail);
+    probe.listen(0, "127.0.0.1", () => {
+      const { port } = probe.address();
+      probe.close(() => done(port));
+    });
+  });
+}
+
+async function stopBrowser(chrome, profile) {
+  if (chrome.exitCode === null && chrome.signalCode === null) {
+    await new Promise((done) => {
+      chrome.once("exit", done);
+      chrome.kill();
+      setTimeout(done, 5000);
+    });
+  }
+  // Best effort: on Windows the browser can hold profile files for a moment longer.
+  try { rmSync(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 300 }); } catch { /* temp folder, harmless */ }
+}
+
+// Whatever happens while driving the page, the browser and its profile are always cleaned up.
+async function capture(spec, browser, baseUrl) {
+  const port = await freePort();
+  const profile = join(tmpdir(), `heartagram-capture-${spec.label}-${Date.now()}`);
   const chrome = spawn(browser, [
     "--headless=new", `--remote-debugging-port=${port}`, `--user-data-dir=${profile}`,
     "--no-first-run", "--disable-gpu", "--hide-scrollbars", "about:blank",
   ], { stdio: "ignore" });
+  const launchFailed = new Promise((_, reject) => {
+    chrome.once("error", (error) => reject(new Error(`[FAIL] No pude abrir el navegador: ${error.message}`)));
+  });
+  try {
+    return await Promise.race([drive(spec, port, baseUrl), launchFailed]);
+  } finally {
+    await stopBrowser(chrome, profile);
+  }
+}
 
+async function drive({ label, width, height, mobile }, port, baseUrl) {
   let target;
   for (let attempt = 0; attempt < 60 && !target; attempt += 1) {
     try { target = (await (await fetch(`http://127.0.0.1:${port}/json`)).json()).find((t) => t.type === "page"); }
@@ -180,15 +216,14 @@ async function capture({ label, width, height, mobile }, browser, baseUrl) {
     try { const host = new URL(url).host; hosts[host] = (hosts[host] ?? 0) + 1; } catch { /* data: URLs */ }
   }
   socket.close();
-  await new Promise((done) => {
-    chrome.once("exit", done);
-    chrome.kill();
-  });
-  // Best effort: on Windows the browser can hold profile files for a moment longer.
-  try { rmSync(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 300 }); } catch { /* temp folder, harmless */ }
   return { label, errors, hosts };
 }
 
+const requested = option("--chrome", null);
+if (requested && !existsSync(requested)) {
+  console.error(`[FAIL] No existe el navegador indicado con --chrome: ${requested}`);
+  process.exit(1);
+}
 const browser = findBrowser();
 if (!browser) {
   console.error("[FAIL] No encontré Chrome ni Edge. Usa --chrome <ruta> o la variable CHROME_PATH.");
