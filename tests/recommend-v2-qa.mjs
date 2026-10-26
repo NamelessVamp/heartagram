@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { computeProfile, DIMENSIONS } from "../js/profile.js";
 import { adaptNintendoCatalog } from "../js/nintendo-catalog.js";
-import { buildRecommendations, nintendoToCandidate, familyKey, reasonFor, omitOwned } from "../js/recommend-v2.js";
+import { buildRecommendations, nintendoToCandidate, familyKey, reasonFor, omitOwned, normalizeTitle } from "../js/recommend-v2.js";
 
 const questions = JSON.parse(readFileSync("data/questions.json", "utf8"));
 const curated = JSON.parse(readFileSync("data/games.json", "utf8"));
@@ -53,16 +53,20 @@ assert.ok(Math.max(...Object.values(genres)) <= 4, `Género repetido: ${JSON.str
 console.log("[OK] Variedad: sin sagas repetidas y máximo 4 juegos del mismo género");
 
 // The same game saved under a Nintendo id must not come back as its curated twin.
-const luigiStoreId = catalog.find((game) => /^Luigi.s Mansion 3$/.test(game.name))?.catalog_id;
-assert.ok(luigiStoreId, "Luigi's Mansion 3 debe existir en el catálogo");
-const ownedViaStore = buildRecommendations(profile, { ...base, ownedIds: [luigiStoreId], seed: "t" });
-assert.equal(ownedViaStore.ranked.some(({ game }) => game.id === "luigis-mansion-3"), false);
-const favoriteViaStore = buildRecommendations(profile, { ...base, favoriteIds: [luigiStoreId], seed: "t" });
+// The catalog is refreshed weekly, so the twin is found by title instead of being a fixed game.
+const twin = catalog.find((game) => curated.some((entry) => normalizeTitle(entry.title) === normalizeTitle(game.name)));
+assert.ok(twin, "Debe haber al menos un juego curado que también esté en el catálogo de Nintendo");
+const twinCurated = curated.find((entry) => normalizeTitle(entry.title) === normalizeTitle(twin.name));
+const twinStoreId = twin.catalog_id;
+const ownedViaStore = buildRecommendations(profile, { ...base, ownedIds: [twinStoreId], seed: "t" });
+assert.equal(ownedViaStore.ranked.some(({ game }) => game.id === twinCurated.id), false);
+const favoriteViaStore = buildRecommendations(profile, { ...base, favoriteIds: [twinStoreId], seed: "t" });
 assert.ok(favoriteViaStore.ranked.length > 0);
 console.log("[OK] Un juego guardado con id de Nintendo tampoco se recomienda en su versión curada");
 
-const poolWithoutOwned = omitOwned(today.pool, { ownedIds: [luigiStoreId, "hades"], curated, catalog });
-assert.equal(poolWithoutOwned.some((game) => game.id === "luigis-mansion-3" || game.id === "hades"), false);
+const otherCurated = curated.find((entry) => entry.id !== twinCurated.id && normalizeTitle(entry.title) !== normalizeTitle(twin.name));
+const poolWithoutOwned = omitOwned(today.pool, { ownedIds: [twinStoreId, otherCurated.id], curated, catalog });
+assert.equal(poolWithoutOwned.some((game) => game.id === twinCurated.id || game.id === otherCurated.id), false);
 assert.equal(poolWithoutOwned.length, today.pool.length - 2);
 assert.equal(omitOwned(today.pool, { curated, catalog }).length, today.pool.length);
 console.log("[OK] omitOwned quita los juegos propios por id o por título y no toca el resto");

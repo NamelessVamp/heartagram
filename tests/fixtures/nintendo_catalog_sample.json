@@ -1,0 +1,2032 @@
+{
+  "schema_version": "1.0.0",
+  "source": "nintendo_mx",
+  "region": "MX",
+  "locale": "es-MX",
+  "generated_at": "2026-10-09T18:08:40+00:00",
+  "product_count": 24,
+  "products": [
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000036098",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000036098",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Among Us",
+      "normalized_title": "Among Us",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "among-us-0b44b71a",
+      "platforms": [
+        "SWITCH"
+      ],
+      "genres": [
+        "Fiesta"
+      ],
+      "publishers": [
+        "Innersloth"
+      ],
+      "developers": [
+        "Innersloth LLC"
+      ],
+      "release_date": "2020-12-15T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000036098/758ab0b61205081da2466386940752c70e0e5ea43bd39e8b9b13eaa455c69b7e",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000036098/05e547279ce593ace4df772add96dd905bc69b27ad99d44beb6992b963de722b",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000036098/5910f043cc487f510c649244cd8deed977201d41d9f1c4f9bb82e2a3a0186774",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000036098/29cca616366ec45ee1c8b6e8c467a6543e24593a0efb4b6910dc5204dbc7318e",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000036098/b79d75ee161584cac1f0a3a902477005d3aea0c46d0ca7783409dd87d3340303",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000036098/2a172d8699ee134e5d33784abe9de88624b9a7df3fcea0e6b1eb2b6db7fd5c60",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000036098/2d9df9187d12a8c394d08d631dd8a1a2ca01ef47d850b3ded4060622502701a0"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 97,
+      "sale_price": 58.2,
+      "sale_end": "2026-10-29T23:59:59Z",
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70010000036098",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100036098",
+      "url_key": "among-us-switch",
+      "features": [
+        "Sigilo"
+      ],
+      "ways_to_play": [
+        "Compite en línea",
+        "Juntos en varias consolas",
+        "Multiplataforma",
+        "Partidas en grupo"
+      ],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Juego en línea",
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "b",
+        "label": "+12 Años",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Violencia de fantasia",
+        "Bajo contenido de sangre",
+        "Interacción de usuarios",
+        "Compras dentro del juego"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 40,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000036098/Video/70c6140ec3bff979dea49f2b4c01b8f39cd7e626c9c6990cec1a9385fb4a2aad"
+      ],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/82c8e4bc61534d618834f230822bf02c_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000109969",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch_2",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000109969",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Big Walk",
+      "normalized_title": "Big Walk",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "big-walk-1017fc7e",
+      "platforms": [
+        "SWITCH_2"
+      ],
+      "genres": [
+        "Acción",
+        "Rompecabezas"
+      ],
+      "publishers": [
+        "Panic"
+      ],
+      "developers": [
+        "House House"
+      ],
+      "release_date": "2026-08-04T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109969/5864b7ecf7a65a0812e3421b6d6807434475f13176e99f4ea95e4fd142d1e86b",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109969/80216a96685ea010ce6d05934d65b2f13e9ba8e7cc1fc4eab20e64615839438f",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109969/600da4ff774adcb634784bf93664f849280c6027a1fe5044268d924b98aec85d",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109969/57cf22ce545e93f72b80a5415cd7acbd82e4fa9bed7830e2a8b0bc741f22c0b8",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109969/cb0756ee402f4266b7fc3f6f2f46acf452431b625abd7aab8614efb3c5850e86",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109969/b01f3bf22502c0795d44d736c1a135fdb89c0f08bf8a451958dc7d1d2adde248",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109969/25ebb412ecc543128a242da0e0ed92c26c24a032c2458f055b9aa904e8f0bdfd"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 265,
+      "sale_price": 212,
+      "sale_end": "2026-10-16T06:59:59Z",
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70010000109969",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100109969",
+      "url_key": "big-walk-switch-2",
+      "features": [
+        "Elige tu propio camino",
+        "Libertad de movimiento"
+      ],
+      "ways_to_play": [
+        "Cooperativo en línea",
+        "Multiplataforma"
+      ],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Juego en línea",
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "a",
+        "label": "Todo Publico",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Interacción de usuarios"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 20,
+      "videos": [],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109969/665677fa85b61ec37eb5940951ca0f23ba0157b24886f7ae8705f7d00e3d21e1"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000035711",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000035711",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Cozy Grove",
+      "normalized_title": "Cozy Grove",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "cozy-grove-b2b20349",
+      "platforms": [
+        "SWITCH"
+      ],
+      "genres": [
+        "Simulación"
+      ],
+      "publishers": [
+        "The Quantum Astrophysicists Guild"
+      ],
+      "developers": [
+        "Spry Fox"
+      ],
+      "release_date": "2021-04-08T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000035711/e20cef68d8e08b6115e8880f1f4dca2ce901236eb887d77b32f1555108b72317",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/843bba3a6a2c4bbc863d59a96a0203f9_1024",
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000035711/c5b9d717494a828c0cc0a697ad034fac18ef3e46f40df77ef9b1be6d2f9a4932",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000035711/52c7b7c2376db0731fb78c42a9b2780af9c68c174b73fef014e99656bdb79391",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000035711/4008062eac5bbf2c0476292342f6a3ca2ff598b9428d93acba7f0d76bfa77a63",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000035711/f7e92a0d295657e82268d2539d923b9a38e9fb04b4495232a61642a62dd8889c",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000035711/f0724ae55299e344e4368e65501b019b5c60d06b3ab961239d0c37f4df466838",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000035711/99d41df44fc942b8bb4ce78347d01e941ce7d968f605ed8003bfa4f9747ab755"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 149.99,
+      "sale_price": 72.3,
+      "sale_end": "2026-10-18T06:59:59Z",
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [
+        "nintendo:MX:70010000120540"
+      ],
+      "raw_id": "70010000035711",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100035711",
+      "url_key": "cozy-grove-switch",
+      "features": [
+        "Personajes personalizables"
+      ],
+      "ways_to_play": [],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "b",
+        "label": "+12 Años",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Travesuras cómicas",
+        "Uso de alcohol",
+        "Compras dentro del juego"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 51.8,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000035711/Video/a9a1b48a86dedc680841e6eedee63e312f984eb40886ee754094908e5d32908d"
+      ],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/4a1714fadc1040299762ee74f68cbf67_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000120540",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000120540",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Cozy Grove – Nintendo Switch™ 2 Edition",
+      "normalized_title": "Cozy Grove – Nintendo Switch 2 Edition",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "switch_2",
+      "family_id": "cozy-grove-b2b20349",
+      "platforms": [
+        "SWITCH_2"
+      ],
+      "genres": [
+        "Simulación"
+      ],
+      "publishers": [
+        "The Quantum Astrophysicists Guild"
+      ],
+      "developers": [
+        "Spry Fox"
+      ],
+      "release_date": "2021-04-08T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000120540/da1548e7300fdf7ca169eafb60091169831fc44a78c97c293bfe61f47f637689",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/843bba3a6a2c4bbc863d59a96a0203f9_1024",
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000035711/c5b9d717494a828c0cc0a697ad034fac18ef3e46f40df77ef9b1be6d2f9a4932",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000035711/52c7b7c2376db0731fb78c42a9b2780af9c68c174b73fef014e99656bdb79391",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000035711/4008062eac5bbf2c0476292342f6a3ca2ff598b9428d93acba7f0d76bfa77a63",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000035711/f7e92a0d295657e82268d2539d923b9a38e9fb04b4495232a61642a62dd8889c",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000035711/f0724ae55299e344e4368e65501b019b5c60d06b3ab961239d0c37f4df466838",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000035711/99d41df44fc942b8bb4ce78347d01e941ce7d968f605ed8003bfa4f9747ab755"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 149.99,
+      "sale_price": 72.3,
+      "sale_end": "2026-10-18T06:59:59Z",
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [
+        "nintendo:MX:70010000035711"
+      ],
+      "raw_id": "70010000120540",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100120540",
+      "url_key": "cozy-grove-nintendo-switch-2-edition-switch-2",
+      "features": [
+        "Personajes personalizables"
+      ],
+      "ways_to_play": [],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "b",
+        "label": "+12 Años",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Travesuras cómicas",
+        "Uso de alcohol",
+        "Compras dentro del juego"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 51.8,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000035711/Video/a9a1b48a86dedc680841e6eedee63e312f984eb40886ee754094908e5d32908d"
+      ],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/843bba3a6a2c4bbc863d59a96a0203f9_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000114806",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch_2",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000114806",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "D-topia",
+      "normalized_title": "D-topia",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "d-topia-ce4d0009",
+      "platforms": [
+        "SWITCH_2"
+      ],
+      "genres": [
+        "Aventura",
+        "Rompecabezas"
+      ],
+      "publishers": [
+        "Annapurna Interactive"
+      ],
+      "developers": [
+        "Marumittu Games"
+      ],
+      "release_date": "2026-07-14T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000114806/0d7f79fe7648e28ce5d99b97587fb6a43001dc8f6724ddb8ede2afed2c5a5d62",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000114806/3e493d8b9579d8cf6454c0d8f5df062889c9c8f4b0019750a94101aa1bef22fb",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000114806/02e169e37e433c69b00a2c61e3eb8b55a65157b6d9e861fcc2b26359b2a0e0a0",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000114806/52744823f2b325106043dcdc8f7e845858871e99df680b4f0e8c193bf99da2e3",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000114806/bf5f91c2664182b9612d61bf4c8a44a9a9986574a26defe0bdb666a3c135173b",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000114806/aeec792fe31e8fda219987010a4aac586e1d2ebeea6bc86ac54abb1612a7a625",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000114806/c02899887d71db7c0368da217fbf5e8ad5808820e76f1f61634d2f10e0213ca5"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 265,
+      "sale_price": 212,
+      "sale_end": "2026-10-12T15:59:59Z",
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70010000114806",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100114806",
+      "url_key": "d-topia-switch-2",
+      "features": [],
+      "ways_to_play": [],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "b",
+        "label": "+12 Años",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Humor vulgar",
+        "Violencia de fantasia",
+        "Lenguaje moderado"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 20,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000114806/Video/a9fa8c35f7b2ae5060925ec6ac2ac49429e6ebae9c539d010288bda30b9461b2"
+      ],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000114806/2011fd4ab059e842cfbccae280ef53edd1fc37762b38e2ae2308a13386ff30a0"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000103978",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch_2",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000103978",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Denshattack!",
+      "normalized_title": "Denshattack!",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "denshattack-c026ba19",
+      "platforms": [
+        "SWITCH_2"
+      ],
+      "genres": [
+        "Acción",
+        "Simulación"
+      ],
+      "publishers": [
+        "Fireshine Games"
+      ],
+      "developers": [
+        "Undercoders"
+      ],
+      "release_date": "2026-07-15T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000103978/511255af56eb4fff904465d7faf42f999ad9ab452e537dfb0c0e51c77fa134ad",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000103978/a55f246b83dfcee5e3dc04504e55d4fc3923c347f0287fdc870388e21ff16dc1",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000103978/6c5a951f20f5741c4530689a29b422c72c406433ef9166d4cddbb14475c96a2a",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000103978/8ac4e1275b681a3585a55e2a07321257b1c2a45a7c0296376b1d726272790799",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000103978/5bc53390db334e0a6ebcf4577e48f3e62edc7a18f8b9bc68dac09b3bc6084dbe",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000103978/b38299d73be4d3c85129b194a7e9dc71e9b3efbb13114541f73a57c48dbcf8a0",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000103978/3757201d95d1dfbb1cdfd0220b52309febd0879ad4dd8b43ed47819e4307ee00"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 249.99,
+      "sale_price": 187.49,
+      "sale_end": "2026-10-16T06:59:59Z",
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [
+        "nintendo:MX:70070000036666"
+      ],
+      "raw_id": "70010000103978",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100103978",
+      "url_key": "denshattack-switch-2",
+      "features": [
+        "Rompe récords"
+      ],
+      "ways_to_play": [],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "b15",
+        "label": "+15 Años",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Violencia de fantasia",
+        "Lenguaje"
+      ],
+      "demo_nsuid": "70030000024153",
+      "percent_off": 25,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000103978/Video/86a24e1c8eb7b005e39eedde1f187a6c07d14963fb5d4fce797b124f412e2078"
+      ],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/eee34511c4764bdb9dc8e381a8693e1b_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000074491",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch_2",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000074491",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Hello Kitty Island Adventure",
+      "normalized_title": "Hello Kitty Island Adventure",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "hello-kitty-island-adventure-2e1f3b91",
+      "platforms": [
+        "SWITCH"
+      ],
+      "genres": [
+        "Aventura",
+        "Simulación"
+      ],
+      "publishers": [
+        "Sunblink"
+      ],
+      "developers": [
+        "Sunblink"
+      ],
+      "release_date": "2025-11-13T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000074491/98290cd42c05c386c4967d3552ab9421e79eba1a0953f20cc64b6e2623cc6675",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/d95c144d4f014db2803c73edd0b5d322_1024",
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109159/d90032d33a19100a6ab97184f990376d99f2ec5bb25b31c93c1f42e032d5c170",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109159/527875949fca13e022fac0c628a32119067d24d5403c451dd6c848adb1eb5e17",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109159/c845d4b53cbc629d215847d8cbc3aca9411f235b48ea8813d150d88e61d4c48f",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109159/1e4f4a9b17bcbe2f2b0ff4cdc3cbffedc86fc6378a69009067a5b4a0371eaa90",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109159/d5f3b3754ce2b014ff31ed0f74c2daba91f560b11c78ad7526c493cd8520ae26",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109159/f2b8fa984d0b07808d671f4e58c094bc459fe94fb20fae582a014df176e51b04"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 709,
+      "sale_price": 389.95,
+      "sale_end": "2026-10-19T06:59:59Z",
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [
+        "nintendo:MX:70010000109159",
+        "nintendo:MX:70050000064217"
+      ],
+      "raw_id": "70010000074491",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100074491",
+      "url_key": "hello-kitty-island-adventure-switch",
+      "features": [
+        "Libertad de movimiento",
+        "Personajes personalizables"
+      ],
+      "ways_to_play": [
+        "Juega en línea con amigos"
+      ],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Juego en línea",
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "a",
+        "label": "Todo Publico",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Sin Descriptores"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 45,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000109159/Video/6f34e0f97e27b702a69c6a8c6a8f439c5366b2183b54c1c69cfee3ed68be292a"
+      ],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/d95c144d4f014db2803c73edd0b5d322_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000095417",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch_2",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000095417",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Hogwarts Legacy",
+      "normalized_title": "Hogwarts Legacy",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "hogwarts-legacy-3fb0fbff",
+      "platforms": [
+        "SWITCH_2"
+      ],
+      "genres": [],
+      "publishers": [
+        "WB Games"
+      ],
+      "developers": [
+        "Avalanche Software"
+      ],
+      "release_date": "2025-06-05T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000095417/f0354775ff98c5321fb6cab8e35c721118fa2f7eab7197b85d526c1e921c275e",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000027672/7fc2440362e7d52ed033a7890859d2684e69ed41a5d20788c7c040374da1e684",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000027672/6c94795726fd466f071fd294cc1f683f22348ab011b48f59623fed81bce59ab6",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000027672/8f623a43b2fa952069589bfc205d8e6e24d83a497b5c0a450c6c7cb11b1c2c13",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000027672/bdf1b0d321147fc6bcc833530dd67cfcfd9711cc26333bbdff476226a09e6df6",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000027672/e5927f4bc73b499a686f232db594dea700addb113c5adfe199d0d13bc4d0692d",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70070000027672/6600882171c1d20624de336147d69f72ea7faf632bc41b621f0307a454a6073b"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 1099,
+      "sale_price": 439.6,
+      "sale_end": "2026-10-13T06:59:59Z",
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70010000095417",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100095417",
+      "url_key": "hogwarts-legacy-switch-2",
+      "features": [],
+      "ways_to_play": [],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "b15",
+        "label": "+15 Años",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Sangre",
+        "Violencia de fantasia",
+        "Lenguaje moderado",
+        "Uso de alcohol",
+        "Compras dentro del juego"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 60,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70070000027672/Video/03a641601d1362e4afd39af0ba4e2c82820021743b1e0fda70763d6bcb7d5101"
+      ],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000095417/6e62d1f95a19794e12abe514fd863037efed20d7543a4ec9db98692d7afdbdbd"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000105065",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch_2",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000105065",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "LEGO® Voyagers",
+      "normalized_title": "LEGO Voyagers",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "lego-voyagers-535cd293",
+      "platforms": [
+        "SWITCH_2"
+      ],
+      "genres": [
+        "Acción",
+        "Aventura"
+      ],
+      "publishers": [
+        "Annapurna Interactive"
+      ],
+      "developers": [
+        "Light Brick Studio"
+      ],
+      "release_date": "2025-09-15T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000105065/f494a76df8cae7940e3a0a2e32d4f81681952fc3ecbd5ed4e2661f9ff3ca0a35",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000105065/67fef61ee5fa65f3d3e9a2bb05be9f1dbe6e9cceed8fc4959cc9c7eef4d3dfee",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000105065/3b5ace18600bc5985d12af3a92cd743d2ea934f5c209cff4df93cd531a452d87",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000105065/2e24279d28cdb3ab623d59764fc93196ccb694323f408a02f56f48f9aef8e35c",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000105065/11399a1344ab98df3ca48861207df3a4f274809d16091e35e2ec91ecf6574fbd",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000105065/78a81f30c97c87dc71ef8eb558324f2f5142c63fe18e7fe67d2d5b7a5841961d",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000105065/5fb3b811c6bf30fdf6c127b1b8f44ef121fcff7b350b41240f65038c18063851"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 329,
+      "sale_price": 197.4,
+      "sale_end": "2026-10-12T15:59:59Z",
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70010000105065",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100105065",
+      "url_key": "lego-voyagers-switch-2",
+      "features": [
+        "Acertijos y deducción",
+        "Exploración",
+        "Libertad de movimiento",
+        "Plataformas"
+      ],
+      "ways_to_play": [
+        "Cooperativo en línea",
+        "Juega en línea con amigos",
+        "Juntos en una consola",
+        "Partidas en grupo"
+      ],
+      "player_count": "2+",
+      "nso_features": [
+        "Juego en línea"
+      ],
+      "content_rating": {
+        "code": "a",
+        "label": "Todo Publico",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [],
+      "demo_nsuid": null,
+      "percent_off": 40,
+      "videos": [],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/61d03ea1cc6349d3a8575c503d807f8f_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000029016",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000029016",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Monster Hunter Rise",
+      "normalized_title": "Monster Hunter Rise",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "monster-hunter-rise-4358ac30",
+      "platforms": [
+        "SWITCH"
+      ],
+      "genres": [],
+      "publishers": [
+        "CAPCOM"
+      ],
+      "developers": [
+        "CAPCOM CO., LTD."
+      ],
+      "release_date": "2022-06-30T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000029016/b6ca09e9a7f6faf27641f62dabe64c6ff97b4f326aa478379e3c112aa28eb9ab",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000013808/edb3e67abb2ed58df0ada8106ae9cb27e6e1fd352adab6e32575ee3827e9122a",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000013808/34805d3b002ba3c8d1c0161ec4e4616e82c0e6db5cd0ac18338f368ef6793eb9",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000013808/d2e32b9ad764d0f4862b6adbfc3fed58509d96c815718b9cec86c161d4ba08a5",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000013808/d893b73dbd9df59ebeb8975bdd3a91832161bd174917a2b7740b849de2e11412",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000013808/5f1d5c40c9045db89e0011a78af16d79f6140e54901ae5815687e1497ccaa1d9",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70070000013808/75d2e83adc81ee5dd2304df684cea4f61aae3c29a64073cb53f7e18581ba4efa"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 805,
+      "sale_price": 100.46,
+      "sale_end": "2026-10-16T06:59:59Z",
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70010000029016",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100029016",
+      "url_key": "monster-hunter-rise-switch",
+      "features": [],
+      "ways_to_play": [],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Juego en línea",
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "b15",
+        "label": "+15 Años",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Sangre",
+        "Violencia",
+        "Interacción de usuarios",
+        "Compras dentro del juego"
+      ],
+      "demo_nsuid": "70030000015207",
+      "percent_off": 87.52,
+      "videos": [],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/2e7b95ba71e14aa38fe6c7e843beaeb5_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000112136",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000112136",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Overcooked! 2 – Nintendo Switch 2 Edition",
+      "normalized_title": "Overcooked! 2 – Nintendo Switch 2 Edition",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "switch_2",
+      "family_id": "overcooked-2-ecd1ff25",
+      "platforms": [
+        "SWITCH_2"
+      ],
+      "genres": [
+        "Acción",
+        "Fiesta"
+      ],
+      "publishers": [
+        "Team17"
+      ],
+      "developers": [],
+      "release_date": "2018-08-07T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112136/64cbe903910d9bbd79caa5ef5a80fc3fb5a8784cfcf10728b6b4e802f9b1a6a2",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/3bf99ba8ef994a59ae9369979988866c_1024",
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112136/1c06d12cf785ef75977e5fde31bc820d202c001af0cd44ff95043c570348555e",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112136/6b1ddfd7a4d8e6382a631d1ab565090e06c99c534989b66c073422b3184a1328",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112136/b1b90614ae4aeb1081a0f7c4d3450d3a54946fa3bfac86349f449e90878d9a87",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112136/4bef11b434a2115c90250df3dec29c5ccfcc7a0620befdd16d14ca1aecb2ff3c",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112136/6ea07beee6b4c048cbce74ba8a7a41729fa75139a9192105426741c1fe6e7147",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112136/c2326be5129267debe021f4cbf478779c64e6f480fdce04dc4c3783b2a0b404f"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 625,
+      "sale_price": 437.5,
+      "sale_end": "2026-10-17T06:59:59Z",
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [
+        "nintendo:MX:70010000003402",
+        "nintendo:MX:70050000065231"
+      ],
+      "raw_id": "70010000112136",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100112136",
+      "url_key": "overcooked-2-nintendo-switch-2-edition-switch-2",
+      "features": [
+        "Rompe récords"
+      ],
+      "ways_to_play": [
+        "Cooperativo en línea",
+        "GameShare con usuarios cercanos",
+        "GameShare por GameChat",
+        "Juega en línea con amigos",
+        "Juntos en una consola",
+        "Juntos en varias consolas",
+        "Partidas en grupo"
+      ],
+      "player_count": "4+",
+      "nso_features": [
+        "Juego en línea",
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "a",
+        "label": "Todo Publico",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [],
+      "demo_nsuid": null,
+      "percent_off": 30,
+      "videos": [],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/3bf99ba8ef994a59ae9369979988866c_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000115483",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch_2",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000115483",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Shadow Tactics: Blades of the Shogun",
+      "normalized_title": "Shadow Tactics: Blades of the Shogun",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "shadow-tactics-blades-of-the-shogun-7a104752",
+      "platforms": [
+        "SWITCH_2"
+      ],
+      "genres": [
+        "Acción"
+      ],
+      "publishers": [
+        "Daedalic Entertainment"
+      ],
+      "developers": [
+        "Mimimi Games"
+      ],
+      "release_date": "2026-03-18T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000115483/bd88826a5b1635c311a4af08aa34324a2c6f0daef8904a3df3506ae4c518e9f6",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000115483/73236e229c61665f1203c8e09e5f91620c59e51189660cc151d45ef2ba69d54a",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000115483/d29dbd6ac96f5aea67292f9b0748d7f6a44d530315227e0c5e5b97db99bd84e8",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000115483/f672202991816876cc9a5907826ad78af65d32606c1de72e655ce9964ccf0fae",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000115483/f1528687f5ae183e31c37606565bc11cd36ccd3b10d14d4e029c4e1307bd24ed",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000115483/b3f6aae49e94858c43104ebfa8c2192ce5129abc8c426aec7dfd2de9ae0d58b3",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000115483/f211ee99349e15238bec7d8bf2753c4cea53acff7e10ee302731c54739508932"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 739,
+      "sale_price": 443.4,
+      "sale_end": "2026-10-30T06:59:59Z",
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70010000115483",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100115483",
+      "url_key": "shadow-tactics-blades-of-the-shogun-switch-2",
+      "features": [
+        "Elige el nivel de dificultad",
+        "Personajes con voz",
+        "Sigilo"
+      ],
+      "ways_to_play": [],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "c",
+        "label": "Adultos +18 Años",
+        "system": "SMEC",
+        "requires_age_gate": true
+      },
+      "content_descriptors": [
+        "Derramamiento de sangre",
+        "Violencia"
+      ],
+      "demo_nsuid": "70030000025011",
+      "percent_off": 40,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000115483/Video/2aa7b478d69b5942c818f9b402c48a81712321f86b7897a7aa7a80ee77a4bd93"
+      ],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000115483/4eec00472054a5444acc213730b4150beb73dd1b954b4a672742debdd6a0c361"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000109930",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch_2",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000109930",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Shadow Tactics: Blades of the Shogun - Aiko's Choice",
+      "normalized_title": "Shadow Tactics: Blades of the Shogun - Aiko's Choice",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "shadow-tactics-blades-of-the-shogun-aiko-s-choice-e78f1741",
+      "platforms": [
+        "SWITCH_2"
+      ],
+      "genres": [
+        "Acción"
+      ],
+      "publishers": [
+        "Daedalic Entertainment"
+      ],
+      "developers": [
+        "Mimimi Games"
+      ],
+      "release_date": "2026-03-18T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109930/894cb47fefe64bf0bb329f1a3dc586019dd3792d494478793d8bc353fbef1fcb",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109930/2ad1b670d97e219dbc44baec2f81469a5ab70cd5768eec8e1ac16e41141ae699",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109930/9a0d027ce944cfa2d4586d378ae021b704593ea6bd4e69b507c91a87c1220cff",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109930/109a62751301765c3f7c56dc826099e1b2d050c79784a44796795f64f0b8e819",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109930/9026aacb77b5a71f8cbf00d7935d8b4bcfdf8ccf684f8c12c5ca8375ce5f0837",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000109930/85728e1154f685556b8e31589f10f36fd02a0b68bc67097053f45d1287420a6f"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 339,
+      "sale_price": 203.4,
+      "sale_end": "2026-10-30T06:59:59Z",
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70010000109930",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100109930",
+      "url_key": "shadow-tactics-blades-of-the-shogun-aikos-choice-switch-2",
+      "features": [
+        "Elige el nivel de dificultad",
+        "Personajes con voz",
+        "Sigilo"
+      ],
+      "ways_to_play": [],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "b15",
+        "label": "+15 Años",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Sangre",
+        "Uso de alcohol",
+        "Violencia"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 40,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000109930/Video/6beaedd4deb943181f20099b10a0d92a337516b5ceb138dd00392cb8d92cd94c"
+      ],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/21db1a9d28cb4a9698fcdd5530efd55a_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000112012",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch_2",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000112012",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "South of Midnight Weaver's Edition",
+      "normalized_title": "South of Midnight Weaver's Edition",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "south-of-midnight-weaver-s-edition-9eb886dc",
+      "platforms": [
+        "SWITCH_2"
+      ],
+      "genres": [
+        "Acción"
+      ],
+      "publishers": [
+        "Compulsion Games"
+      ],
+      "developers": [
+        "Compulsion Games"
+      ],
+      "release_date": "2026-03-31T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112012/8524a71e24a85cfd31187ed68dd6da762bc05a04e6d96b89f470ed1798fa2656",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112012/6275f0a2a5fa920e59b7aea7e10b3b4eaeae7c57de928f2818acfeb070133017",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112012/b3a67ca3d952a54be91dcb7a69bd77d2e4acad3fedbbdb724219d26402fe0b1d",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112012/9a4fd6853ddb398adfd9330c3a8e16c6f5ff645eed4dc21ddb8d94476a4bd0a7",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112012/7e2012f776918d651fdd6d836edbe4dfbb279c6e76c3dc224deba0d1e984c7fd",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112012/6980a72de386d676e836ed6773afd6bd256614d2a0be0d92f2ea25de78429040",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000112012/bfff565f539e777c22ccde979bff77a2f2092d86bfe4b58f0633ece9107774ed"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 699,
+      "sale_price": 489.3,
+      "sale_end": "2026-10-26T06:59:59Z",
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70010000112012",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100112012",
+      "url_key": "south-of-midnight-weavers-edition-switch-2",
+      "features": [
+        "Elige el nivel de dificultad",
+        "Libertad de movimiento",
+        "Personajes con voz",
+        "Plataformas"
+      ],
+      "ways_to_play": [],
+      "player_count": "Un jugador",
+      "nso_features": [],
+      "content_rating": {
+        "code": "c",
+        "label": "Adultos +18 Años",
+        "system": "SMEC",
+        "requires_age_gate": true
+      },
+      "content_descriptors": [
+        "Sangre",
+        "Lenguaje fuerte",
+        "Violencia"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 30,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000112012/Video/95e233a7aa232a06f9dc542f1da5b5a0ceb4fc576bb96aaa9a86e83b68210940"
+      ],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/c2361d79d37740a2808cff03584cb194_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000078415",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000078415",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Ace Attorney Investigations Collection",
+      "normalized_title": "Ace Attorney Investigations Collection",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "collection",
+      "family_id": "ace-attorney-investigations-collection-0b14fd51",
+      "platforms": [
+        "SWITCH"
+      ],
+      "genres": [
+        "Aventura",
+        "Simulación"
+      ],
+      "publishers": [
+        "CAPCOM"
+      ],
+      "developers": [
+        "CAPCOM CO., LTD."
+      ],
+      "release_date": "2024-09-06T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000078415/1d26713c6f566a9ab6516bb92ae26f24c5078a9fe28b0c293d1910c83894f456",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000078415/1fd6b893a503c6a8ae27768d23c54a242e6cabeaf0852487949273cef8e071cd",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000078415/f0ec8945a7ea1f2dfee80392f0ab8c456bef99f311610d6cacc7d41dce916765",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000078415/e09dc1bdf819085039003b8996d765ae178b759fcd305e932f7b5ee2c0b198bc",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000078415/aa8d6d84445da2b89222c186e760ff7cea11d669413421b0fda548044547c8ba",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000078415/ba3705f33587a3cf31cdfe78121851ce6ad6b23c5b20fd24cd4dae1fabd73920",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000078415/c326bf66c48e4981c6e1d829aef60a885ba7ed3f22b2d2e780d78a5d960150fb"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 663,
+      "sale_price": null,
+      "sale_end": null,
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70010000078415",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100078415",
+      "url_key": "ace-attorney-investigations-collection-switch",
+      "features": [
+        "Acertijos y deducción",
+        "Arte pixelado"
+      ],
+      "ways_to_play": [],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "b15",
+        "label": "+15 Años",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Sangre",
+        "Lenguaje moderado",
+        "Temas insinuantes moderados",
+        "Violencia moderada"
+      ],
+      "demo_nsuid": "70030000020910",
+      "percent_off": 0,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000078415/Video/f093deaf2558a2b52850d5ca173cfe63e36f88a56cf58eed2b68247ffef0bd4d"
+      ],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/38adb85f5aaf474892df03b065d62651_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000001620",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000001620",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Luigi’s Mansion™ 3",
+      "normalized_title": "Luigi’s Mansion 3",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "luigi-s-mansion-3-ed9a84b3",
+      "platforms": [
+        "SWITCH"
+      ],
+      "genres": [
+        "Acción",
+        "Aventura"
+      ],
+      "publishers": [
+        "Nintendo"
+      ],
+      "developers": [],
+      "release_date": "2019-10-31T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000001620/2b166fb3197dacfde1d939acd6a976b9fbe3b1a32c54f9f0d2c8d23efb22412d",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000001620/4d5437c859c0b77d140eb8e4dadc9a2e9db37fdaf2f26779c38828c2da6e60cf",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000001620/699b744e3e94cf49d336f5e7d96be966f8f4eb329a5a8277bf940e6271046ea3",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000001620/95314d2808b22d90b87a55d369d950d5043ab64bcf666dbca72968551fa91009",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000001620/ae1b341e5d079e5af490ce5fc007679a21f69db66d85c602bb49db54ce96eb21",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000001620/4ed43984dd7de804af55d407df1d96e9c91cfa318d861956d34339ab35dcf214",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000001620/2b99781bb3be15319c34d59a45fea821ec71c96cbcc41a3aac882765e482a8ad"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 1229,
+      "sale_price": null,
+      "sale_end": null,
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70010000001620",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100001620",
+      "url_key": "luigis-mansion-3-switch",
+      "features": [
+        "Acertijos y deducción"
+      ],
+      "ways_to_play": [
+        "Cooperativo en línea",
+        "Juntos en una consola",
+        "Juntos en varias consolas",
+        "Partidas en grupo"
+      ],
+      "player_count": "4+",
+      "nso_features": [
+        "Juego en línea",
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "a",
+        "label": "Todo Publico",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Travesuras cómicas",
+        "Interacción de usuarios",
+        "Compras dentro del juego"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 0,
+      "videos": [],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/7463a4609e10416ca9e761e640135009_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000097826",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch_2",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000097826",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Edición Estándar WWE 2K25",
+      "normalized_title": "Edición Estándar WWE 2K25",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "edicion-estandar-wwe-2k25-ee6514f9",
+      "platforms": [
+        "SWITCH_2"
+      ],
+      "genres": [
+        "Acción",
+        "Deportes",
+        "Simulación"
+      ],
+      "publishers": [
+        "2K"
+      ],
+      "developers": [
+        "Visual Concepts"
+      ],
+      "release_date": "2025-07-23T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000097826/2fef9ae0ce3c03fc5066e028fb9d0ca997b502a2a7cb6853911a623b18cf96c2",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000097826/3684519107cf945a55fbb76392cf00fcff5e8fba0d3b0fa0fce53103bf67dedb",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000097826/564d7db45bb3fe2d7de5cc3379a429bde17b978c5c93d234b772413172f83e0c",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000097826/029fe3ac829b433385b00ce139257268c700b54b771073330cd1e2a97c23656f",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000097826/58da40dbfdff1f21e7dc81d4f8805d2cd129a12cb15248ecad95b6f746e17e3e",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000097826/e381826b8ed4bfd0cdade38db038d7e835e5ddf30999204d6d2cab631ffabc37",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000097826/4d16218017a4634f1b0ae7bf09e1dcc902b046323b3ceb7601ce047a4b000d83"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 1499,
+      "sale_price": null,
+      "sale_end": null,
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70010000097826",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100097826",
+      "url_key": "wwe-2k25-standard-edition-switch-2",
+      "features": [
+        "Clasificación en línea",
+        "Elige el nivel de dificultad",
+        "Mejora tus atributos",
+        "Personajes con voz",
+        "Personajes personalizables"
+      ],
+      "ways_to_play": [
+        "Compite en línea",
+        "Cooperativo en línea",
+        "GameShare con usuarios cercanos",
+        "GameShare por GameChat",
+        "Juega en línea con amigos",
+        "Juntos en una consola",
+        "Partidas en grupo"
+      ],
+      "player_count": "4+",
+      "nso_features": [
+        "Juego en línea"
+      ],
+      "content_rating": {
+        "code": "b15",
+        "label": "+15 Años",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Lenguaje",
+        "Bajo contenido de sangre",
+        "Temas insinuantes moderados",
+        "Uso de alcohol",
+        "Violencia",
+        "Interacción de usuarios",
+        "Compras dentro del juego (Incluye artículos aleatorios)"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 0,
+      "videos": [],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/725823c282d24f51a92a5f52af9c4dd2_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000053966",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000053966",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Pokémon™ Scarlet",
+      "normalized_title": "Pokémon Scarlet",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "pokemon-scarlet-9f9d3282",
+      "platforms": [
+        "SWITCH"
+      ],
+      "genres": [
+        "Juego de rol"
+      ],
+      "publishers": [
+        "Nintendo"
+      ],
+      "developers": [
+        "GAME FREAK inc."
+      ],
+      "release_date": "2022-11-18T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000053966/849c234de8df7265201d26d9d72f88eed3f32438d3dca12fc135beb4c3befc85",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000053966/9e78551e9143c33808225efd398d378b3f73dcd8b812cd07aee9e496a66bcf9b",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000053966/f8ddaa6cfe5d9551504d99e3fc9387c9d8daa6a03fb0d86058dfeb143b566383",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000053966/f7ca9c4e9dd303234d74488fdf350ceca6255b534d71a45fe6f08d4d290416d2",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000053966/81587bec7fac829b80ee9c759e96aebb689e7340de1fb28880244d79c38f55b6",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000053966/73880dabbd2702be0fee46727f4fd6cc806dccd9e525e3e9af9f410a0e67c43a",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000053966/b3550976ca7fa327c9f12e3a1f9d7a19a69c382e368ca0de257dd153e1f2d3e4"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 1229,
+      "sale_price": null,
+      "sale_end": null,
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70010000053966",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100053966",
+      "url_key": "pokemon-scarlet-switch",
+      "features": [
+        "Elige tu propio camino",
+        "Libertad de movimiento",
+        "Mejora tus atributos",
+        "Personajes personalizables"
+      ],
+      "ways_to_play": [
+        "Compite en línea",
+        "Cooperativo en línea",
+        "Juntos en varias consolas",
+        "Partidas en grupo"
+      ],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Juego en línea"
+      ],
+      "content_rating": {
+        "code": "a",
+        "label": "Todo Publico",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Violencia moderada de fantasía",
+        "Interacción de usuarios",
+        "Compras dentro del juego"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 0,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000053966/Video/bb7f3d077b7f4f14b748ee16a40c4606ebab2f35ebbd969df9c345f02b17aab4",
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000053966/Video/7376bc2c5081947d8a9fe7e8dd636b2f11079a780b20dc03b4822c24ba9954e0",
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000053966/Video/6356e50e7110efa73dafe759938367e9810a4baf433252929a56d29c189f95d6"
+      ],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/441f9d8a45744ea6b22b413ebf637eea_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000110440",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000110440",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Animal Crossing™: New Horizons – Nintendo Switch™ 2 Edition",
+      "normalized_title": "Animal Crossing: New Horizons – Nintendo Switch 2 Edition",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "switch_2",
+      "family_id": "animal-crossing-new-horizons-29c2133e",
+      "platforms": [
+        "SWITCH_2"
+      ],
+      "genres": [],
+      "publishers": [
+        "Nintendo"
+      ],
+      "developers": [
+        "Nintendo"
+      ],
+      "release_date": "2020-03-20T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000110440/749cb30819c96dc883bf8ac71dfe5a27469b2ea035f81775dd23ab8b8c82bc9d",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/eab49773a25c4653b7666ed872a3b142_1024",
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70050000064914/ea941e232f40da16abffd0104a339c04705b8aba4a63abd5d89f0ffb21598e03",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70050000064914/16990de19b9c7e5b71ef5aa5e68fced248928ebfe23453045a836f364440f850",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70050000064914/15ac38a02a332a562a94bd9aa81368ac4cf0cb5339e2b8c7c5eabd130ee6374a",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70050000064914/ed4432ed02fdff6c6dd62152b22ac2080415c9f8ef32f08f0f398de5dea1a5ed",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70050000064914/e637e182a8dc3560bac0a127149eccb01939d1c7f05fe7f17719dd3f90a44262"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 1339,
+      "sale_price": null,
+      "sale_end": null,
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [
+        "nintendo:MX:70010000027619",
+        "nintendo:MX:70050000064914"
+      ],
+      "raw_id": "70010000110440",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100110440",
+      "url_key": "animal-crossing-new-horizons-nintendo-switch-2-edition-switch-2",
+      "features": [],
+      "ways_to_play": [],
+      "player_count": null,
+      "nso_features": [],
+      "content_rating": {
+        "code": "a",
+        "label": "Todo Publico",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Travesuras cómicas",
+        "Violencia moderada de fantasía",
+        "Interacción de usuarios",
+        "Compras dentro del juego"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 0,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70050000064914/Video/7d5d3b61cf5c0e4755ff2534242026e69a757ee9a97b704a076ccab474b419e1"
+      ],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/eab49773a25c4653b7666ed872a3b142_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000003208",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000003208",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Hollow Knight",
+      "normalized_title": "Hollow Knight",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "hollow-knight-2adfa879",
+      "platforms": [
+        "SWITCH"
+      ],
+      "genres": [
+        "Acción"
+      ],
+      "publishers": [
+        "Team Cherry"
+      ],
+      "developers": [
+        "Team Cherry"
+      ],
+      "release_date": "2018-06-12T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000003208/4643fb058642335c523910f3a7910575f56372f612f7c0c9a497aaae978d3e51",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/033a268974ae4681bec4d5ab6691fb65_1024",
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000117998/91af63d01f9fe1a4ccd65d1c8296313d854f50b092f92b9adda2695fac7701a5",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000117998/3ec291b8bd8e57c23b0d87ebfa48eb5d2bcb00b69e43b721b6dc4e9f4af2cd26",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000117998/dcf2e8605c380ca7af5b9a84d693e12ea14cc007f68d695be93be37309ec1077",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000117998/34d96cf299003eda08119667667816396a073d2abfc32d571a055a34875ca120",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000117998/9dbf787e03b8003c78726135b07a00060abdc38ad5dd03b149440653b954cbc6",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000117998/485c25c1401baf8bbd05d09ab412e4b1e30f30bef2d21d204cd45f7d17a3ee07"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 149.99,
+      "sale_price": null,
+      "sale_end": null,
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [
+        "nintendo:MX:70010000117998",
+        "nintendo:MX:70050000069063"
+      ],
+      "raw_id": "70010000003208",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100003208",
+      "url_key": "hollow-knight-switch",
+      "features": [
+        "Exploración",
+        "Plataformas",
+        "Rompe récords de tiempo"
+      ],
+      "ways_to_play": [],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "b",
+        "label": "+12 Años",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Violencia de fantasia",
+        "Bajo contenido de sangre"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 0,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch2/70010000117998/Video/6706dc7982a3b7d306223b7db6618dc12ab0bb53bf9969f020fb7af6ae660e97"
+      ],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/fdcb2cecd8ee47999c7844d1209c4730_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000033131",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000033131",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Hades",
+      "normalized_title": "Hades",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "hades-4a510f82",
+      "platforms": [
+        "SWITCH"
+      ],
+      "genres": [
+        "Acción"
+      ],
+      "publishers": [
+        "Supergiant Games"
+      ],
+      "developers": [
+        "Supergiant Games"
+      ],
+      "release_date": "2020-09-17T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000033131/dbc8c55a21688b446a5c57711b726956483a14ef8c5ddb861f897c0595ccb6b5",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000033131/2a8ec2edcb7e498d599f21aa937baa5c39ff14a8b0d1f489c685b3a6eb52c37b",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000033131/93004a4a44bcf83c5b6a62b0f5a4c974b1e44f7d03d2299646f5ff4f6fac34fd",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000033131/a3a4b5fe7e9a1ea2f3fe2b75708413273a1ce215a41ab9ff956d2595c4cf9af2",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000033131/5521882ad669c26da844b4668eb7e9c754d157211d5b992b549b0fb9592e91fc",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000033131/bfb04be87f9f727e319a75857b4cbb894d288c90c6ecb0a5c4003b30b3dcf9de",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000033131/b87b3c2d336d32ea15d7b890689e71f670f81e158705b50b5f7bbd9ed2e4da3b"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 484.81,
+      "sale_price": null,
+      "sale_end": null,
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70010000033131",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100033131",
+      "url_key": "hades-switch",
+      "features": [
+        "Niveles y mapas aleatorios",
+        "Personajes con voz",
+        "Recomenzar de cero tras las derrotas"
+      ],
+      "ways_to_play": [],
+      "player_count": "Un jugador",
+      "nso_features": [
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "b15",
+        "label": "+15 Años",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Sangre",
+        "Lenguaje moderado",
+        "Temas insinuantes",
+        "Violencia"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 0,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000033131/Video/0bb79dac0351020d6cc885d2abe4414c01e89e51c6052d1dd494fee100fe43f2"
+      ],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/28a00842948641a6be0f54ca8b91c215_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000001801",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000001801",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Stardew Valley",
+      "normalized_title": "Stardew Valley",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "stardew-valley-57e3e71a",
+      "platforms": [
+        "SWITCH"
+      ],
+      "genres": [],
+      "publishers": [
+        "ConcernedApe"
+      ],
+      "developers": [
+        "ConcernedApe"
+      ],
+      "release_date": "2017-10-05T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000001801/3dd0951e2fa3808ab27af1d998a9d0a18d77809118437d1972124b6219246420",
+      "hero_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/e58b95536f244449891063f1b814fef8_1024",
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70050000061921/6016d2f6d874ad4a1063a28181597427f6fe9ee207ce3c8351c10dda377b3bb4",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70050000061921/dcd6f1feda032d04e7220e97e24d93d1f9c963285c88bd8e81e06a20d193054c",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70050000061921/767ac7ae1903bc92ab31b2e131d422c0f8dc9912fd52ce51afc984b6b6974e83",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70050000061921/d76a54c456854df9c9a5059eac394d744aa73fe1d7f391cf79b8a4b73bd7298b",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70050000061921/9c33645aee20fb323e579cd75036df000f2322de1be04662c989d42047ffbfdb",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70050000061921/a14b2ba7d7d59e9ab25a74871d4d41f83527cba7485cd024bbc518c1433932c0"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 149.99,
+      "sale_price": null,
+      "sale_end": null,
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [
+        "nintendo:MX:70010000105384",
+        "nintendo:MX:70050000061921"
+      ],
+      "raw_id": "70010000001801",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100001801",
+      "url_key": "stardew-valley-switch",
+      "features": [],
+      "ways_to_play": [],
+      "player_count": null,
+      "nso_features": [],
+      "content_rating": {
+        "code": "b",
+        "label": "+12 Años",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Violencia de fantasia",
+        "Bajo contenido de sangre",
+        "Lenguaje moderado",
+        "Apuestas simuladas",
+        "Uso de alcohol",
+        "Uso de tabaco",
+        "Interacción de usuarios"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 0,
+      "videos": [],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/b72d94b3aed44670b063dcdcfff348d0_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000000964",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000000964",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Minecraft",
+      "normalized_title": "Minecraft",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "minecraft-f1416844",
+      "platforms": [
+        "SWITCH"
+      ],
+      "genres": [
+        "Acción",
+        "Simulación"
+      ],
+      "publishers": [
+        "Mojang"
+      ],
+      "developers": [],
+      "release_date": "2018-06-20T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000000964/a28a81253e919298beab2295e39a56b7a5140ef15abdb56135655e5c221b2a3a",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000000964/94d3ce6833675dc3266b98aa756b14d0a5e634c5db5bbbd81d294b7be4a8c4e8",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000000964/b23676caba30e73eb5097f21f8d6e7b269700a51be6c0f7d6ac42bb06b856215",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000000964/f38453ba284ae7079907906edd934132cfb9551cd4de07928a025538d27c91ed",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000000964/fe30a072a38e1c83abca8ad0987d40cb054da8bdb684d8b59562e07aaceb1e84",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000000964/e7082dff513211e2bec6facddfc66576edaf4b62086116e6290828f8075c95aa",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000000964/4ebc72cce174b6cc6b57748e842bfd11e6e0dcbaab88d89818c6a5dbe9a9c5c8"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 499,
+      "sale_price": null,
+      "sale_end": null,
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [
+        "nintendo:MX:70010000119400"
+      ],
+      "raw_id": "70010000000964",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100000964",
+      "url_key": "minecraft-switch",
+      "features": [
+        "Crea y juega",
+        "Elige tu propio camino",
+        "Juega en primera o tercera persona",
+        "Libertad de movimiento"
+      ],
+      "ways_to_play": [
+        "Cooperativo en línea",
+        "Juega en línea con amigos",
+        "Juntos en una consola",
+        "Juntos en varias consolas",
+        "Multiplataforma",
+        "Partidas en grupo"
+      ],
+      "player_count": "4+",
+      "nso_features": [
+        "Juego en línea",
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "b",
+        "label": "+12 Años",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Violencia de fantasia",
+        "Interacción de usuarios"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 0,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000000964/Video/a2761b7c2a1626561589be1efdebc15d8803ba2bf3fc570c81e50614ac2e5187"
+      ],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/66ce16bcc325410bbce1517829450f30_1024"
+    },
+    {
+      "schema_version": "1.0.0",
+      "id": "nintendo:MX:70010000047973",
+      "source": "nintendo_mx",
+      "source_catalog": "nintendo_switch",
+      "region": "MX",
+      "locale": "es-MX",
+      "nsuid": "70010000047973",
+      "product_code": null,
+      "slug": null,
+      "store_url": null,
+      "title": "Cult of the Lamb",
+      "normalized_title": "Cult of the Lamb",
+      "description": null,
+      "product_type": "game",
+      "edition_type": "standard",
+      "family_id": "cult-of-the-lamb-cf7bd460",
+      "platforms": [
+        "SWITCH"
+      ],
+      "genres": [
+        "Acción",
+        "Aventura"
+      ],
+      "publishers": [
+        "Devolver Digital"
+      ],
+      "developers": [
+        "Massive Monster"
+      ],
+      "release_date": "2022-08-11T00:00:00.000Z",
+      "cover_url": "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/f4bf3b2748a6571b0f0c62369b733a8386347abdb158fb985f9ffdf36a5567a6",
+      "hero_url": null,
+      "screenshots": [
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/a3ea5ffab983d5397ef89af106c02c0ca89a1edfa9af093fdb58ce1e5a32b44b",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/36a694ef1a732bbd6428068648a093dbe76c1f204c136edbb8ae66bcbec6f06b",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/7f505f751c3e7bfecd02da24c746b5d08b893d04e7a54b0aa039154c72c4ac21",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/cd177f2bd6a67d2c1c18d7a96dd506a172725e42cf852ceaa802607bb8be2f06",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/9123adb7d5df3386a91dfff7d8a42b6448ca50a7fa2b3b3c7f64c01f4987e49f",
+        "https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch/70010000047973/a0d661e63859f1566e9ba84d8de57e5c1803e9762b05f48b90a85a9daf1e35f8"
+      ],
+      "price_currency": "MXN",
+      "regular_price": 399,
+      "sale_price": null,
+      "sale_end": null,
+      "free_to_play": false,
+      "demo_available": true,
+      "availability": [
+        "Disponible ya"
+      ],
+      "related_products": [],
+      "raw_id": "70010000047973",
+      "fetched_at": "2026-10-09T18:08:40+00:00",
+      "sku": "7100047973",
+      "url_key": "cult-of-the-lamb-switch",
+      "features": [
+        "Elige el nivel de dificultad",
+        "Niveles y mapas aleatorios",
+        "Recomenzar de cero tras las derrotas"
+      ],
+      "ways_to_play": [
+        "Juntos en una consola",
+        "Partidas en grupo"
+      ],
+      "player_count": "2+",
+      "nso_features": [
+        "Guardado de datos en la nube"
+      ],
+      "content_rating": {
+        "code": "b15",
+        "label": "+15 Años",
+        "system": "SMEC",
+        "requires_age_gate": false
+      },
+      "content_descriptors": [
+        "Sangre",
+        "Humor vulgar",
+        "Violencia de fantasia"
+      ],
+      "demo_nsuid": null,
+      "percent_off": 0,
+      "videos": [
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000047973/Video/ed3a99f3f946da3008368386dbf7c2c24d0804adcc3796ef6f63583154dadacb",
+        "https://assets.nintendo.com/video/upload/q_auto/store/software/switch/70010000047973/Video/27660653d52e544345b79bd4dee73f5202457d488aafc4ebbee64d58a67dd898"
+      ],
+      "edition_label": "Standard Edition",
+      "square_image_url": "https://assets.nintendo.com/image/fetch/q_auto/f_auto/https://atum-img-lp1.cdn.nintendo.net/i/c/a21cb8312576410295a0991fc0093a8b_1024"
+    }
+  ]
+}
