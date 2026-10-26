@@ -23,10 +23,12 @@ export function initializeDiscoverTabs() {
   buttons.forEach((button, index) => {
     button.addEventListener("click", () => activateDiscoverTab(button.dataset.discoverTab));
     button.addEventListener("keydown", (event) => {
-      if (!["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+      if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
       event.preventDefault();
       const step = event.key === "ArrowRight" ? 1 : -1;
-      const target = buttons[(index + step + buttons.length) % buttons.length];
+      const target = event.key === "Home" ? buttons[0]
+        : event.key === "End" ? buttons[buttons.length - 1]
+        : buttons[(index + step + buttons.length) % buttons.length];
       activateDiscoverTab(target.dataset.discoverTab);
       target.focus();
     });

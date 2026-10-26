@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { GETTING_STARTED_STEPS } from "../js/getting-started.js";
-import { deriveHomeModel } from "../js/home-dashboard.js";
+import { deriveHomeModel, initializeHomeCounts } from "../js/home-dashboard.js";
 
 const profile = {
   archetypes: {
@@ -71,5 +71,12 @@ assert.ok(guideButton.includes('data-action="to-getting-started"'), "Falta Inici
 assert.ok(guideButton.includes('class="btn btn-primary"'), "Inicia aquí debe ser el botón principal");
 assert.ok(hero.indexOf("home-action-guide") < hero.indexOf("home-action-profile"), "Inicia aquí va antes del perfil");
 console.log("[OK] Inicia aquí es la acción principal del hero");
+
+// Inicio must show Mi lista's resolved numbers, so a game that no longer exists is not counted.
+assert.equal(typeof initializeHomeCounts, "function");
+const dashboard = readFileSync("js/home-dashboard.js", "utf8");
+assert.ok(dashboard.includes("if (loading || !counts) return;"), "No se deben mostrar conteos mientras Mi lista aún carga");
+assert.ok(dashboard.includes("resolvedCounts?.interested ?? model.favoriteCount"), "Inicio debe preferir los conteos resueltos");
+console.log("[OK] Inicio usa los conteos de Mi lista cuando ya están resueltos");
 
 console.log("\n[OK] QA de Inicio completo");

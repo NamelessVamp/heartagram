@@ -1,6 +1,6 @@
 import { PLAYER_DIMENSIONS, PLAYER_DIMENSION_LABELS, normalizedTraitPercent, traitSignal } from "./player-journey.js?v=p2";
 import { catalogLabel, curatedGenreLabel } from "./catalog-labels.js";
-import { catalogImageUrl } from "./catalog.js?v=v132";
+import { catalogImageUrl } from "./catalog.js?v=v133";
 
 // All DOM rendering lives here. Logic modules never touch the DOM.
 
@@ -587,7 +587,7 @@ export function renderWishlist(options = {}) {
 
   window.dispatchEvent(
     new CustomEvent("heartagram:collection-rendered", {
-      detail: { counts },
+      detail: { counts, loading: catalogLoading },
     }),
   );
 }

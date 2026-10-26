@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import {
   discoverProfileNames,
   selectMoodGames,
@@ -54,5 +55,15 @@ const names = discoverProfileNames(
 );
 assert.deepEqual(names, { primary: "Principal", secondary: "Secundario" });
 console.log("[OK] resuelve los nombres del perfil para Descubrir");
+
+// Keyboard and timing rules that live in the DOM code are checked on the source.
+const tabs = readFileSync("js/discover-tabs.js", "utf8");
+assert.match(tabs, /"Home", "End"/, "Las pestañas de Descubrir deben responder a Inicio y Fin");
+console.log("[OK] las pestañas de Descubrir responden a Inicio y Fin");
+
+const main = readFileSync("js/main.js", "utf8");
+assert.match(main, /rerankPending = true/, "El re-ranking debe aplazarse mientras Descubrir está abierto");
+assert.match(main, /name !== "results" && rerankPending/, "El re-ranking pendiente debe aplicarse al cambiar de pantalla");
+console.log("[OK] las recomendaciones no se reordenan frente al usuario al cargar el catálogo");
 
 console.log("\n[OK] QA de Descubrir completo");

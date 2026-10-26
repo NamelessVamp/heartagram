@@ -9,12 +9,12 @@ import {
   loadCatalog,
   loadGameDetails,
   queryCatalog,
-} from "./catalog.js?v=v132";
+} from "./catalog.js?v=v133";
 
 import { isFavorite, toggleFavorite } from "./favorites.js";
 import { isOwnedGame, setOwnedGame } from "./library.js";
 
-import { renderNintendoProductDetail } from "./nintendo-product-detail.js?v=v132";
+import { renderNintendoProductDetail } from "./nintendo-product-detail.js?v=v133";
 
 const PAGE_SIZE = 24;
 // The dialog is labelled by the product title once the detail is rendered.

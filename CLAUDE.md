@@ -11,6 +11,7 @@ python -m http.server 8000        # serve the repo root, then open http://localh
 npm test                          # full QA suite; CI runs it before every deploy
 node tests/<name>-qa.mjs          # one suite; run from the repo root (tests read files by relative path)
 git diff --check                  # documented pre-push check
+node scripts/capture_screens.mjs  # screenshots of every screen (phone + desktop) into screens/ (gitignored)
 ```
 
 `npm test` chains every `tests/*-qa.mjs` with `&&`, so the first failure stops the run. The suites are plain `node:assert` scripts. Most of them grep `index.html`, the CSS, or the JS source for exact strings, class names, and `?v=` values, so renaming a class or changing a cache-bust string can fail a suite that looks unrelated.
@@ -52,6 +53,8 @@ A single-page vanilla-ES-module app. There is no server and no AI. All user stat
 **Saved state.** `js/profile-storage.js` validates a saved profile on read and drops one it cannot use (older builds saved profiles without `vibes`, which used to stop startup). Favorites, library and profile writes fall back to memory when `localStorage` is blocked or full. A game can be saved under a curated id or a `nintendo:MX:` id, so ownership is also matched by normalized title (`omitOwned`, `titleKeys` in `js/recommend-v2.js`).
 
 **Explorar.** `initializeCatalogExplorer()` is one memoized promise and binds listeners once. Favorite and library changes update the existing card buttons in place (`refreshCardButtons`) instead of rebuilding the grid, which would drop keyboard focus.
+
+**Counts and re-ranking.** Inicio shows the numbers Mi lista resolved (`initializeHomeCounts`, fed by `heartagram:collection-rendered`), so an id that no longer exists in the catalog is neither listed nor counted; it stays in storage untouched. When the catalog arrives while Descubrir is open, `main.js` sets `rerankPending` and re-ranks on the next screen change, so cards never reshuffle under the user.
 
 **Persistence and events.** All state is in `localStorage` under `heartagram:*` keys: profile, favorites (Me interesa), library (Mi biblioteca), getting-started progress, sidebar state, and collection tab. `js/favorites.js` and `js/library.js` dispatch `heartagram:favorites-changed` and `heartagram:library-changed`. `main.js` listens for them and re-renders the home dashboard and wishlist.
 

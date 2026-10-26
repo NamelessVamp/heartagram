@@ -3,13 +3,13 @@ const DATA_VERSION = "130";
 
 import { computeProfile } from "./profile.js";
 import { updateAppShellNavigation } from "./app-shell.js";
-import { renderHomeDashboard } from "./home-dashboard.js?v=v132";
-import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js?v=v132";
-import { initializeCollectionUI } from "./collection-ui.js?v=v132";
-import { buildRecommendations, omitOwned } from "./recommend-v2.js?v=v132";
-import { activateDiscoverTab, initializeDiscoverTabs } from "./discover-tabs.js?v=v132";
+import { initializeHomeCounts, renderHomeDashboard } from "./home-dashboard.js?v=v133";
+import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js?v=v133";
+import { initializeCollectionUI } from "./collection-ui.js?v=v133";
+import { buildRecommendations, omitOwned } from "./recommend-v2.js?v=v133";
+import { activateDiscoverTab, initializeDiscoverTabs } from "./discover-tabs.js?v=v133";
 
-import * as ui from "./ui.js?v=v132";
+import * as ui from "./ui.js?v=v133";
 
 import { clearFavorites, getFavoriteIds, toggleFavorite } from "./favorites.js";
 
@@ -22,14 +22,14 @@ import {
 import {
   initializeCatalogExplorer,
   openCatalogGameDetails,
-} from "./catalog-ui.js?v=v132";
+} from "./catalog-ui.js?v=v133";
 
 import {
   favoriteIdForCatalogGame,
   loadCatalog,
   resolveCatalogFavorites,
   splitFavoriteIds,
-} from "./catalog.js?v=v132";
+} from "./catalog.js?v=v133";
 import { getOwnedGameIds, setOwnedGame } from "./library.js";
 import { initializeGettingStarted } from "./getting-started.js";
 
@@ -91,6 +91,8 @@ function showScreen(name) {
 
   // Leaving the quiz in the 250 ms between answers must not jump back into it.
   if (name !== "quiz") cancelPendingQuestion();
+
+  if (name !== "results" && rerankPending && state.profile) applyProfile(state.profile);
 
   // Guide progress can change on another screen, so refresh the home actions on return.
   if (name === "intro") {
@@ -177,6 +179,10 @@ function recommendationInputs() {
 
 let catalogPoolRequested = false;
 
+// Set when the catalog arrives while Descubrir is open: re-ranking then would
+// reshuffle cards the user is about to tap, so it waits for the next screen change.
+let rerankPending = false;
+
 // Loads the Nintendo catalog once and refreshes the recommendations with it.
 function ensureCatalogPool() {
   if (catalogPoolRequested || state.catalogGames) return;
@@ -184,7 +190,9 @@ function ensureCatalogPool() {
   loadCatalog()
     .then((catalog) => {
       state.catalogGames = catalog.games;
-      if (state.profile) applyProfile(state.profile);
+      if (!state.profile) return;
+      if (document.body.dataset.screen === "results") rerankPending = true;
+      else applyProfile(state.profile);
     })
     .catch((error) => {
       catalogPoolRequested = false;
@@ -193,6 +201,7 @@ function ensureCatalogPool() {
 }
 
 function applyProfile(profile) {
+  rerankPending = false;
   const { ranked, sections, duo, pool } = buildRecommendations(profile, recommendationInputs());
   state.pool = pool;
   ensureCatalogPool();
@@ -502,6 +511,7 @@ function bindActions() {
 
 async function init() {
   bindActions();
+  initializeHomeCounts();
 
   window.addEventListener("heartagram:favorites-changed", () => {
     renderHomeDashboard({

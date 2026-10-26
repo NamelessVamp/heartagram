@@ -91,8 +91,10 @@ export function renderHomeDashboard({
 
   byId("home-profile-primary").textContent = model.primaryName;
   byId("home-profile-secondary").textContent = model.secondaryName;
-  byId("home-favorite-count").textContent = String(model.favoriteCount);
-  byId("home-owned-count").textContent = String(model.ownedCount);
+  showCounts(
+    resolvedCounts?.interested ?? model.favoriteCount,
+    resolvedCounts?.owned ?? model.ownedCount,
+  );
 
   const recommendationTitle = byId("home-recommendation-title");
   const recommendationCopy = byId("home-recommendation-copy");
@@ -109,6 +111,25 @@ export function renderHomeDashboard({
 }
 
 const HOME_COVER_LIMIT = 4;
+
+// Mi lista counts only games it can show, so Inicio uses its numbers once they are known.
+let resolvedCounts = null;
+
+export function initializeHomeCounts() {
+  window.addEventListener("heartagram:collection-rendered", (event) => {
+    const { counts, loading } = event.detail ?? {};
+    if (loading || !counts) return;
+    resolvedCounts = counts;
+    showCounts(counts.interested, counts.owned);
+  });
+}
+
+function showCounts(favorites, owned) {
+  const favoriteNode = byId("home-favorite-count");
+  const ownedNode = byId("home-owned-count");
+  if (favoriteNode) favoriteNode.textContent = String(favorites);
+  if (ownedNode) ownedNode.textContent = String(owned);
+}
 
 export function homeCoverGames(sections, limit = HOME_COVER_LIMIT) {
   const pool = [...(sections?.forYou ?? []), ...(sections?.mightHook ?? [])]
