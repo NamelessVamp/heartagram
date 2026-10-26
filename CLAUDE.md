@@ -11,7 +11,7 @@ python -m http.server 8000        # serve the repo root, then open http://localh
 npm test                          # full QA suite; CI runs it before every deploy
 node tests/<name>-qa.mjs          # one suite; run from the repo root (tests read files by relative path)
 git diff --check                  # documented pre-push check
-node scripts/capture_screens.mjs  # screenshots of every screen (phone + desktop) into screens/ (gitignored)
+node scripts/capture_screens.mjs  # screenshots of every screen (phone + desktop, --only mobile|desktop) into screens/ (gitignored); tall pages come out in several images
 ```
 
 `npm test` chains every `tests/*-qa.mjs` with `&&`, so the first failure stops the run. The suites are plain `node:assert` scripts. Most of them grep `index.html`, the CSS, or the JS source for exact strings, class names, and `?v=` values, so renaming a class or changing a cache-bust string can fail a suite that looks unrelated.

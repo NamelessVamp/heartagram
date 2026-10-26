@@ -7,6 +7,7 @@
 // so the game covers load:
 //     node scripts/capture_screens.mjs
 //     node scripts/capture_screens.mjs --out screens --chrome "C:\path\to\chrome.exe"
+//     node scripts/capture_screens.mjs --only mobile   (or desktop)
 // Images go to screens/ (gitignored).
 
 import { spawn } from "node:child_process";
@@ -22,8 +23,9 @@ const OUT = resolve(ROOT, option("--out", "screens"));
 const VIEWPORTS = [
   { label: "mobile", width: 390, height: 844, mobile: true },
   { label: "desktop", width: 1440, height: 900, mobile: false },
-];
-const MAX_PAGE_HEIGHT = 6000;
+].filter(({ label }) => !option("--only", null) || label === option("--only", null));
+const MAX_PAGE_HEIGHT = 12000;
+const MAX_SEGMENT_PIXELS = 2_500_000;
 const QUIZ_PICKS = [0, 1, 0, 2, 0, 1, 0, 1, 1, 1, 0, 3];
 const MIME = {
   ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8",
@@ -85,11 +87,15 @@ async function capture({ label, width, height, mobile }, browser, baseUrl) {
     if (message.method === "Network.requestWillBeSent") failed.set(message.params.requestId, { url: message.params.request.url, error: null });
     if (message.method === "Network.loadingFailed" && failed.has(message.params.requestId)) failed.get(message.params.requestId).error = message.params.errorText;
   });
-  const send = (method, params = {}) => new Promise((done) => {
-    const id = nextId++;
-    pending.set(id, done);
-    socket.send(JSON.stringify({ id, method, params }));
-  });
+  const send = (method, params = {}) => {
+    const answer = new Promise((done) => {
+      const id = nextId++;
+      pending.set(id, done);
+      socket.send(JSON.stringify({ id, method, params }));
+    });
+    const timeout = sleep(30000).then(() => { throw new Error(`[FAIL] ${method} no respondió en 30 s`); });
+    return Promise.race([answer, timeout]);
+  };
   const run = async (expression) => (await send("Runtime.evaluate", { expression, awaitPromise: true, returnByValue: true })).result?.result?.value;
   const click = (selector) => run(`document.querySelector(${JSON.stringify(selector)})?.click()`);
   const viewport = (h) => send("Emulation.setDeviceMetricsOverride", { width, height: h, deviceScaleFactor: 1, mobile });
@@ -98,19 +104,29 @@ async function capture({ label, width, height, mobile }, browser, baseUrl) {
   await viewport(height);
 
   let index = 0;
-  // Resizing the viewport to the page height gives a true full-page image, with fixed
-  // backgrounds and bars drawn once instead of cut off.
+  // Resizing the viewport to the page height gives a true image, with fixed backgrounds
+  // and bars drawn once. Very large areas can freeze the browser without a GPU, so a
+  // tall page is captured in several segments instead of one huge image.
   async function shot(name) {
     await sleep(900);
     const pageHeight = Math.min(await run("document.documentElement.scrollHeight"), MAX_PAGE_HEIGHT);
-    await viewport(Math.max(height, pageHeight));
-    await sleep(300);
-    const image = await send("Page.captureScreenshot", { format: "png" });
-    await viewport(height);
+    const segmentHeight = Math.max(height, Math.floor(MAX_SEGMENT_PIXELS / width));
+    const segments = Math.max(1, Math.ceil(pageHeight / segmentHeight));
+    console.log(`[..] ${label} ${name}: página de ${pageHeight}px en ${segments} ${segments === 1 ? "imagen" : "imágenes"}`);
     index += 1;
-    const file = `${label}-${String(index).padStart(2, "0")}-${name}.png`;
-    writeFileSync(join(OUT, file), Buffer.from(image.result.data, "base64"));
-    console.log(`[OK] ${file}`);
+    for (let part = 0; part < segments; part += 1) {
+      const top = part * segmentHeight;
+      await viewport(Math.max(height, Math.min(segmentHeight, pageHeight - top)));
+      await run(`window.scrollTo(0, ${top})`);
+      await sleep(400);
+      const image = await send("Page.captureScreenshot", { format: "png" });
+      const suffix = segments === 1 ? "" : `-${part + 1}de${segments}`;
+      const file = `${label}-${String(index).padStart(2, "0")}-${name}${suffix}.png`;
+      writeFileSync(join(OUT, file), Buffer.from(image.result.data, "base64"));
+      console.log(`[OK] ${file}`);
+    }
+    await viewport(height);
+    await run("window.scrollTo(0, 0)");
   }
 
   await send("Page.navigate", { url: `${baseUrl}/index.html` });
