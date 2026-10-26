@@ -205,26 +205,8 @@ function decorateHeroScene() {
   if (!header || !art || art.querySelector(".bq-window")) return;
   art.append(make("span", "bq-window", WINDOW_SCENE));
 
-  const actions = make("div", "bq-hero-actions");
-  const primary = make("button", "btn btn-primary");
-  const explore = make("button", "btn btn-ghost");
-  primary.type = explore.type = "button";
-  explore.dataset.action = "to-catalog";
-  explore.textContent = "Explorar juegos";
-  actions.append(primary, explore);
-  header.append(actions);
-
   const strip = document.getElementById("home-cover-strip");
   if (strip) header.append(strip);
-
-  const returning = document.getElementById("home-returning-state");
-  const sync = () => {
-    const hasProfile = returning ? !returning.hidden : false;
-    primary.dataset.action = hasProfile ? "to-results" : "start";
-    primary.textContent = hasProfile ? "Ir a Descubrir" : "Descubrir mi perfil";
-  };
-  sync();
-  if (returning) new MutationObserver(sync).observe(returning, { attributes: true, attributeFilter: ["hidden"] });
 }
 
 function decorateHeaderMotifs() {

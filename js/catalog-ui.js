@@ -9,7 +9,7 @@ import {
   loadCatalog,
   loadGameDetails,
   queryCatalog,
-} from "./catalog.js?v=v130";
+} from "./catalog.js?v=v131";
 
 import { isFavorite, toggleFavorite } from "./favorites.js";
 import { isOwnedGame, setOwnedGame } from "./library.js";

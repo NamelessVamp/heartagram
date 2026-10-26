@@ -1,4 +1,9 @@
 import { getFavoriteIds } from "./favorites.js";
+import {
+  GETTING_STARTED_STEPS,
+  normalizeGettingStartedProgress,
+  readGettingStartedProgress,
+} from "./getting-started.js";
 import { getOwnedGameIds } from "./library.js";
 
 function archetypeName(archetypes, id) {
@@ -11,8 +16,11 @@ export function deriveHomeModel({
   sections = null,
   favoriteIds = [],
   ownedIds = [],
+  guideSteps = [],
 } = {}) {
   const recommendation = sections?.forYou?.[0]?.game ?? null;
+  const total = GETTING_STARTED_STEPS.length;
+  const done = normalizeGettingStartedProgress(guideSteps).length;
 
   return {
     hasProfile: Boolean(profile),
@@ -25,7 +33,27 @@ export function deriveHomeModel({
     recommendation,
     favoriteCount: new Set(favoriteIds).size,
     ownedCount: new Set(ownedIds).size,
+    guide: { done, total, started: done > 0, complete: done >= total },
   };
+}
+
+function guideLabel({ done, total, started }) {
+  return started ? `Inicia aquí · ${done} de ${total}` : "Inicia aquí";
+}
+
+// The setup guide is the main action until it is finished; then the profile takes over.
+function renderHomeActions(model) {
+  const guideButton = byId("home-action-guide");
+  const profileButton = byId("home-action-profile");
+  if (!guideButton || !profileButton) return;
+
+  guideButton.hidden = model.guide.complete;
+  guideButton.textContent = guideLabel(model.guide);
+
+  profileButton.dataset.action = model.hasProfile ? "to-results" : "start";
+  profileButton.textContent = model.hasProfile ? "Ir a Descubrir" : "Descubrir mi perfil";
+  profileButton.classList.toggle("btn-primary", model.guide.complete);
+  profileButton.classList.toggle("btn-ghost", !model.guide.complete);
 }
 
 function byId(id) {
@@ -43,12 +71,15 @@ export function renderHomeDashboard({
     sections,
     favoriteIds: getFavoriteIds(),
     ownedIds: getOwnedGameIds(),
+    guideSteps: readGettingStartedProgress(),
   });
 
   const newState = byId("home-new-state");
   const returningState = byId("home-returning-state");
 
   if (!newState || !returningState) return model;
+
+  renderHomeActions(model);
 
   newState.hidden = model.hasProfile;
   returningState.hidden = !model.hasProfile;

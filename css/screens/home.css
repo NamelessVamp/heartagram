@@ -48,10 +48,6 @@
     gap: var(--sp-6);
   }
 
-  .home-primary-card .btn {
-    justify-self: start;
-  }
-
   .home-grid {
     display: grid;
     gap: var(--sp-4);

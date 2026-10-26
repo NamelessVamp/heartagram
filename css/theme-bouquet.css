@@ -705,7 +705,7 @@
     display: none;
   }
 
-  .bq-hero-actions {
+  .home-actions {
     display: flex;
     flex-wrap: wrap;
     gap: var(--sp-3);
@@ -715,12 +715,6 @@
   .home-header .home-cover-strip {
     max-width: 30rem;
     margin: var(--sp-4) 0 var(--sp-2);
-  }
-
-  #new-profile-actions [data-action="start"],
-  #new-profile-actions [data-action="to-catalog"],
-  .home-primary-card > .btn {
-    display: none;
   }
 
   @media (min-width: 64rem) {

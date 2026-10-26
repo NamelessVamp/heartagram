@@ -3,13 +3,13 @@ const DATA_VERSION = "130";
 
 import { computeProfile } from "./profile.js";
 import { updateAppShellNavigation } from "./app-shell.js";
-import { renderHomeDashboard } from "./home-dashboard.js?v=v130";
-import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js?v=v130";
-import { initializeCollectionUI } from "./collection-ui.js?v=v130";
-import { buildRecommendations } from "./recommend-v2.js?v=v130";
-import { activateDiscoverTab, initializeDiscoverTabs } from "./discover-tabs.js?v=v130";
+import { renderHomeDashboard } from "./home-dashboard.js?v=v131";
+import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js?v=v131";
+import { initializeCollectionUI } from "./collection-ui.js?v=v131";
+import { buildRecommendations } from "./recommend-v2.js?v=v131";
+import { activateDiscoverTab, initializeDiscoverTabs } from "./discover-tabs.js?v=v131";
 
-import * as ui from "./ui.js?v=v130";
+import * as ui from "./ui.js?v=v131";
 
 import { clearFavorites, getFavoriteIds, toggleFavorite } from "./favorites.js";
 
@@ -22,14 +22,14 @@ import {
 import {
   initializeCatalogExplorer,
   openCatalogGameDetails,
-} from "./catalog-ui.js?v=v130";
+} from "./catalog-ui.js?v=v131";
 
 import {
   favoriteIdForCatalogGame,
   loadCatalog,
   resolveCatalogFavorites,
   splitFavoriteIds,
-} from "./catalog.js?v=v130";
+} from "./catalog.js?v=v131";
 import { getOwnedGameIds, setOwnedGame } from "./library.js";
 import { initializeGettingStarted } from "./getting-started.js";
 
@@ -79,6 +79,15 @@ function showScreen(name) {
   });
 
   updateAppNavigation(name);
+
+  // Guide progress can change on another screen, so refresh the home actions on return.
+  if (name === "intro") {
+    renderHomeDashboard({
+      profile: state.profile,
+      archetypes: state.archetypes,
+      sections: state.sections,
+    });
+  }
 
   window.scrollTo({
     top: 0,
@@ -336,13 +345,13 @@ function renderHomeState() {
   if (introLead) {
     introLead.textContent = hasProfile
       ? "Tu perfil, tus juegos y tu lista siguen aquí."
-      : "Tu Nintendo Switch ya es tuya. Antes de elegir qué jugar, descubre qué tipo de jugadora eres.";
+      : "Sigue la guía para dejar tu Nintendo Switch 2 lista. Cuando quieras, responde 12 preguntas para encontrar juegos que encajen contigo.";
   }
 
   if (introHint) {
     introHint.textContent = hasProfile
       ? "Continúa donde lo dejaste."
-      : "12 preguntas · menos de 3 minutos";
+      : "Guía a tu ritmo · test de menos de 3 minutos";
   }
 }
 
