@@ -1,15 +1,15 @@
-const DATA_VERSION = "122";
+const DATA_VERSION = "130";
 // App entry: loads data, keeps quiz state and switches screens.
 
 import { computeProfile } from "./profile.js";
 import { updateAppShellNavigation } from "./app-shell.js";
-import { renderHomeDashboard } from "./home-dashboard.js?v=v122";
-import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js?v=v122";
-import { initializeCollectionUI } from "./collection-ui.js?v=v122";
-import { buildRecommendations } from "./recommend-v2.js?v=v122";
-import { activateDiscoverTab, initializeDiscoverTabs } from "./discover-tabs.js?v=v122";
+import { renderHomeDashboard } from "./home-dashboard.js?v=v130";
+import { initializeDiscoverUI, refreshDiscoverProfile } from "./discover-ui.js?v=v130";
+import { initializeCollectionUI } from "./collection-ui.js?v=v130";
+import { buildRecommendations } from "./recommend-v2.js?v=v130";
+import { activateDiscoverTab, initializeDiscoverTabs } from "./discover-tabs.js?v=v130";
 
-import * as ui from "./ui.js?v=v122";
+import * as ui from "./ui.js?v=v130";
 
 import { clearFavorites, getFavoriteIds, toggleFavorite } from "./favorites.js";
 
@@ -22,14 +22,14 @@ import {
 import {
   initializeCatalogExplorer,
   openCatalogGameDetails,
-} from "./catalog-ui.js?v=v122";
+} from "./catalog-ui.js?v=v130";
 
 import {
   favoriteIdForCatalogGame,
   loadCatalog,
   resolveCatalogFavorites,
   splitFavoriteIds,
-} from "./catalog.js?v=v122";
+} from "./catalog.js?v=v130";
 import { getOwnedGameIds, setOwnedGame } from "./library.js";
 import { initializeGettingStarted } from "./getting-started.js";
 

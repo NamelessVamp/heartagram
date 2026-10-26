@@ -1,6 +1,6 @@
 import { PLAYER_DIMENSIONS, PLAYER_DIMENSION_LABELS, normalizedTraitPercent, traitSignal } from "./player-journey.js?v=p2";
 import { catalogLabel, curatedGenreLabel } from "./catalog-labels.js";
-import { catalogImageUrl } from "./catalog.js";
+import { catalogImageUrl } from "./catalog.js?v=v130";
 
 // HEARTAGRAM_DISCOVER_P13
 // All DOM rendering lives here. Logic modules never touch the DOM.

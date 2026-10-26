@@ -1,4 +1,4 @@
-import { favoriteIdForCatalogGame } from "./catalog.js?v=np5";
+import { favoriteIdForCatalogGame } from "./catalog.js?v=v130";
 import { isFavorite, toggleFavorite } from "./favorites.js";
 import { isOwnedGame, setOwnedGame } from "./library.js";
 const el=(t,c,x)=>{const n=document.createElement(t);if(c)n.className=c;if(x!=null)n.textContent=x;return n};

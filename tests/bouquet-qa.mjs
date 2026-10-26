@@ -6,7 +6,7 @@ const css = readFileSync("css/theme-bouquet.css", "utf8");
 const js = readFileSync("js/bouquet.js", "utf8");
 
 assert.ok(html.includes('href="css/theme-bouquet.css?v=ui13"'), "index.html no carga theme-bouquet.css");
-assert.ok(html.includes('src="js/bouquet.js?v=v122"'), "index.html no carga bouquet.js");
+assert.ok(html.includes('src="js/bouquet.js?v=v130"'), "index.html no carga bouquet.js");
 assert.ok(html.indexOf("theme-bouquet.css") > html.indexOf("screens/profile.css"), "theme-bouquet.css debe cargar al final");
 console.log("[OK] Midnight Bouquet cargado al final de la cascada");
 
