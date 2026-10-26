@@ -47,6 +47,8 @@ A single-page vanilla-ES-module app. There is no server and no AI. All user stat
 
 **Catalog IDs.** `js/nintendo-catalog.js` adapts the raw store payload into the shape `catalog.js` expects. Nintendo products use IDs of the form `nintendo:MX:<nsuid>` (10–20 digits). Curated games use slugs such as `luigis-mansion-3`. The helpers `favoriteIdForCatalogGame` and `catalogIdFromFavoriteId` in `js/catalog.js` convert between the two forms. The product dialog in Explorar is rendered entirely by `js/nintendo-product-detail.js` (minified); `catalog-ui.js` only opens it and gives its title the `catalog-dialog-title` id the dialog's `aria-labelledby` points to.
 
+**Inicio actions.** The hero buttons (`#home-action-guide`, `#home-action-profile`) are plain HTML. `renderHomeDashboard()` in `js/home-dashboard.js` sets them from the profile and the guide progress: "Inicia aquí" is the primary button until all guide steps are done, then the profile action takes over. `showScreen("intro")` re-renders it so progress made on the guide screen shows up on return.
+
 **Persistence and events.** All state is in `localStorage` under `heartagram:*` keys: profile, favorites (Me interesa), library (Mi biblioteca), getting-started progress, sidebar state, and collection tab. `js/favorites.js` and `js/library.js` dispatch `heartagram:favorites-changed` and `heartagram:library-changed`. `main.js` listens for them and re-renders the home dashboard and wishlist.
 
 **DOM boundary.** The recommendation and catalog logic modules are DOM-free. The DOM is touched by `main.js`, `ui.js`, and the feature modules (`catalog-ui.js`, `discover-ui.js`, `collection-ui.js`, `home-dashboard.js`, `getting-started.js`, `app-shell.js`, `bouquet.js`, `nintendo-product-detail.js`). `CODESTYLE.md` says DOM work belongs only in `ui.js` and `main.js`. That is not how the code is organised, so follow the existing feature-module split.
@@ -55,7 +57,7 @@ A single-page vanilla-ES-module app. There is no server and no AI. All user stat
 
 **Cache busting is manual.** Every local JS and CSS URL carries a version query, and two constants in JS hold the data version. Bumping a version means changing all of these together:
 
-- `?v=` on the module imports in `js/main.js`, and on `index.html`'s script and stylesheet tags. The current JS value is `v130`; the current CSS value is `ui14`.
+- `?v=` on the module imports in `js/main.js`, and on `index.html`'s script and stylesheet tags. The current JS value is `v131`; the current CSS value is `ui15`.
 - Every import of `./catalog.js` (in `main.js`, `catalog-ui.js`, `ui.js`, `nintendo-product-detail.js`) must use the same `?v=`. A different query string loads a second module instance with its own catalog cache.
 - `DATA_VERSION` in `js/main.js` and `js/catalog.js`, currently `"130"`.
 - The literal versions asserted in `tests/bouquet-qa.mjs`, `tests/css-hygiene-qa.mjs`, and `tests/scrapbook-qa.mjs`.
@@ -75,6 +77,7 @@ A single-page vanilla-ES-module app. There is no server and no AI. All user stat
 - **Commits.** Imperative English with a prefix: `feat:`, `fix:`, `data:`, `style:`, `docs:`. `main` is the release branch; put features on `feat/<name>` branches.
 - **Data placeholders.** Unconfirmed fields are `"VERIFICAR"` or `null`. Never invent values. Prices are integer MXN with a `price_checked` date (`YYYY-MM-DD`).
 - **Restricted content.** No eShop codes, keys, or credentials anywhere in the repo, fixtures and tests included. `.env` holds local secrets and is gitignored; do not print or commit it.
+- **Language.** All visible text is Spanish, including toasts and labels built in `js/bouquet.js`. Only game titles and proper nouns stay in English.
 - **Content rules.** Relevant emoji, symbols (`✦ ♡ ◈ →`) and micro-ASCII are welcome in the UI in moderation; keep code and commits emoji-free. No religious iconography in the UI.
 - **Accessibility.** Use semantic elements (`main`, `section`, `button`), not `div` with `onclick`. Spanish `alt` text on every image. Quiz options must be keyboard-navigable. Respect `prefers-reduced-motion`. Base text is at least 16px.
 - **Python scripts.** `pathlib` for paths, type hints, output tags `[OK]` / `[WARN]` / `[FAIL]`, and a non-zero exit code when validation fails.
