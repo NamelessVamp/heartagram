@@ -238,16 +238,28 @@ function pickOutOfZone(profile, ranked, used) {
     Math.sign(game.vector.mood) === -Math.sign(userMood)) ?? null;
 }
 
+/** The same game can be saved under a curated id or a Nintendo id, so compare by title too. */
+function titleKeys(ids, curated, catalog) {
+  const titles = new Map();
+  curated.forEach((game) => titles.set(game.id, game.title));
+  catalog.forEach((game) => titles.set(game.catalog_id, game.name ?? game.title));
+  return new Set([...ids].map((id) => titles.get(id)).filter(Boolean).map(normalizeTitle));
+}
+
 export function buildRecommendations(profile, {
   curated = [], catalog = [], ownedIds = [], favoriteIds = [], seed = "0",
 } = {}) {
   const owned = new Set(ownedIds);
   const favorites = new Set(favoriteIds);
+  const ownedKeys = titleKeys(owned, curated, catalog);
+  const favoriteKeys = titleKeys(favorites, curated, catalog);
   const pool = buildPool(curated, catalog);
-  const favoriteGenres = new Set(pool.filter((game) => favorites.has(game.id)).flatMap((game) => game.genres ?? []));
+  const isFavorite = (game) => favorites.has(game.id) || favoriteKeys.has(normalizeTitle(game.title));
+  const isOwned = (game) => owned.has(game.id) || ownedKeys.has(normalizeTitle(game.title));
+  const favoriteGenres = new Set(pool.filter(isFavorite).flatMap((game) => game.genres ?? []));
 
   const ranked = pool
-    .filter((game) => game.status === "VERIFICADO" && !owned.has(game.id))
+    .filter((game) => game.status === "VERIFICADO" && !isOwned(game))
     .map((game) => {
       let score = scoreGame(profile, game);
       if (game.source !== "nintendo") score += CURATED_BONUS;

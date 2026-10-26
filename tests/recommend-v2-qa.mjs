@@ -52,6 +52,15 @@ shownOf(today).forEach(({ game }) => { const key = game.genres?.[0] ?? ""; genre
 assert.ok(Math.max(...Object.values(genres)) <= 4, `Género repetido: ${JSON.stringify(genres)}`);
 console.log("[OK] Variedad: sin sagas repetidas y máximo 4 juegos del mismo género");
 
+// The same game saved under a Nintendo id must not come back as its curated twin.
+const luigiStoreId = catalog.find((game) => /^Luigi.s Mansion 3$/.test(game.name))?.catalog_id;
+assert.ok(luigiStoreId, "Luigi's Mansion 3 debe existir en el catálogo");
+const ownedViaStore = buildRecommendations(profile, { ...base, ownedIds: [luigiStoreId], seed: "t" });
+assert.equal(ownedViaStore.ranked.some(({ game }) => game.id === "luigis-mansion-3"), false);
+const favoriteViaStore = buildRecommendations(profile, { ...base, favoriteIds: [luigiStoreId], seed: "t" });
+assert.ok(favoriteViaStore.ranked.length > 0);
+console.log("[OK] Un juego guardado con id de Nintendo tampoco se recomienda en su versión curada");
+
 // Reasons must be facts the catalog confirms, never filler.
 const GENERIC = /alrededor de tu|se quedan contigo|sin presión|desde el primer minuto|perderte en ella|que encaja con este mood|pega fuerte|mucho estilo|ideal para|adictiv|experiencia|rehecho/i;
 curated.forEach((game) => assert.doesNotMatch(game.why, GENERIC, `${game.id}: frase genérica "${game.why}"`));
