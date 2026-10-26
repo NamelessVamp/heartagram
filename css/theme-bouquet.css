@@ -36,6 +36,12 @@
   --bq-glow: 0 0 26px rgb(232 111 166 / 0.28);
 }
 
+/* Unlayered on purpose: the font shorthand in layered rules resets this property,
+   and Cormorant defaults to old-style figures, where 1 reads as I. */
+* {
+  font-variant-numeric: lining-nums;
+}
+
 @layer theme {
   /* ---------- Night sky ---------- */
   html {
