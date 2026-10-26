@@ -1,34 +1,15 @@
-// QA harness: runs the 4 simulated profiles from TEST_DESIGN.md.
-// Uses an in-memory fixture with multiplayer flags taken from the seed
-// hypotheses. Nothing here is written back to data/.
+// QA harness: runs the 4 simulated profiles from TEST_DESIGN.md against the
+// curated games and the same recommendation engine the app uses.
 
 import { readFile } from "node:fs/promises";
 import { computeProfile } from "../js/profile.js";
-import { rankGames, buildSections, buildDuo } from "../js/recommender.js";
+import { buildRecommendations } from "../js/recommend-v2.js";
 
 const load = async (p) => JSON.parse(await readFile(new URL(p, import.meta.url), "utf-8"));
 const questions = await load("../data/questions.json");
 const archetypes = await load("../data/archetypes.json");
-const seed = await load("../data/games.json");
+const games = await load("../data/games.json");
 
-function toFixture(games) {
-  return games.map((game, i) => {
-    const duo = game._hypothesis.duo;
-    const online = duo.includes("ON");
-    const local = duo.includes("LOC");
-    return {
-      ...game,
-      status: "VERIFICADO",
-      multiplayer: {
-        online_coop: online, online_versus: online,
-        local_wireless: local, same_console: local,
-        requires_nso: online, gameshare: false,
-      },
-    };
-  });
-}
-
-const games = toFixture(seed);
 const archName = (id) => archetypes.find((a) => a.id === id).name;
 const toAnswers = (letters) =>
   Object.fromEntries(letters.split(",").map((l, i) => [`q${i + 1}`, l.trim().toLowerCase()]));
@@ -52,9 +33,7 @@ const check = (ok, msg) => {
 
 for (const testCase of CASES) {
   const profile = computeProfile(questions, toAnswers(testCase.answers));
-  const ranked = rankGames(profile, games);
-  const sections = buildSections(profile, ranked);
-  const duo = buildDuo(profile, ranked);
+  const { sections, duo } = buildRecommendations(profile, { curated: games });
   const { primary, secondary } = profile.archetypes;
 
   console.log(`\n⟦ ${testCase.name} ⟧  ${archName(primary)} · ${archName(secondary)}  (horror ${profile.horrorTolerance}, pareja ${profile.couplePref})`);

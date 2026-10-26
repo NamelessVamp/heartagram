@@ -1,5 +1,5 @@
-// Ranks verified games against a player profile.
-// Pure functions only: no DOM access.
+// Scores a game against a player profile. recommend-v2.js builds the
+// sections on top of these helpers. Pure functions only: no DOM access.
 
 import { DIMENSIONS } from "./profile.js";
 
@@ -9,12 +9,9 @@ const WEIGHTS = {
   VIBES_BONUS: 0.10,
   VIBES_BONUS_CAP: 0.20,
   HORROR_PENALTY_PER_LEVEL: 0.25,
-  COUPLE_PREF_BONUS: 0.05,
 };
 
-const SECTION_LIMITS = { FOR_YOU: 3, MIGHT_HOOK: 7 };
-
-// Social is half-weighted here because co-op has its own section (buildDuo).
+// Social is half-weighted here because co-op has its own section (the duo).
 // Without this, liking multiplayer pushes great solo games out of the top 3.
 const DIMENSION_WEIGHTS = { social: 0.5 };
 
@@ -45,27 +42,6 @@ export function scoreGame(profile, game) {
   return score;
 }
 
-export function rankGames(profile, games) {
-  return games
-    .filter((game) => game.status === "VERIFICADO")
-    .map((game) => ({ game, score: scoreGame(profile, game) }))
-    .sort((a, b) => b.score - a.score);
-}
-
-/** Picks a strong game from the opposite side of the user's mood axis. */
-function pickOutOfZone(profile, ranked, excludedIds) {
-  const userMood = profile.vector.mood || ranked[0]?.game.vector.mood || 0;
-  const opposite = (game) => Math.sign(game.vector.mood) === -Math.sign(userMood) && userMood !== 0;
-  return ranked.find(({ game }) => !excludedIds.has(game.id) && opposite(game)) ?? null;
-}
-
-export function buildSections(profile, ranked) {
-  const forYou = ranked.slice(0, SECTION_LIMITS.FOR_YOU);
-  const mightHook = ranked.slice(SECTION_LIMITS.FOR_YOU, SECTION_LIMITS.MIGHT_HOOK);
-  const shown = new Set([...forYou, ...mightHook].map(({ game }) => game.id));
-  return { forYou, mightHook, outOfZone: pickOutOfZone(profile, ranked, shown) };
-}
-
 export function duoBadges(game) {
   const m = game.multiplayer;
   const badges = [];
@@ -73,23 +49,4 @@ export function duoBadges(game) {
   if (m.local_wireless === true) badges.push("MISMO CUARTO");
   if (m.same_console === true) badges.push("UNA CONSOLA");
   return badges;
-}
-
-/**
- * Games for playing together. Order: Inti already owns it, then games that
- * work both remotely and in person, then profile score.
- */
-export function buildDuo(profile, ranked) {
-  return ranked
-    .map(({ game, score }) => {
-      const badges = duoBadges(game);
-      const bonus = game.couple.includes(profile.couplePref) ? WEIGHTS.COUPLE_PREF_BONUS : 0;
-      return { game, score: score + bonus, badges };
-    })
-    .filter(({ badges }) => badges.length > 0)
-    .sort((a, b) => {
-      const owned = Number(b.game.couple.includes("INTI_LIBRARY_MATCH")) - Number(a.game.couple.includes("INTI_LIBRARY_MATCH"));
-      const bothWays = (x) => Number(x.badges.includes("ONLINE") && x.badges.length > 1);
-      return owned || bothWays(b) - bothWays(a) || b.score - a.score;
-    });
 }
