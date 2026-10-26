@@ -20,3 +20,6 @@ install_*.py
 prepare_ui_audit_*.py
 ui_audit_*.txt
 static_nintendo_cleanup_audit.txt
+
+# Local design-review screenshots from scripts/capture_screens.mjs
+screens/
