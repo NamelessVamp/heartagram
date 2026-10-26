@@ -98,13 +98,10 @@ export function renderHomeDashboard({
 
   if (model.recommendation) {
     recommendationTitle.textContent = model.recommendation.title;
-    recommendationCopy.textContent =
-      model.recommendation.why ||
-      "Una recomendación construida alrededor de tu perfil actual.";
+    recommendationCopy.textContent = model.recommendation.why ?? "";
   } else {
-    recommendationTitle.textContent = "Explora tu siguiente juego";
-    recommendationCopy.textContent =
-      "Abre Descubrir para revisar recomendaciones construidas alrededor de tu perfil.";
+    recommendationTitle.textContent = "Todavía no hay una recomendación";
+    recommendationCopy.textContent = "Abre Descubrir para ver las de hoy.";
   }
 
   return model;

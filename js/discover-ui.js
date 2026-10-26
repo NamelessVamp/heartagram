@@ -1,3 +1,4 @@
+import { curatedGenreLabel } from "./catalog-labels.js";
 import { isFavorite, toggleFavorite } from "./favorites.js";
 
 let profileProvider = () => null;
@@ -55,14 +56,13 @@ function createMoodCard(game) {
 
   const signal = document.createElement("span");
   signal.className = "discover-mood-signal";
-  signal.textContent = "MOOD MATCH";
+  signal.textContent = "VA CON ESTE ÁNIMO";
 
   const title = document.createElement("h4");
   title.textContent = game.title;
 
   const copy = document.createElement("p");
-  copy.textContent =
-    game.why || "Una opción del catálogo curado que encaja con este mood.";
+  copy.textContent = game.why || (game.genres ?? []).map(curatedGenreLabel).join(" · ");
 
   const button = document.createElement("button");
   button.type = "button";

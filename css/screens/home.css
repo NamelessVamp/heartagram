@@ -15,8 +15,7 @@
     line-height: 0.95;
   }
 
-  .home-empty-card,
-  .home-primary-card {
+  .home-empty-card {
     display: grid;
     gap: var(--sp-4);
     padding: var(--sp-8) var(--sp-6);
@@ -24,11 +23,6 @@
     background:
       radial-gradient(40rem 20rem at 100% 0%, var(--accent-glow), transparent 60%),
       var(--surface);
-  }
-
-  .home-primary-copy {
-    display: grid;
-    gap: var(--sp-3);
   }
 
   .home-secondary-actions,
@@ -107,8 +101,7 @@
   }
 
   @media (min-width: 40rem) {
-    .home-empty-card,
-    .home-primary-card {
+    .home-empty-card {
       padding: var(--sp-10);
     }
 
@@ -117,20 +110,10 @@
     }
   }
 
-  @media (min-width: 64rem) {
-    .home-primary-card {
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: end;
-    }
-  }
 }
 
 /* ---------- v1.2 polish: cover strip ---------- */
 @layer screens {
-  .home-primary-card {
-    overflow: hidden;
-  }
-
   .home-cover-strip {
     grid-column: 1 / -1;
     display: grid;

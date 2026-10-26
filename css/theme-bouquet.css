@@ -201,7 +201,6 @@
 
   /* ---------- Surfaces ---------- */
   .home-empty-card,
-  .home-primary-card,
   .home-panel,
   .home-stat,
   .discover-profile,
@@ -220,7 +219,6 @@
   }
 
   .home-empty-card,
-  .home-primary-card,
   .discover-profile {
     background:
       radial-gradient(30rem 16rem at 100% 0%, var(--violet-soft), transparent 60%),
@@ -986,11 +984,6 @@
     font: 600 var(--fs-xs) / 1 var(--font-sans);
     letter-spacing: 0.12em;
     text-transform: uppercase;
-  }
-
-  /* The hero already has the main action; this card only repeated it. */
-  #home-returning-state .home-primary-card {
-    display: none;
   }
 
   .discover-section-heading .discover-reroll {

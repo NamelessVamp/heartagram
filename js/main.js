@@ -330,10 +330,6 @@ function renderHomeState() {
     "returning-profile-actions",
   );
 
-  const introLead = document.getElementById("intro-lead");
-
-  const introHint = document.getElementById("intro-hint");
-
   if (newProfileActions) {
     newProfileActions.hidden = hasProfile;
   }
@@ -342,17 +338,6 @@ function renderHomeState() {
     returningProfileActions.hidden = !hasProfile;
   }
 
-  if (introLead) {
-    introLead.textContent = hasProfile
-      ? "Tu perfil, tus juegos y tu lista siguen aquí."
-      : "Sigue la guía para dejar tu Nintendo Switch 2 lista. Cuando quieras, responde 12 preguntas para encontrar juegos que encajen contigo.";
-  }
-
-  if (introHint) {
-    introHint.textContent = hasProfile
-      ? "Continúa donde lo dejaste."
-      : "Guía a tu ritmo · test de menos de 3 minutos";
-  }
 }
 
 const ACTIONS = {

@@ -329,7 +329,7 @@ export function renderResults(sections) {
   forYou.replaceChildren();
 
   if (!matches.length) {
-    forYou.append(el("p", "empty", "Todavía no hay una señal principal."));
+    forYou.append(el("p", "empty", "Por ahora no hay juegos para mostrar con tu perfil."));
   } else {
     forYou.append(gameCard(matches[0], { variant: "hero", sequence: 1 }));
     if (matches.length > 1) {
@@ -611,7 +611,7 @@ function decorateCollectionPanel(panel, type) {
 
   const title = document.createElement("h3");
   title.className = "collection-empty-title";
-  title.textContent = type === "owned" ? "Tu biblioteca está lista para crecer" : "Todavía no has apartado ningún juego";
+  title.textContent = type === "owned" ? "Aquí irán los juegos que ya tienes" : "Todavía no has apartado ningún juego";
 
   const copy = document.createElement("p");
   copy.className = "collection-empty-copy";

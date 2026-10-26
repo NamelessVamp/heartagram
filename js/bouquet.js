@@ -204,9 +204,6 @@ function decorateHeroScene() {
   const art = header?.querySelector(".bq-hero-art");
   if (!header || !art || art.querySelector(".bq-window")) return;
   art.append(make("span", "bq-window", WINDOW_SCENE));
-
-  const strip = document.getElementById("home-cover-strip");
-  if (strip) header.append(strip);
 }
 
 function decorateHeaderMotifs() {
