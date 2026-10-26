@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { adaptNintendoCatalog, displayTitle } from "../js/nintendo-catalog.js";
+import { adaptNintendoCatalog, adaptNintendoProduct, displayTitle } from "../js/nintendo-catalog.js";
 import { countOnSale, queryCatalog } from "../js/catalog.js";
 const payload = JSON.parse(await readFile(new URL("../data/nintendo_catalog.json", import.meta.url), "utf-8"));
 const catalog = adaptNintendoCatalog(payload);
@@ -57,3 +57,15 @@ assert.equal(sample.regular_price_label, "$97.00");
 assert.equal(snapshot.meta.priced_at, payload.generated_at);
 assert.equal(sample.priced_at, payload.generated_at);
 console.log("[OK] Explorar puede filtrar y ordenar por oferta, y cada juego conoce la fecha de sus precios");
+
+// Edge cases of a sale the snapshot does not currently contain.
+const edge = (patch, now) => adaptNintendoProduct({ ...among, ...patch }, now);
+const midSale = Date.parse(among.sale_end) - 5 * 86_400_000;
+assert.equal(edge({ regular_price: null }, midSale).sale_price, null, "Sin precio regular no hay descuento");
+assert.equal(edge({ regular_price: null }, midSale).regular_price_label, null);
+assert.equal(edge({ sale_price: among.regular_price }, midSale).sale_price, null, "Precio igual al regular no es oferta");
+assert.equal(edge({ percent_off: 0 }, midSale).percent_off, 40, "El descuento se deduce de los precios si falta");
+assert.equal(edge({ sale_end: "2026-10-29" }, Date.parse("2026-10-30T04:00:00Z")).sale_price, among.sale_price, "Una fecha sin hora dura hasta el final del día en México");
+assert.equal(edge({ sale_end: "2026-10-29" }, Date.parse("2026-10-30T07:00:00Z")).sale_price, null);
+assert.equal(edge({ sale_end: null }, midSale).sale_price, among.sale_price, "Sin fecha de fin la oferta sigue vigente");
+console.log("[OK] Casos límite de ofertas: sin precio regular, igual al regular, sin porcentaje y fechas sin hora");

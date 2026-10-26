@@ -1,4 +1,4 @@
-import { catalogLabel, formatPricedAt, formatSaleEnd } from "./catalog-labels.js";
+import { catalogLabel, formatPricedAt, formatSaleEnd } from "./catalog-labels.js?v=v135";
 
 // Renders the Nintendo Store Mexico catalog explorer.
 
@@ -10,12 +10,12 @@ import {
   loadCatalog,
   loadGameDetails,
   queryCatalog,
-} from "./catalog.js?v=v134";
+} from "./catalog.js?v=v135";
 
 import { isFavorite, toggleFavorite } from "./favorites.js";
 import { isOwnedGame, setOwnedGame } from "./library.js";
 
-import { renderNintendoProductDetail } from "./nintendo-product-detail.js?v=v134";
+import { renderNintendoProductDetail } from "./nintendo-product-detail.js?v=v135";
 
 const PAGE_SIZE = 24;
 // The dialog is labelled by the product title once the detail is rendered.
@@ -301,7 +301,7 @@ function createCatalogCard(game) {
     body.append(createElement("p", "catalog-card-meta", metadata.join(" · ")));
   }
 
-  if (game.sale_price !== null) {
+  if (game.sale_price !== null && game.percent_off > 0) {
     media.append(createElement("span", "catalog-card-sale", `−${Math.round(game.percent_off)} %`));
     const until = game.sale_end ? ` · hasta el ${formatSaleEnd(game.sale_end)}` : "";
     body.append(createElement("p", "catalog-card-sale-note", `Antes ${game.regular_price_label}${until}`));

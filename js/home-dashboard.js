@@ -117,8 +117,9 @@ let resolvedCounts = null;
 
 export function initializeHomeCounts() {
   window.addEventListener("heartagram:collection-rendered", (event) => {
-    const { counts, loading } = event.detail ?? {};
-    if (loading || !counts) return;
+    const { counts, loading, error } = event.detail ?? {};
+    // While loading, or after a failed load, the numbers would leave out saved Explorar games.
+    if (loading || error || !counts) return;
     resolvedCounts = counts;
     showCounts(counts.interested, counts.owned);
   });

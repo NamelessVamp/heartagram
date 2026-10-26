@@ -24,13 +24,26 @@ function numericPrice(value) {
   return Number.isFinite(parsed) ? parsed : null;
 }
 
+// A date without a time ends at the end of that day in Mexico City, not at UTC midnight.
+function saleEndTime(value) {
+  if (typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value)) return Date.parse(`${value}T23:59:59-06:00`);
+  return Date.parse(value);
+}
+
 // The catalog is a snapshot, so a sale whose end date has passed is already over.
+// Without a regular price there is nothing to compare, so it is not a discount.
 function activeSalePrice(product, now) {
   const sale = numericPrice(product.sale_price);
   const regular = numericPrice(product.regular_price);
-  if (sale === null || (regular !== null && sale >= regular)) return null;
-  const end = Date.parse(product.sale_end);
+  if (sale === null || regular === null || sale >= regular) return null;
+  const end = saleEndTime(product.sale_end);
   return Number.isFinite(end) && end <= now ? null : sale;
+}
+
+function discountPercent(product, salePrice) {
+  const reported = Number(product.percent_off);
+  if (reported > 0) return reported;
+  return Math.max(1, Math.round((1 - salePrice / numericPrice(product.regular_price)) * 100));
 }
 
 function formatMoney(value, currency) {
@@ -67,7 +80,8 @@ export function adaptNintendoProduct(product, now = Date.now(), pricedAt = null)
   const nsuid = String(product.nsuid ?? "").trim();
   if (!/^\d{10,20}$/.test(nsuid)) throw new TypeError("Invalid Nintendo NSUID");
   const title = displayTitle(product.title || product.normalized_title) || nsuid;
-  const onSale = activeSalePrice(product, now) !== null;
+  const salePrice = activeSalePrice(product, now);
+  const onSale = salePrice !== null;
   const rawReleaseDate = product.release_date || null;
   const releaseDate = typeof rawReleaseDate === "string"
     ? rawReleaseDate.slice(0, 10)
@@ -114,7 +128,7 @@ export function adaptNintendoProduct(product, now = Date.now(), pricedAt = null)
     content_rating: product.content_rating || null,
     content_descriptors: Array.isArray(product.content_descriptors) ? product.content_descriptors : [],
     demo_nsuid: product.demo_nsuid || null,
-    percent_off: onSale ? Number(product.percent_off || 0) : 0,
+    percent_off: onSale ? discountPercent(product, salePrice) : 0,
     sale_end: onSale ? product.sale_end || null : null,
     videos: Array.isArray(product.videos) ? product.videos : [],
     sku: product.sku || null,

@@ -1,6 +1,6 @@
 import { PLAYER_DIMENSIONS, PLAYER_DIMENSION_LABELS, normalizedTraitPercent, traitSignal } from "./player-journey.js?v=p2";
-import { catalogLabel, curatedGenreLabel, formatSaleEnd } from "./catalog-labels.js";
-import { catalogImageUrl } from "./catalog.js?v=v134";
+import { catalogLabel, curatedGenreLabel, formatSaleEnd } from "./catalog-labels.js?v=v135";
+import { catalogImageUrl } from "./catalog.js?v=v135";
 
 // All DOM rendering lives here. Logic modules never touch the DOM.
 
@@ -418,7 +418,7 @@ function createCatalogWishlistCard(game, options) {
     copy.append(el("p", "catalog-wishlist-meta", metadata.join(" · ")));
   }
 
-  if (game.sale_price !== null && game.sale_price !== undefined) {
+  if (game.sale_price != null && game.percent_off > 0) {
     const until = game.sale_end ? ` hasta el ${formatSaleEnd(game.sale_end)}` : "";
     copy.append(el("p", "catalog-wishlist-sale", `En oferta: −${Math.round(game.percent_off)} %${until}`));
   }
@@ -592,7 +592,7 @@ export function renderWishlist(options = {}) {
 
   window.dispatchEvent(
     new CustomEvent("heartagram:collection-rendered", {
-      detail: { counts, loading: catalogLoading },
+      detail: { counts, loading: catalogLoading, error: catalogError },
     }),
   );
 }
