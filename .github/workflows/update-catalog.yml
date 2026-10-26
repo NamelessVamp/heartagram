@@ -1,0 +1,135 @@
+name: Update Nintendo catalog
+
+# Weekly refresh of the Nintendo Store Mexico snapshot. It never touches main: it pushes
+# the branch auto/catalog-refresh and opens a pull request, so merging (and therefore the
+# deploy in pages.yml) stays a human decision. Use "0 14 1,15 * *" for twice a month.
+on:
+  schedule:
+    - cron: "0 14 * * 1"
+  workflow_dispatch:
+    inputs:
+      verify_multiplayer:
+        description: Also run verify_curated_multiplayer.py --apply (manual runs only)
+        type: boolean
+        default: false
+      capture_screens:
+        description: Also capture screenshots and attach them as an artifact (manual runs only)
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-catalog
+  cancel-in-progress: false
+
+env:
+  BRANCH: auto/catalog-refresh
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Keep the current catalog for comparison
+        run: cp data/nintendo_catalog.json "$RUNNER_TEMP/catalog_before.json"
+
+      - name: Download the store pages
+        run: |
+          python scripts/probe_nintendo_mx.py
+          python scripts/probe_nintendo_switch_mx.py
+          for raw in store_mx_switch.raw store_mx_switch_2.raw; do
+            if [ ! -s "data/nintendo_probe/$raw" ]; then
+              echo "::error::$raw was not downloaded; Nintendo may be blocking the runner or the page changed"
+              exit 1
+            fi
+          done
+
+      - name: Build, validate, publish and enrich the catalog
+        run: |
+          python scripts/build_nintendo_mx_combined.py
+          python scripts/validate_nintendo_mx_catalog.py
+          python scripts/publish_nintendo_mx_snapshot.py
+          python scripts/enrich_nintendo_catalog_from_raw.py
+
+      - name: Summarize the changes
+        id: report
+        run: |
+          status=0
+          node scripts/catalog_refresh_report.mjs "$RUNNER_TEMP/catalog_before.json" data/nintendo_catalog.json \
+            --games data/games.json > "$RUNNER_TEMP/summary.md" || status=$?
+          cat "$RUNNER_TEMP/summary.md" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$status" -eq 2 ]; then
+            echo "::error::The new catalog shrank by more than 20%; refusing to open a pull request"
+          fi
+          exit "$status"
+
+      - name: Verify curated multiplayer data
+        if: steps.report.outputs.changed == 'true' && github.event_name == 'workflow_dispatch' && inputs.verify_multiplayer
+        continue-on-error: true
+        run: python scripts/verify_curated_multiplayer.py --apply
+
+      - name: Bump the data cache version
+        if: steps.report.outputs.changed == 'true'
+        run: |
+          version="$(date -u +%Y%m%d)"
+          sed -i "s/^const DATA_VERSION = \"[^\"]*\";/const DATA_VERSION = \"$version\";/" js/main.js js/catalog.js
+          grep -n "^const DATA_VERSION" js/main.js js/catalog.js
+
+      - name: Run the tests
+        if: steps.report.outputs.changed == 'true'
+        run: npm test
+
+      - name: Commit and open the pull request
+        if: steps.report.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$BRANCH"
+          git add data js
+          git commit -m "data: refresh the Nintendo Store catalog ($(date -u +%Y-%m-%d))"
+          git push --force origin "$BRANCH"
+          if gh pr view "$BRANCH" --json state --jq .state 2>/dev/null | grep -q OPEN; then
+            gh pr edit "$BRANCH" --body-file "$RUNNER_TEMP/summary.md"
+          elif ! gh pr create --base main --head "$BRANCH" \
+              --title "data: refresh the Nintendo Store catalog" --body-file "$RUNNER_TEMP/summary.md"; then
+            {
+              echo "### The pull request could not be created"
+              echo "Enable Settings > Actions > General > Allow GitHub Actions to create and approve pull requests,"
+              echo "or open it by hand: https://github.com/${{ github.repository }}/compare/main...$BRANCH"
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "::warning::Pull request not created; see the job summary"
+          fi
+
+      - name: Capture screenshots
+        if: steps.report.outputs.changed == 'true' && github.event_name == 'workflow_dispatch' && inputs.capture_screens
+        continue-on-error: true
+        run: node scripts/capture_screens.mjs --out screens
+
+      - uses: actions/upload-artifact@v4
+        if: steps.report.outputs.changed == 'true' && github.event_name == 'workflow_dispatch' && inputs.capture_screens
+        continue-on-error: true
+        with:
+          name: screens
+          path: screens
+          retention-days: 14
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nintendo-probe
+          path: data/nintendo_probe
+          if-no-files-found: ignore
+          retention-days: 7

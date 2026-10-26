@@ -91,6 +91,8 @@ async function capture(spec, browser, baseUrl) {
   const chrome = spawn(browser, [
     "--headless=new", `--remote-debugging-port=${port}`, `--user-data-dir=${profile}`,
     "--no-first-run", "--disable-gpu", "--hide-scrollbars", "about:blank",
+    // Ubuntu runners restrict the browser sandbox; CI is set by GitHub Actions.
+    ...(process.env.CI ? ["--no-sandbox"] : []),
   ], { stdio: "ignore" });
   const launchFailed = new Promise((_, reject) => {
     chrome.once("error", (error) => reject(new Error(`[FAIL] No pude abrir el navegador: ${error.message}`)));

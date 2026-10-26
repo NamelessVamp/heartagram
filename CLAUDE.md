@@ -30,6 +30,17 @@ At the time of writing, `validate_catalog.py` exits with `[FAIL] 5 errores`: fiv
 
 Pushing to `main` deploys. `.github/workflows/pages.yml` runs `npm test` and, only if it passes, copies `index.html`, `css/`, `js/`, and `data/` into `_site` (minus `nintendo_catalog_extras.json` and `nintendo_catalog_meta.json`, which only `scripts/` uses) and publishes to GitHub Pages. Any new top-level static folder must be added to that workflow or it will not be deployed.
 
+## Catalog refresh (GitHub Actions)
+
+`.github/workflows/update-catalog.yml` refreshes the Nintendo Store snapshot every Monday (and on demand from the Actions tab, also from the phone). It runs the Python pipeline in order (probes, build, validate, publish, enrich), compares the result with the previous catalog using `scripts/catalog_refresh_report.mjs`, bumps `DATA_VERSION` to `YYYYMMDD`, runs `npm test`, force-pushes the branch `auto/catalog-refresh` and opens or updates a pull request whose body is the Spanish change summary. It never pushes to `main`: merging the PR is what deploys. A refresh that shrinks the catalog by more than 20% fails the job and opens nothing; a refresh where only `fetched_at` changed is skipped.
+
+- Manual runs offer two extra inputs: `verify_multiplayer` (runs `verify_curated_multiplayer.py --apply`) and `capture_screens` (uploads `screens/` as an artifact).
+- The repo setting Settings > Actions > General > "Allow GitHub Actions to create and approve pull requests" must be on; otherwise the job summary carries the compare URL instead.
+- Commits made with `GITHUB_TOKEN` do not trigger other workflows, so `pages.yml` only runs when the PR is merged.
+- GitHub disables scheduled workflows after 60 days without repository activity; re-enable it in the Actions tab.
+- Tests must not depend on the live catalog: exact assertions use `tests/fixtures/nintendo_catalog_sample.json`, and the live file is only held to invariants.
+- Untested against the real store: Nintendo may block GitHub runner IPs, and the scraping scripts were written against saved pages. Check the first manual run and the `nintendo-probe` artifact.
+
 ## Architecture
 
 A single-page vanilla-ES-module app. There is no server and no AI. All user state lives in `localStorage`. `fetch()` is used for JSON, so the app must be served over HTTP; opening `index.html` from disk breaks loading.
@@ -68,7 +79,7 @@ A single-page vanilla-ES-module app. There is no server and no AI. All user stat
 
 - `?v=` on the module imports in `js/main.js`, and on `index.html`'s script and stylesheet tags. The current JS value is `v136`; the current CSS value is `ui19`. `favorites.js`, `library.js`, `profile-storage.js` and `getting-started.js` are imported without a query, so changing them does not bust the cache by itself; `catalog-labels.js` is versioned because its exports changed (a stale copy next to new modules breaks the whole import graph).
 - Every import of `./catalog.js` (in `main.js`, `catalog-ui.js`, `ui.js`, `nintendo-product-detail.js`) must use the same `?v=`. A different query string loads a second module instance with its own catalog cache.
-- `DATA_VERSION` in `js/main.js` and `js/catalog.js`, currently `"135"`. Bump it whenever a `data/*.json` file changes.
+- `DATA_VERSION` in `js/main.js` and `js/catalog.js`, currently a `YYYYMMDD` string once the weekly refresh has run. Bump it whenever a `data/*.json` file changes; the refresh workflow does it automatically.
 - The literal versions asserted in `tests/bouquet-qa.mjs`, `tests/css-hygiene-qa.mjs`, and `tests/scrapbook-qa.mjs`.
 
 **Catalog pipeline (Python, offline).** The scripts in `scripts/` run in roughly this order, as their docstrings describe:
