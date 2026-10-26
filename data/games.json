@@ -11,8 +11,8 @@
       "online_versus": true,
       "local_wireless": true,
       "same_console": true,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": true,
+      "gameshare": false
     },
     "mood": [
       "CREEPY",
@@ -60,8 +60,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "CREEPY",
@@ -105,8 +105,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "CREEPY",
@@ -148,8 +148,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "CREEPY"
@@ -190,8 +190,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "CREEPY"
@@ -233,8 +233,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "MELANCHOLIC",
@@ -278,8 +278,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "DARK"
@@ -321,8 +321,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "MYSTERIOUS",
@@ -364,8 +364,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "CREEPY",
@@ -407,8 +407,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "DARK_GOTHIC"
@@ -449,9 +449,9 @@
       "online_coop": false,
       "online_versus": false,
       "local_wireless": false,
-      "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "same_console": true,
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "GOTHIC",
@@ -497,8 +497,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "MELANCHOLIC"
@@ -541,8 +541,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "DARK"
@@ -586,8 +586,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "EPIC",
@@ -631,8 +631,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "EPIC",
@@ -676,8 +676,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "MYSTERIOUS",
@@ -721,8 +721,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "MYSTERIOUS",
@@ -811,8 +811,8 @@
       "online_versus": true,
       "local_wireless": true,
       "same_console": true,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": true,
+      "gameshare": false
     },
     "mood": [
       "LIGHTHEARTED"
@@ -858,8 +858,8 @@
       "online_versus": true,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": true,
+      "gameshare": false
     },
     "mood": [
       "MYSTERIOUS",
@@ -904,8 +904,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "DARK",
@@ -948,8 +948,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "MYSTERIOUS",
@@ -990,8 +990,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "EPIC",
@@ -1032,8 +1032,8 @@
       "online_versus": true,
       "local_wireless": true,
       "same_console": true,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "LIGHTHEARTED"
@@ -1078,8 +1078,8 @@
       "online_versus": true,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "CHAOTIC"
@@ -1124,8 +1124,8 @@
       "online_versus": true,
       "local_wireless": true,
       "same_console": true,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": true,
+      "gameshare": false
     },
     "mood": [
       "STYLISH"
@@ -1169,8 +1169,8 @@
       "online_versus": true,
       "local_wireless": true,
       "same_console": true,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": true,
+      "gameshare": false
     },
     "mood": [
       "CHAOTIC",
@@ -1216,8 +1216,8 @@
       "online_versus": true,
       "local_wireless": true,
       "same_console": true,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": true,
+      "gameshare": false
     },
     "mood": [
       "CHAOTIC"
@@ -1259,8 +1259,8 @@
       "online_versus": true,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "STYLISH"
@@ -1307,8 +1307,8 @@
       "online_versus": true,
       "local_wireless": true,
       "same_console": true,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "CHAOTIC"
@@ -1350,8 +1350,8 @@
       "online_versus": true,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "LIGHTHEARTED",
@@ -1391,12 +1391,12 @@
       "SHOOTER"
     ],
     "multiplayer": {
-      "online_coop": false,
+      "online_coop": true,
       "online_versus": false,
-      "local_wireless": false,
+      "local_wireless": true,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": true,
+      "gameshare": false
     },
     "mood": [
       "STYLISH"
@@ -1439,8 +1439,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "STYLISH",
@@ -1483,8 +1483,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "MELANCHOLIC",
@@ -1526,8 +1526,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "MELANCHOLIC",
@@ -1570,8 +1570,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "STYLISH"
@@ -1614,8 +1614,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "STYLISH"
@@ -1659,8 +1659,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "DARK",
@@ -1705,7 +1705,7 @@
       "online_versus": true,
       "local_wireless": true,
       "same_console": true,
-      "requires_nso": "VERIFICAR",
+      "requires_nso": true,
       "gameshare": "VERIFICAR"
     },
     "mood": [
@@ -1751,7 +1751,7 @@
       "online_versus": true,
       "local_wireless": true,
       "same_console": true,
-      "requires_nso": "VERIFICAR",
+      "requires_nso": true,
       "gameshare": "VERIFICAR"
     },
     "mood": [
@@ -1842,8 +1842,8 @@
       "online_versus": true,
       "local_wireless": true,
       "same_console": true,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": true,
+      "gameshare": false
     },
     "mood": [
       "RELAXING"
@@ -1887,8 +1887,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "LIGHTHEARTED"
@@ -1930,8 +1930,8 @@
       "online_versus": false,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": false,
+      "gameshare": false
     },
     "mood": [
       "MELANCHOLIC",
@@ -1973,7 +1973,7 @@
       "online_versus": true,
       "local_wireless": true,
       "same_console": true,
-      "requires_nso": "VERIFICAR",
+      "requires_nso": true,
       "gameshare": "VERIFICAR"
     },
     "mood": [
@@ -2017,8 +2017,8 @@
       "online_versus": true,
       "local_wireless": true,
       "same_console": true,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": true,
+      "gameshare": true
     },
     "mood": [
       "CHAOTIC"
@@ -2060,7 +2060,7 @@
       "online_versus": true,
       "local_wireless": true,
       "same_console": true,
-      "requires_nso": "VERIFICAR",
+      "requires_nso": true,
       "gameshare": "VERIFICAR"
     },
     "mood": [
@@ -2105,7 +2105,7 @@
       "online_versus": true,
       "local_wireless": false,
       "same_console": false,
-      "requires_nso": "VERIFICAR",
+      "requires_nso": true,
       "gameshare": "VERIFICAR"
     },
     "mood": [
@@ -2149,8 +2149,8 @@
       "online_versus": true,
       "local_wireless": true,
       "same_console": true,
-      "requires_nso": "VERIFICAR",
-      "gameshare": "VERIFICAR"
+      "requires_nso": true,
+      "gameshare": true
     },
     "mood": [
       "CHAOTIC"
