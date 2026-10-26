@@ -5,8 +5,8 @@ const html = readFileSync("index.html", "utf8");
 const css = readFileSync("css/theme-bouquet.css", "utf8");
 const js = readFileSync("js/bouquet.js", "utf8");
 
-assert.ok(html.includes('href="css/theme-bouquet.css?v=ui18"'), "index.html no carga theme-bouquet.css");
-assert.ok(html.includes('src="js/bouquet.js?v=v135"'), "index.html no carga bouquet.js");
+assert.ok(html.includes('href="css/theme-bouquet.css?v=ui19"'), "index.html no carga theme-bouquet.css");
+assert.ok(html.includes('src="js/bouquet.js?v=v136"'), "index.html no carga bouquet.js");
 assert.ok(html.indexOf("theme-bouquet.css") > html.indexOf("screens/profile.css"), "theme-bouquet.css debe cargar al final");
 console.log("[OK] Midnight Bouquet cargado al final de la cascada");
 
@@ -41,5 +41,9 @@ for (const [name, text] of [["index.html", html], ["js/bouquet.js", js], ["js/di
   assert.doesNotMatch(text, ENGLISH, `Texto en inglés en ${name}`);
 }
 console.log("[OK] Sin frases en inglés en la interfaz");
+
+// Mi lista ends with its buttons; the decorative quote was removed on purpose.
+assert.equal(js.includes("bq-quote") || css.includes("bq-quote"), false, "La frase decorativa de Mi lista no debe volver");
+console.log("[OK] Mi lista termina con sus botones, sin frase decorativa");
 
 console.log("\n[OK] QA de Midnight Bouquet completo");

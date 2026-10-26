@@ -1,6 +1,6 @@
 import { PLAYER_DIMENSIONS, PLAYER_DIMENSION_LABELS, normalizedTraitPercent, traitSignal } from "./player-journey.js?v=p2";
-import { catalogLabel, curatedGenreLabel, formatSaleEnd } from "./catalog-labels.js?v=v135";
-import { catalogImageUrl } from "./catalog.js?v=v135";
+import { catalogLabel, curatedGenreLabel, formatSaleEnd } from "./catalog-labels.js?v=v136";
+import { catalogImageUrl } from "./catalog.js?v=v136";
 
 // All DOM rendering lives here. Logic modules never touch the DOM.
 

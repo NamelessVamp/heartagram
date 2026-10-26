@@ -292,18 +292,6 @@ function decorateHeaderMotifs() {
     const crystals = collection.querySelector(".bq-crystals");
     if (crystals) crystals.replaceChildren(motif("gem"), motif("gem"), motif("gem"));
   }
-
-  const actions = document.querySelector(".collection-actions");
-  if (actions && !document.querySelector(".bq-quote")) {
-    const quote = make("figure", "bq-quote");
-    quote.setAttribute("aria-hidden", "true");
-    const text = make("p", "bq-quote-text");
-    text.textContent = "“Buenos juegos, buena compañía y una yo más feliz.”";
-    const sign = make("figcaption", "bq-quote-sign");
-    sign.textContent = "— Heartagram";
-    quote.append(motif("bat", "bq-quote-bat"), text, sign);
-    actions.after(quote);
-  }
 }
 
 const OPTION_MOTIFS = ["fox", "feather", "heart", "crescent", "gem", "rose", "star", "bat", "blossom"];
