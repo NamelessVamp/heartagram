@@ -1,5 +1,4 @@
 const STORAGE_KEY = "heartagram:sidebar-collapsed";
-// HEARTAGRAM_INLINE_ICONS_V1
 const NAV_ICON_MARKUP = {
   home: '<path d="M3 11.5 12 4l9 7.5v8a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
   discover: '<path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="m19 16 .8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/>',
@@ -105,7 +104,7 @@ function createSidebar() {
 
   const mark = document.createElement("span");
   mark.className = "app-sidebar-brand-mark";
-  mark.textContent = "H"; // HEARTAGRAM_VISUAL_SYSTEM_V1
+  mark.textContent = "H";
   mark.setAttribute("aria-hidden", "true");
 
   const subtitle = document.createElement("span");

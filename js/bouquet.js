@@ -20,14 +20,6 @@ const CRYSTAL = `<svg viewBox="0 0 40 80" aria-hidden="true">
   <path d="M20 0v80M4 22h32" stroke="#fff" stroke-opacity=".35"/>
 </svg>`;
 
-const NOTES = [
-  [".discover-header", "What do we play today? ♡"],
-  [".catalog-screen-header", "More games, more magic ♡"],
-  [".collection-header", "A collection of what makes me happy ♡"],
-  [".guide-hero > div:first-child", "Lista para tu primera aventura ♡"],
-  [".profile-copy", "Un poco de caos también es una forma de amor ♡"],
-];
-
 function make(tag, className, html = "") {
   const node = document.createElement(tag);
   node.className = className;
@@ -35,29 +27,7 @@ function make(tag, className, html = "") {
   return node;
 }
 
-function note(text) {
-  const node = make("p", "bq-note");
-  node.textContent = text;
-  node.setAttribute("aria-hidden", "true");
-  return node;
-}
-
 const butterfly = (className = "bq-butterfly") => make("span", className, BUTTERFLY);
-
-function whenReady(selector, callback) {
-  const found = document.querySelector(selector);
-  if (found) {
-    callback(found);
-    return;
-  }
-  const observer = new MutationObserver(() => {
-    const node = document.querySelector(selector);
-    if (!node) return;
-    observer.disconnect();
-    callback(node);
-  });
-  observer.observe(document.body, { childList: true, subtree: true });
-}
 
 function decorateSky() {
   if (document.querySelector(".bq-sky")) return;
@@ -76,27 +46,6 @@ function decorateHero() {
   for (let index = 0; index < 5; index += 1) art.append(make("span", "bq-flower", FLOWER));
   for (let index = 0; index < 3; index += 1) art.append(butterfly());
   header.prepend(art);
-}
-
-function decorateNotes() {
-  for (const [selector, text] of NOTES) {
-    const target = document.querySelector(selector);
-    if (target && !target.querySelector(":scope > .bq-note")) target.append(note(text));
-  }
-  const giftTitle = document.getElementById("gift-title");
-  if (giftTitle && !giftTitle.parentElement.querySelector(":scope > .bq-note")) {
-    giftTitle.after(note("Para ti, Player Two ♡"));
-  }
-}
-
-function decorateSidebar() {
-  whenReady(".app-sidebar-secondary", (secondary) => {
-    if (secondary.parentElement.querySelector(".bq-sidebar-note")) return;
-    const text = make("p", "bq-sidebar-note");
-    text.textContent = "Player Two, Always ♡";
-    text.setAttribute("aria-hidden", "true");
-    secondary.before(text);
-  });
 }
 
 function decorateQuiz() {

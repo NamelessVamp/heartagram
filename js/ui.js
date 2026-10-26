@@ -2,7 +2,6 @@ import { PLAYER_DIMENSIONS, PLAYER_DIMENSION_LABELS, normalizedTraitPercent, tra
 import { catalogLabel, curatedGenreLabel } from "./catalog-labels.js";
 import { catalogImageUrl } from "./catalog.js?v=v130";
 
-// HEARTAGRAM_DISCOVER_P13
 // All DOM rendering lives here. Logic modules never touch the DOM.
 
 import { DIMENSIONS } from "./profile.js";
@@ -30,7 +29,6 @@ function el(tag, className, text) {
 
 /* ---------- Quiz ---------- */
 
-// HEARTAGRAM_PLAYER_JOURNEY_P1
 export function renderQuestion(question, index, total, selectedId, onSelect) {
   const current = index + 1;
   document.getElementById("quiz-counter").textContent =
@@ -325,7 +323,6 @@ function renderList(
   games.forEach((game) => container.append(gameCard(game, options)));
 }
 
-// HEARTAGRAM_DISCOVER_P13
 export function renderResults(sections) {
   const forYou = document.getElementById("list-for-you");
   const matches = sections.forYou.slice(0, 3).map(({ game }) => game);
@@ -586,7 +583,6 @@ export function renderWishlist(options = {}) {
 }
 
 
-// HEARTAGRAM_COLLECTION_P15
 function decorateCollectionPanel(panel, type) {
   if (!panel) return;
   panel.classList.toggle("collection-panel-interested", type === "interested");

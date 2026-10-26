@@ -206,35 +206,6 @@
     color: var(--accent-hover);
   }
 
-  .nso-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: var(--fs-sm);
-  }
-
-  .nso-table th,
-  .nso-table td {
-    padding: var(--sp-2) var(--sp-3);
-    border-bottom: 1px solid var(--line);
-    text-align: left;
-  }
-
-  .nso-table th {
-    color: var(--text-faint);
-    font-size: var(--fs-xs);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .nso-table td {
-    color: var(--text-muted);
-  }
-
-  .nso-row-yours td {
-    color: var(--gold);
-    font-weight: 600;
-  }
-
   .nso-chips {
     display: flex;
     flex-wrap: wrap;

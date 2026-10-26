@@ -135,10 +135,6 @@
     box-shadow: inset 2px 0 0 var(--accent);
   }
 
-  .bq-sidebar-note {
-    display: none;
-  }
-
   .mobile-navigation {
     border-top-color: var(--line-strong);
     background: rgb(14 13 36 / 0.94);
@@ -150,21 +146,8 @@
   }
 
   @media (min-width: 64rem) {
-    .bq-sidebar-note {
-      display: block;
-      margin: auto var(--sp-2) 0;
-      color: var(--accent-hover);
-      font: 1.45rem / 1.15 var(--font-hand);
-      text-shadow: 0 0 16px rgb(232 111 166 / 0.45);
-      transform: rotate(-6deg);
-    }
-
     body:not(.sidebar-collapsed) .app-sidebar-secondary {
       margin-top: var(--sp-6);
-    }
-
-    body.sidebar-collapsed .bq-sidebar-note {
-      display: none;
     }
   }
 
@@ -267,37 +250,6 @@
     max-width: none;
   }
 
-  .bq-note {
-    position: absolute;
-    top: 0;
-    right: 0;
-    max-width: 15rem;
-    color: var(--accent-hover);
-    font: 1.6rem / 1.15 var(--font-hand);
-    text-align: center;
-    text-shadow: 0 0 18px rgb(232 111 166 / 0.45);
-    transform: rotate(-7deg);
-    pointer-events: none;
-  }
-
-  .profile-copy .bq-note {
-    position: static;
-    justify-self: end;
-    max-width: none;
-    font-size: 1.35rem;
-    transform: rotate(-3deg);
-  }
-
-  @media (max-width: 63.99rem) {
-    .bq-note {
-      position: static;
-      justify-self: start;
-      max-width: none;
-      font-size: 1.3rem;
-      text-align: left;
-      transform: rotate(-3deg);
-    }
-  }
 
   /* ---------- Inicio: night hero ---------- */
   .home-header {
@@ -367,23 +319,7 @@
   .bq-hero-art .bq-butterfly:nth-of-type(8) { top: 20%; right: 36%; width: 1.5rem; animation-delay: -5s; color: var(--accent-hover); }
   .bq-hero-art .bq-butterfly:nth-of-type(9) { bottom: 22%; right: 8%; width: 1.75rem; animation-delay: -9s; }
 
-  .bq-hero-art .bq-note {
-    top: auto;
-    right: 4%;
-    bottom: 30%;
-  }
-
   @media (max-width: 63.99rem) {
-    .bq-hero-art .bq-note {
-      position: absolute;
-      top: var(--sp-5);
-      right: auto;
-      bottom: auto;
-      left: var(--sp-5);
-      max-width: 11rem;
-      font-size: 1.2rem;
-    }
-
     .bq-hero-art .bq-butterfly:nth-of-type(7) {
       top: 38%;
       right: 12%;
@@ -802,11 +738,6 @@
       width: 7.5rem;
     }
 
-    .bq-hero-art .bq-note {
-      right: calc(3% + 19rem);
-      bottom: 16%;
-    }
-
     .bq-hero-art .bq-butterfly:nth-of-type(7) { top: 46%; right: calc(3% + 13rem); }
     .bq-hero-art .bq-butterfly:nth-of-type(8) { top: 14%; right: calc(3% + 17rem); }
   }
@@ -1044,11 +975,6 @@
 
 /* ---------- v1.2.2 · Cleanup ---------- */
 @layer theme {
-  .bq-note,
-  .bq-sidebar-note {
-    display: none;
-  }
-
   .bq-motif-blossom {
     color: #c9a7ff;
     filter: drop-shadow(0 0 12px rgb(201 167 255 / 0.7));
