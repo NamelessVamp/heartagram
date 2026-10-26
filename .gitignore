@@ -4,25 +4,19 @@
 secrets/
 node_modules/
 __pycache__/
-data/catalog_igdb.full.json
-data/catalog_igdb.json
-data/catalog_igdb_details/
-# Nintendo Store local sync artifacts
+
+# Local memory transfer note, never published
+docs/Handoff.md
+
+# Legacy IGDB data (removed from the project)
+data/catalog_igdb*
+
+# Nintendo Store sync artifacts and script backups
 data/nintendo_probe/
-data/nintendo_catalog_backups/
-data/getting_started_backups/
-
-data/release_docs_backups/
-data/static_nintendo_backups/
-static_nintendo_cleanup_audit.txt
-
-prepare_ui_audit_v12.py
-ui_audit_v12.txt
-data/ui_phase1_backups/
-install_ui_*.py
-data/ui_v2_backups/
-
 data/*_backups/
+
+# One-off local patch and audit scripts
 install_*.py
 prepare_ui_audit_*.py
 ui_audit_*.txt
+static_nintendo_cleanup_audit.txt
