@@ -38,7 +38,8 @@ jobs:
           mkdir _site
           cp index.html _site/
           cp -r css js data _site/
-          if [ -d assets ]; then cp -r assets _site/; fi
+          # Catalog extras and metadata are inputs for scripts/, not the runtime.
+          rm _site/data/nintendo_catalog_extras.json _site/data/nintendo_catalog_meta.json
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site
