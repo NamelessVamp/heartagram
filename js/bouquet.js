@@ -70,13 +70,13 @@ function decorateProfile() {
   art.append(make("span", "bq-moon"), butterfly(), butterfly(), make("span", "bq-tarot-stars", "✦ ✧ ✦"));
   const name = make("p", "bq-tarot-name");
   const meta = make("p", "bq-tarot-meta");
-  meta.textContent = "PLAYER TWO · ✦✦✦";
+  meta.textContent = "JUGADORA 2 · ✦✦✦";
   card.append(art, name, meta);
   screen.insertBefore(card, screen.querySelector(".profile-copy"));
 
   const title = document.getElementById("profile-title");
   const sync = () => {
-    name.textContent = title?.textContent.trim() || "Player Two";
+    name.textContent = title?.textContent.trim() || "Jugadora 2";
   };
   sync();
   if (title) new MutationObserver(sync).observe(title, { childList: true, characterData: true, subtree: true });
@@ -109,7 +109,7 @@ const KONAMI = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "Ar
 let konamiIndex = 0;
 
 function burst() {
-  showToast("✦ PLAYER TWO UNLOCKED ✦");
+  showToast("✦ JUGADORA 2 DESBLOQUEADA ✦");
   if (reduceMotion) return;
   const layer = make("div", "bq-burst");
   layer.setAttribute("aria-hidden", "true");
@@ -126,8 +126,8 @@ function burst() {
 }
 
 function listen() {
-  window.addEventListener("heartagram:favorites-changed", () => showToast("♡ SAVING… [OK]"));
-  window.addEventListener("heartagram:library-changed", () => showToast("◆ SAVED TO LIBRARY [OK]"));
+  window.addEventListener("heartagram:favorites-changed", () => showToast("♡ MI LISTA ACTUALIZADA ✦"));
+  window.addEventListener("heartagram:library-changed", () => showToast("◆ MI BIBLIOTECA ACTUALIZADA ✦"));
   window.addEventListener("keydown", (event) => {
     const key = event.key.length === 1 ? event.key.toLowerCase() : event.key;
     konamiIndex = key === KONAMI[konamiIndex] ? konamiIndex + 1 : Number(key === KONAMI[0]);
@@ -255,7 +255,7 @@ function decorateHeaderMotifs() {
     const quote = make("figure", "bq-quote");
     quote.setAttribute("aria-hidden", "true");
     const text = make("p", "bq-quote-text");
-    text.textContent = "“Good games, good company, a happier me.”";
+    text.textContent = "“Buenos juegos, buena compañía y una yo más feliz.”";
     const sign = make("figcaption", "bq-quote-sign");
     sign.textContent = "— Heartagram";
     quote.append(motif("bat", "bq-quote-bat"), text, sign);
@@ -289,7 +289,7 @@ function decorateTarotMotif() {
   const title = document.getElementById("profile-title");
   if (!card || !art || !meta) return;
   const sync = () => {
-    const [name, label] = ARCHETYPE_MOTIFS[savedPrimaryArchetype()] ?? ["butterfly", "PLAYER TWO"];
+    const [name, label] = ARCHETYPE_MOTIFS[savedPrimaryArchetype()] ?? ["butterfly", "JUGADORA 2"];
     art.querySelector(".bq-tarot-motif")?.remove();
     art.append(name === "butterfly" ? butterfly("bq-butterfly bq-tarot-motif") : motif(name, "bq-tarot-motif"));
     meta.textContent = `${label} · ✦✦✦`;
