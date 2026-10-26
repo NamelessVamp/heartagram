@@ -245,7 +245,7 @@
     -webkit-box-orient: vertical;
   }
 
-  .collection-screen :is(.favorite-button, .library-button, .btn-ghost, .btn-text) {
+  .collection-screen :is(.card, .catalog-wishlist-card) :is(.favorite-button, .library-button, .btn-ghost, .btn-text) {
     min-height: 2.1rem;
     border-color: rgb(43 27 37 / 0.3);
     background: transparent;
