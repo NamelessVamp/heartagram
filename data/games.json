@@ -1592,7 +1592,7 @@
       "local_wireless": true,
       "same_console": true,
       "requires_nso": true,
-      "gameshare": "VERIFICAR"
+      "gameshare": false
     },
     "mood": [
       "WHOLESOME",
@@ -1842,7 +1842,7 @@
       "local_wireless": true,
       "same_console": true,
       "requires_nso": true,
-      "gameshare": "VERIFICAR"
+      "gameshare": false
     },
     "mood": [
       "LIGHTHEARTED"
@@ -1923,7 +1923,7 @@
       "local_wireless": true,
       "same_console": true,
       "requires_nso": true,
-      "gameshare": "VERIFICAR"
+      "gameshare": false
     },
     "mood": [
       "DARK"
@@ -1965,7 +1965,7 @@
       "local_wireless": false,
       "same_console": false,
       "requires_nso": true,
-      "gameshare": "VERIFICAR"
+      "gameshare": false
     },
     "mood": [
       "EPIC"
