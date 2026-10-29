@@ -84,9 +84,11 @@
       border-color var(--dur) var(--ease);
   }
 
-  .home-stat:hover {
-    border-color: var(--line-strong);
-    background: var(--surface-2);
+  @media (hover: hover) {
+    .home-stat:hover {
+      border-color: var(--line-strong);
+      background: var(--surface-2);
+    }
   }
 
   .home-stat-value {

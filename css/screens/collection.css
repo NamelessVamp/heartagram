@@ -31,8 +31,10 @@
     white-space: nowrap;
   }
 
-  .collection-tab:hover {
-    color: var(--text);
+  @media (hover: hover) {
+    .collection-tab:hover {
+      color: var(--text);
+    }
   }
 
   .collection-tab[aria-selected="true"] {

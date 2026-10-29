@@ -1,5 +1,5 @@
 import { isFavorite, toggleFavorite } from "./favorites.js";
-import { reasonFor } from "./recommend-v2.js?v=v137";
+import { reasonFor } from "./recommend-v2.js?v=v138";
 
 let profileProvider = () => null;
 let archetypesProvider = () => [];

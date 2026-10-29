@@ -161,8 +161,10 @@
     color: var(--on-accent);
   }
 
-  .btn-primary:hover:not(:disabled) {
-    background: var(--accent-hover);
+  @media (hover: hover) {
+    .btn-primary:hover:not(:disabled) {
+      background: var(--accent-hover);
+    }
   }
 
   .btn-ghost {
@@ -171,9 +173,11 @@
     color: var(--text);
   }
 
-  .btn-ghost:hover:not(:disabled) {
-    border-color: var(--text-faint);
-    background: var(--surface-3);
+  @media (hover: hover) {
+    .btn-ghost:hover:not(:disabled) {
+      border-color: var(--text-faint);
+      background: var(--surface-3);
+    }
   }
 
   .btn:active:not(:disabled) {
@@ -188,10 +192,12 @@
     font-weight: 500;
   }
 
-  .btn-text:hover {
-    color: var(--text);
-    text-decoration: underline;
-    text-underline-offset: 4px;
+  @media (hover: hover) {
+    .btn-text:hover {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
   }
 
   /* ---------- Toggle buttons: Me interesa / Ya lo tengo ---------- */
@@ -215,10 +221,12 @@
       color var(--dur) var(--ease);
   }
 
-  .favorite-button:hover,
-  .library-button:hover {
-    border-color: var(--text-faint);
-    background: var(--surface-2);
+  @media (hover: hover) {
+    .favorite-button:hover,
+    .library-button:hover {
+      border-color: var(--text-faint);
+      background: var(--surface-2);
+    }
   }
 
   .favorite-button[aria-pressed="true"] {
@@ -291,10 +299,12 @@
       color var(--dur) var(--ease);
   }
 
-  .discover-mood-button:hover,
-  .catalog-filter-chip:hover {
-    border-color: var(--text-faint);
-    color: var(--text);
+  @media (hover: hover) {
+    .discover-mood-button:hover,
+    .catalog-filter-chip:hover {
+      border-color: var(--text-faint);
+      color: var(--text);
+    }
   }
 
   .discover-mood-button[aria-pressed="true"] {
@@ -386,6 +396,11 @@
     line-height: 1;
   }
 
+  .catalog-wishlist-list > .catalog-status,
+  .catalog-wishlist-list > .empty {
+    grid-column: 1 / -1;
+  }
+
   .catalog-status.is-error {
     border-color: var(--accent-line);
     background: var(--accent-soft);
@@ -421,8 +436,10 @@
     transition: border-color var(--dur) var(--ease);
   }
 
-  .card:hover {
-    border-color: var(--line-strong);
+  @media (hover: hover) {
+    .card:hover {
+      border-color: var(--line-strong);
+    }
   }
 
   .card-sequence {
@@ -596,8 +613,10 @@
     line-height: 1;
   }
 
-  .catalog-dialog-close:hover {
-    background: var(--surface-3);
+  @media (hover: hover) {
+    .catalog-dialog-close:hover {
+      background: var(--surface-3);
+    }
   }
 
   @media (min-width: 40rem) {

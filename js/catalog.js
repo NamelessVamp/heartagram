@@ -1,5 +1,5 @@
 const DATA_VERSION = "20261026";
-import { NINTENDO_INDEX_PATH, adaptNintendoCatalog } from "./nintendo-catalog.js?v=v137";
+import { NINTENDO_INDEX_PATH, adaptNintendoCatalog } from "./nintendo-catalog.js?v=v138";
 
 // Nintendo-only catalog runtime for the public static build.
 const DEFAULT_PAGE_SIZE = 24;

@@ -105,8 +105,10 @@
     display: none;
   }
 
-  .guide-chapter > summary:hover {
-    background: var(--surface-2);
+  @media (hover: hover) {
+    .guide-chapter > summary:hover {
+      background: var(--surface-2);
+    }
   }
 
   .guide-chapter > summary::after {

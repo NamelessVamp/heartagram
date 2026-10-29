@@ -215,8 +215,10 @@
     transition: opacity var(--dur) var(--ease);
   }
 
-  .npd-thumb:hover {
-    opacity: 0.85;
+  @media (hover: hover) {
+    .npd-thumb:hover {
+      opacity: 0.85;
+    }
   }
 
   .npd-thumb[aria-current="true"] {

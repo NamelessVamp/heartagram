@@ -50,9 +50,11 @@
       border-color var(--dur) var(--ease);
   }
 
-  .quiz-option:hover {
-    border-color: var(--text-faint);
-    background: var(--surface-2);
+  @media (hover: hover) {
+    .quiz-option:hover {
+      border-color: var(--text-faint);
+      background: var(--surface-2);
+    }
   }
 
   .quiz-option[aria-checked="true"] {

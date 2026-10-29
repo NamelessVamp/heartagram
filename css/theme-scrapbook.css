@@ -187,12 +187,14 @@
     rotate: -0.4deg;
   }
 
-  .collection-screen :is(.card, .catalog-wishlist-card):hover {
-    border: 0;
-    box-shadow: var(--polaroid-shadow);
-    rotate: 0deg;
-    scale: 1.02;
-    translate: none;
+  @media (hover: hover) {
+    .collection-screen :is(.card, .catalog-wishlist-card):hover {
+      border: 0;
+      box-shadow: var(--polaroid-shadow);
+      rotate: 0deg;
+      scale: 1.02;
+      translate: none;
+    }
   }
 
   .collection-screen :is(.card, .catalog-wishlist-card)::after {
@@ -309,8 +311,10 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .collection-screen :is(.card, .catalog-wishlist-card):hover {
-      scale: 1;
+    @media (hover: hover) {
+      .collection-screen :is(.card, .catalog-wishlist-card):hover {
+        scale: 1;
+      }
     }
   }
 }
@@ -605,9 +609,11 @@
     color: var(--paper-ink);
   }
 
-  :is(.discover-profile, .profile-copy, .catalog-empty-state, .collection-empty-state, .empty) .btn-ghost:hover {
-    border-color: var(--wine);
-    background: rgb(43 27 37 / 0.06);
+  @media (hover: hover) {
+    :is(.discover-profile, .profile-copy, .catalog-empty-state, .collection-empty-state, .empty) .btn-ghost:hover {
+      border-color: var(--wine);
+      background: rgb(43 27 37 / 0.06);
+    }
   }
 
   /* Mi lista is a scrapbook screen: handwritten kicker like Descubrir and Perfil. */

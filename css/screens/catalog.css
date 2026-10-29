@@ -91,8 +91,10 @@
     transition: transform 300ms var(--ease);
   }
 
-  .catalog-card-open:hover .catalog-card-media img {
-    transform: scale(1.04);
+  @media (hover: hover) {
+    .catalog-card-open:hover .catalog-card-media img {
+      transform: scale(1.04);
+    }
   }
 
   .catalog-card-body {

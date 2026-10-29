@@ -1,6 +1,6 @@
 import { PLAYER_DIMENSIONS, PLAYER_DIMENSION_LABELS, normalizedTraitPercent, traitSignal } from "./player-journey.js?v=p2";
-import { catalogLabel, curatedGenreLabel, formatSaleEnd } from "./catalog-labels.js?v=v137";
-import { catalogImageUrl } from "./catalog.js?v=v137";
+import { catalogLabel, curatedGenreLabel, formatSaleEnd } from "./catalog-labels.js?v=v138";
+import { catalogImageUrl } from "./catalog.js?v=v138";
 
 // All DOM rendering lives here. Logic modules never touch the DOM.
 
@@ -463,6 +463,29 @@ function createCatalogWishlistCard(game, options) {
   return card;
 }
 
+// Placeholder cards while the catalog loads, announced once through the list's label.
+function fillWithSkeletons(list, label, count = 2) {
+  list.setAttribute("role", "status");
+  list.setAttribute("aria-label", label);
+  for (let index = 0; index < count; index += 1) {
+    const card = el("article", "catalog-card catalog-card-skeleton");
+    card.setAttribute("aria-hidden", "true");
+    card.append(
+      el("div", "catalog-skeleton-media"),
+      el("div", "catalog-skeleton-line catalog-skeleton-title"),
+      el("div", "catalog-skeleton-line catalog-skeleton-short"),
+    );
+    list.append(card);
+  }
+}
+
+function createStatusMessage(text, isError = false) {
+  const message = el("p", isError ? "catalog-status is-error" : "catalog-status");
+  message.append(el("span", "", text));
+  if (isError) message.setAttribute("role", "alert");
+  return message;
+}
+
 export function renderWishlist(options = {}) {
   const {
     interestedCuratedGames = [],
@@ -515,9 +538,9 @@ export function renderWishlist(options = {}) {
   );
 
   if (catalogLoading && interestedCatalogGames.length === 0) {
-    catalogList.append(el("p", "catalog-status", "Cargando juegos guardados..."));
+    fillWithSkeletons(catalogList, "Cargando juegos guardados");
   } else if (catalogError && interestedCatalogGames.length === 0) {
-    catalogList.append(el("p", "catalog-status", "No se pudieron cargar algunos juegos del catálogo."));
+    catalogList.append(createStatusMessage("No se pudieron cargar algunos juegos del catálogo.", true));
   } else if (interestedCatalogGames.length === 0) {
     catalogList.append(el("p", "empty", "Todavía no has guardado juegos desde Explorar."));
   } else {
@@ -580,7 +603,9 @@ export function renderWishlist(options = {}) {
     list.append(fragment);
     libraryContent.append(list);
   } else if (catalogLoading && ownedCuratedGames.length === 0) {
-    libraryContent.append(el("p", "catalog-status", "Cargando Mi biblioteca..."));
+    const loadingList = el("div", "catalog-wishlist-list");
+    fillWithSkeletons(loadingList, "Cargando Mi biblioteca");
+    libraryContent.append(loadingList);
   }
 
   container.append(librarySection);

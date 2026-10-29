@@ -89,10 +89,12 @@
       color var(--dur) var(--ease);
   }
 
-  .shell-nav-button:hover:not(:disabled),
-  .sidebar-toggle:hover {
-    background: var(--surface-2);
-    color: var(--text);
+  @media (hover: hover) {
+    .shell-nav-button:hover:not(:disabled),
+    .sidebar-toggle:hover {
+      background: var(--surface-2);
+      color: var(--text);
+    }
   }
 
   .shell-nav-button[aria-current="page"] {
