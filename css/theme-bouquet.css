@@ -237,6 +237,11 @@
     translate: 0 -2px;
   }
 
+  .card:active {
+    translate: 0 0;
+    box-shadow: none;
+  }
+
   /* ---------- Handwritten notes ---------- */
   .home-header,
   .discover-header,

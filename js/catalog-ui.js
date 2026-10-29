@@ -1,4 +1,4 @@
-import { catalogLabel, formatPricedAt, formatSaleEnd } from "./catalog-labels.js?v=v136";
+import { catalogLabel, formatPricedAt, formatSaleEnd } from "./catalog-labels.js?v=v137";
 
 // Renders the Nintendo Store Mexico catalog explorer.
 
@@ -10,12 +10,12 @@ import {
   loadCatalog,
   loadGameDetails,
   queryCatalog,
-} from "./catalog.js?v=v136";
+} from "./catalog.js?v=v137";
 
 import { isFavorite, toggleFavorite } from "./favorites.js";
 import { isOwnedGame, setOwnedGame } from "./library.js";
 
-import { renderNintendoProductDetail } from "./nintendo-product-detail.js?v=v136";
+import { renderNintendoProductDetail } from "./nintendo-product-detail.js?v=v137";
 
 const PAGE_SIZE = 24;
 // The dialog is labelled by the product title once the detail is rendered.
@@ -53,6 +53,7 @@ function byId(id) {
 function cacheElements() {
   elements.loading = byId("catalog-loading");
   elements.statusLabel = byId("catalog-status-label");
+  elements.loadingSkeleton = byId("catalog-loading-skeleton");
   elements.retry = byId("catalog-retry");
   elements.content = byId("catalog-content");
   elements.query = byId("catalog-query");
@@ -230,8 +231,8 @@ function createCatalogEmptyState() {
   return panel;
 }
 
-function renderCatalogSkeletons(count = 8) {
-  elements.grid.replaceChildren();
+function renderCatalogSkeletons(count = 8, target = elements.grid) {
+  target.replaceChildren();
   const fragment = document.createDocumentFragment();
   for (let index = 0; index < count; index += 1) {
     const card = createElement("article", "catalog-card catalog-card-skeleton");
@@ -244,7 +245,7 @@ function renderCatalogSkeletons(count = 8) {
     );
     fragment.append(card);
   }
-  elements.grid.append(fragment);
+  target.append(fragment);
 }
 
 function createCatalogCard(game) {
@@ -548,7 +549,10 @@ async function loadExplorer() {
   }
 
   elements.loading.hidden = false;
+  elements.loading.classList.remove("is-error");
   elements.statusLabel.textContent = "Cargando catálogo...";
+  renderCatalogSkeletons(8, elements.loadingSkeleton);
+  elements.loadingSkeleton.hidden = false;
   elements.retry.hidden = true;
   elements.content.hidden = true;
 
@@ -572,9 +576,12 @@ async function loadExplorer() {
     requestAnimationFrame(renderResults);
 
     elements.loading.hidden = true;
+    elements.loadingSkeleton.hidden = true;
 
     return state.catalog;
   } catch (error) {
+    elements.loadingSkeleton.hidden = true;
+    elements.loading.classList.add("is-error");
     elements.statusLabel.textContent =
       "No se pudo abrir el catálogo. La colección local sigue disponible.";
     elements.retry.hidden = false;

@@ -176,6 +176,11 @@
     background: var(--surface-3);
   }
 
+  .btn:active:not(:disabled) {
+    translate: 0 1px;
+    filter: brightness(0.92);
+  }
+
   .btn-text {
     min-height: 2.5rem;
     padding: 0 var(--sp-2);
@@ -379,6 +384,25 @@
     color: var(--accent);
     font-size: 1.5rem;
     line-height: 1;
+  }
+
+  .catalog-status.is-error {
+    border-color: var(--accent-line);
+    background: var(--accent-soft);
+    color: var(--text);
+  }
+
+  .catalog-status.is-error span::before {
+    content: "!";
+    display: inline-grid;
+    place-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: var(--sp-3);
+    border-radius: var(--r-pill);
+    background: var(--accent);
+    color: var(--on-accent);
+    font-weight: 700;
   }
 
   .catalog-empty-state .btn,
